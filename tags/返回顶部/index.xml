@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>返回顶部 on UNIXETC</title>
+    <link>https://unixetc.com/tags/%E8%BF%94%E5%9B%9E%E9%A1%B6%E9%83%A8/</link>
+    <description>UNIXETC (返回顶部)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 08 Sep 2015 19:28:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/%E8%BF%94%E5%9B%9E%E9%A1%B6%E9%83%A8/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用ScrollUp添加返回顶部功能</title>
+      <link>https://unixetc.com/post/use-scrollup-to-add-scroll-to-top-feature/</link>
+      <pubDate>Tue, 08 Sep 2015 19:28:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/use-scrollup-to-add-scroll-to-top-feature/</guid>
+      <description>&lt;p&gt;下载ScrollUp &lt;a href=&#34;https://github.com/markgoodyear/scrollup&#34;&gt;https://github.com/markgoodyear/scrollup&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在网页中引用&lt;code&gt;jquery.scrollUp.js&lt;/code&gt;、&lt;code&gt;jquery.easing.js&lt;/code&gt;、&lt;code&gt;jquery.min.js&lt;/code&gt;三个JavaScript脚本，注意顺序&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;script src=&amp;quot;jquery.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script src=&amp;quot;jquery.easing.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script src=&amp;quot;jquery.scrollUp.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后加入控制代码&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;script&amp;gt;
+$(function () {
+    $.scrollUp();
+});
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以上是最简单的使用方法，还有一种带参数的方法&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$(function () {
+    $.scrollUp({
+        scrollName: &#39;scrollUp&#39;,      // Element ID
+        scrollDistance: 300,         // Distance from top/bottom before showing element (px)
+        scrollFrom: &#39;top&#39;,           // &#39;top&#39; or &#39;bottom&#39;
+        scrollSpeed: 300,            // Speed back to top (ms)
+        easingType: &#39;linear&#39;,        // Scroll to top easing (see http://easings.net/)
+        animation: &#39;fade&#39;,           // Fade, slide, none
+        animationSpeed: 200,         // Animation speed (ms)
+        scrollTrigger: false,        // Set a custom triggering element. Can be an HTML string or jQuery object
+        scrollTarget: false,         // Set a custom target element for scrolling to. Can be element or number
+        scrollText: &#39;Scroll to top&#39;, // Text for element, can contain HTML
+        scroll
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;title: false,          // Set a custom &lt;!-- raw HTML omitted --&gt; title if required.
+scrollImg: false,            // Set true to use image
+activeOverlay: false,        // Set CSS color to display scrollUp active point, e.g &amp;lsquo;#00FFFF&amp;rsquo;
+zIndex: 2147483647           // Z-Index for the overlay
+});
+});&lt;/p&gt;
+&lt;p&gt;其中&lt;code&gt;easingType&lt;/code&gt;为&lt;strong&gt;运动类型&lt;/strong&gt;，可参考&lt;a href=&#34;http://easings.net/&#34;&gt;http://easings.net/&lt;/a&gt;说明选用。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

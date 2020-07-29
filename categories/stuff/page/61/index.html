@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>STUFF - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/categories/stuff/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+
+
+
+<meta property="og:title" content="STUFF" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/categories/stuff/" />
+<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="STUFF"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <h1>Category: STUFF</h1>
+    <div class="post-info">
+        <a href="https://unixetc.com/categories">To all categories</a>
+    </div>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/install-vnc-server-on-ubuntu-server/">Ubuntu Server中安装VNC Server</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装所有软件
+#aptitude install openbox firefox ttf-wqy-microhei#aptitude install vnc4server 设置openbox启动
+#update-alternatives --config x-session-manager然后选择openbox-session 设置vncserver密码:
+#vncpasswdPassword: ******Verify:***** 运行vncserver
+# vncserver //运行# vncserver -kill :1 //终止 编辑~/.vnc/xstartup文件
+#vi ~/.vnc/xstartup#!/bin/sh# Uncomment the following two lines for normal desktop:# unset SESSION_MANAGER# exec /etc/X11/xinit/xinitrc[ -x /etc/vnc/xstartup ] &amp;&amp; exec /etc/vnc/xstartup[ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresourcesxsetroot -solid greyvncconfig -iconic &amp;x-terminal-emulator -geometry 80x24+10+10 -ls -title &quot;$VNCDESKTOP Desktop&quot; &amp;x-window-manager &amp;startx&amp; //添加此行 链接VNC
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2013-05-11</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vnc">#VNC</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/debian-use-apt-spy-to-select-the-best-source/">Debian使用apt-spy选择最佳源</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装apt-spy
+#apt-get install apt-spy 使用apt-spy选择最佳源
+#apt-spy update#apt-spy -d stable -a asia -t 3 结果保存在/etc/apt/sources.list.d/apt-spy.list，可手动替换到/etc/apt/sources.list
+apt-spy选项:
+ -d 系统版本，可选stable,testing,unstable -a 区域,如asia,europe等，可用项可cat /etc/apt-spy.conf -t 超时阀值(s)，可筛掉长时间不响应的地址  
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2013-05-09</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/debian">#Debian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/apt-get">#apt-get</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/apt-spy">#apt-spy</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/product-codes-of-nokia-n900/">NokiaN900产品码</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        电池仓贴纸上面的CODE即是
+ 0595085: N900 RX-51 TMN (Telecomunicacoes Moveis Nacionais S.A.*) PT V1 - Black 0582648: RX-51 Belgium 0584571: RX-51 Croatia Makedonia 0584572: RX-51 Czech 0591362: RX-51 Estonia 0574180: RX-51 France 0574383: RX-51 Germany 0591474: RX-51 Hungary 0591474: RX-51 Hungary 0574385: RX-51 Italy 0583516: RX-51 Light Swap 0582647: RX-51 MENA 0585168: RX-51 Montenegro Greece 0582645: RX-51 Netherlands 0582644: RX-51 Poland 0574386: RX-51 Russia 0574179: RX-51 Scandinavia Finland Sweden 0587236: RX-51 Scandinavia Norway Denmark 0584570: RX-51 Slovakia 0584570: RX-51 Slovakia 0574384: RX-51 Spain Portugal 0584598: RX-51 Swap 0584598: RX-51 Swap 0587813: RX-51 Swap France 0587810: RX-51 Swap Russia 0587812: RX-51 Swap USA 0560826: RX-51 UK Ireland 0580952: RX-51 USA 0593611: UK CV 0595421: Vodafone UK GB Contract black 1.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2013-04-26</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/nokia">#nokia</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/n900">#n900</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nokia-n900">#nokia n900</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/rx-51">#rx-51</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+    
+        
+    <div class="pagination">
+        <div class="left pagination-item ">
+            
+                <a href="/categories/stuff/page/60/">To new posts</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/categories/stuff/page/62/">To old posts</a>
+            
+        </div>
+    </div>
+
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

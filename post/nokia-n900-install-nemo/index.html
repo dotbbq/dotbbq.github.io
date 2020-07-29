@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>N900安装最新版Nemo - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+
+
+
+<meta property="og:title" content="N900安装最新版Nemo" />
+<meta property="og:description" content="准备
+ 安装最新uboot 一张至少4g以上的TF卡  下载地址http://releases.nemomobile.org/releases/ 以最新目录为例，下载http://releases.nemomobile.org/releases/latest/images/nemo-armv7hl-n900/里的nemo-armv7hl-n900-mmcblk0p.raw.bz2 解压出raw文件，然后改后缀为img。Windows下用Win32DiskImager将镜像文件写入TF卡。 Linux下可以使用dd命令直接写入，不需要改后缀名：
+alair@e6440:/media/alair/bak/downloads$ sudo dd if=nemo-armv7hl-n900-mmcblk0p.raw of=/dev/sdc bs=1M[sudo] alair 的密码： 记录了3640&#43;1 的读入记录了3640&#43;1 的写出3816816641 bytes (3.8 GB, 3.6 GiB) copied, 185.35 s, 20.6 MB/s Windwos中用winscp在你的N900的/etc/bootmenu.d/新建一个40-nemo.item文件，贴入以下内容：
+ITEM_NAME=&quot;Mer-Nemo Mobile&quot;ITEM_ID=&quot;nemo&quot;ITEM_DEVICE=&quot;${EXT_CARD}p3&quot;ITEM_KERNEL=&quot;uImage&quot;ITEM_FSTYPE=&quot;vfat&quot;ITEM_CMDLINE=&quot;root=/dev/mmcblk0p1 rootwait ro console=ttyO2,115200n8 console=tty0 omapfb.vram=0:2M,1:2M,2:2M mtdoops.mtddev=2 quiet&quot;ITEM_OMAPATAG=1 Linux系统下可以直接SSH连接N900进行操作。 然后root运行
+u-boot-update-bootmenu 关机，插入TF卡，然后推开键盘开机，选Mer-Nemo Mobile进入即可。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unixetc.com/post/nokia-n900-install-nemo/" />
+<meta property="article:published_time" content="2019-04-28T15:56:00+00:00" />
+<meta property="article:modified_time" content="2019-04-28T15:56:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="N900安装最新版Nemo"/>
+<meta name="twitter:description" content="准备
+ 安装最新uboot 一张至少4g以上的TF卡  下载地址http://releases.nemomobile.org/releases/ 以最新目录为例，下载http://releases.nemomobile.org/releases/latest/images/nemo-armv7hl-n900/里的nemo-armv7hl-n900-mmcblk0p.raw.bz2 解压出raw文件，然后改后缀为img。Windows下用Win32DiskImager将镜像文件写入TF卡。 Linux下可以使用dd命令直接写入，不需要改后缀名：
+alair@e6440:/media/alair/bak/downloads$ sudo dd if=nemo-armv7hl-n900-mmcblk0p.raw of=/dev/sdc bs=1M[sudo] alair 的密码： 记录了3640&#43;1 的读入记录了3640&#43;1 的写出3816816641 bytes (3.8 GB, 3.6 GiB) copied, 185.35 s, 20.6 MB/s Windwos中用winscp在你的N900的/etc/bootmenu.d/新建一个40-nemo.item文件，贴入以下内容：
+ITEM_NAME=&quot;Mer-Nemo Mobile&quot;ITEM_ID=&quot;nemo&quot;ITEM_DEVICE=&quot;${EXT_CARD}p3&quot;ITEM_KERNEL=&quot;uImage&quot;ITEM_FSTYPE=&quot;vfat&quot;ITEM_CMDLINE=&quot;root=/dev/mmcblk0p1 rootwait ro console=ttyO2,115200n8 console=tty0 omapfb.vram=0:2M,1:2M,2:2M mtdoops.mtddev=2 quiet&quot;ITEM_OMAPATAG=1 Linux系统下可以直接SSH连接N900进行操作。 然后root运行
+u-boot-update-bootmenu 关机，插入TF卡，然后推开键盘开机，选Mer-Nemo Mobile进入即可。"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">N900安装最新版Nemo</h1>
+        </header>
+        <div class="content">
+            <p>准备</p>
+<ul>
+<li>安装最新uboot</li>
+<li>一张至少4g以上的TF卡</li>
+</ul>
+<p>下载地址<a href="http://releases.nemomobile.org/releases/">http://releases.nemomobile.org/releases/</a>
+以最新目录为例，下载<a href="http://releases.nemomobile.org/releases/latest/images/nemo-armv7hl-n900/">http://releases.nemomobile.org/releases/latest/images/nemo-armv7hl-n900/</a>里的<strong>nemo-armv7hl-n900-mmcblk0p.raw.bz2</strong>
+解压出raw文件，然后改后缀为img。Windows下用<strong>Win32DiskImager</strong>将镜像文件写入TF卡。
+Linux下可以使用<code>dd</code>命令直接写入，不需要改后缀名：</p>
+<pre><code>alair@e6440:/media/alair/bak/downloads$ sudo dd if=nemo-armv7hl-n900-mmcblk0p.raw of=/dev/sdc bs=1M
+[sudo] alair 的密码： 
+记录了3640+1 的读入
+记录了3640+1 的写出
+3816816641 bytes (3.8 GB, 3.6 GiB) copied, 185.35 s, 20.6 MB/s
+</code></pre>
+<p>Windwos中用<strong>winscp</strong>在你的N900的<code>/etc/bootmenu.d/</code>新建一个<code>40-nemo.item</code>文件，贴入以下内容：</p>
+<pre><code>ITEM_NAME=&quot;Mer-Nemo Mobile&quot;
+ITEM_ID=&quot;nemo&quot;
+ITEM_DEVICE=&quot;${EXT_CARD}p3&quot;
+ITEM_KERNEL=&quot;uImage&quot;
+ITEM_FSTYPE=&quot;vfat&quot;
+ITEM_CMDLINE=&quot;root=/dev/mmcblk0p1 rootwait ro console=ttyO2,115200n8 console=tty0 omapfb.vram=0:2M,1:2M,2:2M mtdoops.mtddev=2 quiet&quot;
+ITEM_OMAPATAG=1
+</code></pre>
+<p>Linux系统下可以直接<a href="/post/nokia-n900-and-ssh/">SSH连接N900</a>进行操作。
+然后root运行</p>
+<pre><code>u-boot-update-bootmenu
+</code></pre>
+<p>关机，插入TF卡，然后推开键盘开机，选<strong>Mer-Nemo Mobile</strong>进入即可。</p>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2019-04-28</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/nokia">#Nokia</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/n900">#N900</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nokia-n900">#Nokia N900</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%AF%BA%E5%9F%BA%E4%BA%9A">#诺基亚</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nemo">#Nemo</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python-pip on UNIXETC</title>
+    <link>https://unixetc.com/tags/python-pip/</link>
+    <description>UNIXETC (python-pip)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 20 Apr 2017 14:28:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/python-pip/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>python-pip安装实例</title>
+      <link>https://unixetc.com/post/python-pip-installation/</link>
+      <pubDate>Thu, 20 Apr 2017 14:28:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/python-pip-installation/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Python-pip&lt;/strong&gt; 是一个现代的，通用的 &lt;strong&gt;Python&lt;/strong&gt;包管理工具。提供了对 Python 包的查找、下载、安装、卸载的功能。&lt;/p&gt;
+&lt;p&gt;以下为多个操作系统平台下&lt;strong&gt;Python-pip&lt;/strong&gt;安装方法&lt;/p&gt;
+&lt;h3 id=&#34;通用方法&#34;&gt;通用方法&lt;/h3&gt;
+&lt;p&gt;通过&lt;strong&gt;get-pip.py&lt;/strong&gt;文件来安装，建议&lt;strong&gt;Windows&lt;/strong&gt;用户使用，前提是你必须首先安装&lt;strong&gt;Python&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;版本要求Python 2 &amp;gt;=2.7.9 或Python 3 &amp;gt;=3.4，可从官网下载&lt;a href=&#34;http://www.python.org/&#34;&gt;http://www.python.org/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;然后下载&lt;strong&gt;get-pip.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;下载地址 &lt;a href=&#34;https://bootstrap.pypa.io/get-pip.py&#34;&gt;https://bootstrap.pypa.io/get-pip.py&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;通过&lt;code&gt;python get-pip.py&lt;/code&gt;命令来进行安装。&lt;/p&gt;
+&lt;h3 id=&#34;linux下通过软件管理工具来安装python-pip&#34;&gt;Linux下通过软件管理工具来安装Python-pip&lt;/h3&gt;
+&lt;h4 id=&#34;fedora21&#34;&gt;Fedora21&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Python2&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo yum upgrade python-setuptools
+sudo yum install python-pip python-wheel
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Python3&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo yum install python3 python3-wheel
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;fedora22&#34;&gt;Fedora22&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Python2&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo dnf upgrade python-setuptools
+sudo dnf install python-pip python-wheel
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Python3&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo dnf install python3 python3-wheel
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;centosrhel&#34;&gt;CentOS/RHEL&lt;/h4&gt;
+&lt;p&gt;首先得启用&lt;strong&gt;EPEL repository&lt;/strong&gt;,&lt;a href=&#34;https://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F&#34;&gt;可参考此文&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;EPEL 6/EPEL 7&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo yum install python-pip
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;EPEL 7&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bsh&#34; data-lang=&#34;bsh&#34;&gt;sudo yum install python-wheel
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;opensuse&#34;&gt;OpenSUSE&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Python 2:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo zypper install python-pip python-setuptools python-wheel
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Python 3:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo zypper install python3-pip python3-setuptools python3-wheel
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;debianubuntu&#34;&gt;Debian/Ubuntu&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install python-pip
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;当系统安装的是&lt;strong&gt;Python3&lt;/strong&gt;是，则安装&lt;code&gt;python3-pip&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;archlinux&#34;&gt;Archlinux&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Python 2:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo pacman -S python2-pip
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Python 3:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo pacman -S python-pip
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

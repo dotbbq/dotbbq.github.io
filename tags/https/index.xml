@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>https on UNIXETC</title>
+    <link>https://unixetc.com/tags/https/</link>
+    <description>UNIXETC (https)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Fri, 01 Jul 2016 17:21:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/https/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HSTS域名更换实例</title>
+      <link>https://unixetc.com/post/hsts-domain-name-replacement-examples/</link>
+      <pubDate>Fri, 01 Jul 2016 17:21:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/hsts-domain-name-replacement-examples/</guid>
+      <description>&lt;p&gt;新入手了its0k.com，原来的alair.cn还继续使用&lt;/p&gt;
+&lt;p&gt;在这里需要将alair.cn重定向到its0k.com&lt;/p&gt;
+&lt;p&gt;第一次只是将&lt;code&gt;nginx&lt;/code&gt;配置文件中的&lt;code&gt;alair.cn&lt;/code&gt;全部替换为&lt;code&gt;its0k.com&lt;/code&gt;，通过its0k.com浏览新站完全没问题&lt;/p&gt;
+&lt;p&gt;但是试着从alair.cn跳转浏览新站，浏览器出现了证书安全告警，告警具体原因为证书未包含&lt;code&gt;alair.cn&lt;/code&gt;域名，我才想起来旧域名&lt;code&gt;alair.cn&lt;/code&gt;已经添加进了&lt;code&gt;HSTS&lt;/code&gt;列表，因此不能简单的只为新域名签名，而是需要证书签名时包含新旧两个域名。&lt;/p&gt;
+&lt;p&gt;重新签名了证书，包含以下四个域名&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;its0k.com www.its0k.com alair.cn www.alair.cn
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以下为更改完成后的&lt;code&gt;nginx&lt;/code&gt;配置文件，请注意名相关的部分&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;server {
+listen 443 ssl http2;
+
+ssl_certificate     /root/ssls/its0k.crt;
+ssl_certificate_key /root/ssls/its0k.key;
+
+ssl_session_timeout 60m;
+ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+ssl_ciphers ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-RC4-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:RC4-SHA:!aNULL:!eNULL:!EXPORT:!DES:!3DES:!MD5:!DSS:!PKS;
+ssl_prefer_server_ciphers on;
+ssl_session_cache builtin:1000 shared:SSL:10m;
+ssl_dhparam /etc/ssl/certs/dhparam.pem;
+
+add_header Strict-Transport-Security &amp;quot;max-age=63072000; includeSubdomains; preload&amp;quot;;
+add_header X-Frame-Options &amp;quot;DENY&amp;quot;;
+
+ssl_stapling on;
+ssl_stapling_verify on;
+
+resolver 8.8.8.8 8.8.4.4 valid=300s;
+resolver_timeout 5s;
+
+server_name its0k.com www.its0k.com alair.cn www.alair.cn;
+access_log off;
+index index.html index.htm;
+include /usr/local/nginx/conf/rewrite/ps.conf;
+root /data/wwwroot/its0k.com/compiled;
+error_page 403 404 500 503 505 = https://its0k.com/404;
+if ($host != its0k.com) {
+        rewrite ^/(.*)$ $scheme://its0k.com/$1 permanent;
+        }
+
+location ~ .*\.(gif|svg|jpg|jpeg|png|bmp|swf|flv|ico)$ {
+    expires 30d;
+    access_log off;
+    }
+location ~ .*\.(js|css)?$ {
+    expires 7d;
+    access_log off;
+    }
+}
+server {
+listen 80;
+server_name www.its0k.com its0k.com alair.cn www.alair.cn;
+add_header Strict-Transport-Security &amp;quot;max-age=63072000; includeSubdomains; preload&amp;quot;;
+rewrite ^/(.*) https://its0k.com/$1 permanent;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;至此域名替换完成！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Let&#39;s encrypt 证书快速生成脚本</title>
+      <link>https://unixetc.com/post/letsencrypt-certificate-quickly-generate-script/</link>
+      <pubDate>Mon, 09 May 2016 15:28:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/letsencrypt-certificate-quickly-generate-script/</guid>
+      <description>&lt;p&gt;网站的Let&amp;rsquo;s encrypt证书快到期了，看了官方的续期方法比较繁琐，于是在网上找了找简单方便做法，结果找到了&lt;strong&gt;墓地小企鹅&lt;/strong&gt;写的一个脚本(shell script)，使用这个脚本可以方便的生成以及更新Let&amp;rsquo;s encrypt 证书。&lt;/p&gt;
+&lt;p&gt;脚本地址 &lt;a href=&#34;https://github.com/xdtianyu/scripts/tree/master/lets-encrypt&#34;&gt;https://github.com/xdtianyu/scripts/tree/master/lets-encrypt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;下载脚本&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.conf
+wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;配置&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;root@rnse:~/lesh# cat letsencrypt.conf
+# only modify the values, key files will be generated automaticly.
+ACCOUNT_KEY=&amp;quot;letsencrypt-account.key&amp;quot;
+DOMAIN_KEY=&amp;quot;alair.key&amp;quot;
+DOMAIN_DIR=&amp;quot;/data/wwwroot/alair.cn/compiled&amp;quot;
+DOMAINS=&amp;quot;DNS:alair.cn,DNS:www.alair.cn&amp;quot;
+#ECC=TRUE
+#LIGHTTPD=TRUE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;按照需要自定义&lt;code&gt;DOMAIN_KEY&lt;/code&gt;、&lt;code&gt;DOMAIN_DIR&lt;/code&gt;、&lt;code&gt;DOMAINS&lt;/code&gt;三部分。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;生成证书&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;root@rnse:~/lesh#chmod +x letsencrypt.sh
+root@rnse:~/lesh# ./letsencrypt.sh letsencrypt.conf
+Generate account key...
+Generating RSA private key, 4096 bit long modulus
+..............................++
+....++
+e is 65537 (0x10001)
+Generate domain key...
+Generating RSA private key, 2048 bit long modulus
+...............................................................+++
+..........................+++
+e is 65537 (0x10001)
+Generate CSR...alair.csr
+Parsing account key...
+Parsing CSR...
+Registering account...
+Registered!
+Verifying www.alair.cn...
+www.alair.cn verified!
+Verifying alair.cn...
+alair.cn verified!
+Signing certificate...
+Certificate signed!
+New cert: alair.chained.crt has been generated
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;生成后的目录文件如下:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;root@rnse:~/lesh# ls
+alair.chained.crt  alair.crt  alair.csr  alair.key  lets-encrypt-x3-cross-signed.pem  letsencrypt-account.key  letsencrypt.conf  letsencrypt.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;配置nginx&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;... ...
+ssl_certificate     /path/to/cert/alair.chained.crt;
+ssl_certificate_key /path/to/cert/alair.key;
+... ...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;更新证书&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;证书到期前直接再次生成而已&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>SSL安全优化</title>
+      <link>https://unixetc.com/post/ssl-security-optimization/</link>
+      <pubDate>Mon, 21 Dec 2015 12:21:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/ssl-security-optimization/</guid>
+      <description>&lt;p&gt;先贴出本站的SSL安全评级,测试地址为&lt;a href=&#34;https://www.ssllabs.com/ssltest/analyze.html?d=alair.cn&#34;&gt;https://www.ssllabs.com/ssltest/analyze.html?d=alair.cn&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/ssl-rank.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;以下是本站&lt;strong&gt;Nginx&lt;/strong&gt;配置中关于SSL部分&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;listen 443 ssl http2;
+
+ssl_certificate /etc/letsencrypt/live/alair.cn/fullchain.pem;  
+ssl_certificate_key /etc/letsencrypt/live/alair.cn/privkey.pem; 
+
+ssl_session_timeout 60m;
+ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+ssl_ciphers ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-RC4-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:RC4-SHA:!aNULL:!eNULL:!EXPORT:!DES:!3DES:!MD5:!DSS:!PKS;
+
+ssl_prefer_server_ciphers on;
+ssl_session_cache builtin:1000 shared:SSL:10m;
+ssl_dhparam /etc/ssl/certs/dhparam.pem;
+ssl_stapling on;
+ssl_stapling_verify on;
+
+add_header Strict-Transport-Security &amp;quot;max-age=63072000; includeSubdomains; preload&amp;quot;;
+add_header X-Frame-Options &amp;quot;DENY&amp;quot;;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;说明：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;dhparam.pem&lt;/strong&gt;可以使用&lt;code&gt;openssl dhparam -out dhparam.pem 4096&lt;/code&gt;命令生成，这个命令会执行很长时间，也可以将字节数改为2048&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>使用免费Let&#39;s Encrypt证书</title>
+      <link>https://unixetc.com/post/use-letsencrypt-free-ssl-certificate/</link>
+      <pubDate>Tue, 15 Dec 2015 22:38:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/use-letsencrypt-free-ssl-certificate/</guid>
+      <description>&lt;p&gt;在此介绍如何使用Let&amp;rsquo;s Encrypt的免费SSL证书，需要在有管理权限的VPS上操作，然后参考以下方法自签域名证书。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/letsencrypt/letsencrypt.git
+cd letsencrypt
+mkdir -p /home/webroot/.well-known/acme-challenge  #/home/webroot为网站目录
+./letsencrypt-auto certonly --email me@alair.cn -d alair.cn,www.alair.cn --webroot -w /home/webroot --agree-tos #注意email、域名、和网站目录
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;签发成功后，会提示如&lt;code&gt;/etc/letsencrypt/live/www.alair.cn/fullchain.pem;&lt;/code&gt;的证书路径信息。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;IMPORTANT NOTES:
+- Congratulations! Your certificate and chain have been saved at
+/etc/letsencrypt/live/www.alair.cn/fullchain.pem. Your cert will
+expire on 2016-03-14. To obtain a new version of the certificate in
+the future, simply run Let&#39;s Encrypt again.
+- If like Let&#39;s Encrypt, please consider supporting our work by:
+
+Donating to ISRG / Let&#39;s Encrypt:   https://letsencrypt.org/donate
+Donating to EFF:                    https://eff.org/donate-le
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;接下来在&lt;strong&gt;Nginx&lt;/strong&gt;中配置使用，如下代码&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;... ...
+listen 443 ssl http2; 
+server_name www.alair.cn;   
+index index.html index.htm default.html default.htm;
+root /home/webroot;           
+ssl_certificate /etc/letsencrypt/live/www.alair.cn/fullchain.pem;  
+ssl_certificate_key /etc/letsencrypt/live/www.alair.cn/privkey.pem; 
+ssl_ciphers &amp;quot;EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH&amp;quot;;
+ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+ssl_prefer_server_ciphers on;
+ssl_session_cache shared:SSL:10m;
+... ...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;注意:&lt;strong&gt;我在第一次签发时候提示无法连接DV服务器，经过排查是由于DNS原因，当时用的DNS服务器是&lt;/strong&gt;Dnspod&lt;/strong&gt;，更换为&lt;strong&gt;dns.he.net&lt;/strong&gt;后正常了。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Nginx配置SSL证书</title>
+      <link>https://unixetc.com/post/nginx-configuration-ssl-certificate/</link>
+      <pubDate>Mon, 25 May 2015 15:25:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/nginx-configuration-ssl-certificate/</guid>
+      <description>&lt;h3 id=&#34;申请wosign免费ssl证书&#34;&gt;申请Wosign免费SSL证书&lt;/h3&gt;
+&lt;p&gt;申请地址: &lt;a href=&#34;https://www.wosign.com/products/free_ssl.htm&#34;&gt;https://www.wosign.com/products/free_ssl.htm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;申请成功后，收到类似于&lt;strong&gt;aquan.me_sha256_cn.zip&lt;/strong&gt;的文件,解压后包含如下文件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;for Apache.zip
+for IIS.zip
+for Nginx.zip
+for Other Server.zip
+for Tomcat.zip
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中&lt;strong&gt;for Nginx.zip&lt;/strong&gt;中包含如下两个文件，将其上传到VPS自定义位置。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1_aquan.me_bundle.crt&lt;/li&gt;
+&lt;li&gt;2_aquan.me.key&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;配置nginx&#34;&gt;配置Nginx&lt;/h3&gt;
+&lt;p&gt;不多说了，直接贴代码:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#### Add Wosign SSL Start ####
+listen 443;
+ssl on;
+ssl_certificate /usr/local/nginx/ssl/ssl.crt;
+ssl_certificate_key /usr/local/nginx/ssl/ssl.key;
+ssl_session_timeout 5m;
+ssl_protocols SSLv2 SSLv3 TLSv1;
+ssl_ciphers ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP;
+ssl_prefer_server_ciphers on;
+#### Add Wosign SSL End ####
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;将以上代码插入&lt;code&gt;listen 80;&lt;/code&gt;之后。&lt;/p&gt;
+&lt;p&gt;重启Nginx生效&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;/etc/init.d/nginx restart
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以上设置完成，就可以通过https来浏览网站，同时http也可以浏览。&lt;/p&gt;
+&lt;h3 id=&#34;合并wosign根证书&#34;&gt;合并Wosign根证书&lt;/h3&gt;
+&lt;p&gt;有的浏览器会提示不信任证书，可以通过合并Wosign根证书来解决&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget https://www.wosign.com/Root/Bundle_DV_St.crt  
+cat Bundle_DV_St.crt &amp;gt;&amp;gt; /usr/local/nginx/ssl/ssl.crt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;设置http跳转https&#34;&gt;设置http跳转https&lt;/h3&gt;
+&lt;p&gt;如果想将http跳转至https，可以进行如下设置:&lt;/p&gt;
+&lt;p&gt;将原&lt;code&gt;server&lt;/code&gt;字段中的&lt;code&gt;listen 80;&lt;/code&gt;注释掉，新添加&lt;code&gt;server&lt;/code&gt;专门监听80端口进行跳转&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;server { 
+listen 80; 
+server_name ciux.org www.ciux.org; 
+rewrite ^/(.*) https://$server_name/$1 permanent; 
+}&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DNS on UNIXETC</title>
+    <link>https://unixetc.com/tags/dns/</link>
+    <description>UNIXETC (DNS)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Mon, 20 Mar 2017 13:20:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/dns/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux下设置IP、网关、掩码、MAC和DNS</title>
+      <link>https://unixetc.com/post/linux-set-ip-netmask-gateway-mac-dns/</link>
+      <pubDate>Mon, 20 Mar 2017 13:20:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/linux-set-ip-netmask-gateway-mac-dns/</guid>
+      <description>&lt;p&gt;先用&lt;code&gt;ifconfig&lt;/code&gt;来查看所有活动网络接口&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;eth0      Link encap:Ethernet  HWaddr b8:27:eb:1b:63:a8
+        inet addr:192.168.1.6  Bcast:192.168.1.255  Mask:255.255.255.0
+        inet6 addr: fe80::6502:67ff:89b:b2fd/64 Scope:Link
+        UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+        RX packets:43239 errors:0 dropped:24 overruns:0 frame:0
+        TX packets:30644 errors:0 dropped:0 overruns:0 carrier:0
+        collisions:0 txqueuelen:1000
+        RX bytes:25068614 (23.9 MiB)  TX bytes:5993030 (5.7 MiB)
+
+lo        Link encap:Local Loopback
+        inet addr:127.0.0.1  Mask:255.0.0.0
+        inet6 addr: ::1/128 Scope:Host
+        UP LOOPBACK RUNNING  MTU:65536  Metric:1
+        RX packets:1961 errors:0 dropped:0 overruns:0 frame:0
+        TX packets:1961 errors:0 dropped:0 overruns:0 carrier:0
+        collisions:0 txqueuelen:1
+        RX bytes:160232 (156.4 KiB)  TX bytes:160232 (156.4 KiB)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;设置ip和掩码&#34;&gt;设置IP和掩码&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;ifconfig eth0 192.168.1.6 netmask 255.255.255.0 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;设置网关&#34;&gt;设置网关&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;route add default gw 192.168.1.1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;修改网卡mac&#34;&gt;修改网卡MAC&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;ifconfig eth0 down
+ifconfig eth0 hw ether b877c322f8
+ifconfig eth0 up
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;设置dns&#34;&gt;设置DNS&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;vi /etc/resolv.conf
+
+nameserver 114.114.114.114
+nameserver 114.114.115.115
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;重启网络服务生效 &lt;code&gt;service network restart&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;最新的ubuntu已经不能简单通过修改&lt;code&gt;/etc/resolv.conf&lt;/code&gt;来实现，需要修改&lt;code&gt;resolvconf&lt;/code&gt;配置文件，然后通过命令&lt;code&gt;resolvconf&lt;/code&gt;命令来操作&lt;/p&gt;
+&lt;p&gt;修改&lt;code&gt;/etc/resolvconf/resolv.conf/&lt;/code&gt;目录下的head文件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;nameserver 114.114.114.114
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后通过更新配置来生效&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;resolvconf -u&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>树莓派安装Dnsmasq加速DNS解析</title>
+      <link>https://unixetc.com/post/raspberry-pi-install-dnsmasq-and-dnsmasq-china-list/</link>
+      <pubDate>Mon, 18 Jan 2016 21:28:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/raspberry-pi-install-dnsmasq-and-dnsmasq-china-list/</guid>
+      <description>&lt;p&gt;天朝的dns服务商尿性不是一般的大，动不动就抽风或者劫持，为了避免这种情况，可以在树莓派上安装Dnsmasq来加速dns解析，提高网络浏览体验。&lt;/p&gt;
+&lt;h3 id=&#34;安装配置dnsmasq&#34;&gt;安装配置dnsmasq&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;apt-get install dnsmasq
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;配置dnsmasq,&lt;code&gt;vi /etc/dnsmasq.conf&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;我的配置文件如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;domain=Raspi2
+resolv-file=/etc/resolv.dnsmasq
+conf-dir=/etc/dnsmasq.d
+min-port=4096
+server=114.114.114.114
+server=114.114.115.115
+server=223.5.5.5
+server=223.6.6.6
+server=119.29.29.29
+server=182.254.116.116
+server=112.124.47.27
+server=114.215.126.16
+server=101.226.4.6
+server=218.30.118.6
+server=42.120.21.30
+server=199.91.73.222
+server=178.79.131.110
+server=8.8.8.8
+server=8.8.4.4
+
+cache-size=10000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;配置完重启dnsmasq服务&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;service dnsmasq restart
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中的&lt;code&gt;server&lt;/code&gt;字段为上游DNS&lt;/p&gt;
+&lt;h3 id=&#34;配置dnsmasq-china-list&#34;&gt;配置dnsmasq-china-list&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/felixonmars/dnsmasq-china-list.git
+cd dnsmasq-china-list/
+cp *.conf  /etc/dnsmasq.d/
+service dnsmasq restart
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;至此设置完成，可以在路由器中将首选dns设为树莓派ip，这样局域网内的所有设备都可以体验dns解析加速了！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>树莓派使用ddclient和DDNS</title>
+      <link>https://unixetc.com/post/raspberry-pi-using-ddclient-and-ddns/</link>
+      <pubDate>Thu, 07 Jan 2016 12:31:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/raspberry-pi-using-ddclient-and-ddns/</guid>
+      <description>&lt;h3 id=&#34;域名解析&#34;&gt;域名解析&lt;/h3&gt;
+&lt;p&gt;首先得有个域名，在域名管理中将域名DNS设为he.net的DNS地址，如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ns1.he.net
+ns2.he.net
+ns3.he.net
+ns4.he.net
+ns5.he.net
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后在&lt;a href=&#34;http://dns.he.net&#34;&gt;http://dns.he.net&lt;/a&gt;注册账号，添加域名(Add a new domain)&lt;/p&gt;
+&lt;p&gt;接下来添加A记录(New A)，勾选允许动态域名解析(Enable entry for dynamic dns)&lt;/p&gt;
+&lt;p&gt;点击域名后DDNS列中的刷新按钮，新建一个DDNS密匙(Generate a DDNS key.)&lt;/p&gt;
+&lt;h3 id=&#34;安装设置ddclient&#34;&gt;安装设置ddclient&lt;/h3&gt;
+&lt;p&gt;在树莓派上安装ddclient&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install ddclient
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;编辑ddclient配置文件，路径为&lt;code&gt;/etc/ddclient.conf&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;protocol=dyndns2
+use=web,web=myip.dnsomatic.com
+server=dyn.dns.he.net
+login=raspi.in
+password=&#39;ddnskey&#39;
+www.raspi.in,raspi.in
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中&lt;strong&gt;password&lt;/strong&gt;为设置DDNS时的key&lt;/p&gt;
+&lt;p&gt;重启ddclient服务&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;service ddclient restart
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;验证IP查询结果&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo ddclient -query
+use=if, if=eth0 address is 192.168.1.111
+use=if, if=lo address is 127.0.0.1
+use=web, web=dnspark address is 36.40.143.235
+use=web, web=dyndns address is NOT FOUND
+use=web, web=loopia address is 36.40.143.235
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中if方式查询到的是内网地址和本机地址，web方式查询到的时外网IP&lt;/p&gt;
+&lt;p&gt;至此设置完成，可以ping一下域名试试咯！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>树莓派与DNSPod动态域名解析</title>
+      <link>https://unixetc.com/post/raspberry-pi-and-dnspod-dynamic-dns/</link>
+      <pubDate>Mon, 03 Mar 2014 03:03:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/raspberry-pi-and-dnspod-dynamic-dns/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;所需条件&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Raspberry Pi&lt;/li&gt;
+&lt;li&gt;TP-Link路由器&lt;/li&gt;
+&lt;li&gt;DNSPod帐户&lt;/li&gt;
+&lt;li&gt;域名&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;配置路由器&#34;&gt;配置路由器&lt;/h3&gt;
+&lt;p&gt;进入路由器的&lt;strong&gt;DHCP服务器&lt;/strong&gt;-&amp;gt;&lt;strong&gt;静态地址分配&lt;/strong&gt;菜单，为Raspberry Pi分配静态IP地址，例如：&lt;code&gt;192.168.1.200&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;进入路由器的&lt;strong&gt;安全功能&lt;/strong&gt;-&amp;gt;&lt;strong&gt;远端WEB管理&lt;/strong&gt;菜单，设置&lt;code&gt;WEB管理端口&lt;/code&gt;为一个&lt;strong&gt;非80&lt;/strong&gt;值，例如82&lt;/p&gt;
+&lt;p&gt;进入路由器的&lt;strong&gt;转发规则&lt;/strong&gt;-&amp;gt;&lt;strong&gt;DMZ主机&lt;/strong&gt;菜单，将&lt;code&gt;DMZ主机IP地址&lt;/code&gt;设置为Raspberry Pi的ip地址，然后启用保存。&lt;/p&gt;
+&lt;h3 id=&#34;设置dnspod动态域名解析&#34;&gt;设置DNSPod动态域名解析&lt;/h3&gt;
+&lt;p&gt;首先登录DNSPod网页管理域名，将二级域名&lt;code&gt;www&lt;/code&gt; 的&lt;code&gt;A记录&lt;/code&gt;解析到路由器外网IP(可通过路由器管理首页查询，或者通过浏览ip138.com来获得)&lt;/p&gt;
+&lt;p&gt;注：一级域名请解析**@**的A记录。&lt;/p&gt;
+&lt;p&gt;下载&lt;strong&gt;DNSPod官方客户端Lite&lt;/strong&gt; &lt;a href=&#34;https://support.dnspod.cn/Support/api&#34;&gt;https://support.dnspod.cn/Support/api&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;解压后双击打开登录，从右侧信息列表中也可以看到本机最新IP，点击相应域名后的&lt;strong&gt;动态解析&lt;/strong&gt;按钮，在动态解析设置中右键点击相应的动态记录启用即可，关闭&lt;strong&gt;DNSPod官方客户端Lite&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;设置raspberry-pi&#34;&gt;设置Raspberry Pi&lt;/h3&gt;
+&lt;p&gt;安装Web服务器软件(Nginx)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#apt-get install nginx
+#/etc/init.d/nginx start
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;内网可以通过浏览`http://192.168.1.129&amp;quot;来检查Nginx是否正常运行。&lt;/p&gt;
+&lt;p&gt;浏览&lt;a href=&#34;https://gist.githubusercontent.com/chuangbo/833369&#34;&gt;https://gist.githubusercontent.com/chuangbo/833369&lt;/a&gt;，下载动态域名解析脚本(pypod.py)&lt;/p&gt;
+&lt;p&gt;编辑&lt;code&gt;pypod.py&lt;/code&gt;修改以下内容：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;login_email=&amp;quot;email&amp;quot;, # DSNPod帐户邮箱
+login_password=&amp;quot;password&amp;quot;, # DSNPod帐户密码
+domain_id=100, # 域名id
+record_id=100, # 记录id
+sub_domain=&amp;quot;www&amp;quot;, # 子域名
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中&lt;strong&gt;域名id&lt;/strong&gt;与&lt;strong&gt;记录id&lt;/strong&gt;可以通过以下命令获取：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -k https://dnsapi.cn/Domain.List -d &amp;quot;login_email=xxx&amp;amp;login_password=xxx&amp;quot;
+curl -k https://dnsapi.cn/Record.List -d &amp;quot;login_email=xxx&amp;amp;login_password=xxx&amp;amp;domain_id=xxx&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;提示：如果你使用了&lt;strong&gt;www&lt;/strong&gt;子域名，则需要获取&lt;strong&gt;www&lt;/strong&gt;的记录id，如果使用一级域名(@)，则需要获取**@**的记录id。&lt;/p&gt;
+&lt;p&gt;编辑完&lt;code&gt;pypod.py&lt;/code&gt;保存退出，使用以下命令运行：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#python pypod.py
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;现在可以通过域名来浏览Raspberry Pi上的Web内容了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;pypod.py开机运行&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;添加&lt;code&gt;/usr/bin/python /home/pi/pypod.py&lt;/code&gt;到**/etc/rc.local**。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>IOS - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/tags/ios/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+
+
+
+<meta property="og:title" content="IOS" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/tags/ios/" />
+<meta property="og:updated_time" content="2018-01-22T10:28:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="IOS"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <h1>Tag: IOS</h1>
+    <div class="post-info">
+        <a href="https://unixetc.com/tags">To all tags</a>
+    </div>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/meridian-jailbreak/">IOS10越狱工具Meridian</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        Meridian是一款IOS10.0~10.3.3系列越狱工具支持所有64bit设备。
+支持设备清单：
+ iPhone 7 &amp; 7+ iPhone 6S &amp; 6S+ iPhone 6 &amp; 6+ iPhone SE iPhone 5S iPad Air 1 and 2 iPad (2017) iPad Mini 2, 3, and 4 iPad Pro 1 and 2 (12.9&rdquo; and 10.5&rdquo;) iPod Touch 6th Gen  安装说明：
+点击网站“下载”按钮下载IPA；
+使用Cydia Impactor将IPA安装到您的设备上；
+在设置-&gt;常规-&gt;配置文件和设备管理中信任证书；
+打开应用程序，然后单击开始按钮。
+国内网盘下载
+ Meridian public beta5 Cydia Impactor for Windows  相关网站
+ Meridian官网 https://meridian.sparkes.zone/ Cydia Impactor官网 http://www.cydiaimpactor.com/  
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2018-01-22</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/iphone">#iPhone</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/jailbreak">#Jailbreak</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/apple">#Apple</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ios">#IOS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/merdian">#merdian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ios10">#ios10</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/edit-the-cydia-software-source/">修改iPhone的Cydia源</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        越狱后的ios设备cydia为必装平台，但是在软件源管理中，大家可能会发现一些源通过cydia无法编辑,比如Cydia/Telesphoreo。
+我现在入手一部iPhone 4 CDMA版，通过OTA写号使用。在安装sbsettings的时候，一直提示size mismatch而未能安装成功。网上看了看大家的经历，这样的问题最终定位都是某个软件源不匹配造成，试着删除或者更新就可以解决。
+但是我发现机子买回来，里面有两个源是无法编辑的，一个是上面提到的Cydia/Telesphoreo，另一个就是维维网的源。经过我在cydia下编辑删除，试遍了其他的源的删除，但都是不可以成功安装sbsettings。于是我觉得应该是剩下的那两个不可编辑源的问题，由于Cydia/Telesphoreo是Cydia初始安装的源，应该不会有问题，那就需要编辑删除维维网的源了，但是在cydia的源管理下它是不可编辑的。
+最后让我找到了办法，既然在cydia下不可以编辑，那么在ssh下呢，只要找到该源的文件，那就可以编辑了，经过判断查找，最终定位到/private/etc/apt/sources.list.d/目录，在该目录下存放着一些软件源文件(.list)。因为ios采用和debian相同的软件管理软件apt-get，那么他的软件源管理方式应该类似。基于以上经验，最终定位到了/private/etc/apt/sources.list.d/目录。
+具体解决步骤如下：
+进入到/private/etc/apt/sources.list.d/目录，将里面除了cydia.list文件，其他的全部删除。然后编辑cydia.list文件，只留下一行deb http://apt.saurik.com/ 即可，保存之。
+手机上打开cydia，重新刷新软件源。然后按需添加需要的第三方源。
+至于如何编辑cydia目录，一般可以使用itools等软件，但是这样比较繁琐。简单直接的方法是通过ssh连接手机进行操作，可参考通过SSH连接IOS设备
+aPhone:~ root# cd /private/etc/apt/sources.list.d/aPhone:/private/etc/apt/sources.list.d root# ls -ltotal 24-rwxr-xr-x 1 root wheel 259 May 25 23:01 appvv.list*-rw-r--r-- 1 root wheel 357 Jun 16 13:59 cydia.list-rw-r--r-- 1 root wheel 227 May 25 23:01 saurik.listaPhone:/private/etc/apt/sources.list.d root# cat cydia.listdeb http://apt.saurik.com/ ios/690.10 maindeb http://apt.178.com/ ./deb http://download.voicecloud.cn/cydia/ ./deb http://cydia.zodttd.com/repo/cydia/ stable maindeb http://repo666.ultrasn0w.com/ .
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2012-06-18</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/apt-get">#apt-get</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/cydia">#Cydia</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/iphone">#iPhone</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/jailbreak">#Jailbreak</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/apple">#Apple</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ios">#IOS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%B6%8A%E7%8B%B1">#越狱</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

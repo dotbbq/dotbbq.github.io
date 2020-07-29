@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>Mapinfo中通过SQL查询筛选区域点 - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+
+
+
+<meta property="og:title" content="Mapinfo中通过SQL查询筛选区域点" />
+<meta property="og:description" content="Mapinfo中有一批离散点，现在需要把一部分点筛选出来，可以使用SQL查询功能导出。
+首先，打开需要筛选的图层：
+然后打开装饰层可编辑：
+设置不规则图形样式，建议将填充去掉只留下边框：
+使用不规则图形圈出所需要的采样点
+注意：边线不要压着采样点，被压线的采样点不算做圈选有效。 Map-&gt;Save Cosmetic Objects 保存装饰图层，这里取名123 然后使用SQL查询功能进行查询
+SQL查询时，选择需要交叉的两个图层
+查询完成后，Table-&gt;Export 导出查询结果 导出时设置参考下图，可选择**.mif**、**.txt**、**.csv**格式 " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unixetc.com/post/mapinfo-iris-out-points-with-sql-select/" />
+<meta property="article:published_time" content="2014-12-24T12:24:00+00:00" />
+<meta property="article:modified_time" content="2014-12-24T12:24:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Mapinfo中通过SQL查询筛选区域点"/>
+<meta name="twitter:description" content="Mapinfo中有一批离散点，现在需要把一部分点筛选出来，可以使用SQL查询功能导出。
+首先，打开需要筛选的图层：
+然后打开装饰层可编辑：
+设置不规则图形样式，建议将填充去掉只留下边框：
+使用不规则图形圈出所需要的采样点
+注意：边线不要压着采样点，被压线的采样点不算做圈选有效。 Map-&gt;Save Cosmetic Objects 保存装饰图层，这里取名123 然后使用SQL查询功能进行查询
+SQL查询时，选择需要交叉的两个图层
+查询完成后，Table-&gt;Export 导出查询结果 导出时设置参考下图，可选择**.mif**、**.txt**、**.csv**格式 "/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">Mapinfo中通过SQL查询筛选区域点</h1>
+        </header>
+        <div class="content">
+            <p>Mapinfo中有一批离散点，现在需要把一部分点筛选出来，可以使用SQL查询功能导出。</p>
+<p>首先，打开需要筛选的图层：</p>
+<p><img src="http://cdn.lyq.wiki/imgs/2126470077.png" alt=""></p>
+<p>然后打开装饰层可编辑：</p>
+<p><img src="http://cdn.lyq.wiki/imgs/2287001872.webp" alt=""></p>
+<p>设置不规则图形样式，建议将填充去掉只留下边框：</p>
+<p><img src="http://cdn.lyq.wiki/imgs/1223917062.png" alt=""></p>
+<p>使用不规则图形圈出所需要的采样点</p>
+<p><strong>注意：边线不要压着采样点，被压线的采样点不算做圈选有效。</strong>
+<img src="http://cdn.lyq.wiki/imgs/2381800210.png" alt=""></p>
+<p><strong>Map</strong>-&gt;<strong>Save Cosmetic Objects</strong>  保存装饰图层，这里取名<strong>123</strong>
+<img src="http://cdn.lyq.wiki/imgs/2252925310.png" alt=""></p>
+<p>然后使用SQL查询功能进行查询</p>
+<p><img src="http://cdn.lyq.wiki/imgs/3149415981.png" alt=""></p>
+<p>SQL查询时，选择需要交叉的两个图层</p>
+<p><img src="http://cdn.lyq.wiki/imgs/1938280739.png" alt=""></p>
+<p>查询完成后，<strong>Table</strong>-&gt;<strong>Export</strong> 导出查询结果
+<img src="http://cdn.lyq.wiki/imgs/204486118.png" alt=""></p>
+<p>导出时设置参考下图，可选择**.mif**、**.txt**、**.csv**格式
+<img src="http://cdn.lyq.wiki/imgs/2183870599.webp" alt=""></p>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-12-24</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/sql">#sql</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/mapinfo">#mapinfo</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gis">#gis</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/select">#select</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

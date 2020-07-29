@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cinnarch on UNIXETC</title>
+    <link>https://unixetc.com/tags/cinnarch/</link>
+    <description>UNIXETC (Cinnarch)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Fri, 23 Nov 2012 11:23:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/cinnarch/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cinnarch安装全过程</title>
+      <link>https://unixetc.com/post/installation-cinnarch/</link>
+      <pubDate>Fri, 23 Nov 2012 11:23:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/installation-cinnarch/</guid>
+      <description>&lt;p&gt;Cinnarch是一个新的linux发行版，基于Archlinux以Cinnamon为默认桌面系统，对于想体验Archlinux但对于全新的安装方法无法把握的朋友，Cinnarch不失为一个良好的选择。&lt;/p&gt;
+&lt;p&gt;以下为安装Cinnarch的一次全过程，以供需要的朋友参考。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;下载Cinnarch&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;首先从官网下载Cinnarch镜像，地址为 &lt;a href=&#34;http://www.cinnarch.com/try-it/&#34;&gt;http://www.cinnarch.com/try-it/&lt;/a&gt; ，按照需要下载32Bit或者64Bit的，下载方式有直接下载(iso)与通过BT种子(torrent)下载两种方式。&lt;/p&gt;
+&lt;p&gt;将下载后的镜像刻入CD，放入光驱后重启以进入LiveCD即可。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;安装Cinnarch&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;进入到LiveCD后会弹出一个Welcome弹窗，可以点击其中的CLI Installer开始安装，或者先使用系统(Try it)，需要安装时在系统菜单中找到Cinnarch Installer CLI点击打开，也可以开始安装。&lt;/p&gt;
+&lt;p&gt;打开安装程序前，请确认电脑已经可以联网使用，因为一切软件包都是实时从mirror下载的，并且安装好的系统和archlinux一样，可以滚动升级(Rolling upgrade)。&lt;/p&gt;
+&lt;p&gt;打开安装程序，首先提示更新软件list，更新完成后会出现一个welcome的对话框，确认后进入到安装主菜单，如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;0 Set Language and Keyboard
+1 Set Time and Date
+2 Prepare Hard Drive
+3 Select Source
+4 Install System
+5 Configure System
+6 Exit Install 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;设置语言与键盘 (Set Language and Keyboard)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;选择进入设置菜单，在此主要设置语言选项，键盘布局可以不设置，采用默认即可。 语言设置为zh_CN.UTF-8 设置键盘布局(Set Keymap)时可以直接选择返回主菜单(Return to Main Menu)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;设置时间与日期(Set Time And Date)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;此项用于设置时间与日期，此项下面有三个子菜单：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1 Select Region and Timezone
+2 Set Time and Date
+3 Return to Main Menu
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;第一项菜单用于设置区域与时区，此次区域(Region)设置为Asia，时区(Timezone)设置为Chongqing(或者Beijing/Shanghai)&lt;/p&gt;
+&lt;p&gt;接下来是设置时间与日期(Set Time and Date)，进入该子菜单后，会有一个提示对话框：Do you want to use UTC for your clock?&lt;/p&gt;
+&lt;p&gt;以上提示为，当需要设置UTC时间请选择Yes，使用本地时间(Localtime)则选择No，在此推荐使用本地时间(Localtime)，完成后返回主菜单。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;准备硬盘(Prepare Hard Drive)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在此以本机硬盘作为示例，以下是为linux所准备的分区详情&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;dev/sda9  /boot
+/dev/sda10 swap
+/dev/sda11 /
+/dev/sda12 /home
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;选择主菜单第二项后，进入到磁盘操作的子菜单，如下&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1 Auto-Prepare(erases the ENTIRE hard drive)
+2 Partition Hard Drives
+3 Create Software Raid,Lvm2 and Luks encryption
+4 Set Filesystem Mountpoints
+5 Return to Main Menu
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;第一项为自动分区，对于本地硬盘只用来安装linux的新手用户，可以悬在该项，程序会将全部的硬盘用于linux安装。&lt;/p&gt;
+&lt;p&gt;第二项为手动操作，对于想要自定义分区的用户可以选择该项。&lt;/p&gt;
+&lt;p&gt;第三项为设置分区挂载点，对于已经设置好的分区磁盘，选择该项开始设置各个分区的挂载点，由于我的本地分区信息已经建立完成(参考1)，所以选择该项开始挂载分区。&lt;/p&gt;
+&lt;p&gt;首先会提示挂载交换分区(Swap)，在此选择/dev/sda10 接着是擦除提示，选择是(Yes)，然后按照提示设置标签(LABEL)和扩展选项，其中标签必须设置，扩展选项按照自定义设置，如果不知道怎样设置可以选择默认(置空)。&lt;/p&gt;
+&lt;p&gt;交换分区(Swap)设置完成后，接下来提示设置跟分区(/)，在此选择/dev/sda11 接下来是选择文件系统类型(filesystem)、设置标签(LABEL)和磁盘扩展选项，按照自定义设置即可。&lt;/p&gt;
+&lt;p&gt;至此已经设置了交换分区(Swap)与跟分区(/)，这两个分区设置完成已经可以进行安装了，Cinnarchon同样也是这样预置的，如果没有其他挂载分区设置，就可以选择完成(DONE)来使此次设置生效。&lt;/p&gt;
+&lt;p&gt;但是我已经为用户分区(/home)预留了/dev/sda12，所以还需要将其挂载至系统，选择/dev/sda12开始设置用户分区(/home) 接下来是选择文件系统类型(filesystem)、设置标签(LABEL)和磁盘扩展选项，按照自定义设置即可。&lt;/p&gt;
+&lt;p&gt;同样，参考用户分区(/home)设置，将/dev/sda9挂载至引导分区(/boot)，完成后返回磁盘操作子菜单，选择完成(DONE)使设置生效。&lt;/p&gt;
+&lt;p&gt;下面是提示磁盘分区名方式，建议选择第三项&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;FSUUID  /dev/disk/by-uuid/&amp;lt;uuid&amp;gt;
+FSLABEL /dev/disk/by-label/&amp;lt;label&amp;gt;
+KERNEL  /dev/&amp;lt;kernelname&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;选择软件源(Select Source)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;进入到选择镜像(Choose Mirror)子菜单选择需要使用的镜像地址，国内推荐ustc与163的源 &lt;code&gt;http://mirrors.163.com&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;安装系统(install system)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;点击开始安装系统&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;配置系统(coonfigure system)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;第二个提示对话框，选择是否从usb启动，在此是本机安装所以选择否(NO)，然后选择自己熟悉的编辑器，从nano与vi中选择一个。&lt;/p&gt;
+&lt;p&gt;进入到配置子菜单，按照提示设置：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Desktop-User          Create your user
+Hostname              Your computer`s name
+Root-Password         Set the root password
+/etc/mkinitcpio.conf  (Optional)Initramfs Config
+Return                Return to Main Menu
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;配完成后开始设置生效，接下来设置引导系统类型(boot system type)，有以下三个选项：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;GRUB2        BIOS(Comon)
+UEFI_x86_64 x86_64 UEFI
+UEFI_i386   i386 UEFI
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在此选择grub2，UEFI貌似用于window8公用系统。&lt;/p&gt;
+&lt;p&gt;然后选择grub安装位置，由于本地只有一个磁盘，所以选择/dev/sda，grub安装完成后所有的安装均完成，选择主菜单的退出安装(exit install)。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

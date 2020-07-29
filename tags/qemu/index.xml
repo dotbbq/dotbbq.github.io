@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>qemu on UNIXETC</title>
+    <link>https://unixetc.com/tags/qemu/</link>
+    <description>UNIXETC (qemu)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 11 Feb 2014 12:21:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/qemu/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Qemu for windows 使用实例</title>
+      <link>https://unixetc.com/post/qemu-for-windows-usages/</link>
+      <pubDate>Tue, 11 Feb 2014 12:21:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/qemu-for-windows-usages/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;下载安装QEMU for Windows&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://qemu.weilnetz.de/w32/&#34;&gt;32Bit下载地址&lt;/a&gt;
+&lt;a href=&#34;http://qemu.weilnetz.de/w64/&#34;&gt;64Bit下载地址&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;双击下载后的exe文件完成安装。&lt;/p&gt;
+&lt;h3 id=&#34;qemu-for-windows使用&#34;&gt;QEMU for Windows使用&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;直接启动QEMU&lt;/p&gt;
+&lt;p&gt;qemu-system-i386&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;加载光盘镜像&lt;/p&gt;
+&lt;p&gt;qemu-system-i386 -cdrom image.iso&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;创建磁盘镜像&lt;/p&gt;
+&lt;p&gt;qemu-img create disk.img 100M&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;加载磁盘镜像&lt;/p&gt;
+&lt;p&gt;qemu-system-i386 -hdd disk.img&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;指定内存大小与CPU数&lt;/p&gt;
+&lt;p&gt;qemu-system-i386 -m 256M -smp 2 -hdd disk.img&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;同时加载磁盘镜像与光盘镜像，并且从光盘镜像启动&lt;/p&gt;
+&lt;p&gt;qemu-system-i386 -cdrom image.iso -hdd disk.img -boot d&lt;/p&gt;
+&lt;p&gt;其中-boot后面的d代表从光盘启动，可用引导项：a, b (软驱 1,2), c (第一块硬盘), d (第一个CD-ROM), n-p (从网络启动), 默认为第一块硬盘。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;注释&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;以上qemu-system-i386命令，为启动i386虚拟环境命令，同样qemu可以模拟其他环境，可使用命令如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;qemu-system-aarch64.exe
+qemu-system-aarch64w.exe
+qemu-system-alpha.exe
+qemu-system-alphaw.exe
+qemu-system-arm.exe
+qemu-system-armw.exe
+qemu-system-cris.exe
+qemu-system-crisw.exe
+qemu-system-i386.exe
+qemu-system-i386w.exe
+qemu-system-lm32.exe
+qemu-system-lm32w.exe
+qemu-system-m68k.exe
+qemu-system-m68kw.exe
+qemu-system-microblaze.exe
+qemu-system-microblazeel.exe
+qemu-system-microblazeelw.exe
+qemu-system-microblazew.exe
+qemu-system-mips.exe
+qemu-system-mips64.exe
+qemu-system-mips64el.exe
+qemu-system-mips64elw.exe
+qemu-system-mips64w.exe
+qemu-system-mipsel.exe
+qemu-system-mipselw.exe
+qemu-system-mipsw.exe
+qemu-system-moxie.exe
+qemu-system-moxiew.exe
+qemu-system-or32.exe
+qemu-system-or32w.exe
+qemu-system-ppc.exe
+qemu-system-ppc64.exe
+qemu-system-ppc64w.exe
+qemu-system-ppcemb.exe
+qemu-system-ppcembw.exe
+qemu-system-ppcw.exe
+qemu-system-s390x.exe
+qemu-system-s390xw.exe
+qemu-system-sh4.exe
+qemu-system-sh4eb.exe
+qemu-system-sh4ebw.exe
+qemu-system-sh4w.exe
+qemu-system-sparc.exe
+qemu-system-sparc64.exe
+qemu-system-sparc64w.exe
+qemu-system-sparcw.exe
+qemu-system-unicore32.exe
+qemu-system-unicore32w.exe
+qemu-system-x86_64.exe
+qemu-system-x86_64w.exe
+qemu-system-xtensa.exe
+qemu-system-xtensaeb.exe
+qemu-system-xtensaebw.exe
+qemu-system-xtensaw.exe    &lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

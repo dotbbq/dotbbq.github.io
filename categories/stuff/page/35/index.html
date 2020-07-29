@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>STUFF - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/categories/stuff/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+
+
+
+<meta property="og:title" content="STUFF" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/categories/stuff/" />
+<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="STUFF"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <h1>Category: STUFF</h1>
+    <div class="post-info">
+        <a href="https://unixetc.com/categories">To all categories</a>
+    </div>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/raspberry-pi-allow-root-login/">树莓派开启root登录</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        想要通过ssh登录树莓派进行管理，使用默认的pi用户有时真的不便，对于linux老手来说，可以直接开启root用户ssh登录，这就方便多了，方法如下：
+sudo passwd rootsudo passwd --unlock root 设置SSH
+sudo vi /etc/ssh/sshd_config 将其中的PermitRootLogin without-password改为PermitRootLogin yes，然后重启ssh服务sudo service ssh restart
+Over!
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-09-18</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/root">#Root</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/udo">#udo</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/sudo">#sudo</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/photoshop-compressed-png-images/">使用Photoshop压缩PNG图片</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        Ctrl+O打开PNG文件
+图像 -&gt; 调整 -&gt; 色调分离
+调整色阶值，边调整边预览，找到图片质量变化最小时候的值
+文件 -&gt; 导出 -&gt; 存储为Web所用格式
+文件格式选择PNG-8，参考下图全选部分进行调整，完成后保存即可。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-09-13</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/png">#png</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/photoshop">#photoshop</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/adobe">#adobe</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/use-scrollup-to-add-scroll-to-top-feature/">使用ScrollUp添加返回顶部功能</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        下载ScrollUp https://github.com/markgoodyear/scrollup
+在网页中引用jquery.scrollUp.js、jquery.easing.js、jquery.min.js三个JavaScript脚本，注意顺序
+&lt;script src=&quot;jquery.min.js&quot;&gt;&lt;/script&gt;&lt;script src=&quot;jquery.easing.js&quot;&gt;&lt;/script&gt;&lt;script src=&quot;jquery.scrollUp.js&quot;&gt;&lt;/script&gt; 然后加入控制代码
+&lt;script&gt;$(function () {$.scrollUp();});&lt;/script&gt; 以上是最简单的使用方法，还有一种带参数的方法
+$(function () {$.scrollUp({scrollName: 'scrollUp', // Element IDscrollDistance: 300, // Distance from top/bottom before showing element (px)scrollFrom: 'top', // 'top' or 'bottom'scrollSpeed: 300, // Speed back to top (ms)easingType: 'linear', // Scroll to top easing (see http://easings.net/)animation: 'fade', // Fade, slide, noneanimationSpeed: 200, // Animation speed (ms)scrollTrigger: false, // Set a custom triggering element.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-09-08</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/javascript">#JavaScript</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/js">#JS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/jquery">#jQuery</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/scrollup">#ScrollUp</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%BF%94%E5%9B%9E%E9%A1%B6%E9%83%A8">#返回顶部</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+    
+        
+    <div class="pagination">
+        <div class="left pagination-item ">
+            
+                <a href="/categories/stuff/page/34/">To new posts</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/categories/stuff/page/36/">To old posts</a>
+            
+        </div>
+    </div>
+
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

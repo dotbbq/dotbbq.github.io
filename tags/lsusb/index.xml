@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lsusb on UNIXETC</title>
+    <link>https://unixetc.com/tags/lsusb/</link>
+    <description>UNIXETC (lsusb)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sat, 07 Feb 2015 12:27:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/lsusb/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>树莓派安装TP WN322G&#43;驱动</title>
+      <link>https://unixetc.com/post/raspberry-pi-install-tp-wn322g-drivers/</link>
+      <pubDate>Sat, 07 Feb 2015 12:27:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/raspberry-pi-install-tp-wn322g-drivers/</guid>
+      <description>&lt;p&gt;首先查看usb设备&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pi@raspi ~ $ lsusb
+Bus 001 Device 002: ID 0424:9514 Standard Microsystems Corp.
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 003: ID 0424:ec00 Standard Microsystems Corp.
+Bus 001 Device 004: ID 0ace:1215 ZyDAS ZD1211B 802.11g
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;注意，最后一行为无线网卡信息&lt;/p&gt;
+&lt;p&gt;打开&lt;a href=&#34;https://wiki.debian.org/WiFi&#34;&gt;https://wiki.debian.org/WiFi&lt;/a&gt;，查看是否有对照型号的固件&lt;/p&gt;
+&lt;p&gt;安装对应的固件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pi@raspi ~ $ sudo apt-get install zd1211-firmware
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;完成后使用&lt;code&gt;iwconfig&lt;/code&gt;检查是否已经安装成功&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pi@raspi ~ $ iwconfig
+wlan0     IEEE 802.11bg  ESSID:off/any
+          Mode:Managed  Access Point: Not-Associated   Tx-Power=20 dBm
+          Retry  long limit:7   RTS thr:off   Fragment thr:off
+          Power Management:off
+
+lo        no wireless extensions.
+
+eth0      no wireless extensions.&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

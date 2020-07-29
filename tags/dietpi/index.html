@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>dietpi - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/tags/dietpi/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+
+
+
+<meta property="og:title" content="dietpi" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/tags/dietpi/" />
+<meta property="og:updated_time" content="2015-08-04T18:23:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="dietpi"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <h1>Tag: dietpi</h1>
+    <div class="post-info">
+        <a href="https://unixetc.com/tags">To all tags</a>
+    </div>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/raspberry-pi-use-dietpi/">树莓派使用DietPi</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        下载安装DietPi DietPi项目主页 http://dietpi.com/
+DietPi下载地址 http://fuzon.co.uk/downloads/DietPi.7z
+这个压缩包91MB，解压后的img文件522MB,比官方的小多了。
+然后将镜像写入到SD卡中，linux下使用dd
+dd if=DietPi_v74.img of=/dev/sdc bs=2M Windows下使用Win32 Disk Imager，戳这里
+写入完成后将SD卡插入树莓派，加电启动。
+预设置Wifi链接 首次使用时，可以通过编辑dietpi.txt来进行wifi预设置。
+将TF卡插入电脑读卡器，打开对应的磁盘，找到dietpi.txt文件，打开。
+找到Wifi_Enabled=0，将其设置为1
+然后找到Wifi_SSID和Wifi_KEY分别设置wifi节点名和密码，保存即可。
+配置DietPi DietPi默认用户名密码为root dietpi，第一次启动DietPi提示检测升级，按提示操作。
+不过由于天朝网路问题，可能升级比较缓慢，建议Ctrl+c终止升级，修改sources.list为朝内镜像。
+DietPi默认没有vi,使用nano进行编辑，添加Aliyun源。
+deb http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contribdeb-src http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib 更新软件
+apt-get update&amp;&amp;apt-get upgrade -y 然后运行dietpi-config进行配置。
+DietPi - Config
+ ┌────┤ ---------- DietPi-Config ---------- ├─────┐│ Hardware : Raspberry Pi 1 (512MB) ││ ││ 1 Display Options ││ 2 Audio Options ││ 3 Performance Options ││ 4 Advanced Options ││ 5 Language/Regional Options ││ 6 Security Options ││ 7 Networking Options ││ 8 AutoBoot Options ││ 9 Tools ││ ││ ││ &lt;Ok&gt; &lt;Exit&gt; ││ │└────────────────────────────────────────────────┘ 推荐配置：
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-08-04</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/debian">#Debian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dietpi">#dietpi</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

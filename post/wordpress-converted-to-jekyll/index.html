@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>将Wordpress数据转换为Jekyll文件 - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+
+
+
+<meta property="og:title" content="将Wordpress数据转换为Jekyll文件" />
+<meta property="og:description" content="这里使用的工具名为Exitwp，项目主页为https://github.com/thomasf/exitwp
+安装Exitwp 必备组件
+ Python html2text PyYAML Beautiful soup  ubuntu下安装软件:
+# aptitude install python git build-essential# aptitude install python-pip python-yaml python-bs4 python-html2text# aptitude install libyaml-dev python-dev libxml2-utils 安装Exitwp git clone https://github.com/thomasf/exitwp ###使用Exitwp转换wordpress数据
+首先，登录wordpress后台，使用自带的导出工具将wordpress导出为xml文件
+将导出的xml文件下载，复制到 ./exitwp/wordpress-xml/
+进入 ./exitwp/wordpress-xml/，使用xmllint格式化xml文件
+xmllint --format wp.xml 最后，执行exitwp.py脚本来处理xml文件
+python exitwp.py 生成的md文件，存放在 ./exitwp/build/
+后续的工作 将处理后的md文件复制出来，拷贝至jekyll站点的_post目录，然后使用
+jekyll serve 生成预览，按照提示处理有问题的md文件，直至OK！" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unixetc.com/post/wordpress-converted-to-jekyll/" />
+<meta property="article:published_time" content="2013-09-15T19:15:00+00:00" />
+<meta property="article:modified_time" content="2013-09-15T19:15:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="将Wordpress数据转换为Jekyll文件"/>
+<meta name="twitter:description" content="这里使用的工具名为Exitwp，项目主页为https://github.com/thomasf/exitwp
+安装Exitwp 必备组件
+ Python html2text PyYAML Beautiful soup  ubuntu下安装软件:
+# aptitude install python git build-essential# aptitude install python-pip python-yaml python-bs4 python-html2text# aptitude install libyaml-dev python-dev libxml2-utils 安装Exitwp git clone https://github.com/thomasf/exitwp ###使用Exitwp转换wordpress数据
+首先，登录wordpress后台，使用自带的导出工具将wordpress导出为xml文件
+将导出的xml文件下载，复制到 ./exitwp/wordpress-xml/
+进入 ./exitwp/wordpress-xml/，使用xmllint格式化xml文件
+xmllint --format wp.xml 最后，执行exitwp.py脚本来处理xml文件
+python exitwp.py 生成的md文件，存放在 ./exitwp/build/
+后续的工作 将处理后的md文件复制出来，拷贝至jekyll站点的_post目录，然后使用
+jekyll serve 生成预览，按照提示处理有问题的md文件，直至OK！"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">将Wordpress数据转换为Jekyll文件</h1>
+        </header>
+        <div class="content">
+            <p>这里使用的工具名为<strong>Exitwp</strong>，项目主页为<a href="https://github.com/thomasf/exitwp" title="Exitwp home page">https://github.com/thomasf/exitwp</a></p>
+<h3 id="安装exitwp">安装Exitwp</h3>
+<p>必备组件</p>
+<ul>
+<li>Python</li>
+<li>html2text</li>
+<li>PyYAML</li>
+<li>Beautiful soup</li>
+</ul>
+<p>ubuntu下安装软件:</p>
+<pre><code># aptitude install python git build-essential
+# aptitude install python-pip python-yaml python-bs4 python-html2text
+# aptitude install libyaml-dev python-dev libxml2-utils
+</code></pre>
+<h2 id="安装exitwp-1">安装Exitwp</h2>
+<pre><code>git clone https://github.com/thomasf/exitwp
+</code></pre>
+<p>###使用Exitwp转换wordpress数据</p>
+<p>首先，登录wordpress后台，使用自带的导出工具将wordpress导出为xml文件</p>
+<p>将导出的xml文件下载，复制到 ./exitwp/wordpress-xml/</p>
+<p>进入 ./exitwp/wordpress-xml/，使用xmllint格式化xml文件</p>
+<pre><code>xmllint --format wp.xml
+</code></pre>
+<p>最后，执行exitwp.py脚本来处理xml文件</p>
+<pre><code>python exitwp.py
+</code></pre>
+<p>生成的md文件，存放在 ./exitwp/build/</p>
+<h3 id="后续的工作">后续的工作</h3>
+<p>将处理后的md文件复制出来，拷贝至jekyll站点的_post目录，然后使用</p>
+<pre><code>jekyll serve
+</code></pre>
+<p>生成预览，按照提示处理有问题的md文件，直至OK！</p>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2013-09-15</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/jekyll">#Jekyll</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/wordpress">#Wordpress</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/exitwp">#Exitwp</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

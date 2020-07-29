@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta name="generator" content="Hugo 0.74.3" />
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>UNIXETC - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+
+
+
+<meta property="og:title" content="UNIXETC" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/" />
+<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="UNIXETC"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <div class="homepage-content">
+        
+    </div>
+
+    
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/hdmi-description/">HDMI简介</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        什么是HDMI 高清晰度多媒体接口（High Definition Multimedia Interface，简称HDMI）是一种全数字化图像和声音传送接口，可以传送未压缩的音频及视频信号。HDMI可用于机顶盒、DVD播放机、个人计算机、电视游乐器、综合扩大机、数字音响与电视机等设备。HDMI可以同时传送音频和影音信号，由于音频和视频信号采用同一条电缆，大大简化了系统线路的安装难度。
+HDMI是被设计来取代较旧的模拟影音传送接口如SCART或RCA等端子的。它支持各类电视与计算机图像格式，包括SDTV、HDTV视频画面，再加上多声道数字音频。
+HDMI规格 HDMI分为A、B、C、D四种规格。
+  HDMI A Type
+HDMI A Type应用于HDMI1.0版本，总共有19pin, 规格为4.45 mm × 13.9 mm，为最常见的HDMI接头规格, 相对等于DVI Single-Link传输。在HDMI 1.2a之前, 最大能传输165MHz的TMDS, 所以最大传输规格只能在于1600x1200(TMDS 162.0 MHz)
+  HDMI B Type
+应用于HDMI1.0版本，规格为4.45 mm × 21.2 mm，总共有29pin, 可传输HDMI A type两倍的TMDS数据量, 相对等于DVI Dual-Link传输, 用于传输高分辨率(WQXGA 2560x1600以上)，此类接口未应用在任何产品中。
+  HDMI C Type
+俗称Mini HDMI，应用于HDMI1.3版本，总共有19pin, 可以说是缩小版的HDMI A type, 规格为2.42 mm × 10.42 mm，但脚位定义有所改变。 主要是用在便携式设备上, 例如DV、数码相机、便携式多媒体播放机等。由于大小所限，一些显卡会使用mini-HDMI，用家须使用转接头转成标准大小的Type A再连接显示屏。
+  HDMI D Type
+也称为Micro HDMI应用于HDMI1.4版本，总共有19pin, 规格为2.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-03-04</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/SHARE">SHARE</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/hdmi">#HDMI</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/raspberry-pi-and-dnspod-dynamic-dns/">树莓派与DNSPod动态域名解析</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        所需条件
+ Raspberry Pi TP-Link路由器 DNSPod帐户 域名  配置路由器 进入路由器的DHCP服务器-&gt;静态地址分配菜单，为Raspberry Pi分配静态IP地址，例如：192.168.1.200
+进入路由器的安全功能-&gt;远端WEB管理菜单，设置WEB管理端口为一个非80值，例如82
+进入路由器的转发规则-&gt;DMZ主机菜单，将DMZ主机IP地址设置为Raspberry Pi的ip地址，然后启用保存。
+设置DNSPod动态域名解析 首先登录DNSPod网页管理域名，将二级域名www 的A记录解析到路由器外网IP(可通过路由器管理首页查询，或者通过浏览ip138.com来获得)
+注：一级域名请解析**@**的A记录。
+下载DNSPod官方客户端Lite https://support.dnspod.cn/Support/api
+解压后双击打开登录，从右侧信息列表中也可以看到本机最新IP，点击相应域名后的动态解析按钮，在动态解析设置中右键点击相应的动态记录启用即可，关闭DNSPod官方客户端Lite。
+设置Raspberry Pi 安装Web服务器软件(Nginx)
+#apt-get install nginx#/etc/init.d/nginx start 内网可以通过浏览`http://192.168.1.129&quot;来检查Nginx是否正常运行。
+浏览https://gist.githubusercontent.com/chuangbo/833369，下载动态域名解析脚本(pypod.py)
+编辑pypod.py修改以下内容：
+login_email=&quot;email&quot;, # DSNPod帐户邮箱login_password=&quot;password&quot;, # DSNPod帐户密码domain_id=100, # 域名idrecord_id=100, # 记录idsub_domain=&quot;www&quot;, # 子域名 其中域名id与记录id可以通过以下命令获取：
+curl -k https://dnsapi.cn/Domain.List -d &quot;login_email=xxx&amp;login_password=xxx&quot;curl -k https://dnsapi.cn/Record.List -d &quot;login_email=xxx&amp;login_password=xxx&amp;domain_id=xxx&quot; 提示：如果你使用了www子域名，则需要获取www的记录id，如果使用一级域名(@)，则需要获取**@**的记录id。
+编辑完pypod.py保存退出，使用以下命令运行：
+#python pypod.py 现在可以通过域名来浏览Raspberry Pi上的Web内容了。
+pypod.py开机运行
+添加/usr/bin/python /home/pi/pypod.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-03-03</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dnspod">#dnspod</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ddns">#DDNS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dns">#DNS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%8A%A8%E6%80%81%E5%9F%9F%E5%90%8D">#动态域名</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/raspberry-pi-install-python-development-environment-and-gpio-library/">树莓派安装Python开发环境与GPIO库</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装python
+$sudo apt-get install python-dev 更新
+$sudo easy_install -U distribute 安装python-pip
+$sudo apt-get install python-pip 添加国内pypi镜像
+在~/.pip/pip.conf中添加
+[global]index-url = http://mirrors.aliyun.com/pypi/simple/ 安装python的GPIO库
+$sudo pip install rpi.gpio 
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-03-02</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/python">#Python</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/pip">#pip</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gpio">#gpio</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+    
+        
+    <div class="pagination">
+        <div class="left pagination-item ">
+            
+                <a href="/page/56/">To new posts</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/page/58/">To old posts</a>
+            
+        </div>
+    </div>
+
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

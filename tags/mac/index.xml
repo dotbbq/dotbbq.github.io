@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mac on UNIXETC</title>
+    <link>https://unixetc.com/tags/mac/</link>
+    <description>UNIXETC (mac)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Mon, 20 Mar 2017 13:20:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux下设置IP、网关、掩码、MAC和DNS</title>
+      <link>https://unixetc.com/post/linux-set-ip-netmask-gateway-mac-dns/</link>
+      <pubDate>Mon, 20 Mar 2017 13:20:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/linux-set-ip-netmask-gateway-mac-dns/</guid>
+      <description>&lt;p&gt;先用&lt;code&gt;ifconfig&lt;/code&gt;来查看所有活动网络接口&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;eth0      Link encap:Ethernet  HWaddr b8:27:eb:1b:63:a8
+        inet addr:192.168.1.6  Bcast:192.168.1.255  Mask:255.255.255.0
+        inet6 addr: fe80::6502:67ff:89b:b2fd/64 Scope:Link
+        UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+        RX packets:43239 errors:0 dropped:24 overruns:0 frame:0
+        TX packets:30644 errors:0 dropped:0 overruns:0 carrier:0
+        collisions:0 txqueuelen:1000
+        RX bytes:25068614 (23.9 MiB)  TX bytes:5993030 (5.7 MiB)
+
+lo        Link encap:Local Loopback
+        inet addr:127.0.0.1  Mask:255.0.0.0
+        inet6 addr: ::1/128 Scope:Host
+        UP LOOPBACK RUNNING  MTU:65536  Metric:1
+        RX packets:1961 errors:0 dropped:0 overruns:0 frame:0
+        TX packets:1961 errors:0 dropped:0 overruns:0 carrier:0
+        collisions:0 txqueuelen:1
+        RX bytes:160232 (156.4 KiB)  TX bytes:160232 (156.4 KiB)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;设置ip和掩码&#34;&gt;设置IP和掩码&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;ifconfig eth0 192.168.1.6 netmask 255.255.255.0 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;设置网关&#34;&gt;设置网关&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;route add default gw 192.168.1.1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;修改网卡mac&#34;&gt;修改网卡MAC&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;ifconfig eth0 down
+ifconfig eth0 hw ether b877c322f8
+ifconfig eth0 up
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;设置dns&#34;&gt;设置DNS&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;vi /etc/resolv.conf
+
+nameserver 114.114.114.114
+nameserver 114.114.115.115
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;重启网络服务生效 &lt;code&gt;service network restart&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;最新的ubuntu已经不能简单通过修改&lt;code&gt;/etc/resolv.conf&lt;/code&gt;来实现，需要修改&lt;code&gt;resolvconf&lt;/code&gt;配置文件，然后通过命令&lt;code&gt;resolvconf&lt;/code&gt;命令来操作&lt;/p&gt;
+&lt;p&gt;修改&lt;code&gt;/etc/resolvconf/resolv.conf/&lt;/code&gt;目录下的head文件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;nameserver 114.114.114.114
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后通过更新配置来生效&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;resolvconf -u&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

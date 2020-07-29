@@ -1,0 +1,2128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Raspberry Pi on UNIXETC</title>
+    <link>https://unixetc.com/tags/raspberry-pi/</link>
+    <description>UNIXETC (Raspberry Pi)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sat, 07 Sep 2019 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>一加3t和树莓派UNIXBench跑分对比</title>
+      <link>https://unixetc.com/post/oneplus3t-and-raspberry-pi-unixbench-score-comparison/</link>
+      <pubDate>Sat, 07 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/oneplus3t-and-raspberry-pi-unixbench-score-comparison/</guid>
+      <description>&lt;h3 id=&#34;一加3t&#34;&gt;一加3T&lt;/h3&gt;
+&lt;p&gt;一加3T运行的是&lt;a href=&#34;https://unixetc.com/post/oneplus-3t-install-ubuntutouch/&#34;&gt;UbuntuTouch&lt;/a&gt;系统&lt;/p&gt;
+&lt;h4 id=&#34;一加3t系统信息&#34;&gt;一加3T系统信息&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;phablet@ubuntu-phablet:~$ inxi -F
+Resuming in non X mode: xrandr not found. For package install advice run: inxi --recommends
+System:    Host: android Kernel: 3.18.31-halium-gca027546546e-01041-g7961eb763e61 aarch64 (32 bit) Desktop: N/A
+        Distro: Ubuntu 16.04 xenial
+Machine:   No /sys/class/dmi; using dmidecode: dmidecode is not installed.
+CPU:       Quad core AArch64 Processor rev 1 (aarch64) (-MCP-) (ARM)
+        clock speeds: max: 2188 MHz 1: 1593 MHz 2: 1593 MHz 3: 1593 MHz 4: 1593 MHz
+Graphics:  Card: Failed to Detect Video Card!
+        Display Server: N/A driver: N/A Resolution: 165x47
+Audio:     Card msm8996-tasha-mtp-snd-card driver: msm8996-tasha-m
+        Sound: Advanced Linux Sound Architecture v: k3.18.31-halium-gca027546546e-01041-g7961eb763e61
+Network:   Card-1: Qualcomm Atheros QCA6174 802.11ac Wireless Network Adapter driver: cnss_wlan_pci
+        IF: rename8 state: down mac: c2:ee:fb:e8:e2:ea
+        Card-2: Qualcomm Atheros QCA6174 802.11ac Wireless Network Adapter driver: cnss_wlan_pci
+        IF: wlp1s0 state: up mac: c0:ee:fb:e8:e2:ea
+Drives:    HDD Total Size: 64.0GB (8.3% used) ID-1: /dev/sda model: KLUCG4J1CB size: 57.9GB
+        ID-2: /dev/sdb model: KLUCG4J1CB size: 0.0GB ID-3: /dev/sdc model: KLUCG4J1CB size: 0.0GB
+        ID-4: /dev/sdd model: KLUCG4J1CB size: 0.1GB ID-5: /dev/sde model: KLUCG4J1CB size: 4.3GB
+        ID-6: /dev/sdf model: KLUCG4J1CB size: 1.6GB
+Partition: ID-1: / size: 2.9G used: 1.9G (67%) fs: ext4 dev: /dev/loop0
+Sensors:   None detected - is lm-sensors installed and configured?
+Info:      Processes: 551 Uptime: 1:02 Memory: 1668.1/5736.9MB Init: Upstart runlevel: 2
+        Client: Shell (bash) inxi: 2.2.35
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;一加3t-unixbench跑分&#34;&gt;一加3T unixbench跑分&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;========================================================================
+BYTE UNIX Benchmarks (Version 5.1.3)
+
+System: ubuntu-phablet: GNU/Linux
+OS: GNU/Linux -- 3.18.31-halium-gca027546546e-01041-g7961eb763e61 -- #1 SMP PREEMPT Wed Aug 21 20:33:17 CEST 2019
+Machine: aarch64 (aarch64)
+Language: en_US.utf8 (charmap=&amp;quot;UTF-8&amp;quot;, collate=&amp;quot;UTF-8&amp;quot;)
+11:39:26 up 58 min,  2 users,  load average: 6.59, 7.93, 8.16; runlevel 2
+
+------------------------------------------------------------------------
+Benchmark Run: 六 9月 07 2019 11:39:26 - 12:07:49
+0 CPUs in system; running 1 parallel copy of tests
+
+Dhrystone 2 using register variables       13089762.3 lps   (10.0 s, 7 samples)
+Double-Precision Whetstone                     3000.5 MWIPS (9.8 s, 7 samples)
+Execl Throughput                               1381.2 lps   (29.9 s, 2 samples)
+File Copy 1024 bufsize 2000 maxblocks        254749.2 KBps  (30.0 s, 2 samples)
+File Copy 256 bufsize 500 maxblocks           75714.9 KBps  (30.0 s, 2 samples)
+File Copy 4096 bufsize 8000 maxblocks        813273.2 KBps  (30.0 s, 2 samples)
+Pipe Throughput                              650583.5 lps   (10.0 s, 7 samples)
+Pipe-based Context Switching                  22716.1 lps   (10.0 s, 7 samples)
+Process Creation                                835.5 lps   (30.0 s, 2 samples)
+Shell Scripts (1 concurrent)                   2556.9 lpm   (60.0 s, 2 samples)
+Shell Scripts (8 concurrent)                    938.3 lpm   (60.0 s, 2 samples)
+System Call Overhead                         988399.2 lps   (10.0 s, 7 samples)
+
+System Benchmarks Index Values               BASELINE       RESULT    INDEX
+Dhrystone 2 using register variables         116700.0   13089762.3   1121.7
+Double-Precision Whetstone                       55.0       3000.5    545.5
+Execl Throughput                                 43.0       1381.2    321.2
+File Copy 1024 bufsize 2000 maxblocks          3960.0     254749.2    643.3
+File Copy 256 bufsize 500 maxblocks            1655.0      75714.9    457.5
+File Copy 4096 bufsize 8000 maxblocks          5800.0     813273.2   1402.2
+Pipe Throughput                               12440.0     650583.5    523.0
+Pipe-based Context Switching                   4000.0      22716.1     56.8
+Process Creation                                126.0        835.5     66.3
+Shell Scripts (1 concurrent)                     42.4       2556.9    603.1
+Shell Scripts (8 concurrent)                      6.0        938.3   1563.9
+System Call Overhead                          15000.0     988399.2    658.9
+                                                                ========
+System Benchmarks Index Score                                         463.9
+
+
+
+======= Script description and score comparison completed! =======
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;树莓派&#34;&gt;树莓派&lt;/h3&gt;
+&lt;p&gt;树莓派运行的是官方Raspbian Buster Lite版&lt;/p&gt;
+&lt;h4 id=&#34;树莓派系统信息&#34;&gt;树莓派系统信息&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;pi@raspberrypi:~ $ inxi -F
+System:    Host: raspberrypi Kernel: 4.19.66-v7+ armv7l bits: 32 Desktop: N/A Distro: Raspbian GNU/Linux 10 (buster)
+Machine:   Type: ARM Device System: Raspberry Pi 2 Model B Rev 1.1 details: BCM2835 rev: a21041 serial: 00000000d81b63a8
+CPU:       Topology: Quad Core model: ARMv7 v7l variant: cortex-a7 bits: 32 type: MCP
+        Speed: 1000 MHz min/max: 600/1000 MHz Core speeds (MHz): 1: 1000 2: 1000 3: 1000 4: 1000
+Graphics:  Device-1: bcm2708-fb driver: bcm2708_fb v: kernel
+        Device-2: bcm2835-hdmi driver: N/A
+        Display: tty server: N/A driver: N/A tty: 165x47
+        Message: No advanced graphics data found on this system.
+Audio:     Device-1: bcm2835-audio driver: bcm2835_audio
+        Device-2: bcm2835-hdmi driver: N/A
+        Sound Server: ALSA v: k4.19.66-v7+
+Network:   Device-1: Standard Microsystems SMSC9512/9514 Fast Ethernet Adapter type: USB driver: smsc95xx
+        IF: eth0 state: up speed: 100 Mbps duplex: full mac: b8:27:eb:1b:63:a8
+        Device-2: Realtek RTL8188EUS 802.11n Wireless Network Adapter type: USB driver: r8188eu
+        IF: wlan0 state: down mac: 14:cf:92:1d:84:a0
+        Device-3: Realtek RTL8188CUS 802.11n WLAN Adapter type: USB driver: rtl8192cu
+        IF: wlan1 state: down mac: e8:4e:06:1c:3e:67
+Drives:    Local Storage: total: 29.73 GiB used: 1.35 GiB (4.5%)
+        ID-1: /dev/mmcblk0 vendor: TDK model: TF32G size: 29.73 GiB
+Partition: ID-1: / size: 29.00 GiB used: 1.31 GiB (4.5%) fs: ext4 dev: /dev/mmcblk0p2
+        ID-2: /boot size: 252.0 MiB used: 39.1 MiB (15.5%) fs: vfat dev: /dev/mmcblk0p1
+Sensors:   Message: No sensors data was found. Is sensors configured?
+Info:      Processes: 129 Uptime: 44m Memory: 1002.1 MiB used: 182.8 MiB (18.2%) gpu: 76.0 MiB Shell: bash inxi: 3.0.32
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;树莓派unixbench跑分&#34;&gt;树莓派unixbench跑分&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;========================================================================
+BYTE UNIX Benchmarks (Version 5.1.3)
+
+System: raspberrypi: GNU/Linux
+OS: GNU/Linux -- 4.19.66-v7+ -- #1253 SMP Thu Aug 15 11:49:46 BST 2019
+Machine: armv7l (unknown)
+Language: en_US.utf8 (charmap=&amp;quot;ANSI_X3.4-1968&amp;quot;, collate=&amp;quot;ANSI_X3.4-1968&amp;quot;)
+CPU 0: ARMv7 Processor rev 5 (v7l) (0.0 bogomips)
+
+CPU 1: ARMv7 Processor rev 5 (v7l) (0.0 bogomips)
+
+CPU 2: ARMv7 Processor rev 5 (v7l) (0.0 bogomips)
+
+CPU 3: ARMv7 Processor rev 5 (v7l) (0.0 bogomips)
+
+11:06:28 up 5 min,  1 user,  load average: 1.15, 0.40, 0.15; runlevel 5
+
+------------------------------------------------------------------------
+Benchmark Run: 六 9月 07 2019 11:06:28 - 11:34:53
+4 CPUs in system; running 1 parallel copy of tests
+
+Dhrystone 2 using register variables        3337362.1 lps   (10.0 s, 7 samples)
+Double-Precision Whetstone                      753.3 MWIPS (10.0 s, 7 samples)
+Execl Throughput                                490.1 lps   (29.9 s, 2 samples)
+File Copy 1024 bufsize 2000 maxblocks         73075.5 KBps  (30.0 s, 2 samples)
+File Copy 256 bufsize 500 maxblocks           21292.0 KBps  (30.0 s, 2 samples)
+File Copy 4096 bufsize 8000 maxblocks        194738.9 KBps  (30.0 s, 2 samples)
+Pipe Throughput                              177539.0 lps   (10.0 s, 7 samples)
+Pipe-based Context Switching                  26085.6 lps   (10.0 s, 7 samples)
+Process Creation                               1112.2 lps   (30.0 s, 2 samples)
+Shell Scripts (1 concurrent)                   1167.8 lpm   (60.0 s, 2 samples)
+Shell Scripts (8 concurrent)                    327.1 lpm   (60.2 s, 2 samples)
+System Call Overhead                         451875.9 lps   (10.0 s, 7 samples)
+
+System Benchmarks Index Values               BASELINE       RESULT    INDEX
+Dhrystone 2 using register variables         116700.0    3337362.1    286.0
+Double-Precision Whetstone                       55.0        753.3    137.0
+Execl Throughput                                 43.0        490.1    114.0
+File Copy 1024 bufsize 2000 maxblocks          3960.0      73075.5    184.5
+File Copy 256 bufsize 500 maxblocks            1655.0      21292.0    128.7
+File Copy 4096 bufsize 8000 maxblocks          5800.0     194738.9    335.8
+Pipe Throughput                               12440.0     177539.0    142.7
+Pipe-based Context Switching                   4000.0      26085.6     65.2
+Process Creation                                126.0       1112.2     88.3
+Shell Scripts (1 concurrent)                     42.4       1167.8    275.4
+Shell Scripts (8 concurrent)                      6.0        327.1    545.2
+System Call Overhead                          15000.0     451875.9    301.3
+                                                                ========
+System Benchmarks Index Score                                         182.0
+
+------------------------------------------------------------------------
+Benchmark Run: 六 9月 07 2019 11:34:53 - 12:04:00
+4 CPUs in system; running 4 parallel copies of tests
+
+Dhrystone 2 using register variables       13191650.7 lps   (10.0 s, 7 samples)
+Double-Precision Whetstone                     2978.2 MWIPS (10.0 s, 7 samples)
+Execl Throughput                               1235.3 lps   (29.9 s, 2 samples)
+File Copy 1024 bufsize 2000 maxblocks         85443.5 KBps  (30.0 s, 2 samples)
+File Copy 256 bufsize 500 maxblocks           33157.0 KBps  (30.0 s, 2 samples)
+File Copy 4096 bufsize 8000 maxblocks        295618.5 KBps  (30.0 s, 2 samples)
+Pipe Throughput                              697215.8 lps   (10.0 s, 7 samples)
+Pipe-based Context Switching                 106460.7 lps   (10.0 s, 7 samples)
+Process Creation                               2599.0 lps   (30.0 s, 2 samples)
+Shell Scripts (1 concurrent)                   2615.3 lpm   (60.1 s, 2 samples)
+Shell Scripts (8 concurrent)                    352.7 lpm   (60.3 s, 2 samples)
+System Call Overhead                        1724986.2 lps   (10.0 s, 7 samples)
+
+System Benchmarks Index Values               BASELINE       RESULT    INDEX
+Dhrystone 2 using register variables         116700.0   13191650.7   1130.4
+Double-Precision Whetstone                       55.0       2978.2    541.5
+Execl Throughput                                 43.0       1235.3    287.3
+File Copy 1024 bufsize 2000 maxblocks          3960.0      85443.5    215.8
+File Copy 256 bufsize 500 maxblocks            1655.0      33157.0    200.3
+File Copy 4096 bufsize 8000 maxblocks          5800.0     295618.5    509.7
+Pipe Throughput                               12440.0     697215.8    560.5
+Pipe-based Context Switching                   4000.0     106460.7    266.2
+Process Creation                                126.0       2599.0    206.3
+Shell Scripts (1 concurrent)                     42.4       2615.3    616.8
+Shell Scripts (8 concurrent)                      6.0        352.7    587.9
+System Call Overhead                          15000.0    1724986.2   1150.0
+                                                                ========
+System Benchmarks Index Score                                         437.9
+
+
+
+======= Script description and score comparison completed! =======
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>通过SSH Over USB管理树莓派Zero</title>
+      <link>https://unixetc.com/post/raspberry-pi-zero-with-ssh-over-usb/</link>
+      <pubDate>Fri, 19 Apr 2019 09:46:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/raspberry-pi-zero-with-ssh-over-usb/</guid>
+      <description>&lt;p&gt;树莓派Zero因为相对来说太小巧，没有提供初始化的网卡，所以我们除了通过串口连接以外，树莓派Zero也提供了USB直接连接的方式。即通过Ethernet Gadget模式来连接pc，并进行ssh连接。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Ethernet
+Gadget模式即USB网卡模式，比较常见的就是我们通过android手机的usb接口对pc进行网络共享的一种手段。一般电脑都会自动识别这种设备，并开启网卡进行共享。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;修改配置文件&#34;&gt;修改配置文件&lt;/h3&gt;
+&lt;p&gt;为了进行USB连接，我们需要修改BOOT文件夹下的&lt;strong&gt;config.txt&lt;/strong&gt;与&lt;strong&gt;cmdline.txt&lt;/strong&gt;配置文件。 
+首先在&lt;strong&gt;config.txt&lt;/strong&gt;最末行处换行添加如下代码，打开usb网卡模式：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;dtoverlay=dwc2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其次在&lt;strong&gt;cmdline.txt&lt;/strong&gt;文件中找到&lt;code&gt;rootwait&lt;/code&gt;字段，并在其后面空格添加如下信息，在打开系统时开启USB网卡模式。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;modules-load=dwc2,g_ether
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在boot分区新建ssh文件，以打开ssh访问功能。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;touch ssh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;通过usb连接设备&#34;&gt;通过usb连接设备&lt;/h3&gt;
+&lt;p&gt;树莓派zero有两个MicroUSB口，一个是电源插口，职司供电的功能，另外一个就是USB接口，它除了供电以外还提供OTG的功能，我们也是通过这个接口来连接PC。
+此时我们可以通过以下代码连接树莓派zero：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ssh pi@raspberrypi.local
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;但此时ip段为DHCP模式获取，如果我们希望通过ip来连接，则我们需要给树莓派的usb网卡设置ip。&lt;/p&gt;
+&lt;h3 id=&#34;设置usb网卡的ip&#34;&gt;设置USB网卡的IP&lt;/h3&gt;
+&lt;p&gt;我们可以通过ifconfig -a来查看我们现在的网卡设备，此时我们可以看到，USB0网卡设备，我们就是通过该设备连接的pc，所以我们需要设置该网卡的ip。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo nano /etc/network/interfaces
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;打开网卡配置界面，在最末行添加如下代码来设置固定IP：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;allow-hotplug usb0
+iface usb0 inet static
+        address 192.168.7.2
+        netmask 255.255.255.0
+        network 192.168.7.0
+        broadcast 192.168.7.255
+        gateway 192.168.7.1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后重启usb0网卡：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo ifdown usb0
+sudo ifup usb0
+ifconfig usb0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;但树莓派此时实际上是从机，我们需要通过设置pc主机的ip来让树莓派0的usb网卡真正运作起来，那么我们对刚才的usb设备设置如下IP：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;IP:  192.168.7.1 
+掩码: 255.255.255.0 
+路由: 192.168.7.1&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;此时我们就可以通过ip来进行ssh连接了：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ssh pi@192.168.7.2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://notenoughtech.com/raspberry-pi/raspberry-pi-zero-ssh-usb/&#34;&gt;https://notenoughtech.com/raspberry-pi/raspberry-pi-zero-ssh-usb/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/talkxin/article/details/53066555&#34;&gt;https://blog.csdn.net/talkxin/article/details/53066555&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>树莓派显示天气信息</title>
+      <link>https://unixetc.com/post/weather-according-to-raspberry-pi/</link>
+      <pubDate>Thu, 25 May 2017 15:12:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/weather-according-to-raspberry-pi/</guid>
+      <description>&lt;p&gt;在此介绍一个国外网友的树莓派项目&lt;strong&gt;RARP&lt;/strong&gt;，Weather According to Raspberry Pi&lt;/p&gt;
+&lt;p&gt;顾名思义，Weather According to Raspberry Pi是一个有关天气信息的项目，该项目通过采集&lt;strong&gt;Raspberry Pi&lt;/strong&gt;和&lt;strong&gt;Sense HAT&lt;/strong&gt;的数据，来显示相关的天气信息，比如温度、湿度、压力等&lt;/p&gt;
+&lt;p&gt;项目地址&lt;a href=&#34;http://coded2.herokuapp.com/weather/&#34;&gt;http://coded2.herokuapp.com/weather/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;代码国内下载地址&lt;a href=&#34;http://cdn.lyq.wiki/res/warp_final.zip&#34;&gt;http://cdn.lyq.wiki/res/warp_final.zip&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载后解压，得到&lt;strong&gt;main.py&lt;/strong&gt;和&lt;strong&gt;gauge2.html&lt;/strong&gt;两个文件，其中&lt;strong&gt;main.py&lt;/strong&gt;需要&lt;strong&gt;Python3&lt;/strong&gt;运行，&lt;strong&gt;gauge2.html&lt;/strong&gt;是最终的显示文件&lt;/p&gt;
+&lt;p&gt;安装相关软件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install python3
+sudo apt-get install python3-pip
+pip3 install flask
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;打开&lt;strong&gt;Sense HAT仿真器&lt;/strong&gt;，在程序菜单中，打开后如下图示:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/senseHAT-emu.webp&#34; alt=&#34;SenseHAT Menu&#34;&gt;&lt;/p&gt;
+&lt;p&gt;下来，运行下载的python脚本&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;python3 main.py
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;正常情况下，会提示一个端口为&lt;strong&gt;5000&lt;/strong&gt;的web服务正在运行&lt;/p&gt;
+&lt;p&gt;在浏览器中浏览&lt;strong&gt;localhost:5000&lt;/strong&gt;或者&lt;strong&gt;127.0.0.1:5000&lt;/strong&gt;，最终的浏览如下图&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/warp.webp&#34; alt=&#34;WARP&#34;&gt;&lt;/p&gt;
+&lt;p&gt;三个图表分别显示温度、压力和湿度，这三者的信息均来自&lt;strong&gt;Sense HAT 模拟器&lt;/strong&gt;而不是真正的&lt;strong&gt;Sense HAT&lt;/strong&gt;硬件。&lt;/p&gt;
+&lt;p&gt;如果需要采集&lt;strong&gt;Sense HAT&lt;/strong&gt;扩展板的数据，需要将&lt;strong&gt;Sense HAT&lt;/strong&gt;附加板和&lt;strong&gt;Raspberry Pi&lt;/strong&gt;相连，具体信息参考官网 &lt;a href=&#34;https://www.raspberrypi.org/products/sense-hat/&#34;&gt;https://www.raspberrypi.org/products/sense-hat/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;然后修改代码，打开&lt;strong&gt;main.py&lt;/strong&gt;文件，找到如下行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sense_emu import SenseHat
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;修改为&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sense_hat import SenseHat
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;保存后，重新运行&lt;strong&gt;python3 main.py&lt;/strong&gt;，此时采集的数据就来自真实的&lt;strong&gt;SenseHAT&lt;/strong&gt;硬件。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>理解Linux中Shell初始化文件和用户Profiles文件</title>
+      <link>https://unixetc.com/post/understand-linux-shell-initialization-files-and-user-profiles-files/</link>
+      <pubDate>Tue, 25 Apr 2017 14:25:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/understand-linux-shell-initialization-files-and-user-profiles-files/</guid>
+      <description>&lt;p&gt;Linux是一个多用户、实时共享的操作系统，意味着不止一个用户可以登录同一个系统。系统管理员通过任务管理来分配不同用户的权限，比如安装、升级、卸载应用程序，运行编译程序，文件查看、编辑等等。&lt;/p&gt;
+&lt;p&gt;Linux允许通过两种主要方式来创建用户环境：系统级(全局)和用户级(个人)。一般情况下，Linux系统都会运行基本shell程序，当用户登录成功后shell会在初始化时根据某些文件开创建环境。&lt;/p&gt;
+&lt;h3 id=&#34;linux中的shell初始化&#34;&gt;Linux中的Shell初始化&lt;/h3&gt;
+&lt;p&gt;当&lt;strong&gt;Shell&lt;/strong&gt;被调用时，会有一些初始化/启动文件被启用，它们的主要作用是为shell本身或用户设定运行环境，包含一些函数、	变量、别名等等。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Shell&lt;/strong&gt;可以读取以下两种初始化文件:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;系统级启动文件&lt;/strong&gt; – 包含一些应用于户所有用户的全局配置，一般存在于**/etc**目录中，如 **/etc/profiles** 、**/etc/bashrc** 或者 **/etc/bash.bashrc**。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;用户级启动文件&lt;/strong&gt; – 包含一些应用于单用户的配置文件，一般存放在各个用户目录，这些配置可以覆盖系统级全局配置，如**.profiles**、 **.bash_profile**、 **.bashrc** 和 **.bash_login**.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Shell&lt;/strong&gt;存在三种调用模式：&lt;/p&gt;
+&lt;h4 id=&#34;1-交互式登录shell&#34;&gt;1. 交互式登录Shell&lt;/h4&gt;
+&lt;p&gt;当用户成功登录系统后调用该&lt;strong&gt;Shell&lt;/strong&gt;,使用**/bin/login**登录，随后读取**/etc/passwd**文件。&lt;/p&gt;
+&lt;p&gt;当启动交互式&lt;strong&gt;shell&lt;/strong&gt;后，将读取**/etc/profile**文件以及特定的用户文件**~/.bash_profile**&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;login as: pi
+pi@pi.raspi.in&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;s password:
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Tue Apr &lt;span style=&#34;color:#ae81ff&#34;&gt;25&lt;/span&gt; 10:43:53 &lt;span style=&#34;color:#ae81ff&#34;&gt;2017&lt;/span&gt; from 211.137.135.200
+pi@raspi:~ $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;2-非登录交互式shell&#34;&gt;2. 非登录交互式Shell&lt;/h4&gt;
+&lt;p&gt;当使用如&lt;strong&gt;$/bin/bash&lt;/strong&gt; or &lt;strong&gt;$/bin/zsh&lt;/strong&gt;的命令行时，将会系统非登录交互式&lt;strong&gt;shell&lt;/strong&gt;。他也可以通过**/bin/su**命令来运行。&lt;/p&gt;
+&lt;p&gt;另外，在打开如&lt;strong&gt;konsole&lt;/strong&gt;、&lt;strong&gt;terminator&lt;/strong&gt;和&lt;strong&gt;xterm&lt;/strong&gt;等图形化终端程序时 ，非登录交互式&lt;strong&gt;shell&lt;/strong&gt;也将被调用。&lt;/p&gt;
+&lt;p&gt;这种情况下调用时，它将拷贝父&lt;strong&gt;shell&lt;/strong&gt;的环境，并读取相应用户级的 &lt;strong&gt;~/.bashrc&lt;/strong&gt; 配置文件。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;pi@raspi:~ $ sudo -s
+root@raspi:/home/pi# cd
+root@raspi:~# ls -la
+total &lt;span style=&#34;color:#ae81ff&#34;&gt;56&lt;/span&gt;
+drwx------  &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Apr &lt;span style=&#34;color:#ae81ff&#34;&gt;13&lt;/span&gt; 10:26 .
+drwxr-xr-x &lt;span style=&#34;color:#ae81ff&#34;&gt;22&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Feb  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; 20:28 ..
+-rw-------  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;2177&lt;/span&gt; Apr &lt;span style=&#34;color:#ae81ff&#34;&gt;25&lt;/span&gt; 11:21 .bash_history
+-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root  &lt;span style=&#34;color:#ae81ff&#34;&gt;765&lt;/span&gt; Feb  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; 20:48 .bashrc
+drwx------  &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Mar  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; 14:28 .cache
+drwxr-xr-x  &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Mar  &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; 11:15 .config
+drwxr-xr-x  &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Mar  &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; 11:15 .local
+drwxr-xr-x  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Apr &lt;span style=&#34;color:#ae81ff&#34;&gt;13&lt;/span&gt; 10:26 .oracle_jre_usage
+drwxr-xr-x  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Feb &lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt; 11:18 .pip
+-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root  &lt;span style=&#34;color:#ae81ff&#34;&gt;140&lt;/span&gt; Nov &lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;2007&lt;/span&gt; .profile
+-rw-------  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root   &lt;span style=&#34;color:#ae81ff&#34;&gt;41&lt;/span&gt; Mar  &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; 11:39 .python_history
+drwx------  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Mar  &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; 11:20 .ssh
+-rw-------  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;6342&lt;/span&gt; Mar &lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt; 17:30 .viminfo
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;3-非交互式shell&#34;&gt;3. 非交互式Shell&lt;/h4&gt;
+&lt;p&gt;当运行脚本时则条用非交互式&lt;strong&gt;shell&lt;/strong&gt;。在这种模式下，它将处理所运行的脚本中的命令、函数等操作，不需要进行交互式输入，除非脚本需求。使用的环境继承自&lt;strong&gt;父shell&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;理解系统级shell启动文件&#34;&gt;理解系统级Shell启动文件&lt;/h3&gt;
+&lt;p&gt;下来，我们来看看一些系统级启动文件都有什么内容：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;/etc/profile file&lt;/strong&gt;文件存储登录时系统级环境配置和启动程序。如果你想配置应用于所有用户的环境设置，可以加入此文件。&lt;/p&gt;
+&lt;p&gt;比如，你可在这里设置全局路径变量。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;pi@raspi:~ $ cat /etc/profile
+&lt;span style=&#34;color:#75715e&#34;&gt;# /etc/profile: system-wide .profile file for the Bourne shell (sh(1))&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;`id -u`&amp;#34;&lt;/span&gt; -eq &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+  PATH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/usr/local/sbin:/usr/local/usr/sbin:/usr/sbin:/bin&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#old bak  PATH=&amp;#34;/usr/local/sbin:/usr/local/usr/sbin:/usr/sbin:/bin:/usr/local/games:/usr/games&amp;#34;&lt;/span&gt;
+PATH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/bin:/sbin:/usr/local/games:/usr/games&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+export PATH
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$PS1&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$BASH&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$BASH&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; !&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/bin/sh&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;# The file bash.bashrc already sets the default PS1.&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;# PS1=&amp;#39;\h:\w\$ &amp;#39;&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -f /etc/bash.bashrc &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+      . /etc/bash.bashrc
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;`id -u`&amp;#34;&lt;/span&gt; -eq &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+      PS1&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;# &amp;#39;&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+      PS1&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;$ &amp;#39;&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -d /etc/profile.d &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i in /etc/profile.d/*.sh; &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -r $i &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+      . $i
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;done&lt;/span&gt;
+  unset i
+&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+export PATH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;/usr/local/nginx/sbin:$PATH
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：当你使用&lt;strong&gt;RHEL/CentOS7&lt;/strong&gt;系统时，会看到如下提示&amp;quot;It’s not recommended to change this file unless you know what you are doing. It’s much better to create a custom &lt;strong&gt;.sh&lt;/strong&gt; shell script in &lt;strong&gt;/etc/profile.d/&lt;/strong&gt; to make custom changes to your environment, as this will prevent the need for merging in future updates&amp;rdquo;。&lt;/p&gt;
+&lt;p&gt;提示中的 &lt;strong&gt;/etc/profile.d/&lt;/strong&gt; 目录保存着所有的自定义修改运行环境的脚本。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;pi@raspi:~ $ cd /etc/profile.d/
+pi@raspi:/etc/profile.d $ ls -l
+total &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;663&lt;/span&gt; Mar &lt;span style=&#34;color:#ae81ff&#34;&gt;23&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;2014&lt;/span&gt; bash_completion.sh
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;387&lt;/span&gt; Mar &lt;span style=&#34;color:#ae81ff&#34;&gt;31&lt;/span&gt; 11:47 oneinstack.sh
+pi@raspi:/etc/profile.d $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;/etc/bashrc&lt;/strong&gt; 或 &lt;strong&gt;/etc/bash.bashrc&lt;/strong&gt;文件，包含应用于所有用户的系统级函数、变量、别名等配置信息。&lt;/p&gt;
+&lt;p&gt;如果你的系统包含多种&lt;strong&gt;Shell&lt;/strong&gt;程序，建议你可以将一些特定的配置放到这里。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;root@raspi:~# cat /etc/bash.bashrc
+&lt;span style=&#34;color:#75715e&#34;&gt;# System-wide .bashrc file for interactive bash(1) shells.&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# To enable the settings / commands in this file for login shells as well,&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# this file has to be sourced in /etc/profile.&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# If not running interactively, don&amp;#39;t do anything&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -z &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$PS1&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# check the window size after each command and, if necessary,&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# update the values of LINES and COLUMNS.&lt;/span&gt;
+shopt -s checkwinsize
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# set variable identifying the chroot you work in (used in the prompt below)&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -z &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;debian_chroot&lt;span style=&#34;color:#66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -r /etc/debian_chroot &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+    debian_chroot&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;cat /etc/debian_chroot&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# set a fancy prompt (non-color, overwrite the one in /etc/profile)&lt;/span&gt;
+PS1&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;${debian_chroot:+($debian_chroot)}\u@\h:\w\$ &amp;#39;&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# Commented out, don&amp;#39;t overwrite xterm -T &amp;#34;title&amp;#34; -n &amp;#34;icontitle&amp;#34; by default.&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# If this is an xterm set the title to user@host:dir&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#case &amp;#34;$TERM&amp;#34; in&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#xterm*|rxvt*)&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#    PROMPT_COMMAND=&amp;#39;echo -ne &amp;#34;\033]0;${USER}@${HOSTNAME}: ${PWD}\007&amp;#34;&amp;#39;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#    ;;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#*)&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#    ;;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#esac&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# enable bash completion in interactive shells&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#if ! shopt -oq posix; then&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#  if [ -f /usr/share/bash-completion/bash_completion ]; then&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#    . /usr/share/bash-completion/bash_completion&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#  elif [ -f /etc/bash_completion ]; then&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#    . /etc/bash_completion&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#  fi&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#fi&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# if the command-not-found package is installed, use it&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -x /usr/lib/command-not-found -o -x /usr/share/command-not-found/command-not-found &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; command_not_found_handle &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+                &lt;span style=&#34;color:#75715e&#34;&gt;# check because c-n-f could&amp;#39;ve been removed in the meantime&lt;/span&gt;
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -x /usr/lib/command-not-found &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+                   /usr/lib/command-not-found -- &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$1&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+                   &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; $?
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;elif&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -x /usr/share/command-not-found/command-not-found &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+                   /usr/share/command-not-found/command-not-found -- &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$1&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+                   &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; $?
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+                   printf &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%s: command not found\n&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$1&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &amp;gt;&amp;amp;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;
+                   &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;127&lt;/span&gt;
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+        &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;理解用户级shell启动文件&#34;&gt;理解用户级Shell启动文件&lt;/h3&gt;
+&lt;p&gt;接下来，我们看一下用户级启动文件，它们中的配置只应用户对应用户，一般放置在相对应的用户目录中：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;root@raspi:~# ls -la
+total &lt;span style=&#34;color:#ae81ff&#34;&gt;56&lt;/span&gt;
+drwx------  &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Apr &lt;span style=&#34;color:#ae81ff&#34;&gt;13&lt;/span&gt; 10:26 .
+drwxr-xr-x &lt;span style=&#34;color:#ae81ff&#34;&gt;22&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Feb  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; 20:28 ..
+-rw-------  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;2177&lt;/span&gt; Apr &lt;span style=&#34;color:#ae81ff&#34;&gt;25&lt;/span&gt; 11:21 .bash_history
+-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root  &lt;span style=&#34;color:#ae81ff&#34;&gt;765&lt;/span&gt; Feb  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; 20:48 .bashrc
+drwx------  &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Mar  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; 14:28 .cache
+drwxr-xr-x  &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Mar  &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; 11:15 .config
+drwxr-xr-x  &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Mar  &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; 11:15 .local
+drwxr-xr-x  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Apr &lt;span style=&#34;color:#ae81ff&#34;&gt;13&lt;/span&gt; 10:26 .oracle_jre_usage
+drwxr-xr-x  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Feb &lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt; 11:18 .pip
+-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root  &lt;span style=&#34;color:#ae81ff&#34;&gt;140&lt;/span&gt; Nov &lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;2007&lt;/span&gt; .profile
+-rw-------  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root   &lt;span style=&#34;color:#ae81ff&#34;&gt;41&lt;/span&gt; Mar  &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; 11:39 .python_history
+drwx------  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Mar  &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; 11:20 .ssh
+-rw-------  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;6342&lt;/span&gt; Mar &lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt; 17:30 .viminfo
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;~/.bash_profile&lt;/strong&gt;包含一些用户级的环境变量、启动程序、配置信息等等。你可以在这里自定义路径信息、变量等内容：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# cat ~/.bash_profile&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# .bash_profile&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# Get the aliases and functions&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -f ~/.bashrc &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+        . ~/.bashrc
+&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# User specific environment and startup programs&lt;/span&gt;
+export PATH
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;~/.bashrc&lt;/strong&gt;文件中包含用户自定义别名和函数等。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;pi@raspi:~ $ cat ~/.bashrc
+&lt;span style=&#34;color:#75715e&#34;&gt;# ~/.bashrc: executed by bash(1) for non-login shells.&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# for examples&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# If not running interactively, don&amp;#39;t do anything&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; $- in
+    *i*&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; ;;
+      *&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt;;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;esac&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# don&amp;#39;t put duplicate lines or lines starting with space in the history.&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# See bash(1) for more options&lt;/span&gt;
+HISTCONTROL&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;ignoreboth
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# append to the history file, don&amp;#39;t overwrite it&lt;/span&gt;
+shopt -s histappend
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)&lt;/span&gt;
+HISTSIZE&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1000&lt;/span&gt;
+HISTFILESIZE&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2000&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# check the window size after each command and, if necessary,&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# update the values of LINES and COLUMNS.&lt;/span&gt;
+shopt -s checkwinsize
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# If set, the pattern &amp;#34;**&amp;#34; used in a pathname expansion context will&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# match all files and zero or more directories and subdirectories.&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#shopt -s globstar&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# make less more friendly for non-text input files, see lesspipe(1)&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#[ -x /usr/bin/lesspipe ] &amp;amp;&amp;amp; eval &amp;#34;$(SHELL=/bin/sh lesspipe)&amp;#34;&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# set variable identifying the chroot you work in (used in the prompt below)&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -z &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;debian_chroot&lt;span style=&#34;color:#66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -r /etc/debian_chroot &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+    debian_chroot&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;cat /etc/debian_chroot&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# set a fancy prompt (non-color, unless we know we &amp;#34;want&amp;#34; color)&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$TERM&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; in
+    xterm-color&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; color_prompt&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;yes;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;esac&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# uncomment for a colored prompt, if the terminal has the capability; turned&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# off by default to not distract the user: the focus in a terminal window&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# should be on the output of commands, not on the prompt&lt;/span&gt;
+force_color_prompt&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;yes
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -n &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$force_color_prompt&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -x /usr/bin/tput &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; tput setaf &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &amp;gt;&amp;amp;/dev/null; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+        &lt;span style=&#34;color:#75715e&#34;&gt;# We have color support; assume it&amp;#39;s compliant with Ecma-48&lt;/span&gt;
+        &lt;span style=&#34;color:#75715e&#34;&gt;# (ISO/IEC-6429). (Lack of such support is extremely rare, and such&lt;/span&gt;
+        &lt;span style=&#34;color:#75715e&#34;&gt;# a case would tend to support setf rather than setaf.)&lt;/span&gt;
+        color_prompt&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;yes
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+        color_prompt&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$color_prompt&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; yes &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+    PS1&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w \$\[\033[00m\] &amp;#39;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+    PS1&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;${debian_chroot:+($debian_chroot)}\u@\h:\w\$ &amp;#39;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+unset color_prompt force_color_prompt
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# If this is an xterm set the title to user@host:dir&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$TERM&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; in
+xterm*|rxvt*&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+    PS1&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;\[\e]0;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;debian_chroot:+($debian_chroot)&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;\u@\h: \w\a\]&lt;/span&gt;$PS1&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+    ;;
+*&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+    ;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;esac&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# enable color support of ls and also add handy aliases&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -x /usr/bin/dircolors &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+    test -r ~/.dircolors &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; eval &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;dircolors -b ~/.dircolors&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; eval &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;dircolors -b&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+    alias ls&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;ls --color=auto&amp;#39;&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;#alias dir=&amp;#39;dir --color=auto&amp;#39;&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;#alias vdir=&amp;#39;vdir --color=auto&amp;#39;&lt;/span&gt;
+
+    alias grep&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;grep --color=auto&amp;#39;&lt;/span&gt;
+    alias fgrep&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;fgrep --color=auto&amp;#39;&lt;/span&gt;
+    alias egrep&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;egrep --color=auto&amp;#39;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# colored GCC warnings and errors&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#export GCC_COLORS=&amp;#39;error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01&amp;#39;&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# some more ls aliases&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#alias ll=&amp;#39;ls -l&amp;#39;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#alias la=&amp;#39;ls -A&amp;#39;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#alias l=&amp;#39;ls -CF&amp;#39;&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# Alias definitions.&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# You may want to put all your additions into a separate file like&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# ~/.bash_aliases, instead of adding them here directly.&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# See /usr/share/doc/bash-doc/examples in the bash-doc package.&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -f ~/.bash_aliases &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+    . ~/.bash_aliases
+&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# enable programmable completion features (you don&amp;#39;t need to enable&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# this, if it&amp;#39;s already enabled in /etc/bash.bashrc and /etc/profile&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# sources /etc/bash.bashrc).&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; ! shopt -oq posix; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -f /usr/share/bash-completion/bash_completion &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+    . /usr/share/bash-completion/bash_completion
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;elif&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -f /etc/bash_completion &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+    . /etc/bash_completion
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;~/.bash_login&lt;/strong&gt; 文件包含一些登陆时运行的配置信息。当&lt;strong&gt;~/.bash_profile&lt;/strong&gt;缺失时，&lt;strong&gt;bash&lt;/strong&gt;将读取&lt;strong&gt;~/.bash_login&lt;/strong&gt; 。&lt;/p&gt;
+&lt;p&gt;当 &lt;strong&gt;~/.bash_profile&lt;/strong&gt; 和 &lt;strong&gt;~/.bash_login&lt;/strong&gt;缺失时，&lt;strong&gt;bash&lt;/strong&gt;将读取 &lt;strong&gt;~/.profile&lt;/strong&gt;文件。它同样包含配置信息、函数、变量、别名的信息。&lt;/p&gt;
+&lt;p&gt;下面，我们再看看两个&lt;strong&gt;bash&lt;/strong&gt;初始化时非必须，但是比较重要的配置文件。&lt;/p&gt;
+&lt;p&gt;Linux系统有的一个&lt;strong&gt;历史命令&lt;/strong&gt;功能，该功能按用户记录运行的所有命令历史，存储在 &lt;strong&gt;~/.bash_history&lt;/strong&gt; 文件中。&lt;/p&gt;
+&lt;p&gt;查看历史命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;root@bwgzl:~# history
+    &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;  2017-04-25 11:41:34 root cd sf/
+    &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;  2017-03-31 10:46:17 root ls
+    &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;  2017-03-31 10:46:29 root ./setup-seafile-mysql.sh
+    &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;  2017-03-31 10:47:47 root mysql -u sf -h localhost -p
+    &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;  2017-03-31 10:47:57 root reboot
+    &lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt;  2017-03-31 10:48:28 root ls
+    &lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;  2017-03-31 10:48:33 root ls
+    &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;  2017-03-31 10:48:36 root cd sf
+    &lt;span style=&#34;color:#ae81ff&#34;&gt;9&lt;/span&gt;  2017-03-31 10:48:36 root ls
+   &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;  2017-03-31 10:48:42 root ./setup-seafile-mysql.sh
+   &lt;span style=&#34;color:#ae81ff&#34;&gt;11&lt;/span&gt;  2017-03-31 10:48:48 root exit
+   &lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;  2017-03-31 11:16:54 root cd /data/wwwroot/unixetc.com/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;最后一个是 &lt;strong&gt;~/.bash_logout&lt;/strong&gt; 文件，它不用于&lt;strong&gt;shell&lt;/strong&gt;启动，但存储一些特殊的指令当用户注销时执行。&lt;/p&gt;
+&lt;p&gt;一个很有用的例子就是当用户注销后，清空所有屏幕内容。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;root@bwgzl:~# cat bash_logout 
+&lt;span style=&#34;color:#75715e&#34;&gt;# ~/.bash_logout&lt;/span&gt;
+
+clear
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>树莓派动态IP更新器</title>
+      <link>https://unixetc.com/post/raspberrypi-dynamic-ip-updater/</link>
+      <pubDate>Wed, 19 Apr 2017 21:28:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/raspberrypi-dynamic-ip-updater/</guid>
+      <description>&lt;p&gt;这是一个python3的脚本，每隔10分钟监控一次IP地址，如果发生变化则会通过AutoRemote消息通知你。 关于AutoRemote的使用可&lt;a href=&#34;http://www.notenoughtech.com/raspberry-pi/tasker-raspberrypi/&#34;&gt;参考这里&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这里推荐使用&lt;a href=&#34;https://github.com/phoemur/ipgetter&#34;&gt;&lt;strong&gt;ipgetter&lt;/strong&gt;&lt;/a&gt;来获取外网IP，地址为&lt;a href=&#34;https://github.com/phoemur/ipgetter&#34;&gt;https://github.com/phoemur/ipgetter&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;安装ipgetter&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo apt-get install python3 pip
+sudo pip3 install ipgetter
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;你可以从以下地址获取每个通知设备的AutoRemote所需google key&lt;/p&gt;
+&lt;p&gt;​	http://autoremotejoaomgcd.appspot.com/?key=[it&amp;rsquo;s the part that is here]&lt;/p&gt;
+&lt;p&gt;以下为python3脚本:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;import ipgetter
+import urllib.request
+import requests
+
+currentIP &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; ipgetter.myip&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#AutoRemote function to send a notification YOUR_KEY goes here&lt;/span&gt;
+def sendAR&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;x&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;:
+	AR_key &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;YOUR_KEY&amp;#39;&lt;/span&gt;
+	AR_url &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;http://autoremotejoaomgcd.appspot.com/sendmessage?key=&amp;#39;&lt;/span&gt;+ AR_key +&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;amp;message=IP%20&amp;#39;&lt;/span&gt;
+	message &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; AR_url + x
+	response &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; urllib.request.urlopen&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;message&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;.read&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
+	print&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;x&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;	
+&lt;span style=&#34;color:#75715e&#34;&gt;#check the internet  and check if previous file is present&lt;/span&gt;
+try:
+	requests.get&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;http://www.google.com&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+	print&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Internet present&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+	IPfile &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; open&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;ipfile.txt&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;r&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+	lastIP &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; IPfile.read&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;	
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; lastIP &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; currentIP:
+		print&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;No changes last IP: &amp;#39;&lt;/span&gt; + lastIP + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39; current IP: &amp;#39;&lt;/span&gt; + currentIP&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;:
+		with open&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;ipfile.txt&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;w+&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; as f:
+			f.write&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;currentIP&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+			f.close&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
+			sendAR&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;currentIP&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+			print&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;IP updated&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#handle no file&lt;/span&gt;			
+except IOError:
+	&lt;span style=&#34;color:#75715e&#34;&gt;#print(IOError)&lt;/span&gt;
+	with open&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;ipfile.txt&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;w+&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; as f:
+		IPfile &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; ipgetter.myip&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
+		f.write&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;IPfile&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+		f.close&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
+		print&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;created file with current IP&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+		sendAR&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;currentIP&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+		quit&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#Handle no internet&lt;/span&gt;		
+except requests.ConnectionError:
+	quit&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;运行脚本后，会监视ip变化，如果发生变化则通知最新ip，如果未发生变化则不通知。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>使用手机远程控制树莓派GPIO</title>
+      <link>https://unixetc.com/post/use-your-phone-to-remotely-control-raspberrypi/</link>
+      <pubDate>Thu, 13 Apr 2017 14:14:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/use-your-phone-to-remotely-control-raspberrypi/</guid>
+      <description>&lt;p&gt;必备条件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;树莓派已联网&lt;/li&gt;
+&lt;li&gt;安装官方镜像&lt;/li&gt;
+&lt;li&gt;只支持Raspberry Pi 2/3 Model B&lt;/li&gt;
+&lt;li&gt;只支持Android手机&lt;/li&gt;
+&lt;li&gt;安装Java8&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;安装官方镜像raspbian&#34;&gt;安装官方镜像Raspbian&lt;/h3&gt;
+&lt;p&gt;下载地址 &lt;a href=&#34;https://www.raspberrypi.org/downloads/&#34;&gt;https://www.raspberrypi.org/downloads/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;安装java8&#34;&gt;安装Java8&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt install oracle-java8-jdk
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;下载Marsiot到树莓派&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget http://www.marsiot.com/download/marsiot.jar
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;下载Marsiot到手机，安装&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.marsiot.com/download/marsiot.apk&#34;&gt;http://www.marsiot.com/download/marsiot.apk&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在树莓派上运行&lt;strong&gt;Marsiot&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pi@raspi:~ $ sudo java -jar marsiot.jar
+
+Current version &amp;lt;101&amp;gt;
+More help: sudo java -jar marsiot.jar help
+
+Connect to www.marsiot.com...
+Connected ok!
+
+GPIO init...
+GPIO init ok!
+
+ID-CODE:c1fa PASS-CODE：11c6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;记住以上&lt;strong&gt;ID-CODE&lt;/strong&gt;、&lt;strong&gt;PASS-CODE&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在手机上打开&lt;strong&gt;火星互联&lt;/strong&gt;,&lt;strong&gt;事件中心&lt;/strong&gt;时间轴上会显示所有新加入设备，以&lt;strong&gt;ID-CODE&lt;/strong&gt;区分，找到你对应的设备点击，按照提示输入&lt;strong&gt;PASS-CODE&lt;/strong&gt;即可连接。&lt;/p&gt;
+&lt;p&gt;连接后可以在&lt;strong&gt;我的设备&lt;/strong&gt;中看到已连接的设备，点击通用视图即可实时监控&lt;strong&gt;GPIO&lt;/strong&gt;端口状态。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>修复树莓派PATH变量</title>
+      <link>https://unixetc.com/post/fix-raspberry-path-variable/</link>
+      <pubDate>Fri, 03 Mar 2017 13:13:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/fix-raspberry-path-variable/</guid>
+      <description>&lt;p&gt;使用lnmp一键工具安装完nmp后，重启进入系统就提示&lt;code&gt;bash command not found&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;然后试了试&lt;code&gt;service&lt;/code&gt;,&lt;code&gt;who&lt;/code&gt;等命令也无法使用&lt;/p&gt;
+&lt;p&gt;只有最基本的系统命令&lt;code&gt;ls&lt;/code&gt;,&lt;code&gt;cat&lt;/code&gt;等可以用&lt;/p&gt;
+&lt;p&gt;看来安装lnmp后，我的PATH变量被动了&lt;/p&gt;
+&lt;p&gt;先临时修改下PATH，便于后面操作&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:$PATH
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后检查&lt;code&gt;~/.profile&lt;/code&gt;,&lt;code&gt;/etc/profile&lt;/code&gt;是否存在，存在&lt;/p&gt;
+&lt;p&gt;检查其中的PATH赋值是否异常&lt;/p&gt;
+&lt;p&gt;经过排查，发现&lt;code&gt;/etc/profile&lt;/code&gt;中的PATH赋值异常，修改之重启OK！&lt;/p&gt;
+&lt;p&gt;在此分享正确的原始&lt;code&gt;~/.profile&lt;/code&gt;和&lt;code&gt;/etc/profile&lt;/code&gt;文件&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;~/.profile 内容&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# ~/.profile: executed by the command interpreter for login shells.
+# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
+# exists.
+# see /usr/share/doc/bash/examples/startup-files for examples.
+# the files are located in the bash-doc package.
+
+# the default umask is set in /etc/profile; for setting the umask
+# for ssh logins, install and configure the libpam-umask package.
+#umask 022
+
+# if running bash
+if [ -n &amp;quot;$BASH_VERSION&amp;quot; ]; then
+    # include .bashrc if it exists
+    if [ -f &amp;quot;$HOME/.bashrc&amp;quot; ]; then
+        . &amp;quot;$HOME/.bashrc&amp;quot;
+    fi
+fi
+
+# set PATH so it includes user&#39;s private bin if it exists
+if [ -d &amp;quot;$HOME/bin&amp;quot; ] ; then
+    PATH=&amp;quot;$HOME/bin:$PATH&amp;quot;
+fi
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;**/etc/profile内容 **&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# /etc/profile: system-wide .profile file for the Bourne shell (sh(1))
+# and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).
+
+if [ &amp;quot;`id -u`&amp;quot; -eq 0 ]; then
+PATH=&amp;quot;/usr/local/sbin:/usr/local/usr/sbin:/usr/sbin:/bin&amp;quot;
+else
+#old bak  PATH=&amp;quot;/usr/local/sbin:/usr/local/usr/sbin:/usr/sbin:/bin:/usr/local/games:/usr/games&amp;quot;
+PATH=&amp;quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/bin:/sbin:/usr/local/games:/usr/games&amp;quot;
+fi
+export PATH
+
+if [ &amp;quot;$PS1&amp;quot; ]; then
+if [ &amp;quot;$BASH&amp;quot; ] &amp;amp;&amp;amp; [ &amp;quot;$BASH&amp;quot; != &amp;quot;/bin/sh&amp;quot; ]; then
+    # The file bash.bashrc already sets the default PS1.
+    # PS1=&#39;\h:\w\$ &#39;
+    if [ -f /etc/bash.bashrc ]; then
+    . /etc/bash.bashrc
+    fi
+else
+    if [ &amp;quot;`id -u`&amp;quot; -eq 0 ]; then
+    PS1=&#39;# &#39;
+    else
+    PS1=&#39;$ &#39;
+    fi
+fi
+fi
+
+if [ -d /etc/profile.d ]; then
+for i in /etc/profile.d/*.sh; do
+    if [ -r $i ]; then
+    . $i
+    fi
+done
+unset i
+fi
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Over!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>树莓派可用的PCD8544库</title>
+      <link>https://unixetc.com/post/pcd8544-library-for-raspberry-pi/</link>
+      <pubDate>Fri, 20 Jan 2017 11:20:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/pcd8544-library-for-raspberry-pi/</guid>
+      <description>&lt;p&gt;Nokia 3310/5110显示器基于PCD8544，在此分享一个树莓派可用的PCD8544库&lt;/p&gt;
+&lt;p&gt;使用该库之前，需要安装wiringPi,安装方法可参考&lt;a href=&#34;https://unixetc.com/post/Raspberry-Pi-by-DHT11-collecting-temperature-and-humidity/&#34;&gt;树莓派连接DHT11采集温度与湿度&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;项目地址：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;https://github.com/binerry/RaspberryPi/tree/master/libraries/c/PCD8544
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;可通过&lt;a href=&#34;https://github.com/downloads/binerry/RaspberryPi/Raspberry.Pi_PCD8544.Library.zip&#34;&gt;github download&lt;/a&gt;直接下载,不能访问github的，用以下连接下载&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;http://cdn.lyq.wiki/res/Raspberry.Pi_PCD8544.Library.zip
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;解压后，可得到一个c源码和一个h头文件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;PCD8544.c
+PCD8544.h
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以及samples文件夹下的三个示例&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pcd8544_rpi.c
+pcd8544_test.c
+pcd8544_test2.c
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;按照下图所示连接好树莓派和显示器&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/raspi_pcd8544.webp&#34; alt=&#34;raspi_pcd8544&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;RST —— 复位 接GPIO 0&lt;/li&gt;
+&lt;li&gt;CE —— 片选 接GPIO 1 或 不接&lt;/li&gt;
+&lt;li&gt;DC —— 数据/指令选择 接GPIO 2&lt;/li&gt;
+&lt;li&gt;DIN —— 串行数据线 接GPIO 3&lt;/li&gt;
+&lt;li&gt;CLK —— 串行时钟线 接GPIO 5 （因为我的GPIO 4已经接了一个DHT11传感器）&lt;/li&gt;
+&lt;li&gt;VCC —— 电源输入 接3.3v&lt;/li&gt;
+&lt;li&gt;BL —— 背光控制端 接3.3v&lt;/li&gt;
+&lt;li&gt;GND —— 地线 接地&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;编译三个示例程序&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cc -o pcd8544_test pcd8544_test.c ../PCD8544.c  -L/usr/local/lib -lwiringPi
+cc -o pcd8544_test2 pcd8544_test2.c ../PCD8544.c  -L/usr/local/lib -lwiringPi
+cc -o pcd8544_rpi pcd8544_rpi.c ../PCD8544.c  -L/usr/local/lib -lwiringPi
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后运行之&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo ./pcd8544_test
+sudo ./pcd8544_test2
+sudo ./pcd8544_rpi
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;一下是三个示例运行情况&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/nokia-5110-example.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;参考: &lt;em&gt;&lt;a href=&#34;http://binerry.de/post/25787954149/pcd8544-library-for-raspberry-pi&#34;&gt;http://binerry.de/post/25787954149/pcd8544-library-for-raspberry-pi&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>树莓派安装Dnsmasq加速DNS解析</title>
+      <link>https://unixetc.com/post/raspberry-pi-install-dnsmasq-and-dnsmasq-china-list/</link>
+      <pubDate>Mon, 18 Jan 2016 21:28:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/raspberry-pi-install-dnsmasq-and-dnsmasq-china-list/</guid>
+      <description>&lt;p&gt;天朝的dns服务商尿性不是一般的大，动不动就抽风或者劫持，为了避免这种情况，可以在树莓派上安装Dnsmasq来加速dns解析，提高网络浏览体验。&lt;/p&gt;
+&lt;h3 id=&#34;安装配置dnsmasq&#34;&gt;安装配置dnsmasq&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;apt-get install dnsmasq
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;配置dnsmasq,&lt;code&gt;vi /etc/dnsmasq.conf&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;我的配置文件如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;domain=Raspi2
+resolv-file=/etc/resolv.dnsmasq
+conf-dir=/etc/dnsmasq.d
+min-port=4096
+server=114.114.114.114
+server=114.114.115.115
+server=223.5.5.5
+server=223.6.6.6
+server=119.29.29.29
+server=182.254.116.116
+server=112.124.47.27
+server=114.215.126.16
+server=101.226.4.6
+server=218.30.118.6
+server=42.120.21.30
+server=199.91.73.222
+server=178.79.131.110
+server=8.8.8.8
+server=8.8.4.4
+
+cache-size=10000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;配置完重启dnsmasq服务&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;service dnsmasq restart
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中的&lt;code&gt;server&lt;/code&gt;字段为上游DNS&lt;/p&gt;
+&lt;h3 id=&#34;配置dnsmasq-china-list&#34;&gt;配置dnsmasq-china-list&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/felixonmars/dnsmasq-china-list.git
+cd dnsmasq-china-list/
+cp *.conf  /etc/dnsmasq.d/
+service dnsmasq restart
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;至此设置完成，可以在路由器中将首选dns设为树莓派ip，这样局域网内的所有设备都可以体验dns解析加速了！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>树莓派下安装配置Noip</title>
+      <link>https://unixetc.com/post/install-configure-noip-client-in-raspberry-pi/</link>
+      <pubDate>Mon, 11 Jan 2016 12:13:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/install-configure-noip-client-in-raspberry-pi/</guid>
+      <description>&lt;h3 id=&#34;注册noip&#34;&gt;注册noip&lt;/h3&gt;
+&lt;p&gt;首先在&lt;a href=&#34;http://noip.com&#34;&gt;http://noip.com&lt;/a&gt;注册账户&lt;/p&gt;
+&lt;p&gt;然后在主机管理(Manage Hosts)中添加主机(Add A Host)，根据提示设置二级域名，IP可以随意填写。&lt;/p&gt;
+&lt;h3 id=&#34;安装noip客户端&#34;&gt;安装Noip客户端&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;wget https://www.noip.com/client/linux/noip-duc-linux.tar.gz
+tar zxf noip-duc-linux.tar.gz
+cd noip-2.1.9-1
+sudo make install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;安装过程中，按照提示输入noip帐号信息，时间间隔建议设为5s，默认30s&lt;/p&gt;
+&lt;h3 id=&#34;设置开机启动&#34;&gt;设置开机启动&lt;/h3&gt;
+&lt;p&gt;在&lt;code&gt;/etc/init.d/&lt;/code&gt;中建立&lt;code&gt;noip2&lt;/code&gt;脚本&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo vi /etc/init.d/noip2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;脚本内容如下&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#! /bin/sh
+
+### BEGIN INIT INFO
+# Provides:          noip2
+# Required-Start:    $syslog
+# Required-Stop:     $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: noip.com client service
+### END INIT INFO
+
+# . /lib/lsb/init-functions
+case &amp;quot;$1&amp;quot; in
+    start)
+        echo &amp;quot;Starting noip2.&amp;quot;
+        /usr/local/bin/noip2
+    ;;
+    stop)
+        echo &amp;quot;Shutting down noip2.&amp;quot;
+        killall noip2
+        #killproc /usr/local/bin/noip2
+    ;;
+    *)
+        echo &amp;quot;Usage: $0 {start|stop}&amp;quot;
+        exit 1
+esac
+
+exit 0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;设置开机启动&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo chmod +x /etc/init.d/noip2
+sudo update-rc.d noip2 defaults
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;设置dmz转发&#34;&gt;设置DMZ转发&lt;/h3&gt;
+&lt;p&gt;进入到路由器管理平台，为树莓派指定一个固定IP，然后在&lt;strong&gt;转发规则&lt;/strong&gt;下设置&lt;strong&gt;DMZ主机&lt;/strong&gt;将树莓派ip添加设置，重启生效。&lt;/p&gt;
+&lt;p&gt;至此设置完成，可以ping一下自定义域名，看ip是正确，以后就可以通过自定义域名访问树莓派了。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>树莓派使用ddclient和DDNS</title>
+      <link>https://unixetc.com/post/raspberry-pi-using-ddclient-and-ddns/</link>
+      <pubDate>Thu, 07 Jan 2016 12:31:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/raspberry-pi-using-ddclient-and-ddns/</guid>
+      <description>&lt;h3 id=&#34;域名解析&#34;&gt;域名解析&lt;/h3&gt;
+&lt;p&gt;首先得有个域名，在域名管理中将域名DNS设为he.net的DNS地址，如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ns1.he.net
+ns2.he.net
+ns3.he.net
+ns4.he.net
+ns5.he.net
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后在&lt;a href=&#34;http://dns.he.net&#34;&gt;http://dns.he.net&lt;/a&gt;注册账号，添加域名(Add a new domain)&lt;/p&gt;
+&lt;p&gt;接下来添加A记录(New A)，勾选允许动态域名解析(Enable entry for dynamic dns)&lt;/p&gt;
+&lt;p&gt;点击域名后DDNS列中的刷新按钮，新建一个DDNS密匙(Generate a DDNS key.)&lt;/p&gt;
+&lt;h3 id=&#34;安装设置ddclient&#34;&gt;安装设置ddclient&lt;/h3&gt;
+&lt;p&gt;在树莓派上安装ddclient&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install ddclient
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;编辑ddclient配置文件，路径为&lt;code&gt;/etc/ddclient.conf&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;protocol=dyndns2
+use=web,web=myip.dnsomatic.com
+server=dyn.dns.he.net
+login=raspi.in
+password=&#39;ddnskey&#39;
+www.raspi.in,raspi.in
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中&lt;strong&gt;password&lt;/strong&gt;为设置DDNS时的key&lt;/p&gt;
+&lt;p&gt;重启ddclient服务&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;service ddclient restart
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;验证IP查询结果&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo ddclient -query
+use=if, if=eth0 address is 192.168.1.111
+use=if, if=lo address is 127.0.0.1
+use=web, web=dnspark address is 36.40.143.235
+use=web, web=dyndns address is NOT FOUND
+use=web, web=loopia address is 36.40.143.235
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中if方式查询到的是内网地址和本机地址，web方式查询到的时外网IP&lt;/p&gt;
+&lt;p&gt;至此设置完成，可以ping一下域名试试咯！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>树莓派安装Node.js</title>
+      <link>https://unixetc.com/post/raspberry-pi-install-nodejs/</link>
+      <pubDate>Thu, 03 Dec 2015 12:32:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/raspberry-pi-install-nodejs/</guid>
+      <description>&lt;p&gt;首先查看树莓派cpu信息&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pi@raspi:~ $ cat /proc/cpuinfo
+processor       : 0
+model name      : ARMv6-compatible processor rev 7 (v6l)
+BogoMIPS        : 2.00
+Features        : half thumb fastmult vfp edsp java tls
+CPU implementer : 0x41
+CPU architecture: 7
+CPU variant     : 0x0
+CPU part        : 0xb76
+CPU revision    : 7
+
+Hardware        : BCM2708
+Revision        : 000e
+Serial          : 000000004a8acb6d
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;看清楚cpu构架，是&lt;strong&gt;ARMv6&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;然后在node.js官网下载对应版本的包，下载地址&lt;a href=&#34;https://nodejs.org/dist/&#34;&gt;https://nodejs.org/dist/&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# wget https://nodejs.org/dist/v4.2.2/node-v4.2.2-linux-arm64.tar.gz
+# tar zxf node-v4.2.2-linux-arm64.tar.gz
+# mv node-v4.2.2-linux-arm64 /usr/nodejs422
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;方便使用期间，做个链接&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# ln -s /usr/nodejs422/bin/npm /usr/bin/npm
+# ln -s /usr/nodejs422/bin/node /usr/bin/node
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;完成后查看版本信息&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# node -v
+v4.2.2
+# npm -v
+2.14.7
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;至此安装完成，官网现在放出arm编译版方便多了，为以前通过源码编译安装的岁月干杯！！！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>树莓派安装ffmpeg</title>
+      <link>https://unixetc.com/post/raspberry-pi-install-ffmpeg/</link>
+      <pubDate>Sat, 07 Nov 2015 21:23:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/raspberry-pi-install-ffmpeg/</guid>
+      <description>&lt;p&gt;先安装h264编码器&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+cd /usr/src
+git clone git://git.videolan.org/x264
+cd x264
+./configure --host=arm-unknown-linux-gnueabi --enable-static --disable-opencl
+make
+sudo make install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;下载源码编译安装ffmpeg&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd /usr/src
+git clone git://source.ffmpeg.org/ffmpeg.git
+cd ffmpeg
+sudo ./configure --arch=armel --target-os=linux --enable-gpl --enable-libx264 --enable-nonfree
+make
+sudo make install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;由于树莓派原因，这个过程很长……很长……  建议开&lt;code&gt;screen&lt;/code&gt;，然后Ctrl+a+d&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>树莓派安装配置minidlna</title>
+      <link>https://unixetc.com/post/raspberry-pi-install-minidlna-to-create-digital-media-server/</link>
+      <pubDate>Thu, 06 Aug 2015 18:26:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/raspberry-pi-install-minidlna-to-create-digital-media-server/</guid>
+      <description>&lt;h3 id=&#34;树莓派挂载移动存储&#34;&gt;树莓派挂载移动存储&lt;/h3&gt;
+&lt;p&gt;可以挂载移动硬盘或者大容量的U盘，参考以下文章：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://unixetc.com/post/raspberry-pi-mount-udisk-as-the-storage-partition/&#34;&gt;树莓派挂载U盘作为存储分区&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://unixetc.com/post/examples-of-fdisk-partition/&#34;&gt;fdisk分区实例&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;安装配置minidlna&#34;&gt;安装配置minidlna&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;#sudo apt-get install -y minidlna
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;编辑minidlna配置文件&lt;code&gt;/etc/minidlna.conf&lt;/code&gt;，内容如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;media_dir=/home/pi/dlnadoc  #媒体文件目录
+db_dir=/var/lib/minidlna    #minidlna通过SQLite来建立媒体库索引，因此需要定义数据库目录
+listening_ip=192.168.1.111  #树莓派IP
+port=8200					#web端口，可以通过ip:port查看索引状态
+friendly_name=Raspi_DLNA    #服务器命名
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;重启&lt;code&gt;minidlna&lt;/code&gt;服务&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo service minidlna restart
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;强制刷新&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo service minidlna force-reload
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;查看索引状态,浏览http://192.168.1.111:8200&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;MiniDLNA status
+Audio files: 0
+Video files: 2
+Image files: 0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;dlna客户端&#34;&gt;DLNA客户端&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;PC&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Windows7下将网络设置为&lt;strong&gt;家庭网络&lt;/strong&gt;，完成后刷新，在&lt;strong&gt;网络&lt;/strong&gt;中&lt;strong&gt;媒体设备&lt;/strong&gt;下就可以自动发现&lt;strong&gt;Rasp_DLNA&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;点击进去就可以使用MediaPlayer来浏览。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Android&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;VPlayer+ VPlayer uPnP DLNA Plugin&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;IOS&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;RushPlayer&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>树莓派使用DietPi</title>
+      <link>https://unixetc.com/post/raspberry-pi-use-dietpi/</link>
+      <pubDate>Tue, 04 Aug 2015 18:23:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/raspberry-pi-use-dietpi/</guid>
+      <description>&lt;h3 id=&#34;下载安装dietpi&#34;&gt;下载安装DietPi&lt;/h3&gt;
+&lt;p&gt;DietPi项目主页 &lt;a href=&#34;http://dietpi.com/&#34;&gt;http://dietpi.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;DietPi下载地址 &lt;a href=&#34;http://fuzon.co.uk/downloads/DietPi.7z&#34;&gt;http://fuzon.co.uk/downloads/DietPi.7z&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这个压缩包91MB，解压后的img文件522MB,比官方的小多了。&lt;/p&gt;
+&lt;p&gt;然后将镜像写入到SD卡中，linux下使用&lt;code&gt;dd&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;dd if=DietPi_v74.img of=/dev/sdc bs=2M
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Windows下使用&lt;strong&gt;Win32 Disk Imager&lt;/strong&gt;，&lt;a href=&#34;http://sourceforge.net/projects/win32diskimager/&#34;&gt;戳这里&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;写入完成后将SD卡插入树莓派，加电启动。&lt;/p&gt;
+&lt;h3 id=&#34;预设置wifi链接&#34;&gt;预设置Wifi链接&lt;/h3&gt;
+&lt;p&gt;首次使用时，可以通过编辑&lt;strong&gt;dietpi.txt&lt;/strong&gt;来进行wifi预设置。&lt;/p&gt;
+&lt;p&gt;将TF卡插入电脑读卡器，打开对应的磁盘，找到&lt;strong&gt;dietpi.txt&lt;/strong&gt;文件，打开。&lt;/p&gt;
+&lt;p&gt;找到&lt;code&gt;Wifi_Enabled=0&lt;/code&gt;，将其设置为&lt;strong&gt;1&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;然后找到&lt;code&gt;Wifi_SSID&lt;/code&gt;和&lt;code&gt;Wifi_KEY&lt;/code&gt;分别设置wifi节点名和密码，保存即可。&lt;/p&gt;
+&lt;h3 id=&#34;配置dietpi&#34;&gt;配置DietPi&lt;/h3&gt;
+&lt;p&gt;DietPi默认用户名密码为&lt;code&gt;root dietpi&lt;/code&gt;，第一次启动DietPi提示检测升级，按提示操作。&lt;/p&gt;
+&lt;p&gt;不过由于天朝网路问题，可能升级比较缓慢，建议&lt;strong&gt;Ctrl+c&lt;/strong&gt;终止升级，修改&lt;code&gt;sources.list&lt;/code&gt;为朝内镜像。&lt;/p&gt;
+&lt;p&gt;DietPi默认没有&lt;code&gt;vi&lt;/code&gt;,使用&lt;code&gt;nano&lt;/code&gt;进行编辑，添加Aliyun源。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;deb http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib
+deb-src http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;更新软件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;apt-get update&amp;amp;&amp;amp;apt-get upgrade -y
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后运行&lt;code&gt;dietpi-config&lt;/code&gt;进行配置。&lt;/p&gt;
+&lt;p&gt;DietPi - Config&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;           ┌────┤ ---------- DietPi-Config ---------- ├─────┐
+           │  Hardware : Raspberry Pi 1 (512MB)             │
+           │                                                │
+           │           1 Display Options                    │
+           │           2 Audio Options                      │
+           │           3 Performance Options                │
+           │           4 Advanced Options                   │
+           │           5 Language/Regional Options          │
+           │           6 Security Options                   │
+           │           7 Networking Options                 │
+           │           8 AutoBoot Options                   │
+           │           9 Tools                              │
+           │                                                │
+           │                                                │
+           │           &amp;lt;Ok&amp;gt;               &amp;lt;Exit&amp;gt;            │
+           │                                                │
+           └────────────────────────────────────────────────┘
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;推荐配置：&lt;/p&gt;
+&lt;p&gt;Display Options -&amp;gt; GPU/RAM Memory Split ，不适用桌面系统的话，建议选择&lt;code&gt;Server&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Performance Options -&amp;gt; Change Overclocking Profile ，设置超频选项&lt;/p&gt;
+&lt;p&gt;Language/Regional Options-&amp;gt;  Locale/Timezone ，设置语言与时区，建议将&lt;strong&gt;zh_CN&lt;/strong&gt;的四个语言全部勾选。时区选择Asia/Chongqing。&lt;/p&gt;
+&lt;p&gt;Security Options -&amp;gt; Change Root Password/Change Hostname ，修改密码和主机名&lt;/p&gt;
+&lt;p&gt;Networking Options中干货比较多，大家自行设置&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;┌──────────────────┤ --- DietPi - Network Options --- ├───────────────────┐
+│                                                                         │
+│  Ethernet     : Not Found | Enabled | Disconnected                      │
+│  Wifi         : Not Found | Disabled | Disconnected                     │
+│  Internet     : Please run Internet Test                                │
+│  Samba client : Not Installed                                           │
+│  FTP client   : Not Installed                                           │
+│  NoIp status  : Not Installed                                           │
+│                                                                         │
+│        Ethernet     Change Wired Network Settings                       │
+│        Wifi         Change Wireless Network Settings                    │
+│        Test         Run the Internet Connection Test                    │
+│        Samba Client Install now to access Windows shares                │
+│        Ftp Client   Install now to access FTP as filesystem mount       │
+│        NoIp         Install No-Ip now                                   │
+│                                                                         │
+│                                                                         │
+│                   &amp;lt;Ok&amp;gt;                       &amp;lt;Back&amp;gt;                     │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;设置完成后重启系统。&lt;/p&gt;
+&lt;h3 id=&#34;dietpi软件快捷安装工具&#34;&gt;DietPi软件快捷安装工具&lt;/h3&gt;
+&lt;p&gt;DietPi自带一个便捷的软件安装工具&lt;code&gt;dietpi-software&lt;/code&gt;，可以通过这个工具快速安装一些常用软件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Setup USB Dedicated Drive?
+    ┌───────────────────┤ Setup USB Dedicated Drive? ├───────────────────┐
+    │                                                                    │
+    │ Will you be using a dedicated USB hard drive with this DietPi      │
+    │ installation?                                                      │
+    │                                                                    │
+    │ (NOTICE) Your decision now is final and cannot be changed at a     │
+    │ later date. DietPi will automatically setup your future software   │
+    │ installations to utilize the USB drive instead of MicroSD.         │
+    │ As USB hard drives are generally faster than MicroSD, using a USB  │
+    │ drive can vastly improve system performance.                       │
+    │                                                                    │
+    │  This is recommended for:                                          │
+    │  - BitTorrent (Store downloads)                                    │
+    │  - OwnCloud                                                        │
+    │  - Kodi (Store Media Files)                                        │
+    │  - RetroPie (Store Roms)                                           │
+    │  - Hifi (Store Music)                                              │
+    │                                                                    │
+    │                                                                    │
+    │                  &amp;lt;Yes&amp;gt;                     &amp;lt;No&amp;gt;                    │
+    │                                                                    │
+    └────────────────────────────────────────────────────────────────────┘
+
+      ┌────┤ ---------- DietPi - Software Setup ---------- ├─────┐
+      │                                                          │
+      │           1  Select DietPi Optimized Software.           │
+      │           2  Select Additional Linux Software.           │
+      │           3  SSH Server  : Dropbear                      │
+      │           4  File Server : None                          │
+      │           5  Log System  : DietPi-Ramlog #1              │
+      │           6  DietPi-Config                               │
+      │           7  Help!                                       │
+      │           Go Start Install                               │
+      │                                                          │
+      │                                                          │
+      │              &amp;lt;Ok&amp;gt;                  &amp;lt;Exit&amp;gt;                │
+      │                                                          │
+      └──────────────────────────────────────────────────────────┘
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;1  Select DietPi Optimized Software.包含以下软件:&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;2  Select Additional Linux Software.包含以下软件&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>将树莓派数据上传至乐为物联</title>
+      <link>https://unixetc.com/post/sumbit-raspberry-pi-data-to-lewei50/</link>
+      <pubDate>Thu, 30 Jul 2015 12:59:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/sumbit-raspberry-pi-data-to-lewei50/</guid>
+      <description>&lt;p&gt;进入&lt;a href=&#34;http://www.lewei50.com/&#34;&gt;http://www.lewei50.com/&lt;/a&gt;注册登录&lt;/p&gt;
+&lt;h3 id=&#34;添加设备add-device&#34;&gt;添加设备(Add Device)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;我的物联&lt;/strong&gt; -&amp;gt; &lt;strong&gt;我的设备&lt;/strong&gt;，添加新设备，类型选择&lt;strong&gt;其他&lt;/strong&gt;，不使用模板。&lt;/p&gt;
+&lt;p&gt;请自定义设备&lt;strong&gt;标识&lt;/strong&gt;，后面要用到。&lt;/p&gt;
+&lt;h4 id=&#34;添加传感器&#34;&gt;添加传感器&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;我的物联&lt;/strong&gt; -&amp;gt; &lt;strong&gt;感器与控制器&lt;/strong&gt;，新建传感器。&lt;/p&gt;
+&lt;p&gt;其中&lt;strong&gt;标识&lt;/strong&gt;为提交数据依据，建议英文。&lt;/p&gt;
+&lt;h3 id=&#34;向乐为物联提交数据&#34;&gt;向乐为物联提交数据&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;lewei.sh&lt;/code&gt;代码如下 &lt;a href=&#34;http://cdn.lyq.wiki/res/lewei.sh&#34;&gt;http://cdn.lyq.wiki/res/lewei.sh&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+LURL=http://www.lewei50.com/api/V1/Gateway/UpdateSensors/01
+KEY=&amp;quot;2fasdfsdfsdf9ffadsf62dfbfsdfa1&amp;quot;
+sys_load=`cat /proc/loadavg | awk &#39;{print $2}&#39;`
+st=`/usr/bin/sen_t`
+sh=`/usr/bin/sen_h`
+
+for i in 1 2 3 4 5; do
+        sys_temp=`cat /sys/class/thermal/thermal_zone0/temp | awk &#39;{print $1/1000}&#39;`
+        if [[ &amp;quot;${sys_temp}&amp;quot; =~ ^- ]]
+        then
+                sys_temp=&#39;0.0&#39;
+        else
+                echo ${sys_temp}
+                break
+        fi
+done
+
+echo &amp;quot;Printf Values&amp;quot;
+echo &amp;quot;sys_temp:&amp;quot;${sys_temp}
+echo &amp;quot;sys_load:&amp;quot;${sys_load}
+echo &amp;quot;sensor_t:&amp;quot;${st}
+echo &amp;quot;sensor_h:&amp;quot;${sh}
+echo &amp;quot;Done!&amp;quot;
+
+echo &amp;quot;Sumbit Data to Lewei&amp;quot;
+
+curl --request POST ${LURL} --header &amp;quot;userkey:${KEY}&amp;quot; --data &amp;quot;[{&#39;Name&#39;:&#39;load&#39;,&#39;Value&#39;:&#39;${sys_load}&#39;},{&#39;Name&#39;:&#39;temp&#39;,&#39;Value&#39;:&#39;${sys_temp}&#39;},{&#39;Name&#39;:&#39;sd&#39;,&#39;Value&#39;:&#39;${sh}&#39;},{&#39;Name&#39;:&#39;wd&#39;,&#39;Value&#39;:&#39;${st}&#39;}]&amp;quot; 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中&lt;strong&gt;LURL&lt;/strong&gt;后面的&lt;strong&gt;01&lt;/strong&gt;为设备标识,&lt;strong&gt;KEY&lt;/strong&gt;为用户&lt;strong&gt;Userkey&lt;/strong&gt;,JSON数据中的&lt;strong&gt;Name&lt;/strong&gt;对应相应的&lt;strong&gt;传感器标识&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;其中**/usr/bin/**下的**st,sh**为通过DHT11采集温度与湿度程序，参考&lt;a href=&#34;https://unixetc.com/post/Raspberry-Pi-by-DHT11-collecting-temperature-and-humidity/&#34;&gt;树莓派通过DHT11采集温度与湿度&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;接下来添加cronta任务，每隔1分钟运行一次该脚本&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# m h  dom mon dow   command
+*/1 * * * * /home/pi/lewei.sh&amp;gt;/dev/null 2&amp;gt;&amp;amp;1 &amp;amp;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后可以通过&lt;a href=&#34;http://www.lewei50.com/u/g/12290&#34;&gt;http://www.lewei50.com/u/g/12290&lt;/a&gt;来查看具体的数据以及图表&lt;/p&gt;
+&lt;p&gt;监控页面&lt;a href=&#34;http://raspi.in&#34;&gt;http://raspi.in&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;参考:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.lewei50.com/dev/content/api?sk=70&#34;&gt;http://www.lewei50.com/dev/content/api?sk=70&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.dqy.me/2013/use-cosm.html&#34;&gt;http://www.dqy.me/2013/use-cosm.html&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://personal.xively.com/dev/tutorials/pi/&#34;&gt;https://personal.xively.com/dev/tutorials/pi/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Xively与树莓派监控温度与湿度</title>
+      <link>https://unixetc.com/post/use-xively-monitor-raspberry-pi/</link>
+      <pubDate>Tue, 14 Jul 2015 14:14:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/use-xively-monitor-raspberry-pi/</guid>
+      <description>&lt;p&gt;进入&lt;a href=&#34;https://www.xively.com/&#34;&gt;https://www.xively.com/&lt;/a&gt;注册登录&lt;/p&gt;
+&lt;h3 id=&#34;添加设备add-device&#34;&gt;添加设备(Add Device)&lt;/h3&gt;
+&lt;p&gt;在&lt;strong&gt;Development Devices&lt;/strong&gt;页面点击&lt;strong&gt;Add Device&lt;/strong&gt;添加设备&lt;/p&gt;
+&lt;p&gt;填写&lt;strong&gt;Device Name&lt;/strong&gt;和&lt;strong&gt;Device Description&lt;/strong&gt;，将&lt;strong&gt;Privacy&lt;/strong&gt;设定为&lt;strong&gt;Public Device&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;设置api-key&#34;&gt;设置API Key&lt;/h4&gt;
+&lt;p&gt;进入Device详情页，在&lt;strong&gt;API Keys&lt;/strong&gt;中点击&lt;strong&gt;Add Key&lt;/strong&gt;添加一个Key,将&lt;strong&gt;Permissions&lt;/strong&gt;中的&lt;strong&gt;Read,Create,Update,Delete&lt;/strong&gt;全部勾选，&lt;strong&gt;Label&lt;/strong&gt;随便填。&lt;/p&gt;
+&lt;h3 id=&#34;向xively提交数据&#34;&gt;向Xively提交数据&lt;/h3&gt;
+&lt;p&gt;在这里通过&lt;strong&gt;CURL&lt;/strong&gt;向xively提交&lt;strong&gt;JSON&lt;/strong&gt;格式的数据&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;JSON数据格式&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+  &amp;quot;datastreams&amp;quot;: [
+    {
+       &amp;quot;id&amp;quot;: &amp;quot;load&amp;quot;,
+       &amp;quot;current_value&amp;quot;: &amp;quot;9.00&amp;quot;
+    },
+    {
+      &amp;quot;id&amp;quot;: &amp;quot;temp&amp;quot;,
+      &amp;quot;current_value&amp;quot;: &amp;quot;89.15&amp;quot;
+    }
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中每个id为数据定义的idcurrent_value为提交的值&lt;/p&gt;
+&lt;p&gt;脚本文件&lt;strong&gt;send_xively.sh&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+LOCATION=&#39;/home/pi/xively_data&#39;   #Path of Xively JSON DATA file
+API_KEY=&#39;orxUhgjqSYPDbv5243534tG65464345eArxSVY9pE8ITnE&#39; #API Key
+FEED_ID=&#39;1354438558&#39; #FEED_ID
+####################################################
+
+COSM_URL=https://api.xively.com/v2/feeds/${FEED_ID}?timezone=+8
+cpu_load=`cat /proc/loadavg | awk &#39;{print $2}&#39;`
+sen_t=`sudo /home/pi/st`
+sen_h=`sudo /home/pi/sh`
+
+for i in 1 2 3 4 5; do
+        cpu_t=`cat /sys/class/thermal/thermal_zone0/temp | awk &#39;{print $1/1000}&#39;`
+        if [[ &amp;quot;${cpu_t}&amp;quot; =~ ^- ]]
+        then
+                cpu_t=&#39;0.0&#39;
+        else
+                echo ${cpu_t}
+                break
+        fi
+done
+
+STR=`awk &#39;BEGIN{printf &amp;quot;{\&amp;quot;datastreams\&amp;quot;:[ {\&amp;quot;id\&amp;quot;:\&amp;quot;cpu_load\&amp;quot;,\&amp;quot;current_value\&amp;quot;:\&amp;quot;%.2f\&amp;quot;}, {\&amp;quot;id\&amp;quot;:\&amp;quot;cpu_temp\&amp;quot;,\&amp;quot;current_value\&amp;quot;:\&amp;quot;%.2f\&amp;quot;},{\&amp;quot;id\&amp;quot;:\&amp;quot;sensor_t\&amp;quot;,\&amp;quot;current_value\&amp;quot;:\&amp;quot;%.2f\&amp;quot;}, {\&amp;quot;id\&amp;quot;:\&amp;quot;sensor_h\&amp;quot;,\&amp;quot;current_value\&amp;quot;:\&amp;quot;%.2f\&amp;quot;}] } &amp;quot;,&#39;$cpu_load&#39;,&#39;$cpu_t&#39;,&#39;$sen_t&#39;,&#39;$sen_h&#39;}&#39;`
+
+echo ${cpu_t}
+echo ${cpu_load}
+echo ${sen_t}
+echo ${sen_h}
+echo ${STR}
+echo ${STR} &amp;gt; ${LOCATION}/cosm.json
+curl -s -v --request PUT --header &amp;quot;X-ApiKey: ${API_KEY}&amp;quot; --data-binary @${LOCATION}/cosm.json ${COSM_URL}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中&lt;strong&gt;LOCATION&lt;/strong&gt;为JSON文件存放目录，没有的话请新建。API_KEY和FEED_ID按照自己的配置填写。&lt;/p&gt;
+&lt;p&gt;其中**/home/pi/**下的**st,sh**为通过DHT11采集温度与湿度程序，参考&lt;a href=&#34;https://unixetc.com/post/Raspberry-Pi-by-DHT11-collecting-temperature-and-humidity.html&#34;&gt;树莓派通过DHT11采集温度与湿度&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;接下来添加cronta任务，每隔1分钟运行一次该脚本&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# m h  dom mon dow   command
+*/1 * * * * /home/pi/send_xively.sh&amp;gt;/dev/null 2&amp;gt;&amp;amp;1 &amp;amp;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后可以通过&lt;a href=&#34;https://personal.xively.com/feeds/1255758558&#34;&gt;https://personal.xively.com/feeds/1255758558&lt;/a&gt;来查看具体的数据以及图表&lt;/p&gt;
+&lt;p&gt;监控页面&lt;a href=&#34;http://zjq.in/raspi_sensor&#34;&gt;http://zjq.in/raspi_sensor&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;参考:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.dqy.me/2013/use-cosm.html&#34;&gt;http://www.dqy.me/2013/use-cosm.html&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://personal.xively.com/dev/tutorials/pi/&#34;&gt;https://personal.xively.com/dev/tutorials/pi/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>树莓派连接DHT11采集温度与湿度</title>
+      <link>https://unixetc.com/post/raspberry-pi-by-dht11-collecting-temperature-and-humidity/</link>
+      <pubDate>Sun, 21 Jun 2015 16:21:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/raspberry-pi-by-dht11-collecting-temperature-and-humidity/</guid>
+      <description>&lt;h3 id=&#34;dht11介绍&#34;&gt;DHT11介绍&lt;/h3&gt;
+&lt;p&gt;DHT11是一款有已校准数字信号输出的温湿度传感器。 精度湿度+-5%RH， 温度+-2℃，量程湿度20-90%RH， 温度0~50℃。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;DHT11针脚说明&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/dht11.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;VCC	供电 3－5.5VDC&lt;/li&gt;
+&lt;li&gt;DATA	串行数据，单总线&lt;/li&gt;
+&lt;li&gt;N/A	空脚，请悬空&lt;/li&gt;
+&lt;li&gt;GND	接地，电源负极&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;硬件连接&#34;&gt;硬件连接&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;树莓派GPIO针脚说明&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/Pi-GPIO-header-26-sm.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;DHT11与树莓派链接&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;VCC连接+3V3 
+DATA连接GPIO4 
+GND链接GND&lt;/p&gt;
+&lt;h3 id=&#34;软件部分&#34;&gt;软件部分&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;安装wiringPi&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install git-core
+git clone git://git.drogon.net/wiringPi
+cd wiringPi
+./build
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果由于网络原因无法&lt;code&gt;git clone&lt;/code&gt;成功，可以从此下载wiringPi &lt;a href=&#34;http://cdn.lyq.wiki/res/wiringPi_v2.3.1.zip&#34;&gt;http://cdn.lyq.wiki/res/wiringPi_v2.3.1.zip&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;验证是否安装成功&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gpio -v
+gpio readall
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;下载编译C语言程序代码&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget http://cdn.lyq.wiki/res/sensor.c
+gcc -o sensor sensor.c -lwiringPi
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;运行程序&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo ./sensor
+24,39
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;输出结果，第一个为湿度，第二个为温度&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>入手树莓派2 Model B</title>
+      <link>https://unixetc.com/post/starting-raspberry-pi-2-model-b/</link>
+      <pubDate>Thu, 12 Mar 2015 23:12:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/starting-raspberry-pi-2-model-b/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/raspi2.webp&#34; alt=&#34;Raspberry Pi 2 Model B正面&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/raspi2_b.webp&#34; alt=&#34;Raspberry Pi 2 Model B背面&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;树莓派 2 Mode B 配置详情&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;A 900MHz quad-core ARM Cortex-A7 CPU&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;1GB RAM&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;4 USB ports&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;40 GPIO pins&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Full HDMI port&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ethernet port&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Combined 3.5mm audio jack and composite video&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Camera interface (CSI)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Display interface (DSI)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Micro SD card slot&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;VideoCore IV 3D graphics core&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>组装ATRIX 4G Laptop Dock和树莓派</title>
+      <link>https://unixetc.com/post/assemble-atrix-4g-pc-docking-and-raspberry-pi/</link>
+      <pubDate>Sat, 28 Feb 2015 02:28:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/assemble-atrix-4g-pc-docking-and-raspberry-pi/</guid>
+      <description>&lt;p&gt;清单如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Raspberry Pi B+&lt;/li&gt;
+&lt;li&gt;Laptop Dock for Motorola ATRIX 4G&lt;/li&gt;
+&lt;li&gt;Micro-HDMI 母对母转接头&lt;/li&gt;
+&lt;li&gt;HDMI-Micro HDMI 公对公连接线&lt;/li&gt;
+&lt;li&gt;Micro USB 母对母延长线&lt;/li&gt;
+&lt;li&gt;USB-Micro USB充电线一根&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以下为实物图:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/laptopdock.webp&#34; alt=&#34;Laptop Dock for Motorola ATRIX 4G&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/microhdmigg.webp&#34; alt=&#34;Micro HDMI 母对母转接头&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/hdmimicrohdmi.webp&#34; alt=&#34;HDMI Micro HDMI 公对公连接线&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/mircousbmm.webp&#34; alt=&#34;Micro USB 母对母延长线&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/usbcabe.webp&#34; alt=&#34;USB-Micro USB充电线一根&#34;&gt;&lt;/p&gt;
+&lt;p&gt;操作:&lt;/p&gt;
+&lt;p&gt;主要是将一个Micro USB母口和一对USB/Micro USb公口相连，然后就可以通过Laptop Dock进行供电，并且链接Laptop Dock键盘。&lt;/p&gt;
+&lt;p&gt;下图是一张Laptop Dock接口的照片:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/dockport.webp&#34; alt=&#34;Laptop Dock接口&#34;&gt;&lt;/p&gt;
+&lt;p&gt;以下为USB引脚定义:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;红 电源+&lt;/li&gt;
+&lt;li&gt;白 数据-&lt;/li&gt;
+&lt;li&gt;绿 数据+&lt;/li&gt;
+&lt;li&gt;黑 接地&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因此需要将Laptop上的Micro USB引出的电路进行改造，将其中的&lt;strong&gt;电源&lt;/strong&gt;接到Micro USB公口上给树莓派供电，将&lt;strong&gt;数据&lt;/strong&gt;接到USB公口上链接键盘，线路改造图示如下:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/dockwithrspi.png&#34; alt=&#34;线路改造图示&#34;&gt;&lt;/p&gt;
+&lt;p&gt;接下来就是考验动手能力了，完成后的实物图如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/1f2usb.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/wctlr.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>树莓派安装TP WN322G&#43;驱动</title>
+      <link>https://unixetc.com/post/raspberry-pi-install-tp-wn322g-drivers/</link>
+      <pubDate>Sat, 07 Feb 2015 12:27:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/raspberry-pi-install-tp-wn322g-drivers/</guid>
+      <description>&lt;p&gt;首先查看usb设备&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pi@raspi ~ $ lsusb
+Bus 001 Device 002: ID 0424:9514 Standard Microsystems Corp.
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+Bus 001 Device 003: ID 0424:ec00 Standard Microsystems Corp.
+Bus 001 Device 004: ID 0ace:1215 ZyDAS ZD1211B 802.11g
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;注意，最后一行为无线网卡信息&lt;/p&gt;
+&lt;p&gt;打开&lt;a href=&#34;https://wiki.debian.org/WiFi&#34;&gt;https://wiki.debian.org/WiFi&lt;/a&gt;，查看是否有对照型号的固件&lt;/p&gt;
+&lt;p&gt;安装对应的固件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pi@raspi ~ $ sudo apt-get install zd1211-firmware
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;完成后使用&lt;code&gt;iwconfig&lt;/code&gt;检查是否已经安装成功&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pi@raspi ~ $ iwconfig
+wlan0     IEEE 802.11bg  ESSID:off/any
+          Mode:Managed  Access Point: Not-Associated   Tx-Power=20 dBm
+          Retry  long limit:7   RTS thr:off   Fragment thr:off
+          Power Management:off
+
+lo        no wireless extensions.
+
+eth0      no wireless extensions.&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>树莓派设置时区和ntp时间同步</title>
+      <link>https://unixetc.com/post/raspberry-pi-set-timezone-and-ntp/</link>
+      <pubDate>Fri, 26 Dec 2014 14:23:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/raspberry-pi-set-timezone-and-ntp/</guid>
+      <description>&lt;h3 id=&#34;设置时区&#34;&gt;设置时区&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;使用&lt;code&gt;raspi-config&lt;/code&gt;设置&lt;/p&gt;
+&lt;p&gt;raspi-config&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Internationalisation Options -&amp;gt;  Change Timezone&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;使用&lt;code&gt;tzselect&lt;/code&gt;设置&lt;/p&gt;
+&lt;p&gt;tzselect&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;然后根据提示，选择时区&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;手动设置**/etc/localtime**&lt;/p&gt;
+&lt;p&gt;rm /etc/localtime
+ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;安装配置ntp&#34;&gt;安装配置NTP&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install ntp ntpdate
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;编辑&lt;code&gt;ntp&lt;/code&gt;配置文件**/etc/ntp.conf**，添加以下内容&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;server 0.asia.pool.ntp.org
+server 1.asia.pool.ntp.org
+server 2.asia.pool.ntp.org
+server 3.asia.pool.ntp.org
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;重启ntp服务&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;service ntp restart&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>树莓派挂载U盘</title>
+      <link>https://unixetc.com/post/raspberry-pi-mount-udisk-as-the-storage-partition/</link>
+      <pubDate>Thu, 11 Dec 2014 21:21:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/raspberry-pi-mount-udisk-as-the-storage-partition/</guid>
+      <description>&lt;p&gt;树莓派用的是8g的TF卡，想作为小型NAS有点小，存不了多少东西，于是将一个闲置的32G U盘挂载上，当作存储分区&lt;/p&gt;
+&lt;p&gt;以下为操作过程：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;查看磁盘信息&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pi@raspberrypi ~ $ sudo fdisk -l
+
+Disk /dev/mmcblk0: 7990 MB, 7990149120 bytes
+4 heads, 16 sectors/track, 243840 cylinders, total 15605760 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x000981cb
+
+        Device Boot      Start         End      Blocks   Id  System
+/dev/mmcblk0p1            8192      122879       57344    c  W95 FAT32 (LBA)
+/dev/mmcblk0p2          122880    15605759     7741440   83  Linux
+
+Disk /dev/sda: 32.2 GB, 32229031936 bytes
+255 heads, 63 sectors/track, 3918 cylinders, total 62947328 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x15a8a090
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1            2048    62947327    31472640    f  W95 Ext&#39;d (LBA)
+/dev/sda5            4096    62947327    31471616    7  HPFS/NTFS/exFAT
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这里看到，&lt;strong&gt;/dev/sda&lt;/strong&gt;为32G的磁盘，分区格式为NTFS，现在就是要将改磁盘挂载为linux分区。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;编辑分区&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pi@raspberrypi ~ $ sudo fdisk /dev/sda
+
+Command (m for help): p   //查看分区信息
+
+Disk /dev/sda: 32.2 GB, 32229031936 bytes
+255 heads, 63 sectors/track, 3918 cylinders, total 62947328 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x15a8a090
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1            2048    62947327    31472640    f  W95 Ext&#39;d (LBA)
+/dev/sda5            4096    62947327    31471616    7  HPFS/NTFS/exFAT
+
+Command (m for help): d //删除分区
+Partition number (1-5): 5
+
+Command (m for help): p
+
+Disk /dev/sda: 32.2 GB, 32229031936 bytes
+255 heads, 63 sectors/track, 3918 cylinders, total 62947328 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x15a8a090
+
+   Device Boot      Start         End      Blocks   Id  System
+
+Command (m for help): m //查看命令
+Command action
+   a   toggle a bootable flag
+   b   edit bsd disklabel
+   c   toggle the dos compatibility flag
+   d   delete a partition
+   l   list known partition types
+   m   print this menu
+   n   add a new partition
+   o   create a new empty DOS partition table
+   p   print the partition table
+   q   quit without saving changes
+   s   create a new empty Sun disklabel
+   t   change a partition&#39;s system id
+   u   change display/entry units
+   v   verify the partition table
+   w   write table to disk and exit
+   x   extra functionality (experts only)
+
+Command (m for help): n  //新建分区
+Partition type:
+   p   primary (0 primary, 0 extended, 4 free)
+   e   extended
+Select (default p):
+Using default response p
+Partition number (1-4, default 1):
+Using default value 1
+First sector (2048-62947327, default 2048):
+Using default value 2048
+Last sector, +sectors or +size{K,M,G} (2048-62947327, default 62947327):
+Using default value 62947327
+
+Command (m for help): p
+
+Disk /dev/sda: 32.2 GB, 32229031936 bytes
+255 heads, 63 sectors/track, 3918 cylinders, total 62947328 sectors
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x15a8a090
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sda1            2048    62947327    31472640   83  Linux
+
+Command (m for help): w
+The partition table has been altered!
+
+Calling ioctl() to re-read partition table.
+Syncing disks.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以上完成后就会新建**/dev/sda1**分区&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;格式化分区&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pi@raspberrypi ~ $ sudo mkfs.ext3 /dev/sda1
+mke2fs 1.42.5 (29-Jul-2012)
+Filesystem label=
+OS type: Linux
+Block size=4096 (log=2)
+Fragment size=4096 (log=2)
+Stride=0 blocks, Stripe width=0 blocks
+1970416 inodes, 7868160 blocks
+393408 blocks (5.00%) reserved for the super user
+First data block=0
+Maximum filesystem blocks=0
+241 block groups
+32768 blocks per group, 32768 fragments per group
+8176 inodes per group
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,
+        4096000
+
+Allocating group tables: done
+Writing inode tables: done
+Creating journal (32768 blocks): done
+Writing superblocks and filesystem accounting information: done
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;挂载U盘&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pi@raspberrypi ~ $ mkdir ussd
+pi@raspberrypi ~ $ sudo mount /dev/sda1 ./ussd/
+pi@raspberrypi ~ $ df -hal
+Filesystem      Size  Used Avail Use% Mounted on
+rootfs          7.3G  3.0G  3.9G  44% /
+/dev/root       7.3G  3.0G  3.9G  44% /
+devtmpfs        211M     0  211M   0% /dev
+tmpfs            44M  220K   44M   1% /run
+tmpfs           5.0M     0  5.0M   0% /run/lock
+proc               0     0     0    - /proc
+sysfs              0     0     0    - /sys
+tmpfs            88M     0   88M   0% /run/shm
+devpts             0     0     0    - /dev/pts
+/dev/mmcblk0p1   56M   19M   38M  34% /boot
+/dev/sda1        30G   45M   28G   1% /home/pi/ussd
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;开机自动挂载U盘&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;编辑**/etc/fstab**&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pi@raspberrypi ~ $ cat /etc/fstab
+proc            /proc           proc    defaults          0       0
+/dev/mmcblk0p1  /boot           vfat    defaults          0       2
+/dev/mmcblk0p2  /               ext4    defaults,noatime  0       1
+/dev/sda1       /home/pi/ussd   ext3    defaults          0       0
+# a swapfile is not a swap partition, so no using swapon|off from here on, use  dphys-swapfile     swap[on|off]  for that&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>树莓派使用Ngrok实例</title>
+      <link>https://unixetc.com/post/raspberry-pi-install-ngrok/</link>
+      <pubDate>Wed, 26 Nov 2014 11:26:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/raspberry-pi-install-ngrok/</guid>
+      <description>&lt;p&gt;首先在ngrok &lt;a href=&#34;https://ngrok.com/&#34;&gt;https://ngrok.com/&lt;/a&gt;注册登录&lt;/p&gt;
+&lt;p&gt;架设已经在树莓派上安装了Nginx，端口为80&lt;/p&gt;
+&lt;p&gt;那么下载Linux/ARM版ngrok到树莓派，执行如下命令：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ngrok -authtoken UfATi0wi98gGMqQ+/GsP 80
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中&lt;strong&gt;UfATi0wi98gGMqQ+/GsP&lt;/strong&gt;为你的auth token&lt;/p&gt;
+&lt;p&gt;然后就会出现如下提示:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Forwarding    http://36772918.ngrok.com -&amp;gt; 127.0.0.1:80           
+Forwarding    https://36772918.ngrok.com -&amp;gt; 127.0.0.1:80          
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;按照提示，可以通过那两个二级域名来浏览web服务。&lt;/p&gt;
+&lt;p&gt;以上验证只需要输入一次，下次可以直接使用如下命令来运行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ngrok 80
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;ngrok其他用法&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;自定义二级域名&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;使用自定义的字符串代替系统分配的数字&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ngrok -subdomain mysubd 80
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;开启密码保护&lt;/p&gt;
+&lt;p&gt;ngrok -httpauth &amp;ldquo;user:password&amp;rdquo; 80&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;TCP隧道&lt;/p&gt;
+&lt;p&gt;ngrok tcp 22&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>修改树莓派Swap</title>
+      <link>https://unixetc.com/post/modify-the-raspberry-pi-swap-size/</link>
+      <pubDate>Thu, 30 Oct 2014 14:30:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/modify-the-raspberry-pi-swap-size/</guid>
+      <description>&lt;p&gt;树莓派的swap大小在&lt;code&gt;/etc/dphys-swapfile&lt;/code&gt;中定义，默认为100M&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pi@raspi:~$ cat /etc/dphys-swapfile 
+CONF_SWAPSIZE=1000
+pi@raspi:/mnt$ free -h
+         total       used       free     shared    buffers     cached
+Mem:          437M        36M       401M         0B       2.1M        12M
+-/+ buffers/cache:        22M       415M
+Swap:          99M         0B        99M
+pi@raspi:/mnt$ 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;可以自己修改&lt;code&gt;CONF_SWAPSIZE&lt;/code&gt;的值，单位为兆(MB)&lt;/p&gt;
+&lt;p&gt;修改后重启树莓派生效，如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pi@raspi:~$ cat /etc/dphys-swapfile 
+CONF_SWAPSIZE=1000
+pi@raspi:~$ free -h
+             total       used       free     shared    buffers     cached
+Mem:          437M        53M       383M         0B       7.9M        23M
+-/+ buffers/cache:        22M       415M
+Swap:         999M         0B       999M&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>树莓派中使用TL-WN725N</title>
+      <link>https://unixetc.com/post/use-tl-wn725n-in-raspberry-pi/</link>
+      <pubDate>Tue, 12 Aug 2014 18:12:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/use-tl-wn725n-in-raspberry-pi/</guid>
+      <description>&lt;p&gt;Raspbian版本 &lt;strong&gt;2014-01-07-wheezy-raspbian.img&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;下载地址为&lt;a href=&#34;http://cdn.lyq.wiki/res/8188eu-20140616.tar.gz&#34;&gt;http://cdn.lyq.wiki/res/8188eu-20140616.tar.gz&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;首先固网链接树莓派，通过SSH登录&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget http://cdn.lyq.wiki/res/8188eu_31024_614.zip
+unzip 8188eu_31024_614.zip
+sudo mv 8188eu.ko /lib/modules/`uname -r`/kernel/drivers/net/wireless
+sudo chown root:root /lib/modules/`uname -r`/kernel/drivers/net/wireless/8188eu.ko
+sudo mv rtl8188eufw.bin /lib/firmware/rtlwifi/
+sudo chown root:root /lib/firmware/rtlwifi/rtl8188eufw.bin
+sudo depmod -a
+sudo modprobe 8188eu
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后编辑&lt;code&gt;/etc/netwok/interfaces&lt;/code&gt;，添加以下内容&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;allow-hotplug wlan0
+auto wlan0
+
+iface wlan0 inet manual
+wpa-roam /etc/mywpa.conf
+iface default inet dhcp
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;新建&lt;code&gt;mywpa.conf&lt;/code&gt;写入链接配置&lt;code&gt;vi /etc/mywpa.conf&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;network={
+ssid=&amp;quot;YOUR SSID&amp;quot;
+proto=RSN
+key_mgmt=WPA-PSK
+pairwise=CCMP TKIP
+group=CCMP TKIP
+psk=&amp;quot;YOUR PASSWORD&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;重启系统&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>树莓派安装Tonido打造个人云服务</title>
+      <link>https://unixetc.com/post/raspberry-pi-install-tonido-build-personal-cloud/</link>
+      <pubDate>Tue, 12 Aug 2014 18:12:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/raspberry-pi-install-tonido-build-personal-cloud/</guid>
+      <description>&lt;h3 id=&#34;安装tonido&#34;&gt;安装Tonido&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;sudo mkdir /usr/local/tonido
+cd /usr/local/tonido
+sudo wget http://patch.codelathe.com/tonido/live/installer/armv6l-rpi/tonido.tar.gz
+sudo tar -zxvf tonido.tar.gz
+./tonido.sh start
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;浏览器打开http://ip:10001开始注册设置 &lt;strong&gt;ip&lt;/strong&gt;为树莓派的地址&lt;/p&gt;
+&lt;h3 id=&#34;安装多媒体解码器&#34;&gt;安装多媒体解码器&lt;/h3&gt;
+&lt;p&gt;Tonido支持在线播放音频，但需要安装设置解码器&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd /usr/local/tonido
+sudo apt-get install ffmpeg
+sudo ln -s /usr/bin/ffmpeg ffmpeg.exe
+sudo ln -s /usr/bin/ffmpeg ffmpegv.exe
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;设置开机启动&#34;&gt;设置开机启动&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;下载脚本文件&lt;strong&gt;tonido&lt;/strong&gt; &lt;code&gt;wget http://cdn.lyq.wiki/res/tonido&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;设置脚本权限
+sudo cp tonido /etc/init.d/
+sudo chmod +x /etc/init.d/tonido&lt;/li&gt;
+&lt;li&gt;安装脚本
+sudo update-rc.d tonido defaults&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;客户端下载&#34;&gt;客户端下载&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Tonido Sync for Windows&lt;/strong&gt; &lt;a href=&#34;http://www.tonido.com/download.php?TonidoSync.exe&#34;&gt;http://www.tonido.com/download.php?TonidoSync.exe&lt;/a&gt;
+&lt;strong&gt;Tonido Sync for Mac&lt;/strong&gt; &lt;a href=&#34;http://www.tonido.com/download.php?TonidoSync.dmg&#34;&gt;http://www.tonido.com/download.php?TonidoSync.dmg&lt;/a&gt;
+&lt;strong&gt;Tonido Sync for Linux&lt;/strong&gt; &lt;a href=&#34;http://www.tonido.com/download.php?TonidoSyncSetup_i686.deb&#34;&gt;http://www.tonido.com/download.php?TonidoSyncSetup_i686.deb&lt;/a&gt;
+&lt;strong&gt;Tonido for iPhone&lt;/strong&gt; &lt;a href=&#34;http://itunes.apple.com/us/app/tonido/id388726418?mt=8&#34;&gt;http://itunes.apple.com/us/app/tonido/id388726418?mt=8&lt;/a&gt;
+&lt;strong&gt;Tonido for iPad&lt;/strong&gt; &lt;a href=&#34;http://itunes.apple.com/us/app/tonido/id388726418?mt=8&#34;&gt;http://itunes.apple.com/us/app/tonido/id388726418?mt=8&lt;/a&gt;
+&lt;strong&gt;Tonido for Android&lt;/strong&gt; &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.tonido.android&#34;&gt;https://play.google.com/store/apps/details?id=com.tonido.android&lt;/a&gt;
+&lt;strong&gt;Tonido for Windows Phone&lt;/strong&gt; &lt;a href=&#34;http://www.windowsphone.com/en-us/store/app/tonido/4eeacbe9-7405-47cc-acd0-f418471f992a&#34;&gt;http://www.windowsphone.com/en-us/store/app/tonido/4eeacbe9-7405-47cc-acd0-f418471f992a&lt;/a&gt;
+&lt;strong&gt;Tonido for BlackBerry&lt;/strong&gt; &lt;a href=&#34;http://appworld.blackberry.com/webstore/content/18126?lang=en&#34;&gt;http://appworld.blackberry.com/webstore/content/18126?lang=en&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>树莓派配置VNC</title>
+      <link>https://unixetc.com/post/raspberry-pi-configuration-vnc/</link>
+      <pubDate>Tue, 11 Mar 2014 00:23:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/raspberry-pi-configuration-vnc/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;安装VNC Server&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$sudo apt-get install tightvncserver
+$sudo apt-get install ttf-wqy-microhei //安装中文字体
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;使用VNC Server&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$vncserver -geometry 1024x768 //分辨率，推荐960x640，或者640x480
+$vncserver -kill :1  //结束vncserver进程
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Real VNC Viewer&lt;/strong&gt;链接方法： 192.168.1.2:1&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/raspi_vnc_viewer.webp&#34; alt=&#34;VNC&#34; title=&#34;VNC&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>树莓派修改软件源</title>
+      <link>https://unixetc.com/post/raspberry-pi-modify-software-source/</link>
+      <pubDate>Mon, 10 Mar 2014 12:31:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/raspberry-pi-modify-software-source/</guid>
+      <description>&lt;p&gt;中国国内推荐阿里云的开源镜像服务，地址为&lt;a href=&#34;http://mirrors.aliyun.com/&#34;&gt;http://mirrors.aliyun.com/&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;vi /etc/apt/sources.list
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;将默认的raspbian.org源注释(#)掉，加入阿里云的raspbian源&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;deb http://mirrors.aliyun.com/raspbian/raspbian/ jessie main non-free contrib
+deb-src http://mirrors.aliyun.com/raspbian/raspbian/ jessie main non-free contrib
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;更新系统&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;apt-get update&amp;amp;&amp;amp;apt-get upgrade -y&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>树莓派与DNSPod动态域名解析</title>
+      <link>https://unixetc.com/post/raspberry-pi-and-dnspod-dynamic-dns/</link>
+      <pubDate>Mon, 03 Mar 2014 03:03:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/raspberry-pi-and-dnspod-dynamic-dns/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;所需条件&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Raspberry Pi&lt;/li&gt;
+&lt;li&gt;TP-Link路由器&lt;/li&gt;
+&lt;li&gt;DNSPod帐户&lt;/li&gt;
+&lt;li&gt;域名&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;配置路由器&#34;&gt;配置路由器&lt;/h3&gt;
+&lt;p&gt;进入路由器的&lt;strong&gt;DHCP服务器&lt;/strong&gt;-&amp;gt;&lt;strong&gt;静态地址分配&lt;/strong&gt;菜单，为Raspberry Pi分配静态IP地址，例如：&lt;code&gt;192.168.1.200&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;进入路由器的&lt;strong&gt;安全功能&lt;/strong&gt;-&amp;gt;&lt;strong&gt;远端WEB管理&lt;/strong&gt;菜单，设置&lt;code&gt;WEB管理端口&lt;/code&gt;为一个&lt;strong&gt;非80&lt;/strong&gt;值，例如82&lt;/p&gt;
+&lt;p&gt;进入路由器的&lt;strong&gt;转发规则&lt;/strong&gt;-&amp;gt;&lt;strong&gt;DMZ主机&lt;/strong&gt;菜单，将&lt;code&gt;DMZ主机IP地址&lt;/code&gt;设置为Raspberry Pi的ip地址，然后启用保存。&lt;/p&gt;
+&lt;h3 id=&#34;设置dnspod动态域名解析&#34;&gt;设置DNSPod动态域名解析&lt;/h3&gt;
+&lt;p&gt;首先登录DNSPod网页管理域名，将二级域名&lt;code&gt;www&lt;/code&gt; 的&lt;code&gt;A记录&lt;/code&gt;解析到路由器外网IP(可通过路由器管理首页查询，或者通过浏览ip138.com来获得)&lt;/p&gt;
+&lt;p&gt;注：一级域名请解析**@**的A记录。&lt;/p&gt;
+&lt;p&gt;下载&lt;strong&gt;DNSPod官方客户端Lite&lt;/strong&gt; &lt;a href=&#34;https://support.dnspod.cn/Support/api&#34;&gt;https://support.dnspod.cn/Support/api&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;解压后双击打开登录，从右侧信息列表中也可以看到本机最新IP，点击相应域名后的&lt;strong&gt;动态解析&lt;/strong&gt;按钮，在动态解析设置中右键点击相应的动态记录启用即可，关闭&lt;strong&gt;DNSPod官方客户端Lite&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;设置raspberry-pi&#34;&gt;设置Raspberry Pi&lt;/h3&gt;
+&lt;p&gt;安装Web服务器软件(Nginx)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#apt-get install nginx
+#/etc/init.d/nginx start
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;内网可以通过浏览`http://192.168.1.129&amp;quot;来检查Nginx是否正常运行。&lt;/p&gt;
+&lt;p&gt;浏览&lt;a href=&#34;https://gist.githubusercontent.com/chuangbo/833369&#34;&gt;https://gist.githubusercontent.com/chuangbo/833369&lt;/a&gt;，下载动态域名解析脚本(pypod.py)&lt;/p&gt;
+&lt;p&gt;编辑&lt;code&gt;pypod.py&lt;/code&gt;修改以下内容：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;login_email=&amp;quot;email&amp;quot;, # DSNPod帐户邮箱
+login_password=&amp;quot;password&amp;quot;, # DSNPod帐户密码
+domain_id=100, # 域名id
+record_id=100, # 记录id
+sub_domain=&amp;quot;www&amp;quot;, # 子域名
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中&lt;strong&gt;域名id&lt;/strong&gt;与&lt;strong&gt;记录id&lt;/strong&gt;可以通过以下命令获取：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -k https://dnsapi.cn/Domain.List -d &amp;quot;login_email=xxx&amp;amp;login_password=xxx&amp;quot;
+curl -k https://dnsapi.cn/Record.List -d &amp;quot;login_email=xxx&amp;amp;login_password=xxx&amp;amp;domain_id=xxx&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;提示：如果你使用了&lt;strong&gt;www&lt;/strong&gt;子域名，则需要获取&lt;strong&gt;www&lt;/strong&gt;的记录id，如果使用一级域名(@)，则需要获取**@**的记录id。&lt;/p&gt;
+&lt;p&gt;编辑完&lt;code&gt;pypod.py&lt;/code&gt;保存退出，使用以下命令运行：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#python pypod.py
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;现在可以通过域名来浏览Raspberry Pi上的Web内容了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;pypod.py开机运行&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;添加&lt;code&gt;/usr/bin/python /home/pi/pypod.py&lt;/code&gt;到**/etc/rc.local**。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>树莓派安装Python开发环境与GPIO库</title>
+      <link>https://unixetc.com/post/raspberry-pi-install-python-development-environment-and-gpio-library/</link>
+      <pubDate>Sun, 02 Mar 2014 12:31:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/raspberry-pi-install-python-development-environment-and-gpio-library/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;安装python&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$sudo apt-get install python-dev
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;更新&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$sudo easy_install -U distribute
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;安装python-pip&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$sudo apt-get install python-pip
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;添加国内pypi镜像&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在&lt;strong&gt;~/.pip/pip.conf&lt;/strong&gt;中添加&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[global]
+index-url = http://mirrors.aliyun.com/pypi/simple/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;安装python的GPIO库&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$sudo pip install rpi.gpio&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>开始使用树莓派</title>
+      <link>https://unixetc.com/post/starting-use-raspberry-pi/</link>
+      <pubDate>Fri, 28 Feb 2014 12:28:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/starting-use-raspberry-pi/</guid>
+      <description>&lt;h3 id=&#34;安装系统&#34;&gt;安装系统&lt;/h3&gt;
+&lt;p&gt;从官网下载系统镜像，推荐Raspbian&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://downloads.raspberrypi.org/raspbian_latest&#34;&gt;http://downloads.raspberrypi.org/raspbian_latest&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;将下载后的zip文件解压，得到&lt;strong&gt;2014-01-07-wheezy-raspbian.img&lt;/strong&gt;文件。&lt;/p&gt;
+&lt;p&gt;准备一张SD卡，最好容量大于4GB，Class10&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;将镜像写入SD卡&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Linux下推荐使用&lt;code&gt;dd&lt;/code&gt;名来写入镜像&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;使用&lt;code&gt;fdisk -l&lt;/code&gt;检查分区信息，比如sd卡设备为**/dev/sdb**，使用以下命令写入：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#dd if=2014-01-07-wheezy-raspbian.img of=/dev/sdb bs=1M
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Windows下推荐使用&lt;strong&gt;Win32DiskImager&lt;/strong&gt;写入镜像&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Win32DiskImager下载地址：&lt;a href=&#34;http://sourceforge.net/projects/win32diskimager/&#34;&gt;http://sourceforge.net/projects/win32diskimager/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载后打开软件，选择好镜像文件与USB设备，然后点击&lt;strong&gt;Write&lt;/strong&gt;写入。&lt;/p&gt;
+&lt;h3 id=&#34;开机进入系统&#34;&gt;开机进入系统&lt;/h3&gt;
+&lt;p&gt;将已写入系统的SD卡插入Raspberry Pi，通过固网链接路由器，然后使用USB供电启动。&lt;/p&gt;
+&lt;p&gt;正常启动后，板载的&lt;strong&gt;ACT&lt;/strong&gt;，&lt;strong&gt;PWR&lt;/strong&gt;、&lt;strong&gt;FDX&lt;/strong&gt;、&lt;strong&gt;LNK&lt;/strong&gt;、&lt;strong&gt;100&lt;/strong&gt;五个指示灯均点亮。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;通过SSH连接Raspberry Pi&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;查看Raspberry Pi IP地址&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#nmap -sP 192.168.1/24
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;检查出MAC后标注(Raspberry Pi Foundation)的即为Raspberry Pi主机。&lt;/p&gt;
+&lt;p&gt;然后通过SSH来链接主机&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#ssh 192.168.1.127
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;用户名为&lt;strong&gt;pi&lt;/strong&gt;，默认密码为&lt;strong&gt;raspberry&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Widnows下推荐使用&lt;a href=&#34;http://www.chiark.greenend.org.uk/~sgtatham/putty/&#34; title=&#34;PuTTY: a free telnet/ssh client&#34;&gt;Putty&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;设置raspberry&#34;&gt;设置Raspberry&lt;/h3&gt;
+&lt;p&gt;运行设置工具&lt;code&gt;sudo raspi-config&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;选择&lt;code&gt;Expand Filesystem&lt;/code&gt;扩展文件系统&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Change User Passwd&lt;/code&gt; 修改默认用户&lt;code&gt;pi&lt;/code&gt;的密码，当然也可以在系统中使用&lt;code&gt;passwd&lt;/code&gt;命令来更改。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Advanced Options&lt;/code&gt;-&amp;gt;&lt;code&gt;Hostname&lt;/code&gt; 修改主机名&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Overclock&lt;/code&gt; 超频，建议900Mhz&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>入手树莓派1 Model B</title>
+      <link>https://unixetc.com/post/starting-raspberry-pi-1-model-b/</link>
+      <pubDate>Wed, 26 Feb 2014 12:21:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/starting-raspberry-pi-1-model-b/</guid>
+      <description>&lt;p&gt;刚刚入手Raspberry Pi 1 Model B&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;配置详情&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Broadcom BCM2835 SoC full HD multimedia applications processor&lt;/li&gt;
+&lt;li&gt;700MHz low power ARM1176JZ-F applications processor&lt;/li&gt;
+&lt;li&gt;Broadcom VideoCore IV, OpenGL ES 2.0, 1080p30 h.264/MPEG-4 AVC high profile decoder&lt;/li&gt;
+&lt;li&gt;512MB SDRAM&lt;/li&gt;
+&lt;li&gt;10/100 Ethernet RJ 45 on board network&lt;/li&gt;
+&lt;li&gt;Storage via SD/ MMC/ SDIO card slot&lt;/li&gt;
+&lt;li&gt;Dual USB connector&lt;/li&gt;
+&lt;li&gt;HDMI (rev 1.3 &amp;amp; 1.4) composite RCA (PAL and NTSC)&lt;/li&gt;
+&lt;li&gt;3.5mm jack, HDMI&lt;/li&gt;
+&lt;li&gt;Linux operating system&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;正面图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/raspif.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;背面图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/raspib.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

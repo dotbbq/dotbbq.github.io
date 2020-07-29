@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>scp on UNIXETC</title>
+    <link>https://unixetc.com/tags/scp/</link>
+    <description>UNIXETC (scp)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 08 Dec 2015 21:38:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/scp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用SCP传输文件</title>
+      <link>https://unixetc.com/post/transfer-files-using-scp/</link>
+      <pubDate>Tue, 08 Dec 2015 21:38:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/transfer-files-using-scp/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;示例：用户名root 地址 2.33.153.67&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;下载文件&#34;&gt;下载文件&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;scp root@2.33.153.67:/root/test.mp4 /home/pi/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;将服务器上的/root/test.mp4下载到本地/home/pi文件夹&lt;/p&gt;
+&lt;h3 id=&#34;上传文件&#34;&gt;上传文件&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;scp /home/pi/ok.txt root@2.33.153.67:/root
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;将本地/home/pi/ok.txt上传至服务器/root文件夹&lt;/p&gt;
+&lt;h3 id=&#34;下载文件夹&#34;&gt;下载文件夹&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;scp -r root@2.33.153.67:/root/ebooks /home/pi
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;将服务器上的/root/ebooks文件夹下载至本地/home/pi下&lt;/p&gt;
+&lt;h3 id=&#34;上传文件夹&#34;&gt;上传文件夹&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;scp  -r /home/pi/music root@2.33.153.67:/media
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;将本地/home/pi/music文件夹上传至服务器/media下&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>Linux - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/tags/linux/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+
+
+
+<meta property="og:title" content="Linux" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/tags/linux/" />
+<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <h1>Tag: Linux</h1>
+    <div class="post-info">
+        <a href="https://unixetc.com/tags">To all tags</a>
+    </div>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/use-xively-monitor-raspberry-pi/">Xively与树莓派监控温度与湿度</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        进入https://www.xively.com/注册登录
+添加设备(Add Device) 在Development Devices页面点击Add Device添加设备
+填写Device Name和Device Description，将Privacy设定为Public Device
+设置API Key 进入Device详情页，在API Keys中点击Add Key添加一个Key,将Permissions中的Read,Create,Update,Delete全部勾选，Label随便填。
+向Xively提交数据 在这里通过CURL向xively提交JSON格式的数据
+JSON数据格式
+{&quot;datastreams&quot;: [{&quot;id&quot;: &quot;load&quot;,&quot;current_value&quot;: &quot;9.00&quot;},{&quot;id&quot;: &quot;temp&quot;,&quot;current_value&quot;: &quot;89.15&quot;}]} 其中每个id为数据定义的idcurrent_value为提交的值
+脚本文件send_xively.sh
+#!/bin/bashLOCATION='/home/pi/xively_data' #Path of Xively JSON DATA fileAPI_KEY='orxUhgjqSYPDbv5243534tG65464345eArxSVY9pE8ITnE' #API KeyFEED_ID='1354438558' #FEED_ID####################################################COSM_URL=https://api.xively.com/v2/feeds/${FEED_ID}?timezone=+8cpu_load=`cat /proc/loadavg | awk '{print $2}'`sen_t=`sudo /home/pi/st`sen_h=`sudo /home/pi/sh`for i in 1 2 3 4 5; docpu_t=`cat /sys/class/thermal/thermal_zone0/temp | awk '{print $1/1000}'`if [[ &quot;${cpu_t}&quot; =~ ^- ]]thencpu_t='0.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-07-14</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/humidity">#Humidity</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E4%BC%A0%E6%84%9F%E5%99%A8">#传感器</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%B9%BF%E5%BA%A6">#湿度</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%B8%A9%E5%BA%A6">#温度</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/xively">#Xively</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/json">#JSON</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/seneor">#Seneor</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%89%A9%E8%81%94%E7%BD%91">#物联网</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/temperature">#Temperature</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/ubuntu-install-ghost-blog-system/">Ubuntu下安装Ghost博客系统</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装Nodejs sudo add-apt-repository ppa:chris-lea/node.jssudo apt-get updatesudo apt-get install nodejs 检查是否安装成功
+root@hkvps:~# node -vv0.10.37root@hkvps:~# npm -v1.4.28 安装Ghost Ghost下载地址https://ghost.org/download/
+wget https://ghost.org/zip/ghost-0.6.4.zipunzip ghost-0.6.4.zip -d ghostcd ghostnpm install --production 运行Ghost
+npm start 可以通过127.0.0.1:2368来访问
+通过nmp start来运行Ghost，退出后就会停止，因此需要一个方法让Ghost一直运行
+让Ghost一直运行 安装forever
+npm install forever -g 进入ghost目录，执行以下命令，让Ghost一直运行
+NODE_ENV=production forever start index.js 停止ghost
+forever stop index.js 查看forever运行列表
+forever list 结合Nginx配置域名 安装Nginx
+sudo apt-get install nginx 编辑配置文件
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-06-06</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/js">#JS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ghost">#ghost</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nodejs">#nodejs</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/npm">#npm</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/nginx-configuration-ssl-certificate/">Nginx配置SSL证书</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        申请Wosign免费SSL证书 申请地址: https://www.wosign.com/products/free_ssl.htm
+申请成功后，收到类似于aquan.me_sha256_cn.zip的文件,解压后包含如下文件
+for Apache.zipfor IIS.zipfor Nginx.zipfor Other Server.zipfor Tomcat.zip 其中for Nginx.zip中包含如下两个文件，将其上传到VPS自定义位置。
+ 1_aquan.me_bundle.crt 2_aquan.me.key  配置Nginx 不多说了，直接贴代码:
+#### Add Wosign SSL Start ####listen 443;ssl on;ssl_certificate /usr/local/nginx/ssl/ssl.crt;ssl_certificate_key /usr/local/nginx/ssl/ssl.key;ssl_session_timeout 5m;ssl_protocols SSLv2 SSLv3 TLSv1;ssl_ciphers ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP;ssl_prefer_server_ciphers on;#### Add Wosign SSL End #### 将以上代码插入listen 80;之后。
+重启Nginx生效
+/etc/init.d/nginx restart 以上设置完成，就可以通过https来浏览网站，同时http也可以浏览。
+合并Wosign根证书 有的浏览器会提示不信任证书，可以通过合并Wosign根证书来解决
+wget https://www.wosign.com/Root/Bundle_DV_St.crt cat Bundle_DV_St.crt &gt;&gt; /usr/local/nginx/ssl/ssl.crt 设置http跳转https 如果想将http跳转至https，可以进行如下设置:
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-05-25</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/https">#https</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssl">#ssl</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/free">#free</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/wosign">#wosign</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/crt">#crt</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/key">#key</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+    
+        
+    <div class="pagination">
+        <div class="left pagination-item ">
+            
+                <a href="/tags/linux/page/20/">To new posts</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/tags/linux/page/22/">To old posts</a>
+            
+        </div>
+    </div>
+
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

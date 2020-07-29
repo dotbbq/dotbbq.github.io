@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>YouTube on UNIXETC</title>
+    <link>https://unixetc.com/tags/youtube/</link>
+    <description>UNIXETC (YouTube)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 08 Jan 2015 11:28:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/youtube/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用youtube-dl下载YouTube视频</title>
+      <link>https://unixetc.com/post/use-youtube-dl-to-download-youtube-video/</link>
+      <pubDate>Thu, 08 Jan 2015 11:28:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/use-youtube-dl-to-download-youtube-video/</guid>
+      <description>&lt;h3 id=&#34;什么是youtube-dl&#34;&gt;什么是youtube-dl&lt;/h3&gt;
+&lt;p&gt;youtube-dl是一个简单的下载youtube视频脚本工具，基于Python。&lt;/p&gt;
+&lt;h3 id=&#34;安装youtube-dl&#34;&gt;安装youtube-dl&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;官方安装方法&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo curl https://yt-dl.org/latest/youtube-dl -o /usr/local/bin/youtube-dl
+sudo chmod a+x /usr/local/bin/youtube-dl
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;或者&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl
+sudo chmod a+x /usr/local/bin/youtube-dl
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;还有两种方法:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo pip install youtube-dl
+brew install youtube-dl
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;使用youtube-dl&#34;&gt;使用youtube-dl&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;youtube-dl [OPTIONS] URL [URL...]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;youtube-dl官网&lt;/strong&gt; &lt;a href=&#34;https://github.com/rg3/youtube-dl/&#34;&gt;https://github.com/rg3/youtube-dl/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

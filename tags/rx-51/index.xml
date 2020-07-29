@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rx-51 on UNIXETC</title>
+    <link>https://unixetc.com/tags/rx-51/</link>
+    <description>UNIXETC (rx-51)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Wed, 01 May 2019 12:14:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/rx-51/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>NokiaN900刷机方法</title>
+      <link>https://unixetc.com/post/nokia-n900-installation-firmware/</link>
+      <pubDate>Wed, 01 May 2019 12:14:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/nokia-n900-installation-firmware/</guid>
+      <description>&lt;p&gt;刷机工具以及固件文件下再地址见文章末尾。&lt;/p&gt;
+&lt;p&gt;首先安装刷机工具&lt;strong&gt;maemo flasher&lt;/strong&gt;，然后下载固件，固件分以下两个文件，下载地址&lt;a href=&#34;https://blbl.dev/NokiaN900/index.html&#34;&gt;https://blbl.dev/NokiaN900/index.html&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;emmc(vanilla)&lt;/li&gt;
+&lt;li&gt;firmware(combined)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;切记，先刷&lt;code&gt;emmc&lt;/code&gt;再刷&lt;code&gt;firmware&lt;/code&gt;，并且两次刷机中间不可以开机。&lt;/p&gt;
+&lt;p&gt;将手机关机，然后按住键盘上的&lt;!-- raw HTML omitted --&gt;u&lt;!-- raw HTML omitted --&gt;键，再用数据线将手机链接电脑，这是手机会显示NOKIA字样界面，并且右上角显示有USB图标，即进入刷机模式。&lt;/p&gt;
+&lt;p&gt;首先写入&lt;code&gt;EMMC&lt;/code&gt;文件，命令如下&lt;code&gt;flasher-3.5 -F emmc.bin -f&lt;/code&gt;，以下为linux下操作实例，以供参考&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;alair@zb14:~/下载$ sudo flasher-3.5 -F RX-51_2009SE_10.2010.13-2.VANILLA_PR_EMMC_MR0_ARM.bin -f
+[sudo] alair 的密码： 
+flasher v2.5.2 (Oct 21 2009)
+
+Image &#39;mmc&#39;, size 255947 kB
+    Version RX-51_2009SE_10.2010.13-2.VANILLA
+USB device found found at bus 002, device address 012.
+Found device RX-51, hardware revision 2204
+NOLO version 1.4.14
+Version of &#39;sw-release&#39;: RX-51_2009SE_21.2011.38-1_PR_MR0
+Booting device into flash mode.
+Suitable USB device not found, waiting.
+USB device found found at bus 002, device address 013.
+Raw data transfer EP found at EP2.
+Image(s) flashed successfully in 27.304 s (9373 kB/s)!   
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后断开链接，取出电池，重新将电池放入再次刷机模式链接电脑，下来写入&lt;code&gt;firmware&lt;/code&gt;文件，命令&lt;code&gt;flasher-3.5 -F firmware.bin -f -R&lt;/code&gt;，以下为Linux操作实例，以供参考。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;alair@zb14:~/下载$ sudo flasher-3.5 -F RX-51_2009SE_20.2010.36-2_PR_COMBINED_MR0_ARM.bin -f -R
+flasher v2.5.2 (Oct 21 2009)
+
+SW version in image: RX-51_2009SE_20.2010.36-2_PR_MR0
+Image &#39;kernel&#39;, size 1705 kB
+    Version 2.6.28-20103103+0m5
+Image &#39;rootfs&#39;, size 185728 kB
+    Version RX-51_2009SE_20.2010.36-2_PR_MR0
+Image &#39;cmt-2nd&#39;, size 81408 bytes
+    Version BB5_09.36
+Image &#39;cmt-algo&#39;, size 519808 bytes
+    Version BB5_09.36
+Image &#39;cmt-mcusw&#39;, size 5826 kB
+    Version rx51_ICPR82_10w08
+Image &#39;2nd&#39;, size 14720 bytes
+    Valid for RX-51: 2217, 2218, 2219, 2220, 2120
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2217, 2218, 2219, 2220, 2120
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2217, 2218, 2219, 2220, 2120
+    Version 1.4.14.9+0m5
+Image &#39;2nd&#39;, size 14720 bytes
+    Valid for RX-51: 2101, 2102, 2103
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2101, 2102, 2103
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2101, 2102, 2103
+    Version 1.4.14.9+0m5
+Image &#39;2nd&#39;, size 14848 bytes
+    Valid for RX-51: 2307, 2308, 2309, 2310
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2307, 2308, 2309, 2310
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2307, 2308, 2309, 2310
+    Version 1.4.14.9+0m5
+Image &#39;2nd&#39;, size 14848 bytes
+    Valid for RX-51: 2407, 2408, 2409, 2410
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2407, 2408, 2409, 2410
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2407, 2408, 2409, 2410
+    Version 1.4.14.9+0m5
+Image &#39;2nd&#39;, size 14848 bytes
+    Valid for RX-51: 2301, 2302, 2303, 2304, 2305, 2306
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2301, 2302, 2303, 2304, 2305, 2306
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2301, 2302, 2303, 2304, 2305, 2306
+    Version 1.4.14.9+0m5
+Image &#39;2nd&#39;, size 14848 bytes
+    Valid for RX-51: 2401, 2402, 2403, 2404, 2405, 2406
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2401, 2402, 2403, 2404, 2405, 2406
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2401, 2402, 2403, 2404, 2405, 2406
+    Version 1.4.14.9+0m5
+Image &#39;2nd&#39;, size 14720 bytes
+    Valid for RX-51: 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115, 2116, 2117, 2118, 2119
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115, 2116, 2117, 2118, 2119
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115, 2116, 2117, 2118, 2119
+    Version 1.4.14.9+0m5
+Image &#39;2nd&#39;, size 14848 bytes
+    Valid for RX-51: 2501, 2502, 2503, 2504, 2505, 2506
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2501, 2502, 2503, 2504, 2505, 2506
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2501, 2502, 2503, 2504, 2505, 2506
+    Version 1.4.14.9+0m5
+Image &#39;2nd&#39;, size 14848 bytes
+    Valid for RX-51: 2607, 2608, 2609, 2610
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2607, 2608, 2609, 2610
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2607, 2608, 2609, 2610
+    Version 1.4.14.9+0m5
+Image &#39;2nd&#39;, size 14848 bytes
+    Valid for RX-51: 2507, 2508, 2509, 2510
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2507, 2508, 2509, 2510
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2507, 2508, 2509, 2510
+    Version 1.4.14.9+0m5
+Image &#39;2nd&#39;, size 14720 bytes
+    Valid for RX-51: 2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216
+    Version 1.4.14.9+0m5
+Image &#39;2nd&#39;, size 14848 bytes
+    Valid for RX-51: 2601, 2602, 2603, 2604, 2605, 2606
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2601, 2602, 2603, 2604, 2605, 2606
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2601, 2602, 2603, 2604, 2605, 2606
+    Version 1.4.14.9+0m5
+Suitable USB device not found, waiting.
+USB device found found at bus 002, device address 016.
+Found device RX-51, hardware revision 2204
+NOLO version 1.4.14
+Version of &#39;sw-release&#39;: RX-51_2009SE_21.2011.38-1_PR_MR0
+Sending xloader image (14 kB)...
+100% (14 of 14 kB, avg. 3625 kB/s)
+Sending secondary image (106 kB)...
+100% (106 of 106 kB, avg. 15267 kB/s)
+Flashing bootloader... done.
+Sending cmt-2nd image (79 kB)...
+100% (79 of 79 kB, avg. 13250 kB/s)
+Sending cmt-algo image (507 kB)...
+100% (507 of 507 kB, avg. 29860 kB/s)
+Sending cmt-mcusw image (5826 kB)...
+100% (5826 of 5826 kB, avg. 36645 kB/s)
+Flashing cmt-mcusw... done.
+Sending kernel image (1705 kB)...
+100% (1705 of 1705 kB, avg. 6742 kB/s)
+Flashing kernel... done.
+Sending and flashing rootfs image (185728 kB)...
+100% (185728 of 185728 kB, avg. 16144 kB/s)
+Finishing flashing... done
+CMT flashed successfully
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;刷机完成后，手机自动重启。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>NokiaN900产品码</title>
+      <link>https://unixetc.com/post/product-codes-of-nokia-n900/</link>
+      <pubDate>Fri, 26 Apr 2013 22:26:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/product-codes-of-nokia-n900/</guid>
+      <description>&lt;p&gt;电池仓贴纸上面的CODE即是&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;0595085: N900 RX-51 TMN (Telecomunicacoes Moveis Nacionais S.A.*) PT V1 - Black&lt;/li&gt;
+&lt;li&gt;0582648: RX-51 Belgium&lt;/li&gt;
+&lt;li&gt;0584571: RX-51 Croatia Makedonia&lt;/li&gt;
+&lt;li&gt;0584572: RX-51 Czech&lt;/li&gt;
+&lt;li&gt;0591362: RX-51 Estonia&lt;/li&gt;
+&lt;li&gt;0574180: RX-51 France&lt;/li&gt;
+&lt;li&gt;0574383: RX-51 Germany&lt;/li&gt;
+&lt;li&gt;0591474: RX-51 Hungary&lt;/li&gt;
+&lt;li&gt;0591474: RX-51 Hungary&lt;/li&gt;
+&lt;li&gt;0574385: RX-51 Italy&lt;/li&gt;
+&lt;li&gt;0583516: RX-51 Light Swap&lt;/li&gt;
+&lt;li&gt;0582647: RX-51 MENA&lt;/li&gt;
+&lt;li&gt;0585168: RX-51 Montenegro Greece&lt;/li&gt;
+&lt;li&gt;0582645: RX-51 Netherlands&lt;/li&gt;
+&lt;li&gt;0582644: RX-51 Poland&lt;/li&gt;
+&lt;li&gt;0574386: RX-51 Russia&lt;/li&gt;
+&lt;li&gt;0574179: RX-51 Scandinavia Finland Sweden&lt;/li&gt;
+&lt;li&gt;0587236: RX-51 Scandinavia Norway Denmark&lt;/li&gt;
+&lt;li&gt;0584570: RX-51 Slovakia&lt;/li&gt;
+&lt;li&gt;0584570: RX-51 Slovakia&lt;/li&gt;
+&lt;li&gt;0574384: RX-51 Spain Portugal&lt;/li&gt;
+&lt;li&gt;0584598: RX-51 Swap&lt;/li&gt;
+&lt;li&gt;0584598: RX-51 Swap&lt;/li&gt;
+&lt;li&gt;0587813: RX-51 Swap France&lt;/li&gt;
+&lt;li&gt;0587810: RX-51 Swap Russia&lt;/li&gt;
+&lt;li&gt;0587812: RX-51 Swap USA&lt;/li&gt;
+&lt;li&gt;0560826: RX-51 UK Ireland&lt;/li&gt;
+&lt;li&gt;0580952: RX-51 USA&lt;/li&gt;
+&lt;li&gt;0593611: UK CV&lt;/li&gt;
+&lt;li&gt;0595421: Vodafone UK GB Contract black&lt;/li&gt;
+&lt;li&gt;1.2009.42.2(發布)&lt;/li&gt;
+&lt;li&gt;0574383: RX-51 Germany&lt;/li&gt;
+&lt;li&gt;0574383: RX-51 Germany&lt;/li&gt;
+&lt;li&gt;1.2009.44.1(發布)&lt;/li&gt;
+&lt;li&gt;0595085: N900 RX-51 TMN (Telecomunicacoes Moveis Nacionais S.A.*) PT V1 - Black&lt;/li&gt;
+&lt;li&gt;0582648: RX-51 Belgium&lt;/li&gt;
+&lt;li&gt;0584571: RX-51 Croatia Makedonia&lt;/li&gt;
+&lt;li&gt;0584572: RX-51 Czech&lt;/li&gt;
+&lt;li&gt;0591362: RX-51 Estonia&lt;/li&gt;
+&lt;li&gt;0574180: RX-51 France&lt;/li&gt;
+&lt;li&gt;0574383: RX-51 Germany&lt;/li&gt;
+&lt;li&gt;0591474: RX-51 Hungary&lt;/li&gt;
+&lt;li&gt;0574385: RX-51 Italy&lt;/li&gt;
+&lt;li&gt;0583516: RX-51 Light Swap&lt;/li&gt;
+&lt;li&gt;0582647: RX-51 MENA&lt;/li&gt;
+&lt;li&gt;0585168: RX-51 Montenegro Greece&lt;/li&gt;
+&lt;li&gt;0582645: RX-51 Netherlands&lt;/li&gt;
+&lt;li&gt;0582644: RX-51 Poland&lt;/li&gt;
+&lt;li&gt;0574386: RX-51 Russia&lt;/li&gt;
+&lt;li&gt;0574179: RX-51 Scandinavia Finland Sweden&lt;/li&gt;
+&lt;li&gt;0587236: RX-51 Scandinavia Norway Denmark&lt;/li&gt;
+&lt;li&gt;0584570: RX-51 Slovakia&lt;/li&gt;
+&lt;li&gt;0574384: RX-51 Spain Portugal&lt;/li&gt;
+&lt;li&gt;0584598: RX-51 Swap&lt;/li&gt;
+&lt;li&gt;0587813: RX-51 Swap France&lt;/li&gt;
+&lt;li&gt;0587810: RX-51 Swap Russia&lt;/li&gt;
+&lt;li&gt;0587812: RX-51 Swap USA&lt;/li&gt;
+&lt;li&gt;0593709: RX-51 Switzerland&lt;/li&gt;
+&lt;li&gt;0560826: RX-51 UK Ireland&lt;/li&gt;
+&lt;li&gt;0580952: RX-51 USA&lt;/li&gt;
+&lt;li&gt;0593611: UK CV&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;0593611: N900 RX-51 Country Variant United Kingdom GB V1 Black&lt;/li&gt;
+&lt;li&gt;0595085: N900 RX-51 TMN (Telecomunicacoes Moveis Nacionais S.A.*) PT V1 - Black&lt;/li&gt;
+&lt;li&gt;0582648: RX-51 Belgium&lt;/li&gt;
+&lt;li&gt;0584571: RX-51 Croatia Makedonia&lt;/li&gt;
+&lt;li&gt;0584572: RX-51 Czech&lt;/li&gt;
+&lt;li&gt;0591362: RX-51 Estonia&lt;/li&gt;
+&lt;li&gt;0574180: RX-51 France&lt;/li&gt;
+&lt;li&gt;0574383: RX-51 Germany&lt;/li&gt;
+&lt;li&gt;0591474: RX-51 Hungary&lt;/li&gt;
+&lt;li&gt;0574385: RX-51 Italy&lt;/li&gt;
+&lt;li&gt;0582647: RX-51 MENA&lt;/li&gt;
+&lt;li&gt;0585168: RX-51 Montenegro Greece&lt;/li&gt;
+&lt;li&gt;0582645: RX-51 Netherlands&lt;/li&gt;
+&lt;li&gt;0582644: RX-51 Poland&lt;/li&gt;
+&lt;li&gt;0574386: RX-51 Russia&lt;/li&gt;
+&lt;li&gt;0574179: RX-51 Scandinavia Finland Sweden&lt;/li&gt;
+&lt;li&gt;0587236: RX-51 Scandinavia Norway Denmark&lt;/li&gt;
+&lt;li&gt;0584570: RX-51 Slovakia&lt;/li&gt;
+&lt;li&gt;0574384: RX-51 Spain Portugal&lt;/li&gt;
+&lt;li&gt;0593709: RX-51 Switzerland&lt;/li&gt;
+&lt;li&gt;0560826: RX-51 UK Ireland&lt;/li&gt;
+&lt;li&gt;0580952: RX-51 USA&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;0583566: RX-51 Australia&lt;/li&gt;
+&lt;li&gt;0583566: RX-51 Australia&lt;/li&gt;
+&lt;li&gt;0582648: RX-51 Belgium&lt;/li&gt;
+&lt;li&gt;0584571: RX-51 Croatia Makedonia&lt;/li&gt;
+&lt;li&gt;0584572: RX-51 Czech&lt;/li&gt;
+&lt;li&gt;0591362: RX-51 Estonia&lt;/li&gt;
+&lt;li&gt;0574180: RX-51 France&lt;/li&gt;
+&lt;li&gt;0574383: RX-51 Germany&lt;/li&gt;
+&lt;li&gt;0591474: RX-51 Hungary&lt;/li&gt;
+&lt;li&gt;0583572: RX-51 Indonesia,Vietnam,Cambodia&lt;/li&gt;
+&lt;li&gt;0583572: RX-51 Indonesia,Vietnam,Cambodia&lt;/li&gt;
+&lt;li&gt;0574385: RX-51 Italy&lt;/li&gt;
+&lt;li&gt;0582647: RX-51 MENA&lt;/li&gt;
+&lt;li&gt;0582647: RX-51 MENA&lt;/li&gt;
+&lt;li&gt;0585168: RX-51 Montenegro Greece&lt;/li&gt;
+&lt;li&gt;0582645: RX-51 Netherlands&lt;/li&gt;
+&lt;li&gt;0583569: RX-51 Philippines&lt;/li&gt;
+&lt;li&gt;0583569: RX-51 Philippines&lt;/li&gt;
+&lt;li&gt;0583569: RX-51 Philippines&lt;/li&gt;
+&lt;li&gt;0582644: RX-51 Poland&lt;/li&gt;
+&lt;li&gt;0574386: RX-51 Russia&lt;/li&gt;
+&lt;li&gt;0574179: RX-51 Scandinavia Finland Sweden&lt;/li&gt;
+&lt;li&gt;0587236: RX-51 Scandinavia Norway Denmark&lt;/li&gt;
+&lt;li&gt;0583571: RX-51 Singapore&lt;/li&gt;
+&lt;li&gt;0583571: RX-51 Singapore&lt;/li&gt;
+&lt;li&gt;0584570: RX-51 Slovakia&lt;/li&gt;
+&lt;li&gt;0598090: RX-51 South-Asia(Nepal,Sri Lanka)&lt;/li&gt;
+&lt;li&gt;0598090: RX-51 South-Asia(Nepal,Sri Lanka)&lt;/li&gt;
+&lt;li&gt;0582646: RX-51 South Africa&lt;/li&gt;
+&lt;li&gt;0582646: RX-51 South Africa&lt;/li&gt;
+&lt;li&gt;0574384: RX-51 Spain Portugal&lt;/li&gt;
+&lt;li&gt;0593709: RX-51 Switzerland&lt;/li&gt;
+&lt;li&gt;0599194: RX-51 Taiwan&lt;/li&gt;
+&lt;li&gt;0599194: RX-51 Taiwan&lt;/li&gt;
+&lt;li&gt;0583568: RX-51 Thailand&lt;/li&gt;
+&lt;li&gt;0583568: RX-51 Thailand&lt;/li&gt;
+&lt;li&gt;0583568: RX-51 Thailand&lt;/li&gt;
+&lt;li&gt;0560826: RX-51 UK Ireland&lt;/li&gt;
+&lt;li&gt;0591467: RX-51 Ukraine&lt;/li&gt;
+&lt;li&gt;0580952: RX-51 USA&lt;/li&gt;
+&lt;li&gt;0599195 HK（即全球版）&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

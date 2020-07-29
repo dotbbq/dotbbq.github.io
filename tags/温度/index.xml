@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>温度 on UNIXETC</title>
+    <link>https://unixetc.com/tags/%E6%B8%A9%E5%BA%A6/</link>
+    <description>UNIXETC (温度)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 25 May 2017 15:12:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/%E6%B8%A9%E5%BA%A6/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>树莓派显示天气信息</title>
+      <link>https://unixetc.com/post/weather-according-to-raspberry-pi/</link>
+      <pubDate>Thu, 25 May 2017 15:12:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/weather-according-to-raspberry-pi/</guid>
+      <description>&lt;p&gt;在此介绍一个国外网友的树莓派项目&lt;strong&gt;RARP&lt;/strong&gt;，Weather According to Raspberry Pi&lt;/p&gt;
+&lt;p&gt;顾名思义，Weather According to Raspberry Pi是一个有关天气信息的项目，该项目通过采集&lt;strong&gt;Raspberry Pi&lt;/strong&gt;和&lt;strong&gt;Sense HAT&lt;/strong&gt;的数据，来显示相关的天气信息，比如温度、湿度、压力等&lt;/p&gt;
+&lt;p&gt;项目地址&lt;a href=&#34;http://coded2.herokuapp.com/weather/&#34;&gt;http://coded2.herokuapp.com/weather/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;代码国内下载地址&lt;a href=&#34;http://cdn.lyq.wiki/res/warp_final.zip&#34;&gt;http://cdn.lyq.wiki/res/warp_final.zip&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载后解压，得到&lt;strong&gt;main.py&lt;/strong&gt;和&lt;strong&gt;gauge2.html&lt;/strong&gt;两个文件，其中&lt;strong&gt;main.py&lt;/strong&gt;需要&lt;strong&gt;Python3&lt;/strong&gt;运行，&lt;strong&gt;gauge2.html&lt;/strong&gt;是最终的显示文件&lt;/p&gt;
+&lt;p&gt;安装相关软件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install python3
+sudo apt-get install python3-pip
+pip3 install flask
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;打开&lt;strong&gt;Sense HAT仿真器&lt;/strong&gt;，在程序菜单中，打开后如下图示:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/senseHAT-emu.webp&#34; alt=&#34;SenseHAT Menu&#34;&gt;&lt;/p&gt;
+&lt;p&gt;下来，运行下载的python脚本&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;python3 main.py
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;正常情况下，会提示一个端口为&lt;strong&gt;5000&lt;/strong&gt;的web服务正在运行&lt;/p&gt;
+&lt;p&gt;在浏览器中浏览&lt;strong&gt;localhost:5000&lt;/strong&gt;或者&lt;strong&gt;127.0.0.1:5000&lt;/strong&gt;，最终的浏览如下图&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/warp.webp&#34; alt=&#34;WARP&#34;&gt;&lt;/p&gt;
+&lt;p&gt;三个图表分别显示温度、压力和湿度，这三者的信息均来自&lt;strong&gt;Sense HAT 模拟器&lt;/strong&gt;而不是真正的&lt;strong&gt;Sense HAT&lt;/strong&gt;硬件。&lt;/p&gt;
+&lt;p&gt;如果需要采集&lt;strong&gt;Sense HAT&lt;/strong&gt;扩展板的数据，需要将&lt;strong&gt;Sense HAT&lt;/strong&gt;附加板和&lt;strong&gt;Raspberry Pi&lt;/strong&gt;相连，具体信息参考官网 &lt;a href=&#34;https://www.raspberrypi.org/products/sense-hat/&#34;&gt;https://www.raspberrypi.org/products/sense-hat/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;然后修改代码，打开&lt;strong&gt;main.py&lt;/strong&gt;文件，找到如下行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sense_emu import SenseHat
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;修改为&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sense_hat import SenseHat
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;保存后，重新运行&lt;strong&gt;python3 main.py&lt;/strong&gt;，此时采集的数据就来自真实的&lt;strong&gt;SenseHAT&lt;/strong&gt;硬件。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>将树莓派数据上传至乐为物联</title>
+      <link>https://unixetc.com/post/sumbit-raspberry-pi-data-to-lewei50/</link>
+      <pubDate>Thu, 30 Jul 2015 12:59:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/sumbit-raspberry-pi-data-to-lewei50/</guid>
+      <description>&lt;p&gt;进入&lt;a href=&#34;http://www.lewei50.com/&#34;&gt;http://www.lewei50.com/&lt;/a&gt;注册登录&lt;/p&gt;
+&lt;h3 id=&#34;添加设备add-device&#34;&gt;添加设备(Add Device)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;我的物联&lt;/strong&gt; -&amp;gt; &lt;strong&gt;我的设备&lt;/strong&gt;，添加新设备，类型选择&lt;strong&gt;其他&lt;/strong&gt;，不使用模板。&lt;/p&gt;
+&lt;p&gt;请自定义设备&lt;strong&gt;标识&lt;/strong&gt;，后面要用到。&lt;/p&gt;
+&lt;h4 id=&#34;添加传感器&#34;&gt;添加传感器&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;我的物联&lt;/strong&gt; -&amp;gt; &lt;strong&gt;感器与控制器&lt;/strong&gt;，新建传感器。&lt;/p&gt;
+&lt;p&gt;其中&lt;strong&gt;标识&lt;/strong&gt;为提交数据依据，建议英文。&lt;/p&gt;
+&lt;h3 id=&#34;向乐为物联提交数据&#34;&gt;向乐为物联提交数据&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;lewei.sh&lt;/code&gt;代码如下 &lt;a href=&#34;http://cdn.lyq.wiki/res/lewei.sh&#34;&gt;http://cdn.lyq.wiki/res/lewei.sh&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+LURL=http://www.lewei50.com/api/V1/Gateway/UpdateSensors/01
+KEY=&amp;quot;2fasdfsdfsdf9ffadsf62dfbfsdfa1&amp;quot;
+sys_load=`cat /proc/loadavg | awk &#39;{print $2}&#39;`
+st=`/usr/bin/sen_t`
+sh=`/usr/bin/sen_h`
+
+for i in 1 2 3 4 5; do
+        sys_temp=`cat /sys/class/thermal/thermal_zone0/temp | awk &#39;{print $1/1000}&#39;`
+        if [[ &amp;quot;${sys_temp}&amp;quot; =~ ^- ]]
+        then
+                sys_temp=&#39;0.0&#39;
+        else
+                echo ${sys_temp}
+                break
+        fi
+done
+
+echo &amp;quot;Printf Values&amp;quot;
+echo &amp;quot;sys_temp:&amp;quot;${sys_temp}
+echo &amp;quot;sys_load:&amp;quot;${sys_load}
+echo &amp;quot;sensor_t:&amp;quot;${st}
+echo &amp;quot;sensor_h:&amp;quot;${sh}
+echo &amp;quot;Done!&amp;quot;
+
+echo &amp;quot;Sumbit Data to Lewei&amp;quot;
+
+curl --request POST ${LURL} --header &amp;quot;userkey:${KEY}&amp;quot; --data &amp;quot;[{&#39;Name&#39;:&#39;load&#39;,&#39;Value&#39;:&#39;${sys_load}&#39;},{&#39;Name&#39;:&#39;temp&#39;,&#39;Value&#39;:&#39;${sys_temp}&#39;},{&#39;Name&#39;:&#39;sd&#39;,&#39;Value&#39;:&#39;${sh}&#39;},{&#39;Name&#39;:&#39;wd&#39;,&#39;Value&#39;:&#39;${st}&#39;}]&amp;quot; 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中&lt;strong&gt;LURL&lt;/strong&gt;后面的&lt;strong&gt;01&lt;/strong&gt;为设备标识,&lt;strong&gt;KEY&lt;/strong&gt;为用户&lt;strong&gt;Userkey&lt;/strong&gt;,JSON数据中的&lt;strong&gt;Name&lt;/strong&gt;对应相应的&lt;strong&gt;传感器标识&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;其中**/usr/bin/**下的**st,sh**为通过DHT11采集温度与湿度程序，参考&lt;a href=&#34;https://unixetc.com/post/Raspberry-Pi-by-DHT11-collecting-temperature-and-humidity/&#34;&gt;树莓派通过DHT11采集温度与湿度&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;接下来添加cronta任务，每隔1分钟运行一次该脚本&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# m h  dom mon dow   command
+*/1 * * * * /home/pi/lewei.sh&amp;gt;/dev/null 2&amp;gt;&amp;amp;1 &amp;amp;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后可以通过&lt;a href=&#34;http://www.lewei50.com/u/g/12290&#34;&gt;http://www.lewei50.com/u/g/12290&lt;/a&gt;来查看具体的数据以及图表&lt;/p&gt;
+&lt;p&gt;监控页面&lt;a href=&#34;http://raspi.in&#34;&gt;http://raspi.in&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;参考:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.lewei50.com/dev/content/api?sk=70&#34;&gt;http://www.lewei50.com/dev/content/api?sk=70&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.dqy.me/2013/use-cosm.html&#34;&gt;http://www.dqy.me/2013/use-cosm.html&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://personal.xively.com/dev/tutorials/pi/&#34;&gt;https://personal.xively.com/dev/tutorials/pi/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Xively与树莓派监控温度与湿度</title>
+      <link>https://unixetc.com/post/use-xively-monitor-raspberry-pi/</link>
+      <pubDate>Tue, 14 Jul 2015 14:14:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/use-xively-monitor-raspberry-pi/</guid>
+      <description>&lt;p&gt;进入&lt;a href=&#34;https://www.xively.com/&#34;&gt;https://www.xively.com/&lt;/a&gt;注册登录&lt;/p&gt;
+&lt;h3 id=&#34;添加设备add-device&#34;&gt;添加设备(Add Device)&lt;/h3&gt;
+&lt;p&gt;在&lt;strong&gt;Development Devices&lt;/strong&gt;页面点击&lt;strong&gt;Add Device&lt;/strong&gt;添加设备&lt;/p&gt;
+&lt;p&gt;填写&lt;strong&gt;Device Name&lt;/strong&gt;和&lt;strong&gt;Device Description&lt;/strong&gt;，将&lt;strong&gt;Privacy&lt;/strong&gt;设定为&lt;strong&gt;Public Device&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;设置api-key&#34;&gt;设置API Key&lt;/h4&gt;
+&lt;p&gt;进入Device详情页，在&lt;strong&gt;API Keys&lt;/strong&gt;中点击&lt;strong&gt;Add Key&lt;/strong&gt;添加一个Key,将&lt;strong&gt;Permissions&lt;/strong&gt;中的&lt;strong&gt;Read,Create,Update,Delete&lt;/strong&gt;全部勾选，&lt;strong&gt;Label&lt;/strong&gt;随便填。&lt;/p&gt;
+&lt;h3 id=&#34;向xively提交数据&#34;&gt;向Xively提交数据&lt;/h3&gt;
+&lt;p&gt;在这里通过&lt;strong&gt;CURL&lt;/strong&gt;向xively提交&lt;strong&gt;JSON&lt;/strong&gt;格式的数据&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;JSON数据格式&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+  &amp;quot;datastreams&amp;quot;: [
+    {
+       &amp;quot;id&amp;quot;: &amp;quot;load&amp;quot;,
+       &amp;quot;current_value&amp;quot;: &amp;quot;9.00&amp;quot;
+    },
+    {
+      &amp;quot;id&amp;quot;: &amp;quot;temp&amp;quot;,
+      &amp;quot;current_value&amp;quot;: &amp;quot;89.15&amp;quot;
+    }
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中每个id为数据定义的idcurrent_value为提交的值&lt;/p&gt;
+&lt;p&gt;脚本文件&lt;strong&gt;send_xively.sh&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+LOCATION=&#39;/home/pi/xively_data&#39;   #Path of Xively JSON DATA file
+API_KEY=&#39;orxUhgjqSYPDbv5243534tG65464345eArxSVY9pE8ITnE&#39; #API Key
+FEED_ID=&#39;1354438558&#39; #FEED_ID
+####################################################
+
+COSM_URL=https://api.xively.com/v2/feeds/${FEED_ID}?timezone=+8
+cpu_load=`cat /proc/loadavg | awk &#39;{print $2}&#39;`
+sen_t=`sudo /home/pi/st`
+sen_h=`sudo /home/pi/sh`
+
+for i in 1 2 3 4 5; do
+        cpu_t=`cat /sys/class/thermal/thermal_zone0/temp | awk &#39;{print $1/1000}&#39;`
+        if [[ &amp;quot;${cpu_t}&amp;quot; =~ ^- ]]
+        then
+                cpu_t=&#39;0.0&#39;
+        else
+                echo ${cpu_t}
+                break
+        fi
+done
+
+STR=`awk &#39;BEGIN{printf &amp;quot;{\&amp;quot;datastreams\&amp;quot;:[ {\&amp;quot;id\&amp;quot;:\&amp;quot;cpu_load\&amp;quot;,\&amp;quot;current_value\&amp;quot;:\&amp;quot;%.2f\&amp;quot;}, {\&amp;quot;id\&amp;quot;:\&amp;quot;cpu_temp\&amp;quot;,\&amp;quot;current_value\&amp;quot;:\&amp;quot;%.2f\&amp;quot;},{\&amp;quot;id\&amp;quot;:\&amp;quot;sensor_t\&amp;quot;,\&amp;quot;current_value\&amp;quot;:\&amp;quot;%.2f\&amp;quot;}, {\&amp;quot;id\&amp;quot;:\&amp;quot;sensor_h\&amp;quot;,\&amp;quot;current_value\&amp;quot;:\&amp;quot;%.2f\&amp;quot;}] } &amp;quot;,&#39;$cpu_load&#39;,&#39;$cpu_t&#39;,&#39;$sen_t&#39;,&#39;$sen_h&#39;}&#39;`
+
+echo ${cpu_t}
+echo ${cpu_load}
+echo ${sen_t}
+echo ${sen_h}
+echo ${STR}
+echo ${STR} &amp;gt; ${LOCATION}/cosm.json
+curl -s -v --request PUT --header &amp;quot;X-ApiKey: ${API_KEY}&amp;quot; --data-binary @${LOCATION}/cosm.json ${COSM_URL}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中&lt;strong&gt;LOCATION&lt;/strong&gt;为JSON文件存放目录，没有的话请新建。API_KEY和FEED_ID按照自己的配置填写。&lt;/p&gt;
+&lt;p&gt;其中**/home/pi/**下的**st,sh**为通过DHT11采集温度与湿度程序，参考&lt;a href=&#34;https://unixetc.com/post/Raspberry-Pi-by-DHT11-collecting-temperature-and-humidity.html&#34;&gt;树莓派通过DHT11采集温度与湿度&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;接下来添加cronta任务，每隔1分钟运行一次该脚本&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# m h  dom mon dow   command
+*/1 * * * * /home/pi/send_xively.sh&amp;gt;/dev/null 2&amp;gt;&amp;amp;1 &amp;amp;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后可以通过&lt;a href=&#34;https://personal.xively.com/feeds/1255758558&#34;&gt;https://personal.xively.com/feeds/1255758558&lt;/a&gt;来查看具体的数据以及图表&lt;/p&gt;
+&lt;p&gt;监控页面&lt;a href=&#34;http://zjq.in/raspi_sensor&#34;&gt;http://zjq.in/raspi_sensor&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;参考:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.dqy.me/2013/use-cosm.html&#34;&gt;http://www.dqy.me/2013/use-cosm.html&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://personal.xively.com/dev/tutorials/pi/&#34;&gt;https://personal.xively.com/dev/tutorials/pi/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>将Nginx更换为H2O - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+
+
+
+<meta property="og:title" content="将Nginx更换为H2O" />
+<meta property="og:description" content="安装必须的软件 预备工具软件
+#apt-get install autoconf automake m4 build-essential libssl-dev 必选
+#apt-get install openssl libssl-dev 以下为可选包，可自行搜索安装
+ libuv libyaml wslay  安装H2O 下载安装最新版h2o https://github.com/h2o/h2o/releases
+#wget https://github.com/h2o/h2o/archive/v1.4.1.tar.gz#tar zxf v1.4.1.tar.gz#cd h2o-1.4.1#cmake -DWITH_BUNDLED_SSL=on .#make#sudo make install 编辑H2O站点配置文件 以下是一个简单的http与https配置文件，可自行参考修改
+hosts:&quot;www.example.com&quot;:listen:port: 80listen:port: 443ssl:certificate-file: /path/to/server-certificate.crtkey-file: /path/to/private-key.crtpaths:&quot;/&quot;:file.dir: /path/to/doc-rootaccess-log: /path/to/the/access-logerror-log: /path/to/the/error-logpid-file: /path/to/the/pid-filehttp2-reprioritize-blocking-assets: ON # performance tuning option 启动H2O" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unixetc.com/post/install-h2o-on-bandwagon-vps/" />
+<meta property="article:published_time" content="2015-07-21T17:31:00+00:00" />
+<meta property="article:modified_time" content="2015-07-21T17:31:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="将Nginx更换为H2O"/>
+<meta name="twitter:description" content="安装必须的软件 预备工具软件
+#apt-get install autoconf automake m4 build-essential libssl-dev 必选
+#apt-get install openssl libssl-dev 以下为可选包，可自行搜索安装
+ libuv libyaml wslay  安装H2O 下载安装最新版h2o https://github.com/h2o/h2o/releases
+#wget https://github.com/h2o/h2o/archive/v1.4.1.tar.gz#tar zxf v1.4.1.tar.gz#cd h2o-1.4.1#cmake -DWITH_BUNDLED_SSL=on .#make#sudo make install 编辑H2O站点配置文件 以下是一个简单的http与https配置文件，可自行参考修改
+hosts:&quot;www.example.com&quot;:listen:port: 80listen:port: 443ssl:certificate-file: /path/to/server-certificate.crtkey-file: /path/to/private-key.crtpaths:&quot;/&quot;:file.dir: /path/to/doc-rootaccess-log: /path/to/the/access-logerror-log: /path/to/the/error-logpid-file: /path/to/the/pid-filehttp2-reprioritize-blocking-assets: ON # performance tuning option 启动H2O"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">将Nginx更换为H2O</h1>
+        </header>
+        <div class="content">
+            <h3 id="安装必须的软件">安装必须的软件</h3>
+<p>预备工具软件</p>
+<pre><code>#apt-get install autoconf automake m4 build-essential
+</code></pre>
+<p>libssl-dev <strong>必选</strong></p>
+<pre><code>#apt-get install openssl libssl-dev
+</code></pre>
+<p>以下为可选包，可自行搜索安装</p>
+<ul>
+<li>libuv</li>
+<li>libyaml</li>
+<li>wslay</li>
+</ul>
+<h3 id="安装h2o">安装H2O</h3>
+<p>下载安装最新版h2o  <a href="https://github.com/h2o/h2o/releases">https://github.com/h2o/h2o/releases</a></p>
+<pre><code>#wget https://github.com/h2o/h2o/archive/v1.4.1.tar.gz
+#tar zxf v1.4.1.tar.gz
+#cd h2o-1.4.1
+#cmake -DWITH_BUNDLED_SSL=on .
+#make
+#sudo make install
+</code></pre>
+<h3 id="编辑h2o站点配置文件">编辑H2O站点配置文件</h3>
+<p>以下是一个简单的http与https配置文件，可自行参考修改</p>
+<pre><code>hosts:
+&quot;www.example.com&quot;:
+    listen:
+    port: 80
+    listen:
+    port: 443
+    ssl:
+        certificate-file: /path/to/server-certificate.crt
+        key-file:         /path/to/private-key.crt
+    paths:
+    &quot;/&quot;:
+        file.dir: /path/to/doc-root
+
+access-log: /path/to/the/access-log
+error-log: /path/to/the/error-log
+pid-file: /path/to/the/pid-file
+http2-reprioritize-blocking-assets: ON   # performance tuning option
+</code></pre>
+<p>启动H2O</p>
+<pre><code>#h2o h2o.conf
+</code></pre>
+<p>以daemon模式启动</p>
+<pre><code>#h2o -m daemon -c h2o.conf</code></pre>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-07-21</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vps">#VPS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/openssl">#OpenSSL</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/h2o">#H2O</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/wslay">#wslay</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/web-server">#Web Server</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/bandwagonhost">#BandwagonHost</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/libssl">#libssl</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/libuv">#libuv</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/libyaml">#libyaml</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

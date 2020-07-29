@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>GFW - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/tags/gfw/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+
+
+
+<meta property="og:title" content="GFW" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/tags/gfw/" />
+<meta property="og:updated_time" content="2018-10-15T10:15:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GFW"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <h1>Tag: GFW</h1>
+    <div class="post-info">
+        <a href="https://unixetc.com/tags">To all tags</a>
+    </div>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/bwg-replace-main-ip-after-blocked/">搬瓦工被墙后免费更换IP</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        忙了一天没注意看邮件，下午才发现站点宕机，登录BWG后台检查系统运行正常，使用Ping.pePing了下才发现，可能IP被墙了。
+查看Ping的结果，发现国外线路都可以浏览，国内线路丢包全是100%，看来凉凉咯！
+于是网上找了下解决方案，发现BWG免费提供更换IP服务，每五周使用一次。
+登录BWG后台，然后浏览https://kiwivm.64clouds.com/main-exec.php?mode=blacklistcheck，点击TestMainIP进行检查。
+此页面会显示当前服务器IP以及是否被墙。
+如上提示，IP BLOCKED表示已经被封，点击下面的Replace Main IP更换IP，更换IP后再次浏览上面网站，即可显示IP NOT BLOCKED表示未被封锁。
+注意：该功能每五周可以使用一次，且行且珍惜！
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2018-10-15</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/gfw">#GFW</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%9B%B4%E6%8D%A2ip">#更换IP</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%90%AC%E7%93%A6%E5%B7%A5">#搬瓦工</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/merlin-install-shadowsocks/">梅林固件安装Shadowsocks</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        登录路由器后台，系统管理&gt;系统设置，将Enable SSH设置为LAN only。
+通过SSH登录路由器，参考以下执行，在此推荐Putty。
+#cd /tmp#wget https://github.com/hq450/fancyss_history_package/raw/master/fancyss_arm/shadowsocks_4.1.1.tar.gz#tar -zxvf shadowsocks_4.1.1.tar.gz#cd shadowsocks#chmod +x install.sh#./install.sh2017年11月19日 14:40:36: 固件平台【koolshare merlinarmv7l】符合安装要求，开始安装插件！2017年11月19日 14:40:36: 清理旧文件2017年11月19日 14:40:36: 开始复制文件！2017年11月19日 14:40:36: 复制相关二进制文件！2017年11月19日 14:40:42: 创建一些二进制文件的软链接！2017年11月19日 14:40:42: 复制ss的脚本文件！2017年11月19日 14:40:44: 复制网页文件！2017年11月19日 14:40:44: 移除安装包！2017年11月19日 14:40:44: 为新安装文件赋予执行权限...2017年11月19日 14:40:44: 设置一些默认值2017年11月19日 14:40:47: 一点点清理工作...2017年11月19日 14:40:47: 插件安装成功，你为什么这么屌？！2017年11月19日 14:40:47: 更新完毕，请等待网页自动刷新！ 完成后重启路由器，在软件中心中即可看到影梭已经安装成功！
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-11-19</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/shadowsocks">#Shadowsocks</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/merlin">#merlin</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/router">#router</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A2%85%E6%9E%97">#梅林</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gfw">#GFW</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/asus">#asus</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/firefox-and-foxyproxy/">Firefox和FoxyProxy</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        三年不用Firefox了，最近由于需要进行手机端和电脑端资源同步，chrome在国内不安装谷歌套件无法使用，所以又切换回了firefox。
+在安装完成autoproxy后发现，订阅gfwlist.txt一直无法成功，网上找了找消息，说是autoproxy已经跟不上firefox开发脚步，无法继续使用。于是在firefox的addon站点重新找代理插件，最终选定foxyproxy。
+以下是foxyproxy设置socks代理，和订阅gfwlist.txt的一些设置方法。
+安装foxyproxy 去主页http://getfoxyproxy.org/，安装完成后重启firefox
+添加代理服务器 双击地址栏和搜索栏中间的foxyproxy图标，进入到设置
+代理服务器选项卡中点击新建代理服务器
+常规选项卡中设置代理名称，如ss
+代理服务器细节中设置具体参数，以下是我的设置截图，可以参考
+设置订阅gfwlist.txt 在模式订阅选项卡中，空白处点击右键，添加新的模式订阅
+参考下图设置，注意勾划出来的地方
+将foxyproxy的工作模式选择为使用基于其预定义模版的代理服务器。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-02-13</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/gfw">#GFW</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/proxy">#proxy</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/socks">#socks</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/firefox">#Firefox</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/foxyproxy">#FoxyProxy</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/autoproxy">#AutoProxy</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gfwlist">#gfwlist</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+    
+        
+    <div class="pagination">
+        <div class="left pagination-item disabled">
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/tags/gfw/page/2/">To old posts</a>
+            
+        </div>
+    </div>
+
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

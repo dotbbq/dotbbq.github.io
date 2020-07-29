@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>LFTP使用实例 - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+
+
+
+<meta property="og:title" content="LFTP使用实例" />
+<meta property="og:description" content="LFTP介绍 lftp是一个功能强大的ftp/http客户端，作者是 Alexander Lukyanov。
+lftp支持多种传输协议，如ftp、http、https、sftp、exp等。
+如同BASH一样，lftp支持任务管理。并且具备书签管理、内置镜像和多线程传送功能。
+使用LFTP 登录服务器 lftp ftp://user:password@ip:port 以上是一个完整的lftp登录示例，其中包含协议(ftp)、用户名(user)、密码(password)、主机(ip)以及端口(port)
+默认情况下lftp直接访问ftp服务，默认登录端口为22，因此我们可以使用以下方法来便捷登录主机
+lftp user@ip 然后系统会提示输入password，完成后登录成功！
+lftp命令行参数 lftp :~&gt; help!&lt;shell-command&gt; (commands)alias [&lt;name&gt; [&lt;value&gt;]] attach [PID]bookmark [SUBCMD] cache [SUBCMD]cat [-b] &lt;files&gt; cd &lt;rdir&gt;chmod [OPTS] mode file... close [-a][re]cls [opts] [path/][pattern] debug [&lt;level&gt;|off] [-o &lt;file&gt;]du [options] &lt;dirs&gt; exit [&lt;code&gt;|bg]get [OPTS] &lt;rfile&gt; [-o &lt;lfile&gt;] glob [OPTS] &lt;cmd&gt; &lt;args&gt;help [&lt;cmd&gt;] history -w file|-r file|-c|-l [cnt]jobs [-v] [&lt;job_no." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unixetc.com/post/lftp-use-case/" />
+<meta property="article:published_time" content="2016-04-01T14:21:00+00:00" />
+<meta property="article:modified_time" content="2016-04-01T14:21:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="LFTP使用实例"/>
+<meta name="twitter:description" content="LFTP介绍 lftp是一个功能强大的ftp/http客户端，作者是 Alexander Lukyanov。
+lftp支持多种传输协议，如ftp、http、https、sftp、exp等。
+如同BASH一样，lftp支持任务管理。并且具备书签管理、内置镜像和多线程传送功能。
+使用LFTP 登录服务器 lftp ftp://user:password@ip:port 以上是一个完整的lftp登录示例，其中包含协议(ftp)、用户名(user)、密码(password)、主机(ip)以及端口(port)
+默认情况下lftp直接访问ftp服务，默认登录端口为22，因此我们可以使用以下方法来便捷登录主机
+lftp user@ip 然后系统会提示输入password，完成后登录成功！
+lftp命令行参数 lftp :~&gt; help!&lt;shell-command&gt; (commands)alias [&lt;name&gt; [&lt;value&gt;]] attach [PID]bookmark [SUBCMD] cache [SUBCMD]cat [-b] &lt;files&gt; cd &lt;rdir&gt;chmod [OPTS] mode file... close [-a][re]cls [opts] [path/][pattern] debug [&lt;level&gt;|off] [-o &lt;file&gt;]du [options] &lt;dirs&gt; exit [&lt;code&gt;|bg]get [OPTS] &lt;rfile&gt; [-o &lt;lfile&gt;] glob [OPTS] &lt;cmd&gt; &lt;args&gt;help [&lt;cmd&gt;] history -w file|-r file|-c|-l [cnt]jobs [-v] [&lt;job_no."/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">LFTP使用实例</h1>
+        </header>
+        <div class="content">
+            <h3 id="lftp介绍">LFTP介绍</h3>
+<p>lftp是一个功能强大的ftp/http客户端，作者是 Alexander Lukyanov。</p>
+<p>lftp支持多种传输协议，如ftp、http、https、sftp、exp等。</p>
+<p>如同BASH一样，lftp支持任务管理。并且具备书签管理、内置镜像和多线程传送功能。</p>
+<h3 id="使用lftp">使用LFTP</h3>
+<h4 id="登录服务器">登录服务器</h4>
+<pre><code>lftp ftp://user:password@ip:port
+</code></pre>
+<p>以上是一个完整的lftp登录示例，其中包含协议(ftp)、用户名(user)、密码(password)、主机(ip)以及端口(port)</p>
+<p>默认情况下lftp直接访问ftp服务，默认登录端口为22，因此我们可以使用以下方法来便捷登录主机</p>
+<pre><code>lftp user@ip
+</code></pre>
+<p>然后系统会提示输入<strong>password</strong>，完成后登录成功！</p>
+<h4 id="lftp命令行参数">lftp命令行参数</h4>
+<pre><code>lftp :~&gt; help
+    !&lt;shell-command&gt;                     (commands)
+    alias [&lt;name&gt; [&lt;value&gt;]]             attach [PID]
+    bookmark [SUBCMD]                    cache [SUBCMD]
+    cat [-b] &lt;files&gt;                     cd &lt;rdir&gt;
+    chmod [OPTS] mode file...            close [-a]
+    [re]cls [opts] [path/][pattern]      debug [&lt;level&gt;|off] [-o &lt;file&gt;]
+    du [options] &lt;dirs&gt;                  exit [&lt;code&gt;|bg]
+    get [OPTS] &lt;rfile&gt; [-o &lt;lfile&gt;]      glob [OPTS] &lt;cmd&gt; &lt;args&gt;
+    help [&lt;cmd&gt;]                         history -w file|-r file|-c|-l [cnt]
+    jobs [-v] [&lt;job_no...&gt;]              kill all|&lt;job_no&gt;
+    lcd &lt;ldir&gt;                           lftp [OPTS] &lt;site&gt;
+    ln [-s] &lt;file1&gt; &lt;file2&gt;              ls [&lt;args&gt;]
+    mget [OPTS] &lt;files&gt;                  mirror [OPTS] [remote [local]]
+    mkdir [-p] &lt;dirs&gt;                    module name [args]
+    more &lt;files&gt;                         mput [OPTS] &lt;files&gt;
+    mrm &lt;files&gt;                          mv &lt;file1&gt; &lt;file2&gt;
+    [re]nlist [&lt;args&gt;]                   open [OPTS] &lt;site&gt;
+    pget [OPTS] &lt;rfile&gt; [-o &lt;lfile&gt;]     put [OPTS] &lt;lfile&gt; [-o &lt;rfile&gt;]
+    pwd [-p]                             queue [OPTS] [&lt;cmd&gt;]
+    quote &lt;cmd&gt;                          repeat [OPTS] [delay] [command]
+    rm [-r] [-f] &lt;files&gt;                 rmdir [-f] &lt;dirs&gt;
+    scache [&lt;session_no&gt;]                set [OPT] [&lt;var&gt; [&lt;val&gt;]]
+    site &lt;site-cmd&gt;                      source &lt;file&gt;
+    torrent [-O &lt;dir&gt;] &lt;file|URL&gt;...     user &lt;user|URL&gt; [&lt;pass&gt;]
+    wait [&lt;jobno&gt;]                       zcat &lt;files&gt;
+    zmore &lt;files&gt;
+</code></pre>
+<p>常用的命令解释如下：</p>
+<p><strong>远端操作</strong></p>
+<ul>
+<li>ls 显示远端目录列表</li>
+<li>cd 切换远端目录</li>
+<li>get 下载文件</li>
+<li>put 上传文件</li>
+<li>mv 移动远端文件</li>
+<li>rm 删除远端文件</li>
+<li>pwd 显示远端目录</li>
+<li>du 计算远端目录大小</li>
+<li>退出</li>
+</ul>
+<p><strong>本地操作</strong></p>
+<ul>
+<li>!ls 显示本地目录列表</li>
+<li>lcd 切换本地目录</li>
+<li>lpwd 显示本地目录</li>
+</ul>
+<h4 id="lftp使用范例">LFTP使用范例</h4>
+<p><strong>登录服务器</strong></p>
+<pre><code>root@hostus:~# lftp qxu1128@qxu1128.my3w.com
+Password:
+lftp qxu1128@qxu1128.my3w.com:~&gt; ls
+</code></pre>
+<p><strong>列出服务器目录文件</strong></p>
+<pre><code>lftp qxu1128@qxu1128.my3w.com:/&gt; ls
+drwxr-xr-x    2 0        0            4096 Jan 23  2015 backup
+drwxr-xr-x    2 675      100          4096 Jan 23  2015 cgi-bin
+drwxr-xr-x    2 0        0            4096 Apr 01 03:40 ftplogs
+drwxr-xr-x    4 675      100          4096 Apr 01 11:02 htdocs
+drwxr-xr-x    2 675      100          4096 Jan 23  2015 myfolder
+drwxr-xr-x    2 0        0            4096 Apr 01 02:03 wwwlogs
+</code></pre>
+<p><strong>切换远端目录</strong></p>
+<pre><code>lftp qxu1128@qxu1128.my3w.com:/&gt; cd htdocs/
+lftp qxu1128@qxu1128.my3w.com:/htdocs&gt;
+</code></pre>
+<p><strong>上传文件</strong></p>
+<pre><code>lftp qxu1128@qxu1128.my3w.com:/htdocs&gt; put tb7302.apk
+`tb7302.apk' at 1913856 (24%) 77.7K/s eta:75s [Sending data]
+
+7713808 bytes transferred in 78 seconds (97.0K/s)
+</code></pre>
+<p><strong>下载文件</strong></p>
+<pre><code>lftp qxu1128@qxu1128.my3w.com:/htdocs&gt; get bk.apk
+`bk.apk' at 124528 (1%) 28.1K/s eta:4m [Receiving data]
+
+7713808 bytes transferred in 519 seconds (14.5K/s)
+</code></pre>
+<p><strong>上传文件夹</strong></p>
+<pre><code>lftp qxu1128@qxu1128.my3w.com:/htdocs&gt; mirror -R bootstrap/
+Total: 4 directories, 14 files, 0 symlinks
+New: 14 files, 0 symlinks
+1079609 bytes transferred in 7 seconds (150.7 KiB/s)
+</code></pre>
+<p><strong>下载文件夹</strong></p>
+<pre><code>lftp qxu1128@qxu1128.my3w.com:/htdocs&gt; mirror bootstrap/ new
+Total: 4 directories, 14 files, 0 symlinks
+New: 14 files, 0 symlinks
+1079609 bytes transferred in 6 seconds (189.9 KiB/s)
+lftp qxu1142380172@qxu1142380172.my3w.com:/htdocs&gt; !ls new/
+css  fonts  js
+</code></pre>
+<p><strong>中文乱码</strong></p>
+<p>有时由于编码问题，我们看到的中文可能是乱码，如下：</p>
+<pre><code>lftp qxu1128@qxu1128.my3w.com:/&gt; ls
+drwxr-xr-x    2 0        0            4096 Jan 23  2015 backup
+drwxr-xr-x    2 675      100          4096 Jan 23  2015 cgi-bin
+drwxr-xr-x    2 0        0            4096 Apr 01 03:40 ftplogs
+drwxr-xr-x    4 675      100          4096 Apr 01 11:02 htdocs
+drwxr-xr-x    2 675      100          4096 Jan 23  2015 myfolder
+drwxr-xr-x    2 0        0            4096 Apr 01 02:03 wwwlogs
+-r-xr--r--    1 55961    100           606 Aug 31  2015 ▒▒▒ȶ▒▒▒.txt
+</code></pre>
+<p>如果出现这种情况，就需要进行编码设置，如下：</p>
+<pre><code>lftp qxu1128@qxu1128.my3w.com:/&gt; set ftp:charset GBK
+lftp qxu1128@qxu1128.my3w.com:/&gt; set file:charset UTF-8
+</code></pre>
+<p>设置完成后再看：</p>
+<pre><code>lftp qxu1128@qxu1128.my3w.com:/&gt; ls
+drwxr-xr-x    2 0        0            4096 Jan 23  2015 backup
+drwxr-xr-x    2 675      100          4096 Jan 23  2015 cgi-bin
+drwxr-xr-x    2 0        0            4096 Apr 01 03:40 ftplogs
+drwxr-xr-x    4 675      100          4096 Apr 01 11:33 htdocs
+drwxr-xr-x    2 675      100          4096 Jan 23  2015 myfolder
+drwxr-xr-x    2 0        0            4096 Apr 01 02:03 wwwlogs
+-r-xr--r--    1 55961    100           606 Aug 31  2015 请先读我.txt
+</code></pre>
+<p>以上两条<strong>set</strong>命令可以写入lftp配置文件，以方便以后使用，关于lftp配置文件参考下节介绍。</p>
+<h4 id="lftp书签使用方法">LFTP书签使用方法</h4>
+<p>我们可以使用书签来存储一些商用的ftp登录信息，lftp的书签文件为<code>~/.lftp/bookmarks</code>，我们可以编辑它来添加书签</p>
+<p>lftp书签格式如下</p>
+<pre><code>bkname ftp://user:password@ip:port
+</code></pre>
+<p>设置好书签后，可以使用<code>lftp</code>加书签名来登录</p>
+<pre><code>lftp bkname
+</code></pre>
+<p>书签使用示例：</p>
+<pre><code>root@hostus:~# cat ~/.lftp/bookmarks
+aliyun ftp://qxu172@qxu150172.my3w.com
+root@hostus:~# lftp aliyun
+Password:
+lftp qxu1128@qxu1128.my3w.com:~&gt; ls
+drwxr-xr-x    2 0        0            4096 Jan 23  2015 backup
+drwxr-xr-x    2 675      100          4096 Jan 23  2015 cgi-bin
+drwxr-xr-x    2 0        0            4096 Apr 01 03:40 ftplogs
+drwxr-xr-x    4 675      100          4096 Apr 01 11:33 htdocs
+drwxr-xr-x    2 675      100          4096 Jan 23  2015 myfolder
+drwxr-xr-x    2 0        0            4096 Apr 01 02:03 wwwlogs
+</code></pre>
+<h3 id="lftp配置文件">LFTP配置文件</h3>
+<p>lftp执行配置文件顺序为<code>/etc/lftp.conf</code>、<code>~/.lftprc</code>、<code>~/.lftp/rc</code>，我们可以编辑这些修改这些文件，来达到全局配置或者用户自定义配置。</p>
+<p><strong>set</strong></p>
+<p>在设置文件中，使用set来设置一些变量的值，如下：</p>
+<pre><code>set ftp:ssl-force on
+set ssl:verify-certificate on
+set ftp:use-feat off
+set ftp:ssl-protect-data on
+</code></pre>
+<p><strong>debug</strong></p>
+<p>默认情况下lftp是静默提示的，如果需要查看一些提示信息，就要对<strong>debug</strong>进行设置</p>
+<ul>
+<li>debug 5 显示所有调试信息</li>
+<li>debug 3 仅显示欢迎信息和错误信息</li>
+</ul>
+<p><strong>alias</strong></p>
+<p>定义命令别名，比如为ls设置别名dir以方便个人使用习惯，如下：</p>
+<pre><code>alias dir ls
+alias less more
+alias zless zmore
+alias bzless bzmore
+alias reconnect &quot;close; cache flush; cd .&quot;
+alias edit &quot;eval -f &quot;get $0 -o ~/.lftp/edit.tmp.$$ &amp;&amp; shell \\&quot;cp -p ~/.lftp/edit.tmp.$$ ~/.lftp/edit.tmp.$$.orig &amp;&amp; vim ~/.lftp/edit.tmp.$$ &amp;&amp; test ~/.lftp/edit.tmp.$$ -nt ~/.lftp/edit.tmp.$$.orig\\&quot; &amp;&amp; put ~/.lftp/edit.tmp.$$ -o $0; shell rm -f ~/.lftp/edit.tmp.$$*&quot;</code></pre>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-04-01</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ftp">#ftp</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/lftp">#lftp</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/download">#download</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/upload">#upload</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

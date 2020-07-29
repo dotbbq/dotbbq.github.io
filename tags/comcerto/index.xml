@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Comcerto on UNIXETC</title>
+    <link>https://unixetc.com/tags/comcerto/</link>
+    <description>UNIXETC (Comcerto)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sat, 17 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/comcerto/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>如何判断西数MyCloud是第几代</title>
+      <link>https://unixetc.com/post/western-digital-my-cloud-version-judgment-method/</link>
+      <pubDate>Sat, 17 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/western-digital-my-cloud-version-judgment-method/</guid>
+      <description>&lt;p&gt;西数MyCloud共出了两代，那么如何判断呢？&lt;/p&gt;
+&lt;h3 id=&#34;看系统版本&#34;&gt;看系统版本&lt;/h3&gt;
+&lt;p&gt;第一代的是3.x/4.x，第二代的是2.x&lt;/p&gt;
+&lt;h3 id=&#34;看cpu信息&#34;&gt;看CPU信息&lt;/h3&gt;
+&lt;p&gt;SSH登录MyCloud后，通过&lt;code&gt;cat /proc/cpuinfo&lt;/code&gt;检查CPU信息&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;第一代是&lt;code&gt;Comcerto 2000 EVM&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;第二代是 &lt;code&gt;Marvell Armada 375 (Device Tree) &lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

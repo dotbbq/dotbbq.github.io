@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>select on UNIXETC</title>
+    <link>https://unixetc.com/tags/select/</link>
+    <description>UNIXETC (select)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Wed, 24 Dec 2014 12:24:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/select/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mapinfo中通过SQL查询筛选区域点</title>
+      <link>https://unixetc.com/post/mapinfo-iris-out-points-with-sql-select/</link>
+      <pubDate>Wed, 24 Dec 2014 12:24:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/mapinfo-iris-out-points-with-sql-select/</guid>
+      <description>&lt;p&gt;Mapinfo中有一批离散点，现在需要把一部分点筛选出来，可以使用SQL查询功能导出。&lt;/p&gt;
+&lt;p&gt;首先，打开需要筛选的图层：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/2126470077.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;然后打开装饰层可编辑：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/2287001872.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;设置不规则图形样式，建议将填充去掉只留下边框：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/1223917062.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;使用不规则图形圈出所需要的采样点&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意：边线不要压着采样点，被压线的采样点不算做圈选有效。&lt;/strong&gt;
+&lt;img src=&#34;http://cdn.lyq.wiki/imgs/2381800210.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Map&lt;/strong&gt;-&amp;gt;&lt;strong&gt;Save Cosmetic Objects&lt;/strong&gt;  保存装饰图层，这里取名&lt;strong&gt;123&lt;/strong&gt;
+&lt;img src=&#34;http://cdn.lyq.wiki/imgs/2252925310.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;然后使用SQL查询功能进行查询&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/3149415981.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;SQL查询时，选择需要交叉的两个图层&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/1938280739.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;查询完成后，&lt;strong&gt;Table&lt;/strong&gt;-&amp;gt;&lt;strong&gt;Export&lt;/strong&gt; 导出查询结果
+&lt;img src=&#34;http://cdn.lyq.wiki/imgs/204486118.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;导出时设置参考下图，可选择**.mif**、**.txt**、**.csv**格式
+&lt;img src=&#34;http://cdn.lyq.wiki/imgs/2183870599.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

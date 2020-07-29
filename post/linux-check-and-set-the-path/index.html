@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>Linux下查看修改PATH - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+
+
+
+<meta property="og:title" content="Linux下查看修改PATH" />
+<meta property="og:description" content="什么是PATH? 要搞清什么是PATH，应该先搞清什么是环境变量？
+在计算机中，如果需要运行一个软件，那么我们就要找到它所在的位置，但是每次运行程序时如果都要进入到相应目录，那么显然是很繁琐的。于是就有了环境变量，环境变量就是一个系统参数，里面记录了一些目录，运行软件的时候，相关的程序将会按照该目录寻找相关文件。
+而在Linux中，系统会有一个默认的PATH环境变量，里面记录了系统级的相关命令目录，比如当我们输入ls、cd、pwd等命令时，我们不需要指定它们所在的目录，因为包含这些命令的系统目录已经写入PATH参数，因而方便我们调用。
+查看PATH 在linux中，可以使用export命令来查看所有环境变量，如下：
+pi@raspi:~$ exportdeclare -x HOME=&quot;/home/pi&quot;declare -x LANG=&quot;en_GB.UTF-8&quot;declare -x LOGNAME=&quot;pi&quot;declare -x MAIL=&quot;/var/mail/pi&quot;declare -x OLDPWDdeclare -x PATH=&quot;/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/home/pi/bin&quot;declare -x PWD=&quot;/home/pi&quot;declare -x SHELL=&quot;/bin/bash&quot;declare -x SHLVL=&quot;1&quot;declare -x SSH_CLIENT=&quot;101.135.216.146 28249 22&quot;declare -x SSH_CONNECTION=&quot;101.135.216.146 28249 192.168.1.111 22&quot;declare -x SSH_TTY=&quot;/dev/pts/1&quot;declare -x TERM=&quot;xterm&quot;declare -x USER=&quot;pi&quot; 使用echo来查看单独的环境变量
+pi@raspi:~$ echo $PATH/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/home/pi/bin 我们可以看到，以上PATH值包含了一些系统命令的目录，而这些目录都用:隔开。
+修改PATH 我们可以使用export命令来添加目录，如下：
+export PATH=/mydoc:$PATH 以上命令在原有的PATH前添加了/mydoc这个目录，设置完成后的PATH值如下：
+pi@raspi:~$ echo $PATH/mydoc:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/home/pi/bin 以上方法修改PATH值，在终端退出后就会失效，因此建议通过修改/etc/profile来设定PATH" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unixetc.com/post/linux-check-and-set-the-path/" />
+<meta property="article:published_time" content="2016-03-29T13:29:00+00:00" />
+<meta property="article:modified_time" content="2016-03-29T13:29:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux下查看修改PATH"/>
+<meta name="twitter:description" content="什么是PATH? 要搞清什么是PATH，应该先搞清什么是环境变量？
+在计算机中，如果需要运行一个软件，那么我们就要找到它所在的位置，但是每次运行程序时如果都要进入到相应目录，那么显然是很繁琐的。于是就有了环境变量，环境变量就是一个系统参数，里面记录了一些目录，运行软件的时候，相关的程序将会按照该目录寻找相关文件。
+而在Linux中，系统会有一个默认的PATH环境变量，里面记录了系统级的相关命令目录，比如当我们输入ls、cd、pwd等命令时，我们不需要指定它们所在的目录，因为包含这些命令的系统目录已经写入PATH参数，因而方便我们调用。
+查看PATH 在linux中，可以使用export命令来查看所有环境变量，如下：
+pi@raspi:~$ exportdeclare -x HOME=&quot;/home/pi&quot;declare -x LANG=&quot;en_GB.UTF-8&quot;declare -x LOGNAME=&quot;pi&quot;declare -x MAIL=&quot;/var/mail/pi&quot;declare -x OLDPWDdeclare -x PATH=&quot;/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/home/pi/bin&quot;declare -x PWD=&quot;/home/pi&quot;declare -x SHELL=&quot;/bin/bash&quot;declare -x SHLVL=&quot;1&quot;declare -x SSH_CLIENT=&quot;101.135.216.146 28249 22&quot;declare -x SSH_CONNECTION=&quot;101.135.216.146 28249 192.168.1.111 22&quot;declare -x SSH_TTY=&quot;/dev/pts/1&quot;declare -x TERM=&quot;xterm&quot;declare -x USER=&quot;pi&quot; 使用echo来查看单独的环境变量
+pi@raspi:~$ echo $PATH/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/home/pi/bin 我们可以看到，以上PATH值包含了一些系统命令的目录，而这些目录都用:隔开。
+修改PATH 我们可以使用export命令来添加目录，如下：
+export PATH=/mydoc:$PATH 以上命令在原有的PATH前添加了/mydoc这个目录，设置完成后的PATH值如下：
+pi@raspi:~$ echo $PATH/mydoc:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/home/pi/bin 以上方法修改PATH值，在终端退出后就会失效，因此建议通过修改/etc/profile来设定PATH"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">Linux下查看修改PATH</h1>
+        </header>
+        <div class="content">
+            <h3 id="什么是path">什么是PATH?</h3>
+<p>要搞清什么是<strong>PATH</strong>，应该先搞清什么是环境变量？</p>
+<p>在计算机中，如果需要运行一个软件，那么我们就要找到它所在的位置，但是每次运行程序时如果都要进入到相应目录，那么显然是很繁琐的。于是就有了环境变量，环境变量就是一个系统参数，里面记录了一些目录，运行软件的时候，相关的程序将会按照该目录寻找相关文件。</p>
+<p>而在Linux中，系统会有一个默认的<strong>PATH</strong>环境变量，里面记录了系统级的相关命令目录，比如当我们输入<code>ls</code>、<code>cd</code>、<code>pwd</code>等命令时，我们不需要指定它们所在的目录，因为包含这些命令的系统目录已经写入<strong>PATH</strong>参数，因而方便我们调用。</p>
+<h3 id="查看path">查看PATH</h3>
+<p>在linux中，可以使用<code>export</code>命令来查看所有环境变量，如下：</p>
+<pre><code>pi@raspi:~$ export
+declare -x HOME=&quot;/home/pi&quot;
+declare -x LANG=&quot;en_GB.UTF-8&quot;
+declare -x LOGNAME=&quot;pi&quot;
+declare -x MAIL=&quot;/var/mail/pi&quot;
+declare -x OLDPWD
+declare -x PATH=&quot;/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/home/pi/bin&quot;
+declare -x PWD=&quot;/home/pi&quot;
+declare -x SHELL=&quot;/bin/bash&quot;
+declare -x SHLVL=&quot;1&quot;
+declare -x SSH_CLIENT=&quot;101.135.216.146 28249 22&quot;
+declare -x SSH_CONNECTION=&quot;101.135.216.146 28249 192.168.1.111 22&quot;
+declare -x SSH_TTY=&quot;/dev/pts/1&quot;
+declare -x TERM=&quot;xterm&quot;
+declare -x USER=&quot;pi&quot;
+</code></pre>
+<p>使用<code>echo</code>来查看单独的环境变量</p>
+<pre><code>pi@raspi:~$ echo $PATH
+/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/home/pi/bin
+</code></pre>
+<p>我们可以看到，以上<strong>PATH</strong>值包含了一些系统命令的目录，而这些目录都用<code>:</code>隔开。</p>
+<h3 id="修改path">修改PATH</h3>
+<p>我们可以使用<code>export</code>命令来添加目录，如下：</p>
+<pre><code>export PATH=/mydoc:$PATH
+</code></pre>
+<p>以上命令在原有的<strong>PATH</strong>前添加了<code>/mydoc</code>这个目录，设置完成后的<strong>PATH</strong>值如下：</p>
+<pre><code>pi@raspi:~$ echo $PATH
+/mydoc:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/home/pi/bin
+</code></pre>
+<p>以上方法修改<strong>PATH</strong>值，在终端退出后就会失效，因此建议通过修改<code>/etc/profile</code>来设定<strong>PATH</strong></p>
+<p>看一下<code>/etc/profile</code>中到底有什么东西</p>
+<pre><code>pi@raspi:~$ cat /etc/profile
+# /etc/profile: system-wide .profile file for the Bourne shell (sh(1))
+# and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).
+
+if [ &quot;`id -u`&quot; -eq 0 ]; then
+PATH=&quot;/usr/local/sbin:/usr/local/usr/sbin:/usr/sbin:/bin&quot;
+else
+PATH=&quot;/usr/local/sbin:/usr/local/usr/sbin:/usr/sbin:/bin:/usr/local/games:/usr/games&quot;
+fi
+export PATH
+
+if [ &quot;$PS1&quot; ]; then
+if [ &quot;$BASH&quot; ] &amp;&amp; [ &quot;$BASH&quot; != &quot;/bin/sh&quot; ]; then
+    # The file bash.bashrc already sets the default PS1.
+    # PS1='\h:\w\$ '
+    if [ -f /etc/bash.bashrc ]; then
+    . /etc/bash.bashrc
+    fi
+else
+    if [ &quot;`id -u`&quot; -eq 0 ]; then
+    PS1='# '
+    else
+    PS1='$ '
+    fi
+fi
+fi
+
+if [ -d /etc/profile.d ]; then
+for i in /etc/profile.d/*.sh; do
+    if [ -r $i ]; then
+    . $i
+    fi
+done
+unset i
+fi
+export PATH=/usr/local/nginx/sbin:/usr/local/php:$PATH
+</code></pre>
+<p>看来<code>/etc/profile</code>中默认将一部分系统目录都添加到了<strong>PATH</strong>中，而我们只需要更改最后一行，将一些自定义的目录添加到<strong>PATH</strong>即可。</p>
+<p>通过编辑<code>/etc/profile</code>来设定的<strong>PATH</strong>值会在下次进入系统时生效，如果需要当即生效，只需要执行以下命令即可：</p>
+<pre><code>source /etc/profile</code></pre>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-03-29</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/path">#PATH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/echo">#echo</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Marisot on UNIXETC</title>
+    <link>https://unixetc.com/tags/marisot/</link>
+    <description>UNIXETC (Marisot)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 13 Apr 2017 14:14:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/marisot/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用手机远程控制树莓派GPIO</title>
+      <link>https://unixetc.com/post/use-your-phone-to-remotely-control-raspberrypi/</link>
+      <pubDate>Thu, 13 Apr 2017 14:14:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/use-your-phone-to-remotely-control-raspberrypi/</guid>
+      <description>&lt;p&gt;必备条件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;树莓派已联网&lt;/li&gt;
+&lt;li&gt;安装官方镜像&lt;/li&gt;
+&lt;li&gt;只支持Raspberry Pi 2/3 Model B&lt;/li&gt;
+&lt;li&gt;只支持Android手机&lt;/li&gt;
+&lt;li&gt;安装Java8&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;安装官方镜像raspbian&#34;&gt;安装官方镜像Raspbian&lt;/h3&gt;
+&lt;p&gt;下载地址 &lt;a href=&#34;https://www.raspberrypi.org/downloads/&#34;&gt;https://www.raspberrypi.org/downloads/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;安装java8&#34;&gt;安装Java8&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt install oracle-java8-jdk
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;下载Marsiot到树莓派&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget http://www.marsiot.com/download/marsiot.jar
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;下载Marsiot到手机，安装&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.marsiot.com/download/marsiot.apk&#34;&gt;http://www.marsiot.com/download/marsiot.apk&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在树莓派上运行&lt;strong&gt;Marsiot&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pi@raspi:~ $ sudo java -jar marsiot.jar
+
+Current version &amp;lt;101&amp;gt;
+More help: sudo java -jar marsiot.jar help
+
+Connect to www.marsiot.com...
+Connected ok!
+
+GPIO init...
+GPIO init ok!
+
+ID-CODE:c1fa PASS-CODE：11c6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;记住以上&lt;strong&gt;ID-CODE&lt;/strong&gt;、&lt;strong&gt;PASS-CODE&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在手机上打开&lt;strong&gt;火星互联&lt;/strong&gt;,&lt;strong&gt;事件中心&lt;/strong&gt;时间轴上会显示所有新加入设备，以&lt;strong&gt;ID-CODE&lt;/strong&gt;区分，找到你对应的设备点击，按照提示输入&lt;strong&gt;PASS-CODE&lt;/strong&gt;即可连接。&lt;/p&gt;
+&lt;p&gt;连接后可以在&lt;strong&gt;我的设备&lt;/strong&gt;中看到已连接的设备，点击通用视图即可实时监控&lt;strong&gt;GPIO&lt;/strong&gt;端口状态。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>VPS优化 - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+
+
+
+<meta property="og:title" content="VPS优化" />
+<meta property="og:description" content="pdksh替代bash $sudo apt-get install pdksh$sudo vi /etc/shells 添加/bin/pdksh到/etc/shells文件
+$chsh -s /bin/pdksh 重新登录即可。
+修改SSH端口 #vi /etc/ssh/sshd_config  将Port 22中的22改为自定义数字即可
+# /etc/init.d/ssh restart dropbear替代openssh $sudo apt-get install dropbear$sudo /etc/init.d/ssh stop$sudo vi /etc/default/dropbear 修改NO_START=0,修改DROPBEAR_PORT为自定义端口号
+$sudo /etc/init.d/dropbear start$sudo apt-get remove openssh-server$sudo apt-get autoremove 关闭多余的TTY Ubuntu 12.04 server如下操作
+#cd /etc/init/#mv tty2.conf tty2.conf.bak#mv tty3.conf tty2.conf.bak#mv tty4.conf tty2.conf.bak#mv tty5.conf tty2.conf.bak#mv tty6.conf tty2.conf.bak#reboot Debian 7如下操作" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unixetc.com/post/optimization-vps/" />
+<meta property="article:published_time" content="2014-02-01T12:31:00+00:00" />
+<meta property="article:modified_time" content="2014-02-01T12:31:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="VPS优化"/>
+<meta name="twitter:description" content="pdksh替代bash $sudo apt-get install pdksh$sudo vi /etc/shells 添加/bin/pdksh到/etc/shells文件
+$chsh -s /bin/pdksh 重新登录即可。
+修改SSH端口 #vi /etc/ssh/sshd_config  将Port 22中的22改为自定义数字即可
+# /etc/init.d/ssh restart dropbear替代openssh $sudo apt-get install dropbear$sudo /etc/init.d/ssh stop$sudo vi /etc/default/dropbear 修改NO_START=0,修改DROPBEAR_PORT为自定义端口号
+$sudo /etc/init.d/dropbear start$sudo apt-get remove openssh-server$sudo apt-get autoremove 关闭多余的TTY Ubuntu 12.04 server如下操作
+#cd /etc/init/#mv tty2.conf tty2.conf.bak#mv tty3.conf tty2.conf.bak#mv tty4.conf tty2.conf.bak#mv tty5.conf tty2.conf.bak#mv tty6.conf tty2.conf.bak#reboot Debian 7如下操作"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">VPS优化</h1>
+        </header>
+        <div class="content">
+            <h3 id="pdksh替代bash">pdksh替代bash</h3>
+<pre><code>$sudo apt-get install pdksh
+$sudo vi /etc/shells
+</code></pre>
+<p>添加/bin/pdksh到/etc/shells文件</p>
+<pre><code>$chsh -s /bin/pdksh
+</code></pre>
+<p>重新登录即可。</p>
+<h3 id="修改ssh端口">修改SSH端口</h3>
+<pre><code>#vi /etc/ssh/sshd_config    
+</code></pre>
+<p>将Port 22中的22改为自定义数字即可</p>
+<pre><code># /etc/init.d/ssh restart
+</code></pre>
+<h3 id="dropbear替代openssh">dropbear替代openssh</h3>
+<pre><code>$sudo apt-get install dropbear
+$sudo /etc/init.d/ssh stop
+$sudo vi /etc/default/dropbear
+</code></pre>
+<p>修改NO_START=<strong>0</strong>,修改DROPBEAR_PORT为自定义端口号</p>
+<pre><code>$sudo /etc/init.d/dropbear start
+$sudo apt-get remove openssh-server
+$sudo apt-get autoremove
+</code></pre>
+<h3 id="关闭多余的tty">关闭多余的TTY</h3>
+<p><strong>Ubuntu 12.04 server</strong>如下操作</p>
+<pre><code>#cd /etc/init/
+#mv tty2.conf tty2.conf.bak
+#mv tty3.conf tty2.conf.bak
+#mv tty4.conf tty2.conf.bak
+#mv tty5.conf tty2.conf.bak
+#mv tty6.conf tty2.conf.bak
+#reboot
+</code></pre>
+<p><strong>Debian 7</strong>如下操作</p>
+<pre><code>#vi /etc/inittab
+</code></pre>
+<p>找到如下行</p>
+<pre><code>1:2345:respawn:/sbin/getty 38400 tty1
+2:23:respawn:/sbin/getty 38400 tty2
+3:23:respawn:/sbin/getty 38400 tty3
+4:23:respawn:/sbin/getty 38400 tty4
+5:23:respawn:/sbin/getty 38400 tty5
+6:23:respawn:/sbin/getty 38400 tty6
+</code></pre>
+<p>将不需要的行注释掉(#)即可，重启完成。</p>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-02-01</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vps">#VPS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/openssh">#OpenSSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/pdksh">#pdksh</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dropbear">#dropbear</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/getty">#getty</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

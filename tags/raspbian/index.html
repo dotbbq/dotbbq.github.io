@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>Raspbian - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/tags/raspbian/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+
+
+
+<meta property="og:title" content="Raspbian" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/tags/raspbian/" />
+<meta property="og:updated_time" content="2019-04-19T09:46:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Raspbian"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <h1>Tag: Raspbian</h1>
+    <div class="post-info">
+        <a href="https://unixetc.com/tags">To all tags</a>
+    </div>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/raspberry-pi-zero-with-ssh-over-usb/">通过SSH Over USB管理树莓派Zero</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        树莓派Zero因为相对来说太小巧，没有提供初始化的网卡，所以我们除了通过串口连接以外，树莓派Zero也提供了USB直接连接的方式。即通过Ethernet Gadget模式来连接pc，并进行ssh连接。
+ Ethernet Gadget模式即USB网卡模式，比较常见的就是我们通过android手机的usb接口对pc进行网络共享的一种手段。一般电脑都会自动识别这种设备，并开启网卡进行共享。
+ 修改配置文件 为了进行USB连接，我们需要修改BOOT文件夹下的config.txt与cmdline.txt配置文件。 首先在config.txt最末行处换行添加如下代码，打开usb网卡模式：
+dtoverlay=dwc2 其次在cmdline.txt文件中找到rootwait字段，并在其后面空格添加如下信息，在打开系统时开启USB网卡模式。
+modules-load=dwc2,g_ether 在boot分区新建ssh文件，以打开ssh访问功能。
+touch ssh 通过usb连接设备 树莓派zero有两个MicroUSB口，一个是电源插口，职司供电的功能，另外一个就是USB接口，它除了供电以外还提供OTG的功能，我们也是通过这个接口来连接PC。 此时我们可以通过以下代码连接树莓派zero：
+ssh pi@raspberrypi.local 但此时ip段为DHCP模式获取，如果我们希望通过ip来连接，则我们需要给树莓派的usb网卡设置ip。
+设置USB网卡的IP 我们可以通过ifconfig -a来查看我们现在的网卡设备，此时我们可以看到，USB0网卡设备，我们就是通过该设备连接的pc，所以我们需要设置该网卡的ip。
+sudo nano /etc/network/interfaces 打开网卡配置界面，在最末行添加如下代码来设置固定IP：
+allow-hotplug usb0iface usb0 inet staticaddress 192.168.7.2netmask 255.255.255.0network 192.168.7.0broadcast 192.168.7.255gateway 192.168.7.1 然后重启usb0网卡：
+sudo ifdown usb0sudo ifup usb0ifconfig usb0 但树莓派此时实际上是从机，我们需要通过设置pc主机的ip来让树莓派0的usb网卡真正运作起来，那么我们对刚才的usb设备设置如下IP：
+ IP: 192.168.7.1 掩码: 255.255.255.0 路由: 192.168.7.1
+ 此时我们就可以通过ip来进行ssh连接了：
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2019-04-19</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi-zero">#Raspberry Pi Zero</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh-over-usb">#ssh over usb</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/understand-linux-shell-initialization-files-and-user-profiles-files/">理解Linux中Shell初始化文件和用户Profiles文件</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        Linux是一个多用户、实时共享的操作系统，意味着不止一个用户可以登录同一个系统。系统管理员通过任务管理来分配不同用户的权限，比如安装、升级、卸载应用程序，运行编译程序，文件查看、编辑等等。
+Linux允许通过两种主要方式来创建用户环境：系统级(全局)和用户级(个人)。一般情况下，Linux系统都会运行基本shell程序，当用户登录成功后shell会在初始化时根据某些文件开创建环境。
+Linux中的Shell初始化 当Shell被调用时，会有一些初始化/启动文件被启用，它们的主要作用是为shell本身或用户设定运行环境，包含一些函数、	变量、别名等等。
+Shell可以读取以下两种初始化文件:
+ 系统级启动文件 – 包含一些应用于户所有用户的全局配置，一般存在于**/etc**目录中，如 **/etc/profiles** 、**/etc/bashrc** 或者 **/etc/bash.bashrc**。 用户级启动文件 – 包含一些应用于单用户的配置文件，一般存放在各个用户目录，这些配置可以覆盖系统级全局配置，如**.profiles**、 **.bash_profile**、 **.bashrc** 和 **.bash_login**.  Shell存在三种调用模式：
+1. 交互式登录Shell 当用户成功登录系统后调用该Shell,使用**/bin/login**登录，随后读取**/etc/passwd**文件。
+当启动交互式shell后，将读取**/etc/profile**文件以及特定的用户文件**~/.bash_profile**
+login as: pi pi@pi.raspi.in&#39;s password: The programs included with the Debian GNU/Linux system are free software; the exact distribution terms for each program are described in the individual files in /usr/share/doc/*/copyright. Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent permitted by applicable law.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-04-25</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/path">#PATH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/shell">#shell</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/profile">#profile</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">#环境变量</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/fix-raspberry-path-variable/">修复树莓派PATH变量</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        使用lnmp一键工具安装完nmp后，重启进入系统就提示bash command not found
+然后试了试service,who等命令也无法使用
+只有最基本的系统命令ls,cat等可以用
+看来安装lnmp后，我的PATH变量被动了
+先临时修改下PATH，便于后面操作
+export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:$PATH 然后检查~/.profile,/etc/profile是否存在，存在
+检查其中的PATH赋值是否异常
+经过排查，发现/etc/profile中的PATH赋值异常，修改之重启OK！
+在此分享正确的原始~/.profile和/etc/profile文件
+~/.profile 内容
+# ~/.profile: executed by the command interpreter for login shells.# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login# exists.# see /usr/share/doc/bash/examples/startup-files for examples.# the files are located in the bash-doc package.# the default umask is set in /etc/profile; for setting the umask# for ssh logins, install and configure the libpam-umask package.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-03-03</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/path">#PATH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+    
+        
+    <div class="pagination">
+        <div class="left pagination-item disabled">
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/tags/raspbian/page/2/">To old posts</a>
+            
+        </div>
+    </div>
+
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

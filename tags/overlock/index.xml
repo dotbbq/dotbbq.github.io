@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>overlock on UNIXETC</title>
+    <link>https://unixetc.com/tags/overlock/</link>
+    <description>UNIXETC (overlock)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Fri, 28 Feb 2014 12:28:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/overlock/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>开始使用树莓派</title>
+      <link>https://unixetc.com/post/starting-use-raspberry-pi/</link>
+      <pubDate>Fri, 28 Feb 2014 12:28:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/starting-use-raspberry-pi/</guid>
+      <description>&lt;h3 id=&#34;安装系统&#34;&gt;安装系统&lt;/h3&gt;
+&lt;p&gt;从官网下载系统镜像，推荐Raspbian&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://downloads.raspberrypi.org/raspbian_latest&#34;&gt;http://downloads.raspberrypi.org/raspbian_latest&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;将下载后的zip文件解压，得到&lt;strong&gt;2014-01-07-wheezy-raspbian.img&lt;/strong&gt;文件。&lt;/p&gt;
+&lt;p&gt;准备一张SD卡，最好容量大于4GB，Class10&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;将镜像写入SD卡&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Linux下推荐使用&lt;code&gt;dd&lt;/code&gt;名来写入镜像&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;使用&lt;code&gt;fdisk -l&lt;/code&gt;检查分区信息，比如sd卡设备为**/dev/sdb**，使用以下命令写入：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#dd if=2014-01-07-wheezy-raspbian.img of=/dev/sdb bs=1M
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Windows下推荐使用&lt;strong&gt;Win32DiskImager&lt;/strong&gt;写入镜像&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Win32DiskImager下载地址：&lt;a href=&#34;http://sourceforge.net/projects/win32diskimager/&#34;&gt;http://sourceforge.net/projects/win32diskimager/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载后打开软件，选择好镜像文件与USB设备，然后点击&lt;strong&gt;Write&lt;/strong&gt;写入。&lt;/p&gt;
+&lt;h3 id=&#34;开机进入系统&#34;&gt;开机进入系统&lt;/h3&gt;
+&lt;p&gt;将已写入系统的SD卡插入Raspberry Pi，通过固网链接路由器，然后使用USB供电启动。&lt;/p&gt;
+&lt;p&gt;正常启动后，板载的&lt;strong&gt;ACT&lt;/strong&gt;，&lt;strong&gt;PWR&lt;/strong&gt;、&lt;strong&gt;FDX&lt;/strong&gt;、&lt;strong&gt;LNK&lt;/strong&gt;、&lt;strong&gt;100&lt;/strong&gt;五个指示灯均点亮。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;通过SSH连接Raspberry Pi&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;查看Raspberry Pi IP地址&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#nmap -sP 192.168.1/24
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;检查出MAC后标注(Raspberry Pi Foundation)的即为Raspberry Pi主机。&lt;/p&gt;
+&lt;p&gt;然后通过SSH来链接主机&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#ssh 192.168.1.127
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;用户名为&lt;strong&gt;pi&lt;/strong&gt;，默认密码为&lt;strong&gt;raspberry&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Widnows下推荐使用&lt;a href=&#34;http://www.chiark.greenend.org.uk/~sgtatham/putty/&#34; title=&#34;PuTTY: a free telnet/ssh client&#34;&gt;Putty&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;设置raspberry&#34;&gt;设置Raspberry&lt;/h3&gt;
+&lt;p&gt;运行设置工具&lt;code&gt;sudo raspi-config&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;选择&lt;code&gt;Expand Filesystem&lt;/code&gt;扩展文件系统&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Change User Passwd&lt;/code&gt; 修改默认用户&lt;code&gt;pi&lt;/code&gt;的密码，当然也可以在系统中使用&lt;code&gt;passwd&lt;/code&gt;命令来更改。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Advanced Options&lt;/code&gt;-&amp;gt;&lt;code&gt;Hostname&lt;/code&gt; 修改主机名&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Overclock&lt;/code&gt; 超频，建议900Mhz&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>N900超频与刷9G-Home</title>
+      <link>https://unixetc.com/post/n900-overclock-and-brush-9ghome/</link>
+      <pubDate>Sun, 08 Apr 2012 14:18:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/n900-overclock-and-brush-9ghome/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;什么是9G-home?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在linux中/home为用户主用目录，N900默认为/home分配的空间大概1.9G左右，而为了刷Android等第三方系统，我们需要更大的/home来存放文件，所以改变/home目录大小称之为XG-home(x有3/5/6/9等)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;刷9G Home&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;下载9G-home刷机包:http://pan.baidu.com/share/link?shareid=1527292529&amp;amp;uk=1493434283&lt;/p&gt;
+&lt;p&gt;打开CMD，进入到flasher目录，输入如下命令（具体依照本机目录输入）:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;flasher-3.5.exe -F 9ghomeemmc.bin -f
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;出现提示&lt;strong&gt;Suitable USB device not found,waiting.&lt;/strong&gt; 时，关闭手机，按住U键连接数据线，等待cmd提示开始写入时可放开U键，等待提示完成。 &lt;strong&gt;不要开机，切记！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;接着重新刷Rom文件，即COMBIND那个文件。&lt;strong&gt;继续别开机！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;N900超频&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;接下来刷入超频包，以下是几个不同等级的超频包&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;zImage-700mhz&lt;/li&gt;
+&lt;li&gt;zImage-750mhz&lt;/li&gt;
+&lt;li&gt;zImage-800mhz&lt;/li&gt;
+&lt;li&gt;zImage-850mhz-450dsp&lt;/li&gt;
+&lt;li&gt;zImage-900mhz&lt;/li&gt;
+&lt;li&gt;zImage-900mhz-500dsp&lt;/li&gt;
+&lt;li&gt;zImage-930mhz&lt;/li&gt;
+&lt;li&gt;zImage-930mhz-500dsp&lt;/li&gt;
+&lt;li&gt;zImage-950mhz&lt;/li&gt;
+&lt;li&gt;zImage-950mhz-500dsp&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下载地址:http://pan.baidu.com/share/link?shareid=1567324549&amp;amp;uk=1493434283&lt;/p&gt;
+&lt;p&gt;这里以超750MHz为例&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;flasher-3.5.exe -k zImage-750mhz -f
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;等到提示完成后，开机即可。 给大家贴出前后两张对比图&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/752251483.webp&#34; alt=&#34;n900_bf_oc.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/1611504914.webp&#34; alt=&#34;n900_af_oc.png&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

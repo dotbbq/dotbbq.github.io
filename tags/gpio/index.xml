@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gpio on UNIXETC</title>
+    <link>https://unixetc.com/tags/gpio/</link>
+    <description>UNIXETC (gpio)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sun, 02 Mar 2014 12:31:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/gpio/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>树莓派安装Python开发环境与GPIO库</title>
+      <link>https://unixetc.com/post/raspberry-pi-install-python-development-environment-and-gpio-library/</link>
+      <pubDate>Sun, 02 Mar 2014 12:31:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/raspberry-pi-install-python-development-environment-and-gpio-library/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;安装python&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$sudo apt-get install python-dev
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;更新&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$sudo easy_install -U distribute
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;安装python-pip&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$sudo apt-get install python-pip
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;添加国内pypi镜像&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在&lt;strong&gt;~/.pip/pip.conf&lt;/strong&gt;中添加&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[global]
+index-url = http://mirrors.aliyun.com/pypi/simple/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;安装python的GPIO库&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$sudo pip install rpi.gpio&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

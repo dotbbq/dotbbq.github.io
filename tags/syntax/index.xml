@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>syntax on UNIXETC</title>
+    <link>https://unixetc.com/tags/syntax/</link>
+    <description>UNIXETC (syntax)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 17 Sep 2013 17:17:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/syntax/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Vim Markdown语法高亮</title>
+      <link>https://unixetc.com/post/vim-markdown-syntax-highlighting/</link>
+      <pubDate>Tue, 17 Sep 2013 17:17:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/vim-markdown-syntax-highlighting/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;安装插件&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;插件下载地址:&lt;a href=&#34;https://github.com/plasticboy/vim-markdown/archive/master.tar.gz&#34;&gt;https://github.com/plasticboy/vim-markdown/archive/master.tar.gz&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;安装方法：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$mkdir ~/.vim/
+$cd ~/.vim
+$tar --strip=1 -zxf vim-markdown-master.tar.gz
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Vim开启语法高亮&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;编辑&lt;code&gt;~/.vimrc&lt;/code&gt;，写入&lt;strong&gt;syntax on&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

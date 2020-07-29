@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HP on UNIXETC</title>
+    <link>https://unixetc.com/tags/hp/</link>
+    <description>UNIXETC (HP)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Wed, 17 Aug 2016 08:17:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/hp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Debian下安装Zbook14无线网卡驱动</title>
+      <link>https://unixetc.com/post/zbook14-install-wireless-driver-under-debian/</link>
+      <pubDate>Wed, 17 Aug 2016 08:17:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/zbook14-install-wireless-driver-under-debian/</guid>
+      <description>&lt;p&gt;首先查看无线网卡型号&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;alair@zb14:~$ lspci|grep less
+02:00.0 Network controller: Intel Corporation Wireless 7260 (rev 73)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;搜索Inter相关固件
+​	
+alair@zb14:~$ apt-cache search iwlwifi
+firmware-iwlwifi - Binary firmware for Intel Wireless cards&lt;/p&gt;
+&lt;p&gt;安装之
+​	
+&lt;code&gt;alair@zb14:~$ apt-get install firmware-iwlwifi&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;重启完事儿！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>WebOS资源分享</title>
+      <link>https://unixetc.com/post/webos-resource-sharing/</link>
+      <pubDate>Mon, 20 Aug 2012 12:59:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/webos-resource-sharing/</guid>
+      <description>&lt;p&gt;对于WebOS还是继续看好，但是出于使用习惯和需求，将已经闲置了两个多月的HP TouchPad出手，新入手了台iPad2 Wifi (32nm)。&lt;/p&gt;
+&lt;p&gt;以下分享一些关于HP TouchPad的WebOS资源，以方便需要的朋友 以下为目录说明:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;G:WebOS
+├─8%及12%无法通过一键修砖 *关于刷机不过的处理方法
+├─cm7alpha3.5 *CM7 for HP TouchPad
+├─cm9alpha2 *CM7 for HP TouchPad
+├─patchs *一些补丁备份，便于安装
+├─soft *收集的一些HP TouchPad软件
+├─touchpad免激活 *HP TouchPad免激活工具
+├─WQI *WebOS Quick Install
+└─zoopda-elite-TP *Zoopda eLite发布的DIY ROM for HP TouchPad
+calibre-0.8.22.msi *电子书管理编辑软件
+KSMediaStreamer_v1.0.7.msi *流媒体分享软件
+NovacomInstaller_x86.msi *驱动程序(Windows)
+patch.txt *Preware补丁推荐
+Splashtop_Streamer_Win_v1.6.0.1.exe *远程桌面服务程序
+TBaccess.exe *TBaccess PC端
+UniversalNovacomInstaller.jar *驱动程序(Linux)
+webOS Nation Moboot.zip *MoBoot主题文件
+webosdoctorp305hstnhwifi.jar *HP TouchPad官网3.0.5 ROM
+WifiMediaSync.msi *媒体文件同步工具
+手动删除android.txt *手动删除CM方法
+
+G:WebOScm7alpha3.5
+ACMEInstaller
+ACMEUninstaller
+gapps-gb-20110828-signed.zip
+moboot_0.3.5.zip
+novacom.exe
+update-cm-7.1.0-tenderloin-a3.5-fullofbugs.zip
+update-cwm_tenderloin-1012.zip
+XRONified_vB2.9.1_odex_01032012.zip
+
+G:WebOScm9alpha2
+ACMEInstaller2
+ACMEUninstaller
+gapps-ics-20120429-signed.zip
+moboot_0.3.5.zip
+novacom.exe
+update-cm-9.0.0-RC0-Touchpad-alpha2-fullofbugs.zip
+update-cwm_tenderloin-1012.zip
+
+G:WebOSpatchs
+ca.canucksoftware.filemgr_2.0.7_all.ipk
+ca.canucksoftware.homebrew-js-service-framework_1.0.0_all.ipk
+ca.canucksoftware.systoolsmgr_1.0.5_all.ipk
+cacanucksoftwareinternalz_15.ipk
+
+G:WebOSsoft
+ca.canuckcoding.comicshelfhd_1.3.0_all.ipk
+chomper.sys.lsmime_0.1.0_armv7.ipk
+com.8bitdevelopment.wifimediasync_3.0.5_all.ipk
+com.amwityga.tpnews_1.0.0_all.ipk
+com.aol.engadgetHD_1.0.5_all_Touchpad.ipk
+com.hedami.musicplayerremix_2.5.5_all.ipk
+com.hp.palm.renren_01.00.022_all.ipk
+com.ingloriousapps.glimpse_1.2.3_all.ipk
+com.ingloriousapps.notesplus-untestedalpha_0.3.1_all.ipk
+com.kalemsoft.ksmplayera_0.5.3_tp.ipk
+com.l337tech.internet-radio-hd-pro_0.0.2_all.ipk
+com.menaka.mvnc_2.0.0_all.ipk
+com.mporting.ime.zh-cn.patch_3.0.4_all.ipk
+com.noteday.opencoursehd_1.0.0_all.ipk
+com.omastudios.filemanager_1.7.0_all.ipk
+com.oscillicious.sodasynthhd_1.0.2_all.ipk
+com.picsel.app.smartoffice_1.8.5_all.ipk
+com.qq.palmqzone_1.0.0_all.ipk
+com.sina.touchpadweibo_1.0.1_all.ipk
+com.smilepig.sohutv_0.0.7_all.ipk
+com.splashtop.remote.webos_1.0.3_all.ipk
+com.syllogithm.webosrdpc_0.2.5_all.ipk
+com.tencent.qq_1.0.0_all.ipk
+com.tudou.video_2.0.0_all.ipk
+com.wordpress.mobilecoder.touchplayer_1.0.6a_all.ipk
+com.xuepx.justradio.hd_2.0.3_all.ipk
+com.youku.touchpad_2.0.0_beta3.ipk
+de.thg_.usbflashmount_0.1.0_all.ipk
+org.webosinternals.preware_1.8.5_arm.ipk
+org.webosinternals.preware_1.9.12_arm.ipk
+
+G:WebOStouchpad免激活
+devicetool-tp
+devicetool-tp.jar
+devicetool.bat
+readme.txt
+
+G:WebOSWQI
+WebOSQuickInstall-4.2.0.jar
+WebOSQuickInstall-4.3.1.jar
+WebOSQuickInstall-4.4.0.jar 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;http://pan.baidu.com/share/link?shareid=308749&amp;amp;uk=1493434283&#34;&gt;下载地址&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>HP Veer刷机中遇到的12%卡死问题</title>
+      <link>https://unixetc.com/post/twelve-percent-problem-on-hp-veer/</link>
+      <pubDate>Mon, 28 May 2012 15:28:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/twelve-percent-problem-on-hp-veer/</guid>
+      <description>&lt;p&gt;对于webos系统，我是由衷的赞美，但是相应的硬件确实有待商榷。&lt;/p&gt;
+&lt;p&gt;去年就入手了一部HP Veer 4G，体验了一个星期就转手了，因为我手中已经有了HP Touchpad。&lt;/p&gt;
+&lt;p&gt;前几天朋友再次邮寄Veer给我，自己玩不转，也不想玩了，所以让给我倒腾去吧。拿到手第一感觉就是，这货儿也太不爱惜了，机子用的就没法看，好在屏幕还贴膜着，要不更不知道会咋样。&lt;/p&gt;
+&lt;p&gt;拿到手的机子是商家当时发货时的系统，被搞的乌七八糟，于是重新找rom下载之。&lt;/p&gt;
+&lt;p&gt;以前自己用的那个感觉刷原厂rom就很好，但是现在想试着找找看有没有不错的第三方rom，煮机网看了下，发现现在有个stay版的，看起来做的确实不错，于是下载安装之。&lt;/p&gt;
+&lt;p&gt;刷机时由于懒惰，用了一个一键清除工具，没有使用系统自带的擦除功能，导致存储上出了问题，u盘功能不能使用了。想着不用管重新刷过就是，没想到碰到了从来没有过的12%卡死问题，刷了N多次还是不能过12%。&lt;/p&gt;
+&lt;p&gt;网上看了看一些经验，像重新安装驱动，换一台电脑试试等等，都没有用。&lt;/p&gt;
+&lt;p&gt;最后在webos-internals.org上找到了方法，地址在这里&lt;a href=&#34;http://www.webos-internals.org/wiki/How_To_Recover&#34;&gt;http://www.webos-internals.org/wiki/How_To_Recover&lt;/a&gt;，里面列出了几个不能正常recovery的实例，参考里面的Doctor disconnects at 8%条目，就可以解决刷机12%的问题。
+从里面说明来看，造成这些问题的主要原因就是存储问题，所以可能是由于我使用了一键清除工具的原因。&lt;/p&gt;
+&lt;p&gt;主要步骤如下：&lt;/p&gt;
+&lt;p&gt;1，重启手机，进入到recovery模式下(Power+音量上） 
+2，使用novacom刷入uImage&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#novacom boot mem://&amp;lt; nova-installer-image-broadway.uImage
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中的uImage文件，可以从官网的rom中提取，下载.tar格式的rom文件，用7zip打开&lt;/p&gt;
+&lt;p&gt;3，使用novaterm连接系统，进入cli，重新修复存储系统&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#lvm.static vgscan --ignorelockingfailure
+#lvm.static vgchange -ay --ignorelockingfailure
+#mkdosfs -f 1 -s 64 /dev/store/media
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Windows下novaterm的目录为C:\Program Files\Palm Incterminal\novaterm.bat&lt;/p&gt;
+&lt;p&gt;完成以上步骤，就可以重启进入recovery重新刷机了。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

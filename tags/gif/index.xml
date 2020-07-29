@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gif on UNIXETC</title>
+    <link>https://unixetc.com/tags/gif/</link>
+    <description>UNIXETC (gif)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sun, 03 Apr 2016 12:34:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/gif/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用OptiPNG优化压缩图片</title>
+      <link>https://unixetc.com/post/optimize-and-compress-image-by-optipng/</link>
+      <pubDate>Sun, 03 Apr 2016 12:34:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/optimize-and-compress-image-by-optipng/</guid>
+      <description>&lt;p&gt;因工作需要，得处理一张7872x5904体积为178MB的图片，格式为TIFF。&lt;/p&gt;
+&lt;p&gt;网上搜了半天，找到一个名为&lt;strong&gt;OptiPNG&lt;/strong&gt;的软件，主要为PNG优化，但也支持TIFF格式。&lt;/p&gt;
+&lt;p&gt;下面是OptiPNG的官方介绍&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;OptiPNG is a PNG optimizer that recompresses image files to a smaller size, without losing any information. This program also converts external formats (BMP, GIF, PNM and TIFF) to optimized PNG, and performs PNG integrity checks and corrections.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;OptiPNG可以将PNG文件重新压缩，压缩后体积变得更小，并且不会丢失任何信息。同时optipng还支持其他格式的图片，如BMP、GIF、PNM和TIFF。&lt;/p&gt;
+&lt;p&gt;至于OptiPNG的威力如何，请看本次实例&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;root@raspi:~# ls -lh huxian.tif                         
+-rw-r--r-- 1 root root 178M Apr  4 16:54 huxian.tif    //原始文件178MB
+root@raspi:~# optipng huxian.tif
+** Processing: huxian.tif
+Importing TIFF
+7872x5904 pixels, 4x8 bits/pixel, RGB+alpha   //分辨率7872x5904
+Reducing image to 3x8 bits/pixel, RGB
+Input file size = 186000368 bytes
+
+Trying:
+zc = 9  zm = 8  zs = 0  f = 0         IDAT size = 4273133
+
+Selecting parameters:
+zc = 9  zm = 8  zs = 0  f = 0         IDAT size = 4273133
+
+Output file: huxian.png
+
+Output IDAT size = 4273133 bytes
+Output file size = 4273190 bytes (181727178 bytes = 97.70% decrease)
+
+root@raspi:~# ls -lh huxian*
+-rw-r--r-- 1 root root 4.1M Apr  4 17:02 huxian.png   //压缩结果4.1MB
+-rw-r--r-- 1 root root 178M Apr  4 16:54 huxian.tif
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;看来OptiPNG还是很牛的嘛！！!&lt;/p&gt;
+&lt;p&gt;OptiPNG官方地址 &lt;a href=&#34;http://optipng.sourceforge.net/&#34;&gt;http://optipng.sourceforge.net/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;官方提供源码和Windows编译版，Debian/Ubuntu系统可以通过&lt;code&gt;apt-get install optipng&lt;/code&gt;来安装。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

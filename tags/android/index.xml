@@ -1,0 +1,852 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Android on UNIXETC</title>
+    <link>https://unixetc.com/tags/android/</link>
+    <description>UNIXETC (Android)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sat, 07 Sep 2019 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>一加3t和树莓派UNIXBench跑分对比</title>
+      <link>https://unixetc.com/post/oneplus3t-and-raspberry-pi-unixbench-score-comparison/</link>
+      <pubDate>Sat, 07 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/oneplus3t-and-raspberry-pi-unixbench-score-comparison/</guid>
+      <description>&lt;h3 id=&#34;一加3t&#34;&gt;一加3T&lt;/h3&gt;
+&lt;p&gt;一加3T运行的是&lt;a href=&#34;https://unixetc.com/post/oneplus-3t-install-ubuntutouch/&#34;&gt;UbuntuTouch&lt;/a&gt;系统&lt;/p&gt;
+&lt;h4 id=&#34;一加3t系统信息&#34;&gt;一加3T系统信息&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;phablet@ubuntu-phablet:~$ inxi -F
+Resuming in non X mode: xrandr not found. For package install advice run: inxi --recommends
+System:    Host: android Kernel: 3.18.31-halium-gca027546546e-01041-g7961eb763e61 aarch64 (32 bit) Desktop: N/A
+        Distro: Ubuntu 16.04 xenial
+Machine:   No /sys/class/dmi; using dmidecode: dmidecode is not installed.
+CPU:       Quad core AArch64 Processor rev 1 (aarch64) (-MCP-) (ARM)
+        clock speeds: max: 2188 MHz 1: 1593 MHz 2: 1593 MHz 3: 1593 MHz 4: 1593 MHz
+Graphics:  Card: Failed to Detect Video Card!
+        Display Server: N/A driver: N/A Resolution: 165x47
+Audio:     Card msm8996-tasha-mtp-snd-card driver: msm8996-tasha-m
+        Sound: Advanced Linux Sound Architecture v: k3.18.31-halium-gca027546546e-01041-g7961eb763e61
+Network:   Card-1: Qualcomm Atheros QCA6174 802.11ac Wireless Network Adapter driver: cnss_wlan_pci
+        IF: rename8 state: down mac: c2:ee:fb:e8:e2:ea
+        Card-2: Qualcomm Atheros QCA6174 802.11ac Wireless Network Adapter driver: cnss_wlan_pci
+        IF: wlp1s0 state: up mac: c0:ee:fb:e8:e2:ea
+Drives:    HDD Total Size: 64.0GB (8.3% used) ID-1: /dev/sda model: KLUCG4J1CB size: 57.9GB
+        ID-2: /dev/sdb model: KLUCG4J1CB size: 0.0GB ID-3: /dev/sdc model: KLUCG4J1CB size: 0.0GB
+        ID-4: /dev/sdd model: KLUCG4J1CB size: 0.1GB ID-5: /dev/sde model: KLUCG4J1CB size: 4.3GB
+        ID-6: /dev/sdf model: KLUCG4J1CB size: 1.6GB
+Partition: ID-1: / size: 2.9G used: 1.9G (67%) fs: ext4 dev: /dev/loop0
+Sensors:   None detected - is lm-sensors installed and configured?
+Info:      Processes: 551 Uptime: 1:02 Memory: 1668.1/5736.9MB Init: Upstart runlevel: 2
+        Client: Shell (bash) inxi: 2.2.35
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;一加3t-unixbench跑分&#34;&gt;一加3T unixbench跑分&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;========================================================================
+BYTE UNIX Benchmarks (Version 5.1.3)
+
+System: ubuntu-phablet: GNU/Linux
+OS: GNU/Linux -- 3.18.31-halium-gca027546546e-01041-g7961eb763e61 -- #1 SMP PREEMPT Wed Aug 21 20:33:17 CEST 2019
+Machine: aarch64 (aarch64)
+Language: en_US.utf8 (charmap=&amp;quot;UTF-8&amp;quot;, collate=&amp;quot;UTF-8&amp;quot;)
+11:39:26 up 58 min,  2 users,  load average: 6.59, 7.93, 8.16; runlevel 2
+
+------------------------------------------------------------------------
+Benchmark Run: 六 9月 07 2019 11:39:26 - 12:07:49
+0 CPUs in system; running 1 parallel copy of tests
+
+Dhrystone 2 using register variables       13089762.3 lps   (10.0 s, 7 samples)
+Double-Precision Whetstone                     3000.5 MWIPS (9.8 s, 7 samples)
+Execl Throughput                               1381.2 lps   (29.9 s, 2 samples)
+File Copy 1024 bufsize 2000 maxblocks        254749.2 KBps  (30.0 s, 2 samples)
+File Copy 256 bufsize 500 maxblocks           75714.9 KBps  (30.0 s, 2 samples)
+File Copy 4096 bufsize 8000 maxblocks        813273.2 KBps  (30.0 s, 2 samples)
+Pipe Throughput                              650583.5 lps   (10.0 s, 7 samples)
+Pipe-based Context Switching                  22716.1 lps   (10.0 s, 7 samples)
+Process Creation                                835.5 lps   (30.0 s, 2 samples)
+Shell Scripts (1 concurrent)                   2556.9 lpm   (60.0 s, 2 samples)
+Shell Scripts (8 concurrent)                    938.3 lpm   (60.0 s, 2 samples)
+System Call Overhead                         988399.2 lps   (10.0 s, 7 samples)
+
+System Benchmarks Index Values               BASELINE       RESULT    INDEX
+Dhrystone 2 using register variables         116700.0   13089762.3   1121.7
+Double-Precision Whetstone                       55.0       3000.5    545.5
+Execl Throughput                                 43.0       1381.2    321.2
+File Copy 1024 bufsize 2000 maxblocks          3960.0     254749.2    643.3
+File Copy 256 bufsize 500 maxblocks            1655.0      75714.9    457.5
+File Copy 4096 bufsize 8000 maxblocks          5800.0     813273.2   1402.2
+Pipe Throughput                               12440.0     650583.5    523.0
+Pipe-based Context Switching                   4000.0      22716.1     56.8
+Process Creation                                126.0        835.5     66.3
+Shell Scripts (1 concurrent)                     42.4       2556.9    603.1
+Shell Scripts (8 concurrent)                      6.0        938.3   1563.9
+System Call Overhead                          15000.0     988399.2    658.9
+                                                                ========
+System Benchmarks Index Score                                         463.9
+
+
+
+======= Script description and score comparison completed! =======
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;树莓派&#34;&gt;树莓派&lt;/h3&gt;
+&lt;p&gt;树莓派运行的是官方Raspbian Buster Lite版&lt;/p&gt;
+&lt;h4 id=&#34;树莓派系统信息&#34;&gt;树莓派系统信息&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;pi@raspberrypi:~ $ inxi -F
+System:    Host: raspberrypi Kernel: 4.19.66-v7+ armv7l bits: 32 Desktop: N/A Distro: Raspbian GNU/Linux 10 (buster)
+Machine:   Type: ARM Device System: Raspberry Pi 2 Model B Rev 1.1 details: BCM2835 rev: a21041 serial: 00000000d81b63a8
+CPU:       Topology: Quad Core model: ARMv7 v7l variant: cortex-a7 bits: 32 type: MCP
+        Speed: 1000 MHz min/max: 600/1000 MHz Core speeds (MHz): 1: 1000 2: 1000 3: 1000 4: 1000
+Graphics:  Device-1: bcm2708-fb driver: bcm2708_fb v: kernel
+        Device-2: bcm2835-hdmi driver: N/A
+        Display: tty server: N/A driver: N/A tty: 165x47
+        Message: No advanced graphics data found on this system.
+Audio:     Device-1: bcm2835-audio driver: bcm2835_audio
+        Device-2: bcm2835-hdmi driver: N/A
+        Sound Server: ALSA v: k4.19.66-v7+
+Network:   Device-1: Standard Microsystems SMSC9512/9514 Fast Ethernet Adapter type: USB driver: smsc95xx
+        IF: eth0 state: up speed: 100 Mbps duplex: full mac: b8:27:eb:1b:63:a8
+        Device-2: Realtek RTL8188EUS 802.11n Wireless Network Adapter type: USB driver: r8188eu
+        IF: wlan0 state: down mac: 14:cf:92:1d:84:a0
+        Device-3: Realtek RTL8188CUS 802.11n WLAN Adapter type: USB driver: rtl8192cu
+        IF: wlan1 state: down mac: e8:4e:06:1c:3e:67
+Drives:    Local Storage: total: 29.73 GiB used: 1.35 GiB (4.5%)
+        ID-1: /dev/mmcblk0 vendor: TDK model: TF32G size: 29.73 GiB
+Partition: ID-1: / size: 29.00 GiB used: 1.31 GiB (4.5%) fs: ext4 dev: /dev/mmcblk0p2
+        ID-2: /boot size: 252.0 MiB used: 39.1 MiB (15.5%) fs: vfat dev: /dev/mmcblk0p1
+Sensors:   Message: No sensors data was found. Is sensors configured?
+Info:      Processes: 129 Uptime: 44m Memory: 1002.1 MiB used: 182.8 MiB (18.2%) gpu: 76.0 MiB Shell: bash inxi: 3.0.32
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;树莓派unixbench跑分&#34;&gt;树莓派unixbench跑分&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;========================================================================
+BYTE UNIX Benchmarks (Version 5.1.3)
+
+System: raspberrypi: GNU/Linux
+OS: GNU/Linux -- 4.19.66-v7+ -- #1253 SMP Thu Aug 15 11:49:46 BST 2019
+Machine: armv7l (unknown)
+Language: en_US.utf8 (charmap=&amp;quot;ANSI_X3.4-1968&amp;quot;, collate=&amp;quot;ANSI_X3.4-1968&amp;quot;)
+CPU 0: ARMv7 Processor rev 5 (v7l) (0.0 bogomips)
+
+CPU 1: ARMv7 Processor rev 5 (v7l) (0.0 bogomips)
+
+CPU 2: ARMv7 Processor rev 5 (v7l) (0.0 bogomips)
+
+CPU 3: ARMv7 Processor rev 5 (v7l) (0.0 bogomips)
+
+11:06:28 up 5 min,  1 user,  load average: 1.15, 0.40, 0.15; runlevel 5
+
+------------------------------------------------------------------------
+Benchmark Run: 六 9月 07 2019 11:06:28 - 11:34:53
+4 CPUs in system; running 1 parallel copy of tests
+
+Dhrystone 2 using register variables        3337362.1 lps   (10.0 s, 7 samples)
+Double-Precision Whetstone                      753.3 MWIPS (10.0 s, 7 samples)
+Execl Throughput                                490.1 lps   (29.9 s, 2 samples)
+File Copy 1024 bufsize 2000 maxblocks         73075.5 KBps  (30.0 s, 2 samples)
+File Copy 256 bufsize 500 maxblocks           21292.0 KBps  (30.0 s, 2 samples)
+File Copy 4096 bufsize 8000 maxblocks        194738.9 KBps  (30.0 s, 2 samples)
+Pipe Throughput                              177539.0 lps   (10.0 s, 7 samples)
+Pipe-based Context Switching                  26085.6 lps   (10.0 s, 7 samples)
+Process Creation                               1112.2 lps   (30.0 s, 2 samples)
+Shell Scripts (1 concurrent)                   1167.8 lpm   (60.0 s, 2 samples)
+Shell Scripts (8 concurrent)                    327.1 lpm   (60.2 s, 2 samples)
+System Call Overhead                         451875.9 lps   (10.0 s, 7 samples)
+
+System Benchmarks Index Values               BASELINE       RESULT    INDEX
+Dhrystone 2 using register variables         116700.0    3337362.1    286.0
+Double-Precision Whetstone                       55.0        753.3    137.0
+Execl Throughput                                 43.0        490.1    114.0
+File Copy 1024 bufsize 2000 maxblocks          3960.0      73075.5    184.5
+File Copy 256 bufsize 500 maxblocks            1655.0      21292.0    128.7
+File Copy 4096 bufsize 8000 maxblocks          5800.0     194738.9    335.8
+Pipe Throughput                               12440.0     177539.0    142.7
+Pipe-based Context Switching                   4000.0      26085.6     65.2
+Process Creation                                126.0       1112.2     88.3
+Shell Scripts (1 concurrent)                     42.4       1167.8    275.4
+Shell Scripts (8 concurrent)                      6.0        327.1    545.2
+System Call Overhead                          15000.0     451875.9    301.3
+                                                                ========
+System Benchmarks Index Score                                         182.0
+
+------------------------------------------------------------------------
+Benchmark Run: 六 9月 07 2019 11:34:53 - 12:04:00
+4 CPUs in system; running 4 parallel copies of tests
+
+Dhrystone 2 using register variables       13191650.7 lps   (10.0 s, 7 samples)
+Double-Precision Whetstone                     2978.2 MWIPS (10.0 s, 7 samples)
+Execl Throughput                               1235.3 lps   (29.9 s, 2 samples)
+File Copy 1024 bufsize 2000 maxblocks         85443.5 KBps  (30.0 s, 2 samples)
+File Copy 256 bufsize 500 maxblocks           33157.0 KBps  (30.0 s, 2 samples)
+File Copy 4096 bufsize 8000 maxblocks        295618.5 KBps  (30.0 s, 2 samples)
+Pipe Throughput                              697215.8 lps   (10.0 s, 7 samples)
+Pipe-based Context Switching                 106460.7 lps   (10.0 s, 7 samples)
+Process Creation                               2599.0 lps   (30.0 s, 2 samples)
+Shell Scripts (1 concurrent)                   2615.3 lpm   (60.1 s, 2 samples)
+Shell Scripts (8 concurrent)                    352.7 lpm   (60.3 s, 2 samples)
+System Call Overhead                        1724986.2 lps   (10.0 s, 7 samples)
+
+System Benchmarks Index Values               BASELINE       RESULT    INDEX
+Dhrystone 2 using register variables         116700.0   13191650.7   1130.4
+Double-Precision Whetstone                       55.0       2978.2    541.5
+Execl Throughput                                 43.0       1235.3    287.3
+File Copy 1024 bufsize 2000 maxblocks          3960.0      85443.5    215.8
+File Copy 256 bufsize 500 maxblocks            1655.0      33157.0    200.3
+File Copy 4096 bufsize 8000 maxblocks          5800.0     295618.5    509.7
+Pipe Throughput                               12440.0     697215.8    560.5
+Pipe-based Context Switching                   4000.0     106460.7    266.2
+Process Creation                                126.0       2599.0    206.3
+Shell Scripts (1 concurrent)                     42.4       2615.3    616.8
+Shell Scripts (8 concurrent)                      6.0        352.7    587.9
+System Call Overhead                          15000.0    1724986.2   1150.0
+                                                                ========
+System Benchmarks Index Score                                         437.9
+
+
+
+======= Script description and score comparison completed! =======
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Vivo Y913精简版线刷包</title>
+      <link>https://unixetc.com/post/vivo-y913-simplify-version-brush-pack/</link>
+      <pubDate>Fri, 06 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/vivo-y913-simplify-version-brush-pack/</guid>
+      <description>&lt;p&gt;刷机所需文件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-396657758&#34;&gt;vivo_Y913_RevA_PD1304CV_A_1.18.4.7z&lt;/a&gt; A版线刷包&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-396657769&#34;&gt;vivo_Y913_RevB_PD1304CV_B_2.2.1.7z&lt;/a&gt; B版线刷包&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-396656652&#34;&gt;vivo_driver_v2.0.0.3.7z&lt;/a&gt; VIVO手机驱动&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;提示:&lt;strong&gt;解压密码为&lt;/strong&gt;alair&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;如何判断y913版本&#34;&gt;如何判断Y913版本？&lt;/h3&gt;
+&lt;p&gt;关机，按住&lt;strong&gt;电源减&lt;/strong&gt;+&lt;strong&gt;电源键&lt;/strong&gt;进入&lt;strong&gt;FASTBOOT MODE&lt;/strong&gt;，Version字段中PD1304CV后为版本号，分为A和B。&lt;/p&gt;
+&lt;h3 id=&#34;安装y913驱动&#34;&gt;安装Y913驱动&lt;/h3&gt;
+&lt;p&gt;下载驱动软件安装，完成后打开，按照提示安装&lt;strong&gt;adb&lt;/strong&gt;驱动，其他两个可选。&lt;/p&gt;
+&lt;h3 id=&#34;y913刷机&#34;&gt;Y913刷机&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;将手机关机，进入&lt;strong&gt;FASTBOOT&lt;/strong&gt;模式连接电脑&lt;/li&gt;
+&lt;li&gt;下载对应版本的刷机包，解压后进入&lt;strong&gt;BrushPack&lt;/strong&gt;目录，打开&lt;strong&gt;Fastboot刷机工具&lt;/strong&gt;，将同目录下的&lt;strong&gt;flash_all.bat&lt;/strong&gt;拖放到&lt;strong&gt;Fastboot刷机工具&lt;/strong&gt;窗口，点击&lt;strong&gt;开始刷机&lt;/strong&gt;，按照提示刷机完成后手机自动重启。&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>一加3T安装UbuntuTouch</title>
+      <link>https://unixetc.com/post/oneplus-3t-install-ubuntutouch/</link>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/oneplus-3t-install-ubuntutouch/</guid>
+      <description>&lt;p&gt;Ubuntu Touch（又称Ubuntu Phone）是Canonical公司与Ubuntu社区所开发的移动设备操作系统，专为触屏行动设备所设计，例如：智能手机和平板电脑。&lt;/p&gt;
+&lt;p&gt;现在国外开发者Vince1171放出了Oneplus3/3t的UbuntuTouch适配版，现在我们就安装试试。&lt;/p&gt;
+&lt;p&gt;首先下载所需文件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://tc5.us/file/18418398-416068360&#34;&gt;TWRP Recovery&lt;/a&gt; Recovery&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://tc5.us/file/18418398-395414726&#34;&gt; OnePlus_3T_Stable_9.0.3_Firmware_Modem.zip&lt;/a&gt;  OnePlus3T底包&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://tc5.us/file/18418398-415954047&#34;&gt;LineageOS&lt;/a&gt; LineageOS ROM&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://tc5.us/file/18418398-415952593&#34;&gt;halium-install.sh&lt;/a&gt; 安装脚本&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://tc5.us/file/18418398-415952666&#34;&gt;halium-boot.img&lt;/a&gt;引导镜像&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://tc5.us/file/18418398-415952924&#34;&gt;system.img&lt;/a&gt; 系统镜像&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://tc5.us/file/18418398-416068353&#34;&gt;ubports-touch.rootfs-xenial-armhf.tar.gz&lt;/a&gt; UbuntuTouch系统镜像&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下载完成后下来开始安装，本地PC环境为LinuxMint(类Ubuntu)，建议以下操作在&lt;strong&gt;root&lt;/strong&gt;权限下操作。&lt;/p&gt;
+&lt;h2 id=&#34;安装工具&#34;&gt;安装工具&lt;/h2&gt;
+&lt;p&gt;首先安装&lt;code&gt;adb&lt;/code&gt;以及&lt;code&gt;fastboot&lt;/code&gt;工具&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt install adb fastboot
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;解锁手机&#34;&gt;解锁手机&lt;/h2&gt;
+&lt;p&gt;接下来设置手机，&lt;strong&gt;设置&lt;/strong&gt;-&amp;gt;&lt;strong&gt;关于手机&lt;/strong&gt;，连击&lt;strong&gt;版本号&lt;/strong&gt;打开&lt;strong&gt;开发者选项&lt;/strong&gt;，进入&lt;strong&gt;开发者选项&lt;/strong&gt;打开&lt;strong&gt;OEM解锁&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;然后关闭手机，按住&lt;strong&gt;电源&lt;/strong&gt;+&lt;strong&gt;音量上&lt;/strong&gt;进入fastboot模式，链接手机和电脑。&lt;/p&gt;
+&lt;p&gt;在电脑端运行以下命令解锁&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;fastboot oem unlock
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;按照手机提示，选择&lt;strong&gt;YES&lt;/strong&gt;开始解锁，完成后手机重启。&lt;/p&gt;
+&lt;h2 id=&#34;安装recovery&#34;&gt;安装Recovery&lt;/h2&gt;
+&lt;p&gt;重启手机进入fastboot模式&lt;/p&gt;
+&lt;p&gt;接下来通过以下命令安装&lt;strong&gt;Recovery&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;fastboot flash recovery TWRP_recovery.img
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;安装完成后，关闭手机，按&lt;strong&gt;电源&lt;/strong&gt;+&lt;strong&gt;音量减&lt;/strong&gt;进入Recovery&lt;/p&gt;
+&lt;h2 id=&#34;安装lineageos&#34;&gt;安装LineageOS&lt;/h2&gt;
+&lt;p&gt;通过TWRP Recovery来刷入&lt;strong&gt;LineageOS ROM&lt;/strong&gt;，完成后双清重启再次进入&lt;strong&gt;Recovery&lt;/strong&gt;，通过数据线连接手机，进行后面操作。&lt;/p&gt;
+&lt;h2 id=&#34;安装ubuntutouch&#34;&gt;安装UbuntuTouch&lt;/h2&gt;
+&lt;p&gt;手机进入&lt;strong&gt;Recovery&lt;/strong&gt;模式，通过数据线连接电脑，然后开始按照以下进行安装。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;root@hpzb14:/media/alair/data# ./halium-install.sh -p ut ubports-touch.rootfs-xenial-armhf.tar.gz system.img 
+Debug: Chosen rootfs is ubports-touch.rootfs-xenial-armhf.tar.gz
+Debug: Chosen android image is system.img
+Debug: Chosen release is ut
+
+I: Writing rootfs into mountable image
+I: Writing android image into mountable image
+I: Running post installation tasks
+enabling Mir ... [done]
+enabling SSH ... [done]
+Please enter a new password for the user &#39;phablet&#39;:
+输入新的 UNIX 密码： 
+重新输入新的 UNIX 密码： 
+passwd: password updated successfully
+I: Unmounting images
+I: Shrinking images
+e2fsck 1.44.1 (24-Mar-2018)
+resize2fs 1.44.1 (24-Mar-2018)
+将 .halium-install-imgs.6Kcou/system.img 上的文件系统调整为 120200 个块（每块 4k）。
+开始第 2 步（共 32687 步）
+正在重定位块            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+开始第 3 步（共 24 步）
+正在扫描inode表          XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+.halium-install-imgs.6Kcou/system.img 上的文件系统现在为 120200 个块（每块 4k）。
+
+I: Pushing rootfs and android image to /data via ADB
+.halium-install-imgs.6Kcou/rootfs.img: 1 file pushed. 7.1 MB/s (3221225472 bytes in 433.702s)
+.halium-install-imgs.6Kcou/system.img: 1 file pushed. 7.7 MB/s (492339200 bytes in 61.329s)
+I: Cleaning up host
+I: Cleaning up device
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后继续在&lt;strong&gt;Recovery&lt;/strong&gt;模式下:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;adb shell &#39;touch /data/.writable_image; mkdir /a; mount /data/rootfs.img /a; echo manual | tee /a/etc/init/rsyslog.override; touch /a/.writable_device_image; umount /a; sync&#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;以上操作完后，重启手机进入&lt;strong&gt;fastboot模式&lt;/strong&gt;，按照以下安装引导系统程序。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;root@hpzb14:/media/alair/data# fastboot flash boot halium-boot.img 
+&amp;lt; waiting for any device &amp;gt;
+target reported max download size of 435159040 bytes
+sending &#39;boot&#39; (15468 KB)...
+OKAY [  0.410s]
+writing &#39;boot&#39;...
+OKAY [  0.119s]
+finished. total time: 0.529s
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;至此安装完成，重启即可进入UbuntuTouch系统。&lt;/p&gt;
+&lt;h4 id=&#34;重要提示&#34;&gt;重要提示&lt;/h4&gt;
+&lt;p&gt;进入系统后，打开&lt;strong&gt;Terminal&lt;/strong&gt;输入&lt;code&gt;sudo ubports-qa install xenial_-_haliumfixup &amp;amp;&amp;amp; sudo apt install pulseaudio-modules-droid-glue-24&lt;/code&gt;更新音频模块。如果默认软件源速度太慢，可以&lt;a href=&#34;https://unixetc.com/post/ubuntu-touch-change-mirror/&#34;&gt;参考此文&lt;/a&gt;先更换为国内源。&lt;/p&gt;
+&lt;h3 id=&#34;ubuntutouch系统截图&#34;&gt;UbuntuTouch系统截图&lt;/h3&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/Vince1171/OnePlus3-T-Halium-Prebuild&#34;&gt;https://github.com/Vince1171/OnePlus3-T-Halium-Prebuild&lt;/a&gt;&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>一加3T售后刷机包</title>
+      <link>https://unixetc.com/post/oneplus-3t-after-sale-rom/</link>
+      <pubDate>Sat, 13 Oct 2018 10:23:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/oneplus-3t-after-sale-rom/</guid>
+      <description>&lt;p&gt;首先下载以下两个文件包：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一加3T9008驱动  &lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-314319015&#34;&gt;Download&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;一加3T售后恢复包 &lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-314277876&#34;&gt;Download&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;然后，将手机完全关机，按住&lt;strong&gt;音量+&lt;/strong&gt;不放，将手机和电脑连接，此时手机还是黑屏状态，电脑会有设备连接提示音。&lt;/p&gt;
+&lt;p&gt;我的电脑-&amp;gt;右键管理-&amp;gt;设备管理器，打开查看，第一次使用会在&lt;strong&gt;其他设备&lt;/strong&gt;下出现&lt;strong&gt;QHSUSB_BULK&lt;/strong&gt;带黄色感叹号的未知设备，右键点击更新驱动，手动选择&lt;strong&gt;刷机驱动包&lt;/strong&gt;里面的驱动目录进行安装，如果不行的话可以使用&lt;strong&gt;360驱动大师&lt;/strong&gt;进行识别安装，安装完成后会出现类似以下的设备驱动:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/3798536887.png&#34; alt=&#34;hsusb99008_201539387431.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;其中&lt;strong&gt;Qualcomm HS-USB QDLoader 9008(COM4)&lt;strong&gt;的新设备，就是正常驱动后的手机，俗称&lt;/strong&gt;高通9008&lt;/strong&gt;模式。&lt;/p&gt;
+&lt;p&gt;将下载的&lt;strong&gt;一加3T售后恢复包&lt;/strong&gt;解压后，打开其中的&lt;strong&gt;MsmDownloadTool V3.0.exe&lt;/strong&gt;开始刷机&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/489731911.png&#34; alt=&#34;9008sjImag211539387935.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;正常识别COM设备后，点击&lt;strong&gt;Start&lt;/strong&gt;开始刷机，完成后自动重启。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>一加3T安装MIUI10</title>
+      <link>https://unixetc.com/post/oneplus3t-miui10/</link>
+      <pubDate>Thu, 19 Jul 2018 21:22:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/oneplus3t-miui10/</guid>
+      <description>&lt;p&gt;首先，十分感谢&lt;strong&gt;&lt;!-- raw HTML omitted --&gt;HitoLiu&lt;!-- raw HTML omitted --&gt;&lt;/strong&gt;辛苦劳动，才有了Oneplus3T的MIUI10&lt;/p&gt;
+&lt;p&gt;刷机前先确认H2OS版本，由于H大的MIUI10是基于Android 7，所以要是基于Android7系的话，则可以直接刷，要是基于Android8的话，就得先降级。&lt;/p&gt;
+&lt;h3 id=&#34;一加3t安卓8降级安卓7&#34;&gt;一加3T安卓8降级安卓7&lt;/h3&gt;
+&lt;p&gt;基于Android8的手机，下载下面降级包，通过系统内自带升级功能，手动选择该包进行降级。&lt;/p&gt;
+&lt;p&gt;一加3T &lt;strong&gt;Android 8降级Android 7刷机包 &lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-315801567&#34;&gt;https://dotbbq.pipipan.com/fs/18418398-315801567&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;或者在这里下载Android7的底包，刷入底包即可 &lt;strong&gt;&lt;a href=&#34;https://ciux.org/oneplus3t-base-firmware.html&#34;&gt;https://ciux.org/oneplus3t-base-firmware.html&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;降级完成后，开始解锁刷入第三方recovery来刷机。&lt;/p&gt;
+&lt;p&gt;推荐使用一加3/3T工具包(OnePlus3/3T Unified ToolKit)，使用方法**&lt;a href=&#34;https://unixetc.com/post/oneplus3-3t-unified-toolkit/&#34;&gt;点击这里&lt;/a&gt;**&lt;/p&gt;
+&lt;h3 id=&#34;一加3t-miui10刷机流程&#34;&gt;一加3T MIUI10刷机流程&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;解锁&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;手机端设置-&amp;gt;开发者选项，打开OEM解锁和USB调试。&lt;/p&gt;
+&lt;p&gt;连接手机和电脑，打开工具包选择2) Unlock - ReLock Bootloader，下一步选择1解锁。&lt;/p&gt;
+&lt;p&gt;手机按照提示选择&lt;strong&gt;YES&lt;/strong&gt;解锁&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;刷入TWRP Recovery&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;重启手机，选择Fastboot模式，连接手机和电脑，选择5) Flash - Boot TWRP Recovery，刷入TWRP&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;刷入MIUI10&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;进入TWRP Recovery，挂载MTP，将MIUI10刷机包拷入手机，然后进行卡刷。&lt;/p&gt;
+&lt;p&gt;双清后重启即可！&lt;/p&gt;
+&lt;h4 id=&#34;官方更新说明&#34;&gt;官方更新说明&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;因MIUI官方开始全部适配安卓8，7.1的MIUI在11月2号官方已经正式停更了，目前这版MIUI是MIUI官方发布的最后一个安卓7.1版本，也是目前
+最完善的一版。
+如果不出意外的话，这也是一加3/3T安卓7.1 MIUI的最后一版。后续就是准备给一加3/3T上安卓O或以上的MIUI了，基本完善后我会优先发在群里
+给机油门尝鲜。安卓O的MIUI最快也要半个月以上，且第一版难免bug多，耐心等待别催，只要我手上的3T还没坏就会一直把MIUI维护下去。
+8.10.22及以上的MIUI无需双清可直接刷本版MIUI升级，8.10.22以下的需要双清升级。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;8.11.3更新日志&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1.同步MIUI官方最后一版安卓7.1的MIUI的更新
+2.修复新版附加设置-交换返回与多任务键无效的bug
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;8.11.2更新日志：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1.同步MIUI的更新
+2.解决WiFi mac地址问题
+3.解决WiFi认证问题
+4.修复了一些其他已知bug
+5.附加设置更新，全新的界面，加入色温调节，省电模式，性能模式等等
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;8.10.28更新日志：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1.同步MIUI官方第392周更新
+2.修复了一些已知bug
+这次不是简单的同步更新，而是完全的重制，除了修复以前的一些已知bug外，流畅度也有大幅度的提升，并且还增加了很多新功能，比如
+人脸解锁、AI相机等等，还有很多细节上的变化，应该能让你爽到脱肛的那种。
+注意注意注意！这个包更改幅度较大，必须双清刷，否则可能出现各种程序报错！如果data分区被加密则需要格式化data！！否则可能会
+一直卡在开机动画不能进系统！
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;8.12.5更新：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1.加入ROOT权限
+2.修复充电快充满后几率发生断开的BUG
+3.修复人脸识别无法使用的BUG
+4.修复MIUI相机无法录像的BUG
+5.修复几个引起卡顿问题
+6.其它大量的BUG修复，现在已经熬夜到凌晨四点半，不想写了自行体验，做包很累切刷且珍惜
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1.可能有未知bug
+2.安卓大版本升级需要双清，否则可能各种报错
+3.如果data被加密需要格式化data才能开机，否则可能卡在开机动画无法进系统
+4.暂未添加支付宝指纹支付，后续更新添加
+5.第一次开机需要点时间，耐心等待，开机后手机有点热是正常的，以后就不会了
+6.第一次开机后手机可能会有点卡，是magisk的锅，重启即可
+7.硬件原因不支持小爱同学语音唤醒，这不是bug
+8.刷机前先确认你的twrp recovery支持安卓8
+9.人品不好智商低慎刷
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;MIUI10 for OnePlus3T 下载地址: &lt;strong&gt;提示：刷最新版基于Android8的话不需要降级，刷基于Android7的版本需要降级！！！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Based Android 8&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MIUI10_OP3-3T_Hito_8.12.5_79c6_8.1.zip &lt;strong&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-326373687&#34;&gt;https://dotbbq.pipipan.com/fs/18418398-326373687&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;MIUI10_OP3-3T_Hito_8.12.3_e3b7_8.1.zip &lt;strong&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-326373663&#34;&gt;https://dotbbq.pipipan.com/fs/18418398-326373663&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Based Android 7&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MIUI10_OP3-3T_Hito_8.11.5_a93c_7.1.zip &lt;strong&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-319122537&#34;&gt;https://dotbbq.pipipan.com/fs/18418398-319122537&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;MIUI10_OP3-3T_Hito_8.11.2_ff8a_7.1.zip  &lt;strong&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-317870488&#34;&gt;https://dotbbq.pipipan.com/fs/18418398-317870488&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;MIUI10_OP3-3T_Hito_8.10.28_3cd1_7.1.zip &lt;strong&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-317451619&#34;&gt;https://dotbbq.pipipan.com/fs/18418398-317451619&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;MIUI10_OP3-3T_Hito_8.10.24_4cce_7.1.zip &lt;strong&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-316913781&#34;&gt;https://dotbbq.pipipan.com/fs/18418398-316913781&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;MIUI10_OP3-3T_Hito_8.10.8_8aff_7.1.zip  &lt;strong&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-315803433&#34;&gt;https://dotbbq.pipipan.com/fs/18418398-315803433&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Google Camera一加3/3T移植版</title>
+      <link>https://unixetc.com/post/google-camera-port-for-oneplus-3t/</link>
+      <pubDate>Wed, 13 Dec 2017 12:13:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/google-camera-port-for-oneplus-3t/</guid>
+      <description>&lt;p&gt;Google Camera一加3/3T移植版，支持HDR+, 1080p 60FPS视频, 慢动作和慢动作图片。 By BSG, Ivanich, and Arnova8G2.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;可用特性:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Camera (HDR+, flash, zoom, front camera, etc)&lt;/li&gt;
+&lt;li&gt;视频 (30fps/60fps at 1080p、防抖、自动对焦)&lt;/li&gt;
+&lt;li&gt;慢动作 (120fps)&lt;/li&gt;
+&lt;li&gt;Panorama&lt;/li&gt;
+&lt;li&gt;Photo Sphere&lt;/li&gt;
+&lt;li&gt;Lens Blur&lt;/li&gt;
+&lt;li&gt;RAW&lt;/li&gt;
+&lt;li&gt;Motion Photos (Android 8+ only, check the &amp;ldquo;suggested settings&amp;rdquo;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;不可用特性:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ZSL (HDR+打开情况下)&lt;/li&gt;
+&lt;li&gt;(OOS Oreo)慢动作&lt;/li&gt;
+&lt;li&gt;前置相机HDR&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;下载:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-316386226&#34;&gt;GCam_5.3.015-Pixel3Mod-Arnova8G2-1.4.apk&lt;/a&gt; &lt;strong&gt;Update 2018-10-04&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-316386061&#34;&gt;GCam-5.1.018-Pixel2Mod-Arnova8G2-V8.3b1.apk&lt;/a&gt; &lt;strong&gt;Update 2018-08-25&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;本文只提供一加3/3T的稳定版apk，BSG、Ivanich和Arnova8G2的完整版清单，请移步&lt;a href=&#34;https://www.celsoazevedo.com/files/android/google-camera/&#34;&gt;这里&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>一加3/3T工具包</title>
+      <link>https://unixetc.com/post/oneplus3-3t-unified-toolkit/</link>
+      <pubDate>Thu, 15 Jun 2017 16:15:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/oneplus3-3t-unified-toolkit/</guid>
+      <description>&lt;p&gt;工具菜单如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    Title OnePlus 3/3T Unified ToolKit v5.0U by @ahmed_radaideh
+	
+	
+	
+            ======================
+            =        Menu        =
+            ======================
+	
+	
+    Enter a Number to select a Task.
+	
+    1)  Install USB Drivers On PC
+    2)  Unlock - ReLock Bootloader
+    3)  Check Device Status
+    4)  Check Bootloader Status
+    5)  Flash - Boot TWRP Recovery
+    6)  Flash - Boot Stock Recovery
+    7)  Push Systemless Root
+    8)  Push Debloater Script
+    9)  Wipe Cache Your Device
+    10) Force Decryption Device [WIPE]
+    11) Get Logs your Device
+    12) Restart Menu
+	
+    13) Check for new Version
+    14) XDA Thread
+    15) Donate!
+    00) Exit
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;XDA贴地址在&lt;a href=&#34;https://forum.xda-developers.com/oneplus-3/development/toolkit-oneplus-3-toolkit-unlock-t3398799&#34;&gt;这里&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;一加3t刷机步骤&#34;&gt;一加3T刷机步骤&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;进入Fastboot模式方法，关机后，按住&lt;/strong&gt;音量减&lt;strong&gt;+&lt;/strong&gt;电源键**进入。**界面如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/161221230.webp&#34; alt=&#34;Image31542161760.webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;注意看最上面两个横线中间的&lt;strong&gt;START&lt;/strong&gt;，这里是启动菜单，可以使用&lt;strong&gt;音量键&lt;/strong&gt;上下选择，使用&lt;strong&gt;电源键确认&lt;/strong&gt;选择。注意看最后一行的设备状态(DEVICE STATE) ，locked表示加锁，unlock表示解锁。&lt;/p&gt;
+&lt;p&gt;有以下四个菜单项：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;START 正常启动开机&lt;/li&gt;
+&lt;li&gt;Recovery mode 进入recovery&lt;/li&gt;
+&lt;li&gt;Restart bootloader 重启bootloader模式&lt;/li&gt;
+&lt;li&gt;Power off 关机&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;一加3t解锁&#34;&gt;一加3T解锁&lt;/h4&gt;
+&lt;p&gt;设置-&amp;gt;开发者选项  打开&lt;strong&gt;OEM解锁&lt;/strong&gt;和&lt;strong&gt;USB调试&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/3468369060.webp&#34; alt=&#34;Image11542159101.webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;连接手机和电脑，打开工具包选择&lt;strong&gt;Unlock - ReLock Bootloader&lt;/strong&gt;，下一步选择&lt;strong&gt;Unlock Bootloader&lt;/strong&gt;解锁，然后手机重启，接下来会有&lt;strong&gt;Unlock Boot loader?&lt;strong&gt;提示，用音量减选择&lt;/strong&gt;YES&lt;/strong&gt;，电源键确认开始解锁操作。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/2664099143.webp&#34; alt=&#34;Image21542161433.webp&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;刷入第三方recovery&#34;&gt;刷入第三方Recovery&lt;/h4&gt;
+&lt;p&gt;打开&lt;strong&gt;Fastboot&lt;/strong&gt;模式，连接手机和电脑，选择&lt;strong&gt;5)  Flash - Boot TWRP Recovery&lt;/strong&gt;，刷入&lt;strong&gt;TWRP&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;刷机第三方ROM&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;进入&lt;strong&gt;TWRP&lt;/strong&gt;，挂载&lt;strong&gt;MTP&lt;/strong&gt;，将&lt;strong&gt;ROM&lt;/strong&gt;文件拷入手机，然后进行卡刷。&lt;/p&gt;
+&lt;h4 id=&#34;一加3t恢复官方rom&#34;&gt;一加3T恢复官方ROM&lt;/h4&gt;
+&lt;p&gt;步骤：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;恢复官方Recovery&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;进入&lt;strong&gt;Fastboot&lt;/strong&gt;，连接手机和电脑，选择&lt;strong&gt;6)  Flash - Boot Stock Recovery&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;进入&lt;strong&gt;Fastboot&lt;/strong&gt;，连接手机和电脑，选择&lt;strong&gt;10) Force Decryption Device [WIPE]&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;重新加锁Boot&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;进入&lt;strong&gt;Fastboot&lt;/strong&gt;，连接手机和电脑，打开工具包选择&lt;strong&gt;2)  Unlock - ReLock Bootloader&lt;/strong&gt;，下一步选择2重新加锁。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;通过USB刷机&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;进入&lt;strong&gt;Recovery&lt;/strong&gt;，选择&lt;strong&gt;从USB安装升级文件&lt;/strong&gt;,手机连接电脑，通过以下命令刷入官方包：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;adb fastboot OnePlus3T.zip
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;完成后重启。&lt;/p&gt;
+&lt;h4 id=&#34;一些补充说明&#34;&gt;一些补充说明&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;启用开发者选项&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;设置-&amp;gt;关于手机 单击&lt;strong&gt;版本号&lt;/strong&gt;多次(4)，会提示已经打开开发者选项&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;进入&lt;strong&gt;Fastboot&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;关机，按住&lt;strong&gt;音量减&lt;/strong&gt;，再同时按住&lt;strong&gt;电源键&lt;/strong&gt;开机&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;进入&lt;strong&gt;Recovery&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;关机，按住&lt;strong&gt;音量加&lt;/strong&gt;，再同时按住&lt;strong&gt;电源键&lt;/strong&gt;开机&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Adb工具&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;adb在工具包内的files文件夹中&lt;/p&gt;
+&lt;p&gt;下载地址&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-315801102&#34;&gt;https://dotbbq.pipipan.com/fs/18418398-315801102&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>在Linux中运行Android软件</title>
+      <link>https://unixetc.com/post/anbox-run-android-applications-on-linux/</link>
+      <pubDate>Fri, 09 Jun 2017 06:09:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/anbox-run-android-applications-on-linux/</guid>
+      <description>&lt;p&gt;想要在PC上运行Android软件就需要模拟器，Windows版的Android模拟器软件很多，但是Linux平台的就不多了，今天推荐一款Linux下的Android模拟器软件&lt;strong&gt;Anbox&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Anbox官方介绍为Android in a Box,Run Android applications on any GNU/Linux operating system.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Anbox&lt;/strong&gt;现在还处于测试阶段，很多功能还不完善和稳定，请谨慎使用。&lt;/p&gt;
+&lt;h3 id=&#34;安装anbox&#34;&gt;安装Anbox&lt;/h3&gt;
+&lt;p&gt;首先得安装&lt;strong&gt;Snaps&lt;/strong&gt;,官方地址为&lt;a href=&#34;https://snapcraft.io/&#34;&gt;https://snapcraft.io/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;LinuxMint中安装Snaps和必须包&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt install snapd
+sudo apt install pulseaudio
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;接下来按照官方指南安装&lt;strong&gt;Anbox&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;snap install --classic anbox-installer &amp;amp;&amp;amp; anbox-installer
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;我试着通过snap来安装一直存在权限问题，一般权限不能运行&lt;code&gt;snap install --classic anbox-installer&lt;/code&gt;，root运行完&lt;code&gt;snap install --classic anbox-installer&lt;/code&gt;后，但运行&lt;code&gt;anbox-installer&lt;/code&gt;又提示不能使用root权限，一般权限根本无法运行&lt;code&gt;anbox-installer&lt;/code&gt;，搞了半天都没有成功，于是就有了下文。&lt;/p&gt;
+&lt;p&gt;通过常规方法安装&lt;strong&gt;Anbox&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget https://raw.githubusercontent.com/anbox/anbox-installer/master/installer.sh -O anbox-installer
+chmod +x ./anbox-installer
+./anbox-installer
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;安装完成后会有重启系统的提示&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;To ensure all changes made to your system you should now reboot
+your system. If you don&amp;rsquo;t do this no Android applications will
+show up in the system application launcher.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;重启后就会在系统菜单中找到&lt;strong&gt;Anbox&lt;/strong&gt;，点击打开，见下图(注意Cuto是我自己安装的，原来没有)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/org.anbox.appmgr.webp&#34; alt=&#34;org.anbox.appmgr&#34;&gt;&lt;/p&gt;
+&lt;p&gt;一个基本的Android系统已经成功了，可以看看系统信息&lt;strong&gt;Settings&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/anbox.settings.webp&#34; alt=&#34;anbox_settings&#34;&gt;&lt;/p&gt;
+&lt;p&gt;可以看到，Android版本为7.1.1，很新咯!&lt;/p&gt;
+&lt;h4 id=&#34;在anbox中安装android软件&#34;&gt;在Anbox中安装Android软件&lt;/h4&gt;
+&lt;p&gt;首先需要安装&lt;strong&gt;adb&lt;/strong&gt;工具&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt install adb
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;安装成功后，可以使用adb来识别模拟器是否链接&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;adb devices
+
+List of devices attached
+emulator-6663	device
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;可以看到出现了一个名为emulator-6663的设备&lt;/p&gt;
+&lt;p&gt;下来安装Android软件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;alair@vbs ~/下载 $ ls
+Cuto-1.2.1-28-for-30644-o_1bgano4o21gjj1l1v183893n1sdkr-uid-423508.apk
+nautilus_nutstore_amd64.deb
+alair@vbs ~/下载 $ adb install ./Cuto-1.2.1-28-for-30644-o_1bgano4o21gjj1l1v183893n1sdkr-uid-423508.apk 
+18112 KB/s (7389673 bytes in 0.398s)
+Success
+alair@vbs ~/下载 $ 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以上以安装&lt;strong&gt;Cuto&lt;/strong&gt;为例，安装完成后就可以点击运行咯。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>使用Syncthing在多个设备之间同步文件</title>
+      <link>https://unixetc.com/post/use-syncthing-synchronize-files-between-multiple-devices/</link>
+      <pubDate>Fri, 06 May 2016 15:16:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/use-syncthing-synchronize-files-between-multiple-devices/</guid>
+      <description>&lt;p&gt;Syncthing是一款开源的多平台同步软件，使用他可以在多个设备间进行文件同步，并且带有版本控制功能。&lt;/p&gt;
+&lt;p&gt;Syncthing官网地址 **&lt;a href=&#34;https://syncthing.net/&#34;&gt;https://syncthing.net/&lt;/a&gt;**Github地址 &lt;strong&gt;&lt;a href=&#34;https://github.com/syncthing/syncthing&#34;&gt;https://github.com/syncthing/syncthing&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;安装syncthing&#34;&gt;安装Syncthing&lt;/h3&gt;
+&lt;p&gt;Syncthing官网提供多平台安装包，下载地址为 &lt;a href=&#34;https://github.com/syncthing/syncthing/releases/&#34;&gt;https://github.com/syncthing/syncthing/releases/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;并且针对Debian/Ubuntu平台，官方提供了apt-get安装方法&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Add the release PGP keys:
+curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
+
+# Add the &amp;quot;release&amp;quot; channel to your APT sources:
+echo &amp;quot;deb http://apt.syncthing.net/ syncthing release&amp;quot; | sudo tee /etc/apt/sources.list.d/syncthing.list
+
+# Update and install syncthing:
+sudo apt-get update
+sudo apt-get install syncthing
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;运行syncthing&#34;&gt;运行Syncthing&lt;/h3&gt;
+&lt;p&gt;Linux下直接使用&lt;code&gt;syncthing&lt;/code&gt;命令运行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;syncthing &amp;amp;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Windows下直接打开下载的&lt;strong&gt;syncthing.exe&lt;/strong&gt;文件，而后浏览器自动打开&lt;code&gt;http://127.0.0.1:8384&lt;/code&gt;进行设置管理。&lt;/p&gt;
+&lt;h3 id=&#34;管理syncthing&#34;&gt;管理Syncthing&lt;/h3&gt;
+&lt;p&gt;如果是在VPS上安装Syncthing ,运行&lt;code&gt;syncthing&lt;/code&gt;后，只能通过&lt;code&gt;http://127.0.0.1:8384&lt;/code&gt;进行管理，我们可以通过以下方法在本地管理。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ssl -L 9891:localhost:8384 root@ip
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;输入root密码登录成功后，即可本地浏览&lt;code&gt;http://127.0.0.1:9891&lt;/code&gt;对VPS上的Synchting进行管理。&lt;/p&gt;
+&lt;h4 id=&#34;添加设备&#34;&gt;添加设备&lt;/h4&gt;
+&lt;p&gt;每个设备均有一个&lt;strong&gt;设备标识&lt;/strong&gt;，可以通过操作-&amp;gt;显示设备标识来查看。&lt;/p&gt;
+&lt;p&gt;不同的设备之间进行链接，就是通过添加对方的&lt;strong&gt;设备标志&lt;/strong&gt;来实现。&lt;/p&gt;
+&lt;p&gt;例如，在本地点击&lt;strong&gt;添加远程设备&lt;/strong&gt;，然后将VPS端的&lt;strong&gt;设备标识&lt;/strong&gt;填写入，设备名称可以置空。&lt;/p&gt;
+&lt;p&gt;在此提醒勾选&lt;strong&gt;介绍人设备&lt;/strong&gt;选项，这样当对方添加了其他第三方设备，可以自动添加到本设备中，而不需要在本设备与第三方设备间进行再次添加。&lt;/p&gt;
+&lt;h4 id=&#34;添加同步文件&#34;&gt;添加同步文件&lt;/h4&gt;
+&lt;p&gt;点击&lt;strong&gt;添加文件夹&lt;/strong&gt;来设置进行共享的文件内容。&lt;/p&gt;
+&lt;p&gt;首先设置&lt;strong&gt;文件夹标识&lt;/strong&gt;和&lt;strong&gt;文件夹路径&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;然后如果已经添加了其他远程设备，在&lt;strong&gt;共享给&lt;/strong&gt;下方勾选需要进行同步的远程设备。&lt;/p&gt;
+&lt;h4 id=&#34;接收同步文件夹&#34;&gt;接收同步文件夹&lt;/h4&gt;
+&lt;p&gt;Syncthing共享操作时双向的，通过上一步进行分享文件夹后，还需要在另外一个设备上进行确认共享。&lt;/p&gt;
+&lt;p&gt;收到远程设备的共享信息后，选择确认共享，然后设置共享文件夹接收目录即可。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>小米4C解锁和刷入TWRP Recovery</title>
+      <link>https://unixetc.com/post/mi4c-unlock-and-twrp-recovery/</link>
+      <pubDate>Sun, 20 Mar 2016 13:20:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/mi4c-unlock-and-twrp-recovery/</guid>
+      <description>&lt;p&gt;时隔三年再次入手小米手机，没想到如今的MIUI已经今非昔比，首先是bootloader锁住了，官方理由是安全，但是作为一个android发烧友，锁bootloader后就无法安装第三方recovery，进而无法体验众多第三方系统了。以下介绍如何解锁小米4C以及刷入第三方TWRP Recovery。
+permalink: &amp;lsquo;logs/Mi4C-Unlock-and-TWRP-Recovery.html&amp;rsquo;
+时隔三年再次入手小米手机，没想到如今的MIUI已经今非昔比，首先是bootloader锁住了，官方理由是安全，但是作为一个android发烧友，锁bootloader后就无法安装第三方recovery，进而无法体验众多第三方系统了。其次是到处广告，整个系统UI很多处都是广告，额滴个神啊！ 小米穷疯了吧! 无力吐槽啊………………&lt;/p&gt;
+&lt;p&gt;以下介绍如何解锁小米4C以及刷入第三方TWRP Recovery。&lt;/p&gt;
+&lt;h3 id=&#34;解锁小米4c&#34;&gt;解锁小米4C&lt;/h3&gt;
+&lt;p&gt;小米解锁需要去官方申请，申请提交地址为 &lt;a href=&#34;http://www.miui.com/unlock/&#34;&gt;http://www.miui.com/unlock/&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;录入小米ID以及手机号等信息后，就等着吧……&lt;/p&gt;
+&lt;p&gt;我等了16天才收到解锁申请通过短信通知。&lt;/p&gt;
+&lt;p&gt;然后下载官方解锁工具，下载地址为&lt;a href=&#34;http://www.miui.com/unlock/download.html&#34;&gt;http://www.miui.com/unlock/download.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;打开解锁工具，登录小米帐号，关机长按音量下+电源键进入Fastboot模式。&lt;/p&gt;
+&lt;p&gt;然后按照提示进行操作，两分钟不到解锁成功！！！&lt;/p&gt;
+&lt;p&gt;注：如果解锁失败，提示什么帐号不一致啦、手机信息无法获取啦，请到miui官网论坛进行问题提交。&lt;/p&gt;
+&lt;h3 id=&#34;刷入twrp-recovery&#34;&gt;刷入TWRP Recovery&lt;/h3&gt;
+&lt;p&gt;首先下载adb工具包，里面包含需要的软件fastboot，下载地址 &lt;a href=&#34;http://pan.baidu.com/s/1sjR8ved&#34;&gt;http://pan.baidu.com/s/1sjR8ved&lt;/a&gt;，下载后点击安装。&lt;/p&gt;
+&lt;p&gt;然后下载TWRP Recovery镜像文件，下载地址为&lt;a href=&#34;http://pan.baidu.com/s/1nuugNK9&#34;&gt;http://pan.baidu.com/s/1nuugNK9&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;将下载后的TWRP Recovery镜像文件(.img)拷贝至adb工具包目录，然后CMD模式下进入到adb工具包目录，如下操作：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;刷入TWRP Recovery&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;D:\&amp;gt;fastboot flash recovery libra_ts_twrp_3_0_0_3.img
+target reported max download size of 536870912 bytes
+sending &#39;recovery&#39; (51844 KB)...
+OKAY [  1.485s]
+writing &#39;recovery&#39;...
+OKAY [  0.481s]
+finished. total time: 1.971s
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;重启引导进入TWRP Recovery&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;D:\&amp;gt;fastboot boot libra_ts_twrp_3_0_0_3.img
+downloading &#39;boot.img&#39;...
+OKAY [  1.494s]
+booting...
+OKAY [  0.516s]
+finished. total time: 2.014s
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;说明：首次刷入TWRP Recovery，进入Recovery后触摸屏可能无法操作，这时唯一的方法就是等待，等到1分钟左右手机自动息屏后，重按电源键点亮屏幕即可恢复操作。&lt;/p&gt;
+&lt;h3 id=&#34;推荐小米4c第三方rom&#34;&gt;推荐小米4C第三方ROM&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Xiaomi Mi4c CM13&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.teamsuperluminal.org/mi4c-cyanogenmod-13/&#34;&gt;http://www.teamsuperluminal.org/mi4c-cyanogenmod-13/&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Xiaomi Mi4c Broken OS v4.3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.teamsuperluminal.org/broken-os-v4-2-mi4c/&#34;&gt;http://www.teamsuperluminal.org/broken-os-v4-2-mi4c/&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Xiaomi Mi4c CM12.1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.teamsuperluminal.org/mi4c-cyanogenmod-12-1/&#34;&gt;http://www.teamsuperluminal.org/mi4c-cyanogenmod-12-1/&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Xiaomi Mi4c PAC-rom 5.1.1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.teamsuperluminal.org/pac-rom-5-1-1-mi4c/&#34;&gt;http://www.teamsuperluminal.org/pac-rom-5-1-1-mi4c/&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mokee 60.1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;http://download.mokeedev.com/?device=libra&#34;&gt;http://download.mokeedev.com/?device=libra&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>推荐几个Xposed模块</title>
+      <link>https://unixetc.com/post/the-xposed-module-is-recommended/</link>
+      <pubDate>Sat, 14 Mar 2015 13:23:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/the-xposed-module-is-recommended/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;MinMinGuard&lt;/li&gt;
+&lt;li&gt;Statusbar Scroll to Top&lt;/li&gt;
+&lt;li&gt;WiFiKeyView&lt;/li&gt;
+&lt;li&gt;SwipeBack&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/xposed_modules.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>华为C8817L解锁与Root</title>
+      <link>https://unixetc.com/post/huawei-c8817l-unlock-and-root/</link>
+      <pubDate>Thu, 07 Aug 2014 18:17:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/huawei-c8817l-unlock-and-root/</guid>
+      <description>&lt;h3 id=&#34;解锁&#34;&gt;解锁&lt;/h3&gt;
+&lt;p&gt;解锁Bootloader首先需要获得解锁码，以下为官方解锁页：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;获取解锁码&lt;/strong&gt; &lt;a href=&#34;http://www.emui.com/plugin.php?id=unlock&amp;amp;mod=detail&#34;&gt;http://www.emui.com/plugin.php?id=unlock&amp;amp;mod=detail&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/unlock_sumbit.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;提交成功后会获得16位的解锁码。&lt;/p&gt;
+&lt;p&gt;下载以下两个文件：&lt;/p&gt;
+&lt;p&gt;c8817l驱动 &lt;a href=&#34;http://pan.baidu.com/s/1jG3fBhW&#34;&gt;http://pan.baidu.com/s/1jG3fBhW&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;google adb工具包 &lt;a href=&#34;http://pan.baidu.com/s/1dDpI77b&#34;&gt;http://pan.baidu.com/s/1dDpI77b&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;安装好驱动城区，解开adb工具包，cmd进入adb包目录。&lt;/p&gt;
+&lt;p&gt;关机，同时按住&lt;strong&gt;音量下&lt;/strong&gt;和&lt;strong&gt;电源键&lt;/strong&gt;开机，进入到fastboot模式。&lt;/p&gt;
+&lt;p&gt;usb链接电脑，参考以下解锁：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/unlock_c8817l.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;其中&lt;code&gt;fastboot oem unlock&lt;/code&gt;后为16位解锁码&lt;/p&gt;
+&lt;p&gt;解锁成功后手机会自动重启。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;进入开发者模式&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;关于&lt;/strong&gt;-&amp;gt;点击4次&lt;strong&gt;版本号&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;root&#34;&gt;Root&lt;/h3&gt;
+&lt;p&gt;360一键root,其他不多说了！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Nokia N900 and Android</title>
+      <link>https://unixetc.com/post/nokia-n900-and-android/</link>
+      <pubDate>Sat, 07 Apr 2012 14:27:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/nokia-n900-and-android/</guid>
+      <description>&lt;p&gt;感谢&lt;strong&gt;NITDroid Project&lt;/strong&gt; 的辛苦工作，使&lt;strong&gt;N900&lt;/strong&gt;更加的神机！&lt;/p&gt;
+&lt;p&gt;使用Nitdroid刷入Android后，系统运行在/home目录，所以/home必须空间足够，N900默认的为 1.9G是不可以的，需要增大/home的容量，推荐参考N900超频和刷9G-home,将/home增大到9G&lt;/p&gt;
+&lt;h3 id=&#34;添加软件源&#34;&gt;添加软件源&lt;/h3&gt;
+&lt;p&gt;确保已添加以下软件源，一般前四个系统已经添加，没有的自己添加。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;名称：Nokia Applications
+网址：https://downloads.maemo.nokia.com/fremantle/ssu/apps/
+发布：./
+组件：空
+
+名称：Nokia System Software Updats
+网址：https://downloads.maemo.nokia.com/fremantle/ssu/mr0
+发布：./
+组件：空
+
+名称：Ovi
+网址：https://downloads.maemo.nokia.com/fremantle1.2/ovi/
+发布：./
+组件：空
+
+名称：maemo.org
+网址：http://repository.maemo.ory/extras/
+发布：frmantle−1.3
+组件：free non−free
+
+名称：Fremantle Extras−testing
+网址：http://repository.maemo.org/extras-testing/
+发布：fremantle
+组件：free non−free
+
+名称：Fremantle Extras−devel
+网址：http://repository.maemo.org/extras-devel/
+发布：fremantle
+组件：free non−free
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;开刷&#34;&gt;开刷&lt;/h3&gt;
+&lt;p&gt;下载N12_UMay.tar.bz2与nitdroid-kernel-2.6.28-07_rc3_armel.deb&lt;/p&gt;
+&lt;p&gt;115网盘下载地址: &lt;a href=&#34;http://u.115.com/file/aqpmpqhl&#34;&gt;http://u.115.com/file/aqpmpqhl&lt;/a&gt; &lt;a href=&#34;http://u.115.com/file/dna7jt6r&#34;&gt;http://u.115.com/file/dna7jt6r&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;最新的文件在官网的&lt;a href=&#34;http://downloads.nitdroid.com/e-yes/&#34;&gt;http://downloads.nitdroid.com/e-yes/&lt;/a&gt;页，如发现跟新可自行下载最新版本 注意，网盘中提供的N12_UMay.tar.bz2已经解压为N12_UMay.tar，官网的下载后自行解压&lt;/p&gt;
+&lt;p&gt;将两个文件拷贝至USB连接模式下的根目录，即**/home/user/MyDocs/**&lt;/p&gt;
+&lt;p&gt;建议通过SSH连接N900，在PC上使用&lt;strong&gt;Putty&lt;/strong&gt;操作，要么就在手机上运行&lt;strong&gt;x-terminal&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# apt-get install nitdroid-installer
+# mkdir /and
+# mount /home /and
+# cd /and
+# tar xvf /home/user/MyDocs/N12_UMay.tar #注意这里已经是.tar格式
+# dpkg -i /home/user/MyDocs/nitdroid-kernel-2.6.28-07_rc3_armel.deb
+# reboot
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;重启后会出现多系统选择,1为Maemo,2为Nitdroid&lt;/p&gt;
+&lt;p&gt;N900的android菜单映射:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;电源键=锁屏
+长按电源键=关机/重启菜单
+照相键=返回
+长按照相键=最近使用的程序
+锁屏键=选项&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

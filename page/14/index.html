@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta name="generator" content="Hugo 0.74.3" />
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>UNIXETC - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+
+
+
+<meta property="og:title" content="UNIXETC" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/" />
+<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="UNIXETC"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <div class="homepage-content">
+        
+    </div>
+
+    
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/v2ray-use-case/">V2ray使用实例</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        Project V 提供了单一的内核和多种界面操作方式。内核（V2Ray）用于实际的网络交互、路由等针对网络数据的处理，而外围的用户界面程序提供了方便直接的操作流程。 V2Ray 的主要作用是根据用户的配置，对于传入的网络连接进行一定处理，然后发往指定的服务器。它是一个命令行程序，可以接受一个 JSON 格式的配置文件。
+VPS安装服务端 使用下面命令一键安装:
+bash &lt;(curl -L -s https://install.direct/go.sh) 或者从https://github.com/v2ray/v2ray-core/releases下载预编译包进行安装。
+安装完成后，使用service v2ray start启动v2ray服务。
+Windows安装本地端 从https://github.com/v2ray/v2ray-core/releases下载Windows客户端，解压后编辑config.json文件，内容如下：
+{&quot;inbound&quot;: {&quot;port&quot;: 1080, // 监听端口&quot;protocol&quot;: &quot;socks&quot;, // 入口协议为 SOCKS 5&quot;domainOverride&quot;: [&quot;tls&quot;,&quot;http&quot;],&quot;settings&quot;: {&quot;auth&quot;: &quot;noauth&quot; //socks的认证设置，noauth 代表不认证，由于 socks 通常在客户端使用，所以这里不认证}},&quot;outbound&quot;: {&quot;protocol&quot;: &quot;vmess&quot;, // 出口协议&quot;settings&quot;: {&quot;vnext&quot;: [{&quot;address&quot;: &quot;10.0.0.1&quot;, // 服务器地址，请修改为你自己的服务器 ip 或域名&quot;port&quot;: 31892, // 服务器端口&quot;users&quot;: [{&quot;id&quot;: &quot;3efd584f-8a7d-43af-9c75-35266df4ceb0&quot;, // 用户 ID，必须与服务器端配置相同&quot;alterId&quot;: 64 // 此处的值也应当与服务器相同}]}]}}} 以上的id和alterId，在vps上使用cat /etc/v2ray/config.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2018-08-20</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/shadowsocks">#Shadowsocks</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/v2ray">#v2ray</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E4%BB%A3%E7%90%86">#代理</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/proxy">#proxy</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/socks">#socks</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vmess">#vmess</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/tls">#tls</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/tcp">#tcp</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/mkcp">#mkcp</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/websocket">#websocket</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/oneplus3t-miui10/">一加3T安装MIUI10</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        首先，十分感谢HitoLiu辛苦劳动，才有了Oneplus3T的MIUI10
+刷机前先确认H2OS版本，由于H大的MIUI10是基于Android 7，所以要是基于Android7系的话，则可以直接刷，要是基于Android8的话，就得先降级。
+一加3T安卓8降级安卓7 基于Android8的手机，下载下面降级包，通过系统内自带升级功能，手动选择该包进行降级。
+一加3T Android 8降级Android 7刷机包 https://dotbbq.pipipan.com/fs/18418398-315801567
+或者在这里下载Android7的底包，刷入底包即可 https://ciux.org/oneplus3t-base-firmware.html
+降级完成后，开始解锁刷入第三方recovery来刷机。
+推荐使用一加3/3T工具包(OnePlus3/3T Unified ToolKit)，使用方法**点击这里**
+一加3T MIUI10刷机流程  解锁  手机端设置-&gt;开发者选项，打开OEM解锁和USB调试。
+连接手机和电脑，打开工具包选择2) Unlock - ReLock Bootloader，下一步选择1解锁。
+手机按照提示选择YES解锁
+ 刷入TWRP Recovery  重启手机，选择Fastboot模式，连接手机和电脑，选择5) Flash - Boot TWRP Recovery，刷入TWRP
+ 刷入MIUI10  进入TWRP Recovery，挂载MTP，将MIUI10刷机包拷入手机，然后进行卡刷。
+双清后重启即可！
+官方更新说明 因MIUI官方开始全部适配安卓8，7.1的MIUI在11月2号官方已经正式停更了，目前这版MIUI是MIUI官方发布的最后一个安卓7.1版本，也是目前最完善的一版。如果不出意外的话，这也是一加3/3T安卓7.1 MIUI的最后一版。后续就是准备给一加3/3T上安卓O或以上的MIUI了，基本完善后我会优先发在群里给机油门尝鲜。安卓O的MIUI最快也要半个月以上，且第一版难免bug多，耐心等待别催，只要我手上的3T还没坏就会一直把MIUI维护下去。8.10.22及以上的MIUI无需双清可直接刷本版MIUI升级，8.10.22以下的需要双清升级。 8.11.3更新日志
+1.同步MIUI官方最后一版安卓7.1的MIUI的更新2.修复新版附加设置-交换返回与多任务键无效的bug 8.11.2更新日志：
+1.同步MIUI的更新2.解决WiFi mac地址问题3.解决WiFi认证问题4.修复了一些其他已知bug5.附加设置更新，全新的界面，加入色温调节，省电模式，性能模式等等 8.10.28更新日志：
+1.同步MIUI官方第392周更新2.修复了一些已知bug这次不是简单的同步更新，而是完全的重制，除了修复以前的一些已知bug外，流畅度也有大幅度的提升，并且还增加了很多新功能，比如人脸解锁、AI相机等等，还有很多细节上的变化，应该能让你爽到脱肛的那种。注意注意注意！这个包更改幅度较大，必须双清刷，否则可能出现各种程序报错！如果data分区被加密则需要格式化data！！否则可能会一直卡在开机动画不能进系统！ 8.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2018-07-19</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/android">#Android</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/twrp">#twrp</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/oneplus">#oneplus</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/oneplus3t">#oneplus3t</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/miui">#miui</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/miui10">#miui10</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/grub-boot-iso-image-file/">GRUB引导ISO镜像</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        家里电脑安装了双系统(Xubuntu+Windows7)，平时一直不关机，开着TeamViewer便于在办公室远程操作。
+这次不知怎么回事儿，远程掉了，回家一看Windows意外关机，再开机直接蓝屏。
+由于为了省资源，关闭了系统保护，没法进行还原，多次试着拯救都没能解决，无限蓝屏……
+手头刚好没有WinPE的U盘，没法ghost恢复或重装Windows，只有xubuntu可用，一筹莫展。
+突然想到grub是否可以引导iso？ 网上找了下，还真可以，于是下载了个WinPE镜像文件，打算通过grub来引导以修复Windows。
+具体操作如下：
+安装grub-imageboot
+alair@e6440:~$ apt search memdisk正在排序... 完成全文搜索... 完成 grub-imageboot/bionic,bionic 0.6 allboot iso, harddisk and floppy images with grub2 and syslinux memdiskalair@e6440:~$ sudo apt install grub-imageboot[sudo] alair 的密码： 正在读取软件包列表... 完成正在分析软件包的依赖关系树 正在读取状态信息... 完成 将会同时安装下列软件：syslinux-common下列【新】软件包将被安装：grub-imageboot syslinux-common升级了 0 个软件包，新安装了 2 个软件包，要卸载 0 个软件包，有 4 个软件包未被升级。需要下载 1,176 kB 的归档。解压缩后会消耗 3,684 kB 的额外空间。您希望继续执行吗？ [Y/n] y获取:1 http://mirrors.cqu.edu.cn/ubuntu bionic/main amd64 syslinux-common all 3:6.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2018-07-08</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/grub">#GRUB</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/grub-imageboot">#grub-imageboot</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/grub2">#grub2</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/memdisk">#memdisk</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/iso">#ISO</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/winpe">#WinPE</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/update-grub">#update-grub</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+    
+        
+    <div class="pagination">
+        <div class="left pagination-item ">
+            
+                <a href="/page/13/">To new posts</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/page/15/">To old posts</a>
+            
+        </div>
+    </div>
+
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

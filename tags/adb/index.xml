@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>adb on UNIXETC</title>
+    <link>https://unixetc.com/tags/adb/</link>
+    <description>UNIXETC (adb)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 15 Jun 2017 16:15:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/adb/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>一加3/3T工具包</title>
+      <link>https://unixetc.com/post/oneplus3-3t-unified-toolkit/</link>
+      <pubDate>Thu, 15 Jun 2017 16:15:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/oneplus3-3t-unified-toolkit/</guid>
+      <description>&lt;p&gt;工具菜单如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    Title OnePlus 3/3T Unified ToolKit v5.0U by @ahmed_radaideh
+	
+	
+	
+            ======================
+            =        Menu        =
+            ======================
+	
+	
+    Enter a Number to select a Task.
+	
+    1)  Install USB Drivers On PC
+    2)  Unlock - ReLock Bootloader
+    3)  Check Device Status
+    4)  Check Bootloader Status
+    5)  Flash - Boot TWRP Recovery
+    6)  Flash - Boot Stock Recovery
+    7)  Push Systemless Root
+    8)  Push Debloater Script
+    9)  Wipe Cache Your Device
+    10) Force Decryption Device [WIPE]
+    11) Get Logs your Device
+    12) Restart Menu
+	
+    13) Check for new Version
+    14) XDA Thread
+    15) Donate!
+    00) Exit
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;em&gt;XDA贴地址在&lt;a href=&#34;https://forum.xda-developers.com/oneplus-3/development/toolkit-oneplus-3-toolkit-unlock-t3398799&#34;&gt;这里&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;一加3t刷机步骤&#34;&gt;一加3T刷机步骤&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;进入Fastboot模式方法，关机后，按住&lt;/strong&gt;音量减&lt;strong&gt;+&lt;/strong&gt;电源键**进入。**界面如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/161221230.webp&#34; alt=&#34;Image31542161760.webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;注意看最上面两个横线中间的&lt;strong&gt;START&lt;/strong&gt;，这里是启动菜单，可以使用&lt;strong&gt;音量键&lt;/strong&gt;上下选择，使用&lt;strong&gt;电源键确认&lt;/strong&gt;选择。注意看最后一行的设备状态(DEVICE STATE) ，locked表示加锁，unlock表示解锁。&lt;/p&gt;
+&lt;p&gt;有以下四个菜单项：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;START 正常启动开机&lt;/li&gt;
+&lt;li&gt;Recovery mode 进入recovery&lt;/li&gt;
+&lt;li&gt;Restart bootloader 重启bootloader模式&lt;/li&gt;
+&lt;li&gt;Power off 关机&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;一加3t解锁&#34;&gt;一加3T解锁&lt;/h4&gt;
+&lt;p&gt;设置-&amp;gt;开发者选项  打开&lt;strong&gt;OEM解锁&lt;/strong&gt;和&lt;strong&gt;USB调试&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/3468369060.webp&#34; alt=&#34;Image11542159101.webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;连接手机和电脑，打开工具包选择&lt;strong&gt;Unlock - ReLock Bootloader&lt;/strong&gt;，下一步选择&lt;strong&gt;Unlock Bootloader&lt;/strong&gt;解锁，然后手机重启，接下来会有&lt;strong&gt;Unlock Boot loader?&lt;strong&gt;提示，用音量减选择&lt;/strong&gt;YES&lt;/strong&gt;，电源键确认开始解锁操作。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/2664099143.webp&#34; alt=&#34;Image21542161433.webp&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;刷入第三方recovery&#34;&gt;刷入第三方Recovery&lt;/h4&gt;
+&lt;p&gt;打开&lt;strong&gt;Fastboot&lt;/strong&gt;模式，连接手机和电脑，选择&lt;strong&gt;5)  Flash - Boot TWRP Recovery&lt;/strong&gt;，刷入&lt;strong&gt;TWRP&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;刷机第三方ROM&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;进入&lt;strong&gt;TWRP&lt;/strong&gt;，挂载&lt;strong&gt;MTP&lt;/strong&gt;，将&lt;strong&gt;ROM&lt;/strong&gt;文件拷入手机，然后进行卡刷。&lt;/p&gt;
+&lt;h4 id=&#34;一加3t恢复官方rom&#34;&gt;一加3T恢复官方ROM&lt;/h4&gt;
+&lt;p&gt;步骤：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;恢复官方Recovery&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;进入&lt;strong&gt;Fastboot&lt;/strong&gt;，连接手机和电脑，选择&lt;strong&gt;6)  Flash - Boot Stock Recovery&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;进入&lt;strong&gt;Fastboot&lt;/strong&gt;，连接手机和电脑，选择&lt;strong&gt;10) Force Decryption Device [WIPE]&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;重新加锁Boot&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;进入&lt;strong&gt;Fastboot&lt;/strong&gt;，连接手机和电脑，打开工具包选择&lt;strong&gt;2)  Unlock - ReLock Bootloader&lt;/strong&gt;，下一步选择2重新加锁。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;通过USB刷机&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;进入&lt;strong&gt;Recovery&lt;/strong&gt;，选择&lt;strong&gt;从USB安装升级文件&lt;/strong&gt;,手机连接电脑，通过以下命令刷入官方包：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;adb fastboot OnePlus3T.zip
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;完成后重启。&lt;/p&gt;
+&lt;h4 id=&#34;一些补充说明&#34;&gt;一些补充说明&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;启用开发者选项&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;设置-&amp;gt;关于手机 单击&lt;strong&gt;版本号&lt;/strong&gt;多次(4)，会提示已经打开开发者选项&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;进入&lt;strong&gt;Fastboot&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;关机，按住&lt;strong&gt;音量减&lt;/strong&gt;，再同时按住&lt;strong&gt;电源键&lt;/strong&gt;开机&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;进入&lt;strong&gt;Recovery&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;关机，按住&lt;strong&gt;音量加&lt;/strong&gt;，再同时按住&lt;strong&gt;电源键&lt;/strong&gt;开机&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Adb工具&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;adb在工具包内的files文件夹中&lt;/p&gt;
+&lt;p&gt;下载地址&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-315801102&#34;&gt;https://dotbbq.pipipan.com/fs/18418398-315801102&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>在Linux中运行Android软件</title>
+      <link>https://unixetc.com/post/anbox-run-android-applications-on-linux/</link>
+      <pubDate>Fri, 09 Jun 2017 06:09:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/anbox-run-android-applications-on-linux/</guid>
+      <description>&lt;p&gt;想要在PC上运行Android软件就需要模拟器，Windows版的Android模拟器软件很多，但是Linux平台的就不多了，今天推荐一款Linux下的Android模拟器软件&lt;strong&gt;Anbox&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Anbox官方介绍为Android in a Box,Run Android applications on any GNU/Linux operating system.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Anbox&lt;/strong&gt;现在还处于测试阶段，很多功能还不完善和稳定，请谨慎使用。&lt;/p&gt;
+&lt;h3 id=&#34;安装anbox&#34;&gt;安装Anbox&lt;/h3&gt;
+&lt;p&gt;首先得安装&lt;strong&gt;Snaps&lt;/strong&gt;,官方地址为&lt;a href=&#34;https://snapcraft.io/&#34;&gt;https://snapcraft.io/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;LinuxMint中安装Snaps和必须包&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt install snapd
+sudo apt install pulseaudio
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;接下来按照官方指南安装&lt;strong&gt;Anbox&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;snap install --classic anbox-installer &amp;amp;&amp;amp; anbox-installer
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;我试着通过snap来安装一直存在权限问题，一般权限不能运行&lt;code&gt;snap install --classic anbox-installer&lt;/code&gt;，root运行完&lt;code&gt;snap install --classic anbox-installer&lt;/code&gt;后，但运行&lt;code&gt;anbox-installer&lt;/code&gt;又提示不能使用root权限，一般权限根本无法运行&lt;code&gt;anbox-installer&lt;/code&gt;，搞了半天都没有成功，于是就有了下文。&lt;/p&gt;
+&lt;p&gt;通过常规方法安装&lt;strong&gt;Anbox&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget https://raw.githubusercontent.com/anbox/anbox-installer/master/installer.sh -O anbox-installer
+chmod +x ./anbox-installer
+./anbox-installer
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;安装完成后会有重启系统的提示&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;To ensure all changes made to your system you should now reboot
+your system. If you don&amp;rsquo;t do this no Android applications will
+show up in the system application launcher.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;重启后就会在系统菜单中找到&lt;strong&gt;Anbox&lt;/strong&gt;，点击打开，见下图(注意Cuto是我自己安装的，原来没有)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/org.anbox.appmgr.webp&#34; alt=&#34;org.anbox.appmgr&#34;&gt;&lt;/p&gt;
+&lt;p&gt;一个基本的Android系统已经成功了，可以看看系统信息&lt;strong&gt;Settings&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/anbox.settings.webp&#34; alt=&#34;anbox_settings&#34;&gt;&lt;/p&gt;
+&lt;p&gt;可以看到，Android版本为7.1.1，很新咯!&lt;/p&gt;
+&lt;h4 id=&#34;在anbox中安装android软件&#34;&gt;在Anbox中安装Android软件&lt;/h4&gt;
+&lt;p&gt;首先需要安装&lt;strong&gt;adb&lt;/strong&gt;工具&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt install adb
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;安装成功后，可以使用adb来识别模拟器是否链接&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;adb devices
+
+List of devices attached
+emulator-6663	device
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;可以看到出现了一个名为emulator-6663的设备&lt;/p&gt;
+&lt;p&gt;下来安装Android软件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;alair@vbs ~/下载 $ ls
+Cuto-1.2.1-28-for-30644-o_1bgano4o21gjj1l1v183893n1sdkr-uid-423508.apk
+nautilus_nutstore_amd64.deb
+alair@vbs ~/下载 $ adb install ./Cuto-1.2.1-28-for-30644-o_1bgano4o21gjj1l1v183893n1sdkr-uid-423508.apk 
+18112 KB/s (7389673 bytes in 0.398s)
+Success
+alair@vbs ~/下载 $ 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以上以安装&lt;strong&gt;Cuto&lt;/strong&gt;为例，安装完成后就可以点击运行咯。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

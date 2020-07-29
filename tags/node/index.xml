@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>node on UNIXETC</title>
+    <link>https://unixetc.com/tags/node/</link>
+    <description>UNIXETC (node)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 03 Dec 2015 12:32:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/node/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>树莓派安装Node.js</title>
+      <link>https://unixetc.com/post/raspberry-pi-install-nodejs/</link>
+      <pubDate>Thu, 03 Dec 2015 12:32:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/raspberry-pi-install-nodejs/</guid>
+      <description>&lt;p&gt;首先查看树莓派cpu信息&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pi@raspi:~ $ cat /proc/cpuinfo
+processor       : 0
+model name      : ARMv6-compatible processor rev 7 (v6l)
+BogoMIPS        : 2.00
+Features        : half thumb fastmult vfp edsp java tls
+CPU implementer : 0x41
+CPU architecture: 7
+CPU variant     : 0x0
+CPU part        : 0xb76
+CPU revision    : 7
+
+Hardware        : BCM2708
+Revision        : 000e
+Serial          : 000000004a8acb6d
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;看清楚cpu构架，是&lt;strong&gt;ARMv6&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;然后在node.js官网下载对应版本的包，下载地址&lt;a href=&#34;https://nodejs.org/dist/&#34;&gt;https://nodejs.org/dist/&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# wget https://nodejs.org/dist/v4.2.2/node-v4.2.2-linux-arm64.tar.gz
+# tar zxf node-v4.2.2-linux-arm64.tar.gz
+# mv node-v4.2.2-linux-arm64 /usr/nodejs422
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;方便使用期间，做个链接&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# ln -s /usr/nodejs422/bin/npm /usr/bin/npm
+# ln -s /usr/nodejs422/bin/node /usr/bin/node
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;完成后查看版本信息&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# node -v
+v4.2.2
+# npm -v
+2.14.7
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;至此安装完成，官网现在放出arm编译版方便多了，为以前通过源码编译安装的岁月干杯！！！&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

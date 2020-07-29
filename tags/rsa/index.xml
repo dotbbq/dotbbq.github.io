@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RSA on UNIXETC</title>
+    <link>https://unixetc.com/tags/rsa/</link>
+    <description>UNIXETC (RSA)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 01 Aug 2019 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/rsa/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>通过SSH访问UbuntuTouch</title>
+      <link>https://unixetc.com/post/shell-access-ubuntu-touch-via-ssh/</link>
+      <pubDate>Thu, 01 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/shell-access-ubuntu-touch-via-ssh/</guid>
+      <description>&lt;p&gt;在&lt;a href=&#34;https://unixetc.com/post/oneplus-3t-install-ubuntutouch/&#34;&gt;一加3T上安装完UbuntuTouch&lt;/a&gt;后，可以通过以下方法开启SSH登录。&lt;/p&gt;
+&lt;p&gt;打开终端(Terminal)，输入以下命令开启ssh服务。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo android-gadget-service enable ssh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后就可以通过&lt;code&gt;ssh phablet@ip&lt;/code&gt;来登录设备。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/access_ubuntu_touch_via_ssh.png&#34; alt=&#34;&amp;ldquo;access ubuntutouch via ssh&amp;rdquo;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>使用SSH密匙登录Github</title>
+      <link>https://unixetc.com/post/use-the-ssh-key-to-login-github/</link>
+      <pubDate>Tue, 03 Sep 2013 19:23:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/use-the-ssh-key-to-login-github/</guid>
+      <description>&lt;h3 id=&#34;生成ssh密匙文件&#34;&gt;生成ssh密匙文件&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;ssh-keygen -t rsa -C &amp;quot;user@domain.com&amp;quot;   
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;接下来会提示输入密码，推荐自定义密码，当然也可以置空&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Enter passphrase(empty for no passphrase):
+Enter same passphrase again:
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;完成后会在用户目录下的.ssh文件夹中新建&lt;!-- raw HTML omitted --&gt;id_rsa&lt;!-- raw HTML omitted --&gt;与&lt;!-- raw HTML omitted --&gt;is_rsa.pub&lt;!-- raw HTML omitted --&gt;两个文件。&lt;/p&gt;
+&lt;h3 id=&#34;添加ssh密匙到github用户&#34;&gt;添加ssh密匙到github用户&lt;/h3&gt;
+&lt;p&gt;登录至github.com,点击右上角的&lt;strong&gt;Account Settings&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在左侧选择&lt;strong&gt;SSH Keys&lt;/strong&gt;菜单，然后在右侧点击&lt;strong&gt;Add SSH Key&lt;/strong&gt;按钮&lt;/p&gt;
+&lt;p&gt;将上一步生成的&lt;strong&gt;id_rsa.pub&lt;/strong&gt;文件内容复制进去保存。&lt;/p&gt;
+&lt;h3 id=&#34;本地连接至githubcom&#34;&gt;本地连接至github.com&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;ssh -T git@github.com
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果前面设置了passphrase，那么就按照提示输入passphrase。如果置空的话，就直接点击&lt;strong&gt;回车&lt;/strong&gt;。成功后会有如下提示：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Hi wrchiu! You`ve successfully authenticated, but GitHub does note provide shell access.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;参考以上设置完成后，以后git push时就不需要每次输入密码了！&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

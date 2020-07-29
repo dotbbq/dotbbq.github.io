@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>html on UNIXETC</title>
+    <link>https://unixetc.com/tags/html/</link>
+    <description>UNIXETC (html)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 02 Jul 2015 17:32:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Typecho主题Limits</title>
+      <link>https://unixetc.com/post/typecho-limits-theme/</link>
+      <pubDate>Thu, 02 Jul 2015 17:32:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/typecho-limits-theme/</guid>
+      <description>&lt;p&gt;又造了个简单成马咧的主题，分享给大家!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;说明&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;评论采用多说，请自行替换comments.php内容&lt;/li&gt;
+&lt;li&gt;没有页面导航，因此请在&lt;strong&gt;设置-阅读&lt;/strong&gt;中，将&lt;strong&gt;每页文章数目&lt;/strong&gt;设大一些(例如:&lt;strong&gt;999&lt;/strong&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;预览图:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/typecho_limits.png&#34; alt=&#34;Limits主题&#34;&gt;&lt;/p&gt;
+&lt;p&gt;下载: &lt;a href=&#34;http://cdn.lyq.wiki/res/limits.7z&#34;&gt;Limits.7z&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

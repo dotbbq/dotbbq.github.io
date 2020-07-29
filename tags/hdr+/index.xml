@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hdr&#43; on UNIXETC</title>
+    <link>https://unixetc.com/tags/hdr&#43;/</link>
+    <description>UNIXETC (hdr&#43;)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Wed, 13 Dec 2017 12:13:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/hdr+/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Google Camera一加3/3T移植版</title>
+      <link>https://unixetc.com/post/google-camera-port-for-oneplus-3t/</link>
+      <pubDate>Wed, 13 Dec 2017 12:13:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/google-camera-port-for-oneplus-3t/</guid>
+      <description>&lt;p&gt;Google Camera一加3/3T移植版，支持HDR+, 1080p 60FPS视频, 慢动作和慢动作图片。 By BSG, Ivanich, and Arnova8G2.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;可用特性:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Camera (HDR+, flash, zoom, front camera, etc)&lt;/li&gt;
+&lt;li&gt;视频 (30fps/60fps at 1080p、防抖、自动对焦)&lt;/li&gt;
+&lt;li&gt;慢动作 (120fps)&lt;/li&gt;
+&lt;li&gt;Panorama&lt;/li&gt;
+&lt;li&gt;Photo Sphere&lt;/li&gt;
+&lt;li&gt;Lens Blur&lt;/li&gt;
+&lt;li&gt;RAW&lt;/li&gt;
+&lt;li&gt;Motion Photos (Android 8+ only, check the &amp;ldquo;suggested settings&amp;rdquo;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;不可用特性:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ZSL (HDR+打开情况下)&lt;/li&gt;
+&lt;li&gt;(OOS Oreo)慢动作&lt;/li&gt;
+&lt;li&gt;前置相机HDR&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;下载:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-316386226&#34;&gt;GCam_5.3.015-Pixel3Mod-Arnova8G2-1.4.apk&lt;/a&gt; &lt;strong&gt;Update 2018-10-04&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-316386061&#34;&gt;GCam-5.1.018-Pixel2Mod-Arnova8G2-V8.3b1.apk&lt;/a&gt; &lt;strong&gt;Update 2018-08-25&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;本文只提供一加3/3T的稳定版apk，BSG、Ivanich和Arnova8G2的完整版清单，请移步&lt;a href=&#34;https://www.celsoazevedo.com/files/android/google-camera/&#34;&gt;这里&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>Let&#39;s encrypt 证书快速生成脚本 - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+
+
+
+<meta property="og:title" content="Let&#39;s encrypt 证书快速生成脚本" />
+<meta property="og:description" content="网站的Let&rsquo;s encrypt证书快到期了，看了官方的续期方法比较繁琐，于是在网上找了找简单方便做法，结果找到了墓地小企鹅写的一个脚本(shell script)，使用这个脚本可以方便的生成以及更新Let&rsquo;s encrypt 证书。
+脚本地址 https://github.com/xdtianyu/scripts/tree/master/lets-encrypt
+下载脚本
+wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.confwget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh 配置
+root@rnse:~/lesh# cat letsencrypt.conf# only modify the values, key files will be generated automaticly.ACCOUNT_KEY=&quot;letsencrypt-account.key&quot;DOMAIN_KEY=&quot;alair.key&quot;DOMAIN_DIR=&quot;/data/wwwroot/alair.cn/compiled&quot;DOMAINS=&quot;DNS:alair.cn,DNS:www.alair.cn&quot;#ECC=TRUE#LIGHTTPD=TRUE 按照需要自定义DOMAIN_KEY、DOMAIN_DIR、DOMAINS三部分。
+生成证书
+root@rnse:~/lesh#chmod &#43;x letsencrypt.shroot@rnse:~/lesh# ./letsencrypt.sh letsencrypt.confGenerate account key...Generating RSA private key, 4096 bit long modulus..............................&#43;&#43;....&#43;&#43;e is 65537 (0x10001)Generate domain key...Generating RSA private key, 2048 bit long modulus." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unixetc.com/post/letsencrypt-certificate-quickly-generate-script/" />
+<meta property="article:published_time" content="2016-05-09T15:28:00+00:00" />
+<meta property="article:modified_time" content="2016-05-09T15:28:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Let&#39;s encrypt 证书快速生成脚本"/>
+<meta name="twitter:description" content="网站的Let&rsquo;s encrypt证书快到期了，看了官方的续期方法比较繁琐，于是在网上找了找简单方便做法，结果找到了墓地小企鹅写的一个脚本(shell script)，使用这个脚本可以方便的生成以及更新Let&rsquo;s encrypt 证书。
+脚本地址 https://github.com/xdtianyu/scripts/tree/master/lets-encrypt
+下载脚本
+wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.confwget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh 配置
+root@rnse:~/lesh# cat letsencrypt.conf# only modify the values, key files will be generated automaticly.ACCOUNT_KEY=&quot;letsencrypt-account.key&quot;DOMAIN_KEY=&quot;alair.key&quot;DOMAIN_DIR=&quot;/data/wwwroot/alair.cn/compiled&quot;DOMAINS=&quot;DNS:alair.cn,DNS:www.alair.cn&quot;#ECC=TRUE#LIGHTTPD=TRUE 按照需要自定义DOMAIN_KEY、DOMAIN_DIR、DOMAINS三部分。
+生成证书
+root@rnse:~/lesh#chmod &#43;x letsencrypt.shroot@rnse:~/lesh# ./letsencrypt.sh letsencrypt.confGenerate account key...Generating RSA private key, 4096 bit long modulus..............................&#43;&#43;....&#43;&#43;e is 65537 (0x10001)Generate domain key...Generating RSA private key, 2048 bit long modulus."/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">Let&#39;s encrypt 证书快速生成脚本</h1>
+        </header>
+        <div class="content">
+            <p>网站的Let&rsquo;s encrypt证书快到期了，看了官方的续期方法比较繁琐，于是在网上找了找简单方便做法，结果找到了<strong>墓地小企鹅</strong>写的一个脚本(shell script)，使用这个脚本可以方便的生成以及更新Let&rsquo;s encrypt 证书。</p>
+<p>脚本地址 <a href="https://github.com/xdtianyu/scripts/tree/master/lets-encrypt">https://github.com/xdtianyu/scripts/tree/master/lets-encrypt</a></p>
+<p><strong>下载脚本</strong></p>
+<pre><code>wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.conf
+wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh
+</code></pre>
+<p><strong>配置</strong></p>
+<pre><code>root@rnse:~/lesh# cat letsencrypt.conf
+# only modify the values, key files will be generated automaticly.
+ACCOUNT_KEY=&quot;letsencrypt-account.key&quot;
+DOMAIN_KEY=&quot;alair.key&quot;
+DOMAIN_DIR=&quot;/data/wwwroot/alair.cn/compiled&quot;
+DOMAINS=&quot;DNS:alair.cn,DNS:www.alair.cn&quot;
+#ECC=TRUE
+#LIGHTTPD=TRUE
+</code></pre>
+<p>按照需要自定义<code>DOMAIN_KEY</code>、<code>DOMAIN_DIR</code>、<code>DOMAINS</code>三部分。</p>
+<p><strong>生成证书</strong></p>
+<pre><code>root@rnse:~/lesh#chmod +x letsencrypt.sh
+root@rnse:~/lesh# ./letsencrypt.sh letsencrypt.conf
+Generate account key...
+Generating RSA private key, 4096 bit long modulus
+..............................++
+....++
+e is 65537 (0x10001)
+Generate domain key...
+Generating RSA private key, 2048 bit long modulus
+...............................................................+++
+..........................+++
+e is 65537 (0x10001)
+Generate CSR...alair.csr
+Parsing account key...
+Parsing CSR...
+Registering account...
+Registered!
+Verifying www.alair.cn...
+www.alair.cn verified!
+Verifying alair.cn...
+alair.cn verified!
+Signing certificate...
+Certificate signed!
+New cert: alair.chained.crt has been generated
+</code></pre>
+<p>生成后的目录文件如下:</p>
+<pre><code>root@rnse:~/lesh# ls
+alair.chained.crt  alair.crt  alair.csr  alair.key  lets-encrypt-x3-cross-signed.pem  letsencrypt-account.key  letsencrypt.conf  letsencrypt.sh
+</code></pre>
+<p><strong>配置nginx</strong></p>
+<pre><code>... ...
+ssl_certificate     /path/to/cert/alair.chained.crt;
+ssl_certificate_key /path/to/cert/alair.key;
+... ...
+</code></pre>
+<p><strong>更新证书</strong></p>
+<p>证书到期前直接再次生成而已</p>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-05-09</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/js">#JS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/https">#https</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssl">#ssl</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/letsencrypt">#letsencrypt</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/shell">#shell</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>systemd on UNIXETC</title>
+    <link>https://unixetc.com/tags/systemd/</link>
+    <description>UNIXETC (systemd)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Wed, 06 Mar 2013 03:06:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/systemd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Archlinux下修改网卡名称</title>
+      <link>https://unixetc.com/post/archlinux-modify-the-network-adapter-name/</link>
+      <pubDate>Wed, 06 Mar 2013 03:06:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/archlinux-modify-the-network-adapter-name/</guid>
+      <description>&lt;p&gt;刚刚安装了Archlinux，用的archlinux-2013.03.01-dual.iso镜像，最新的systemd将网卡名更改了，不在是原来默认的eth0/wlan0&lt;/p&gt;
+&lt;p&gt;我的ifconfig -a输出如下:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;enp9s0: flags=4098 mtu 1500
+ether 04:7d:7b:f8:25:9d txqueuelen 1000 (Ethernet)
+RX packets 0 bytes 0 (0.0 B)
+RX errors 0 dropped 0 overruns 0 frame 0
+TX packets 0 bytes 0 (0.0 B)
+TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0
+
+lo: flags=73mtu 65536
+inet 127.0.0.1 netmask 255.0.0.0
+inet6 ::1 prefixlen 128 scopeid 0x10
+loop txqueuelen 0 (Local Loopback)
+RX packets 0 bytes 0 (0.0 B)
+RX errors 0 dropped 0 overruns 0 frame 0
+TX packets 0 bytes 0 (0.0 B)
+TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0
+
+wlp3s0: flags=4098mtu 1500
+ether 88:9f:fa:f8:c3:06 txqueuelen 1000 (Ethernet)
+RX packets 0 bytes 0 (0.0 B)
+RX errors 0 dropped 0 overruns 0 frame 0
+TX packets 0 bytes 0 (0.0 B)
+TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0&amp;lt;/pre&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;怎么将网卡名改回原来的eth0/wlan0呢？如下操作即可:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#cd /usr/lib/udev/rules.d/
+#mv 80-net-name-slot.rules 80-net-name-slot.rules.bak
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果&lt;code&gt;/usr/lib/udev/rules.d/&lt;/code&gt;目录没有如上文件，那就在&lt;code&gt;/etc/udev/rules.d/&lt;/code&gt;找，完成后重启电脑即可！&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

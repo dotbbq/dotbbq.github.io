@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>win32diskimager - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/tags/win32diskimager/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+
+
+
+<meta property="og:title" content="win32diskimager" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/tags/win32diskimager/" />
+<meta property="og:updated_time" content="2014-02-28T12:28:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="win32diskimager"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <h1>Tag: win32diskimager</h1>
+    <div class="post-info">
+        <a href="https://unixetc.com/tags">To all tags</a>
+    </div>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/starting-use-raspberry-pi/">开始使用树莓派</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装系统 从官网下载系统镜像，推荐Raspbian
+http://downloads.raspberrypi.org/raspbian_latest
+将下载后的zip文件解压，得到2014-01-07-wheezy-raspbian.img文件。
+准备一张SD卡，最好容量大于4GB，Class10
+将镜像写入SD卡
+ Linux下推荐使用dd名来写入镜像  使用fdisk -l检查分区信息，比如sd卡设备为**/dev/sdb**，使用以下命令写入：
+#dd if=2014-01-07-wheezy-raspbian.img of=/dev/sdb bs=1M  Windows下推荐使用Win32DiskImager写入镜像  Win32DiskImager下载地址：http://sourceforge.net/projects/win32diskimager/
+下载后打开软件，选择好镜像文件与USB设备，然后点击Write写入。
+开机进入系统 将已写入系统的SD卡插入Raspberry Pi，通过固网链接路由器，然后使用USB供电启动。
+正常启动后，板载的ACT，PWR、FDX、LNK、100五个指示灯均点亮。
+通过SSH连接Raspberry Pi
+查看Raspberry Pi IP地址
+#nmap -sP 192.168.1/24 检查出MAC后标注(Raspberry Pi Foundation)的即为Raspberry Pi主机。
+然后通过SSH来链接主机
+#ssh 192.168.1.127 用户名为pi，默认密码为raspberry
+Widnows下推荐使用Putty
+设置Raspberry 运行设置工具sudo raspi-config
+ 选择Expand Filesystem扩展文件系统 Change User Passwd 修改默认用户pi的密码，当然也可以在系统中使用passwd命令来更改。 Advanced Options-&gt;Hostname 修改主机名 Overclock 超频，建议900Mhz  
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-02-28</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/debian">#Debian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/overlock">#overlock</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%B6%85%E9%A2%91">#超频</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/win32diskimager">#win32diskimager</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/linux-liveusb-tools/">Linux Live USB制作工具</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        现在大多数的Linux发行版都支持Live方式，即可直接运行体验无需安装。
+Linux Live又分为LiveCD和LiveUSB，前者是通过光盘(CD/DVD)方式直接运行，后者则是通过USB设备(U盘/移动硬盘)来运行。
+以下介绍几款Linux Live USB制作工具，个人推荐Linux Live USB Creator!
+注:需要主板BIOS开启USB Boot功能。
+Universal USB Installer http://www.pendrivelinux.com
+1，选择Linux版本，勾选后面的Download the iso(Optional).则从互联网下载所选镜像。 2，选择本地镜像文件(iso)。 3，选择将要写入的USB设备，勾选Show all Drives可以看到所有本地磁盘，需要写入移动硬盘就需要勾选此项。
+UNetbootin http://unetbootin.sourceforge.net
+1，选择镜像源，从网络下载或者本地iso文件 2，在类型中选择usb设备或者硬盘，然后在驱动器栏选择具体的盘符。
+LinuxLive USB Creator http://www.linuxliveusb.com/
+1，选择需要写入的USB设备 2，选择安装源（ISO文件、光驱、网路下载）
+Image Writer for Microsoft Windows (Win32DiskImager) https://launchpad.net/win32-image-writer
+这个操作相对很简单，并且只单一的适用于img镜像文件，如Meego就是采用这种发行方式
+万能的dd
+最喜欢这个方法了！ 使用lsblk查看u盘设备名，如/dev/sdb，例如镜像文件名为linux.iso，使用以下命令将镜像文件写入U盘
+#dd if=linux.iso of=/dev/sdb 
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2012-08-13</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dd">#dd</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/win32diskimager">#win32diskimager</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/liveusb">#liveusb</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/unetbootin">#unetbootin</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

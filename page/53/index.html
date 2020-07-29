@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta name="generator" content="Hugo 0.74.3" />
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>UNIXETC - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+
+
+
+<meta property="og:title" content="UNIXETC" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/" />
+<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="UNIXETC"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <div class="homepage-content">
+        
+    </div>
+
+    
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/vc-runtime-library-collection/">VC运行库全集</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        VC运行库全集
+VC2005,VC2008,VC2010,VC2013
+VC++ Redistributable Package Collection
+VCRP:| +---vcpp_2005| vcredist_x86.exe +---vcpp_2008| vcredist_x86.exe +---vcpp_2010| vcredist_x64.exe| vcredist_x86.exe +---vcpp_2012| vcredist_x64.exe| vcredist_x86.exe| vozqco_70591.exe \---vcpp_2013vcredist_arm.exevcredist_x64.exevcredist_x86.exe VC运行库下载地址https://dotbbq.pipipan.com/fs/18418398-315802255
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-08-15</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/SHARE">SHARE</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/vc">#VC</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vc&#43;&#43;">#VC&#43;&#43;</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/virutalc&#43;&#43;">#VirutalC&#43;&#43;</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/microsoft">#Microsoft</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/runtime">#Runtime</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/library">#Library</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/use-tl-wn725n-in-raspberry-pi/">树莓派中使用TL-WN725N</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        Raspbian版本 2014-01-07-wheezy-raspbian.img
+下载地址为http://cdn.lyq.wiki/res/8188eu-20140616.tar.gz
+首先固网链接树莓派，通过SSH登录
+wget http://cdn.lyq.wiki/res/8188eu_31024_614.zipunzip 8188eu_31024_614.zipsudo mv 8188eu.ko /lib/modules/`uname -r`/kernel/drivers/net/wirelesssudo chown root:root /lib/modules/`uname -r`/kernel/drivers/net/wireless/8188eu.kosudo mv rtl8188eufw.bin /lib/firmware/rtlwifi/sudo chown root:root /lib/firmware/rtlwifi/rtl8188eufw.binsudo depmod -asudo modprobe 8188eu 然后编辑/etc/netwok/interfaces，添加以下内容
+allow-hotplug wlan0auto wlan0iface wlan0 inet manualwpa-roam /etc/mywpa.confiface default inet dhcp 新建mywpa.conf写入链接配置vi /etc/mywpa.conf
+network={ssid=&quot;YOUR SSID&quot;proto=RSNkey_mgmt=WPA-PSKpairwise=CCMP TKIPgroup=CCMP TKIPpsk=&quot;YOUR PASSWORD&quot;} 重启系统
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-08-12</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/tp-link">#TP-Link</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/tl-wn735n">#TL-WN735N</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/wn725n">#wn725n</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/wireless">#wireless</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%97%A0%E7%BA%BF%E7%BD%91%E5%8D%A1">#无线网卡</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/raspberry-pi-install-tonido-build-personal-cloud/">树莓派安装Tonido打造个人云服务</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装Tonido sudo mkdir /usr/local/tonidocd /usr/local/tonidosudo wget http://patch.codelathe.com/tonido/live/installer/armv6l-rpi/tonido.tar.gzsudo tar -zxvf tonido.tar.gz./tonido.sh start 浏览器打开http://ip:10001开始注册设置 ip为树莓派的地址
+安装多媒体解码器 Tonido支持在线播放音频，但需要安装设置解码器
+cd /usr/local/tonidosudo apt-get install ffmpegsudo ln -s /usr/bin/ffmpeg ffmpeg.exesudo ln -s /usr/bin/ffmpeg ffmpegv.exe 设置开机启动  下载脚本文件tonido wget http://cdn.lyq.wiki/res/tonido 设置脚本权限 sudo cp tonido /etc/init.d/ sudo chmod +x /etc/init.d/tonido 安装脚本 sudo update-rc.d tonido defaults  客户端下载 Tonido Sync for Windows http://www.tonido.com/download.php?TonidoSync.exe Tonido Sync for Mac http://www.tonido.com/download.php?TonidoSync.dmg Tonido Sync for Linux http://www.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-08-12</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/tonido">#tonido</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+    
+        
+    <div class="pagination">
+        <div class="left pagination-item ">
+            
+                <a href="/page/52/">To new posts</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/page/54/">To old posts</a>
+            
+        </div>
+    </div>
+
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

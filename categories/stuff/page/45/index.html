@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>STUFF - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/categories/stuff/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+
+
+
+<meta property="og:title" content="STUFF" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/categories/stuff/" />
+<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="STUFF"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <h1>Category: STUFF</h1>
+    <div class="post-info">
+        <a href="https://unixetc.com/categories">To all categories</a>
+    </div>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/use-youtube-dl-to-download-youtube-video/">使用youtube-dl下载YouTube视频</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        什么是youtube-dl youtube-dl是一个简单的下载youtube视频脚本工具，基于Python。
+安装youtube-dl 官方安装方法
+sudo curl https://yt-dl.org/latest/youtube-dl -o /usr/local/bin/youtube-dlsudo chmod a+x /usr/local/bin/youtube-dl 或者
+sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dlsudo chmod a+x /usr/local/bin/youtube-dl 还有两种方法:
+sudo pip install youtube-dlbrew install youtube-dl 使用youtube-dl youtube-dl [OPTIONS] URL [URL...] youtube-dl官网 https://github.com/rg3/youtube-dl/
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-01-08</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/youtube-dl">#youtube-dl</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/youtube">#YouTube</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/raspberry-pi-set-timezone-and-ntp/">树莓派设置时区和ntp时间同步</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        设置时区   使用raspi-config设置
+raspi-config
+  Internationalisation Options -&gt; Change Timezone
+ 使用tzselect设置
+tzselect
+  然后根据提示，选择时区
+ 手动设置**/etc/localtime**
+rm /etc/localtime ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+  安装配置NTP sudo apt-get install ntp ntpdate 编辑ntp配置文件**/etc/ntp.conf**，添加以下内容
+server 0.asia.pool.ntp.orgserver 1.asia.pool.ntp.orgserver 2.asia.pool.ntp.orgserver 3.asia.pool.ntp.org 重启ntp服务
+service ntp restart 
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-12-26</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ntp">#ntp</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/tzselect">#tzselect</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ntpdate">#ntpdate</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/mapinfo-iris-out-points-with-sql-select/">Mapinfo中通过SQL查询筛选区域点</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        Mapinfo中有一批离散点，现在需要把一部分点筛选出来，可以使用SQL查询功能导出。
+首先，打开需要筛选的图层：
+然后打开装饰层可编辑：
+设置不规则图形样式，建议将填充去掉只留下边框：
+使用不规则图形圈出所需要的采样点
+注意：边线不要压着采样点，被压线的采样点不算做圈选有效。 Map-&gt;Save Cosmetic Objects 保存装饰图层，这里取名123 然后使用SQL查询功能进行查询
+SQL查询时，选择需要交叉的两个图层
+查询完成后，Table-&gt;Export 导出查询结果 导出时设置参考下图，可选择**.mif**、**.txt**、**.csv**格式 
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-12-24</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/sql">#sql</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/mapinfo">#mapinfo</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gis">#gis</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/select">#select</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+    
+        
+    <div class="pagination">
+        <div class="left pagination-item ">
+            
+                <a href="/categories/stuff/page/44/">To new posts</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/categories/stuff/page/46/">To old posts</a>
+            
+        </div>
+    </div>
+
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

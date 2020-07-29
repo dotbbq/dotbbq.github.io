@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>Linux下更改时区 - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+
+
+
+<meta property="og:title" content="Linux下更改时区" />
+<meta property="og:description" content="Linux中时区代码都在/usr/share/zoneinfo/目录中
+首先删除默认时区
+#rm /etc/localtime 设定新的时区
+#ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 完成！" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unixetc.com/post/change-timezone-in-centos/" />
+<meta property="article:published_time" content="2015-11-30T11:30:00+00:00" />
+<meta property="article:modified_time" content="2015-11-30T11:30:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux下更改时区"/>
+<meta name="twitter:description" content="Linux中时区代码都在/usr/share/zoneinfo/目录中
+首先删除默认时区
+#rm /etc/localtime 设定新的时区
+#ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 完成！"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">Linux下更改时区</h1>
+        </header>
+        <div class="content">
+            <p>Linux中时区代码都在<code>/usr/share/zoneinfo/</code>目录中</p>
+<p>首先删除默认时区</p>
+<pre><code>#rm /etc/localtime
+</code></pre>
+<p>设定新的时区</p>
+<pre><code>#ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+</code></pre>
+<p>完成！</p>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-11-30</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/timezone">#timezone</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/localtime">#localtime</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%97%B6%E5%8C%BA">#时区</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

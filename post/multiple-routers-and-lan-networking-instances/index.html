@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>多路由器同局域网组网实例 - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+
+
+
+<meta property="og:title" content="多路由器同局域网组网实例" />
+<meta property="og:description" content="装修的时候，家里卧室阳台和客厅均预留网口，共6个，所有的网线都汇集在楼梯下的弱电箱里，但是当时没注意到弱电箱过小，后期装宽带才发现，一堆线占了很多地方，电信的光猫塞进去都不方便。
+出于无奈只能买了个外置机柜，9U的，刚好放到楼梯地下不占地方。于是将光猫、主路由和NAS都塞了进去。
+最终家里的网络布局如下： 其中，RB750为主路由，IP为192.168.1.11，是为了和光猫的192.168.1.1区分开。下挂R6300和R6200俩AP，一个MyCloud NAS，一个小米电视。
+一楼客厅的R6300v2为主AP，采用AP模式链接，IP为192.168.1.2，刷的梅林固件，下挂俩树莓派。
+二楼书桌上的R6200v2也采用AP模式链接，不过是默认固件，IP为192.168.1.3。
+以上都为超五类网线链接，这样就可以做到全家设备同局域网共享访问，相互间都是1G速率。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unixetc.com/post/multiple-routers-and-lan-networking-instances/" />
+<meta property="article:published_time" content="2019-01-24T11:24:00+00:00" />
+<meta property="article:modified_time" content="2019-01-24T11:24:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="多路由器同局域网组网实例"/>
+<meta name="twitter:description" content="装修的时候，家里卧室阳台和客厅均预留网口，共6个，所有的网线都汇集在楼梯下的弱电箱里，但是当时没注意到弱电箱过小，后期装宽带才发现，一堆线占了很多地方，电信的光猫塞进去都不方便。
+出于无奈只能买了个外置机柜，9U的，刚好放到楼梯地下不占地方。于是将光猫、主路由和NAS都塞了进去。
+最终家里的网络布局如下： 其中，RB750为主路由，IP为192.168.1.11，是为了和光猫的192.168.1.1区分开。下挂R6300和R6200俩AP，一个MyCloud NAS，一个小米电视。
+一楼客厅的R6300v2为主AP，采用AP模式链接，IP为192.168.1.2，刷的梅林固件，下挂俩树莓派。
+二楼书桌上的R6200v2也采用AP模式链接，不过是默认固件，IP为192.168.1.3。
+以上都为超五类网线链接，这样就可以做到全家设备同局域网共享访问，相互间都是1G速率。"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">多路由器同局域网组网实例</h1>
+        </header>
+        <div class="content">
+            <p>装修的时候，家里卧室阳台和客厅均预留网口，共6个，所有的网线都汇集在楼梯下的弱电箱里，但是当时没注意到弱电箱过小，后期装宽带才发现，一堆线占了很多地方，电信的光猫塞进去都不方便。</p>
+<p>出于无奈只能买了个外置机柜，9U的，刚好放到楼梯地下不占地方。于是将光猫、主路由和NAS都塞了进去。</p>
+<p>最终家里的网络布局如下：
+<img src="/imgs/2909649507.webp" alt="网络图"></p>
+<p>其中，<strong>RB750</strong>为主路由，IP为<code>192.168.1.11</code>，是为了和光猫的<code>192.168.1.1</code>区分开。下挂<strong>R6300</strong>和<strong>R6200</strong>俩AP，一个MyCloud NAS，一个小米电视。</p>
+<p>一楼客厅的<strong>R6300v2</strong>为主AP，采用AP模式链接，IP为<code>192.168.1.2</code>，刷的梅林固件，下挂俩树莓派。</p>
+<p>二楼书桌上的<strong>R6200v2</strong>也采用AP模式链接，不过是默认固件，IP为<code>192.168.1.3</code>。</p>
+<p>以上都为超五类网线链接，这样就可以做到全家设备同局域网共享访问，相互间都是1G速率。</p>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2019-01-24</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/router">#router</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/rb750">#rb750</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/rb750gr3">#rb750gr3</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/lan">#lan</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/r6300">#r6300</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/r6200">#r6200</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>编程 on UNIXETC</title>
+    <link>https://unixetc.com/tags/%E7%BC%96%E7%A8%8B/</link>
+    <description>UNIXETC (编程)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 24 Sep 2013 12:59:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/%E7%BC%96%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>JavaScript数组使用实例</title>
+      <link>https://unixetc.com/post/examples-javascript-array/</link>
+      <pubDate>Tue, 24 Sep 2013 12:59:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/examples-javascript-array/</guid>
+      <description>&lt;p&gt;GF办公用需要一个小系统，原要求是VBA实现，不过我没弄过那玩意儿。C语言倒是熟悉，但CLI的东西她使用不方便。&lt;/p&gt;
+&lt;p&gt;于是做一个web系统，php比较熟悉，不过她的工作不能使用外网，额滴神！最后还是选择了用javascript实现，现学现卖吧。&lt;/p&gt;
+&lt;p&gt;由于不能使用数据库，所以需要构建一个三维数组来存储数据，以下是javascript中数组使用的一些实例。&lt;/p&gt;
+&lt;p&gt;定义数组并赋值&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var jz = newArry();
+jz[0] = 10;
+jz[1] = &amp;quot;hello&amp;quot;;
+jz[2] = 23.4;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以上是一个简单的一维数组，其中三个值分别为:&lt;code&gt;10&lt;/code&gt;整数，&lt;code&gt;hello&lt;/code&gt;字符串,&lt;code&gt;23.4&lt;/code&gt;浮点数，可以通过以下方法使用&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;alert(&amp;quot;jz[0] is &amp;quot;+jz[0]+&amp;quot;\n jz[1] is &amp;quot;+jz[1]+&amp;quot;\n jz[2] is &amp;quot;+jz[2]);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;二维数组的定义方法:为一维数组的单个值赋予数组值，那么就可以构成二维数组&lt;/p&gt;
+&lt;p&gt;实例&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var jz = newArry();
+jz[0] = newArry(1,2);
+jz[1] = newArry(3,4);
+jz[2] = newArry(5,6);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;可以通过&lt;code&gt;jz[0][0]&lt;/code&gt;、&lt;code&gt;jz[0][1]&lt;/code&gt;、&lt;code&gt;jz[0][2]&lt;/code&gt;来访问。&lt;/p&gt;
+&lt;p&gt;以下是一个简单的三维数组实例&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var jz newArry();
+jz[0] = newArry([100,200],[300,400],[500,600])
+jz[1] = newArry([&#39;str1&#39;,&#39;str2&#39;],[&#39;str3&#39;,&#39;str4&#39;],[&#39;str5&#39;,&#39;str6&#39;]);
+jz[2] = newArry([2.24,3.2],[12.9,89.01],[38.04,7.6]);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;方位方法如&lt;code&gt;jz[0][1][0]&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

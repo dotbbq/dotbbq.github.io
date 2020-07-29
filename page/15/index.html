@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta name="generator" content="Hugo 0.74.3" />
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>UNIXETC - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+
+
+
+<meta property="og:title" content="UNIXETC" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/" />
+<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="UNIXETC"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <div class="homepage-content">
+        
+    </div>
+
+    
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/excel-file-size-abnormal-check/">Excel文件大小异常核查</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        有时候明明excel文件中没多少内容，但是文件体积却很大，在此分享一个检查解决的方法。
+将excel文件后缀名改为zip，用压缩软件将其打开，定位到xl\worksheets\目录，可以看到各个sheet的体积大小，如下:
+找到其中体积最大的，定位到该sheet
+首先将所有内容全选并粘贴为文字。
+然后将内容排序后，全选下面的空白行邮件删除，将条件格式全部删除，这样应该就OK了！
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2018-06-10</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/office">#Office</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/excel">#Excel</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/xls">#xls</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/worksheets">#worksheets</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/sheet">#sheet</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/canonical-livepatch-service/">Ubuntu配置Livepatch服务</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        CLS(Canonical Livepatch Service)是Ubuntu母公司Canonical提供的一项服务，该服务可以为处于LTS的Ubuntu版本提供内核关键补丁修复，而不需要重新启动系统，特别适用于用作Server的系统。
+使用CLS的前提是必须注册一个Ubuntu帐号，地址为https://login.ubuntu.com/+login
+注册完成后，即可访问CLS主页https://www.ubuntu.com/server/livepatch进行登录配置。
+登陆后选择用户类型，一般个人用户选择Ubuntu User，然后点击Get your Livepatch token获取密匙
+按照下一步提示进行操作，启用CLS服务。
+运行完成后即成功启用CLS服务。
+检查CLS服务配置状态可以使用以下命令:
+alair@e6440:~$ sudo canonical-livepatch status --verboseclient-version: 8.0.2machine-id: 08e0*****************750dbmachine-token: 4753a054c*****************a2eb84c7architecture: x86_64cpu-model: Intel(R) Core(TM) i5-4310M CPU @ 2.70GHzlast-check: 2018-05-25T19:55:15.537634075+08:00boot-time: 2018-05-25T19:47:51+08:00uptime: 14m43sstatus:- kernel: 4.15.0-22.24-genericrunning: truelivepatch:checkState: checkedpatchState: nothing-to-applyversion: &quot;&quot;fixes: &quot;&quot;
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2018-05-25</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/kernel">#Kernel</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/canonical">#Canonical</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/livepatch">#Livepatch</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/cls">#CLS</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/xiunobbs-nginx-pseudo-static/">XiunoBBS Nginx伪静态规则</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        XiunoBBS是一款非常流行的轻论坛程序
+以下为XiunoBBS Nginx伪静态规则代码，添加到相应的nginx配置文件中即可。
+location ~* \.(htm)$ {rewrite &quot;^(.*)/(.+?).htm(.*?)$&quot; $1/index.php?$2.htm$3 last;} 
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2018-02-06</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/xiunobbs">#XiunoBBS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/bbs">#BBS</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+    
+        
+    <div class="pagination">
+        <div class="left pagination-item ">
+            
+                <a href="/page/14/">To new posts</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/page/16/">To old posts</a>
+            
+        </div>
+    </div>
+
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

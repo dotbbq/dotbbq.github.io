@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>树莓派配置VNC - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+
+
+
+<meta property="og:title" content="树莓派配置VNC" />
+<meta property="og:description" content="安装VNC Server
+$sudo apt-get install tightvncserver$sudo apt-get install ttf-wqy-microhei //安装中文字体 使用VNC Server
+$vncserver -geometry 1024x768 //分辨率，推荐960x640，或者640x480$vncserver -kill :1 //结束vncserver进程 Real VNC Viewer链接方法： 192.168.1.2:1" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unixetc.com/post/raspberry-pi-configuration-vnc/" />
+<meta property="article:published_time" content="2014-03-11T00:23:00+00:00" />
+<meta property="article:modified_time" content="2014-03-11T00:23:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="树莓派配置VNC"/>
+<meta name="twitter:description" content="安装VNC Server
+$sudo apt-get install tightvncserver$sudo apt-get install ttf-wqy-microhei //安装中文字体 使用VNC Server
+$vncserver -geometry 1024x768 //分辨率，推荐960x640，或者640x480$vncserver -kill :1 //结束vncserver进程 Real VNC Viewer链接方法： 192.168.1.2:1"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">树莓派配置VNC</h1>
+        </header>
+        <div class="content">
+            <p><strong>安装VNC Server</strong></p>
+<pre><code>$sudo apt-get install tightvncserver
+$sudo apt-get install ttf-wqy-microhei //安装中文字体
+</code></pre>
+<p><strong>使用VNC Server</strong></p>
+<pre><code>$vncserver -geometry 1024x768 //分辨率，推荐960x640，或者640x480
+$vncserver -kill :1  //结束vncserver进程
+</code></pre>
+<p><strong>Real VNC Viewer</strong>链接方法： 192.168.1.2:1</p>
+<p><img src="http://cdn.lyq.wiki/imgs/raspi_vnc_viewer.webp" alt="VNC" title="VNC"></p>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-03-11</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vnc">#VNC</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/tightvncserver">#tightvncserver</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

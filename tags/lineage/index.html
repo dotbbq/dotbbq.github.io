@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>Lineage - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/tags/lineage/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+
+
+
+<meta property="og:title" content="Lineage" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/tags/lineage/" />
+<meta property="og:updated_time" content="2019-09-01T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Lineage"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <h1>Tag: Lineage</h1>
+    <div class="post-info">
+        <a href="https://unixetc.com/tags">To all tags</a>
+    </div>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/oneplus-3t-install-ubuntutouch/">一加3T安装UbuntuTouch</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        Ubuntu Touch（又称Ubuntu Phone）是Canonical公司与Ubuntu社区所开发的移动设备操作系统，专为触屏行动设备所设计，例如：智能手机和平板电脑。
+现在国外开发者Vince1171放出了Oneplus3/3t的UbuntuTouch适配版，现在我们就安装试试。
+首先下载所需文件：
+ TWRP Recovery Recovery OnePlus_3T_Stable_9.0.3_Firmware_Modem.zip OnePlus3T底包 LineageOS LineageOS ROM halium-install.sh 安装脚本 halium-boot.img引导镜像 system.img 系统镜像 ubports-touch.rootfs-xenial-armhf.tar.gz UbuntuTouch系统镜像  下载完成后下来开始安装，本地PC环境为LinuxMint(类Ubuntu)，建议以下操作在root权限下操作。
+安装工具 首先安装adb以及fastboot工具
+sudo apt install adb fastboot 解锁手机 接下来设置手机，设置-&gt;关于手机，连击版本号打开开发者选项，进入开发者选项打开OEM解锁
+然后关闭手机，按住电源+音量上进入fastboot模式，链接手机和电脑。
+在电脑端运行以下命令解锁
+fastboot oem unlock 按照手机提示，选择YES开始解锁，完成后手机重启。
+安装Recovery 重启手机进入fastboot模式
+接下来通过以下命令安装Recovery
+fastboot flash recovery TWRP_recovery.img 安装完成后，关闭手机，按电源+音量减进入Recovery
+安装LineageOS 通过TWRP Recovery来刷入LineageOS ROM，完成后双清重启再次进入Recovery，通过数据线连接手机，进行后面操作。
+安装UbuntuTouch 手机进入Recovery模式，通过数据线连接电脑，然后开始按照以下进行安装。
+root@hpzb14:/media/alair/data# ./halium-install.sh -p ut ubports-touch.rootfs-xenial-armhf.tar.gz system.img Debug: Chosen rootfs is ubports-touch.rootfs-xenial-armhf.tar.gzDebug: Chosen android image is system.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2019-09-01</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/android">#Android</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/oneplus">#OnePlus</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/oneplus3">#OnePlus3</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/oneplus3t">#OnePlus3T</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E4%B8%80%E5%8A%A03t">#一加3T</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ubuntutouch">#UbuntuTouch</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ut">#UT</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/lineageos">#LineageOS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/lineage">#Lineage</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

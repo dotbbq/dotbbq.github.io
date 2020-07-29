@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>盒子 - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/tags/%E7%9B%92%E5%AD%90/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+
+
+
+<meta property="og:title" content="盒子" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/tags/%E7%9B%92%E5%AD%90/" />
+<meta property="og:updated_time" content="2019-11-05T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="盒子"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <h1>Tag: 盒子</h1>
+    <div class="post-info">
+        <a href="https://unixetc.com/tags">To all tags</a>
+    </div>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/armbian-change-software-source/">Armbian更改软件源</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        上一篇文章介绍了如何在斐迅N1上安装Armbian，现在介绍如何更改软件源为国内镜像。
+编辑/etc/apt/sources.list替换为以下内容：
+deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-freedeb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-freedeb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-freedeb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-freedeb http://ftp.debian.org/debian jessie-backports main接着编辑/etc/apt/sources.list.d/armbian.list ，替换为以下内容：
+deb http://mirrors.tuna.tsinghua.edu.cn/armbian/ buster main buster-utils buster-desktop保存后，刷新缓存更新系统：
+sudo apt updatesudo apt upgrade -y
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2019-11-05</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/phicomm">#PHICOMM</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%96%90%E8%AE%AF">#斐讯</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/n1">#N1</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%96%90%E8%AE%AFn1">#斐讯N1</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/armbian">#armbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/arm">#ARM</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%9B%92%E5%AD%90">#盒子</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/apt">#apt</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/debian">#Debian</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/phicomm-n1-install-armbian/">斐讯N1安装Armbian</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        最近入手斐讯N1一枚，买的是白色未拆封，到手版本为V2.19_0307_NS，刚好省了降级的麻烦，以下为斐讯N1安装armbian操作过程。
+开启adb调试模式 将N1通过HDMI连接显示器，将鼠标插到N1的USB口上，开机后用鼠标点击系统版本:V2.19_0307_NS区域，多次点击后会出现提示&quot;开启adb调试模式&rdquo;，即可。
+从此下载minimal_adb_fastboot，下载后安装。
+准备刷机U盘 准备一个不小区8G的U盘，下载镜像写入工具balenaEtcher，下载后安装。
+下载Armbian镜像，在此以Armbian_5.98_Aml-g12_Debian_buster_dev_5.4.0-rc4_20191025.img.xz为例，镜像为debian最新版，不带桌面系统。如果需要其他的可以从此处自行下载。
+Armbian_5.98_Aml-g12_Debian_buster_dev_5.4.0-rc4_20191025.img.xz
+将下载后的镜像文件用balenaEtcher写入U盘，写入完成后先别拔掉U盘，进入到BOOT分区，找到uEnv.ini文件，将dtb_name行改为如下内容：
+ dtb_name=/dtb/amlogic/meson-gxl-s905d-phicomm-n1.dtb
+ 然后退出U盘备用。
+如果你的BOOT分区下/dtd/amlogic/目录中没有meson-gxl-s905d-phicomm-n1.dtb文件，那么可以点击meson-gxl-s905d-phicomm-n1.dtb下载放入相应目录即可。
+从U盘引导Armbian 将制作好的系统U盘插到靠近HDMI一侧的U口，另外一个U口插入双公头的刷机线连接电脑，将N1通过HDMI连接显示器，并且插好网线然后开机。
+开机后可以从显示器上看到盒子的IP地址，电脑上运行Minimal ADB and Fastboot，然后输入adb connect 192.168.1.54命令连接盒子，连接成功后会有如下提示：
+ connected to 192.168.1.54:5555
+ 然后输入adb shell reboot update开始从U盘引导Armbian系统，盒子重启后成功引导armbian，此时可以将usb刷机线拔掉，插入一个外接键盘，开始后面操作。
+Armbian系统默认账号为root，密码为1234，按照提示输入账号信息进行登录，登录后会有更改默认密码提示，按照提示更改默认密码。
+接下来会有新建账号提示:
+Creating a new user account. Press &lt;Ctrl-C&gt; to abortPlease provide a username (eg. your forename):可以按照该提示新建账号，或者按Ctrl+c终止，继续用root账号登录。
+将Armbian安装到N1中 以上只是从U盘成功引导登录Armbian，接下来我们将Armbian安装到N1内置存储(eMMC)，即可拔掉U盘了。
+如果是通过root登录的话，那么直接运行root目录下install.sh即可安装，如下：
+ root@aml:~# ./install. shStart script create MBR and filesystem/dev/mmcblk1Start backup u-boot default4＋0 records in4＋0 records out4194304 bytes（4.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2019-11-03</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/phicomm">#PHICOMM</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%96%90%E8%AE%AF">#斐讯</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/n1">#N1</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%96%90%E8%AE%AFn1">#斐讯N1</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/armbian">#armbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/arm">#ARM</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%9B%92%E5%AD%90">#盒子</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/etcher">#Etcher</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/debian">#Debian</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

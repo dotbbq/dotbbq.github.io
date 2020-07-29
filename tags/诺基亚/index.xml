@@ -1,0 +1,814 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>诺基亚 on UNIXETC</title>
+    <link>https://unixetc.com/tags/%E8%AF%BA%E5%9F%BA%E4%BA%9A/</link>
+    <description>UNIXETC (诺基亚)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 30 Apr 2019 13:40:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/%E8%AF%BA%E5%9F%BA%E4%BA%9A/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>NokiaN900删除不必要的软件</title>
+      <link>https://unixetc.com/post/n900-removes-unnecessary-software-and-games/</link>
+      <pubDate>Tue, 30 Apr 2019 13:40:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/n900-removes-unnecessary-software-and-games/</guid>
+      <description>&lt;p&gt;NokiaN900自带的软件不少，还有一些游戏，以下为这些软件的删除方式。&lt;/p&gt;
+&lt;p&gt;首先，建议安装&lt;code&gt;rootsh&lt;/code&gt;以&lt;a href=&#34;https://unixetc.com/post/nokia-n900-and-ssh/&#34;&gt;获取ROOT权限&lt;/a&gt;，然后在xTermianl进行以下操作。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;名称&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;th&gt;删除命令&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Mahjong&lt;/td&gt;
+&lt;td&gt;游戏&lt;/td&gt;
+&lt;td&gt;apt-get remove -y osso-mahjong&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Chess&lt;/td&gt;
+&lt;td&gt;游戏&lt;/td&gt;
+&lt;td&gt;apt-get remove -y gnuchess&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Blocks&lt;/td&gt;
+&lt;td&gt;游戏&lt;/td&gt;
+&lt;td&gt;apt-get remove -y maemoblocks&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Marbles&lt;/td&gt;
+&lt;td&gt;游戏&lt;/td&gt;
+&lt;td&gt;apt-get remove -y osso-lmarbles&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AP News&lt;/td&gt;
+&lt;td&gt;软件&lt;/td&gt;
+&lt;td&gt;apt-get remove -y ap-installer&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Docs To Go&lt;/td&gt;
+&lt;td&gt;软件&lt;/td&gt;
+&lt;td&gt;apt-get remove -y dtg-installer&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Sketch&lt;/td&gt;
+&lt;td&gt;画图&lt;/td&gt;
+&lt;td&gt;apt-get remove -y osso-sketch&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Backup&lt;/td&gt;
+&lt;td&gt;备份&lt;/td&gt;
+&lt;td&gt;apt-get remove -y osso-backup&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PDF reader&lt;/td&gt;
+&lt;td&gt;PDF阅读&lt;/td&gt;
+&lt;td&gt;apt-get remove -y osso-pdf-viewer&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RSS&lt;/td&gt;
+&lt;td&gt;RSS订阅&lt;/td&gt;
+&lt;td&gt;apt-get remove -y osso-rss-feed-reader&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Notes&lt;/td&gt;
+&lt;td&gt;记事本&lt;/td&gt;
+&lt;td&gt;apt-get remove -y osso-notes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Amazon&lt;/td&gt;
+&lt;td&gt;Amazon安装快捷方式&lt;/td&gt;
+&lt;td&gt;rm   /usr/share/maemo-installer-utils/amazon.install        rm /usr/share/applications/hildon/amazon.desktop&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Facebook&lt;/td&gt;
+&lt;td&gt;Facebook安装快捷方式&lt;/td&gt;
+&lt;td&gt;rm   /usr/share/applications/hildon/facebook.desktop       rm /usr/share/maemo-installer-utils/facebook.install&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Maps&lt;/td&gt;
+&lt;td&gt;Nokia地图&lt;/td&gt;
+&lt;td&gt;apt-get remove -y nokia-maps*&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Force Weather&lt;/td&gt;
+&lt;td&gt;天气预报安装快捷方式&lt;/td&gt;
+&lt;td&gt;rm   /usr/share/maemo-installer-utils/foreca.install      rm /usr/share/applications/hildon/foreca.desktop&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;User Guide&lt;/td&gt;
+&lt;td&gt;用户手册快捷方式&lt;/td&gt;
+&lt;td&gt;rm /usr/share/applications/hildon/user-guide.desktop&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Get started&lt;/td&gt;
+&lt;td&gt;开始使用指南&lt;/td&gt;
+&lt;td&gt;apt-get remove -y tutorial-home-applet&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Store&lt;/td&gt;
+&lt;td&gt;Nokia商店快捷方式&lt;/td&gt;
+&lt;td&gt;rm /usr/share/applications/hildon/ovi.desktop&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>N900安装最新版Nemo</title>
+      <link>https://unixetc.com/post/nokia-n900-install-nemo/</link>
+      <pubDate>Sun, 28 Apr 2019 15:56:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/nokia-n900-install-nemo/</guid>
+      <description>&lt;p&gt;准备&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;安装最新uboot&lt;/li&gt;
+&lt;li&gt;一张至少4g以上的TF卡&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下载地址&lt;a href=&#34;http://releases.nemomobile.org/releases/&#34;&gt;http://releases.nemomobile.org/releases/&lt;/a&gt;
+以最新目录为例，下载&lt;a href=&#34;http://releases.nemomobile.org/releases/latest/images/nemo-armv7hl-n900/&#34;&gt;http://releases.nemomobile.org/releases/latest/images/nemo-armv7hl-n900/&lt;/a&gt;里的&lt;strong&gt;nemo-armv7hl-n900-mmcblk0p.raw.bz2&lt;/strong&gt;
+解压出raw文件，然后改后缀为img。Windows下用&lt;strong&gt;Win32DiskImager&lt;/strong&gt;将镜像文件写入TF卡。
+Linux下可以使用&lt;code&gt;dd&lt;/code&gt;命令直接写入，不需要改后缀名：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;alair@e6440:/media/alair/bak/downloads$ sudo dd if=nemo-armv7hl-n900-mmcblk0p.raw of=/dev/sdc bs=1M
+[sudo] alair 的密码： 
+记录了3640+1 的读入
+记录了3640+1 的写出
+3816816641 bytes (3.8 GB, 3.6 GiB) copied, 185.35 s, 20.6 MB/s
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Windwos中用&lt;strong&gt;winscp&lt;/strong&gt;在你的N900的&lt;code&gt;/etc/bootmenu.d/&lt;/code&gt;新建一个&lt;code&gt;40-nemo.item&lt;/code&gt;文件，贴入以下内容：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ITEM_NAME=&amp;quot;Mer-Nemo Mobile&amp;quot;
+ITEM_ID=&amp;quot;nemo&amp;quot;
+ITEM_DEVICE=&amp;quot;${EXT_CARD}p3&amp;quot;
+ITEM_KERNEL=&amp;quot;uImage&amp;quot;
+ITEM_FSTYPE=&amp;quot;vfat&amp;quot;
+ITEM_CMDLINE=&amp;quot;root=/dev/mmcblk0p1 rootwait ro console=ttyO2,115200n8 console=tty0 omapfb.vram=0:2M,1:2M,2:2M mtdoops.mtddev=2 quiet&amp;quot;
+ITEM_OMAPATAG=1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Linux系统下可以直接&lt;a href=&#34;https://unixetc.com/post/nokia-n900-and-ssh/&#34;&gt;SSH连接N900&lt;/a&gt;进行操作。
+然后root运行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;u-boot-update-bootmenu
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;关机，插入TF卡，然后推开键盘开机，选&lt;strong&gt;Mer-Nemo Mobile&lt;/strong&gt;进入即可。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>再次入手NokiaN900</title>
+      <link>https://unixetc.com/post/start-with-nokian900-again/</link>
+      <pubDate>Mon, 22 Apr 2019 11:20:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/start-with-nokian900-again/</guid>
+      <description>&lt;p&gt;时隔八年，再次入手Nokia N900&lt;/p&gt;
+&lt;h3 id=&#34;系统截图&#34;&gt;系统截图&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/2343602920.webp&#34; alt=&#34;homepage&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/4001251822.webp&#34; alt=&#34;menu&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/3223841748.webp&#34; alt=&#34;seting&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;nokia-n900配置&#34;&gt;Nokia N900配置&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;参数&lt;/th&gt;
+&lt;th&gt;属性&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;网络&lt;/td&gt;
+&lt;td&gt;GSM / HSPA&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2G bands&lt;/td&gt;
+&lt;td&gt;GSM 850 / 900 / 1800 / 1900&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3G bands&lt;/td&gt;
+&lt;td&gt;HSDPA 900 / 1700 / 2100&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;速率&lt;/td&gt;
+&lt;td&gt;HSPA 10.2/2 Mbps&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GPRS&lt;/td&gt;
+&lt;td&gt;Class 32&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;EDGE&lt;/td&gt;
+&lt;td&gt;Class 32&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;发布&lt;/td&gt;
+&lt;td&gt;2009, August. Released 2009, November&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;状态&lt;/td&gt;
+&lt;td&gt;停产&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;外观尺寸&lt;/td&gt;
+&lt;td&gt;110.9 x 59.8 x 18 mm, 113 cc   (4.37 x 2.35 x 0.71 in)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;重量&lt;/td&gt;
+&lt;td&gt;181 g (6.38 oz)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;键盘&lt;/td&gt;
+&lt;td&gt;QWERTY&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SIM&lt;/td&gt;
+&lt;td&gt;Mini-SIM&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;类型&lt;/td&gt;
+&lt;td&gt;TFT resistive touchscreen, 65K   colors&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;尺寸&lt;/td&gt;
+&lt;td&gt;3.5 inches, 34.9 cm2 (~52.6% screen-to-body ratio)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;分辨率&lt;/td&gt;
+&lt;td&gt;800 x   480 pixels, 5:3 ratio (~267 ppi density)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;操作系统&lt;/td&gt;
+&lt;td&gt;Maemo 5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;平台&lt;/td&gt;
+&lt;td&gt;TI OMAP 3430&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CPU&lt;/td&gt;
+&lt;td&gt;600 MHz Cortex-A8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GPU&lt;/td&gt;
+&lt;td&gt;PowerVR SGX530&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;外置存储&lt;/td&gt;
+&lt;td&gt;microSD, up to 16 GB (dedicated   slot)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;内置存储&lt;/td&gt;
+&lt;td&gt;32 GB,   256 MB RAM&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;摄像头&lt;/td&gt;
+&lt;td&gt;5 MP, AF&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;特性&lt;/td&gt;
+&lt;td&gt;Carl Zeiss optics, Dual-LED   flash&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;视频&lt;/td&gt;
+&lt;td&gt;480p@25fps&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;制式&lt;/td&gt;
+&lt;td&gt;VGA&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;外放&lt;/td&gt;
+&lt;td&gt;Yes, with stereo speakers&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3.5mm接口&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;WLAN&lt;/td&gt;
+&lt;td&gt;Wi-Fi 802.11 b/g, DLNA&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;蓝牙&lt;/td&gt;
+&lt;td&gt;2.1, A2DP&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GPS&lt;/td&gt;
+&lt;td&gt;Yes, with A-GPS; Ovi Maps&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;红外&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;广播&lt;/td&gt;
+&lt;td&gt;Stereo FM radio (via third party   software); FM transmitter&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;USB&lt;/td&gt;
+&lt;td&gt;microUSB 2.0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;传感器&lt;/td&gt;
+&lt;td&gt;Accelerometer, proximity&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;浏览器&lt;/td&gt;
+&lt;td&gt;xHTML, HTML, Adobe Flash&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;多媒体&lt;/td&gt;
+&lt;td&gt;MP3/WMA/WAV/eAAC+   player&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;多媒体&lt;/td&gt;
+&lt;td&gt;WMV/RealVideo/MP4/AVI/XviD/DivX   player&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;视频输出&lt;/td&gt;
+&lt;td&gt;TV-out&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;文档&lt;/td&gt;
+&lt;td&gt;PDF document viewer&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;图片&lt;/td&gt;
+&lt;td&gt;Photo editor&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;电池&lt;/td&gt;
+&lt;td&gt;Removable Li-Ion 1320 mAh   battery (BL-5J)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;待机&lt;/td&gt;
+&lt;td&gt;Up to 278 h (2G) / Up to 250 h   (3G)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;通话时长&lt;/td&gt;
+&lt;td&gt;Up to 6 h 30 min (2G) / Up to 4   h 30 min (3G)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;音频播放&lt;/td&gt;
+&lt;td&gt;Up to   24 h 30 min&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;颜色&lt;/td&gt;
+&lt;td&gt;Black&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SAR&lt;/td&gt;
+&lt;td&gt;0.92 W/kg (head)     0.82   W/kg (body)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SAR EU&lt;/td&gt;
+&lt;td&gt;0.80 W/kg (head)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;价格&lt;/td&gt;
+&lt;td&gt;About 160 EUR&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;外放&lt;/td&gt;
+&lt;td&gt;Voice 66dB / Noise 66dB / Ring 70dB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;音频质量&lt;/td&gt;
+&lt;td&gt;Noise -93.7dB / Crosstalk -86.9dB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Maemo发布版本历史</title>
+      <link>https://unixetc.com/post/maemo-release-history/</link>
+      <pubDate>Sun, 21 Apr 2019 21:31:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/maemo-release-history/</guid>
+      <description>&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;系统&lt;/th&gt;
+&lt;th&gt;版本&lt;/th&gt;
+&lt;th&gt;代号&lt;/th&gt;
+&lt;th&gt;构建标识&lt;/th&gt;
+&lt;th&gt;发布时间&lt;/th&gt;
+&lt;th&gt;首发设备&lt;/th&gt;
+&lt;th&gt;备注&lt;/th&gt;
+&lt;th&gt;支持设备&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2005&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;2.2005.45-1&lt;/td&gt;
+&lt;td&gt;2005/11/1&lt;/td&gt;
+&lt;td&gt;770&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2005&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;3.2005.51-13&lt;/td&gt;
+&lt;td&gt;2005/12/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2005&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;5.2006.13-7&lt;/td&gt;
+&lt;td&gt;2006/4/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2006&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Mistral&lt;/td&gt;
+&lt;td&gt;0.2006.22-21&lt;/td&gt;
+&lt;td&gt;2006/5/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2006&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Mistral&lt;/td&gt;
+&lt;td&gt;1.2006.26-8&lt;/td&gt;
+&lt;td&gt;2006/5/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2006&lt;/td&gt;
+&lt;td&gt;2.1&lt;/td&gt;
+&lt;td&gt;Scirocco&lt;/td&gt;
+&lt;td&gt;2.2006.39-14&lt;/td&gt;
+&lt;td&gt;2006/11/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2006&lt;/td&gt;
+&lt;td&gt;2.2&lt;/td&gt;
+&lt;td&gt;Gregale&lt;/td&gt;
+&lt;td&gt;3.2006.49-2&lt;/td&gt;
+&lt;td&gt;2007/1/1&lt;/td&gt;
+&lt;td&gt;770&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2007&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;Bora&lt;/td&gt;
+&lt;td&gt;2.2006.51-6&lt;/td&gt;
+&lt;td&gt;2007/1/1&lt;/td&gt;
+&lt;td&gt;N800&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770*, N800&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2007&lt;/td&gt;
+&lt;td&gt;3.1&lt;/td&gt;
+&lt;td&gt;Bora&lt;/td&gt;
+&lt;td&gt;3.2007.10-7&lt;/td&gt;
+&lt;td&gt;2007/3/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770*, N800&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2007&lt;/td&gt;
+&lt;td&gt;3.2&lt;/td&gt;
+&lt;td&gt;Bora&lt;/td&gt;
+&lt;td&gt;4.2007.26-8&lt;/td&gt;
+&lt;td&gt;2007/7/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770*, N800&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2007&lt;/td&gt;
+&lt;td&gt;3.2&lt;/td&gt;
+&lt;td&gt;Bora&lt;/td&gt;
+&lt;td&gt;4.2007.38-2&lt;/td&gt;
+&lt;td&gt;2007/10/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770*, N800&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2008&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;Chinook&lt;/td&gt;
+&lt;td&gt;1.2007.42-18&lt;/td&gt;
+&lt;td&gt;2007/11/1&lt;/td&gt;
+&lt;td&gt;N810&lt;/td&gt;
+&lt;td&gt;(N810 only)&lt;/td&gt;
+&lt;td&gt;N810&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2008&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;Chinook&lt;/td&gt;
+&lt;td&gt;1.2007.42-19&lt;/td&gt;
+&lt;td&gt;2007/11/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;(N810 only)&lt;/td&gt;
+&lt;td&gt;N810&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2008&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;Chinook&lt;/td&gt;
+&lt;td&gt;1.2007.44-4&lt;/td&gt;
+&lt;td&gt;2007/11/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;(N800 only)&lt;/td&gt;
+&lt;td&gt;N800&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2008&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;Chinook&lt;/td&gt;
+&lt;td&gt;2.2007.50-2&lt;/td&gt;
+&lt;td&gt;2007/11/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770*, N800, N810&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2008&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;Chinook&lt;/td&gt;
+&lt;td&gt;2.2007.51-3&lt;/td&gt;
+&lt;td&gt;2008/1/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770*, N800, N810&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2008&lt;/td&gt;
+&lt;td&gt;4.1&lt;/td&gt;
+&lt;td&gt;Diablo&lt;/td&gt;
+&lt;td&gt;4.2008.23-14&lt;/td&gt;
+&lt;td&gt;2008/6/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;N800, N810&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2008&lt;/td&gt;
+&lt;td&gt;4.1&lt;/td&gt;
+&lt;td&gt;Diablo&lt;/td&gt;
+&lt;td&gt;4.2008.30-2&lt;/td&gt;
+&lt;td&gt;2008/8/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;N800, N810&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2008&lt;/td&gt;
+&lt;td&gt;4.1&lt;/td&gt;
+&lt;td&gt;Diablo&lt;/td&gt;
+&lt;td&gt;4.2008.36-5&lt;/td&gt;
+&lt;td&gt;2008/9/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;N800, N810&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2008&lt;/td&gt;
+&lt;td&gt;4.1&lt;/td&gt;
+&lt;td&gt;Diablo&lt;/td&gt;
+&lt;td&gt;5.2008.43-7&lt;/td&gt;
+&lt;td&gt;2008/12/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;N800, N810&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Maemo 5&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;Fremantle&lt;/td&gt;
+&lt;td&gt;1.2009.42-11&lt;/td&gt;
+&lt;td&gt;2009/11/1&lt;/td&gt;
+&lt;td&gt;N900&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;N900&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Maemo 5&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;Fremantle&lt;/td&gt;
+&lt;td&gt;1.2009.44-1&lt;/td&gt;
+&lt;td&gt;2010/1/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;N900&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Maemo 5&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;Fremantle&lt;/td&gt;
+&lt;td&gt;2.2009.51-1&lt;/td&gt;
+&lt;td&gt;2010/1/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;PR1.1&lt;/td&gt;
+&lt;td&gt;N900&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Maemo 5&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;Fremantle&lt;/td&gt;
+&lt;td&gt;3.2010.02-8&lt;/td&gt;
+&lt;td&gt;2010/2/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;PR1.1.1&lt;/td&gt;
+&lt;td&gt;N900&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Maemo 5&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;Fremantle&lt;/td&gt;
+&lt;td&gt;10.2010.12-9&lt;/td&gt;
+&lt;td&gt;2010/5/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;PR1.2&lt;/td&gt;
+&lt;td&gt;N900&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Maemo 5&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;Fremantle&lt;/td&gt;
+&lt;td&gt;10.2010.19-1&lt;/td&gt;
+&lt;td&gt;2010/5/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;PR1.2&lt;/td&gt;
+&lt;td&gt;N900&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Maemo 5&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;Fremantle&lt;/td&gt;
+&lt;td&gt;20.2010.36-2&lt;/td&gt;
+&lt;td&gt;2010/10/25&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;PR1.3&lt;/td&gt;
+&lt;td&gt;N900&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Maemo 5&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;Fremantle&lt;/td&gt;
+&lt;td&gt;21.2011.38-1&lt;/td&gt;
+&lt;td&gt;2011/10/26&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;PR1.3.1&lt;/td&gt;
+&lt;td&gt;N900&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MeeGo&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;Arlington&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2010/5/26&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;N900, etc.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MeeGo&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;Irvine&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;2010/10/28&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Aava and Nokia N900&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MeeGo&lt;/td&gt;
+&lt;td&gt;1.2&lt;/td&gt;
+&lt;td&gt;Harmattan&lt;/td&gt;
+&lt;td&gt;1.2011.34-2&lt;/td&gt;
+&lt;td&gt;–&lt;/td&gt;
+&lt;td&gt;N950&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;N9, N950&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>树莓派可用的PCD8544库</title>
+      <link>https://unixetc.com/post/pcd8544-library-for-raspberry-pi/</link>
+      <pubDate>Fri, 20 Jan 2017 11:20:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/pcd8544-library-for-raspberry-pi/</guid>
+      <description>&lt;p&gt;Nokia 3310/5110显示器基于PCD8544，在此分享一个树莓派可用的PCD8544库&lt;/p&gt;
+&lt;p&gt;使用该库之前，需要安装wiringPi,安装方法可参考&lt;a href=&#34;https://unixetc.com/post/Raspberry-Pi-by-DHT11-collecting-temperature-and-humidity/&#34;&gt;树莓派连接DHT11采集温度与湿度&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;项目地址：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;https://github.com/binerry/RaspberryPi/tree/master/libraries/c/PCD8544
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;可通过&lt;a href=&#34;https://github.com/downloads/binerry/RaspberryPi/Raspberry.Pi_PCD8544.Library.zip&#34;&gt;github download&lt;/a&gt;直接下载,不能访问github的，用以下连接下载&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;http://cdn.lyq.wiki/res/Raspberry.Pi_PCD8544.Library.zip
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;解压后，可得到一个c源码和一个h头文件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;PCD8544.c
+PCD8544.h
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以及samples文件夹下的三个示例&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pcd8544_rpi.c
+pcd8544_test.c
+pcd8544_test2.c
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;按照下图所示连接好树莓派和显示器&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/raspi_pcd8544.webp&#34; alt=&#34;raspi_pcd8544&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;RST —— 复位 接GPIO 0&lt;/li&gt;
+&lt;li&gt;CE —— 片选 接GPIO 1 或 不接&lt;/li&gt;
+&lt;li&gt;DC —— 数据/指令选择 接GPIO 2&lt;/li&gt;
+&lt;li&gt;DIN —— 串行数据线 接GPIO 3&lt;/li&gt;
+&lt;li&gt;CLK —— 串行时钟线 接GPIO 5 （因为我的GPIO 4已经接了一个DHT11传感器）&lt;/li&gt;
+&lt;li&gt;VCC —— 电源输入 接3.3v&lt;/li&gt;
+&lt;li&gt;BL —— 背光控制端 接3.3v&lt;/li&gt;
+&lt;li&gt;GND —— 地线 接地&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;编译三个示例程序&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cc -o pcd8544_test pcd8544_test.c ../PCD8544.c  -L/usr/local/lib -lwiringPi
+cc -o pcd8544_test2 pcd8544_test2.c ../PCD8544.c  -L/usr/local/lib -lwiringPi
+cc -o pcd8544_rpi pcd8544_rpi.c ../PCD8544.c  -L/usr/local/lib -lwiringPi
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后运行之&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo ./pcd8544_test
+sudo ./pcd8544_test2
+sudo ./pcd8544_rpi
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;一下是三个示例运行情况&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/nokia-5110-example.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;参考: &lt;em&gt;&lt;a href=&#34;http://binerry.de/post/25787954149/pcd8544-library-for-raspberry-pi&#34;&gt;http://binerry.de/post/25787954149/pcd8544-library-for-raspberry-pi&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Nokia N900系统优化脚本</title>
+      <link>https://unixetc.com/post/system-optimization-script-for-nokia-n900/</link>
+      <pubDate>Wed, 28 Mar 2012 13:28:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/system-optimization-script-for-nokia-n900/</guid>
+      <description>&lt;p&gt;Nokia N900系统优化脚本，更加省电，操作更加流畅！&lt;/p&gt;
+&lt;p&gt;脚本下载地址&lt;a href=&#34;http://cdn.lyq.wiki/res/speedpatch-ALTERNATIVE.tar.gz.rar&#34;&gt;http://cdn.lyq.wiki/res/speedpatch-ALTERNATIVE.tar.gz.rar&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;使用方法： 通过USB连接手机，将脚本传到磁盘根目录(/home/user/MyDocs)，以下操作可以使用XT或者SSH连接电脑进行(Root权限下)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#cd /home/user/MyDocs
+#tar xzvf speedpatch-ALTERNATIVE.tar.gz
+#mkdir /wp-content/local/sbin
+#cp /root/.profile /root/.profile.bak
+#cp ./.profile_root /root/.profile
+#cp ./.profile /home/user/
+#cp ./speedpatch /etc/event.d/
+#cp ./cgroup_clean /wp-content/local/sbin
+#chmod +rwx /wp-content/local/sbin/cgroup_clean
+#rm ./.profile_root
+#rm ./.profile
+#rm ./speedpatch
+#rm ./cgroup_clean
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;应用transition.ini文件:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1.使用theme-customizer&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#cp /home/user/MyDocs/transitions.ini /opt/theme-customizer
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;2.使用系统默认主题&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#cp /home/user/MyDocs/transitions.ini /wp-content/share/hildon-desktop/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;3.删除优化脚本&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#cp /root/.profile.bak /root/.profile
+#rm /etc/event.d/speedpatch
+#rm /home/user/.profile
+#rm /wp-content/local/sbin/cgroup_clean&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

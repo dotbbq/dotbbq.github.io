@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>STUFF - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/categories/stuff/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+
+
+
+<meta property="og:title" content="STUFF" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/categories/stuff/" />
+<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="STUFF"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <h1>Category: STUFF</h1>
+    <div class="post-info">
+        <a href="https://unixetc.com/categories">To all categories</a>
+    </div>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/grub-boot-iso-image-file/">GRUB引导ISO镜像</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        家里电脑安装了双系统(Xubuntu+Windows7)，平时一直不关机，开着TeamViewer便于在办公室远程操作。
+这次不知怎么回事儿，远程掉了，回家一看Windows意外关机，再开机直接蓝屏。
+由于为了省资源，关闭了系统保护，没法进行还原，多次试着拯救都没能解决，无限蓝屏……
+手头刚好没有WinPE的U盘，没法ghost恢复或重装Windows，只有xubuntu可用，一筹莫展。
+突然想到grub是否可以引导iso？ 网上找了下，还真可以，于是下载了个WinPE镜像文件，打算通过grub来引导以修复Windows。
+具体操作如下：
+安装grub-imageboot
+alair@e6440:~$ apt search memdisk正在排序... 完成全文搜索... 完成 grub-imageboot/bionic,bionic 0.6 allboot iso, harddisk and floppy images with grub2 and syslinux memdiskalair@e6440:~$ sudo apt install grub-imageboot[sudo] alair 的密码： 正在读取软件包列表... 完成正在分析软件包的依赖关系树 正在读取状态信息... 完成 将会同时安装下列软件：syslinux-common下列【新】软件包将被安装：grub-imageboot syslinux-common升级了 0 个软件包，新安装了 2 个软件包，要卸载 0 个软件包，有 4 个软件包未被升级。需要下载 1,176 kB 的归档。解压缩后会消耗 3,684 kB 的额外空间。您希望继续执行吗？ [Y/n] y获取:1 http://mirrors.cqu.edu.cn/ubuntu bionic/main amd64 syslinux-common all 3:6.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2018-07-08</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/grub">#GRUB</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/grub-imageboot">#grub-imageboot</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/grub2">#grub2</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/memdisk">#memdisk</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/iso">#ISO</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/winpe">#WinPE</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/update-grub">#update-grub</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/excel-file-size-abnormal-check/">Excel文件大小异常核查</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        有时候明明excel文件中没多少内容，但是文件体积却很大，在此分享一个检查解决的方法。
+将excel文件后缀名改为zip，用压缩软件将其打开，定位到xl\worksheets\目录，可以看到各个sheet的体积大小，如下:
+找到其中体积最大的，定位到该sheet
+首先将所有内容全选并粘贴为文字。
+然后将内容排序后，全选下面的空白行邮件删除，将条件格式全部删除，这样应该就OK了！
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2018-06-10</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/office">#Office</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/excel">#Excel</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/xls">#xls</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/worksheets">#worksheets</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/sheet">#sheet</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/canonical-livepatch-service/">Ubuntu配置Livepatch服务</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        CLS(Canonical Livepatch Service)是Ubuntu母公司Canonical提供的一项服务，该服务可以为处于LTS的Ubuntu版本提供内核关键补丁修复，而不需要重新启动系统，特别适用于用作Server的系统。
+使用CLS的前提是必须注册一个Ubuntu帐号，地址为https://login.ubuntu.com/+login
+注册完成后，即可访问CLS主页https://www.ubuntu.com/server/livepatch进行登录配置。
+登陆后选择用户类型，一般个人用户选择Ubuntu User，然后点击Get your Livepatch token获取密匙
+按照下一步提示进行操作，启用CLS服务。
+运行完成后即成功启用CLS服务。
+检查CLS服务配置状态可以使用以下命令:
+alair@e6440:~$ sudo canonical-livepatch status --verboseclient-version: 8.0.2machine-id: 08e0*****************750dbmachine-token: 4753a054c*****************a2eb84c7architecture: x86_64cpu-model: Intel(R) Core(TM) i5-4310M CPU @ 2.70GHzlast-check: 2018-05-25T19:55:15.537634075+08:00boot-time: 2018-05-25T19:47:51+08:00uptime: 14m43sstatus:- kernel: 4.15.0-22.24-genericrunning: truelivepatch:checkState: checkedpatchState: nothing-to-applyversion: &quot;&quot;fixes: &quot;&quot;
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2018-05-25</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/kernel">#Kernel</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/canonical">#Canonical</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/livepatch">#Livepatch</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/cls">#CLS</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+    
+        
+    <div class="pagination">
+        <div class="left pagination-item ">
+            
+                <a href="/categories/stuff/page/13/">To new posts</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/categories/stuff/page/15/">To old posts</a>
+            
+        </div>
+    </div>
+
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

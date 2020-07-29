@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JS on UNIXETC</title>
+    <link>https://unixetc.com/tags/js/</link>
+    <description>UNIXETC (JS)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Mon, 09 May 2016 15:28:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/js/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Let&#39;s encrypt 证书快速生成脚本</title>
+      <link>https://unixetc.com/post/letsencrypt-certificate-quickly-generate-script/</link>
+      <pubDate>Mon, 09 May 2016 15:28:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/letsencrypt-certificate-quickly-generate-script/</guid>
+      <description>&lt;p&gt;网站的Let&amp;rsquo;s encrypt证书快到期了，看了官方的续期方法比较繁琐，于是在网上找了找简单方便做法，结果找到了&lt;strong&gt;墓地小企鹅&lt;/strong&gt;写的一个脚本(shell script)，使用这个脚本可以方便的生成以及更新Let&amp;rsquo;s encrypt 证书。&lt;/p&gt;
+&lt;p&gt;脚本地址 &lt;a href=&#34;https://github.com/xdtianyu/scripts/tree/master/lets-encrypt&#34;&gt;https://github.com/xdtianyu/scripts/tree/master/lets-encrypt&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;下载脚本&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.conf
+wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;配置&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;root@rnse:~/lesh# cat letsencrypt.conf
+# only modify the values, key files will be generated automaticly.
+ACCOUNT_KEY=&amp;quot;letsencrypt-account.key&amp;quot;
+DOMAIN_KEY=&amp;quot;alair.key&amp;quot;
+DOMAIN_DIR=&amp;quot;/data/wwwroot/alair.cn/compiled&amp;quot;
+DOMAINS=&amp;quot;DNS:alair.cn,DNS:www.alair.cn&amp;quot;
+#ECC=TRUE
+#LIGHTTPD=TRUE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;按照需要自定义&lt;code&gt;DOMAIN_KEY&lt;/code&gt;、&lt;code&gt;DOMAIN_DIR&lt;/code&gt;、&lt;code&gt;DOMAINS&lt;/code&gt;三部分。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;生成证书&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;root@rnse:~/lesh#chmod +x letsencrypt.sh
+root@rnse:~/lesh# ./letsencrypt.sh letsencrypt.conf
+Generate account key...
+Generating RSA private key, 4096 bit long modulus
+..............................++
+....++
+e is 65537 (0x10001)
+Generate domain key...
+Generating RSA private key, 2048 bit long modulus
+...............................................................+++
+..........................+++
+e is 65537 (0x10001)
+Generate CSR...alair.csr
+Parsing account key...
+Parsing CSR...
+Registering account...
+Registered!
+Verifying www.alair.cn...
+www.alair.cn verified!
+Verifying alair.cn...
+alair.cn verified!
+Signing certificate...
+Certificate signed!
+New cert: alair.chained.crt has been generated
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;生成后的目录文件如下:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;root@rnse:~/lesh# ls
+alair.chained.crt  alair.crt  alair.csr  alair.key  lets-encrypt-x3-cross-signed.pem  letsencrypt-account.key  letsencrypt.conf  letsencrypt.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;配置nginx&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;... ...
+ssl_certificate     /path/to/cert/alair.chained.crt;
+ssl_certificate_key /path/to/cert/alair.key;
+... ...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;更新证书&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;证书到期前直接再次生成而已&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>树莓派安装Node.js</title>
+      <link>https://unixetc.com/post/raspberry-pi-install-nodejs/</link>
+      <pubDate>Thu, 03 Dec 2015 12:32:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/raspberry-pi-install-nodejs/</guid>
+      <description>&lt;p&gt;首先查看树莓派cpu信息&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pi@raspi:~ $ cat /proc/cpuinfo
+processor       : 0
+model name      : ARMv6-compatible processor rev 7 (v6l)
+BogoMIPS        : 2.00
+Features        : half thumb fastmult vfp edsp java tls
+CPU implementer : 0x41
+CPU architecture: 7
+CPU variant     : 0x0
+CPU part        : 0xb76
+CPU revision    : 7
+
+Hardware        : BCM2708
+Revision        : 000e
+Serial          : 000000004a8acb6d
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;看清楚cpu构架，是&lt;strong&gt;ARMv6&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;然后在node.js官网下载对应版本的包，下载地址&lt;a href=&#34;https://nodejs.org/dist/&#34;&gt;https://nodejs.org/dist/&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# wget https://nodejs.org/dist/v4.2.2/node-v4.2.2-linux-arm64.tar.gz
+# tar zxf node-v4.2.2-linux-arm64.tar.gz
+# mv node-v4.2.2-linux-arm64 /usr/nodejs422
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;方便使用期间，做个链接&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# ln -s /usr/nodejs422/bin/npm /usr/bin/npm
+# ln -s /usr/nodejs422/bin/node /usr/bin/node
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;完成后查看版本信息&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# node -v
+v4.2.2
+# npm -v
+2.14.7
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;至此安装完成，官网现在放出arm编译版方便多了，为以前通过源码编译安装的岁月干杯！！！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>使用ScrollUp添加返回顶部功能</title>
+      <link>https://unixetc.com/post/use-scrollup-to-add-scroll-to-top-feature/</link>
+      <pubDate>Tue, 08 Sep 2015 19:28:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/use-scrollup-to-add-scroll-to-top-feature/</guid>
+      <description>&lt;p&gt;下载ScrollUp &lt;a href=&#34;https://github.com/markgoodyear/scrollup&#34;&gt;https://github.com/markgoodyear/scrollup&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在网页中引用&lt;code&gt;jquery.scrollUp.js&lt;/code&gt;、&lt;code&gt;jquery.easing.js&lt;/code&gt;、&lt;code&gt;jquery.min.js&lt;/code&gt;三个JavaScript脚本，注意顺序&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;script src=&amp;quot;jquery.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script src=&amp;quot;jquery.easing.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script src=&amp;quot;jquery.scrollUp.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后加入控制代码&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;script&amp;gt;
+$(function () {
+    $.scrollUp();
+});
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以上是最简单的使用方法，还有一种带参数的方法&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$(function () {
+    $.scrollUp({
+        scrollName: &#39;scrollUp&#39;,      // Element ID
+        scrollDistance: 300,         // Distance from top/bottom before showing element (px)
+        scrollFrom: &#39;top&#39;,           // &#39;top&#39; or &#39;bottom&#39;
+        scrollSpeed: 300,            // Speed back to top (ms)
+        easingType: &#39;linear&#39;,        // Scroll to top easing (see http://easings.net/)
+        animation: &#39;fade&#39;,           // Fade, slide, none
+        animationSpeed: 200,         // Animation speed (ms)
+        scrollTrigger: false,        // Set a custom triggering element. Can be an HTML string or jQuery object
+        scrollTarget: false,         // Set a custom target element for scrolling to. Can be element or number
+        scrollText: &#39;Scroll to top&#39;, // Text for element, can contain HTML
+        scroll
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;title: false,          // Set a custom &lt;!-- raw HTML omitted --&gt; title if required.
+scrollImg: false,            // Set true to use image
+activeOverlay: false,        // Set CSS color to display scrollUp active point, e.g &amp;lsquo;#00FFFF&amp;rsquo;
+zIndex: 2147483647           // Z-Index for the overlay
+});
+});&lt;/p&gt;
+&lt;p&gt;其中&lt;code&gt;easingType&lt;/code&gt;为&lt;strong&gt;运动类型&lt;/strong&gt;，可参考&lt;a href=&#34;http://easings.net/&#34;&gt;http://easings.net/&lt;/a&gt;说明选用。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu下安装Ghost博客系统</title>
+      <link>https://unixetc.com/post/ubuntu-install-ghost-blog-system/</link>
+      <pubDate>Sat, 06 Jun 2015 16:26:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/ubuntu-install-ghost-blog-system/</guid>
+      <description>&lt;h3 id=&#34;安装nodejs&#34;&gt;安装Nodejs&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;sudo add-apt-repository ppa:chris-lea/node.js
+sudo apt-get update
+sudo apt-get install nodejs
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;检查是否安装成功&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;root@hkvps:~# node -v
+v0.10.37
+root@hkvps:~# npm -v
+1.4.28
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;安装ghost&#34;&gt;安装Ghost&lt;/h3&gt;
+&lt;p&gt;Ghost下载地址&lt;a href=&#34;https://ghost.org/download/&#34;&gt;https://ghost.org/download/&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget https://ghost.org/zip/ghost-0.6.4.zip
+unzip ghost-0.6.4.zip -d ghost
+cd ghost
+npm install --production
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;运行Ghost&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm start
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;可以通过127.0.0.1:2368来访问&lt;/p&gt;
+&lt;p&gt;通过&lt;code&gt;nmp start&lt;/code&gt;来运行Ghost，退出后就会停止，因此需要一个方法让Ghost一直运行&lt;/p&gt;
+&lt;h3 id=&#34;让ghost一直运行&#34;&gt;让Ghost一直运行&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;安装forever&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;npm install forever -g
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;进入ghost目录，执行以下命令，让Ghost一直运行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;NODE_ENV=production forever start index.js
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;停止ghost&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;forever stop index.js
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;查看forever运行列表&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;forever list
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;结合nginx配置域名&#34;&gt;结合Nginx配置域名&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;安装Nginx&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install nginx
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;编辑配置文件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo vi /etc/nginx/sites-available/ghost.conf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;写入如下内容&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;server {
+    listen 80;
+    server_name aquan.me;
+
+    location / {
+        proxy_set_header   X-Real-IP $remote_addr;
+        proxy_set_header   Host      $http_host;
+        proxy_pass         http://127.0.0.1:2368;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;重启Nginx&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo ln -s /etc/nginx/sites-available/ghost.conf /etc/nginx/sites-enabled/ghost.conf
+sudo service nginx restart
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;参考:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://docs.ghostchina.com/zh/&#34;&gt;http://docs.ghostchina.com/zh/&lt;/a&gt;
+&lt;a href=&#34;http://972169909-qq-com.iteye.com/blog/1739928&#34;&gt;http://972169909-qq-com.iteye.com/blog/1739928&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>JavaScript数组使用实例</title>
+      <link>https://unixetc.com/post/examples-javascript-array/</link>
+      <pubDate>Tue, 24 Sep 2013 12:59:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/examples-javascript-array/</guid>
+      <description>&lt;p&gt;GF办公用需要一个小系统，原要求是VBA实现，不过我没弄过那玩意儿。C语言倒是熟悉，但CLI的东西她使用不方便。&lt;/p&gt;
+&lt;p&gt;于是做一个web系统，php比较熟悉，不过她的工作不能使用外网，额滴神！最后还是选择了用javascript实现，现学现卖吧。&lt;/p&gt;
+&lt;p&gt;由于不能使用数据库，所以需要构建一个三维数组来存储数据，以下是javascript中数组使用的一些实例。&lt;/p&gt;
+&lt;p&gt;定义数组并赋值&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var jz = newArry();
+jz[0] = 10;
+jz[1] = &amp;quot;hello&amp;quot;;
+jz[2] = 23.4;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以上是一个简单的一维数组，其中三个值分别为:&lt;code&gt;10&lt;/code&gt;整数，&lt;code&gt;hello&lt;/code&gt;字符串,&lt;code&gt;23.4&lt;/code&gt;浮点数，可以通过以下方法使用&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;alert(&amp;quot;jz[0] is &amp;quot;+jz[0]+&amp;quot;\n jz[1] is &amp;quot;+jz[1]+&amp;quot;\n jz[2] is &amp;quot;+jz[2]);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;二维数组的定义方法:为一维数组的单个值赋予数组值，那么就可以构成二维数组&lt;/p&gt;
+&lt;p&gt;实例&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var jz = newArry();
+jz[0] = newArry(1,2);
+jz[1] = newArry(3,4);
+jz[2] = newArry(5,6);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;可以通过&lt;code&gt;jz[0][0]&lt;/code&gt;、&lt;code&gt;jz[0][1]&lt;/code&gt;、&lt;code&gt;jz[0][2]&lt;/code&gt;来访问。&lt;/p&gt;
+&lt;p&gt;以下是一个简单的三维数组实例&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var jz newArry();
+jz[0] = newArry([100,200],[300,400],[500,600])
+jz[1] = newArry([&#39;str1&#39;,&#39;str2&#39;],[&#39;str3&#39;,&#39;str4&#39;],[&#39;str5&#39;,&#39;str6&#39;]);
+jz[2] = newArry([2.24,3.2],[12.9,89.01],[38.04,7.6]);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;方位方法如&lt;code&gt;jz[0][1][0]&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

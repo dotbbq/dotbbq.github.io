@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>使用Google Authenticator两步验证加强SSH登录 - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+
+
+
+<meta property="og:title" content="使用Google Authenticator两步验证加强SSH登录" />
+<meta property="og:description" content="Google Authenticator开源版主页 https://github.com/google/google-authenticator
+安装Google Authenticator Ubuntu已经包含libpam-google-authenticator软件(Ubuntu 11.10以上版本),可以直接使用apt-get安装
+apt-get install libpam-google-authenticator 其他系统可以通过源码编译安装
+git clone https://github.com/google/google-authenticator-libpam.gitcd google-authenticator-libpam/./bootstrap.sh./configuremakemake install 注意：在Debian7中执行./configure时可能存在以下错误提示
+configure: error: Unable to find the PAM library or the PAM header files 在此需要安装libpam0g-dev和libtool
+apt-get -y install libpam0g-dev libtool 设置Google Authenticator 在手机端搜索安装Google Authenticator
+google-authenticatorDo you want authentication tokens to be time-based (y/n) y 然后出现二维码，使用手机端Google Authenticator扫码,接下来服务器端继续设置
+如果没有出现二维码，可以将提示的以**https://www.google.com/chart?**开头的连接复制到浏览器中，就可以看到二维码了
+Do you want me to update your &quot;/root/." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unixetc.com/post/use-google-authenticator-set-2step-verification-strengthening-ssh-login/" />
+<meta property="article:published_time" content="2016-01-28T12:33:00+00:00" />
+<meta property="article:modified_time" content="2016-01-28T12:33:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用Google Authenticator两步验证加强SSH登录"/>
+<meta name="twitter:description" content="Google Authenticator开源版主页 https://github.com/google/google-authenticator
+安装Google Authenticator Ubuntu已经包含libpam-google-authenticator软件(Ubuntu 11.10以上版本),可以直接使用apt-get安装
+apt-get install libpam-google-authenticator 其他系统可以通过源码编译安装
+git clone https://github.com/google/google-authenticator-libpam.gitcd google-authenticator-libpam/./bootstrap.sh./configuremakemake install 注意：在Debian7中执行./configure时可能存在以下错误提示
+configure: error: Unable to find the PAM library or the PAM header files 在此需要安装libpam0g-dev和libtool
+apt-get -y install libpam0g-dev libtool 设置Google Authenticator 在手机端搜索安装Google Authenticator
+google-authenticatorDo you want authentication tokens to be time-based (y/n) y 然后出现二维码，使用手机端Google Authenticator扫码,接下来服务器端继续设置
+如果没有出现二维码，可以将提示的以**https://www.google.com/chart?**开头的连接复制到浏览器中，就可以看到二维码了
+Do you want me to update your &quot;/root/."/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">使用Google Authenticator两步验证加强SSH登录</h1>
+        </header>
+        <div class="content">
+            <p>Google Authenticator开源版主页 <a href="https://github.com/google/google-authenticator">https://github.com/google/google-authenticator</a></p>
+<h3 id="安装google-authenticator">安装Google Authenticator</h3>
+<p><strong>Ubuntu</strong>已经包含libpam-google-authenticator软件(Ubuntu 11.10以上版本),可以直接使用<code>apt-get</code>安装</p>
+<pre><code>apt-get install libpam-google-authenticator
+</code></pre>
+<p>其他系统可以通过源码编译安装</p>
+<pre><code>git clone https://github.com/google/google-authenticator-libpam.git
+cd google-authenticator-libpam/
+./bootstrap.sh
+./configure
+make
+make install
+</code></pre>
+<p>注意：在Debian7中执行<code>./configure</code>时可能存在以下错误提示</p>
+<pre><code>configure: error: Unable to find the PAM library or the PAM header files
+</code></pre>
+<p>在此需要安装<code>libpam0g-dev</code>和<code>libtool</code></p>
+<pre><code>apt-get -y install libpam0g-dev libtool
+</code></pre>
+<h3 id="设置google-authenticator">设置Google Authenticator</h3>
+<p>在手机端搜索安装<strong>Google Authenticator</strong></p>
+<pre><code>google-authenticator
+Do you want authentication tokens to be time-based (y/n) y
+</code></pre>
+<p>然后出现二维码，使用手机端<strong>Google Authenticator</strong>扫码,接下来服务器端继续设置</p>
+<p>如果没有出现二维码，可以将提示的以**<a href="https://www.google.com/chart?">https://www.google.com/chart?</a>**开头的连接复制到浏览器中，就可以看到二维码了</p>
+<pre><code>Do you want me to update your &quot;/root/.google_authenticator&quot; file (y/n) y
+
+Do you want to disallow multiple uses of the same authentication
+token? This restricts you to one login about every 30s, but it increases
+your chances to notice or even prevent man-in-the-middle attacks (y/n) Do you want to disallow multiple uses of the same authentication
+token? This restricts you to one login about every 30s, but it increases
+your chances to notice or even prevent man-in-the-middle attacks (y/n) y
+
+By default, tokens are good for 30 seconds and in order to compensate for
+possible time-skew between the client and the server, we allow an extra
+token before and after the current time. If you experience problems with poor
+time synchronization, you can increase the window from its default
+size of 1:30min to about 4min. Do you want to do so (y/n) y
+
+If the computer that you are logging into isn't hardened against brute-force
+login attempts, you can enable rate-limiting for the authentication module.
+By default, this limits attackers to no more than 3 login attempts every 30s.
+Do you want to enable rate-limiting (y/n) y
+</code></pre>
+<p>接下来将<strong>Google Authenticator</strong>验证配置到SSH登录中</p>
+<p>编辑<code>/etc/pam.d/sshd</code>文件，添加下行保存</p>
+<pre><code>auth required pam_google_authenticator.so
+</code></pre>
+<p>编辑<code>/etc/ssh/sshd_config</code>找到下行</p>
+<pre><code>ChallengeResponseAuthentication no
+</code></pre>
+<p>更改为</p>
+<pre><code>ChallengeResponseAuthentication yes
+</code></pre>
+<p>重启SSH服务</p>
+<pre><code>service ssh restart
+</code></pre>
+<p>再次登录的话输入用户名后就跟着提示两部验证码，然后才输入用户密码，如下：</p>
+<pre><code>login as: root
+Using keyboard-interactive authentication.
+Verification code:
+Using keyboard-interactive authentication.
+Password:
+Welcome to Ubuntu 14.04.2 LTS (GNU/Linux 2.6.32-042stab108.8 i686)
+
+* Documentation:  https://help.ubuntu.com/
+Last login: Thu Jan 28 15:04:20 2016 from 61.185.216.146
+root@hkvps:~#
+</code></pre>
+<p><em>参考 <a href="https://wzyboy.im/post/765.html">https://wzyboy.im/post/765.html</a></em></p>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-01-28</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/google">#Google</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vps">#VPS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%B0%B7%E6%AD%8C">#谷歌</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ga">#ga</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/2step">#2step</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/libpam">#libpam</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/pam">#pam</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E4%B8%A4%E6%AD%A5%E9%AA%8C%E8%AF%81">#两步验证</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/otp">#otp</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

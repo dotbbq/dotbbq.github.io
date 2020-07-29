@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>logs on UNIXETC</title>
+    <link>https://unixetc.com/tags/logs/</link>
+    <description>UNIXETC (logs)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Mon, 23 Dec 2013 21:23:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/logs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Typecho主题Logs</title>
+      <link>https://unixetc.com/post/typecho-theme-logs/</link>
+      <pubDate>Mon, 23 Dec 2013 21:23:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/typecho-theme-logs/</guid>
+      <description>&lt;p&gt;弄了个Typecho主题，名为&lt;strong&gt;Logs&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;预览:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/logs_review.webp&#34; alt=&#34;Logs&#34;&gt;&lt;/p&gt;
+&lt;p&gt;基本完善，有个别可能需要小修改，先贴出来分享给看得上的人&lt;/p&gt;
+&lt;p&gt;本站就是使用的这个主题，所以就不贴预览图了&lt;/p&gt;
+&lt;p&gt;Update 2014/01/02&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;边栏添加搜索框&lt;/li&gt;
+&lt;li&gt;优化一些代码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Update 2013/12/25&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;修改导航栏UI&lt;/li&gt;
+&lt;li&gt;启用友链插件，更改友链以及广告链接输出方式，友链插件地址&lt;a href=&#34;http://www.imhan.com/archives/typecho-links/&#34;&gt;http://www.imhan.com/archives/typecho-links/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Update 2013/12/22&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;评论ui完善&lt;/li&gt;
+&lt;li&gt;添加favicon.ico&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下载 &lt;a href=&#34;https://dotbbq.pipipan.com/dir/18418398-34172445-2a9b98/&#34;&gt;Logs1.1.zip&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

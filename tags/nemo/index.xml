@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nemo on UNIXETC</title>
+    <link>https://unixetc.com/tags/nemo/</link>
+    <description>UNIXETC (Nemo)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sun, 28 Apr 2019 15:56:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/nemo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>N900安装最新版Nemo</title>
+      <link>https://unixetc.com/post/nokia-n900-install-nemo/</link>
+      <pubDate>Sun, 28 Apr 2019 15:56:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/nokia-n900-install-nemo/</guid>
+      <description>&lt;p&gt;准备&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;安装最新uboot&lt;/li&gt;
+&lt;li&gt;一张至少4g以上的TF卡&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下载地址&lt;a href=&#34;http://releases.nemomobile.org/releases/&#34;&gt;http://releases.nemomobile.org/releases/&lt;/a&gt;
+以最新目录为例，下载&lt;a href=&#34;http://releases.nemomobile.org/releases/latest/images/nemo-armv7hl-n900/&#34;&gt;http://releases.nemomobile.org/releases/latest/images/nemo-armv7hl-n900/&lt;/a&gt;里的&lt;strong&gt;nemo-armv7hl-n900-mmcblk0p.raw.bz2&lt;/strong&gt;
+解压出raw文件，然后改后缀为img。Windows下用&lt;strong&gt;Win32DiskImager&lt;/strong&gt;将镜像文件写入TF卡。
+Linux下可以使用&lt;code&gt;dd&lt;/code&gt;命令直接写入，不需要改后缀名：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;alair@e6440:/media/alair/bak/downloads$ sudo dd if=nemo-armv7hl-n900-mmcblk0p.raw of=/dev/sdc bs=1M
+[sudo] alair 的密码： 
+记录了3640+1 的读入
+记录了3640+1 的写出
+3816816641 bytes (3.8 GB, 3.6 GiB) copied, 185.35 s, 20.6 MB/s
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Windwos中用&lt;strong&gt;winscp&lt;/strong&gt;在你的N900的&lt;code&gt;/etc/bootmenu.d/&lt;/code&gt;新建一个&lt;code&gt;40-nemo.item&lt;/code&gt;文件，贴入以下内容：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ITEM_NAME=&amp;quot;Mer-Nemo Mobile&amp;quot;
+ITEM_ID=&amp;quot;nemo&amp;quot;
+ITEM_DEVICE=&amp;quot;${EXT_CARD}p3&amp;quot;
+ITEM_KERNEL=&amp;quot;uImage&amp;quot;
+ITEM_FSTYPE=&amp;quot;vfat&amp;quot;
+ITEM_CMDLINE=&amp;quot;root=/dev/mmcblk0p1 rootwait ro console=ttyO2,115200n8 console=tty0 omapfb.vram=0:2M,1:2M,2:2M mtdoops.mtddev=2 quiet&amp;quot;
+ITEM_OMAPATAG=1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Linux系统下可以直接&lt;a href=&#34;https://unixetc.com/post/nokia-n900-and-ssh/&#34;&gt;SSH连接N900&lt;/a&gt;进行操作。
+然后root运行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;u-boot-update-bootmenu
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;关机，插入TF卡，然后推开键盘开机，选&lt;strong&gt;Mer-Nemo Mobile&lt;/strong&gt;进入即可。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

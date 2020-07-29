@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>Jekyll - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/tags/jekyll/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+
+
+
+<meta property="og:title" content="Jekyll" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/tags/jekyll/" />
+<meta property="og:updated_time" content="2015-05-20T15:20:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Jekyll"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <h1>Tag: Jekyll</h1>
+    <div class="post-info">
+        <a href="https://unixetc.com/tags">To all tags</a>
+    </div>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/install-jekyll-on-windows/">Windows下安装Jekyll</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装Ruby/DevKit 首先从 http://rubyinstaller.org/downloads/ 下载以下两个文件进行安装
+ rubyinstaller-1.9.3-p194.exe DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe  Ruby安装在D:\Ruby200, DevKit安装在D:\rubydevkit
+打开CMD进入到DevKit目录，开始初始化安装
+D:\rubydevkit&gt;ruby dk.rb init[INFO] found RubyInstaller v2.0.0 at d:/Ruby200Initialization complete! Please review and modify the auto-generated'config.yml' file to ensure it contains the root directories to allof the installed Rubies you want enhanced by the DevKit.D:\rubydevkit&gt;ruby dk.rb install[INFO] Updating convenience notice gem override for 'd:/Ruby200'[INFO] Installing 'd:/Ruby200/lib/ruby/site_ruby/devkit.rb' 替换Gem源
+天朝网路可能会引起gem安装失败，建议更换为ruby.taobao,org源
+$gem sources -r http://rubygems.org/$gem sources -a http://ruby.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-05-20</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/jekyll">#Jekyll</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ruby">#Ruby</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/blog">#Blog</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/devkit">#DevKit</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gem">#gem</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/create-a-free-blog-with-jekyll-and-github-page/">结合Jekyll与Github Page建立免费博客</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装Jekyll  Windows下安装Jekyll Debian下安装Jekyll  Jekyll使用 待补充
+将Jekyll内容发布到Github 首先登录Github，新建一个用户名.github.com的repositories
+然后将该 Repositories clone到本地文件夹。
+在本地文件夹生成Jekyll站点，然后使用jekyll server生成内容。
+下来将生成后的内容发布到Github
+git add --allgit commit -m &quot;Update&quot;git remote add origin git@github.com:用户名/用户名.github.com.gitgit push origin master 设置自定义域名 在Jekyll站点目录中新建CNAME文件，写入域名
+然后将域名A记录指向github提供的ip地址204.232.175.78或207.97.227.245
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-07-16</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/jekyll">#Jekyll</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/github">#Github</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%8D%9A%E5%AE%A2">#博客</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/jekyll-chinese-garbled-windows/">Windows下Jekyll乱码问题</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        在Ruby目录中搜索convertible.rb，找到大概27行如下内容:
+self.content = File.read(File.join(base, name)) 替换为
+self.content = File.read(File.join(base, name), :encoding =&gt; 'utf-8')  在windows环境变量中，添加以下两个环境变量
+LANG=zh_CN.UTF-8LC_ALL=zh_CN.UTF-8 
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2013-09-21</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/jekyll">#Jekyll</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E4%B9%B1%E7%A0%81">#乱码</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81">#中文乱码</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ruby">#Ruby</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+    
+        
+    <div class="pagination">
+        <div class="left pagination-item disabled">
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/tags/jekyll/page/2/">To old posts</a>
+            
+        </div>
+    </div>
+
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>斐讯N1系统信息和UNIXBENCH跑分 - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+
+
+
+<meta property="og:title" content="斐讯N1系统信息和UNIXBENCH跑分" />
+<meta property="og:description" content="斐讯N1系统信息和UNIXBENCH跑分" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unixetc.com/post/phicomm-n1-unixbench-score-and-system-information/" />
+<meta property="article:published_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-03-02T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="斐讯N1系统信息和UNIXBENCH跑分"/>
+<meta name="twitter:description" content="斐讯N1系统信息和UNIXBENCH跑分"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">斐讯N1系统信息和UNIXBENCH跑分</h1>
+        </header>
+        <div class="content">
+            <h4 id="系统信息">系统信息</h4>
+<pre><code>alair@aml:~ $ inxi -F
+System:    Host: aml Kernel: 5.5.0-rc6-aml-s9xxx aarch64 bits: 32 Console: tty 0 Distro: Ubuntu 18.04.4 LTS
+Machine:   No /sys/class/dmi; using dmidecode: dmidecode is not installed.
+CPU:       Quad core ARMv8 rev 4 (v8l) (-MCP-)  (ARM)
+           clock speeds: max: 1512 MHz 1: 1512 MHz 2: 1512 MHz 3: 1512 MHz 4: 1512 MHz
+Graphics:  Card: Failed to Detect Video Card!
+           Display Server: N/A driver: N/A tty size: 254x72 Advanced Data: N/A out of X
+Audio:     Card AMLGX driver: AMLGX Sound: ALSA v: k5.5.0-rc6-aml-s9xxx
+Network:   Card: Failed to Detect Network Card!
+Drives:    HDD Total Size: NA (-)
+           ID-1: /dev/mmcblk1 model: N/A size: 7.8GB
+Partition: ID-1: / size: 6.3G used: 4.8G (76%) fs: ext4 dev: /dev/mmcblk1p2
+           ID-2: /boot size: 244M used: 77M (32%) fs: vfat dev: /dev/mmcblk1p1
+           ID-3: /var/log size: 49M used: 2.5M (6%) fs: ext4 dev: /dev/zram0
+           ID-4: swap-1 size: 0.91GB used: 0.00GB (0%) fs: swap dev: /dev/zram1
+Sensors:   None detected - is lm-sensors installed and configured?
+Info:      Processes: 155 Uptime: 2:39 Memory: 306.4/1741.2MB Init: systemd runlevel: 5
+           Client: Shell (zsh) inxi: 2.3.56
+</code></pre><h4 id="unixbench分数">Unixbench分数</h4>
+<pre><code>alair@aml:~/unixbench-5.1.2 $ ./Run
+make all
+make[1]: Entering directory '/home/alair/unixbench-5.1.2'
+Checking distribution of files
+./pgms  exists
+./src  exists
+./testdir  exists
+./tmp  exists
+./results  exists
+make[1]: Leaving directory '/home/alair/unixbench-5.1.2'
+sh: 1: 3dinfo: not found
+
+   #    #  #    #  #  #    #          #####   ######  #    #   ####   #    #
+   #    #  ##   #  #   #  #           #    #  #       ##   #  #    #  #    #
+   #    #  # #  #  #    ##            #####   #####   # #  #  #       ######
+   #    #  #  # #  #    ##            #    #  #       #  # #  #       #    #
+   #    #  #   ##  #   #  #           #    #  #       #   ##  #    #  #    #
+    ####   #    #  #  #    #          #####   ######  #    #   ####   #    #
+
+   Version 5.1.2                      Based on the Byte Magazine Unix Benchmark
+
+   Multi-CPU version                  Version 5 revisions by Ian Smith,
+                                      Sunnyvale, CA, USA
+   December 22, 2007                  johantheghost at yahoo period com
+
+Wide character in print at ./Run line 1510.
+Wide character in printf at ./Run line 1541.
+Use of uninitialized value in printf at ./Run line 1378.
+Use of uninitialized value in printf at ./Run line 1379.
+Use of uninitialized value in printf at ./Run line 1378.
+Use of uninitialized value in printf at ./Run line 1379.
+Use of uninitialized value in printf at ./Run line 1378.
+Use of uninitialized value in printf at ./Run line 1379.
+Use of uninitialized value in printf at ./Run line 1378.
+Use of uninitialized value in printf at ./Run line 1379.
+Use of uninitialized value in printf at ./Run line 1588.
+Use of uninitialized value in printf at ./Run line 1589.
+Use of uninitialized value in printf at ./Run line 1588.
+Use of uninitialized value in printf at ./Run line 1589.
+Use of uninitialized value in printf at ./Run line 1588.
+Use of uninitialized value in printf at ./Run line 1589.
+Use of uninitialized value in printf at ./Run line 1588.
+Use of uninitialized value in printf at ./Run line 1589.
+
+1 x Dhrystone 2 using register variables  1 2 3 4 5 6 7 8 9 10
+
+1 x Double-Precision Whetstone  1 2 3 4 5 6 7 8 9 10
+
+1 x Execl Throughput  1 2 3
+
+1 x File Copy 1024 bufsize 2000 maxblocks  1 2 3
+
+1 x File Copy 256 bufsize 500 maxblocks  1 2 3
+
+1 x File Copy 4096 bufsize 8000 maxblocks  1 2 3
+
+1 x Pipe Throughput  1 2 3 4 5 6 7 8 9 10
+
+1 x Pipe-based Context Switching  1 2 3 4 5 6 7 8 9 10
+
+1 x Process Creation  1 2 3
+
+1 x System Call Overhead  1 2 3 4 5 6 7 8 9 10
+
+1 x Shell Scripts (1 concurrent)  1 2 3
+
+1 x Shell Scripts (8 concurrent)  1 2 3
+Wide character in printf at ./Run line 1483.
+
+4 x Dhrystone 2 using register variables  1 2 3 4 5 6 7 8 9 10
+
+4 x Double-Precision Whetstone  1 2 3 4 5 6 7 8 9 10
+
+4 x Execl Throughput  1 2 3
+
+4 x File Copy 1024 bufsize 2000 maxblocks  1 2 3
+
+4 x File Copy 256 bufsize 500 maxblocks  1 2 3
+
+4 x File Copy 4096 bufsize 8000 maxblocks  1 2 3
+
+4 x Pipe Throughput  1 2 3 4 5 6 7 8 9 10
+
+4 x Pipe-based Context Switching  1 2 3 4 5 6 7 8 9 10
+
+4 x Process Creation  1 2 3
+
+4 x System Call Overhead  1 2 3 4 5 6 7 8 9 10
+
+4 x Shell Scripts (1 concurrent)  1 2 3
+
+4 x Shell Scripts (8 concurrent)  1 2 3
+Wide character in printf at ./Run line 1483.
+
+========================================================================
+   BYTE UNIX Benchmarks (Version 5.1.2)
+
+   System: aml: GNU/Linux
+   OS: GNU/Linux -- 5.5.0-rc6-aml-s9xxx -- #rc1.037 SMP PREEMPT Wed Feb 5 17:28:41 MSK 2020
+   Machine: aarch64 (aarch64)
+   Language: en_US.utf8 (charmap=&quot;UTF-8&quot;, collate=&quot;UTF-8&quot;)
+   CPU 0: ARMv8 Processor rev 4 (v8l) (0.0 bogomips)
+
+   CPU 1: ARMv8 Processor rev 4 (v8l) (0.0 bogomips)
+
+   CPU 2: ARMv8 Processor rev 4 (v8l) (0.0 bogomips)
+
+   CPU 3: ARMv8 Processor rev 4 (v8l) (0.0 bogomips)
+
+   19:35:59 up  2:44,  1 user,  load average: 2.13, 2.07, 2.01; runlevel 5
+
+------------------------------------------------------------------------
+Benchmark Run: 一 3月 02 2020 19:35:59 - 20:03:58
+4 CPUs in system; running 1 parallel copy of tests
+
+Dhrystone 2 using register variables        6888588.0 lps   (10.0 s, 7 samples)
+Double-Precision Whetstone                     1373.9 MWIPS (9.8 s, 7 samples)
+Execl Throughput                                877.5 lps   (30.0 s, 2 samples)
+File Copy 1024 bufsize 2000 maxblocks        168765.4 KBps  (30.0 s, 2 samples)
+File Copy 256 bufsize 500 maxblocks           49199.4 KBps  (30.0 s, 2 samples)
+File Copy 4096 bufsize 8000 maxblocks        445012.9 KBps  (30.0 s, 2 samples)
+Pipe Throughput                              327924.7 lps   (10.0 s, 7 samples)
+Pipe-based Context Switching                  69606.2 lps   (10.0 s, 7 samples)
+Process Creation                               2416.8 lps   (30.0 s, 2 samples)
+Shell Scripts (1 concurrent)                   2283.5 lpm   (60.0 s, 2 samples)
+Shell Scripts (8 concurrent)                    656.5 lpm   (60.0 s, 2 samples)
+System Call Overhead                         632162.6 lps   (10.0 s, 7 samples)
+
+System Benchmarks Index Values               BASELINE       RESULT    INDEX
+Dhrystone 2 using register variables         116700.0    6888588.0    590.3
+Double-Precision Whetstone                       55.0       1373.9    249.8
+Execl Throughput                                 43.0        877.5    204.1
+File Copy 1024 bufsize 2000 maxblocks          3960.0     168765.4    426.2
+File Copy 256 bufsize 500 maxblocks            1655.0      49199.4    297.3
+File Copy 4096 bufsize 8000 maxblocks          5800.0     445012.9    767.3
+Pipe Throughput                               12440.0     327924.7    263.6
+Pipe-based Context Switching                   4000.0      69606.2    174.0
+Process Creation                                126.0       2416.8    191.8
+Shell Scripts (1 concurrent)                     42.4       2283.5    538.6
+Shell Scripts (8 concurrent)                      6.0        656.5   1094.1
+System Call Overhead                          15000.0     632162.6    421.4
+                                                                   ========
+System Benchmarks Index Score                                         369.1
+
+------------------------------------------------------------------------
+Benchmark Run: 一 3月 02 2020 20:03:58 - 20:32:08
+4 CPUs in system; running 4 parallel copies of tests
+
+Dhrystone 2 using register variables       26826718.3 lps   (10.0 s, 7 samples)
+Double-Precision Whetstone                     5449.1 MWIPS (9.8 s, 7 samples)
+Execl Throughput                               2965.8 lps   (30.0 s, 2 samples)
+File Copy 1024 bufsize 2000 maxblocks        291243.4 KBps  (30.0 s, 2 samples)
+File Copy 256 bufsize 500 maxblocks           80902.5 KBps  (30.0 s, 2 samples)
+File Copy 4096 bufsize 8000 maxblocks        827300.0 KBps  (30.0 s, 2 samples)
+Pipe Throughput                             1252522.5 lps   (10.0 s, 7 samples)
+Pipe-based Context Switching                 217969.4 lps   (10.0 s, 7 samples)
+Process Creation                               6193.8 lps   (30.0 s, 2 samples)
+Shell Scripts (1 concurrent)                   5216.1 lpm   (60.0 s, 2 samples)
+Shell Scripts (8 concurrent)                    701.8 lpm   (60.1 s, 2 samples)
+System Call Overhead                        2375324.0 lps   (10.0 s, 7 samples)
+
+System Benchmarks Index Values               BASELINE       RESULT    INDEX
+Dhrystone 2 using register variables         116700.0   26826718.3   2298.8
+Double-Precision Whetstone                       55.0       5449.1    990.7
+Execl Throughput                                 43.0       2965.8    689.7
+File Copy 1024 bufsize 2000 maxblocks          3960.0     291243.4    735.5
+File Copy 256 bufsize 500 maxblocks            1655.0      80902.5    488.8
+File Copy 4096 bufsize 8000 maxblocks          5800.0     827300.0   1426.4
+Pipe Throughput                               12440.0    1252522.5   1006.9
+Pipe-based Context Switching                   4000.0     217969.4    544.9
+Process Creation                                126.0       6193.8    491.6
+Shell Scripts (1 concurrent)                     42.4       5216.1   1230.2
+Shell Scripts (8 concurrent)                      6.0        701.8   1169.6
+System Call Overhead                          15000.0    2375324.0   1583.5
+                                                                   ========
+System Benchmarks Index Score                                         943.1
+</code></pre>
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2020-03-02</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/debian">#Debian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/unixbench">#Unixbench</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%B7%91%E5%88%86">#跑分</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/inxi">#inxi</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

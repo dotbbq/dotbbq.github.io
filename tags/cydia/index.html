@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>Cydia - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/tags/cydia/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+
+
+
+<meta property="og:title" content="Cydia" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/tags/cydia/" />
+<meta property="og:updated_time" content="2015-07-10T10:27:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Cydia"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <h1>Tag: Cydia</h1>
+    <div class="post-info">
+        <a href="https://unixetc.com/tags">To all tags</a>
+    </div>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/verzion-iphone5c-open-chinatelecom-4g/">V版本iPhone5C开启中国电信4G</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        首先，使用太极越狱将手机越狱 http://www.taig.com/
+在Cydia中添加http://apt.chinasnow.net源，搜索安装CommCenter patch for ios8
+设置iTunes可以刷入运营商文件(.ipcc)
+Win+R打开运行窗口，输入&quot;%ProgramFiles%\iTunes\iTunes.exe&quot; /setPrefInt carrier-testing 1
+下载运营商文件http://cdn.lyq.wiki/res/ipccs.zip
+打开iTunes，链接手机到电脑，Shift+更新，选择相对应系统版本的运营商文件
+完成后重启手机OK！
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-07-10</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/cydia">#Cydia</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/iphone">#iPhone</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/jailbreak">#Jailbreak</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/apple">#Apple</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%B6%8A%E7%8B%B1">#越狱</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/4g">#4G</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/verzion">#Verzion</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/iphone5c">#iPhone5C</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/lte">#LTE</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E4%B8%AD%E5%9B%BD%E7%94%B5%E4%BF%A1">#中国电信</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/itunes">#iTunes</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/chinasnow">#chinasnow</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/edit-the-cydia-software-source/">修改iPhone的Cydia源</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        越狱后的ios设备cydia为必装平台，但是在软件源管理中，大家可能会发现一些源通过cydia无法编辑,比如Cydia/Telesphoreo。
+我现在入手一部iPhone 4 CDMA版，通过OTA写号使用。在安装sbsettings的时候，一直提示size mismatch而未能安装成功。网上看了看大家的经历，这样的问题最终定位都是某个软件源不匹配造成，试着删除或者更新就可以解决。
+但是我发现机子买回来，里面有两个源是无法编辑的，一个是上面提到的Cydia/Telesphoreo，另一个就是维维网的源。经过我在cydia下编辑删除，试遍了其他的源的删除，但都是不可以成功安装sbsettings。于是我觉得应该是剩下的那两个不可编辑源的问题，由于Cydia/Telesphoreo是Cydia初始安装的源，应该不会有问题，那就需要编辑删除维维网的源了，但是在cydia的源管理下它是不可编辑的。
+最后让我找到了办法，既然在cydia下不可以编辑，那么在ssh下呢，只要找到该源的文件，那就可以编辑了，经过判断查找，最终定位到/private/etc/apt/sources.list.d/目录，在该目录下存放着一些软件源文件(.list)。因为ios采用和debian相同的软件管理软件apt-get，那么他的软件源管理方式应该类似。基于以上经验，最终定位到了/private/etc/apt/sources.list.d/目录。
+具体解决步骤如下：
+进入到/private/etc/apt/sources.list.d/目录，将里面除了cydia.list文件，其他的全部删除。然后编辑cydia.list文件，只留下一行deb http://apt.saurik.com/ 即可，保存之。
+手机上打开cydia，重新刷新软件源。然后按需添加需要的第三方源。
+至于如何编辑cydia目录，一般可以使用itools等软件，但是这样比较繁琐。简单直接的方法是通过ssh连接手机进行操作，可参考通过SSH连接IOS设备
+aPhone:~ root# cd /private/etc/apt/sources.list.d/aPhone:/private/etc/apt/sources.list.d root# ls -ltotal 24-rwxr-xr-x 1 root wheel 259 May 25 23:01 appvv.list*-rw-r--r-- 1 root wheel 357 Jun 16 13:59 cydia.list-rw-r--r-- 1 root wheel 227 May 25 23:01 saurik.listaPhone:/private/etc/apt/sources.list.d root# cat cydia.listdeb http://apt.saurik.com/ ios/690.10 maindeb http://apt.178.com/ ./deb http://download.voicecloud.cn/cydia/ ./deb http://cydia.zodttd.com/repo/cydia/ stable maindeb http://repo666.ultrasn0w.com/ .
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2012-06-18</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/apt-get">#apt-get</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/cydia">#Cydia</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/iphone">#iPhone</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/jailbreak">#Jailbreak</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/apple">#Apple</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ios">#IOS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%B6%8A%E7%8B%B1">#越狱</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/remove-unnecessary-iphone-language-file/">删除不需要的iPhone语言文件</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        首先，需要iPhone已经越狱，并且安装了OpenSSH
+脚本文件下载：http://cdn.lyq.wiki/res/langpack2.2.zip，解压出脚本文件langpack2.2.sh
+通过itools或者其他管理软件，将脚本文件复制到/var/mobile目录
+通过ssh连接手机，进入/var/mobile目录开始操作 注意：此时请关闭手机的定时锁屏功能，以防意外终止操作而失败！！
+#chmod 777 langpack2.2.sh //为脚本添加执行权限#./langpack2.2.sh //运行脚本 开始搜索语言包文件，等待。。。。。
+搜索到所有语言包后，开始提示是否删除。
+根据提示，输入y或者n来确定所要删除的语言包，根据需要筛选。
+所有选择完成后，会提示所有将要删除的语言包，再次确认删除与否（y或n），开始删除过程。。。
+删除完成后，会提示所删除的语言包数量，并且提示是否删除该脚本文件
+注意：进行完以上操作后，建议马上修改SSH密码，以防止感染蠕虫病毒！！
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2012-04-02</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/cydia">#Cydia</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/iphone">#iPhone</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/jailbreak">#Jailbreak</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/apple">#Apple</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/openssh">#OpenSSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/itools">#itools</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/langpack2.2.sh">#langpack2.2.sh</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>树莓派设置时区和ntp时间同步 - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+
+
+
+<meta property="og:title" content="树莓派设置时区和ntp时间同步" />
+<meta property="og:description" content="设置时区   使用raspi-config设置
+raspi-config
+  Internationalisation Options -&gt; Change Timezone
+ 使用tzselect设置
+tzselect
+  然后根据提示，选择时区
+ 手动设置**/etc/localtime**
+rm /etc/localtime ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+  安装配置NTP sudo apt-get install ntp ntpdate 编辑ntp配置文件**/etc/ntp.conf**，添加以下内容
+server 0.asia.pool.ntp.orgserver 1.asia.pool.ntp.orgserver 2.asia.pool.ntp.orgserver 3.asia.pool.ntp.org 重启ntp服务
+service ntp restart " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unixetc.com/post/raspberry-pi-set-timezone-and-ntp/" />
+<meta property="article:published_time" content="2014-12-26T14:23:00+00:00" />
+<meta property="article:modified_time" content="2014-12-26T14:23:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="树莓派设置时区和ntp时间同步"/>
+<meta name="twitter:description" content="设置时区   使用raspi-config设置
+raspi-config
+  Internationalisation Options -&gt; Change Timezone
+ 使用tzselect设置
+tzselect
+  然后根据提示，选择时区
+ 手动设置**/etc/localtime**
+rm /etc/localtime ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+  安装配置NTP sudo apt-get install ntp ntpdate 编辑ntp配置文件**/etc/ntp.conf**，添加以下内容
+server 0.asia.pool.ntp.orgserver 1.asia.pool.ntp.orgserver 2.asia.pool.ntp.orgserver 3.asia.pool.ntp.org 重启ntp服务
+service ntp restart "/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">树莓派设置时区和ntp时间同步</h1>
+        </header>
+        <div class="content">
+            <h3 id="设置时区">设置时区</h3>
+<ol>
+<li>
+<p>使用<code>raspi-config</code>设置</p>
+<p>raspi-config</p>
+</li>
+</ol>
+<p>Internationalisation Options -&gt;  Change Timezone</p>
+<ol start="2">
+<li>
+<p>使用<code>tzselect</code>设置</p>
+<p>tzselect</p>
+</li>
+</ol>
+<p>然后根据提示，选择时区</p>
+<ol start="3">
+<li>
+<p>手动设置**/etc/localtime**</p>
+<p>rm /etc/localtime
+ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</p>
+</li>
+</ol>
+<h3 id="安装配置ntp">安装配置NTP</h3>
+<pre><code>sudo apt-get install ntp ntpdate
+</code></pre>
+<p>编辑<code>ntp</code>配置文件**/etc/ntp.conf**，添加以下内容</p>
+<pre><code>server 0.asia.pool.ntp.org
+server 1.asia.pool.ntp.org
+server 2.asia.pool.ntp.org
+server 3.asia.pool.ntp.org
+</code></pre>
+<p>重启ntp服务</p>
+<pre><code>service ntp restart</code></pre>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-12-26</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ntp">#ntp</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/tzselect">#tzselect</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ntpdate">#ntpdate</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

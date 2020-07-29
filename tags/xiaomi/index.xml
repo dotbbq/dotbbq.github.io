@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>xiaomi on UNIXETC</title>
+    <link>https://unixetc.com/tags/xiaomi/</link>
+    <description>UNIXETC (xiaomi)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sun, 20 Mar 2016 13:20:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/xiaomi/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>小米4C解锁和刷入TWRP Recovery</title>
+      <link>https://unixetc.com/post/mi4c-unlock-and-twrp-recovery/</link>
+      <pubDate>Sun, 20 Mar 2016 13:20:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/mi4c-unlock-and-twrp-recovery/</guid>
+      <description>&lt;p&gt;时隔三年再次入手小米手机，没想到如今的MIUI已经今非昔比，首先是bootloader锁住了，官方理由是安全，但是作为一个android发烧友，锁bootloader后就无法安装第三方recovery，进而无法体验众多第三方系统了。以下介绍如何解锁小米4C以及刷入第三方TWRP Recovery。
+permalink: &amp;lsquo;logs/Mi4C-Unlock-and-TWRP-Recovery.html&amp;rsquo;
+时隔三年再次入手小米手机，没想到如今的MIUI已经今非昔比，首先是bootloader锁住了，官方理由是安全，但是作为一个android发烧友，锁bootloader后就无法安装第三方recovery，进而无法体验众多第三方系统了。其次是到处广告，整个系统UI很多处都是广告，额滴个神啊！ 小米穷疯了吧! 无力吐槽啊………………&lt;/p&gt;
+&lt;p&gt;以下介绍如何解锁小米4C以及刷入第三方TWRP Recovery。&lt;/p&gt;
+&lt;h3 id=&#34;解锁小米4c&#34;&gt;解锁小米4C&lt;/h3&gt;
+&lt;p&gt;小米解锁需要去官方申请，申请提交地址为 &lt;a href=&#34;http://www.miui.com/unlock/&#34;&gt;http://www.miui.com/unlock/&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;录入小米ID以及手机号等信息后，就等着吧……&lt;/p&gt;
+&lt;p&gt;我等了16天才收到解锁申请通过短信通知。&lt;/p&gt;
+&lt;p&gt;然后下载官方解锁工具，下载地址为&lt;a href=&#34;http://www.miui.com/unlock/download.html&#34;&gt;http://www.miui.com/unlock/download.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;打开解锁工具，登录小米帐号，关机长按音量下+电源键进入Fastboot模式。&lt;/p&gt;
+&lt;p&gt;然后按照提示进行操作，两分钟不到解锁成功！！！&lt;/p&gt;
+&lt;p&gt;注：如果解锁失败，提示什么帐号不一致啦、手机信息无法获取啦，请到miui官网论坛进行问题提交。&lt;/p&gt;
+&lt;h3 id=&#34;刷入twrp-recovery&#34;&gt;刷入TWRP Recovery&lt;/h3&gt;
+&lt;p&gt;首先下载adb工具包，里面包含需要的软件fastboot，下载地址 &lt;a href=&#34;http://pan.baidu.com/s/1sjR8ved&#34;&gt;http://pan.baidu.com/s/1sjR8ved&lt;/a&gt;，下载后点击安装。&lt;/p&gt;
+&lt;p&gt;然后下载TWRP Recovery镜像文件，下载地址为&lt;a href=&#34;http://pan.baidu.com/s/1nuugNK9&#34;&gt;http://pan.baidu.com/s/1nuugNK9&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;将下载后的TWRP Recovery镜像文件(.img)拷贝至adb工具包目录，然后CMD模式下进入到adb工具包目录，如下操作：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;刷入TWRP Recovery&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;D:\&amp;gt;fastboot flash recovery libra_ts_twrp_3_0_0_3.img
+target reported max download size of 536870912 bytes
+sending &#39;recovery&#39; (51844 KB)...
+OKAY [  1.485s]
+writing &#39;recovery&#39;...
+OKAY [  0.481s]
+finished. total time: 1.971s
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;重启引导进入TWRP Recovery&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;D:\&amp;gt;fastboot boot libra_ts_twrp_3_0_0_3.img
+downloading &#39;boot.img&#39;...
+OKAY [  1.494s]
+booting...
+OKAY [  0.516s]
+finished. total time: 2.014s
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;说明：首次刷入TWRP Recovery，进入Recovery后触摸屏可能无法操作，这时唯一的方法就是等待，等到1分钟左右手机自动息屏后，重按电源键点亮屏幕即可恢复操作。&lt;/p&gt;
+&lt;h3 id=&#34;推荐小米4c第三方rom&#34;&gt;推荐小米4C第三方ROM&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Xiaomi Mi4c CM13&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.teamsuperluminal.org/mi4c-cyanogenmod-13/&#34;&gt;http://www.teamsuperluminal.org/mi4c-cyanogenmod-13/&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Xiaomi Mi4c Broken OS v4.3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.teamsuperluminal.org/broken-os-v4-2-mi4c/&#34;&gt;http://www.teamsuperluminal.org/broken-os-v4-2-mi4c/&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Xiaomi Mi4c CM12.1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.teamsuperluminal.org/mi4c-cyanogenmod-12-1/&#34;&gt;http://www.teamsuperluminal.org/mi4c-cyanogenmod-12-1/&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Xiaomi Mi4c PAC-rom 5.1.1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.teamsuperluminal.org/pac-rom-5-1-1-mi4c/&#34;&gt;http://www.teamsuperluminal.org/pac-rom-5-1-1-mi4c/&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mokee 60.1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;http://download.mokeedev.com/?device=libra&#34;&gt;http://download.mokeedev.com/?device=libra&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>grive2 on UNIXETC</title>
+    <link>https://unixetc.com/tags/grive2/</link>
+    <description>UNIXETC (grive2)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Wed, 26 Aug 2015 18:23:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/grive2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux下使用grive管理Google Drive</title>
+      <link>https://unixetc.com/post/linux-use-grive-management-google-drive/</link>
+      <pubDate>Wed, 26 Aug 2015 18:23:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/linux-use-grive-management-google-drive/</guid>
+      <description>&lt;p&gt;找到一个linux下可用的google drive客户端，纯cli操作，值得推荐&lt;/p&gt;
+&lt;p&gt;grive项目主页 &lt;a href=&#34;https://github.com/Grive/grive&#34;&gt;https://github.com/Grive/grive&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ubuntu中下通过PPA安装grive&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo add-apt-repository ppa:nilarimogard/webupd8 
+sudo apt-get update
+sudo apt-get install grive
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;使用grive同步Google Drive&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mkdir googledrive
+cd googledrive
+grive -a
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;第一次运行，会有验证提示，将提示的url代码粘贴到浏览器中验证帐户，完了后将生成的验证代码粘贴到grive进行验证。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

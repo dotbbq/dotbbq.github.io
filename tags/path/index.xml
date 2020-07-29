@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PATH on UNIXETC</title>
+    <link>https://unixetc.com/tags/path/</link>
+    <description>UNIXETC (PATH)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 25 Apr 2017 14:25:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/path/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>理解Linux中Shell初始化文件和用户Profiles文件</title>
+      <link>https://unixetc.com/post/understand-linux-shell-initialization-files-and-user-profiles-files/</link>
+      <pubDate>Tue, 25 Apr 2017 14:25:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/understand-linux-shell-initialization-files-and-user-profiles-files/</guid>
+      <description>&lt;p&gt;Linux是一个多用户、实时共享的操作系统，意味着不止一个用户可以登录同一个系统。系统管理员通过任务管理来分配不同用户的权限，比如安装、升级、卸载应用程序，运行编译程序，文件查看、编辑等等。&lt;/p&gt;
+&lt;p&gt;Linux允许通过两种主要方式来创建用户环境：系统级(全局)和用户级(个人)。一般情况下，Linux系统都会运行基本shell程序，当用户登录成功后shell会在初始化时根据某些文件开创建环境。&lt;/p&gt;
+&lt;h3 id=&#34;linux中的shell初始化&#34;&gt;Linux中的Shell初始化&lt;/h3&gt;
+&lt;p&gt;当&lt;strong&gt;Shell&lt;/strong&gt;被调用时，会有一些初始化/启动文件被启用，它们的主要作用是为shell本身或用户设定运行环境，包含一些函数、	变量、别名等等。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Shell&lt;/strong&gt;可以读取以下两种初始化文件:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;系统级启动文件&lt;/strong&gt; – 包含一些应用于户所有用户的全局配置，一般存在于**/etc**目录中，如 **/etc/profiles** 、**/etc/bashrc** 或者 **/etc/bash.bashrc**。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;用户级启动文件&lt;/strong&gt; – 包含一些应用于单用户的配置文件，一般存放在各个用户目录，这些配置可以覆盖系统级全局配置，如**.profiles**、 **.bash_profile**、 **.bashrc** 和 **.bash_login**.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Shell&lt;/strong&gt;存在三种调用模式：&lt;/p&gt;
+&lt;h4 id=&#34;1-交互式登录shell&#34;&gt;1. 交互式登录Shell&lt;/h4&gt;
+&lt;p&gt;当用户成功登录系统后调用该&lt;strong&gt;Shell&lt;/strong&gt;,使用**/bin/login**登录，随后读取**/etc/passwd**文件。&lt;/p&gt;
+&lt;p&gt;当启动交互式&lt;strong&gt;shell&lt;/strong&gt;后，将读取**/etc/profile**文件以及特定的用户文件**~/.bash_profile**&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;login as: pi
+pi@pi.raspi.in&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;#39;&lt;/span&gt;s password:
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Tue Apr &lt;span style=&#34;color:#ae81ff&#34;&gt;25&lt;/span&gt; 10:43:53 &lt;span style=&#34;color:#ae81ff&#34;&gt;2017&lt;/span&gt; from 211.137.135.200
+pi@raspi:~ $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;2-非登录交互式shell&#34;&gt;2. 非登录交互式Shell&lt;/h4&gt;
+&lt;p&gt;当使用如&lt;strong&gt;$/bin/bash&lt;/strong&gt; or &lt;strong&gt;$/bin/zsh&lt;/strong&gt;的命令行时，将会系统非登录交互式&lt;strong&gt;shell&lt;/strong&gt;。他也可以通过**/bin/su**命令来运行。&lt;/p&gt;
+&lt;p&gt;另外，在打开如&lt;strong&gt;konsole&lt;/strong&gt;、&lt;strong&gt;terminator&lt;/strong&gt;和&lt;strong&gt;xterm&lt;/strong&gt;等图形化终端程序时 ，非登录交互式&lt;strong&gt;shell&lt;/strong&gt;也将被调用。&lt;/p&gt;
+&lt;p&gt;这种情况下调用时，它将拷贝父&lt;strong&gt;shell&lt;/strong&gt;的环境，并读取相应用户级的 &lt;strong&gt;~/.bashrc&lt;/strong&gt; 配置文件。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;pi@raspi:~ $ sudo -s
+root@raspi:/home/pi# cd
+root@raspi:~# ls -la
+total &lt;span style=&#34;color:#ae81ff&#34;&gt;56&lt;/span&gt;
+drwx------  &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Apr &lt;span style=&#34;color:#ae81ff&#34;&gt;13&lt;/span&gt; 10:26 .
+drwxr-xr-x &lt;span style=&#34;color:#ae81ff&#34;&gt;22&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Feb  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; 20:28 ..
+-rw-------  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;2177&lt;/span&gt; Apr &lt;span style=&#34;color:#ae81ff&#34;&gt;25&lt;/span&gt; 11:21 .bash_history
+-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root  &lt;span style=&#34;color:#ae81ff&#34;&gt;765&lt;/span&gt; Feb  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; 20:48 .bashrc
+drwx------  &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Mar  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; 14:28 .cache
+drwxr-xr-x  &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Mar  &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; 11:15 .config
+drwxr-xr-x  &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Mar  &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; 11:15 .local
+drwxr-xr-x  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Apr &lt;span style=&#34;color:#ae81ff&#34;&gt;13&lt;/span&gt; 10:26 .oracle_jre_usage
+drwxr-xr-x  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Feb &lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt; 11:18 .pip
+-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root  &lt;span style=&#34;color:#ae81ff&#34;&gt;140&lt;/span&gt; Nov &lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;2007&lt;/span&gt; .profile
+-rw-------  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root   &lt;span style=&#34;color:#ae81ff&#34;&gt;41&lt;/span&gt; Mar  &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; 11:39 .python_history
+drwx------  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Mar  &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; 11:20 .ssh
+-rw-------  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;6342&lt;/span&gt; Mar &lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt; 17:30 .viminfo
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;3-非交互式shell&#34;&gt;3. 非交互式Shell&lt;/h4&gt;
+&lt;p&gt;当运行脚本时则条用非交互式&lt;strong&gt;shell&lt;/strong&gt;。在这种模式下，它将处理所运行的脚本中的命令、函数等操作，不需要进行交互式输入，除非脚本需求。使用的环境继承自&lt;strong&gt;父shell&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;理解系统级shell启动文件&#34;&gt;理解系统级Shell启动文件&lt;/h3&gt;
+&lt;p&gt;下来，我们来看看一些系统级启动文件都有什么内容：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;/etc/profile file&lt;/strong&gt;文件存储登录时系统级环境配置和启动程序。如果你想配置应用于所有用户的环境设置，可以加入此文件。&lt;/p&gt;
+&lt;p&gt;比如，你可在这里设置全局路径变量。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;pi@raspi:~ $ cat /etc/profile
+&lt;span style=&#34;color:#75715e&#34;&gt;# /etc/profile: system-wide .profile file for the Bourne shell (sh(1))&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;`id -u`&amp;#34;&lt;/span&gt; -eq &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+  PATH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/usr/local/sbin:/usr/local/usr/sbin:/usr/sbin:/bin&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#old bak  PATH=&amp;#34;/usr/local/sbin:/usr/local/usr/sbin:/usr/sbin:/bin:/usr/local/games:/usr/games&amp;#34;&lt;/span&gt;
+PATH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/bin:/sbin:/usr/local/games:/usr/games&amp;#34;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+export PATH
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$PS1&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$BASH&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$BASH&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; !&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/bin/sh&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;# The file bash.bashrc already sets the default PS1.&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;# PS1=&amp;#39;\h:\w\$ &amp;#39;&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -f /etc/bash.bashrc &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+      . /etc/bash.bashrc
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;`id -u`&amp;#34;&lt;/span&gt; -eq &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+      PS1&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;# &amp;#39;&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+      PS1&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;$ &amp;#39;&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -d /etc/profile.d &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i in /etc/profile.d/*.sh; &lt;span style=&#34;color:#66d9ef&#34;&gt;do&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -r $i &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+      . $i
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;done&lt;/span&gt;
+  unset i
+&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+export PATH&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;/usr/local/nginx/sbin:$PATH
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：当你使用&lt;strong&gt;RHEL/CentOS7&lt;/strong&gt;系统时，会看到如下提示&amp;quot;It’s not recommended to change this file unless you know what you are doing. It’s much better to create a custom &lt;strong&gt;.sh&lt;/strong&gt; shell script in &lt;strong&gt;/etc/profile.d/&lt;/strong&gt; to make custom changes to your environment, as this will prevent the need for merging in future updates&amp;rdquo;。&lt;/p&gt;
+&lt;p&gt;提示中的 &lt;strong&gt;/etc/profile.d/&lt;/strong&gt; 目录保存着所有的自定义修改运行环境的脚本。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;pi@raspi:~ $ cd /etc/profile.d/
+pi@raspi:/etc/profile.d $ ls -l
+total &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;663&lt;/span&gt; Mar &lt;span style=&#34;color:#ae81ff&#34;&gt;23&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;2014&lt;/span&gt; bash_completion.sh
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;387&lt;/span&gt; Mar &lt;span style=&#34;color:#ae81ff&#34;&gt;31&lt;/span&gt; 11:47 oneinstack.sh
+pi@raspi:/etc/profile.d $
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;/etc/bashrc&lt;/strong&gt; 或 &lt;strong&gt;/etc/bash.bashrc&lt;/strong&gt;文件，包含应用于所有用户的系统级函数、变量、别名等配置信息。&lt;/p&gt;
+&lt;p&gt;如果你的系统包含多种&lt;strong&gt;Shell&lt;/strong&gt;程序，建议你可以将一些特定的配置放到这里。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;root@raspi:~# cat /etc/bash.bashrc
+&lt;span style=&#34;color:#75715e&#34;&gt;# System-wide .bashrc file for interactive bash(1) shells.&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# To enable the settings / commands in this file for login shells as well,&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# this file has to be sourced in /etc/profile.&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# If not running interactively, don&amp;#39;t do anything&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -z &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$PS1&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# check the window size after each command and, if necessary,&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# update the values of LINES and COLUMNS.&lt;/span&gt;
+shopt -s checkwinsize
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# set variable identifying the chroot you work in (used in the prompt below)&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -z &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;debian_chroot&lt;span style=&#34;color:#66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -r /etc/debian_chroot &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+    debian_chroot&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;cat /etc/debian_chroot&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# set a fancy prompt (non-color, overwrite the one in /etc/profile)&lt;/span&gt;
+PS1&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;${debian_chroot:+($debian_chroot)}\u@\h:\w\$ &amp;#39;&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# Commented out, don&amp;#39;t overwrite xterm -T &amp;#34;title&amp;#34; -n &amp;#34;icontitle&amp;#34; by default.&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# If this is an xterm set the title to user@host:dir&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#case &amp;#34;$TERM&amp;#34; in&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#xterm*|rxvt*)&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#    PROMPT_COMMAND=&amp;#39;echo -ne &amp;#34;\033]0;${USER}@${HOSTNAME}: ${PWD}\007&amp;#34;&amp;#39;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#    ;;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#*)&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#    ;;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#esac&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# enable bash completion in interactive shells&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#if ! shopt -oq posix; then&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#  if [ -f /usr/share/bash-completion/bash_completion ]; then&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#    . /usr/share/bash-completion/bash_completion&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#  elif [ -f /etc/bash_completion ]; then&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#    . /etc/bash_completion&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#  fi&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#fi&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# if the command-not-found package is installed, use it&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -x /usr/lib/command-not-found -o -x /usr/share/command-not-found/command-not-found &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; command_not_found_handle &lt;span style=&#34;color:#f92672&#34;&gt;{&lt;/span&gt;
+                &lt;span style=&#34;color:#75715e&#34;&gt;# check because c-n-f could&amp;#39;ve been removed in the meantime&lt;/span&gt;
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -x /usr/lib/command-not-found &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+                   /usr/lib/command-not-found -- &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$1&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+                   &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; $?
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;elif&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -x /usr/share/command-not-found/command-not-found &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+                   /usr/share/command-not-found/command-not-found -- &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$1&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+                   &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; $?
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+                   printf &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;%s: command not found\n&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$1&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &amp;gt;&amp;amp;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;
+                   &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;127&lt;/span&gt;
+                &lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+        &lt;span style=&#34;color:#f92672&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;理解用户级shell启动文件&#34;&gt;理解用户级Shell启动文件&lt;/h3&gt;
+&lt;p&gt;接下来，我们看一下用户级启动文件，它们中的配置只应用户对应用户，一般放置在相对应的用户目录中：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;root@raspi:~# ls -la
+total &lt;span style=&#34;color:#ae81ff&#34;&gt;56&lt;/span&gt;
+drwx------  &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Apr &lt;span style=&#34;color:#ae81ff&#34;&gt;13&lt;/span&gt; 10:26 .
+drwxr-xr-x &lt;span style=&#34;color:#ae81ff&#34;&gt;22&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Feb  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; 20:28 ..
+-rw-------  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;2177&lt;/span&gt; Apr &lt;span style=&#34;color:#ae81ff&#34;&gt;25&lt;/span&gt; 11:21 .bash_history
+-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root  &lt;span style=&#34;color:#ae81ff&#34;&gt;765&lt;/span&gt; Feb  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; 20:48 .bashrc
+drwx------  &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Mar  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; 14:28 .cache
+drwxr-xr-x  &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Mar  &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; 11:15 .config
+drwxr-xr-x  &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Mar  &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; 11:15 .local
+drwxr-xr-x  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Apr &lt;span style=&#34;color:#ae81ff&#34;&gt;13&lt;/span&gt; 10:26 .oracle_jre_usage
+drwxr-xr-x  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Feb &lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt; 11:18 .pip
+-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root  &lt;span style=&#34;color:#ae81ff&#34;&gt;140&lt;/span&gt; Nov &lt;span style=&#34;color:#ae81ff&#34;&gt;20&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;2007&lt;/span&gt; .profile
+-rw-------  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root   &lt;span style=&#34;color:#ae81ff&#34;&gt;41&lt;/span&gt; Mar  &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; 11:39 .python_history
+drwx------  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Mar  &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; 11:20 .ssh
+-rw-------  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;6342&lt;/span&gt; Mar &lt;span style=&#34;color:#ae81ff&#34;&gt;30&lt;/span&gt; 17:30 .viminfo
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;~/.bash_profile&lt;/strong&gt;包含一些用户级的环境变量、启动程序、配置信息等等。你可以在这里自定义路径信息、变量等内容：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# cat ~/.bash_profile&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# .bash_profile&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# Get the aliases and functions&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -f ~/.bashrc &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+        . ~/.bashrc
+&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# User specific environment and startup programs&lt;/span&gt;
+export PATH
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;~/.bashrc&lt;/strong&gt;文件中包含用户自定义别名和函数等。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;pi@raspi:~ $ cat ~/.bashrc
+&lt;span style=&#34;color:#75715e&#34;&gt;# ~/.bashrc: executed by bash(1) for non-login shells.&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# for examples&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# If not running interactively, don&amp;#39;t do anything&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; $- in
+    *i*&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; ;;
+      *&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt;;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;esac&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# don&amp;#39;t put duplicate lines or lines starting with space in the history.&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# See bash(1) for more options&lt;/span&gt;
+HISTCONTROL&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;ignoreboth
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# append to the history file, don&amp;#39;t overwrite it&lt;/span&gt;
+shopt -s histappend
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)&lt;/span&gt;
+HISTSIZE&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1000&lt;/span&gt;
+HISTFILESIZE&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2000&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# check the window size after each command and, if necessary,&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# update the values of LINES and COLUMNS.&lt;/span&gt;
+shopt -s checkwinsize
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# If set, the pattern &amp;#34;**&amp;#34; used in a pathname expansion context will&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# match all files and zero or more directories and subdirectories.&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#shopt -s globstar&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# make less more friendly for non-text input files, see lesspipe(1)&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#[ -x /usr/bin/lesspipe ] &amp;amp;&amp;amp; eval &amp;#34;$(SHELL=/bin/sh lesspipe)&amp;#34;&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# set variable identifying the chroot you work in (used in the prompt below)&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -z &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;debian_chroot&lt;span style=&#34;color:#66d9ef&#34;&gt;:-&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -r /etc/debian_chroot &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+    debian_chroot&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;cat /etc/debian_chroot&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# set a fancy prompt (non-color, unless we know we &amp;#34;want&amp;#34; color)&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$TERM&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; in
+    xterm-color&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; color_prompt&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;yes;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;esac&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# uncomment for a colored prompt, if the terminal has the capability; turned&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# off by default to not distract the user: the focus in a terminal window&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# should be on the output of commands, not on the prompt&lt;/span&gt;
+force_color_prompt&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;yes
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -n &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$force_color_prompt&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -x /usr/bin/tput &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; tput setaf &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; &amp;gt;&amp;amp;/dev/null; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+        &lt;span style=&#34;color:#75715e&#34;&gt;# We have color support; assume it&amp;#39;s compliant with Ecma-48&lt;/span&gt;
+        &lt;span style=&#34;color:#75715e&#34;&gt;# (ISO/IEC-6429). (Lack of such support is extremely rare, and such&lt;/span&gt;
+        &lt;span style=&#34;color:#75715e&#34;&gt;# a case would tend to support setf rather than setaf.)&lt;/span&gt;
+        color_prompt&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;yes
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+        color_prompt&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$color_prompt&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; yes &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+    PS1&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w \$\[\033[00m\] &amp;#39;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;
+    PS1&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;${debian_chroot:+($debian_chroot)}\u@\h:\w\$ &amp;#39;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+unset color_prompt force_color_prompt
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# If this is an xterm set the title to user@host:dir&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;$TERM&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; in
+xterm*|rxvt*&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+    PS1&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;\[\e]0;&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;debian_chroot:+($debian_chroot)&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;\u@\h: \w\a\]&lt;/span&gt;$PS1&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+    ;;
+*&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+    ;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;esac&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# enable color support of ls and also add handy aliases&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -x /usr/bin/dircolors &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+    test -r ~/.dircolors &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; eval &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;dircolors -b ~/.dircolors&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;||&lt;/span&gt; eval &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;dircolors -b&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
+    alias ls&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;ls --color=auto&amp;#39;&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;#alias dir=&amp;#39;dir --color=auto&amp;#39;&lt;/span&gt;
+    &lt;span style=&#34;color:#75715e&#34;&gt;#alias vdir=&amp;#39;vdir --color=auto&amp;#39;&lt;/span&gt;
+
+    alias grep&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;grep --color=auto&amp;#39;&lt;/span&gt;
+    alias fgrep&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;fgrep --color=auto&amp;#39;&lt;/span&gt;
+    alias egrep&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;egrep --color=auto&amp;#39;&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# colored GCC warnings and errors&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#export GCC_COLORS=&amp;#39;error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01&amp;#39;&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# some more ls aliases&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#alias ll=&amp;#39;ls -l&amp;#39;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#alias la=&amp;#39;ls -A&amp;#39;&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#alias l=&amp;#39;ls -CF&amp;#39;&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# Alias definitions.&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# You may want to put all your additions into a separate file like&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# ~/.bash_aliases, instead of adding them here directly.&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# See /usr/share/doc/bash-doc/examples in the bash-doc package.&lt;/span&gt;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -f ~/.bash_aliases &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+    . ~/.bash_aliases
+&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+
+&lt;span style=&#34;color:#75715e&#34;&gt;# enable programmable completion features (you don&amp;#39;t need to enable&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# this, if it&amp;#39;s already enabled in /etc/bash.bashrc and /etc/profile&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;# sources /etc/bash.bashrc).&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; ! shopt -oq posix; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -f /usr/share/bash-completion/bash_completion &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+    . /usr/share/bash-completion/bash_completion
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;elif&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;[&lt;/span&gt; -f /etc/bash_completion &lt;span style=&#34;color:#f92672&#34;&gt;]&lt;/span&gt;; &lt;span style=&#34;color:#66d9ef&#34;&gt;then&lt;/span&gt;
+    . /etc/bash_completion
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;~/.bash_login&lt;/strong&gt; 文件包含一些登陆时运行的配置信息。当&lt;strong&gt;~/.bash_profile&lt;/strong&gt;缺失时，&lt;strong&gt;bash&lt;/strong&gt;将读取&lt;strong&gt;~/.bash_login&lt;/strong&gt; 。&lt;/p&gt;
+&lt;p&gt;当 &lt;strong&gt;~/.bash_profile&lt;/strong&gt; 和 &lt;strong&gt;~/.bash_login&lt;/strong&gt;缺失时，&lt;strong&gt;bash&lt;/strong&gt;将读取 &lt;strong&gt;~/.profile&lt;/strong&gt;文件。它同样包含配置信息、函数、变量、别名的信息。&lt;/p&gt;
+&lt;p&gt;下面，我们再看看两个&lt;strong&gt;bash&lt;/strong&gt;初始化时非必须，但是比较重要的配置文件。&lt;/p&gt;
+&lt;p&gt;Linux系统有的一个&lt;strong&gt;历史命令&lt;/strong&gt;功能，该功能按用户记录运行的所有命令历史，存储在 &lt;strong&gt;~/.bash_history&lt;/strong&gt; 文件中。&lt;/p&gt;
+&lt;p&gt;查看历史命令：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;root@bwgzl:~# history
+    &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;  2017-04-25 11:41:34 root cd sf/
+    &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;  2017-03-31 10:46:17 root ls
+    &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;  2017-03-31 10:46:29 root ./setup-seafile-mysql.sh
+    &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt;  2017-03-31 10:47:47 root mysql -u sf -h localhost -p
+    &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt;  2017-03-31 10:47:57 root reboot
+    &lt;span style=&#34;color:#ae81ff&#34;&gt;6&lt;/span&gt;  2017-03-31 10:48:28 root ls
+    &lt;span style=&#34;color:#ae81ff&#34;&gt;7&lt;/span&gt;  2017-03-31 10:48:33 root ls
+    &lt;span style=&#34;color:#ae81ff&#34;&gt;8&lt;/span&gt;  2017-03-31 10:48:36 root cd sf
+    &lt;span style=&#34;color:#ae81ff&#34;&gt;9&lt;/span&gt;  2017-03-31 10:48:36 root ls
+   &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;  2017-03-31 10:48:42 root ./setup-seafile-mysql.sh
+   &lt;span style=&#34;color:#ae81ff&#34;&gt;11&lt;/span&gt;  2017-03-31 10:48:48 root exit
+   &lt;span style=&#34;color:#ae81ff&#34;&gt;12&lt;/span&gt;  2017-03-31 11:16:54 root cd /data/wwwroot/unixetc.com/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;最后一个是 &lt;strong&gt;~/.bash_logout&lt;/strong&gt; 文件，它不用于&lt;strong&gt;shell&lt;/strong&gt;启动，但存储一些特殊的指令当用户注销时执行。&lt;/p&gt;
+&lt;p&gt;一个很有用的例子就是当用户注销后，清空所有屏幕内容。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;root@bwgzl:~# cat bash_logout 
+&lt;span style=&#34;color:#75715e&#34;&gt;# ~/.bash_logout&lt;/span&gt;
+
+clear
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>修复树莓派PATH变量</title>
+      <link>https://unixetc.com/post/fix-raspberry-path-variable/</link>
+      <pubDate>Fri, 03 Mar 2017 13:13:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/fix-raspberry-path-variable/</guid>
+      <description>&lt;p&gt;使用lnmp一键工具安装完nmp后，重启进入系统就提示&lt;code&gt;bash command not found&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;然后试了试&lt;code&gt;service&lt;/code&gt;,&lt;code&gt;who&lt;/code&gt;等命令也无法使用&lt;/p&gt;
+&lt;p&gt;只有最基本的系统命令&lt;code&gt;ls&lt;/code&gt;,&lt;code&gt;cat&lt;/code&gt;等可以用&lt;/p&gt;
+&lt;p&gt;看来安装lnmp后，我的PATH变量被动了&lt;/p&gt;
+&lt;p&gt;先临时修改下PATH，便于后面操作&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:$PATH
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后检查&lt;code&gt;~/.profile&lt;/code&gt;,&lt;code&gt;/etc/profile&lt;/code&gt;是否存在，存在&lt;/p&gt;
+&lt;p&gt;检查其中的PATH赋值是否异常&lt;/p&gt;
+&lt;p&gt;经过排查，发现&lt;code&gt;/etc/profile&lt;/code&gt;中的PATH赋值异常，修改之重启OK！&lt;/p&gt;
+&lt;p&gt;在此分享正确的原始&lt;code&gt;~/.profile&lt;/code&gt;和&lt;code&gt;/etc/profile&lt;/code&gt;文件&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;~/.profile 内容&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# ~/.profile: executed by the command interpreter for login shells.
+# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
+# exists.
+# see /usr/share/doc/bash/examples/startup-files for examples.
+# the files are located in the bash-doc package.
+
+# the default umask is set in /etc/profile; for setting the umask
+# for ssh logins, install and configure the libpam-umask package.
+#umask 022
+
+# if running bash
+if [ -n &amp;quot;$BASH_VERSION&amp;quot; ]; then
+    # include .bashrc if it exists
+    if [ -f &amp;quot;$HOME/.bashrc&amp;quot; ]; then
+        . &amp;quot;$HOME/.bashrc&amp;quot;
+    fi
+fi
+
+# set PATH so it includes user&#39;s private bin if it exists
+if [ -d &amp;quot;$HOME/bin&amp;quot; ] ; then
+    PATH=&amp;quot;$HOME/bin:$PATH&amp;quot;
+fi
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;**/etc/profile内容 **&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# /etc/profile: system-wide .profile file for the Bourne shell (sh(1))
+# and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).
+
+if [ &amp;quot;`id -u`&amp;quot; -eq 0 ]; then
+PATH=&amp;quot;/usr/local/sbin:/usr/local/usr/sbin:/usr/sbin:/bin&amp;quot;
+else
+#old bak  PATH=&amp;quot;/usr/local/sbin:/usr/local/usr/sbin:/usr/sbin:/bin:/usr/local/games:/usr/games&amp;quot;
+PATH=&amp;quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/bin:/sbin:/usr/local/games:/usr/games&amp;quot;
+fi
+export PATH
+
+if [ &amp;quot;$PS1&amp;quot; ]; then
+if [ &amp;quot;$BASH&amp;quot; ] &amp;amp;&amp;amp; [ &amp;quot;$BASH&amp;quot; != &amp;quot;/bin/sh&amp;quot; ]; then
+    # The file bash.bashrc already sets the default PS1.
+    # PS1=&#39;\h:\w\$ &#39;
+    if [ -f /etc/bash.bashrc ]; then
+    . /etc/bash.bashrc
+    fi
+else
+    if [ &amp;quot;`id -u`&amp;quot; -eq 0 ]; then
+    PS1=&#39;# &#39;
+    else
+    PS1=&#39;$ &#39;
+    fi
+fi
+fi
+
+if [ -d /etc/profile.d ]; then
+for i in /etc/profile.d/*.sh; do
+    if [ -r $i ]; then
+    . $i
+    fi
+done
+unset i
+fi
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Over!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Linux下查看修改PATH</title>
+      <link>https://unixetc.com/post/linux-check-and-set-the-path/</link>
+      <pubDate>Tue, 29 Mar 2016 13:29:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/linux-check-and-set-the-path/</guid>
+      <description>&lt;h3 id=&#34;什么是path&#34;&gt;什么是PATH?&lt;/h3&gt;
+&lt;p&gt;要搞清什么是&lt;strong&gt;PATH&lt;/strong&gt;，应该先搞清什么是环境变量？&lt;/p&gt;
+&lt;p&gt;在计算机中，如果需要运行一个软件，那么我们就要找到它所在的位置，但是每次运行程序时如果都要进入到相应目录，那么显然是很繁琐的。于是就有了环境变量，环境变量就是一个系统参数，里面记录了一些目录，运行软件的时候，相关的程序将会按照该目录寻找相关文件。&lt;/p&gt;
+&lt;p&gt;而在Linux中，系统会有一个默认的&lt;strong&gt;PATH&lt;/strong&gt;环境变量，里面记录了系统级的相关命令目录，比如当我们输入&lt;code&gt;ls&lt;/code&gt;、&lt;code&gt;cd&lt;/code&gt;、&lt;code&gt;pwd&lt;/code&gt;等命令时，我们不需要指定它们所在的目录，因为包含这些命令的系统目录已经写入&lt;strong&gt;PATH&lt;/strong&gt;参数，因而方便我们调用。&lt;/p&gt;
+&lt;h3 id=&#34;查看path&#34;&gt;查看PATH&lt;/h3&gt;
+&lt;p&gt;在linux中，可以使用&lt;code&gt;export&lt;/code&gt;命令来查看所有环境变量，如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pi@raspi:~$ export
+declare -x HOME=&amp;quot;/home/pi&amp;quot;
+declare -x LANG=&amp;quot;en_GB.UTF-8&amp;quot;
+declare -x LOGNAME=&amp;quot;pi&amp;quot;
+declare -x MAIL=&amp;quot;/var/mail/pi&amp;quot;
+declare -x OLDPWD
+declare -x PATH=&amp;quot;/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/home/pi/bin&amp;quot;
+declare -x PWD=&amp;quot;/home/pi&amp;quot;
+declare -x SHELL=&amp;quot;/bin/bash&amp;quot;
+declare -x SHLVL=&amp;quot;1&amp;quot;
+declare -x SSH_CLIENT=&amp;quot;101.135.216.146 28249 22&amp;quot;
+declare -x SSH_CONNECTION=&amp;quot;101.135.216.146 28249 192.168.1.111 22&amp;quot;
+declare -x SSH_TTY=&amp;quot;/dev/pts/1&amp;quot;
+declare -x TERM=&amp;quot;xterm&amp;quot;
+declare -x USER=&amp;quot;pi&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;使用&lt;code&gt;echo&lt;/code&gt;来查看单独的环境变量&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pi@raspi:~$ echo $PATH
+/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/home/pi/bin
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;我们可以看到，以上&lt;strong&gt;PATH&lt;/strong&gt;值包含了一些系统命令的目录，而这些目录都用&lt;code&gt;:&lt;/code&gt;隔开。&lt;/p&gt;
+&lt;h3 id=&#34;修改path&#34;&gt;修改PATH&lt;/h3&gt;
+&lt;p&gt;我们可以使用&lt;code&gt;export&lt;/code&gt;命令来添加目录，如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;export PATH=/mydoc:$PATH
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以上命令在原有的&lt;strong&gt;PATH&lt;/strong&gt;前添加了&lt;code&gt;/mydoc&lt;/code&gt;这个目录，设置完成后的&lt;strong&gt;PATH&lt;/strong&gt;值如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pi@raspi:~$ echo $PATH
+/mydoc:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/home/pi/bin
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以上方法修改&lt;strong&gt;PATH&lt;/strong&gt;值，在终端退出后就会失效，因此建议通过修改&lt;code&gt;/etc/profile&lt;/code&gt;来设定&lt;strong&gt;PATH&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;看一下&lt;code&gt;/etc/profile&lt;/code&gt;中到底有什么东西&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pi@raspi:~$ cat /etc/profile
+# /etc/profile: system-wide .profile file for the Bourne shell (sh(1))
+# and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).
+
+if [ &amp;quot;`id -u`&amp;quot; -eq 0 ]; then
+PATH=&amp;quot;/usr/local/sbin:/usr/local/usr/sbin:/usr/sbin:/bin&amp;quot;
+else
+PATH=&amp;quot;/usr/local/sbin:/usr/local/usr/sbin:/usr/sbin:/bin:/usr/local/games:/usr/games&amp;quot;
+fi
+export PATH
+
+if [ &amp;quot;$PS1&amp;quot; ]; then
+if [ &amp;quot;$BASH&amp;quot; ] &amp;amp;&amp;amp; [ &amp;quot;$BASH&amp;quot; != &amp;quot;/bin/sh&amp;quot; ]; then
+    # The file bash.bashrc already sets the default PS1.
+    # PS1=&#39;\h:\w\$ &#39;
+    if [ -f /etc/bash.bashrc ]; then
+    . /etc/bash.bashrc
+    fi
+else
+    if [ &amp;quot;`id -u`&amp;quot; -eq 0 ]; then
+    PS1=&#39;# &#39;
+    else
+    PS1=&#39;$ &#39;
+    fi
+fi
+fi
+
+if [ -d /etc/profile.d ]; then
+for i in /etc/profile.d/*.sh; do
+    if [ -r $i ]; then
+    . $i
+    fi
+done
+unset i
+fi
+export PATH=/usr/local/nginx/sbin:/usr/local/php:$PATH
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;看来&lt;code&gt;/etc/profile&lt;/code&gt;中默认将一部分系统目录都添加到了&lt;strong&gt;PATH&lt;/strong&gt;中，而我们只需要更改最后一行，将一些自定义的目录添加到&lt;strong&gt;PATH&lt;/strong&gt;即可。&lt;/p&gt;
+&lt;p&gt;通过编辑&lt;code&gt;/etc/profile&lt;/code&gt;来设定的&lt;strong&gt;PATH&lt;/strong&gt;值会在下次进入系统时生效，如果需要当即生效，只需要执行以下命令即可：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;source /etc/profile&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

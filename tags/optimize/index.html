@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>optimize - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/tags/optimize/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+
+
+
+<meta property="og:title" content="optimize" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/tags/optimize/" />
+<meta property="og:updated_time" content="2016-04-03T12:34:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="optimize"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <h1>Tag: optimize</h1>
+    <div class="post-info">
+        <a href="https://unixetc.com/tags">To all tags</a>
+    </div>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/optimize-and-compress-image-by-optipng/">使用OptiPNG优化压缩图片</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        因工作需要，得处理一张7872x5904体积为178MB的图片，格式为TIFF。
+网上搜了半天，找到一个名为OptiPNG的软件，主要为PNG优化，但也支持TIFF格式。
+下面是OptiPNG的官方介绍
+ OptiPNG is a PNG optimizer that recompresses image files to a smaller size, without losing any information. This program also converts external formats (BMP, GIF, PNM and TIFF) to optimized PNG, and performs PNG integrity checks and corrections.
+ OptiPNG可以将PNG文件重新压缩，压缩后体积变得更小，并且不会丢失任何信息。同时optipng还支持其他格式的图片，如BMP、GIF、PNM和TIFF。
+至于OptiPNG的威力如何，请看本次实例
+root@raspi:~# ls -lh huxian.tif -rw-r--r-- 1 root root 178M Apr 4 16:54 huxian.tif //原始文件178MBroot@raspi:~# optipng huxian.tif** Processing: huxian.tifImporting TIFF7872x5904 pixels, 4x8 bits/pixel, RGB+alpha //分辨率7872x5904Reducing image to 3x8 bits/pixel, RGBInput file size = 186000368 bytesTrying:zc = 9 zm = 8 zs = 0 f = 0 IDAT size = 4273133Selecting parameters:zc = 9 zm = 8 zs = 0 f = 0 IDAT size = 4273133Output file: huxian.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-04-03</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/png">#png</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/optipng">#optipng</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/bmp">#bmp</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gif">#gif</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/pnm">#pnm</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/tiff">#tiff</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/optimize">#optimize</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/compress">#compress</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

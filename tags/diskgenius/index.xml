@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DiskGenius on UNIXETC</title>
+    <link>https://unixetc.com/tags/diskgenius/</link>
+    <description>UNIXETC (DiskGenius)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sat, 10 Jun 2017 16:10:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/diskgenius/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>修复东芝U盘写保护</title>
+      <link>https://unixetc.com/post/fix-toshiba-u-disk-write-protection/</link>
+      <pubDate>Sat, 10 Jun 2017 16:10:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/fix-toshiba-u-disk-write-protection/</guid>
+      <description>&lt;p&gt;一直以来都是使用U盘安装Linux，光盘镜像通过&lt;code&gt;dd&lt;/code&gt;写入U盘。最近需要安装&lt;strong&gt;elementary&lt;/strong&gt;，下载镜像后发现系统推荐使用&lt;strong&gt;Rufus&lt;/strong&gt;来写入U盘，这个工具以前没试过所以试了下，确实挺快的。&lt;/p&gt;
+&lt;p&gt;不过在安装完&lt;strong&gt;elementary&lt;/strong&gt;后，想将U盘重新恢复格式化出问题了，使用&lt;strong&gt;DiskGenius&lt;/strong&gt;无法进行操作，使用系统自带的磁盘管理也没法操作，包括&lt;strong&gt;Linux&lt;/strong&gt;下的&lt;strong&gt;GParted&lt;/strong&gt;也不行，都提示U盘被写保护了，-__-!&lt;/p&gt;
+&lt;p&gt;万般无奈只能想到量产工具，下面分享使用到的两款软件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ChipGenius&lt;/li&gt;
+&lt;li&gt;Restore&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;ChipGenius&lt;/strong&gt;是一款U盘信息检测软件，通过它可以来查看U盘主控信息，我的这款U盘芯片信息如下：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-reStructuredText&#34; data-lang=&#34;reStructuredText&#34;&gt;设备描述: [G:]USB 大容量存储设备(TOSHIBA TransMemory-Mx)&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;设备类型: 大容量存储设备&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;协议版本: USB 3.00&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;当前速度: 极速(SuperSpeed)&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;电力消耗: 504mA&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;USB设备ID: VID = 0930 PID = 6545&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;设备序列号: FFFFFFFFFFFFEE20F000BC99&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;设备供应商: TOSHIBA&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;　设备名称: TransMemory-Mx&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;设备修订版: 0110&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;产品制造商: TOSHIBA&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;　产品型号: TransMemory-Mx&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;产品修订版: PMAP&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;　主控厂商: Phison(群联)&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;　主控型号: PS2251-03(PS2303) - F/W 02.08.53 [2014-01-02]&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&lt;/span&gt;闪存识别码: 983AA892 - Toshiba(东芝) TC58NVG7T2JTA00 [TLC-8K]&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Restore&lt;/strong&gt;是群联官方提供的一款恢复工具，可以进行低级格式化和修复。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>phicomm on UNIXETC</title>
+    <link>https://unixetc.com/tags/phicomm/</link>
+    <description>UNIXETC (phicomm)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 05 Nov 2019 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/phicomm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Armbian更改软件源</title>
+      <link>https://unixetc.com/post/armbian-change-software-source/</link>
+      <pubDate>Tue, 05 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/armbian-change-software-source/</guid>
+      <description>&lt;p&gt;上一篇文章介绍了&lt;a href=&#34;https://unixetc.com/post/phicomm-n1-install-armbian/&#34;&gt;如何在斐迅N1上安装Armbian&lt;/a&gt;，现在介绍如何更改软件源为国内镜像。&lt;/p&gt;
+&lt;p&gt;编辑&lt;code&gt;/etc/apt/sources.list&lt;/code&gt;替换为以下内容：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free
+deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free
+deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free
+deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free
+deb http://ftp.debian.org/debian jessie-backports main
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;接着编辑&lt;code&gt;/etc/apt/sources.list.d/armbian.list &lt;/code&gt;，替换为以下内容：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;deb http://mirrors.tuna.tsinghua.edu.cn/armbian/ buster main buster-utils buster-desktop
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;保存后，刷新缓存更新系统：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt update
+sudo apt upgrade -y
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>斐讯N1安装Armbian</title>
+      <link>https://unixetc.com/post/phicomm-n1-install-armbian/</link>
+      <pubDate>Sun, 03 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/phicomm-n1-install-armbian/</guid>
+      <description>&lt;p&gt;最近入手斐讯N1一枚，买的是白色未拆封，到手版本为&lt;strong&gt;V2.19_0307_NS&lt;/strong&gt;，刚好省了降级的麻烦，以下为斐讯N1安装armbian操作过程。&lt;/p&gt;
+&lt;h3 id=&#34;开启adb调试模式&#34;&gt;开启adb调试模式&lt;/h3&gt;
+&lt;p&gt;将N1通过HDMI连接显示器，将鼠标插到N1的USB口上，开机后用鼠标点击&lt;strong&gt;系统版本:V2.19_0307_NS&lt;/strong&gt;区域，多次点击后会出现提示&amp;quot;开启adb调试模式&amp;rdquo;，即可。&lt;/p&gt;
+&lt;p&gt;从此下载&lt;a href=&#34;https://tc5.us/file/18418398-405909486&#34;&gt;minimal_adb_fastboot&lt;/a&gt;，下载后安装。&lt;/p&gt;
+&lt;h3 id=&#34;准备刷机u盘&#34;&gt;准备刷机U盘&lt;/h3&gt;
+&lt;p&gt;准备一个不小区8G的U盘，下载镜像写入工具&lt;a href=&#34;https://tc5.us/file/18418398-404861253&#34;&gt;balenaEtcher&lt;/a&gt;，下载后安装。&lt;/p&gt;
+&lt;p&gt;下载&lt;strong&gt;Armbian&lt;/strong&gt;镜像，在此以&lt;strong&gt;Armbian_5.98_Aml-g12_Debian_buster_dev_5.4.0-rc4_20191025.img.xz&lt;/strong&gt;为例，镜像为debian最新版，不带桌面系统。如果需要其他的可以从&lt;a href=&#34;https://yadi.sk/d/pHxaRAs-tZiei&#34;&gt;此处&lt;/a&gt;自行下载。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://tc5.us/file/18418398-404861253&#34;&gt;Armbian_5.98_Aml-g12_Debian_buster_dev_5.4.0-rc4_20191025.img.xz&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;将下载后的镜像文件用&lt;strong&gt;balenaEtcher&lt;/strong&gt;写入U盘，写入完成后先别拔掉U盘，进入到&lt;strong&gt;BOOT&lt;/strong&gt;分区，找到&lt;strong&gt;uEnv.ini&lt;/strong&gt;文件，将&lt;strong&gt;dtb_name&lt;/strong&gt;行改为如下内容：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;dtb_name=/dtb/amlogic/meson-gxl-s905d-phicomm-n1.dtb&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;然后退出U盘备用。&lt;/p&gt;
+&lt;p&gt;如果你的&lt;strong&gt;BOOT&lt;/strong&gt;分区下&lt;code&gt;/dtd/amlogic/&lt;/code&gt;目录中没有&lt;code&gt;meson-gxl-s905d-phicomm-n1.dtb&lt;/code&gt;文件，那么可以点击&lt;a href=&#34;https://tc5.us/file/18418398-405918006&#34;&gt;meson-gxl-s905d-phicomm-n1.dtb&lt;/a&gt;下载放入相应目录即可。&lt;/p&gt;
+&lt;h3 id=&#34;从u盘引导armbian&#34;&gt;从U盘引导Armbian&lt;/h3&gt;
+&lt;p&gt;将制作好的系统U盘插到靠近HDMI一侧的U口，另外一个U口插入双公头的刷机线连接电脑，将N1通过HDMI连接显示器，并且插好网线然后开机。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/n1lianxian.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;开机后可以从显示器上看到盒子的IP地址，电脑上运行&lt;strong&gt;Minimal ADB and Fastboot&lt;/strong&gt;，然后输入&lt;code&gt;adb connect 192.168.1.54&lt;/code&gt;命令连接盒子，连接成功后会有如下提示：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;connected to 192.168.1.54:5555&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;然后输入&lt;code&gt;adb shell reboot update&lt;/code&gt;开始从U盘引导Armbian系统，盒子重启后成功引导armbian，此时可以将&lt;strong&gt;usb刷机线&lt;/strong&gt;拔掉，插入一个外接键盘，开始后面操作。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Armbian&lt;/strong&gt;系统默认账号为&lt;strong&gt;root&lt;/strong&gt;，密码为&lt;strong&gt;1234&lt;/strong&gt;，按照提示输入账号信息进行登录，登录后会有更改默认密码提示，按照提示更改默认密码。&lt;/p&gt;
+&lt;p&gt;接下来会有新建账号提示:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Creating a new user account. Press &amp;lt;Ctrl-C&amp;gt; to abort
+
+Please provide a username (eg. your forename):
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;可以按照该提示新建账号，或者按&lt;!-- raw HTML omitted --&gt;Ctrl+c&lt;!-- raw HTML omitted --&gt;终止，继续用&lt;strong&gt;root&lt;/strong&gt;账号登录。&lt;/p&gt;
+&lt;h3 id=&#34;将armbian安装到n1中&#34;&gt;将Armbian安装到N1中&lt;/h3&gt;
+&lt;p&gt;以上只是从U盘成功引导登录Armbian，接下来我们将Armbian安装到N1内置存储(eMMC)，即可拔掉U盘了。&lt;/p&gt;
+&lt;p&gt;如果是通过&lt;strong&gt;root&lt;/strong&gt;登录的话，那么直接运行root目录下&lt;code&gt;install.sh&lt;/code&gt;即可安装，如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; root@aml:~# ./install. sh
+ Start script create MBR and filesystem
+ /dev/mmcblk1
+ Start backup u-boot default
+ 4＋0 records in
+ 4＋0 records out
+4194304 bytes（4.2mb，4.omib） copied，o.793832s，52.8mb/s Start create MBR and partittion
+ start restore u-boot
+ 442＋0 records in
+ 442＋0 records out
+ 442 bytes copied， 0.0123705 s， 35.7 KB/
+ 8191＋0 records in
+ 8191＋0 records out
+ 4193792 bytes （4.2 MB， 4.0 MiB） copied， 0.414592， 10.1 MB/s Done
+ Start copy system for eMMC.
+ Formatting BOOT partition... mkfs. fat 4.1 （2017-01-24）
+ done.
+ Cppying BOOT... done.
+ Edit init config... done.
+ Formatt ing ROOT partition...
+ e2fsck1.44.5（15-dec-2018）
+ ROOT EMMC: clean， 11/427392 files， 50723/1706240 blocks
+ done.
+ Copying ROOTFS.
+ Copy BIN
+ Create DEV
+ Copy ETC
+ Copy HOME
+ Copy LIB
+ Create MEDIA
+ Create MNT
+ Copy OPT
+ Create PROC
+ Copy ROOT
+ Create RUN
+ Copy SBIN
+ Copy SEL INUX
+ Copy SRV
+ Create SYS
+ Create TMP
+ Copy USR
+ Copy VAR
+ Copy fstab
+*****************************
+ Complete copy os to eMMC
+*****************************
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;提示&lt;strong&gt;Complete copy OS to eMMC&lt;/strong&gt;就表示安装完成，然后输入&lt;code&gt;halt&lt;/code&gt;关机，拔掉U盘后重新加电启动盒子即可。&lt;/p&gt;
+&lt;p&gt;如果不是通过root用户登录的话，那么按照如下操作进行安装。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$su
+#cd /root/
+#./install.sh
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>斐讯K1刷华硕固件</title>
+      <link>https://unixetc.com/post/phicomm-k1-psg-1208-brush-asus-firmware/</link>
+      <pubDate>Sat, 20 Feb 2016 12:32:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/phicomm-k1-psg-1208-brush-asus-firmware/</guid>
+      <description>&lt;p&gt;在福利吧(fuliba.net)看到斐讯K1路由器免费获得的活动，于是在天猫买了一台，赠送的139铃铛卡也正常激活使用，一个月到期后共140元也正常提了出来。总的来说，没被坑！！！&lt;/p&gt;
+&lt;p&gt;但是斐讯K1默认的固件确实不敢恭维，于是在网上搜了一通，先刷入Breed，然后通过Breed刷入华硕固件，特整理步骤。&lt;/p&gt;
+&lt;h3 id=&#34;什么是breed&#34;&gt;什么是Breed?&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这是楼主从去年年中自行设计开发的一个全新的 Bootloader，并用于取代 U-Boot。&lt;/p&gt;
+&lt;p&gt;此 Bootloader 暂取名为 Breed，不是 U-Boot，也不是 U-Boot 的改进版，是全新、独立的、跟 U-Boot 平级的 Bootloader。&lt;/p&gt;
+&lt;p&gt;科普一下：&lt;/p&gt;
+&lt;p&gt;Bootloader 意思为引导加载器，即为用于加载操作系统的程序。它是一大类此类功能程序的统称。现在的 BIOS、UEFI、GRUB、RedBoot、U-Boot、CFE、Breed 等都是 Bootloader。&lt;/p&gt;
+&lt;p&gt;因此，还是上面那句话，Breed 不是由什么东西改名出来的，这就是一个新的东西。看着有些人的话我真的觉得很搞笑。&lt;/p&gt;
+&lt;p&gt;此外，由上面两句话，如果想从 Breed 刷到其他任何 Bootloader，例如 U-Boot，请在 Breed 固件更新页面选择更新 Bootloader。。。。。。。。。。。。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;摘自&lt;strong&gt;恩山无线论坛&lt;/strong&gt;Breed作者&lt;strong&gt;hackpascal&lt;/strong&gt;原帖&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;刷入breed&#34;&gt;刷入Breed&lt;/h3&gt;
+&lt;p&gt;适合斐讯K1的Breed下载地址为 &lt;a href=&#34;http://breed.hackpascal.net/breed-mt7620-reset1.bin&#34;&gt;http://breed.hackpascal.net/breed-mt7620-reset1.bin&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;首先进入到斐讯K1的管理后台,192.168.2.1，确保路由器正常使用并且已经配置好联网。&lt;/p&gt;
+&lt;p&gt;接着，在浏览器地址栏输入&lt;strong&gt;http://192.168.2.1/goform/Diagnosis?pingAddr=192.168.2.100|echo&amp;quot;&amp;ldquo;|telnetd&lt;/strong&gt;回车&lt;/p&gt;
+&lt;p&gt;浏览器会跳转到网络测试页面，这个不用理会。&lt;/p&gt;
+&lt;p&gt;打开&lt;strong&gt;CMD&lt;/strong&gt; (WIN+R)，telnet连接路由器&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;telnet 192.168.2.1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;使用路由器管理员帐号登录，默认为admin/admin&lt;/p&gt;
+&lt;p&gt;下载Breed到路由器&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd /tmp
+wget http://breed.hackpascal.net/breed-mt7620-reset1.bin
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;刷入Breed&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mtd_write write breed-mt7620-reset1.bin Bootloader
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;重启路由器&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;reboot
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;相关截图：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/breed-to-k1.png&#34; alt=&#34;斐讯K1刷入Breed过程&#34; title=&#34;斐讯K1刷入Breed过程&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;刷华硕固件&#34;&gt;刷华硕固件&lt;/h3&gt;
+&lt;p&gt;路由器断电，插电时按住Reset键5秒。&lt;/p&gt;
+&lt;p&gt;网线连接电脑，浏览192.168.1.1进入Breed Web恢复控制台。&lt;/p&gt;
+&lt;p&gt;左侧菜单点击固件更新，在右侧选择固件文件，开始上传更新。&lt;/p&gt;
+&lt;p&gt;完成后可能不会自动重启，需要手动断电重启。&lt;/p&gt;
+&lt;p&gt;注意：有时Reset后，电脑可能无法连接192.168.1.1，可以手动设置网卡参数192.168.1.11/255.255.255.0/192.168.1.1&lt;/p&gt;
+&lt;p&gt;至此斐讯K1刷华硕固件整个过程完成，至于华硕固件使用方法，请自行搜索。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

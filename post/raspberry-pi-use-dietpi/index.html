@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>树莓派使用DietPi - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+
+
+
+<meta property="og:title" content="树莓派使用DietPi" />
+<meta property="og:description" content="下载安装DietPi DietPi项目主页 http://dietpi.com/
+DietPi下载地址 http://fuzon.co.uk/downloads/DietPi.7z
+这个压缩包91MB，解压后的img文件522MB,比官方的小多了。
+然后将镜像写入到SD卡中，linux下使用dd
+dd if=DietPi_v74.img of=/dev/sdc bs=2M Windows下使用Win32 Disk Imager，戳这里
+写入完成后将SD卡插入树莓派，加电启动。
+预设置Wifi链接 首次使用时，可以通过编辑dietpi.txt来进行wifi预设置。
+将TF卡插入电脑读卡器，打开对应的磁盘，找到dietpi.txt文件，打开。
+找到Wifi_Enabled=0，将其设置为1
+然后找到Wifi_SSID和Wifi_KEY分别设置wifi节点名和密码，保存即可。
+配置DietPi DietPi默认用户名密码为root dietpi，第一次启动DietPi提示检测升级，按提示操作。
+不过由于天朝网路问题，可能升级比较缓慢，建议Ctrl&#43;c终止升级，修改sources.list为朝内镜像。
+DietPi默认没有vi,使用nano进行编辑，添加Aliyun源。
+deb http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contribdeb-src http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib 更新软件
+apt-get update&amp;&amp;apt-get upgrade -y 然后运行dietpi-config进行配置。
+DietPi - Config
+ ┌────┤ ---------- DietPi-Config ---------- ├─────┐│ Hardware : Raspberry Pi 1 (512MB) ││ ││ 1 Display Options ││ 2 Audio Options ││ 3 Performance Options ││ 4 Advanced Options ││ 5 Language/Regional Options ││ 6 Security Options ││ 7 Networking Options ││ 8 AutoBoot Options ││ 9 Tools ││ ││ ││ &lt;Ok&gt; &lt;Exit&gt; ││ │└────────────────────────────────────────────────┘ 推荐配置：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unixetc.com/post/raspberry-pi-use-dietpi/" />
+<meta property="article:published_time" content="2015-08-04T18:23:00+00:00" />
+<meta property="article:modified_time" content="2015-08-04T18:23:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="树莓派使用DietPi"/>
+<meta name="twitter:description" content="下载安装DietPi DietPi项目主页 http://dietpi.com/
+DietPi下载地址 http://fuzon.co.uk/downloads/DietPi.7z
+这个压缩包91MB，解压后的img文件522MB,比官方的小多了。
+然后将镜像写入到SD卡中，linux下使用dd
+dd if=DietPi_v74.img of=/dev/sdc bs=2M Windows下使用Win32 Disk Imager，戳这里
+写入完成后将SD卡插入树莓派，加电启动。
+预设置Wifi链接 首次使用时，可以通过编辑dietpi.txt来进行wifi预设置。
+将TF卡插入电脑读卡器，打开对应的磁盘，找到dietpi.txt文件，打开。
+找到Wifi_Enabled=0，将其设置为1
+然后找到Wifi_SSID和Wifi_KEY分别设置wifi节点名和密码，保存即可。
+配置DietPi DietPi默认用户名密码为root dietpi，第一次启动DietPi提示检测升级，按提示操作。
+不过由于天朝网路问题，可能升级比较缓慢，建议Ctrl&#43;c终止升级，修改sources.list为朝内镜像。
+DietPi默认没有vi,使用nano进行编辑，添加Aliyun源。
+deb http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contribdeb-src http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib 更新软件
+apt-get update&amp;&amp;apt-get upgrade -y 然后运行dietpi-config进行配置。
+DietPi - Config
+ ┌────┤ ---------- DietPi-Config ---------- ├─────┐│ Hardware : Raspberry Pi 1 (512MB) ││ ││ 1 Display Options ││ 2 Audio Options ││ 3 Performance Options ││ 4 Advanced Options ││ 5 Language/Regional Options ││ 6 Security Options ││ 7 Networking Options ││ 8 AutoBoot Options ││ 9 Tools ││ ││ ││ &lt;Ok&gt; &lt;Exit&gt; ││ │└────────────────────────────────────────────────┘ 推荐配置："/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">树莓派使用DietPi</h1>
+        </header>
+        <div class="content">
+            <h3 id="下载安装dietpi">下载安装DietPi</h3>
+<p>DietPi项目主页 <a href="http://dietpi.com/">http://dietpi.com/</a></p>
+<p>DietPi下载地址 <a href="http://fuzon.co.uk/downloads/DietPi.7z">http://fuzon.co.uk/downloads/DietPi.7z</a></p>
+<p>这个压缩包91MB，解压后的img文件522MB,比官方的小多了。</p>
+<p>然后将镜像写入到SD卡中，linux下使用<code>dd</code></p>
+<pre><code>dd if=DietPi_v74.img of=/dev/sdc bs=2M
+</code></pre>
+<p>Windows下使用<strong>Win32 Disk Imager</strong>，<a href="http://sourceforge.net/projects/win32diskimager/">戳这里</a></p>
+<p>写入完成后将SD卡插入树莓派，加电启动。</p>
+<h3 id="预设置wifi链接">预设置Wifi链接</h3>
+<p>首次使用时，可以通过编辑<strong>dietpi.txt</strong>来进行wifi预设置。</p>
+<p>将TF卡插入电脑读卡器，打开对应的磁盘，找到<strong>dietpi.txt</strong>文件，打开。</p>
+<p>找到<code>Wifi_Enabled=0</code>，将其设置为<strong>1</strong></p>
+<p>然后找到<code>Wifi_SSID</code>和<code>Wifi_KEY</code>分别设置wifi节点名和密码，保存即可。</p>
+<h3 id="配置dietpi">配置DietPi</h3>
+<p>DietPi默认用户名密码为<code>root dietpi</code>，第一次启动DietPi提示检测升级，按提示操作。</p>
+<p>不过由于天朝网路问题，可能升级比较缓慢，建议<strong>Ctrl+c</strong>终止升级，修改<code>sources.list</code>为朝内镜像。</p>
+<p>DietPi默认没有<code>vi</code>,使用<code>nano</code>进行编辑，添加Aliyun源。</p>
+<pre><code>deb http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib
+deb-src http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib
+</code></pre>
+<p>更新软件</p>
+<pre><code>apt-get update&amp;&amp;apt-get upgrade -y
+</code></pre>
+<p>然后运行<code>dietpi-config</code>进行配置。</p>
+<p>DietPi - Config</p>
+<pre><code>           ┌────┤ ---------- DietPi-Config ---------- ├─────┐
+           │  Hardware : Raspberry Pi 1 (512MB)             │
+           │                                                │
+           │           1 Display Options                    │
+           │           2 Audio Options                      │
+           │           3 Performance Options                │
+           │           4 Advanced Options                   │
+           │           5 Language/Regional Options          │
+           │           6 Security Options                   │
+           │           7 Networking Options                 │
+           │           8 AutoBoot Options                   │
+           │           9 Tools                              │
+           │                                                │
+           │                                                │
+           │           &lt;Ok&gt;               &lt;Exit&gt;            │
+           │                                                │
+           └────────────────────────────────────────────────┘
+</code></pre>
+<p>推荐配置：</p>
+<p>Display Options -&gt; GPU/RAM Memory Split ，不适用桌面系统的话，建议选择<code>Server</code></p>
+<p>Performance Options -&gt; Change Overclocking Profile ，设置超频选项</p>
+<p>Language/Regional Options-&gt;  Locale/Timezone ，设置语言与时区，建议将<strong>zh_CN</strong>的四个语言全部勾选。时区选择Asia/Chongqing。</p>
+<p>Security Options -&gt; Change Root Password/Change Hostname ，修改密码和主机名</p>
+<p>Networking Options中干货比较多，大家自行设置</p>
+<pre><code>┌──────────────────┤ --- DietPi - Network Options --- ├───────────────────┐
+│                                                                         │
+│  Ethernet     : Not Found | Enabled | Disconnected                      │
+│  Wifi         : Not Found | Disabled | Disconnected                     │
+│  Internet     : Please run Internet Test                                │
+│  Samba client : Not Installed                                           │
+│  FTP client   : Not Installed                                           │
+│  NoIp status  : Not Installed                                           │
+│                                                                         │
+│        Ethernet     Change Wired Network Settings                       │
+│        Wifi         Change Wireless Network Settings                    │
+│        Test         Run the Internet Connection Test                    │
+│        Samba Client Install now to access Windows shares                │
+│        Ftp Client   Install now to access FTP as filesystem mount       │
+│        NoIp         Install No-Ip now                                   │
+│                                                                         │
+│                                                                         │
+│                   &lt;Ok&gt;                       &lt;Back&gt;                     │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+</code></pre>
+<p>设置完成后重启系统。</p>
+<h3 id="dietpi软件快捷安装工具">DietPi软件快捷安装工具</h3>
+<p>DietPi自带一个便捷的软件安装工具<code>dietpi-software</code>，可以通过这个工具快速安装一些常用软件</p>
+<pre><code>Setup USB Dedicated Drive?
+    ┌───────────────────┤ Setup USB Dedicated Drive? ├───────────────────┐
+    │                                                                    │
+    │ Will you be using a dedicated USB hard drive with this DietPi      │
+    │ installation?                                                      │
+    │                                                                    │
+    │ (NOTICE) Your decision now is final and cannot be changed at a     │
+    │ later date. DietPi will automatically setup your future software   │
+    │ installations to utilize the USB drive instead of MicroSD.         │
+    │ As USB hard drives are generally faster than MicroSD, using a USB  │
+    │ drive can vastly improve system performance.                       │
+    │                                                                    │
+    │  This is recommended for:                                          │
+    │  - BitTorrent (Store downloads)                                    │
+    │  - OwnCloud                                                        │
+    │  - Kodi (Store Media Files)                                        │
+    │  - RetroPie (Store Roms)                                           │
+    │  - Hifi (Store Music)                                              │
+    │                                                                    │
+    │                                                                    │
+    │                  &lt;Yes&gt;                     &lt;No&gt;                    │
+    │                                                                    │
+    └────────────────────────────────────────────────────────────────────┘
+
+      ┌────┤ ---------- DietPi - Software Setup ---------- ├─────┐
+      │                                                          │
+      │           1  Select DietPi Optimized Software.           │
+      │           2  Select Additional Linux Software.           │
+      │           3  SSH Server  : Dropbear                      │
+      │           4  File Server : None                          │
+      │           5  Log System  : DietPi-Ramlog #1              │
+      │           6  DietPi-Config                               │
+      │           7  Help!                                       │
+      │           Go Start Install                               │
+      │                                                          │
+      │                                                          │
+      │              &lt;Ok&gt;                  &lt;Exit&gt;                │
+      │                                                          │
+      └──────────────────────────────────────────────────────────┘
+</code></pre>
+<p>1  Select DietPi Optimized Software.包含以下软件:</p>
+<!-- raw HTML omitted -->
+<p>2  Select Additional Linux Software.包含以下软件</p>
+<!-- raw HTML omitted -->
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-08-04</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/debian">#Debian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dietpi">#dietpi</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

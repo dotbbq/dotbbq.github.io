@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>photoshop on UNIXETC</title>
+    <link>https://unixetc.com/tags/photoshop/</link>
+    <description>UNIXETC (photoshop)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sun, 13 Sep 2015 12:38:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/photoshop/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用Photoshop压缩PNG图片</title>
+      <link>https://unixetc.com/post/photoshop-compressed-png-images/</link>
+      <pubDate>Sun, 13 Sep 2015 12:38:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/photoshop-compressed-png-images/</guid>
+      <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Ctrl+O&lt;!-- raw HTML omitted --&gt; 打开PNG文件&lt;/p&gt;
+&lt;p&gt;图像 -&amp;gt; 调整 -&amp;gt; 色调分离&lt;/p&gt;
+&lt;p&gt;调整&lt;strong&gt;色阶&lt;/strong&gt;值，边调整边预览，找到图片质量变化最小时候的值&lt;/p&gt;
+&lt;p&gt;文件 -&amp;gt; 导出 -&amp;gt; 存储为Web所用格式&lt;/p&gt;
+&lt;p&gt;文件格式选择&lt;strong&gt;PNG-8&lt;/strong&gt;，参考下图全选部分进行调整，完成后保存即可。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/output_png_images.png&#34; alt=&#34;导出设置&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

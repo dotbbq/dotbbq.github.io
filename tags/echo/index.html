@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>echo - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/tags/echo/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+
+
+
+<meta property="og:title" content="echo" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/tags/echo/" />
+<meta property="og:updated_time" content="2016-03-29T13:29:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="echo"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <h1>Tag: echo</h1>
+    <div class="post-info">
+        <a href="https://unixetc.com/tags">To all tags</a>
+    </div>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/linux-check-and-set-the-path/">Linux下查看修改PATH</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        什么是PATH? 要搞清什么是PATH，应该先搞清什么是环境变量？
+在计算机中，如果需要运行一个软件，那么我们就要找到它所在的位置，但是每次运行程序时如果都要进入到相应目录，那么显然是很繁琐的。于是就有了环境变量，环境变量就是一个系统参数，里面记录了一些目录，运行软件的时候，相关的程序将会按照该目录寻找相关文件。
+而在Linux中，系统会有一个默认的PATH环境变量，里面记录了系统级的相关命令目录，比如当我们输入ls、cd、pwd等命令时，我们不需要指定它们所在的目录，因为包含这些命令的系统目录已经写入PATH参数，因而方便我们调用。
+查看PATH 在linux中，可以使用export命令来查看所有环境变量，如下：
+pi@raspi:~$ exportdeclare -x HOME=&quot;/home/pi&quot;declare -x LANG=&quot;en_GB.UTF-8&quot;declare -x LOGNAME=&quot;pi&quot;declare -x MAIL=&quot;/var/mail/pi&quot;declare -x OLDPWDdeclare -x PATH=&quot;/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/home/pi/bin&quot;declare -x PWD=&quot;/home/pi&quot;declare -x SHELL=&quot;/bin/bash&quot;declare -x SHLVL=&quot;1&quot;declare -x SSH_CLIENT=&quot;101.135.216.146 28249 22&quot;declare -x SSH_CONNECTION=&quot;101.135.216.146 28249 192.168.1.111 22&quot;declare -x SSH_TTY=&quot;/dev/pts/1&quot;declare -x TERM=&quot;xterm&quot;declare -x USER=&quot;pi&quot; 使用echo来查看单独的环境变量
+pi@raspi:~$ echo $PATH/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/home/pi/bin 我们可以看到，以上PATH值包含了一些系统命令的目录，而这些目录都用:隔开。
+修改PATH 我们可以使用export命令来添加目录，如下：
+export PATH=/mydoc:$PATH 以上命令在原有的PATH前添加了/mydoc这个目录，设置完成后的PATH值如下：
+pi@raspi:~$ echo $PATH/mydoc:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/home/pi/bin 以上方法修改PATH值，在终端退出后就会失效，因此建议通过修改/etc/profile来设定PATH
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-03-29</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/path">#PATH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/echo">#echo</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

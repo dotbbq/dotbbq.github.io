@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>N900软件管理 - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+
+
+
+<meta property="og:title" content="N900软件管理" />
+<meta property="og:description" content="###通过自带的application manager（软件管理）安装 打开application manager，首次会自动更新软件列表，然后可以在download目录中按分类安装软件。 ###通过apt-get在线安装 使用apt-get前提为已经安装了rootsh（可通过第一种方法安装），打开 x terminal
+$sudo gainroot /*切换到root帐户*/#apt-get install pkg /*安装pkg*/ #apt-get install pkg1,pkg2 /*安装多个软件*/ #apt-get remove pkg /*卸载软件*/ #apt-get remove –purge pkg /*卸载并清除配置文件*/ #apt-get update /*更新软件源*/ #apt-get upgrade /*更新软件*/ #apt-get dist-upgrade /*更新系统*/ #apt-get clean /*清除软件列表以节省空间*/ ###通过dpkg安装本地软件包(.deb)
+可以通过数据线，先将下载的软件包拷贝到机子内，然后使用dpkg来安装
+#dpkg -i pkg.deb  可以在这里http://repository.maemo.org/下载官方的.deb包进行安装" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unixetc.com/post/nokia-n900-software-manager/" />
+<meta property="article:published_time" content="2012-03-31T13:31:00+00:00" />
+<meta property="article:modified_time" content="2012-03-31T13:31:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="N900软件管理"/>
+<meta name="twitter:description" content="###通过自带的application manager（软件管理）安装 打开application manager，首次会自动更新软件列表，然后可以在download目录中按分类安装软件。 ###通过apt-get在线安装 使用apt-get前提为已经安装了rootsh（可通过第一种方法安装），打开 x terminal
+$sudo gainroot /*切换到root帐户*/#apt-get install pkg /*安装pkg*/ #apt-get install pkg1,pkg2 /*安装多个软件*/ #apt-get remove pkg /*卸载软件*/ #apt-get remove –purge pkg /*卸载并清除配置文件*/ #apt-get update /*更新软件源*/ #apt-get upgrade /*更新软件*/ #apt-get dist-upgrade /*更新系统*/ #apt-get clean /*清除软件列表以节省空间*/ ###通过dpkg安装本地软件包(.deb)
+可以通过数据线，先将下载的软件包拷贝到机子内，然后使用dpkg来安装
+#dpkg -i pkg.deb  可以在这里http://repository.maemo.org/下载官方的.deb包进行安装"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">N900软件管理</h1>
+        </header>
+        <div class="content">
+            <p>###通过自带的application manager（软件管理）安装
+打开application manager，首次会自动更新软件列表，然后可以在download目录中按分类安装软件。
+###通过apt-get在线安装
+使用apt-get前提为已经安装了rootsh（可通过第一种方法安装），打开 x terminal</p>
+<pre><code>$sudo gainroot /*切换到root帐户*/
+#apt-get install pkg /*安装pkg*/ 
+#apt-get install pkg1,pkg2 /*安装多个软件*/ 
+#apt-get remove pkg /*卸载软件*/ 
+#apt-get remove –purge pkg /*卸载并清除配置文件*/ 
+#apt-get update /*更新软件源*/ 
+#apt-get upgrade /*更新软件*/ 
+#apt-get dist-upgrade /*更新系统*/ 
+#apt-get clean /*清除软件列表以节省空间*/
+</code></pre>
+<p>###通过dpkg安装本地软件包(.deb)</p>
+<p>可以通过数据线，先将下载的软件包拷贝到机子内，然后使用dpkg来安装</p>
+<pre><code>#dpkg -i pkg.deb 
+</code></pre>
+<p>可以在这里<a href="http://repository.maemo.org/">http://repository.maemo.org/</a>下载官方的.deb包进行安装</p>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2012-03-31</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/apt-get">#apt-get</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nokia">#nokia</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/n900">#n900</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dpkg">#dpkg</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nokia-n900">#nokia n900</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/rootsh">#rootsh</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gainroot">#gainroot</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

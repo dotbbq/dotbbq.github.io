@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Excel on UNIXETC</title>
+    <link>https://unixetc.com/tags/excel/</link>
+    <description>UNIXETC (Excel)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sun, 10 Jun 2018 16:10:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/excel/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Excel文件大小异常核查</title>
+      <link>https://unixetc.com/post/excel-file-size-abnormal-check/</link>
+      <pubDate>Sun, 10 Jun 2018 16:10:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/excel-file-size-abnormal-check/</guid>
+      <description>&lt;p&gt;有时候明明excel文件中没多少内容，但是文件体积却很大，在此分享一个检查解决的方法。&lt;/p&gt;
+&lt;p&gt;将excel文件后缀名改为&lt;code&gt;zip&lt;/code&gt;，用压缩软件将其打开，定位到&lt;code&gt;xl\worksheets\&lt;/code&gt;目录，可以看到各个sheet的体积大小，如下:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/Image-0011528628242.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;找到其中体积最大的，定位到该sheet&lt;/p&gt;
+&lt;p&gt;首先将所有内容全选并粘贴为文字。&lt;/p&gt;
+&lt;p&gt;然后将内容排序后，全选下面的空白行邮件删除，将条件格式全部删除，这样应该就OK了！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>按需安装Office2016组件</title>
+      <link>https://unixetc.com/post/install-office2016-components-on-demand/</link>
+      <pubDate>Fri, 20 Oct 2017 11:21:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/install-office2016-components-on-demand/</guid>
+      <description>&lt;h3 id=&#34;所需软件&#34;&gt;所需软件&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Office 2016 下载地址 &lt;a href=&#34;ed2k://%7Cfile%7Ccn_office_professional_plus_2016_x86_x64_dvd_6969182.iso%7C2588266496%7C27EEA4FE4BB13CD0ECCDFC24167F9E01%7C/&#34;&gt;ed2k://|file|cn_office_professional_plus_2016_x86_x64_dvd_6969182.iso|2588266496|27EEA4FE4BB13CD0ECCDFC24167F9E01|/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;office2016install.zip  下载地址 &lt;a href=&#34;https://pan.baidu.com/s/1jIMOFfK&#34;&gt;https://pan.baidu.com/s/1jIMOFfK&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;DAEMON Tools Lite 下载地址 &lt;a href=&#34;https://www.daemon-tools.cc/chn/downloads&#34;&gt;https://www.daemon-tools.cc/chn/downloads&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;步骤&#34;&gt;步骤&lt;/h3&gt;
+&lt;p&gt;1、下载Office2016和DAEMON Tools Lite，安装DAEMON Tools Lite，将office2016镜像(iso)文件挂载到虚拟光驱。&lt;/p&gt;
+&lt;p&gt;2、下载office2016install.zip后解压，得到&lt;strong&gt;setup.exe&lt;/strong&gt;和&lt;strong&gt;configuration.xml&lt;/strong&gt;两个文件&lt;/p&gt;
+&lt;p&gt;打开&lt;code&gt;configuration.xml&lt;/code&gt;，文件内容如下&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;Configuration&amp;gt;
+    &amp;lt;Add SourcePath=&amp;quot;G:\&amp;quot; OfficeClientEdition=&amp;quot;64&amp;quot; &amp;gt;
+        &amp;lt;Product ID=&amp;quot;ProPlusRetail&amp;quot;&amp;gt;
+        &amp;lt;Language ID=&amp;quot;zh-CN&amp;quot; /&amp;gt;
+        &amp;lt;ExcludeApp ID=&amp;quot;Groove&amp;quot; /&amp;gt;
+        &amp;lt;ExcludeApp ID=&amp;quot;InfoPath&amp;quot; /&amp;gt;
+        &amp;lt;ExcludeApp ID=&amp;quot;Lync&amp;quot; /&amp;gt;
+        &amp;lt;ExcludeApp ID=&amp;quot;OneNote&amp;quot; /&amp;gt;
+        &amp;lt;ExcludeApp ID=&amp;quot;Outlook&amp;quot; /&amp;gt;
+        &amp;lt;ExcludeApp ID=&amp;quot;Publisher&amp;quot; /&amp;gt;
+        &amp;lt;ExcludeApp ID=&amp;quot;SharePointDesigner&amp;quot; /&amp;gt;
+        &amp;lt;/Product&amp;gt;
+    &amp;lt;/Add&amp;gt;  
+&amp;lt;/Configuration&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;SourcePath 是安装源目录，此处为虚拟光驱G盘&lt;/li&gt;
+&lt;li&gt;OfficeClientEdition 为构架版本，此处为64位，也可以设置为32位&lt;/li&gt;
+&lt;li&gt;Language 为安装语言，此处为中文简体&lt;/li&gt;
+&lt;li&gt;ExcludeApp 表示不需要安装的组件，此处去掉了Groove、InfoPath、Lync、OneNote、Outlook、Publisher、SharePointDesigner，剩下的为Word、Excel、powerpoint和access进行安装。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在当前目录下以管理员身份CMD，运行下面命令开始安装：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;setup.exe /configure configuration.xml&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Excel单元格插入换行符</title>
+      <link>https://unixetc.com/post/excel-cell-insert-a-newline/</link>
+      <pubDate>Wed, 20 Aug 2014 18:20:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/excel-cell-insert-a-newline/</guid>
+      <description>&lt;p&gt;一般情况下，单元格插入换行符可以使用&lt;strong&gt;Alt+Enter&lt;/strong&gt;来实现&lt;/p&gt;
+&lt;p&gt;但如果需要批量操作的话，那么可以使用 **CHAR(10)**来表示换行符&lt;/p&gt;
+&lt;p&gt;实例如下，一看就懂！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/3447757799.png&#34; alt=&#34;char(10)&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

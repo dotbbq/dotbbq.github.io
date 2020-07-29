@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>miui10 on UNIXETC</title>
+    <link>https://unixetc.com/tags/miui10/</link>
+    <description>UNIXETC (miui10)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 19 Jul 2018 21:22:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/miui10/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>一加3T安装MIUI10</title>
+      <link>https://unixetc.com/post/oneplus3t-miui10/</link>
+      <pubDate>Thu, 19 Jul 2018 21:22:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/oneplus3t-miui10/</guid>
+      <description>&lt;p&gt;首先，十分感谢&lt;strong&gt;&lt;!-- raw HTML omitted --&gt;HitoLiu&lt;!-- raw HTML omitted --&gt;&lt;/strong&gt;辛苦劳动，才有了Oneplus3T的MIUI10&lt;/p&gt;
+&lt;p&gt;刷机前先确认H2OS版本，由于H大的MIUI10是基于Android 7，所以要是基于Android7系的话，则可以直接刷，要是基于Android8的话，就得先降级。&lt;/p&gt;
+&lt;h3 id=&#34;一加3t安卓8降级安卓7&#34;&gt;一加3T安卓8降级安卓7&lt;/h3&gt;
+&lt;p&gt;基于Android8的手机，下载下面降级包，通过系统内自带升级功能，手动选择该包进行降级。&lt;/p&gt;
+&lt;p&gt;一加3T &lt;strong&gt;Android 8降级Android 7刷机包 &lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-315801567&#34;&gt;https://dotbbq.pipipan.com/fs/18418398-315801567&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;或者在这里下载Android7的底包，刷入底包即可 &lt;strong&gt;&lt;a href=&#34;https://ciux.org/oneplus3t-base-firmware.html&#34;&gt;https://ciux.org/oneplus3t-base-firmware.html&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;降级完成后，开始解锁刷入第三方recovery来刷机。&lt;/p&gt;
+&lt;p&gt;推荐使用一加3/3T工具包(OnePlus3/3T Unified ToolKit)，使用方法**&lt;a href=&#34;https://unixetc.com/post/oneplus3-3t-unified-toolkit/&#34;&gt;点击这里&lt;/a&gt;**&lt;/p&gt;
+&lt;h3 id=&#34;一加3t-miui10刷机流程&#34;&gt;一加3T MIUI10刷机流程&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;解锁&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;手机端设置-&amp;gt;开发者选项，打开OEM解锁和USB调试。&lt;/p&gt;
+&lt;p&gt;连接手机和电脑，打开工具包选择2) Unlock - ReLock Bootloader，下一步选择1解锁。&lt;/p&gt;
+&lt;p&gt;手机按照提示选择&lt;strong&gt;YES&lt;/strong&gt;解锁&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;刷入TWRP Recovery&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;重启手机，选择Fastboot模式，连接手机和电脑，选择5) Flash - Boot TWRP Recovery，刷入TWRP&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;刷入MIUI10&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;进入TWRP Recovery，挂载MTP，将MIUI10刷机包拷入手机，然后进行卡刷。&lt;/p&gt;
+&lt;p&gt;双清后重启即可！&lt;/p&gt;
+&lt;h4 id=&#34;官方更新说明&#34;&gt;官方更新说明&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;因MIUI官方开始全部适配安卓8，7.1的MIUI在11月2号官方已经正式停更了，目前这版MIUI是MIUI官方发布的最后一个安卓7.1版本，也是目前
+最完善的一版。
+如果不出意外的话，这也是一加3/3T安卓7.1 MIUI的最后一版。后续就是准备给一加3/3T上安卓O或以上的MIUI了，基本完善后我会优先发在群里
+给机油门尝鲜。安卓O的MIUI最快也要半个月以上，且第一版难免bug多，耐心等待别催，只要我手上的3T还没坏就会一直把MIUI维护下去。
+8.10.22及以上的MIUI无需双清可直接刷本版MIUI升级，8.10.22以下的需要双清升级。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;8.11.3更新日志&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1.同步MIUI官方最后一版安卓7.1的MIUI的更新
+2.修复新版附加设置-交换返回与多任务键无效的bug
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;8.11.2更新日志：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1.同步MIUI的更新
+2.解决WiFi mac地址问题
+3.解决WiFi认证问题
+4.修复了一些其他已知bug
+5.附加设置更新，全新的界面，加入色温调节，省电模式，性能模式等等
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;8.10.28更新日志：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1.同步MIUI官方第392周更新
+2.修复了一些已知bug
+这次不是简单的同步更新，而是完全的重制，除了修复以前的一些已知bug外，流畅度也有大幅度的提升，并且还增加了很多新功能，比如
+人脸解锁、AI相机等等，还有很多细节上的变化，应该能让你爽到脱肛的那种。
+注意注意注意！这个包更改幅度较大，必须双清刷，否则可能出现各种程序报错！如果data分区被加密则需要格式化data！！否则可能会
+一直卡在开机动画不能进系统！
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;8.12.5更新：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1.加入ROOT权限
+2.修复充电快充满后几率发生断开的BUG
+3.修复人脸识别无法使用的BUG
+4.修复MIUI相机无法录像的BUG
+5.修复几个引起卡顿问题
+6.其它大量的BUG修复，现在已经熬夜到凌晨四点半，不想写了自行体验，做包很累切刷且珍惜
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1.可能有未知bug
+2.安卓大版本升级需要双清，否则可能各种报错
+3.如果data被加密需要格式化data才能开机，否则可能卡在开机动画无法进系统
+4.暂未添加支付宝指纹支付，后续更新添加
+5.第一次开机需要点时间，耐心等待，开机后手机有点热是正常的，以后就不会了
+6.第一次开机后手机可能会有点卡，是magisk的锅，重启即可
+7.硬件原因不支持小爱同学语音唤醒，这不是bug
+8.刷机前先确认你的twrp recovery支持安卓8
+9.人品不好智商低慎刷
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;MIUI10 for OnePlus3T 下载地址: &lt;strong&gt;提示：刷最新版基于Android8的话不需要降级，刷基于Android7的版本需要降级！！！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Based Android 8&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MIUI10_OP3-3T_Hito_8.12.5_79c6_8.1.zip &lt;strong&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-326373687&#34;&gt;https://dotbbq.pipipan.com/fs/18418398-326373687&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;MIUI10_OP3-3T_Hito_8.12.3_e3b7_8.1.zip &lt;strong&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-326373663&#34;&gt;https://dotbbq.pipipan.com/fs/18418398-326373663&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Based Android 7&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MIUI10_OP3-3T_Hito_8.11.5_a93c_7.1.zip &lt;strong&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-319122537&#34;&gt;https://dotbbq.pipipan.com/fs/18418398-319122537&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;MIUI10_OP3-3T_Hito_8.11.2_ff8a_7.1.zip  &lt;strong&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-317870488&#34;&gt;https://dotbbq.pipipan.com/fs/18418398-317870488&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;MIUI10_OP3-3T_Hito_8.10.28_3cd1_7.1.zip &lt;strong&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-317451619&#34;&gt;https://dotbbq.pipipan.com/fs/18418398-317451619&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;MIUI10_OP3-3T_Hito_8.10.24_4cce_7.1.zip &lt;strong&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-316913781&#34;&gt;https://dotbbq.pipipan.com/fs/18418398-316913781&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;MIUI10_OP3-3T_Hito_8.10.8_8aff_7.1.zip  &lt;strong&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-315803433&#34;&gt;https://dotbbq.pipipan.com/fs/18418398-315803433&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

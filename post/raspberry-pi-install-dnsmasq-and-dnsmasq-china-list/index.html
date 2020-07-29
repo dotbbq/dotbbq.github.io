@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>树莓派安装Dnsmasq加速DNS解析 - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+
+
+
+<meta property="og:title" content="树莓派安装Dnsmasq加速DNS解析" />
+<meta property="og:description" content="天朝的dns服务商尿性不是一般的大，动不动就抽风或者劫持，为了避免这种情况，可以在树莓派上安装Dnsmasq来加速dns解析，提高网络浏览体验。
+安装配置dnsmasq apt-get install dnsmasq 配置dnsmasq,vi /etc/dnsmasq.conf
+我的配置文件如下：
+domain=Raspi2resolv-file=/etc/resolv.dnsmasqconf-dir=/etc/dnsmasq.dmin-port=4096server=114.114.114.114server=114.114.115.115server=223.5.5.5server=223.6.6.6server=119.29.29.29server=182.254.116.116server=112.124.47.27server=114.215.126.16server=101.226.4.6server=218.30.118.6server=42.120.21.30server=199.91.73.222server=178.79.131.110server=8.8.8.8server=8.8.4.4cache-size=10000 配置完重启dnsmasq服务
+service dnsmasq restart 其中的server字段为上游DNS
+配置dnsmasq-china-list git clone https://github.com/felixonmars/dnsmasq-china-list.gitcd dnsmasq-china-list/cp *.conf /etc/dnsmasq.d/service dnsmasq restart 至此设置完成，可以在路由器中将首选dns设为树莓派ip，这样局域网内的所有设备都可以体验dns解析加速了！" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unixetc.com/post/raspberry-pi-install-dnsmasq-and-dnsmasq-china-list/" />
+<meta property="article:published_time" content="2016-01-18T21:28:00+00:00" />
+<meta property="article:modified_time" content="2016-01-18T21:28:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="树莓派安装Dnsmasq加速DNS解析"/>
+<meta name="twitter:description" content="天朝的dns服务商尿性不是一般的大，动不动就抽风或者劫持，为了避免这种情况，可以在树莓派上安装Dnsmasq来加速dns解析，提高网络浏览体验。
+安装配置dnsmasq apt-get install dnsmasq 配置dnsmasq,vi /etc/dnsmasq.conf
+我的配置文件如下：
+domain=Raspi2resolv-file=/etc/resolv.dnsmasqconf-dir=/etc/dnsmasq.dmin-port=4096server=114.114.114.114server=114.114.115.115server=223.5.5.5server=223.6.6.6server=119.29.29.29server=182.254.116.116server=112.124.47.27server=114.215.126.16server=101.226.4.6server=218.30.118.6server=42.120.21.30server=199.91.73.222server=178.79.131.110server=8.8.8.8server=8.8.4.4cache-size=10000 配置完重启dnsmasq服务
+service dnsmasq restart 其中的server字段为上游DNS
+配置dnsmasq-china-list git clone https://github.com/felixonmars/dnsmasq-china-list.gitcd dnsmasq-china-list/cp *.conf /etc/dnsmasq.d/service dnsmasq restart 至此设置完成，可以在路由器中将首选dns设为树莓派ip，这样局域网内的所有设备都可以体验dns解析加速了！"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">树莓派安装Dnsmasq加速DNS解析</h1>
+        </header>
+        <div class="content">
+            <p>天朝的dns服务商尿性不是一般的大，动不动就抽风或者劫持，为了避免这种情况，可以在树莓派上安装Dnsmasq来加速dns解析，提高网络浏览体验。</p>
+<h3 id="安装配置dnsmasq">安装配置dnsmasq</h3>
+<pre><code>apt-get install dnsmasq
+</code></pre>
+<p>配置dnsmasq,<code>vi /etc/dnsmasq.conf</code></p>
+<p>我的配置文件如下：</p>
+<pre><code>domain=Raspi2
+resolv-file=/etc/resolv.dnsmasq
+conf-dir=/etc/dnsmasq.d
+min-port=4096
+server=114.114.114.114
+server=114.114.115.115
+server=223.5.5.5
+server=223.6.6.6
+server=119.29.29.29
+server=182.254.116.116
+server=112.124.47.27
+server=114.215.126.16
+server=101.226.4.6
+server=218.30.118.6
+server=42.120.21.30
+server=199.91.73.222
+server=178.79.131.110
+server=8.8.8.8
+server=8.8.4.4
+
+cache-size=10000
+</code></pre>
+<p>配置完重启dnsmasq服务</p>
+<pre><code>service dnsmasq restart
+</code></pre>
+<p>其中的<code>server</code>字段为上游DNS</p>
+<h3 id="配置dnsmasq-china-list">配置dnsmasq-china-list</h3>
+<pre><code>git clone https://github.com/felixonmars/dnsmasq-china-list.git
+cd dnsmasq-china-list/
+cp *.conf  /etc/dnsmasq.d/
+service dnsmasq restart
+</code></pre>
+<p>至此设置完成，可以在路由器中将首选dns设为树莓派ip，这样局域网内的所有设备都可以体验dns解析加速了！</p>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-01-18</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/git">#Git</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dns">#DNS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dnsmasq">#dnsmasq</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

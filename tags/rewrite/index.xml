@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rewrite on UNIXETC</title>
+    <link>https://unixetc.com/tags/rewrite/</link>
+    <description>UNIXETC (rewrite)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Wed, 14 Oct 2015 12:13:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/rewrite/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>StartSSL免费证书与Nginx配置</title>
+      <link>https://unixetc.com/post/startssl-and-nginx/</link>
+      <pubDate>Wed, 14 Oct 2015 12:13:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/startssl-and-nginx/</guid>
+      <description>&lt;h3 id=&#34;注册startssl&#34;&gt;注册StartSSL&lt;/h3&gt;
+&lt;p&gt;打开&lt;a href=&#34;https://www.startssl.com/&#34;&gt;https://www.startssl.com/&lt;/a&gt;，点击&lt;strong&gt;Sign-up&lt;/strong&gt;开始注册&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/sign-up-startssl.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;参考上图填写注册信息，然后&lt;strong&gt;Continue&lt;/strong&gt;，会有如下提示，系统会发送验证码到你的注册邮箱&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/CR.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;检查注册邮箱，将收到的验证码填写提交，然后会出现如下提示，等待审核。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/Additional_Verification_Required.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;审核通过后，会收到如下提示邮件，点击其中连接，然后输入邮箱中的验证码完成注册&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/StartSSL_Account_Request.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/complete_registration.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;安装证书&#34;&gt;安装证书&lt;/h3&gt;
+&lt;p&gt;接下来创建私匙&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/gpk.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;安装证书&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/install_cert.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;安装成功后会有如下提示&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/cif.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/fic.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;验证域名&#34;&gt;验证域名&lt;/h3&gt;
+&lt;p&gt;接下来验证域名，点击&lt;strong&gt;Validations Wizard&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/select_Validation.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;填写域名&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/enter_domain_name.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;选择验证邮件地址&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/select_Validation_email.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;按照提示输入邮箱接收到的验证码完成验证。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/complete_Validation_domain.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;创建证书&#34;&gt;创建证书&lt;/h3&gt;
+&lt;p&gt;选择&lt;strong&gt;Certificates Wizard&lt;/strong&gt;，证书目标选择&lt;strong&gt;Web Server SSL/TLS Certificate&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/Select_Certificate_Purpose.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;接下来新建私匙&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/Generate_Private_key.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;点击&lt;strong&gt;Skip&lt;/strong&gt;跳过系统建立步骤，我们自己在VPS上建立CSR文件，参考下图通过&lt;code&gt;openssl&lt;/code&gt;命令建立CSR文件&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/create_scr_file.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;注意，为了便于后期安装配置方便，建议密码置空&lt;/p&gt;
+&lt;p&gt;完成后，&lt;code&gt;cat&lt;/code&gt;出建立好的&lt;strong&gt;ciuxsss.csr&lt;/strong&gt;内容，粘贴提交&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/Submit_Certificate_Request.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/Certificate_Request_Received.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;接下来添加域名&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/add_domains.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/add_sub_domain.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/Ready_Processing_Certificate.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;接下来将文本框中的内容保存为一个**.crt**文件&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/Save_Certificate.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;配置nginx&#34;&gt;配置Nginx&lt;/h3&gt;
+&lt;p&gt;贴出我的配置文件，大家参考一下&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;server {
+    listen 80;
+    location /{
+    return 301 https://$host$request_uri;
+    }
+}
+
+server
+    {
+        listen 443;
+        #listen 80;
+        #listen [::]:80;
+        server_name ciux.org;
+        index index.html index.htm index.php default.html default.htm default.php;
+        root  /home/ciux/compiled;
+
+ssl    on;
+ssl_certificate    /home/bk/ssl/ciuxsss.crt;
+ssl_certificate_key     /home/bk/ssl/ciuxsss.key;
+ssl_session_timeout 5m;
+
+ssl_protocols SSLv2 SSLv3 TLSv1;
+ssl_ciphers ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP;
+ssl_prefer_server_ciphers   on;
+
+……
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中第一个Server是将所有80端口的http访问301重定向到443端口的https访问。&lt;/p&gt;
+&lt;p&gt;如果发现浏览器提示证书不被信任，那就需要合并Startssl的根证书&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget http://cert.startssl.com/certs/sub.class1.server.ca.pem  
+cat sub.class1.server.ca.pem &amp;gt;&amp;gt; ciuxsss.crt&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,921 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Debian on UNIXETC</title>
+    <link>https://unixetc.com/tags/debian/</link>
+    <description>UNIXETC (Debian)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Mon, 02 Mar 2020 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/debian/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>斐讯N1系统信息和UNIXBENCH跑分</title>
+      <link>https://unixetc.com/post/phicomm-n1-unixbench-score-and-system-information/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/phicomm-n1-unixbench-score-and-system-information/</guid>
+      <description>&lt;h4 id=&#34;系统信息&#34;&gt;系统信息&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;alair@aml:~ $ inxi -F
+System:    Host: aml Kernel: 5.5.0-rc6-aml-s9xxx aarch64 bits: 32 Console: tty 0 Distro: Ubuntu 18.04.4 LTS
+Machine:   No /sys/class/dmi; using dmidecode: dmidecode is not installed.
+CPU:       Quad core ARMv8 rev 4 (v8l) (-MCP-)  (ARM)
+           clock speeds: max: 1512 MHz 1: 1512 MHz 2: 1512 MHz 3: 1512 MHz 4: 1512 MHz
+Graphics:  Card: Failed to Detect Video Card!
+           Display Server: N/A driver: N/A tty size: 254x72 Advanced Data: N/A out of X
+Audio:     Card AMLGX driver: AMLGX Sound: ALSA v: k5.5.0-rc6-aml-s9xxx
+Network:   Card: Failed to Detect Network Card!
+Drives:    HDD Total Size: NA (-)
+           ID-1: /dev/mmcblk1 model: N/A size: 7.8GB
+Partition: ID-1: / size: 6.3G used: 4.8G (76%) fs: ext4 dev: /dev/mmcblk1p2
+           ID-2: /boot size: 244M used: 77M (32%) fs: vfat dev: /dev/mmcblk1p1
+           ID-3: /var/log size: 49M used: 2.5M (6%) fs: ext4 dev: /dev/zram0
+           ID-4: swap-1 size: 0.91GB used: 0.00GB (0%) fs: swap dev: /dev/zram1
+Sensors:   None detected - is lm-sensors installed and configured?
+Info:      Processes: 155 Uptime: 2:39 Memory: 306.4/1741.2MB Init: systemd runlevel: 5
+           Client: Shell (zsh) inxi: 2.3.56
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;unixbench分数&#34;&gt;Unixbench分数&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;alair@aml:~/unixbench-5.1.2 $ ./Run
+make all
+make[1]: Entering directory &#39;/home/alair/unixbench-5.1.2&#39;
+Checking distribution of files
+./pgms  exists
+./src  exists
+./testdir  exists
+./tmp  exists
+./results  exists
+make[1]: Leaving directory &#39;/home/alair/unixbench-5.1.2&#39;
+sh: 1: 3dinfo: not found
+
+   #    #  #    #  #  #    #          #####   ######  #    #   ####   #    #
+   #    #  ##   #  #   #  #           #    #  #       ##   #  #    #  #    #
+   #    #  # #  #  #    ##            #####   #####   # #  #  #       ######
+   #    #  #  # #  #    ##            #    #  #       #  # #  #       #    #
+   #    #  #   ##  #   #  #           #    #  #       #   ##  #    #  #    #
+    ####   #    #  #  #    #          #####   ######  #    #   ####   #    #
+
+   Version 5.1.2                      Based on the Byte Magazine Unix Benchmark
+
+   Multi-CPU version                  Version 5 revisions by Ian Smith,
+                                      Sunnyvale, CA, USA
+   December 22, 2007                  johantheghost at yahoo period com
+
+Wide character in print at ./Run line 1510.
+Wide character in printf at ./Run line 1541.
+Use of uninitialized value in printf at ./Run line 1378.
+Use of uninitialized value in printf at ./Run line 1379.
+Use of uninitialized value in printf at ./Run line 1378.
+Use of uninitialized value in printf at ./Run line 1379.
+Use of uninitialized value in printf at ./Run line 1378.
+Use of uninitialized value in printf at ./Run line 1379.
+Use of uninitialized value in printf at ./Run line 1378.
+Use of uninitialized value in printf at ./Run line 1379.
+Use of uninitialized value in printf at ./Run line 1588.
+Use of uninitialized value in printf at ./Run line 1589.
+Use of uninitialized value in printf at ./Run line 1588.
+Use of uninitialized value in printf at ./Run line 1589.
+Use of uninitialized value in printf at ./Run line 1588.
+Use of uninitialized value in printf at ./Run line 1589.
+Use of uninitialized value in printf at ./Run line 1588.
+Use of uninitialized value in printf at ./Run line 1589.
+
+1 x Dhrystone 2 using register variables  1 2 3 4 5 6 7 8 9 10
+
+1 x Double-Precision Whetstone  1 2 3 4 5 6 7 8 9 10
+
+1 x Execl Throughput  1 2 3
+
+1 x File Copy 1024 bufsize 2000 maxblocks  1 2 3
+
+1 x File Copy 256 bufsize 500 maxblocks  1 2 3
+
+1 x File Copy 4096 bufsize 8000 maxblocks  1 2 3
+
+1 x Pipe Throughput  1 2 3 4 5 6 7 8 9 10
+
+1 x Pipe-based Context Switching  1 2 3 4 5 6 7 8 9 10
+
+1 x Process Creation  1 2 3
+
+1 x System Call Overhead  1 2 3 4 5 6 7 8 9 10
+
+1 x Shell Scripts (1 concurrent)  1 2 3
+
+1 x Shell Scripts (8 concurrent)  1 2 3
+Wide character in printf at ./Run line 1483.
+
+4 x Dhrystone 2 using register variables  1 2 3 4 5 6 7 8 9 10
+
+4 x Double-Precision Whetstone  1 2 3 4 5 6 7 8 9 10
+
+4 x Execl Throughput  1 2 3
+
+4 x File Copy 1024 bufsize 2000 maxblocks  1 2 3
+
+4 x File Copy 256 bufsize 500 maxblocks  1 2 3
+
+4 x File Copy 4096 bufsize 8000 maxblocks  1 2 3
+
+4 x Pipe Throughput  1 2 3 4 5 6 7 8 9 10
+
+4 x Pipe-based Context Switching  1 2 3 4 5 6 7 8 9 10
+
+4 x Process Creation  1 2 3
+
+4 x System Call Overhead  1 2 3 4 5 6 7 8 9 10
+
+4 x Shell Scripts (1 concurrent)  1 2 3
+
+4 x Shell Scripts (8 concurrent)  1 2 3
+Wide character in printf at ./Run line 1483.
+
+========================================================================
+   BYTE UNIX Benchmarks (Version 5.1.2)
+
+   System: aml: GNU/Linux
+   OS: GNU/Linux -- 5.5.0-rc6-aml-s9xxx -- #rc1.037 SMP PREEMPT Wed Feb 5 17:28:41 MSK 2020
+   Machine: aarch64 (aarch64)
+   Language: en_US.utf8 (charmap=&amp;quot;UTF-8&amp;quot;, collate=&amp;quot;UTF-8&amp;quot;)
+   CPU 0: ARMv8 Processor rev 4 (v8l) (0.0 bogomips)
+
+   CPU 1: ARMv8 Processor rev 4 (v8l) (0.0 bogomips)
+
+   CPU 2: ARMv8 Processor rev 4 (v8l) (0.0 bogomips)
+
+   CPU 3: ARMv8 Processor rev 4 (v8l) (0.0 bogomips)
+
+   19:35:59 up  2:44,  1 user,  load average: 2.13, 2.07, 2.01; runlevel 5
+
+------------------------------------------------------------------------
+Benchmark Run: 一 3月 02 2020 19:35:59 - 20:03:58
+4 CPUs in system; running 1 parallel copy of tests
+
+Dhrystone 2 using register variables        6888588.0 lps   (10.0 s, 7 samples)
+Double-Precision Whetstone                     1373.9 MWIPS (9.8 s, 7 samples)
+Execl Throughput                                877.5 lps   (30.0 s, 2 samples)
+File Copy 1024 bufsize 2000 maxblocks        168765.4 KBps  (30.0 s, 2 samples)
+File Copy 256 bufsize 500 maxblocks           49199.4 KBps  (30.0 s, 2 samples)
+File Copy 4096 bufsize 8000 maxblocks        445012.9 KBps  (30.0 s, 2 samples)
+Pipe Throughput                              327924.7 lps   (10.0 s, 7 samples)
+Pipe-based Context Switching                  69606.2 lps   (10.0 s, 7 samples)
+Process Creation                               2416.8 lps   (30.0 s, 2 samples)
+Shell Scripts (1 concurrent)                   2283.5 lpm   (60.0 s, 2 samples)
+Shell Scripts (8 concurrent)                    656.5 lpm   (60.0 s, 2 samples)
+System Call Overhead                         632162.6 lps   (10.0 s, 7 samples)
+
+System Benchmarks Index Values               BASELINE       RESULT    INDEX
+Dhrystone 2 using register variables         116700.0    6888588.0    590.3
+Double-Precision Whetstone                       55.0       1373.9    249.8
+Execl Throughput                                 43.0        877.5    204.1
+File Copy 1024 bufsize 2000 maxblocks          3960.0     168765.4    426.2
+File Copy 256 bufsize 500 maxblocks            1655.0      49199.4    297.3
+File Copy 4096 bufsize 8000 maxblocks          5800.0     445012.9    767.3
+Pipe Throughput                               12440.0     327924.7    263.6
+Pipe-based Context Switching                   4000.0      69606.2    174.0
+Process Creation                                126.0       2416.8    191.8
+Shell Scripts (1 concurrent)                     42.4       2283.5    538.6
+Shell Scripts (8 concurrent)                      6.0        656.5   1094.1
+System Call Overhead                          15000.0     632162.6    421.4
+                                                                   ========
+System Benchmarks Index Score                                         369.1
+
+------------------------------------------------------------------------
+Benchmark Run: 一 3月 02 2020 20:03:58 - 20:32:08
+4 CPUs in system; running 4 parallel copies of tests
+
+Dhrystone 2 using register variables       26826718.3 lps   (10.0 s, 7 samples)
+Double-Precision Whetstone                     5449.1 MWIPS (9.8 s, 7 samples)
+Execl Throughput                               2965.8 lps   (30.0 s, 2 samples)
+File Copy 1024 bufsize 2000 maxblocks        291243.4 KBps  (30.0 s, 2 samples)
+File Copy 256 bufsize 500 maxblocks           80902.5 KBps  (30.0 s, 2 samples)
+File Copy 4096 bufsize 8000 maxblocks        827300.0 KBps  (30.0 s, 2 samples)
+Pipe Throughput                             1252522.5 lps   (10.0 s, 7 samples)
+Pipe-based Context Switching                 217969.4 lps   (10.0 s, 7 samples)
+Process Creation                               6193.8 lps   (30.0 s, 2 samples)
+Shell Scripts (1 concurrent)                   5216.1 lpm   (60.0 s, 2 samples)
+Shell Scripts (8 concurrent)                    701.8 lpm   (60.1 s, 2 samples)
+System Call Overhead                        2375324.0 lps   (10.0 s, 7 samples)
+
+System Benchmarks Index Values               BASELINE       RESULT    INDEX
+Dhrystone 2 using register variables         116700.0   26826718.3   2298.8
+Double-Precision Whetstone                       55.0       5449.1    990.7
+Execl Throughput                                 43.0       2965.8    689.7
+File Copy 1024 bufsize 2000 maxblocks          3960.0     291243.4    735.5
+File Copy 256 bufsize 500 maxblocks            1655.0      80902.5    488.8
+File Copy 4096 bufsize 8000 maxblocks          5800.0     827300.0   1426.4
+Pipe Throughput                               12440.0    1252522.5   1006.9
+Pipe-based Context Switching                   4000.0     217969.4    544.9
+Process Creation                                126.0       6193.8    491.6
+Shell Scripts (1 concurrent)                     42.4       5216.1   1230.2
+Shell Scripts (8 concurrent)                      6.0        701.8   1169.6
+System Call Overhead                          15000.0    2375324.0   1583.5
+                                                                   ========
+System Benchmarks Index Score                                         943.1
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>YandexDisk命令行客户端</title>
+      <link>https://unixetc.com/post/yandex-disk-console-client-for-linux/</link>
+      <pubDate>Sat, 29 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/yandex-disk-console-client-for-linux/</guid>
+      <description>&lt;p&gt;Linux的Yandex.Disk控制台客户端使您可以在Yandex.Disk上管理文件，而无需使用&lt;a href=&#34;https://yandex.com/support/disk/cli-clients.html#cli-gui&#34;&gt;窗口界面&lt;/a&gt;或支持&lt;a href=&#34;https://yandex.com/support/disk/webdav.html#concept3&#34;&gt;WebDAV的程序&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;与WebDAV连接相比，使用控制台客户端的优势：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Low system resource requirements.&lt;/li&gt;
+&lt;li&gt;Faster file reading and writing speeds.&lt;/li&gt;
+&lt;li&gt;Faster syncing with the Yandex.Disk server.&lt;/li&gt;
+&lt;li&gt;Manage files offline.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;控制台客户端可以安装在以下操作系统上：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ubuntu Linux 8.04 及以上版本&lt;/li&gt;
+&lt;li&gt;Debian 5 及以上版本&lt;/li&gt;
+&lt;li&gt;Fedora 9 及以上版本&lt;/li&gt;
+&lt;li&gt;Red Hat Enterprise Linux 6 及以上版本&lt;/li&gt;
+&lt;li&gt;CentOS 6 及以上版本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;安装客户端&#34;&gt;安装客户端&lt;/h3&gt;
+&lt;p&gt;要自动安装客户端，请使用命令进行快速软件包安装。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;.deb软件包&lt;/em&gt; 安装示例&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;echo &amp;quot;deb http://repo.yandex.ru/yandex-disk/deb/ stable main&amp;quot; | sudo tee -a /etc/apt/sources.list.d/yandex-disk.list &amp;gt; /dev/null
+wget http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG -O- | sudo apt-key add - 
+sudo apt-get update
+sudo apt-get install -y yandex-disk
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;要手动安装客户端，请从下面的相应链接下载相应版本的软件包。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;包格式&lt;/th&gt;
+&lt;th&gt;32位&lt;/th&gt;
+&lt;th&gt;64位&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;.deb (Ubuntu, Debian)&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://repo.yandex.ru/yandex-disk/yandex-disk_latest_i386.deb&#34;&gt;yandex-disk_latest_i386&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://repo.yandex.ru/yandex-disk/yandex-disk_latest_amd64.deb&#34;&gt;yandex-disk_latest_amd64&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;.rpm (Fedora, Red Hat Enterprise Linux, CentOS)&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://repo.yandex.ru/yandex-disk/yandex-disk-latest.i386.rpm&#34;&gt;yandex-disk-latest.i386&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://repo.yandex.ru/yandex-disk/yandex-disk-latest.x86_64.rpm&#34;&gt;yandex-disk-latest.x86_64&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;使用dpkg软件包管理器的安装示例&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# dpkg -i yandex-disk_0.1.0.103_i386.deb
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;注意:该存储库自动安装在&lt;code&gt;/etc/apt/sources.list.d/yandex.list&lt;/code&gt;中&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;使用rpm软件包管理器进行安装的示例&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# rpm -ivh yandex-disk-0.1.0.103-1.fedora.i386.rpm
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;注意：该存储库将自动安装到&lt;code&gt;/etc/yum.repos.d/yandex.repo&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;您还可以将包含yandex-disk软件包的存储库添加到可用的软件包管理器存储库列表中，并使用apt-get或yum实用程序安装该软件包。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;使用apt-get安装&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# echo &amp;quot;deb http://repo.yandex.ru/yandex-disk/deb/ stable main&amp;quot; &amp;gt;&amp;gt; /etc/apt/sources.list.d/yandex-disk.list
+# apt-get update
+# apt-get install yandex-disk
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;使用yum安装&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# nano /etc/yum.repos.d/yandex.repo
+# rpm --import http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG
+# yum install yandex-disk
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;yandex.repo&lt;/code&gt;内容：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[yandex]
+name=Yandex
+failovermethod=priority
+baseurl=http://repo.yandex.ru/yandex-disk/rpm/stable/$basearch/
+enabled=1
+metadata_expire=1d
+gpgcheck=1
+gpgkey=http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;您可能需要将一个打开的GPG密钥导入系统以检查软件包的数字签名。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;为.deb包导入GPG密钥&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget -O YANDEX-DISK-KEY.GPG http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG
+sudo apt-key add YANDEX-DISK-KEY.GPG
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;*&lt;strong&gt;为.rpm包导入GPG密钥&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo rpm --import http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;设置向导&#34;&gt;设置向导&lt;/h3&gt;
+&lt;p&gt;您可以使用&lt;code&gt;setup&lt;/code&gt;命令运行客户端安装程序。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ yandex-disk setup
+&lt;/code&gt;&lt;/pre&gt;&lt;ol&gt;
+&lt;li&gt;输入存储Yandex.Disk本地副本的目录的名称。如果将名称保留为空白，则会在主目录中创建一个Yandex.Disk文件夹。&lt;/li&gt;
+&lt;li&gt;指示是否使用代理服务器（是/否）。&lt;/li&gt;
+&lt;li&gt;指示是否在启动时启动客户端（是/否）。&lt;/li&gt;
+&lt;li&gt;输入您的Yandex用户名。&lt;/li&gt;
+&lt;li&gt;输入您的Yandex密码。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;注意：如果您使用或以前使用过两次身份验证，则需要由“Yandex.Key”移动应用程序生成的一次性密码登录到Yandex.Disk程序。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;设置向导完成后，将在&lt;code&gt;~/.config/yandex-disk&lt;/code&gt;中创建&lt;code&gt;config.cfg&lt;/code&gt;配置文件。&lt;/p&gt;
+&lt;h3 id=&#34;使用客户端&#34;&gt;使用客户端&lt;/h3&gt;
+&lt;h4 id=&#34;命令&#34;&gt;命令&lt;/h4&gt;
+&lt;p&gt;使用以下命令与客户端一起使用：&lt;/p&gt;
+&lt;p&gt;. &lt;code&gt;Token&lt;/code&gt; 为您的Yandex用户名（USERNAME）获取授权密钥（OAuth令牌）。输入命令时，您可以输入您的Yandex密码（PASSWORD）以及令牌文件及其目录（FILE）。如果未指定其他选项，将在&lt;code&gt;~/.config/yandex-disk&lt;/code&gt;中创建&lt;code&gt;passwd&lt;/code&gt;文件来存储令牌。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$ yandex-disk token [-p, --password=PASSWORD] [OPTION] USERNAME [FILE]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;. &lt;code&gt;Start&lt;/code&gt; 启动守护程序并同步除exclude-dirs排除列表中的所有文件夹之外的所有文件夹。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$ yandex-disk start [OPTION]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;. &lt;code&gt;Status&lt;/code&gt; 显示守护程序的状态（同步状态，同步错误，已同步文件列表以及Yandex.Disk上的总空间和可用空间）。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$ yandex-disk status [OPTION]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;. &lt;code&gt;Stop&lt;/code&gt; 停止守护程序。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$ yandex-disk stop [OPTION]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;. &lt;code&gt;Sync&lt;/code&gt; 同步除exclude-dirs排除列表中的文件夹以外的所有文件夹。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$ yandex-disk sync [OPTION]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;. &lt;code&gt;Publish&lt;/code&gt; 获取指向指定文件或文件夹（FILE）的公共链接。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$ yandex-disk publish [OPTION] FILE&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;. &lt;code&gt;Unpublish&lt;/code&gt; 取消发布指定的文件或文件夹（FILE）。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$ yandex-disk unpublish FILE&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;其他选项option&#34;&gt;其他选项[OPTION]&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ndash;config=FILE, -c FILE&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;显示配置文件。默认为&lt;code&gt;~/.config/yandex-disk&lt;/code&gt;下的&lt;code&gt;config.cfg&lt;/code&gt;文件&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ndash;dir=DIR, -d DIR&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;输入要存储Yandex.Disk本地副本的目录。如果在初始设置过程中未输入名称，则默认情况下将使用&lt;code&gt;~/Yandex.Disk&lt;/code&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ndash;auth=FILE, -a FILE&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;输入包含授权数据的文件。默认文件是&lt;code&gt;passwd&lt;/code&gt;，它是使用&lt;code&gt;token&lt;/code&gt;命令或设置向导创建的，并存储在&lt;code&gt;~/.config/yandex-disk&lt;/code&gt;中。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ndash;exclude-dirs=DIR1,DIR2,&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;不要同步指定的目录。 为了使这些设置始终适用，必须将这些目录添加到&lt;code&gt;config.cfg&lt;/code&gt;文件中的&lt;code&gt;exclude-dirs&lt;/code&gt;排除列表中。 为了使设置正常工作，排除目录的名称应用逗号而不是空格分隔。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ndash;read-only&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;禁止更改Yandex.Disk服务器上的文件，并且仅同步本地副本。如果发生同步冲突，则将重命名本地文件。如果还启用了&lt;code&gt;--overwrite&lt;/code&gt;设置，则将覆盖本地文件。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ndash;overwrite&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;与服务器同步时，要覆盖对Yandex.Disk本地副本所做的更改。与&lt;code&gt;--read-only&lt;/code&gt;选项一起使用。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ndash;no-daemon, -D&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;启动守护程序而不将管理返回到控制台。要返回管理，必须通过在另一个控制台中启动命令&lt;code&gt;yandex-disk stop&lt;/code&gt;或关闭当前控制台来停止守护程序。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ndash;help, -h&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;显示帮助。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ndash;proxy=PARAM&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;配置代理服务器。有效参数：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Auto — 使用系统代理设置（默认使用）。&lt;/li&gt;
+&lt;li&gt;no — 不要使用代理服务器。&lt;/li&gt;
+&lt;li&gt;protocol,address,port,login,password — 手动设置服务器。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;使用命令的例子&#34;&gt;使用命令的例子&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;$ yandex-disk start -c ~/ydconfig/newconfig.cfg # launch the daemon and sync with specified configuration file 
+$ yandex-disk start --exclude-dirs=Foto # do not sync folder &#39;Photo&#39;
+$ yandex-disk sync --read-only # sync folders in &#39;read-only&#39; mode
+$ yandex-disk publish Photo # get a public link to the folder &#39;Photo&#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;configcfg文件的示例&#34;&gt;&amp;lsquo;config.cfg&amp;rsquo;文件的示例&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;# Path to file with authorization dataauth=&amp;quot;/home/user/ydconfig/my_passwd&amp;quot; 
+# Folder for storing the local copy of Yandex.Disk.dir=&amp;quot;/home/user/myDisk&amp;quot;
+# Do not sync specified folders.
+# exclude-dirs=&amp;quot;exclude/dir1,exclude/dir2,path/to/another/exclude/dir&amp;quot;
+# Specify proxy server. Examples:
+#proxy=https,127.0.0.1,80
+#proxy=https,127.0.0.1,80,login,password
+#proxy=https,127.0.0.1,443
+#proxy=socks4,my.proxy.local,1080,login,password
+#proxy=socks5,my.another.proxy.local,1081
+#proxy=auto
+#proxy=no
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;faq&#34;&gt;FAQ&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;控制台客户端中有哪些Yandex.Disk功能？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;使用控制台客户端时，Yandex.Disk的所有主要功能都可用：同步和共享文件和文件夹，以及自定义文件夹同步。&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;自定义文件夹同步在控制台客户端中是否起作用？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Yes. You can choose not to sync certain folders by entering the command (setting &amp;ndash;exclude-dirs=DIR1,DIR2,&amp;hellip;) or by adding them to the exclude-dirs exclusion list in config.cfg.
+是。您可以通过输入命令（设置&amp;ndash;exclude-dirs = DIR1，DIR2，&amp;hellip;）或将其添加到config.cfg中的exclude-dirs排除列表中，选择不同步某些文件夹。&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;控制台客户端是否支持符号链接？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;是的，它确实。&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;控制台客户端可以用于数据复制吗？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;是。可以使用&amp;ndash;read-only参数复制数据。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;via &lt;a href=&#34;https://yandex.com/support/disk/cli-clients.html&#34;&gt;https://yandex.com/support/disk/cli-clients.html&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Armbian更改软件源</title>
+      <link>https://unixetc.com/post/armbian-change-software-source/</link>
+      <pubDate>Tue, 05 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/armbian-change-software-source/</guid>
+      <description>&lt;p&gt;上一篇文章介绍了&lt;a href=&#34;https://unixetc.com/post/phicomm-n1-install-armbian/&#34;&gt;如何在斐迅N1上安装Armbian&lt;/a&gt;，现在介绍如何更改软件源为国内镜像。&lt;/p&gt;
+&lt;p&gt;编辑&lt;code&gt;/etc/apt/sources.list&lt;/code&gt;替换为以下内容：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free
+deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free
+deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free
+deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free
+# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free
+deb http://ftp.debian.org/debian jessie-backports main
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;接着编辑&lt;code&gt;/etc/apt/sources.list.d/armbian.list &lt;/code&gt;，替换为以下内容：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;deb http://mirrors.tuna.tsinghua.edu.cn/armbian/ buster main buster-utils buster-desktop
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;保存后，刷新缓存更新系统：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt update
+sudo apt upgrade -y
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>斐讯N1安装Armbian</title>
+      <link>https://unixetc.com/post/phicomm-n1-install-armbian/</link>
+      <pubDate>Sun, 03 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/phicomm-n1-install-armbian/</guid>
+      <description>&lt;p&gt;最近入手斐讯N1一枚，买的是白色未拆封，到手版本为&lt;strong&gt;V2.19_0307_NS&lt;/strong&gt;，刚好省了降级的麻烦，以下为斐讯N1安装armbian操作过程。&lt;/p&gt;
+&lt;h3 id=&#34;开启adb调试模式&#34;&gt;开启adb调试模式&lt;/h3&gt;
+&lt;p&gt;将N1通过HDMI连接显示器，将鼠标插到N1的USB口上，开机后用鼠标点击&lt;strong&gt;系统版本:V2.19_0307_NS&lt;/strong&gt;区域，多次点击后会出现提示&amp;quot;开启adb调试模式&amp;rdquo;，即可。&lt;/p&gt;
+&lt;p&gt;从此下载&lt;a href=&#34;https://tc5.us/file/18418398-405909486&#34;&gt;minimal_adb_fastboot&lt;/a&gt;，下载后安装。&lt;/p&gt;
+&lt;h3 id=&#34;准备刷机u盘&#34;&gt;准备刷机U盘&lt;/h3&gt;
+&lt;p&gt;准备一个不小区8G的U盘，下载镜像写入工具&lt;a href=&#34;https://tc5.us/file/18418398-404861253&#34;&gt;balenaEtcher&lt;/a&gt;，下载后安装。&lt;/p&gt;
+&lt;p&gt;下载&lt;strong&gt;Armbian&lt;/strong&gt;镜像，在此以&lt;strong&gt;Armbian_5.98_Aml-g12_Debian_buster_dev_5.4.0-rc4_20191025.img.xz&lt;/strong&gt;为例，镜像为debian最新版，不带桌面系统。如果需要其他的可以从&lt;a href=&#34;https://yadi.sk/d/pHxaRAs-tZiei&#34;&gt;此处&lt;/a&gt;自行下载。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://tc5.us/file/18418398-404861253&#34;&gt;Armbian_5.98_Aml-g12_Debian_buster_dev_5.4.0-rc4_20191025.img.xz&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;将下载后的镜像文件用&lt;strong&gt;balenaEtcher&lt;/strong&gt;写入U盘，写入完成后先别拔掉U盘，进入到&lt;strong&gt;BOOT&lt;/strong&gt;分区，找到&lt;strong&gt;uEnv.ini&lt;/strong&gt;文件，将&lt;strong&gt;dtb_name&lt;/strong&gt;行改为如下内容：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;dtb_name=/dtb/amlogic/meson-gxl-s905d-phicomm-n1.dtb&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;然后退出U盘备用。&lt;/p&gt;
+&lt;p&gt;如果你的&lt;strong&gt;BOOT&lt;/strong&gt;分区下&lt;code&gt;/dtd/amlogic/&lt;/code&gt;目录中没有&lt;code&gt;meson-gxl-s905d-phicomm-n1.dtb&lt;/code&gt;文件，那么可以点击&lt;a href=&#34;https://tc5.us/file/18418398-405918006&#34;&gt;meson-gxl-s905d-phicomm-n1.dtb&lt;/a&gt;下载放入相应目录即可。&lt;/p&gt;
+&lt;h3 id=&#34;从u盘引导armbian&#34;&gt;从U盘引导Armbian&lt;/h3&gt;
+&lt;p&gt;将制作好的系统U盘插到靠近HDMI一侧的U口，另外一个U口插入双公头的刷机线连接电脑，将N1通过HDMI连接显示器，并且插好网线然后开机。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/n1lianxian.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;开机后可以从显示器上看到盒子的IP地址，电脑上运行&lt;strong&gt;Minimal ADB and Fastboot&lt;/strong&gt;，然后输入&lt;code&gt;adb connect 192.168.1.54&lt;/code&gt;命令连接盒子，连接成功后会有如下提示：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;connected to 192.168.1.54:5555&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;然后输入&lt;code&gt;adb shell reboot update&lt;/code&gt;开始从U盘引导Armbian系统，盒子重启后成功引导armbian，此时可以将&lt;strong&gt;usb刷机线&lt;/strong&gt;拔掉，插入一个外接键盘，开始后面操作。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Armbian&lt;/strong&gt;系统默认账号为&lt;strong&gt;root&lt;/strong&gt;，密码为&lt;strong&gt;1234&lt;/strong&gt;，按照提示输入账号信息进行登录，登录后会有更改默认密码提示，按照提示更改默认密码。&lt;/p&gt;
+&lt;p&gt;接下来会有新建账号提示:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Creating a new user account. Press &amp;lt;Ctrl-C&amp;gt; to abort
+
+Please provide a username (eg. your forename):
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;可以按照该提示新建账号，或者按&lt;!-- raw HTML omitted --&gt;Ctrl+c&lt;!-- raw HTML omitted --&gt;终止，继续用&lt;strong&gt;root&lt;/strong&gt;账号登录。&lt;/p&gt;
+&lt;h3 id=&#34;将armbian安装到n1中&#34;&gt;将Armbian安装到N1中&lt;/h3&gt;
+&lt;p&gt;以上只是从U盘成功引导登录Armbian，接下来我们将Armbian安装到N1内置存储(eMMC)，即可拔掉U盘了。&lt;/p&gt;
+&lt;p&gt;如果是通过&lt;strong&gt;root&lt;/strong&gt;登录的话，那么直接运行root目录下&lt;code&gt;install.sh&lt;/code&gt;即可安装，如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt; root@aml:~# ./install. sh
+ Start script create MBR and filesystem
+ /dev/mmcblk1
+ Start backup u-boot default
+ 4＋0 records in
+ 4＋0 records out
+4194304 bytes（4.2mb，4.omib） copied，o.793832s，52.8mb/s Start create MBR and partittion
+ start restore u-boot
+ 442＋0 records in
+ 442＋0 records out
+ 442 bytes copied， 0.0123705 s， 35.7 KB/
+ 8191＋0 records in
+ 8191＋0 records out
+ 4193792 bytes （4.2 MB， 4.0 MiB） copied， 0.414592， 10.1 MB/s Done
+ Start copy system for eMMC.
+ Formatting BOOT partition... mkfs. fat 4.1 （2017-01-24）
+ done.
+ Cppying BOOT... done.
+ Edit init config... done.
+ Formatt ing ROOT partition...
+ e2fsck1.44.5（15-dec-2018）
+ ROOT EMMC: clean， 11/427392 files， 50723/1706240 blocks
+ done.
+ Copying ROOTFS.
+ Copy BIN
+ Create DEV
+ Copy ETC
+ Copy HOME
+ Copy LIB
+ Create MEDIA
+ Create MNT
+ Copy OPT
+ Create PROC
+ Copy ROOT
+ Create RUN
+ Copy SBIN
+ Copy SEL INUX
+ Copy SRV
+ Create SYS
+ Create TMP
+ Copy USR
+ Copy VAR
+ Copy fstab
+*****************************
+ Complete copy os to eMMC
+*****************************
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;提示&lt;strong&gt;Complete copy OS to eMMC&lt;/strong&gt;就表示安装完成，然后输入&lt;code&gt;halt&lt;/code&gt;关机，拔掉U盘后重新加电启动盒子即可。&lt;/p&gt;
+&lt;p&gt;如果不是通过root用户登录的话，那么按照如下操作进行安装。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$su
+#cd /root/
+#./install.sh
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>Debian10中sudo配置</title>
+      <link>https://unixetc.com/post/sudo-configuration-in-debian10/</link>
+      <pubDate>Wed, 10 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/sudo-configuration-in-debian10/</guid>
+      <description>&lt;p&gt;Debian10中&lt;code&gt;/etc/sudoers&lt;/code&gt;中提示了需要通过&lt;code&gt;visudo&lt;/code&gt;来编辑该文件，如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This file MUST be edited with the &amp;lsquo;visudo&amp;rsquo; command as root.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;但奇葩的是系统中没有&lt;code&gt;visudo&lt;/code&gt;命令，&lt;code&gt;apt&lt;/code&gt;搜索也搜不到，-_-!&lt;/p&gt;
+&lt;p&gt;因此只能通过以下方法来编辑：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#echo &amp;quot;alair  ALL=(ALL:ALL) ALL&amp;quot; &amp;gt;&amp;gt; /etc/sudoers
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;保存后用户&lt;code&gt;alair&lt;/code&gt;就可以使用&lt;code&gt;sudo&lt;/code&gt;命令来进行&lt;strong&gt;root&lt;/strong&gt;权限操作了。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>python-pip安装实例</title>
+      <link>https://unixetc.com/post/python-pip-installation/</link>
+      <pubDate>Thu, 20 Apr 2017 14:28:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/python-pip-installation/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Python-pip&lt;/strong&gt; 是一个现代的，通用的 &lt;strong&gt;Python&lt;/strong&gt;包管理工具。提供了对 Python 包的查找、下载、安装、卸载的功能。&lt;/p&gt;
+&lt;p&gt;以下为多个操作系统平台下&lt;strong&gt;Python-pip&lt;/strong&gt;安装方法&lt;/p&gt;
+&lt;h3 id=&#34;通用方法&#34;&gt;通用方法&lt;/h3&gt;
+&lt;p&gt;通过&lt;strong&gt;get-pip.py&lt;/strong&gt;文件来安装，建议&lt;strong&gt;Windows&lt;/strong&gt;用户使用，前提是你必须首先安装&lt;strong&gt;Python&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;版本要求Python 2 &amp;gt;=2.7.9 或Python 3 &amp;gt;=3.4，可从官网下载&lt;a href=&#34;http://www.python.org/&#34;&gt;http://www.python.org/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;然后下载&lt;strong&gt;get-pip.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;下载地址 &lt;a href=&#34;https://bootstrap.pypa.io/get-pip.py&#34;&gt;https://bootstrap.pypa.io/get-pip.py&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;通过&lt;code&gt;python get-pip.py&lt;/code&gt;命令来进行安装。&lt;/p&gt;
+&lt;h3 id=&#34;linux下通过软件管理工具来安装python-pip&#34;&gt;Linux下通过软件管理工具来安装Python-pip&lt;/h3&gt;
+&lt;h4 id=&#34;fedora21&#34;&gt;Fedora21&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Python2&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo yum upgrade python-setuptools
+sudo yum install python-pip python-wheel
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Python3&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo yum install python3 python3-wheel
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;fedora22&#34;&gt;Fedora22&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Python2&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo dnf upgrade python-setuptools
+sudo dnf install python-pip python-wheel
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Python3&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo dnf install python3 python3-wheel
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;centosrhel&#34;&gt;CentOS/RHEL&lt;/h4&gt;
+&lt;p&gt;首先得启用&lt;strong&gt;EPEL repository&lt;/strong&gt;,&lt;a href=&#34;https://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F&#34;&gt;可参考此文&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;EPEL 6/EPEL 7&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo yum install python-pip
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;EPEL 7&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bsh&#34; data-lang=&#34;bsh&#34;&gt;sudo yum install python-wheel
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;opensuse&#34;&gt;OpenSUSE&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Python 2:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo zypper install python-pip python-setuptools python-wheel
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Python 3:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo zypper install python3-pip python3-setuptools python3-wheel
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;debianubuntu&#34;&gt;Debian/Ubuntu&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install python-pip
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;当系统安装的是&lt;strong&gt;Python3&lt;/strong&gt;是，则安装&lt;code&gt;python3-pip&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;archlinux&#34;&gt;Archlinux&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Python 2:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo pacman -S python2-pip
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Python 3:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo pacman -S python-pip
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Linux开启TCP BBR算法</title>
+      <link>https://unixetc.com/post/linux_enable_tcp_bbr/</link>
+      <pubDate>Mon, 17 Apr 2017 14:28:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/linux_enable_tcp_bbr/</guid>
+      <description>&lt;p&gt;Linux Kernel 4.9+已经支持tcp_bbr拥塞控制算法，因此建议将内核升级为最新版。&lt;/p&gt;
+&lt;h3 id=&#34;将内核升级到最新版&#34;&gt;将内核升级到最新版&lt;/h3&gt;
+&lt;h4 id=&#34;debianubuntu升级最新内核&#34;&gt;Debian/Ubuntu升级最新内核&lt;/h4&gt;
+&lt;p&gt;最新内核下载地址 &lt;a href=&#34;http://kernel.ubuntu.com/~kernel-ppa/mainline&#34;&gt;http://kernel.ubuntu.com/~kernel-ppa/mainline&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;下载安装新内核&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.10.10/linux-image-4.10.10-041010-generic_4.10.10-041010.201704120813_amd64.deb&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;
+dpkg -i linux-image-4.10.10-041010-generic_4.10.10-041010.201704120813_amd64.deb
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;更新GRUB并且重启&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;update-grub
+reboot
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;centos-7-升级最新内核&#34;&gt;Centos 7 升级最新内核&lt;/h4&gt;
+&lt;p&gt;内核下载地址 &lt;a href=&#34;http://elrepo.org/linux/kernel/el7/x86_64/RPMS/&#34;&gt;http://elrepo.org/linux/kernel/el7/x86_64/RPMS/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;安装最新内核&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
+yum --enablerepo&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;elrepo-kernel install kernel-ml -y
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;检查内核是否安装完成&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;rpm -qa | grep kernel&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;更新GRUB并重启主机&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;egrep ^menuentry /etc/grub2.cfg | cut -f &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; -d &lt;span style=&#34;color:#ae81ff&#34;&gt;\&amp;#39;&lt;/span&gt;
+grub2-set-default &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;#default 0表示第一个内核设置为默认运行, 选择最新内核就对了&lt;/span&gt;
+reboot
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://elrepo.org/linux/kernel/&#34;&gt;http://elrepo.org/linux/kernel/&lt;/a&gt;下&lt;code&gt;e15&lt;/code&gt;、&lt;code&gt;e16&lt;/code&gt;分别对应Centos5、Centos6，可参考以上安装&lt;/p&gt;
+&lt;h3 id=&#34;开启bbr&#34;&gt;开启BBR&lt;/h3&gt;
+&lt;p&gt;重启后&lt;code&gt;uname -r&lt;/code&gt; 检查内核版本是不是4.9+&lt;/p&gt;
+&lt;p&gt;然后执行以下操作&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;net.core.default_qdisc=fq&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; /etc/sysctl.conf
+echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;net.ipv4.tcp_congestion_control=bbr&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; /etc/sysctl.conf
+sysctl -p
+sysctl net.ipv4.tcp_available_congestion_control
+sysctl net.ipv4.tcp_congestion_control
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;运行结果中有&lt;strong&gt;bbr&lt;/strong&gt;则成功了&lt;/p&gt;
+&lt;p&gt;通过&lt;code&gt;lsmod | grep bbr&lt;/code&gt;可以检查是否开启&lt;strong&gt;bbr&lt;/strong&gt;模块&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Debian下安装Zbook14无线网卡驱动</title>
+      <link>https://unixetc.com/post/zbook14-install-wireless-driver-under-debian/</link>
+      <pubDate>Wed, 17 Aug 2016 08:17:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/zbook14-install-wireless-driver-under-debian/</guid>
+      <description>&lt;p&gt;首先查看无线网卡型号&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;alair@zb14:~$ lspci|grep less
+02:00.0 Network controller: Intel Corporation Wireless 7260 (rev 73)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;搜索Inter相关固件
+​	
+alair@zb14:~$ apt-cache search iwlwifi
+firmware-iwlwifi - Binary firmware for Intel Wireless cards&lt;/p&gt;
+&lt;p&gt;安装之
+​	
+&lt;code&gt;alair@zb14:~$ apt-get install firmware-iwlwifi&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;重启完事儿！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>树莓派使用DietPi</title>
+      <link>https://unixetc.com/post/raspberry-pi-use-dietpi/</link>
+      <pubDate>Tue, 04 Aug 2015 18:23:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/raspberry-pi-use-dietpi/</guid>
+      <description>&lt;h3 id=&#34;下载安装dietpi&#34;&gt;下载安装DietPi&lt;/h3&gt;
+&lt;p&gt;DietPi项目主页 &lt;a href=&#34;http://dietpi.com/&#34;&gt;http://dietpi.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;DietPi下载地址 &lt;a href=&#34;http://fuzon.co.uk/downloads/DietPi.7z&#34;&gt;http://fuzon.co.uk/downloads/DietPi.7z&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这个压缩包91MB，解压后的img文件522MB,比官方的小多了。&lt;/p&gt;
+&lt;p&gt;然后将镜像写入到SD卡中，linux下使用&lt;code&gt;dd&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;dd if=DietPi_v74.img of=/dev/sdc bs=2M
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Windows下使用&lt;strong&gt;Win32 Disk Imager&lt;/strong&gt;，&lt;a href=&#34;http://sourceforge.net/projects/win32diskimager/&#34;&gt;戳这里&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;写入完成后将SD卡插入树莓派，加电启动。&lt;/p&gt;
+&lt;h3 id=&#34;预设置wifi链接&#34;&gt;预设置Wifi链接&lt;/h3&gt;
+&lt;p&gt;首次使用时，可以通过编辑&lt;strong&gt;dietpi.txt&lt;/strong&gt;来进行wifi预设置。&lt;/p&gt;
+&lt;p&gt;将TF卡插入电脑读卡器，打开对应的磁盘，找到&lt;strong&gt;dietpi.txt&lt;/strong&gt;文件，打开。&lt;/p&gt;
+&lt;p&gt;找到&lt;code&gt;Wifi_Enabled=0&lt;/code&gt;，将其设置为&lt;strong&gt;1&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;然后找到&lt;code&gt;Wifi_SSID&lt;/code&gt;和&lt;code&gt;Wifi_KEY&lt;/code&gt;分别设置wifi节点名和密码，保存即可。&lt;/p&gt;
+&lt;h3 id=&#34;配置dietpi&#34;&gt;配置DietPi&lt;/h3&gt;
+&lt;p&gt;DietPi默认用户名密码为&lt;code&gt;root dietpi&lt;/code&gt;，第一次启动DietPi提示检测升级，按提示操作。&lt;/p&gt;
+&lt;p&gt;不过由于天朝网路问题，可能升级比较缓慢，建议&lt;strong&gt;Ctrl+c&lt;/strong&gt;终止升级，修改&lt;code&gt;sources.list&lt;/code&gt;为朝内镜像。&lt;/p&gt;
+&lt;p&gt;DietPi默认没有&lt;code&gt;vi&lt;/code&gt;,使用&lt;code&gt;nano&lt;/code&gt;进行编辑，添加Aliyun源。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;deb http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib
+deb-src http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;更新软件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;apt-get update&amp;amp;&amp;amp;apt-get upgrade -y
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后运行&lt;code&gt;dietpi-config&lt;/code&gt;进行配置。&lt;/p&gt;
+&lt;p&gt;DietPi - Config&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;           ┌────┤ ---------- DietPi-Config ---------- ├─────┐
+           │  Hardware : Raspberry Pi 1 (512MB)             │
+           │                                                │
+           │           1 Display Options                    │
+           │           2 Audio Options                      │
+           │           3 Performance Options                │
+           │           4 Advanced Options                   │
+           │           5 Language/Regional Options          │
+           │           6 Security Options                   │
+           │           7 Networking Options                 │
+           │           8 AutoBoot Options                   │
+           │           9 Tools                              │
+           │                                                │
+           │                                                │
+           │           &amp;lt;Ok&amp;gt;               &amp;lt;Exit&amp;gt;            │
+           │                                                │
+           └────────────────────────────────────────────────┘
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;推荐配置：&lt;/p&gt;
+&lt;p&gt;Display Options -&amp;gt; GPU/RAM Memory Split ，不适用桌面系统的话，建议选择&lt;code&gt;Server&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Performance Options -&amp;gt; Change Overclocking Profile ，设置超频选项&lt;/p&gt;
+&lt;p&gt;Language/Regional Options-&amp;gt;  Locale/Timezone ，设置语言与时区，建议将&lt;strong&gt;zh_CN&lt;/strong&gt;的四个语言全部勾选。时区选择Asia/Chongqing。&lt;/p&gt;
+&lt;p&gt;Security Options -&amp;gt; Change Root Password/Change Hostname ，修改密码和主机名&lt;/p&gt;
+&lt;p&gt;Networking Options中干货比较多，大家自行设置&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;┌──────────────────┤ --- DietPi - Network Options --- ├───────────────────┐
+│                                                                         │
+│  Ethernet     : Not Found | Enabled | Disconnected                      │
+│  Wifi         : Not Found | Disabled | Disconnected                     │
+│  Internet     : Please run Internet Test                                │
+│  Samba client : Not Installed                                           │
+│  FTP client   : Not Installed                                           │
+│  NoIp status  : Not Installed                                           │
+│                                                                         │
+│        Ethernet     Change Wired Network Settings                       │
+│        Wifi         Change Wireless Network Settings                    │
+│        Test         Run the Internet Connection Test                    │
+│        Samba Client Install now to access Windows shares                │
+│        Ftp Client   Install now to access FTP as filesystem mount       │
+│        NoIp         Install No-Ip now                                   │
+│                                                                         │
+│                                                                         │
+│                   &amp;lt;Ok&amp;gt;                       &amp;lt;Back&amp;gt;                     │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;设置完成后重启系统。&lt;/p&gt;
+&lt;h3 id=&#34;dietpi软件快捷安装工具&#34;&gt;DietPi软件快捷安装工具&lt;/h3&gt;
+&lt;p&gt;DietPi自带一个便捷的软件安装工具&lt;code&gt;dietpi-software&lt;/code&gt;，可以通过这个工具快速安装一些常用软件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Setup USB Dedicated Drive?
+    ┌───────────────────┤ Setup USB Dedicated Drive? ├───────────────────┐
+    │                                                                    │
+    │ Will you be using a dedicated USB hard drive with this DietPi      │
+    │ installation?                                                      │
+    │                                                                    │
+    │ (NOTICE) Your decision now is final and cannot be changed at a     │
+    │ later date. DietPi will automatically setup your future software   │
+    │ installations to utilize the USB drive instead of MicroSD.         │
+    │ As USB hard drives are generally faster than MicroSD, using a USB  │
+    │ drive can vastly improve system performance.                       │
+    │                                                                    │
+    │  This is recommended for:                                          │
+    │  - BitTorrent (Store downloads)                                    │
+    │  - OwnCloud                                                        │
+    │  - Kodi (Store Media Files)                                        │
+    │  - RetroPie (Store Roms)                                           │
+    │  - Hifi (Store Music)                                              │
+    │                                                                    │
+    │                                                                    │
+    │                  &amp;lt;Yes&amp;gt;                     &amp;lt;No&amp;gt;                    │
+    │                                                                    │
+    └────────────────────────────────────────────────────────────────────┘
+
+      ┌────┤ ---------- DietPi - Software Setup ---------- ├─────┐
+      │                                                          │
+      │           1  Select DietPi Optimized Software.           │
+      │           2  Select Additional Linux Software.           │
+      │           3  SSH Server  : Dropbear                      │
+      │           4  File Server : None                          │
+      │           5  Log System  : DietPi-Ramlog #1              │
+      │           6  DietPi-Config                               │
+      │           7  Help!                                       │
+      │           Go Start Install                               │
+      │                                                          │
+      │                                                          │
+      │              &amp;lt;Ok&amp;gt;                  &amp;lt;Exit&amp;gt;                │
+      │                                                          │
+      └──────────────────────────────────────────────────────────┘
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;1  Select DietPi Optimized Software.包含以下软件:&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;2  Select Additional Linux Software.包含以下软件&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>开始使用树莓派</title>
+      <link>https://unixetc.com/post/starting-use-raspberry-pi/</link>
+      <pubDate>Fri, 28 Feb 2014 12:28:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/starting-use-raspberry-pi/</guid>
+      <description>&lt;h3 id=&#34;安装系统&#34;&gt;安装系统&lt;/h3&gt;
+&lt;p&gt;从官网下载系统镜像，推荐Raspbian&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://downloads.raspberrypi.org/raspbian_latest&#34;&gt;http://downloads.raspberrypi.org/raspbian_latest&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;将下载后的zip文件解压，得到&lt;strong&gt;2014-01-07-wheezy-raspbian.img&lt;/strong&gt;文件。&lt;/p&gt;
+&lt;p&gt;准备一张SD卡，最好容量大于4GB，Class10&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;将镜像写入SD卡&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Linux下推荐使用&lt;code&gt;dd&lt;/code&gt;名来写入镜像&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;使用&lt;code&gt;fdisk -l&lt;/code&gt;检查分区信息，比如sd卡设备为**/dev/sdb**，使用以下命令写入：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#dd if=2014-01-07-wheezy-raspbian.img of=/dev/sdb bs=1M
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Windows下推荐使用&lt;strong&gt;Win32DiskImager&lt;/strong&gt;写入镜像&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Win32DiskImager下载地址：&lt;a href=&#34;http://sourceforge.net/projects/win32diskimager/&#34;&gt;http://sourceforge.net/projects/win32diskimager/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载后打开软件，选择好镜像文件与USB设备，然后点击&lt;strong&gt;Write&lt;/strong&gt;写入。&lt;/p&gt;
+&lt;h3 id=&#34;开机进入系统&#34;&gt;开机进入系统&lt;/h3&gt;
+&lt;p&gt;将已写入系统的SD卡插入Raspberry Pi，通过固网链接路由器，然后使用USB供电启动。&lt;/p&gt;
+&lt;p&gt;正常启动后，板载的&lt;strong&gt;ACT&lt;/strong&gt;，&lt;strong&gt;PWR&lt;/strong&gt;、&lt;strong&gt;FDX&lt;/strong&gt;、&lt;strong&gt;LNK&lt;/strong&gt;、&lt;strong&gt;100&lt;/strong&gt;五个指示灯均点亮。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;通过SSH连接Raspberry Pi&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;查看Raspberry Pi IP地址&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#nmap -sP 192.168.1/24
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;检查出MAC后标注(Raspberry Pi Foundation)的即为Raspberry Pi主机。&lt;/p&gt;
+&lt;p&gt;然后通过SSH来链接主机&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#ssh 192.168.1.127
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;用户名为&lt;strong&gt;pi&lt;/strong&gt;，默认密码为&lt;strong&gt;raspberry&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Widnows下推荐使用&lt;a href=&#34;http://www.chiark.greenend.org.uk/~sgtatham/putty/&#34; title=&#34;PuTTY: a free telnet/ssh client&#34;&gt;Putty&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;设置raspberry&#34;&gt;设置Raspberry&lt;/h3&gt;
+&lt;p&gt;运行设置工具&lt;code&gt;sudo raspi-config&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;选择&lt;code&gt;Expand Filesystem&lt;/code&gt;扩展文件系统&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Change User Passwd&lt;/code&gt; 修改默认用户&lt;code&gt;pi&lt;/code&gt;的密码，当然也可以在系统中使用&lt;code&gt;passwd&lt;/code&gt;命令来更改。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Advanced Options&lt;/code&gt;-&amp;gt;&lt;code&gt;Hostname&lt;/code&gt; 修改主机名&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Overclock&lt;/code&gt; 超频，建议900Mhz&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Debian下安装Jekyll</title>
+      <link>https://unixetc.com/post/install-jekyll-on-debian/</link>
+      <pubDate>Fri, 06 Sep 2013 19:16:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/install-jekyll-on-debian/</guid>
+      <description>&lt;h3 id=&#34;安装rvm&#34;&gt;安装Rvm&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;$sudo aptitude install curl
+$curl -L get.rvm.io | bash -s stable
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;加载Rvm&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$source ~/.rvm/scripts/rvm
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;检查安装必备组件&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$rvm requirements
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;安装-ruby-193&#34;&gt;安装 Ruby 1.9.3&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;$rvm install 1.9.3
+$ruby -v
+$gem -v
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;更改Gem软件源&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$gem sources -a http://ruby.taobao.org/
+$gem sources -r http://rubygems.org/
+$gem sources -l
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;安装jekyll&#34;&gt;安装Jekyll&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;$gem install jekyll
+$jekyll -v
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;打完收工!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Debian使用apt-spy选择最佳源</title>
+      <link>https://unixetc.com/post/debian-use-apt-spy-to-select-the-best-source/</link>
+      <pubDate>Thu, 09 May 2013 05:09:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/debian-use-apt-spy-to-select-the-best-source/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;安装apt-spy&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#apt-get install apt-spy
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;使用apt-spy选择最佳源&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#apt-spy update
+#apt-spy -d stable -a asia -t 3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;结果保存在&lt;code&gt;/etc/apt/sources.list.d/apt-spy.list&lt;/code&gt;，可手动替换到&lt;code&gt;/etc/apt/sources.list&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;apt-spy选项:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;-d 系统版本，可选stable,testing,unstable&lt;/li&gt;
+&lt;li&gt;-a 区域,如asia,europe等，可用项可cat /etc/apt-spy.conf&lt;/li&gt;
+&lt;li&gt;-t 超时阀值(s)，可筛掉长时间不响应的地址&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

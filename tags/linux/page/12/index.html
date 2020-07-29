@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>Linux - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/tags/linux/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+
+
+
+<meta property="og:title" content="Linux" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/tags/linux/" />
+<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <h1>Tag: Linux</h1>
+    <div class="post-info">
+        <a href="https://unixetc.com/tags">To all tags</a>
+    </div>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/zbook14-install-wireless-driver-under-debian/">Debian下安装Zbook14无线网卡驱动</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        首先查看无线网卡型号
+alair@zb14:~$ lspci|grep less02:00.0 Network controller: Intel Corporation Wireless 7260 (rev 73) 搜索Inter相关固件 ​	alair@zb14:~$ apt-cache search iwlwifi firmware-iwlwifi - Binary firmware for Intel Wireless cards
+安装之 ​	alair@zb14:~$ apt-get install firmware-iwlwifi
+重启完事儿！
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-08-17</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/debian">#Debian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/zbook">#Zbook</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/hp">#HP</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/inter">#inter</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/inter7260">#inter7260</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/ubuntu-modify-the-grub-boot-menu/">ubuntu修改grub引导菜单</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        先运行update-grub命令生成一次grub配置，顺便查看一下识别出来的引导菜单内容
+root@alairpc:~# update-grubGenerating grub configuration file ...Found linux image: /boot/vmlinuz-4.4.0-21-genericFound initrd image: /boot/initrd.img-4.4.0-21-genericFound memtest86+ image: /boot/memtest86+.elfFound memtest86+ image: /boot/memtest86+.binFound Windows 7 (loader) on /dev/sda1doneroot@alairpc:~#  注意看，以上共有5个菜单项，最后一个是windows7
+接下来我们来看看gurb配置文件/etc/default/grub
+root@alairpc:~# cat /etc/default/grub # If you change this file, run 'update-grub' afterwards to update# /boot/grub/grub.cfg.# For full documentation of the options in this file, see:# info -f grub -n 'Simple configuration'GRUB_DEFAULT=4#GRUB_HIDDEN_TIMEOUT=0GRUB_HIDDEN_TIMEOUT_QUIET=trueGRUB_TIMEOUT=3GRUB_DISTRIBUTOR=`lsb_release -i -s 2&gt; /dev/null || echo Debian`GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot;GRUB_CMDLINE_LINUX=&quot;locale=zh_CN&quot;# Uncomment to enable BadRAM filtering, modify to suit your needs# This works with Linux (no patch required) and with any kernel that obtains# the memory map information from GRUB (GNU Mach, kernel of FreeBSD .
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-06-27</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/grub">#GRUB</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/use-syncthing-synchronize-files-between-multiple-devices/">使用Syncthing在多个设备之间同步文件</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        Syncthing是一款开源的多平台同步软件，使用他可以在多个设备间进行文件同步，并且带有版本控制功能。
+Syncthing官网地址 **https://syncthing.net/**Github地址 https://github.com/syncthing/syncthing
+安装Syncthing Syncthing官网提供多平台安装包，下载地址为 https://github.com/syncthing/syncthing/releases/
+并且针对Debian/Ubuntu平台，官方提供了apt-get安装方法
+# Add the release PGP keys:curl -s https://syncthing.net/release-key.txt | sudo apt-key add -# Add the &quot;release&quot; channel to your APT sources:echo &quot;deb http://apt.syncthing.net/ syncthing release&quot; | sudo tee /etc/apt/sources.list.d/syncthing.list# Update and install syncthing:sudo apt-get updatesudo apt-get install syncthing 运行Syncthing Linux下直接使用syncthing命令运行
+syncthing &amp; Windows下直接打开下载的syncthing.exe文件，而后浏览器自动打开http://127.0.0.1:8384进行设置管理。
+管理Syncthing 如果是在VPS上安装Syncthing ,运行syncthing后，只能通过http://127.0.0.1:8384进行管理，我们可以通过以下方法在本地管理。
+ssl -L 9891:localhost:8384 root@ip 输入root密码登录成功后，即可本地浏览http://127.0.0.1:9891对VPS上的Synchting进行管理。
+添加设备 每个设备均有一个设备标识，可以通过操作-&gt;显示设备标识来查看。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-05-06</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/android">#Android</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/syncthing">#Syncthing</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/sync">#Sync</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%90%8C%E6%AD%A5%E6%96%87%E4%BB%B6">#同步文件</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/macos">#MacOS</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+    
+        
+    <div class="pagination">
+        <div class="left pagination-item ">
+            
+                <a href="/tags/linux/page/11/">To new posts</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/tags/linux/page/13/">To old posts</a>
+            
+        </div>
+    </div>
+
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

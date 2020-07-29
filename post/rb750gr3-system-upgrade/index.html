@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>MikroTik RB750Gr3系统升级 - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+
+
+
+<meta property="og:title" content="MikroTik RB750Gr3系统升级" />
+<meta property="og:description" content="自动升级 进入路由器管理界面，通过System-&gt;Auto Upgrade功能自动升级。
+或者使用Winbox连接，通过System-&gt;Auto Upgrade功能自动升级
+自动升级不了的，刷不出最新系统的继续看下面手动升级。
+手动升级 官方系统下载页面https://mikrotik.com/download
+本次以RB750gr3为例，官方显示了以下四个系统版本
+ 5.26 (Legacy) 6.40.9 (Long-term) 6.43.2 (Stable) 6.44beta9 (Testing)  我的RB750gr3当前版本为6.41，通过自动升级刷新不出来最新版本，因此只能手动升级。
+RB750gr3为MMIPS构架，从下载页面找到相应的构架。
+其中MMIPS后面就备注着hEX (RB750Gr3), RBMxx点击下载**Main package**，格式为**.npk**文件。
+通过Winbox连接路由器，将下载的npk文件拖放到File菜单，上传完成后如下所示。
+然后system-&gt;reboot重启系统完成更新，更新后版本号可以通过Winbox标题栏看到。
+提醒:Router OS 6.45.6 for RB750gr3系统包国内网盘**下载地址**" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unixetc.com/post/rb750gr3-system-upgrade/" />
+<meta property="article:published_time" content="2018-10-01T11:21:00+00:00" />
+<meta property="article:modified_time" content="2018-10-01T11:21:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="MikroTik RB750Gr3系统升级"/>
+<meta name="twitter:description" content="自动升级 进入路由器管理界面，通过System-&gt;Auto Upgrade功能自动升级。
+或者使用Winbox连接，通过System-&gt;Auto Upgrade功能自动升级
+自动升级不了的，刷不出最新系统的继续看下面手动升级。
+手动升级 官方系统下载页面https://mikrotik.com/download
+本次以RB750gr3为例，官方显示了以下四个系统版本
+ 5.26 (Legacy) 6.40.9 (Long-term) 6.43.2 (Stable) 6.44beta9 (Testing)  我的RB750gr3当前版本为6.41，通过自动升级刷新不出来最新版本，因此只能手动升级。
+RB750gr3为MMIPS构架，从下载页面找到相应的构架。
+其中MMIPS后面就备注着hEX (RB750Gr3), RBMxx点击下载**Main package**，格式为**.npk**文件。
+通过Winbox连接路由器，将下载的npk文件拖放到File菜单，上传完成后如下所示。
+然后system-&gt;reboot重启系统完成更新，更新后版本号可以通过Winbox标题栏看到。
+提醒:Router OS 6.45.6 for RB750gr3系统包国内网盘**下载地址**"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">MikroTik RB750Gr3系统升级</h1>
+        </header>
+        <div class="content">
+            <h3 id="自动升级">自动升级</h3>
+<p>进入路由器管理界面，通过<strong>System</strong>-&gt;<strong>Auto Upgrade</strong>功能自动升级。</p>
+<p>或者使用<strong>Winbox</strong>连接，通过<strong>System</strong>-&gt;<strong>Auto Upgrade</strong>功能自动升级</p>
+<p><strong>自动升级不了的，刷不出最新系统的继续看下面手动升级。</strong></p>
+<h3 id="手动升级">手动升级</h3>
+<p>官方系统下载页面<a href="https://mikrotik.com/download">https://mikrotik.com/download</a></p>
+<p>本次以<strong>RB750gr3</strong>为例，官方显示了以下四个系统版本</p>
+<ul>
+<li>5.26 (Legacy)</li>
+<li>6.40.9 (Long-term)</li>
+<li>6.43.2 (Stable)</li>
+<li>6.44beta9 (Testing)</li>
+</ul>
+<p>我的<strong>RB750gr3</strong>当前版本为<strong>6.41</strong>，通过自动升级刷新不出来最新版本，因此只能手动升级。</p>
+<p><strong>RB750gr3</strong>为<strong>MMIPS</strong>构架，从下载页面找到相应的构架。</p>
+<p>其中<strong>MMIPS</strong>后面就备注着<strong>hEX (RB750Gr3), RBMxx</strong>点击下载**<a href="https://download.mikrotik.com/routeros/6.43.2/routeros-mmips-6.43.2.npk">Main package</a>**，格式为**.npk**文件。</p>
+<p>通过<strong>Winbox</strong>连接路由器，将下载的npk文件拖放到<strong>File</strong>菜单，上传完成后如下所示。</p>
+<p><img src="/imgs/2983593228.png" alt="File"></p>
+<p>然后<strong>system</strong>-&gt;<strong>reboot</strong>重启系统完成更新，更新后版本号可以通过<strong>Winbox</strong>标题栏看到。</p>
+<p><strong>提醒</strong>:Router OS 6.45.6 for RB750gr3系统包国内网盘**<a href="https://tc5.us/file/18418398-397940220">下载地址</a>**</p>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2018-10-01</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/router">#router</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/routeros">#routeros</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ros">#ros</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/mikrotik">#mikrotik</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/rb750">#rb750</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/rb750gr3">#rb750gr3</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/upgrade">#upgrade</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/winbox">#winbox</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

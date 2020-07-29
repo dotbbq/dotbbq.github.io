@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>镜头 - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/tags/%E9%95%9C%E5%A4%B4/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+
+
+
+<meta property="og:title" content="镜头" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/tags/%E9%95%9C%E5%A4%B4/" />
+<meta property="og:updated_time" content="2019-05-04T17:05:01+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="镜头"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <h1>Tag: 镜头</h1>
+    <div class="post-info">
+        <a href="https://unixetc.com/tags">To all tags</a>
+    </div>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/mplayer-and-the-n900-cameras/">Mplayer和N900镜头</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        诺基亚N900有前后两个镜头，前置640x480(0.3M)后置848*480(0.4M)，这两个镜头都是V4L2设备，分别对应**/dev/video0和/dev/video1**，因此可以方便的通过mplayer或gstreamer；来访问它们。
+ Video4Linux或V4L是一个视频截取及设备输出API，以及Linux的驱动程序框架，支持很多USB摄像头、电视调谐卡以及其他设备。 V4L2是V4L的第二个版本。Video4Linux2修复了一些设计上的程序错误，最先在2.5.X版的核心中出现。Video4Linux2的驱动程序包含了一个对Video4Linux1应用程序的兼容模式，虽然支持并不完整，并且建议在V4L2模式下使用Video4Linux1设备。
+ mplayer访问镜头：
+$ mplayer tv:// -tv device=/dev/video0 # 后置镜头$ mplayer tv:// -tv device=/dev/video1 # 前置镜头 如果使用前置镜头，建议使用镜像模式-vf mirror
+$ mplayer tv:// -tv device=/dev/video1 -vf mirror 
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2019-05-04</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/nokia">#nokia</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/n900">#n900</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nokia-n900">#nokia n900</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E9%95%9C%E5%A4%B4">#镜头</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%89%8D%E7%BD%AE%E9%95%9C%E5%A4%B4">#前置镜头</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%90%8E%E7%BD%AE%E9%95%9C%E5%A4%B4">#后置镜头</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E9%95%9C%E5%83%8F%E6%A8%A1%E5%BC%8F">#镜像模式</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/mplayer">#mplayer</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/v4l2">#V4L2</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/v4l">#V4L</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gstreamer">#gstreamer</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

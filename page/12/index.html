@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta name="generator" content="Hugo 0.74.3" />
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>UNIXETC - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+
+
+
+<meta property="og:title" content="UNIXETC" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/" />
+<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="UNIXETC"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <div class="homepage-content">
+        
+    </div>
+
+    
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/centos7-install-l2tp-vpn/">CentOS7安装L2TP VPN</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        Centos7安装VPN 下载安装脚本:
+wget http://cdn.lyq.wiki/vpnscripts/vpninstall 执行安装脚本
+chmod+x vpninstall./vpninstall 安装完成后提示如下:
+IPsec VPN server is now ready for use!Connect to your new VPN with these details:Server IP: 181.53.149.126IPsec PSK: EMc6SpQHaBgZCnvNtLXUsername: vpnuserPassword: FzfpNGofpRdkBj2BWrite these down. You'll need them to connect! 以上为安装完成后提示的帐号信息，其中用户名(username)、密码(passowrd)和IPsec PSK密匙(IPsec PSK)为随即生成。
+如果为了方便，以上帐号信息可以参考以下方法自定义：
+[root@hwcsh ~]# vi /etc/ipsec.secrets #编辑PSK%any %any : PSK &quot;EMc6SpQHaBgZCnvNtLX&quot;[root@hwcsh ~]# vi /etc/ppp/chap-secrets #编辑帐户信息&quot;vpnuser&quot; l2tpd &quot;FzfpNGofpRdkBj2B&quot; *[root@hwcsh ~]#systemctl restart ipsec xl2tpd #重启服务 iPhone6配置L2TP VPN 设置-&gt;VPN-&gt;添加VPN配置，类型选择L2TP，然后参考下图设置。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2018-12-10</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/centos">#CentOS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/centos7">#CentOS7</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/l2tp">#L2TP</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vpn">#VPN</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/bwg-replace-main-ip-after-blocked/">搬瓦工被墙后免费更换IP</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        忙了一天没注意看邮件，下午才发现站点宕机，登录BWG后台检查系统运行正常，使用Ping.pePing了下才发现，可能IP被墙了。
+查看Ping的结果，发现国外线路都可以浏览，国内线路丢包全是100%，看来凉凉咯！
+于是网上找了下解决方案，发现BWG免费提供更换IP服务，每五周使用一次。
+登录BWG后台，然后浏览https://kiwivm.64clouds.com/main-exec.php?mode=blacklistcheck，点击TestMainIP进行检查。
+此页面会显示当前服务器IP以及是否被墙。
+如上提示，IP BLOCKED表示已经被封，点击下面的Replace Main IP更换IP，更换IP后再次浏览上面网站，即可显示IP NOT BLOCKED表示未被封锁。
+注意：该功能每五周可以使用一次，且行且珍惜！
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2018-10-15</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/gfw">#GFW</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%9B%B4%E6%8D%A2ip">#更换IP</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%90%AC%E7%93%A6%E5%B7%A5">#搬瓦工</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/oneplus-3t-after-sale-rom/">一加3T售后刷机包</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        首先下载以下两个文件包：
+ 一加3T9008驱动 Download 一加3T售后恢复包 Download  然后，将手机完全关机，按住音量+不放，将手机和电脑连接，此时手机还是黑屏状态，电脑会有设备连接提示音。
+我的电脑-&gt;右键管理-&gt;设备管理器，打开查看，第一次使用会在其他设备下出现QHSUSB_BULK带黄色感叹号的未知设备，右键点击更新驱动，手动选择刷机驱动包里面的驱动目录进行安装，如果不行的话可以使用360驱动大师进行识别安装，安装完成后会出现类似以下的设备驱动:
+其中Qualcomm HS-USB QDLoader 9008(COM4)的新设备，就是正常驱动后的手机，俗称高通9008模式。
+将下载的一加3T售后恢复包解压后，打开其中的MsmDownloadTool V3.0.exe开始刷机
+正常识别COM设备后，点击Start开始刷机，完成后自动重启。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2018-10-13</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/android">#Android</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/oneplus">#oneplus</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/oneplus3t">#oneplus3t</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/rom">#rom</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/9008">#9008</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+    
+        
+    <div class="pagination">
+        <div class="left pagination-item ">
+            
+                <a href="/page/11/">To new posts</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/page/13/">To old posts</a>
+            
+        </div>
+    </div>
+
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

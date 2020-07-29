@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>Nokia N900系统优化脚本 - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+
+
+
+<meta property="og:title" content="Nokia N900系统优化脚本" />
+<meta property="og:description" content="Nokia N900系统优化脚本，更加省电，操作更加流畅！
+脚本下载地址http://cdn.lyq.wiki/res/speedpatch-ALTERNATIVE.tar.gz.rar
+使用方法： 通过USB连接手机，将脚本传到磁盘根目录(/home/user/MyDocs)，以下操作可以使用XT或者SSH连接电脑进行(Root权限下)
+#cd /home/user/MyDocs#tar xzvf speedpatch-ALTERNATIVE.tar.gz#mkdir /wp-content/local/sbin#cp /root/.profile /root/.profile.bak#cp ./.profile_root /root/.profile#cp ./.profile /home/user/#cp ./speedpatch /etc/event.d/#cp ./cgroup_clean /wp-content/local/sbin#chmod &#43;rwx /wp-content/local/sbin/cgroup_clean#rm ./.profile_root#rm ./.profile#rm ./speedpatch#rm ./cgroup_clean 应用transition.ini文件:
+1.使用theme-customizer
+#cp /home/user/MyDocs/transitions.ini /opt/theme-customizer 2.使用系统默认主题
+#cp /home/user/MyDocs/transitions.ini /wp-content/share/hildon-desktop/ 3.删除优化脚本
+#cp /root/.profile.bak /root/.profile#rm /etc/event.d/speedpatch#rm /home/user/.profile#rm /wp-content/local/sbin/cgroup_clean " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unixetc.com/post/system-optimization-script-for-nokia-n900/" />
+<meta property="article:published_time" content="2012-03-28T13:28:00+00:00" />
+<meta property="article:modified_time" content="2012-03-28T13:28:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Nokia N900系统优化脚本"/>
+<meta name="twitter:description" content="Nokia N900系统优化脚本，更加省电，操作更加流畅！
+脚本下载地址http://cdn.lyq.wiki/res/speedpatch-ALTERNATIVE.tar.gz.rar
+使用方法： 通过USB连接手机，将脚本传到磁盘根目录(/home/user/MyDocs)，以下操作可以使用XT或者SSH连接电脑进行(Root权限下)
+#cd /home/user/MyDocs#tar xzvf speedpatch-ALTERNATIVE.tar.gz#mkdir /wp-content/local/sbin#cp /root/.profile /root/.profile.bak#cp ./.profile_root /root/.profile#cp ./.profile /home/user/#cp ./speedpatch /etc/event.d/#cp ./cgroup_clean /wp-content/local/sbin#chmod &#43;rwx /wp-content/local/sbin/cgroup_clean#rm ./.profile_root#rm ./.profile#rm ./speedpatch#rm ./cgroup_clean 应用transition.ini文件:
+1.使用theme-customizer
+#cp /home/user/MyDocs/transitions.ini /opt/theme-customizer 2.使用系统默认主题
+#cp /home/user/MyDocs/transitions.ini /wp-content/share/hildon-desktop/ 3.删除优化脚本
+#cp /root/.profile.bak /root/.profile#rm /etc/event.d/speedpatch#rm /home/user/.profile#rm /wp-content/local/sbin/cgroup_clean "/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">Nokia N900系统优化脚本</h1>
+        </header>
+        <div class="content">
+            <p>Nokia N900系统优化脚本，更加省电，操作更加流畅！</p>
+<p>脚本下载地址<a href="http://cdn.lyq.wiki/res/speedpatch-ALTERNATIVE.tar.gz.rar">http://cdn.lyq.wiki/res/speedpatch-ALTERNATIVE.tar.gz.rar</a></p>
+<p>使用方法： 通过USB连接手机，将脚本传到磁盘根目录(/home/user/MyDocs)，以下操作可以使用XT或者SSH连接电脑进行(Root权限下)</p>
+<pre><code>#cd /home/user/MyDocs
+#tar xzvf speedpatch-ALTERNATIVE.tar.gz
+#mkdir /wp-content/local/sbin
+#cp /root/.profile /root/.profile.bak
+#cp ./.profile_root /root/.profile
+#cp ./.profile /home/user/
+#cp ./speedpatch /etc/event.d/
+#cp ./cgroup_clean /wp-content/local/sbin
+#chmod +rwx /wp-content/local/sbin/cgroup_clean
+#rm ./.profile_root
+#rm ./.profile
+#rm ./speedpatch
+#rm ./cgroup_clean
+</code></pre>
+<p>应用transition.ini文件:</p>
+<p><strong>1.使用theme-customizer</strong></p>
+<pre><code>#cp /home/user/MyDocs/transitions.ini /opt/theme-customizer
+</code></pre>
+<p><strong>2.使用系统默认主题</strong></p>
+<pre><code>#cp /home/user/MyDocs/transitions.ini /wp-content/share/hildon-desktop/
+</code></pre>
+<p><strong>3.删除优化脚本</strong></p>
+<pre><code>#cp /root/.profile.bak /root/.profile
+#rm /etc/event.d/speedpatch
+#rm /home/user/.profile
+#rm /wp-content/local/sbin/cgroup_clean</code></pre>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2012-03-28</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nokia">#nokia</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/n900">#n900</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/maemo">#maemo</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%AF%BA%E5%9F%BA%E4%BA%9A">#诺基亚</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

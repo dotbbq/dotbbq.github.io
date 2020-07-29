@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>raspi - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/tags/raspi/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+
+
+
+<meta property="og:title" content="raspi" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/tags/raspi/" />
+<meta property="og:updated_time" content="2019-09-07T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="raspi"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <h1>Tag: raspi</h1>
+    <div class="post-info">
+        <a href="https://unixetc.com/tags">To all tags</a>
+    </div>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/raspberry-pi-by-dht11-collecting-temperature-and-humidity/">树莓派连接DHT11采集温度与湿度</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        DHT11介绍 DHT11是一款有已校准数字信号输出的温湿度传感器。 精度湿度+-5%RH， 温度+-2℃，量程湿度20-90%RH， 温度0~50℃。
+DHT11针脚说明
+ VCC	供电 3－5.5VDC DATA	串行数据，单总线 N/A	空脚，请悬空 GND	接地，电源负极  硬件连接 树莓派GPIO针脚说明
+DHT11与树莓派链接
+VCC连接+3V3 DATA连接GPIO4 GND链接GND
+软件部分 安装wiringPi
+sudo apt-get install git-coregit clone git://git.drogon.net/wiringPicd wiringPi./build 如果由于网络原因无法git clone成功，可以从此下载wiringPi http://cdn.lyq.wiki/res/wiringPi_v2.3.1.zip
+验证是否安装成功
+gpio -vgpio readall 下载编译C语言程序代码
+wget http://cdn.lyq.wiki/res/sensor.cgcc -o sensor sensor.c -lwiringPi 运行程序
+sudo ./sensor24,39 输出结果，第一个为湿度，第二个为温度
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-06-21</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/humidity">#Humidity</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E4%BC%A0%E6%84%9F%E5%99%A8">#传感器</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/seneor">#Seneor</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/temperature">#Temperature</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dht11">#dht11</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/starting-raspberry-pi-2-model-b/">入手树莓派2 Model B</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        树莓派 2 Mode B 配置详情
+  A 900MHz quad-core ARM Cortex-A7 CPU
+  1GB RAM
+  4 USB ports
+  40 GPIO pins
+  Full HDMI port
+  Ethernet port
+  Combined 3.5mm audio jack and composite video
+  Camera interface (CSI)
+  Display interface (DSI)
+  Micro SD card slot
+  VideoCore IV 3D graphics core
+  
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-03-12</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/assemble-atrix-4g-pc-docking-and-raspberry-pi/">组装ATRIX 4G Laptop Dock和树莓派</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        清单如下：
+ Raspberry Pi B+ Laptop Dock for Motorola ATRIX 4G Micro-HDMI 母对母转接头 HDMI-Micro HDMI 公对公连接线 Micro USB 母对母延长线 USB-Micro USB充电线一根  以下为实物图:
+操作:
+主要是将一个Micro USB母口和一对USB/Micro USb公口相连，然后就可以通过Laptop Dock进行供电，并且链接Laptop Dock键盘。
+下图是一张Laptop Dock接口的照片:
+以下为USB引脚定义:
+ 红 电源+ 白 数据- 绿 数据+ 黑 接地  因此需要将Laptop上的Micro USB引出的电路进行改造，将其中的电源接到Micro USB公口上给树莓派供电，将数据接到USB公口上链接键盘，线路改造图示如下:
+接下来就是考验动手能力了，完成后的实物图如下：
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-02-28</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/laptop-dock">#Laptop Dock</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dock">#Dock</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/motorola">#Motorola</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/atrix-4g">#Atrix 4G</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%91%A9%E6%89%98%E7%BD%97%E6%8B%89">#摩托罗拉</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+    
+        
+    <div class="pagination">
+        <div class="left pagination-item ">
+            
+                <a href="/tags/raspi/page/6/">To new posts</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/tags/raspi/page/8/">To old posts</a>
+            
+        </div>
+    </div>
+
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

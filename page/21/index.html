@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta name="generator" content="Hugo 0.74.3" />
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>UNIXETC - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+
+
+
+<meta property="og:title" content="UNIXETC" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/" />
+<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="UNIXETC"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <div class="homepage-content">
+        
+    </div>
+
+    
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/anbox-run-android-applications-on-linux/">在Linux中运行Android软件</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        想要在PC上运行Android软件就需要模拟器，Windows版的Android模拟器软件很多，但是Linux平台的就不多了，今天推荐一款Linux下的Android模拟器软件Anbox
+Anbox官方介绍为Android in a Box,Run Android applications on any GNU/Linux operating system.
+Anbox现在还处于测试阶段，很多功能还不完善和稳定，请谨慎使用。
+安装Anbox 首先得安装Snaps,官方地址为https://snapcraft.io/
+LinuxMint中安装Snaps和必须包
+sudo apt install snapdsudo apt install pulseaudio 接下来按照官方指南安装Anbox
+snap install --classic anbox-installer &amp;&amp; anbox-installer 我试着通过snap来安装一直存在权限问题，一般权限不能运行snap install --classic anbox-installer，root运行完snap install --classic anbox-installer后，但运行anbox-installer又提示不能使用root权限，一般权限根本无法运行anbox-installer，搞了半天都没有成功，于是就有了下文。
+通过常规方法安装Anbox
+wget https://raw.githubusercontent.com/anbox/anbox-installer/master/installer.sh -O anbox-installerchmod +x ./anbox-installer./anbox-installer 安装完成后会有重启系统的提示
+ To ensure all changes made to your system you should now reboot your system. If you don&rsquo;t do this no Android applications will show up in the system application launcher.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-06-09</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/android">#Android</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/anbox">#Anbox</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/adb">#adb</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/apk">#apk</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/centos7-installation-and-use-p7zip/">CentOS7安装使用p7zip</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        在此只推荐从源码安装p7zip，下载地址 http://www.7-zip.org/download.html
+源码在这里下载 https://sourceforge.net/projects/p7zip/files/p7zip/
+wget https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_all.tar.bz2 tar jxf p7zip_16.02_src_all.tar.bz2 cd p7zip_16.02 make make install 使用p7zip
+[root@localhost ~]# 7za 7-Zip (a) [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21 p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,1 CPU x64) Usage: 7za &lt;command&gt; [&lt;switches&gt;...] &lt;archive_name&gt; [&lt;file_names&gt;...] [&lt;@listfiles...&gt;] &lt;Commands&gt; a : Add files to archive b : Benchmark d : Delete files from archive e : Extract files from archive (without using directory names) h : Calculate hash values for files i : Show information about supported formats l : List contents of archive rn : Rename files in archive t : Test integrity of archive u : Update files to archive x : eXtract files with full paths 压缩文件
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-06-06</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/centos">#CentOS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/p7zip">#p7zip</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/7z">#7z</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/7za">#7za</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/weather-according-to-raspberry-pi/">树莓派显示天气信息</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        在此介绍一个国外网友的树莓派项目RARP，Weather According to Raspberry Pi
+顾名思义，Weather According to Raspberry Pi是一个有关天气信息的项目，该项目通过采集Raspberry Pi和Sense HAT的数据，来显示相关的天气信息，比如温度、湿度、压力等
+项目地址http://coded2.herokuapp.com/weather/
+代码国内下载地址http://cdn.lyq.wiki/res/warp_final.zip
+下载后解压，得到main.py和gauge2.html两个文件，其中main.py需要Python3运行，gauge2.html是最终的显示文件
+安装相关软件
+sudo apt-get install python3sudo apt-get install python3-pippip3 install flask 打开Sense HAT仿真器，在程序菜单中，打开后如下图示:
+下来，运行下载的python脚本
+python3 main.py 正常情况下，会提示一个端口为5000的web服务正在运行
+在浏览器中浏览localhost:5000或者127.0.0.1:5000，最终的浏览如下图
+三个图表分别显示温度、压力和湿度，这三者的信息均来自Sense HAT 模拟器而不是真正的Sense HAT硬件。
+如果需要采集Sense HAT扩展板的数据，需要将Sense HAT附加板和Raspberry Pi相连，具体信息参考官网 https://www.raspberrypi.org/products/sense-hat/
+然后修改代码，打开main.py文件，找到如下行
+from sense_emu import SenseHat 修改为
+from sense_hat import SenseHat 保存后，重新运行python3 main.py，此时采集的数据就来自真实的SenseHAT硬件。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-05-25</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/laptop-dock">#Laptop Dock</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/sense-hat">#Sense HAT</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/hat">#HAT</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/sense">#Sense</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/rarp">#RARP</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/python">#Python</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/python3">#Python3</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/humidity">#Humidity</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%A4%A9%E6%B0%94">#天气</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E4%BC%A0%E6%84%9F%E5%99%A8">#传感器</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%8E%8B%E5%8A%9B">#压力</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%B9%BF%E5%BA%A6">#湿度</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%B8%A9%E5%BA%A6">#温度</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+    
+        
+    <div class="pagination">
+        <div class="left pagination-item ">
+            
+                <a href="/page/20/">To new posts</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/page/22/">To old posts</a>
+            
+        </div>
+    </div>
+
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

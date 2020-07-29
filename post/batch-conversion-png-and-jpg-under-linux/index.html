@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>Linux下批量转换PNG和JPG - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+
+
+
+<meta property="og:title" content="Linux下批量转换PNG和JPG" />
+<meta property="og:description" content="我们用到的软件名为imagemagick，一款强大的图片处理软件。
+Debian系使用apt-get install imagemagick来安装，Fedora系通过yum install imagemagick来安装。
+其他系统可以到官方下载页进行下载安装 https://www.imagemagick.org/script/download.php
+安装完成后，可以通过convert tst.jpg tsg.png将JPG文件转换为PNG，反之亦可。
+下来进行批量替换：
+root@bwgzl:/data/wwwroot/getos.org/images# ll total 188 drwxr-xr-x 2 www www 4096 Aug 4 15:48 ./ drwxr-xr-x 27 www www 4096 Aug 4 15:32 ../ -rw-r--r-- 1 www www 18778 Aug 4 15:43 clip_image002.jpg -rw-r--r-- 1 www www 17637 Aug 4 15:43 clip_image004.jpg -rw-r--r-- 1 www www 28075 Aug 4 15:43 clip_image006.jpg -rw-r--r-- 1 www www 30916 Aug 4 15:43 clip_image008.jpg -rw-r--r-- 1 www www 13538 Aug 4 15:43 clip_image010." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unixetc.com/post/batch-conversion-png-and-jpg-under-linux/" />
+<meta property="article:published_time" content="2017-07-17T07:17:00+00:00" />
+<meta property="article:modified_time" content="2017-07-17T07:17:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux下批量转换PNG和JPG"/>
+<meta name="twitter:description" content="我们用到的软件名为imagemagick，一款强大的图片处理软件。
+Debian系使用apt-get install imagemagick来安装，Fedora系通过yum install imagemagick来安装。
+其他系统可以到官方下载页进行下载安装 https://www.imagemagick.org/script/download.php
+安装完成后，可以通过convert tst.jpg tsg.png将JPG文件转换为PNG，反之亦可。
+下来进行批量替换：
+root@bwgzl:/data/wwwroot/getos.org/images# ll total 188 drwxr-xr-x 2 www www 4096 Aug 4 15:48 ./ drwxr-xr-x 27 www www 4096 Aug 4 15:32 ../ -rw-r--r-- 1 www www 18778 Aug 4 15:43 clip_image002.jpg -rw-r--r-- 1 www www 17637 Aug 4 15:43 clip_image004.jpg -rw-r--r-- 1 www www 28075 Aug 4 15:43 clip_image006.jpg -rw-r--r-- 1 www www 30916 Aug 4 15:43 clip_image008.jpg -rw-r--r-- 1 www www 13538 Aug 4 15:43 clip_image010."/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">Linux下批量转换PNG和JPG</h1>
+        </header>
+        <div class="content">
+            <p>我们用到的软件名为<strong>imagemagick</strong>，一款强大的图片处理软件。</p>
+<p>Debian系使用<code>apt-get install imagemagick</code>来安装，Fedora系通过<code>yum install imagemagick</code>来安装。</p>
+<p>其他系统可以到官方下载页进行下载安装 <a href="https://www.imagemagick.org/script/download.php">https://www.imagemagick.org/script/download.php</a></p>
+<p>安装完成后，可以通过<code>convert tst.jpg tsg.png</code>将JPG文件转换为PNG，反之亦可。</p>
+<p>下来进行批量替换：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">root@bwgzl:/data/wwwroot/getos.org/images# ll
+total <span style="color:#ae81ff">188</span>
+drwxr-xr-x  <span style="color:#ae81ff">2</span> www www  <span style="color:#ae81ff">4096</span> Aug  <span style="color:#ae81ff">4</span> 15:48 ./
+drwxr-xr-x <span style="color:#ae81ff">27</span> www www  <span style="color:#ae81ff">4096</span> Aug  <span style="color:#ae81ff">4</span> 15:32 ../
+-rw-r--r--  <span style="color:#ae81ff">1</span> www www <span style="color:#ae81ff">18778</span> Aug  <span style="color:#ae81ff">4</span> 15:43 clip_image002.jpg
+-rw-r--r--  <span style="color:#ae81ff">1</span> www www <span style="color:#ae81ff">17637</span> Aug  <span style="color:#ae81ff">4</span> 15:43 clip_image004.jpg
+-rw-r--r--  <span style="color:#ae81ff">1</span> www www <span style="color:#ae81ff">28075</span> Aug  <span style="color:#ae81ff">4</span> 15:43 clip_image006.jpg
+-rw-r--r--  <span style="color:#ae81ff">1</span> www www <span style="color:#ae81ff">30916</span> Aug  <span style="color:#ae81ff">4</span> 15:43 clip_image008.jpg
+-rw-r--r--  <span style="color:#ae81ff">1</span> www www <span style="color:#ae81ff">13538</span> Aug  <span style="color:#ae81ff">4</span> 15:43 clip_image010.jpg
+-rw-r--r--  <span style="color:#ae81ff">1</span> www www <span style="color:#ae81ff">11845</span> Aug  <span style="color:#ae81ff">4</span> 15:43 clip_image012.jpg
+-rw-r--r--  <span style="color:#ae81ff">1</span> www www <span style="color:#ae81ff">14519</span> Aug  <span style="color:#ae81ff">4</span> 15:43 clip_image014.jpg
+-rw-r--r--  <span style="color:#ae81ff">1</span> www www <span style="color:#ae81ff">33052</span> Aug  <span style="color:#ae81ff">4</span> 15:43 clip_image016.jpg
+root@bwgzl:/data/wwwroot/getos.org/images# ls -1 *.jpg | xargs -n <span style="color:#ae81ff">1</span> bash -c <span style="color:#e6db74">&#39;convert &#34;$0&#34; &#34;${0%.jpg}.png&#34;&#39;</span>
+root@bwgzl:/data/wwwroot/getos.org/images# ls -ltr
+total <span style="color:#ae81ff">1172</span>
+-rw-r--r-- <span style="color:#ae81ff">1</span> www  www   <span style="color:#ae81ff">18778</span> Aug  <span style="color:#ae81ff">4</span> 15:43 clip_image002.jpg
+-rw-r--r-- <span style="color:#ae81ff">1</span> www  www   <span style="color:#ae81ff">17637</span> Aug  <span style="color:#ae81ff">4</span> 15:43 clip_image004.jpg
+-rw-r--r-- <span style="color:#ae81ff">1</span> www  www   <span style="color:#ae81ff">28075</span> Aug  <span style="color:#ae81ff">4</span> 15:43 clip_image006.jpg
+-rw-r--r-- <span style="color:#ae81ff">1</span> www  www   <span style="color:#ae81ff">30916</span> Aug  <span style="color:#ae81ff">4</span> 15:43 clip_image008.jpg
+-rw-r--r-- <span style="color:#ae81ff">1</span> www  www   <span style="color:#ae81ff">13538</span> Aug  <span style="color:#ae81ff">4</span> 15:43 clip_image010.jpg
+-rw-r--r-- <span style="color:#ae81ff">1</span> www  www   <span style="color:#ae81ff">11845</span> Aug  <span style="color:#ae81ff">4</span> 15:43 clip_image012.jpg
+-rw-r--r-- <span style="color:#ae81ff">1</span> www  www   <span style="color:#ae81ff">14519</span> Aug  <span style="color:#ae81ff">4</span> 15:43 clip_image014.jpg
+-rw-r--r-- <span style="color:#ae81ff">1</span> www  www   <span style="color:#ae81ff">33052</span> Aug  <span style="color:#ae81ff">4</span> 15:43 clip_image016.jpg
+-rw-r--r-- <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">132411</span> Aug  <span style="color:#ae81ff">4</span> 16:00 clip_image002.png
+-rw-r--r-- <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">106702</span> Aug  <span style="color:#ae81ff">4</span> 16:00 clip_image004.png
+-rw-r--r-- <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">197143</span> Aug  <span style="color:#ae81ff">4</span> 16:00 clip_image006.png
+-rw-r--r-- <span style="color:#ae81ff">1</span> root root  <span style="color:#ae81ff">79397</span> Aug  <span style="color:#ae81ff">4</span> 16:00 clip_image008.png
+-rw-r--r-- <span style="color:#ae81ff">1</span> root root  <span style="color:#ae81ff">37643</span> Aug  <span style="color:#ae81ff">4</span> 16:00 clip_image010.png
+-rw-r--r-- <span style="color:#ae81ff">1</span> root root  <span style="color:#ae81ff">81090</span> Aug  <span style="color:#ae81ff">4</span> 16:00 clip_image012.png
+-rw-r--r-- <span style="color:#ae81ff">1</span> root root  <span style="color:#ae81ff">88635</span> Aug  <span style="color:#ae81ff">4</span> 16:00 clip_image014.png
+-rw-r--r-- <span style="color:#ae81ff">1</span> root root <span style="color:#ae81ff">272537</span> Aug  <span style="color:#ae81ff">4</span> 16:00 clip_image016.png
+</code></pre></div><p>注意第二条命令即为批量转换操作</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ls -1 *.jpg | xargs -n <span style="color:#ae81ff">1</span> bash -c <span style="color:#e6db74">&#39;convert &#34;$0&#34; &#34;${0%.jpg}.png&#34;&#39;</span>
+</code></pre></div>
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-07-17</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/imagemagick">#imagemagick</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/png">#png</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/jpg">#jpg</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta name="generator" content="Hugo 0.74.3" />
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>UNIXETC - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+
+
+
+<meta property="og:title" content="UNIXETC" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/" />
+<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="UNIXETC"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <div class="homepage-content">
+        
+    </div>
+
+    
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/mikrotik-rb750gr3-quickset/">RB750gr3快速设置</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        开箱照 以下为开箱照
+RB750快速设置 首先下载Winbox，下载地址，将1口连接光猫，2口连接电脑。
+下载打开后，软件会自动搜索到路由器MAC，登录名为admin，密码为空，点击connect登录。
+登录后点击Quick Set进行快速设置，完成后应用即可。如下图：
+注意以上我把路由器地址设置为192.168.1.11是为了和光猫192.168.1.1区分开。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-11-22</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/router">#router</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ros">#ros</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/mikrotik">#mikrotik</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/rb750">#rb750</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/rb750gr3">#rb750gr3</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/merlin-install-shadowsocks/">梅林固件安装Shadowsocks</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        登录路由器后台，系统管理&gt;系统设置，将Enable SSH设置为LAN only。
+通过SSH登录路由器，参考以下执行，在此推荐Putty。
+#cd /tmp#wget https://github.com/hq450/fancyss_history_package/raw/master/fancyss_arm/shadowsocks_4.1.1.tar.gz#tar -zxvf shadowsocks_4.1.1.tar.gz#cd shadowsocks#chmod +x install.sh#./install.sh2017年11月19日 14:40:36: 固件平台【koolshare merlinarmv7l】符合安装要求，开始安装插件！2017年11月19日 14:40:36: 清理旧文件2017年11月19日 14:40:36: 开始复制文件！2017年11月19日 14:40:36: 复制相关二进制文件！2017年11月19日 14:40:42: 创建一些二进制文件的软链接！2017年11月19日 14:40:42: 复制ss的脚本文件！2017年11月19日 14:40:44: 复制网页文件！2017年11月19日 14:40:44: 移除安装包！2017年11月19日 14:40:44: 为新安装文件赋予执行权限...2017年11月19日 14:40:44: 设置一些默认值2017年11月19日 14:40:47: 一点点清理工作...2017年11月19日 14:40:47: 插件安装成功，你为什么这么屌？！2017年11月19日 14:40:47: 更新完毕，请等待网页自动刷新！ 完成后重启路由器，在软件中心中即可看到影梭已经安装成功！
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-11-19</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/shadowsocks">#Shadowsocks</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/merlin">#merlin</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/router">#router</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A2%85%E6%9E%97">#梅林</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gfw">#GFW</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/asus">#asus</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header>
+        <h1 class="post-title"><a href="/post/install-office2016-components-on-demand/">按需安装Office2016组件</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        所需软件  Office 2016 下载地址 ed2k://|file|cn_office_professional_plus_2016_x86_x64_dvd_6969182.iso|2588266496|27EEA4FE4BB13CD0ECCDFC24167F9E01|/ office2016install.zip 下载地址 https://pan.baidu.com/s/1jIMOFfK DAEMON Tools Lite 下载地址 https://www.daemon-tools.cc/chn/downloads  步骤 1、下载Office2016和DAEMON Tools Lite，安装DAEMON Tools Lite，将office2016镜像(iso)文件挂载到虚拟光驱。
+2、下载office2016install.zip后解压，得到setup.exe和configuration.xml两个文件
+打开configuration.xml，文件内容如下
+&lt;Configuration&gt;&lt;Add SourcePath=&quot;G:\&quot; OfficeClientEdition=&quot;64&quot; &gt;&lt;Product ID=&quot;ProPlusRetail&quot;&gt;&lt;Language ID=&quot;zh-CN&quot; /&gt;&lt;ExcludeApp ID=&quot;Groove&quot; /&gt;&lt;ExcludeApp ID=&quot;InfoPath&quot; /&gt;&lt;ExcludeApp ID=&quot;Lync&quot; /&gt;&lt;ExcludeApp ID=&quot;OneNote&quot; /&gt;&lt;ExcludeApp ID=&quot;Outlook&quot; /&gt;&lt;ExcludeApp ID=&quot;Publisher&quot; /&gt;&lt;ExcludeApp ID=&quot;SharePointDesigner&quot; /&gt;&lt;/Product&gt;&lt;/Add&gt; &lt;/Configuration&gt;  SourcePath 是安装源目录，此处为虚拟光驱G盘 OfficeClientEdition 为构架版本，此处为64位，也可以设置为32位 Language 为安装语言，此处为中文简体 ExcludeApp 表示不需要安装的组件，此处去掉了Groove、InfoPath、Lync、OneNote、Outlook、Publisher、SharePointDesigner，剩下的为Word、Excel、powerpoint和access进行安装。  在当前目录下以管理员身份CMD，运行下面命令开始安装：
+setup.exe /configure configuration.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-10-20</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/microsoft">#Microsoft</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%BE%AE%E8%BD%AF">#微软</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/office">#Office</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/office2016">#Office2016</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%BB%84%E4%BB%B6">#组件</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/word">#Word</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/excel">#Excel</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/powerpoint">#PowerPoint</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/access">#Access</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/daemon">#DAEMON</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%99%9A%E6%8B%9F%E5%85%89%E9%A9%B1">#虚拟光驱</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+    
+        
+    <div class="pagination">
+        <div class="left pagination-item ">
+            
+                <a href="/page/16/">To new posts</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/page/18/">To old posts</a>
+            
+        </div>
+    </div>
+
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

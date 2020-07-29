@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dpkg on UNIXETC</title>
+    <link>https://unixetc.com/tags/dpkg/</link>
+    <description>UNIXETC (dpkg)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 09 Mar 2017 13:19:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/dpkg/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Termux软件包管理</title>
+      <link>https://unixetc.com/post/termux-package-management/</link>
+      <pubDate>Thu, 09 Mar 2017 13:19:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/termux-package-management/</guid>
+      <description>&lt;p&gt;首次安装Termux后，内含一个基础系统，包括apt软件包管理功能，并且集成了一些busybox系统工具。&lt;/p&gt;
+&lt;p&gt;其余的软件包可使用apt进行安装管理，命令如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;apt update
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;更新可用软件包清单。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;apt search &amp;lt;query&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;按名称搜索可用软件。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;apt install &amp;lt;package&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;安装软件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;apt upgrade
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;更新所有可更新软件。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;apt show &amp;lt;package&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;显示软件信息&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;apt list
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;列出可用软件清单&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;apt list --installed
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;列出所有已安装软件清单&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;apt remove &amp;lt;package&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;卸载已安装软件&lt;/p&gt;
+&lt;p&gt;Apt是基于dpkg格式的软件管理工具，一般没必要直接使用dpkg来进行操作，不过以下两个例子可以参考：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;dpkg -L &amp;lt;package&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;列出已安装软件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;dpkg --verify
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;验证已安装软件的完整性&lt;/p&gt;
+&lt;p&gt;更多信息请检阅apt manual page (通过apt install man来安装)&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>N900软件管理</title>
+      <link>https://unixetc.com/post/nokia-n900-software-manager/</link>
+      <pubDate>Sat, 31 Mar 2012 13:31:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/nokia-n900-software-manager/</guid>
+      <description>&lt;p&gt;###通过自带的application manager（软件管理）安装
+打开application manager，首次会自动更新软件列表，然后可以在download目录中按分类安装软件。
+###通过apt-get在线安装
+使用apt-get前提为已经安装了rootsh（可通过第一种方法安装），打开 x terminal&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$sudo gainroot /*切换到root帐户*/
+#apt-get install pkg /*安装pkg*/ 
+#apt-get install pkg1,pkg2 /*安装多个软件*/ 
+#apt-get remove pkg /*卸载软件*/ 
+#apt-get remove –purge pkg /*卸载并清除配置文件*/ 
+#apt-get update /*更新软件源*/ 
+#apt-get upgrade /*更新软件*/ 
+#apt-get dist-upgrade /*更新系统*/ 
+#apt-get clean /*清除软件列表以节省空间*/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;###通过dpkg安装本地软件包(.deb)&lt;/p&gt;
+&lt;p&gt;可以通过数据线，先将下载的软件包拷贝到机子内，然后使用dpkg来安装&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#dpkg -i pkg.deb 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;可以在这里&lt;a href=&#34;http://repository.maemo.org/&#34;&gt;http://repository.maemo.org/&lt;/a&gt;下载官方的.deb包进行安装&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

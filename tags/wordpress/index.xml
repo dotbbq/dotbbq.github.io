@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wordpress on UNIXETC</title>
+    <link>https://unixetc.com/tags/wordpress/</link>
+    <description>UNIXETC (Wordpress)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sun, 15 Sep 2013 19:15:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/wordpress/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>将Wordpress数据转换为Jekyll文件</title>
+      <link>https://unixetc.com/post/wordpress-converted-to-jekyll/</link>
+      <pubDate>Sun, 15 Sep 2013 19:15:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/wordpress-converted-to-jekyll/</guid>
+      <description>&lt;p&gt;这里使用的工具名为&lt;strong&gt;Exitwp&lt;/strong&gt;，项目主页为&lt;a href=&#34;https://github.com/thomasf/exitwp&#34; title=&#34;Exitwp home page&#34;&gt;https://github.com/thomasf/exitwp&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;安装exitwp&#34;&gt;安装Exitwp&lt;/h3&gt;
+&lt;p&gt;必备组件&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Python&lt;/li&gt;
+&lt;li&gt;html2text&lt;/li&gt;
+&lt;li&gt;PyYAML&lt;/li&gt;
+&lt;li&gt;Beautiful soup&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ubuntu下安装软件:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# aptitude install python git build-essential
+# aptitude install python-pip python-yaml python-bs4 python-html2text
+# aptitude install libyaml-dev python-dev libxml2-utils
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;安装exitwp-1&#34;&gt;安装Exitwp&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/thomasf/exitwp
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;###使用Exitwp转换wordpress数据&lt;/p&gt;
+&lt;p&gt;首先，登录wordpress后台，使用自带的导出工具将wordpress导出为xml文件&lt;/p&gt;
+&lt;p&gt;将导出的xml文件下载，复制到 ./exitwp/wordpress-xml/&lt;/p&gt;
+&lt;p&gt;进入 ./exitwp/wordpress-xml/，使用xmllint格式化xml文件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;xmllint --format wp.xml
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;最后，执行exitwp.py脚本来处理xml文件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;python exitwp.py
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;生成的md文件，存放在 ./exitwp/build/&lt;/p&gt;
+&lt;h3 id=&#34;后续的工作&#34;&gt;后续的工作&lt;/h3&gt;
+&lt;p&gt;将处理后的md文件复制出来，拷贝至jekyll站点的_post目录，然后使用&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;jekyll serve
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;生成预览，按照提示处理有问题的md文件，直至OK！&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,741 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SHARE on UNIXETC</title>
+    <link>https://unixetc.com/categories/share/</link>
+    <description>UNIXETC (SHARE)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sun, 21 Apr 2019 21:31:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/categories/share/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Maemo发布版本历史</title>
+      <link>https://unixetc.com/post/maemo-release-history/</link>
+      <pubDate>Sun, 21 Apr 2019 21:31:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/maemo-release-history/</guid>
+      <description>&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;系统&lt;/th&gt;
+&lt;th&gt;版本&lt;/th&gt;
+&lt;th&gt;代号&lt;/th&gt;
+&lt;th&gt;构建标识&lt;/th&gt;
+&lt;th&gt;发布时间&lt;/th&gt;
+&lt;th&gt;首发设备&lt;/th&gt;
+&lt;th&gt;备注&lt;/th&gt;
+&lt;th&gt;支持设备&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2005&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;2.2005.45-1&lt;/td&gt;
+&lt;td&gt;2005/11/1&lt;/td&gt;
+&lt;td&gt;770&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2005&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;3.2005.51-13&lt;/td&gt;
+&lt;td&gt;2005/12/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2005&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;5.2006.13-7&lt;/td&gt;
+&lt;td&gt;2006/4/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2006&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Mistral&lt;/td&gt;
+&lt;td&gt;0.2006.22-21&lt;/td&gt;
+&lt;td&gt;2006/5/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2006&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Mistral&lt;/td&gt;
+&lt;td&gt;1.2006.26-8&lt;/td&gt;
+&lt;td&gt;2006/5/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2006&lt;/td&gt;
+&lt;td&gt;2.1&lt;/td&gt;
+&lt;td&gt;Scirocco&lt;/td&gt;
+&lt;td&gt;2.2006.39-14&lt;/td&gt;
+&lt;td&gt;2006/11/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2006&lt;/td&gt;
+&lt;td&gt;2.2&lt;/td&gt;
+&lt;td&gt;Gregale&lt;/td&gt;
+&lt;td&gt;3.2006.49-2&lt;/td&gt;
+&lt;td&gt;2007/1/1&lt;/td&gt;
+&lt;td&gt;770&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2007&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;Bora&lt;/td&gt;
+&lt;td&gt;2.2006.51-6&lt;/td&gt;
+&lt;td&gt;2007/1/1&lt;/td&gt;
+&lt;td&gt;N800&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770*, N800&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2007&lt;/td&gt;
+&lt;td&gt;3.1&lt;/td&gt;
+&lt;td&gt;Bora&lt;/td&gt;
+&lt;td&gt;3.2007.10-7&lt;/td&gt;
+&lt;td&gt;2007/3/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770*, N800&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2007&lt;/td&gt;
+&lt;td&gt;3.2&lt;/td&gt;
+&lt;td&gt;Bora&lt;/td&gt;
+&lt;td&gt;4.2007.26-8&lt;/td&gt;
+&lt;td&gt;2007/7/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770*, N800&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2007&lt;/td&gt;
+&lt;td&gt;3.2&lt;/td&gt;
+&lt;td&gt;Bora&lt;/td&gt;
+&lt;td&gt;4.2007.38-2&lt;/td&gt;
+&lt;td&gt;2007/10/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770*, N800&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2008&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;Chinook&lt;/td&gt;
+&lt;td&gt;1.2007.42-18&lt;/td&gt;
+&lt;td&gt;2007/11/1&lt;/td&gt;
+&lt;td&gt;N810&lt;/td&gt;
+&lt;td&gt;(N810 only)&lt;/td&gt;
+&lt;td&gt;N810&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2008&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;Chinook&lt;/td&gt;
+&lt;td&gt;1.2007.42-19&lt;/td&gt;
+&lt;td&gt;2007/11/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;(N810 only)&lt;/td&gt;
+&lt;td&gt;N810&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2008&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;Chinook&lt;/td&gt;
+&lt;td&gt;1.2007.44-4&lt;/td&gt;
+&lt;td&gt;2007/11/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;(N800 only)&lt;/td&gt;
+&lt;td&gt;N800&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2008&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;Chinook&lt;/td&gt;
+&lt;td&gt;2.2007.50-2&lt;/td&gt;
+&lt;td&gt;2007/11/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770*, N800, N810&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2008&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;Chinook&lt;/td&gt;
+&lt;td&gt;2.2007.51-3&lt;/td&gt;
+&lt;td&gt;2008/1/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770*, N800, N810&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2008&lt;/td&gt;
+&lt;td&gt;4.1&lt;/td&gt;
+&lt;td&gt;Diablo&lt;/td&gt;
+&lt;td&gt;4.2008.23-14&lt;/td&gt;
+&lt;td&gt;2008/6/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;N800, N810&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2008&lt;/td&gt;
+&lt;td&gt;4.1&lt;/td&gt;
+&lt;td&gt;Diablo&lt;/td&gt;
+&lt;td&gt;4.2008.30-2&lt;/td&gt;
+&lt;td&gt;2008/8/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;N800, N810&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2008&lt;/td&gt;
+&lt;td&gt;4.1&lt;/td&gt;
+&lt;td&gt;Diablo&lt;/td&gt;
+&lt;td&gt;4.2008.36-5&lt;/td&gt;
+&lt;td&gt;2008/9/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;N800, N810&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2008&lt;/td&gt;
+&lt;td&gt;4.1&lt;/td&gt;
+&lt;td&gt;Diablo&lt;/td&gt;
+&lt;td&gt;5.2008.43-7&lt;/td&gt;
+&lt;td&gt;2008/12/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;N800, N810&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Maemo 5&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;Fremantle&lt;/td&gt;
+&lt;td&gt;1.2009.42-11&lt;/td&gt;
+&lt;td&gt;2009/11/1&lt;/td&gt;
+&lt;td&gt;N900&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;N900&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Maemo 5&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;Fremantle&lt;/td&gt;
+&lt;td&gt;1.2009.44-1&lt;/td&gt;
+&lt;td&gt;2010/1/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;N900&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Maemo 5&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;Fremantle&lt;/td&gt;
+&lt;td&gt;2.2009.51-1&lt;/td&gt;
+&lt;td&gt;2010/1/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;PR1.1&lt;/td&gt;
+&lt;td&gt;N900&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Maemo 5&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;Fremantle&lt;/td&gt;
+&lt;td&gt;3.2010.02-8&lt;/td&gt;
+&lt;td&gt;2010/2/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;PR1.1.1&lt;/td&gt;
+&lt;td&gt;N900&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Maemo 5&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;Fremantle&lt;/td&gt;
+&lt;td&gt;10.2010.12-9&lt;/td&gt;
+&lt;td&gt;2010/5/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;PR1.2&lt;/td&gt;
+&lt;td&gt;N900&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Maemo 5&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;Fremantle&lt;/td&gt;
+&lt;td&gt;10.2010.19-1&lt;/td&gt;
+&lt;td&gt;2010/5/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;PR1.2&lt;/td&gt;
+&lt;td&gt;N900&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Maemo 5&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;Fremantle&lt;/td&gt;
+&lt;td&gt;20.2010.36-2&lt;/td&gt;
+&lt;td&gt;2010/10/25&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;PR1.3&lt;/td&gt;
+&lt;td&gt;N900&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Maemo 5&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;Fremantle&lt;/td&gt;
+&lt;td&gt;21.2011.38-1&lt;/td&gt;
+&lt;td&gt;2011/10/26&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;PR1.3.1&lt;/td&gt;
+&lt;td&gt;N900&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MeeGo&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;Arlington&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2010/5/26&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;N900, etc.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MeeGo&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;Irvine&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;2010/10/28&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Aava and Nokia N900&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MeeGo&lt;/td&gt;
+&lt;td&gt;1.2&lt;/td&gt;
+&lt;td&gt;Harmattan&lt;/td&gt;
+&lt;td&gt;1.2011.34-2&lt;/td&gt;
+&lt;td&gt;–&lt;/td&gt;
+&lt;td&gt;N950&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;N9, N950&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>网件R6300v2梅林7.9.1</title>
+      <link>https://unixetc.com/post/r6300v2-merlin-firmware-x7-9-1/</link>
+      <pubDate>Sun, 30 Sep 2018 09:30:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/r6300v2-merlin-firmware-x7-9-1/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;【网件系列】包括以下机型：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;R6300V2&lt;/li&gt;
+&lt;li&gt;R6400&lt;/li&gt;
+&lt;li&gt;R6900/R7000&lt;/li&gt;
+&lt;li&gt;R8000&lt;/li&gt;
+&lt;li&gt;R8500&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;更新日志&#34;&gt;更新日志&lt;/h3&gt;
+&lt;p&gt;** 固件更新日志：2018年09月27日(X7.9.1) ：**&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;升级软件中心核心skipd v1为skipd v3，增强软件中心稳定性。&lt;/li&gt;
+&lt;li&gt;同步固件内置软件中心为最新1.4.2&lt;/li&gt;
+&lt;li&gt;需要说明的是skipd v1数据库和skipd v3数据库不兼容，从X7.x系列升级X7.9.1可以向上兼容，但是从从X7.9.1降级刷固件，需要格式化jffs分区以重新建立skipd v1 数据库&lt;/li&gt;
+&lt;li&gt;由于skipdv3不支持超时脚本、定时脚本，所以Tools - Script里的这两个功能不能使用了。另外因为aliddns插件使用了skipd的定时脚本功能，aliddns将会无法定时更新ip， 之后我将更新aliddns插件修复这一问题。
+&lt;strong&gt;2018年05月08日(X7.9) ：&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;例行更新：同步asuswrt-merlin固件380.70_0代码，更新日志见asuswrt-merlin更新日志的380.70部分&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;刷机须知&#34;&gt;刷机须知&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;【网件原厂】刷【koolshare改版固件】：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在原厂固件升级页面下直接上传.chk后缀的过度固件，本帖下方提供；&lt;/li&gt;
+&lt;li&gt;在过度固件里恢复一次出厂设置后，刷入.trx后缀的koolshare改版固件（如果chk版本和trx版本一致则不需要，跳到第三步）；&lt;/li&gt;
+&lt;li&gt;等待刷机完成后，，在【系统管理】 – 【系统设置】内勾选：Format JFFS partition at next boot（下次重启格式化jffs分区） 和 Enable JFFS custom scripts and configs（开启jffs自定义脚本），点击应用本页面设置，成功应用后重启路由器；&lt;/li&gt;
+&lt;li&gt;重启完成后，确保路由器连上网络，然后进入软件中心，首先点击更新按钮，将更新软件中心到最新版本，然后即可安装并使用插件。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;【koolshare改版固件/梅林原版固件】刷【koolshare改版固件】：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在梅林固件升级页面下直接上传.trx后缀的固件，本帖下方提供；&lt;/li&gt;
+&lt;li&gt;从X7.x系列升级X7.9，不需要清空配置和格式化jffs分区；&lt;/li&gt;
+&lt;li&gt;从X7.x系列升级X7.9.1，不需要清空配置和格式化jffs分区，skipdv1数据库会自动升级为skipdv3；&lt;/li&gt;
+&lt;li&gt;从X7.9.1降级为X7.x，不需要清空配置，但需要格式化jffs分区&lt;/li&gt;
+&lt;li&gt;从X7.9.1降级为X6.x，需要清空配置并格式化jffs分区&lt;/li&gt;
+&lt;li&gt;从X6.x系列升级X7.9/X7.9.1，需要清除路由器配置和格式化jffs分区；&lt;/li&gt;
+&lt;li&gt;如果升级后界面有问题，尝试清除浏览器缓存或者强制刷新（ctrl + F5）一次&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;清配置方法1：&lt;/strong&gt; 在路由器【系统管理】- 【恢复/导出/上传设置】- 【原厂默认值】&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;清配置方法2：&lt;/strong&gt; 开机状态，长按reset直到路由自动重启。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;格式化jffs：&lt;/strong&gt; 在【系统管理】- 【系统设置】，勾选Format JFFS partition at next boot，点击应用本页面设置后重启路由器&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;【koolshare改版固件】刷【原厂】：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;格式化jffs分区：进入路由管理界面 -【系统管理】- 【系统设置】，勾选Format JFFS partition at next boot，点击应用本页面设置后重启路由器&lt;/li&gt;
+&lt;li&gt;在koolshare改版固件升级页面下直接上传.trx 后缀的用于刷回官方的固件(OFW)&lt;/li&gt;
+&lt;li&gt;刷回官方固件后建议再恢复一次出厂设置&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;固件双清方法：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如果固件出现问题，一时找不到解决办法，可以尝试双清并手动配置，方法如下&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;格式化jffs分区：方法同上；&lt;/li&gt;
+&lt;li&gt;恢复出厂设置：进入路由管理界面 -【【系统管理】- 【恢复/导出/上传设置】- 【原厂默认值】，点击原厂默认值一栏的【恢复】按钮；&lt;/li&gt;
+&lt;li&gt;建议完成双清后手动配置路由，而不是用以前备份的配置，以避免可能的问题；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;软件中心重置方法：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如果软件中心出现问题，可以尝试用格式化jffs分区的方法重置软件中心，格式化后建议重新配置软件中心及插件，而不是用以前备份的jffs分区文件去恢复！&lt;/p&gt;
+&lt;h3 id=&#34;相关链接&#34;&gt;相关链接&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;merlin改版固件讨论telegram群：&lt;a href=&#34;https://t.me/xbchat&#34;&gt;https://t.me/xbchat&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;koolshare merlin firmware QQ讨论群：&lt;a href=&#34;https://jq.qq.com/?_wv=1027&amp;amp;k=5ULbuSg&#34;&gt;https://jq.qq.com/?_wv=1027&amp;amp;k=5ULbuSg&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;merlin改版固件380系列软件中心Github项目：&lt;a href=&#34;https://github.com/koolshare/koolshare.github.io&#34;&gt;https://github.com/koolshare/koolshare.github.io&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;梅林AM380软件中心插件开发教程详解：&lt;a href=&#34;https://github.com/koolshare/koolshare.github.io/wiki/%E6%A2%85%E6%9E%97AM380%E8%BD%AF%E4%BB%B6%E4%B8%AD%E5%BF%83%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91%E6%95%99%E7%A8%8B%E8%AF%A6%E8%A7%A3&#34;&gt;点我访问&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;固件下载地址&#34;&gt;固件下载地址:&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;X7.9.1 固件（trx）&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://u18418398.pipipan.com/fs/18418398-312737889&#34;&gt;R6300V2&lt;/a&gt; MD5:688D27BF84254E5965ECB2D9CAFD43C1&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://u18418398.pipipan.com/fs/18418398-312737985&#34;&gt;R6400&lt;/a&gt; MD5:3F9F3BDAC49C154AC79BAE674595EDDF&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://u18418398.pipipan.com/fs/18418398-312738066&#34;&gt;R6900/R7000&lt;/a&gt; MD5:51E631FD28C36878D883D35418294962&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://u18418398.pipipan.com/fs/18418398-312738145&#34;&gt;R8000&lt;/a&gt; MD5:C05636976A7C5677FF7C7ABED83BF40F&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://u18418398.pipipan.com/fs/18418398-312738249&#34;&gt;R8500&lt;/a&gt; MD5:6AC6E6950CEB15B0D9DB48A9D9C3DE18&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;X7.9.1 过度固件（chk）&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://u18418398.pipipan.com/fs/18418398-312737841&#34;&gt;R6300V2&lt;/a&gt; MD5:8547778981ED0CE50B333FF799D42C96&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://u18418398.pipipan.com/fs/18418398-312737953&#34;&gt;R6400&lt;/a&gt; MD5:EEE5B69087E8847DA26D8857086D7131&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://u18418398.pipipan.com/fs/18418398-312738040&#34;&gt;R6900/R7000&lt;/a&gt; MD5:672B99639181CD8846ADD245484A2D28&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://u18418398.pipipan.com/fs/18418398-312738121&#34;&gt;R8000&lt;/a&gt; MD5:F51B1E06061CEF88FF929C2D3144653E&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://u18418398.pipipan.com/fs/18418398-312738216&#34;&gt;R8500&lt;/a&gt; MD5:B2C7F5F78102D2F8D1BEDA119A18EFF1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;X7.9&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://u18418398.pipipan.com/fs/18418398-312737929&#34;&gt;R6300V2&lt;/a&gt; MD5:641B2841C1E9643E7B76F2CD46CD6936&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://u18418398.pipipan.com/fs/18418398-312738012&#34;&gt;R6400&lt;/a&gt; MD5:876AB82C58AC60B86E21B2FBB21E11E9&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://u18418398.pipipan.com/fs/18418398-312738085&#34;&gt;R6900/R7000&lt;/a&gt; MD5:1C31E5C0689E392C6733A4F9BD1A1B6E&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://u18418398.pipipan.com/fs/18418398-312738192&#34;&gt;R8000&lt;/a&gt; MD5:C8DD62581F32842443E82D5354BA929D&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://u18418398.pipipan.com/fs/18418398-312738363&#34;&gt;R8500&lt;/a&gt; MD5:B422DB290B2A5121EE4A0AFA3746ED6F&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Google Camera一加3/3T移植版</title>
+      <link>https://unixetc.com/post/google-camera-port-for-oneplus-3t/</link>
+      <pubDate>Wed, 13 Dec 2017 12:13:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/google-camera-port-for-oneplus-3t/</guid>
+      <description>&lt;p&gt;Google Camera一加3/3T移植版，支持HDR+, 1080p 60FPS视频, 慢动作和慢动作图片。 By BSG, Ivanich, and Arnova8G2.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;可用特性:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Camera (HDR+, flash, zoom, front camera, etc)&lt;/li&gt;
+&lt;li&gt;视频 (30fps/60fps at 1080p、防抖、自动对焦)&lt;/li&gt;
+&lt;li&gt;慢动作 (120fps)&lt;/li&gt;
+&lt;li&gt;Panorama&lt;/li&gt;
+&lt;li&gt;Photo Sphere&lt;/li&gt;
+&lt;li&gt;Lens Blur&lt;/li&gt;
+&lt;li&gt;RAW&lt;/li&gt;
+&lt;li&gt;Motion Photos (Android 8+ only, check the &amp;ldquo;suggested settings&amp;rdquo;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;不可用特性:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ZSL (HDR+打开情况下)&lt;/li&gt;
+&lt;li&gt;(OOS Oreo)慢动作&lt;/li&gt;
+&lt;li&gt;前置相机HDR&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;下载:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-316386226&#34;&gt;GCam_5.3.015-Pixel3Mod-Arnova8G2-1.4.apk&lt;/a&gt; &lt;strong&gt;Update 2018-10-04&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-316386061&#34;&gt;GCam-5.1.018-Pixel2Mod-Arnova8G2-V8.3b1.apk&lt;/a&gt; &lt;strong&gt;Update 2018-08-25&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;本文只提供一加3/3T的稳定版apk，BSG、Ivanich和Arnova8G2的完整版清单，请移步&lt;a href=&#34;https://www.celsoazevedo.com/files/android/google-camera/&#34;&gt;这里&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>打造一台翻墙路由器[转载]</title>
+      <link>https://unixetc.com/post/dir-505-openwrt-shadowsocks-chinadns/</link>
+      <pubDate>Fri, 20 Nov 2015 11:20:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/dir-505-openwrt-shadowsocks-chinadns/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;本文转载自&lt;a href=&#34;https://github.com/Jerry-hechen/blog&#34;&gt;https://github.com/Jerry-hechen/blog&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;路由器配置方案：Shadowsocks-libev-spec + ChinaDNS&lt;/p&gt;
+&lt;p&gt;本教程以Dlink dir-505为例，其他型号路由也类似，Openwrt版本：15.05，其他安装包均为最新版。&lt;/p&gt;
+&lt;p&gt;首先路由器型号需要在openwrt列表中：&lt;a href=&#34;http://wiki.openwrt.org/toh/start&#34;&gt;http://wiki.openwrt.org/toh/start&lt;/a&gt;(可以ctrl+F搜索匹配型号)，并记录所用路由器cpu的型号。&lt;/p&gt;
+&lt;h3 id=&#34;一下载路由器cpu型号对应的的固件httpsdownloadsopenwrtorg&#34;&gt;一.下载路由器CPU型号对应的的固件：&lt;a href=&#34;https://downloads.openwrt.org/&#34;&gt;https://downloads.openwrt.org/&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;二刷机及配置&#34;&gt;二.刷机及配置&lt;/h3&gt;
+&lt;p&gt;1.访问路由器上传固件，等待一会儿，勿断电。&lt;/p&gt;
+&lt;p&gt;2.好了之后打开wifi开关，连上openwrt（有的固件默认不没有开启WI-FI需要用网线连接），访问192.168.1.1&lt;/p&gt;
+&lt;p&gt;3.System－》Administertion，设置路由密码，选中Allow remote hosts to connect to local SSH forwarded ports&lt;/p&gt;
+&lt;p&gt;4.Network－》Wifi，WI-FI没有启动先启动，设置Transmit Power为15dBm（31mW），设置Country Code为CN-China&lt;/p&gt;
+&lt;p&gt;5.设置下WIFI名称（ESSID）、密码、加密方式（Encryption,推荐使用WPA-PSK/WPA2-PSK）&lt;/p&gt;
+&lt;p&gt;6.Network－》Interfaces，修改LAN口，勾掉Bridge interfaces选项，更改网关为192.168.5.1，添加WAN口选择DHCP client选项（如果需要拨号选择PPPoE）,勾上Adapter “eth1”。注意：此处修改LAN口、添加WAN口不要“保存&amp;amp;应用”，先“保存”，在Network－》Interfaces列表整体“保存&amp;amp;应用”&lt;/p&gt;
+&lt;p&gt;为了和主路由不冲突最好将网关改为其他，比如192.168.5.1&lt;/p&gt;
+&lt;p&gt;刷机成功。&lt;/p&gt;
+&lt;h3 id=&#34;三下载安装包并安装到路由器&#34;&gt;三.下载安装包并安装到路由器&lt;/h3&gt;
+&lt;h4 id=&#34;1下载安装包&#34;&gt;1.下载安装包&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;Shadowsocks-spec: http://sourceforge.net/projects/openwrt-dist/files/shadowsocks-libev/
+chinaDNS: chinaDNS: http://sourceforge.net/projects/openwrt-dist/files/chinadns/
+Shadowsocks-spec-LuCI：http://sourceforge.net/projects/openwrt-dist/files/luci-app/shadowsocks-spec/
+chinaDNS-LuCI：http://sourceforge.net/projects/openwrt-dist/files/luci-app/chinadns/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;注意，一定要下载路由器cpu型号对应的文件！DIR-505选择ar71xx&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;2安装到路由器&#34;&gt;2.安装到路由器&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;保证路由器可以上外网&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;用ssh工具上传shadowsocks-libev-spec、ChinaDNS、及2个luci文件 4个ipk包到路由器/tmp目录&lt;/p&gt;
+&lt;p&gt;ssh &lt;a href=&#34;mailto:root@192.168.5.1&#34;&gt;root@192.168.5.1&lt;/a&gt;
+opkg update&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;安装中文包，然后在路由管理界面System－》System－》Language and Style切换中文语音，刷新可看到中文&lt;/p&gt;
+&lt;p&gt;opkg install luci-i18n-base-zh-cn&lt;/p&gt;
+&lt;p&gt;cd /tmp&lt;/p&gt;
+&lt;p&gt;opkg install shadowsocks-libev-spec-polarssl_2.4.1-1_ar71xx.ipk&lt;/p&gt;
+&lt;p&gt;opkg install ChinaDNS_1.3.2-3_ar71xx.ipk&lt;/p&gt;
+&lt;p&gt;opkg install luci-app-shadowsocks-spec_1.3.2-1_all.ipk&lt;/p&gt;
+&lt;p&gt;opkg install luci-app-chinadns_1.3.4-1_all.ipk&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;期间可能会遇到错误提示,没关系，这时因为安装ipset包后需要重启。&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;3更改配置路由管理界面&#34;&gt;3.更改配置（路由管理界面）&lt;/h4&gt;
+&lt;p&gt;网络－》DHCP/DNS&lt;/p&gt;
+&lt;p&gt;基本设置里将 本地服务器 更改为 127.0.0.1#5353&lt;/p&gt;
+&lt;p&gt;HOSTS和解析文件里 勾选 忽略解析文件和忽略HOSTS文件&lt;/p&gt;
+&lt;p&gt;服务－》ChinaDNS里 ChinaDNS上游服务器更改为 114.114.114.114,127.0.0.1:5300 (适合服务器支持UDP转发，较新版本Shadowsocks均支持)&lt;/p&gt;
+&lt;p&gt;服务－》ShadowSocks 全局设置中输入S’s账号（先启用，S’s账号需要和服务配置匹配），代理设置中更改代理方式为“忽略列表”&lt;/p&gt;
+&lt;h3 id=&#34;四设置自动更新忽略配置文件&#34;&gt;四.设置自动更新忽略配置文件。&lt;/h3&gt;
+&lt;p&gt;敌人的策略一直在变化，为了实现智能分流需要设置自动更新忽略配置文件，长时间不更新可能导致部分国内网站走代理或者国外不走代理，如下：&lt;/p&gt;
+&lt;p&gt;1.手动建立文件夹, shadowsocks忽略配置用到&lt;/p&gt;
+&lt;p&gt;mkdir /etc/shadowsocks&lt;/p&gt;
+&lt;p&gt;2.新建 vi /root/update.sh，内容如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#!/bin/sh
+
+ping -c2 www.baidu.com &amp;gt;&amp;gt;/dev/null
+if [ $? -eq 0 ];then
+    wget -O- &#39;http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest&#39; | awk -F\| &#39;/CN\|ipv4/ { printf(&amp;quot;%s/%d\n&amp;quot;, $4, 32-log($5)/log(2)) }&#39; &amp;gt; /etc/shadowsocks/ignore.list
+    wget -O- &#39;http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest&#39; | awk -F\| &#39;/CN\|ipv4/ { printf(&amp;quot;%s/%d\n&amp;quot;, $4, 32-log($5)/log(2)) }&#39; &amp;gt; /etc/chinadns_chnroute.txt
+else
+        echo &#39;network is down...&#39;
+fi
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;3.然后用命令给予该脚本执行权限并执行，正常的话配置文件会成功更新&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;chmod +x /root/update.sh
+/root/update.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;4.在路由器，管理界面点击“系统”→“计划任务”中，输入以下内容：&lt;/p&gt;
+&lt;p&gt;30 4 * * * /root/update.sh&lt;/p&gt;
+&lt;p&gt;保存后，每天的凌晨4点半就会自动执行这个更新脚本了。&lt;/p&gt;
+&lt;p&gt;5.重启路由器，系统－》重启&lt;/p&gt;
+&lt;p&gt;翻墙成功!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>下载Chrome离线安装包</title>
+      <link>https://unixetc.com/post/download-the-chrome-offline-installation-package/</link>
+      <pubDate>Sat, 30 Aug 2014 08:30:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/download-the-chrome-offline-installation-package/</guid>
+      <description>&lt;p&gt;Chrome离线安装包下载地址：&lt;/p&gt;
+&lt;p&gt;正式版 &lt;a href=&#34;http://www.google.com/chrome/eula.html?hl=zh-CN&amp;amp;standalone=1&#34;&gt;http://www.google.com/chrome/eula.html?hl=zh-CN&amp;amp;standalone=1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;测试版 &lt;a href=&#34;http://www.google.com/chrome/eula.html?hl=zh-CN&amp;amp;standalone=1&amp;amp;extra=betachannel&#34;&gt;http://www.google.com/chrome/eula.html?hl=zh-CN&amp;amp;standalone=1&amp;amp;extra=betachannel&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;开发版 &lt;a href=&#34;http://www.google.com/chrome/eula.html?hl=zh-CN&amp;amp;standalone=1&amp;amp;extra=devchannel&#34;&gt;http://www.google.com/chrome/eula.html?hl=zh-CN&amp;amp;standalone=1&amp;amp;extra=devchannel&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载文件名为&lt;strong&gt;ChromeStandaloneSetup.exe&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>VC运行库全集</title>
+      <link>https://unixetc.com/post/vc-runtime-library-collection/</link>
+      <pubDate>Fri, 15 Aug 2014 15:15:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/vc-runtime-library-collection/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;VC运行库全集&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;VC2005,VC2008,VC2010,VC2013&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;VC++ Redistributable Package Collection&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;VCRP:
+    |   
+    +---vcpp_2005
+    |       vcredist_x86.exe       
+    +---vcpp_2008
+    |       vcredist_x86.exe      
+    +---vcpp_2010
+    |       vcredist_x64.exe
+    |       vcredist_x86.exe       
+    +---vcpp_2012
+    |       vcredist_x64.exe
+    |       vcredist_x86.exe
+    |       vozqco_70591.exe   
+    \---vcpp_2013
+        vcredist_arm.exe
+        vcredist_x64.exe
+        vcredist_x86.exe
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;VC运行库下载地址&lt;strong&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-315802255&#34;&gt;https://dotbbq.pipipan.com/fs/18418398-315802255&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>HDMI简介</title>
+      <link>https://unixetc.com/post/hdmi-description/</link>
+      <pubDate>Tue, 04 Mar 2014 13:12:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/hdmi-description/</guid>
+      <description>&lt;h3 id=&#34;什么是hdmi&#34;&gt;什么是HDMI&lt;/h3&gt;
+&lt;p&gt;高清晰度多媒体接口（High Definition Multimedia Interface，简称HDMI）是一种全数字化图像和声音传送接口，可以传送未压缩的音频及视频信号。HDMI可用于机顶盒、DVD播放机、个人计算机、电视游乐器、综合扩大机、数字音响与电视机等设备。HDMI可以同时传送音频和影音信号，由于音频和视频信号采用同一条电缆，大大简化了系统线路的安装难度。&lt;/p&gt;
+&lt;p&gt;HDMI是被设计来取代较旧的模拟影音传送接口如SCART或RCA等端子的。它支持各类电视与计算机图像格式，包括SDTV、HDTV视频画面，再加上多声道数字音频。&lt;/p&gt;
+&lt;h3 id=&#34;hdmi规格&#34;&gt;HDMI规格&lt;/h3&gt;
+&lt;p&gt;HDMI分为A、B、C、D四种规格。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/hdmitype.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;HDMI A Type&lt;/p&gt;
+&lt;p&gt;HDMI A Type应用于HDMI1.0版本，总共有19pin, 规格为4.45 mm × 13.9 mm，为最常见的HDMI接头规格, 相对等于DVI Single-Link传输。在HDMI 1.2a之前, 最大能传输165MHz的TMDS, 所以最大传输规格只能在于1600x1200(TMDS 162.0 MHz)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;HDMI B Type&lt;/p&gt;
+&lt;p&gt;应用于HDMI1.0版本，规格为4.45 mm × 21.2 mm，总共有29pin, 可传输HDMI A type两倍的TMDS数据量, 相对等于DVI Dual-Link传输, 用于传输高分辨率(WQXGA 2560x1600以上)，&lt;strong&gt;此类接口未应用在任何产品中&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;HDMI C Type&lt;/p&gt;
+&lt;p&gt;俗称&lt;strong&gt;Mini HDMI&lt;/strong&gt;，应用于HDMI1.3版本，总共有19pin, 可以说是缩小版的HDMI A type, 规格为2.42 mm × 10.42 mm，但脚位定义有所改变。 主要是用在便携式设备上, 例如DV、数码相机、便携式多媒体播放机等。由于大小所限，一些显卡会使用mini-HDMI，用家须使用转接头转成标准大小的Type A再连接显示屏。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;HDMI D Type&lt;/p&gt;
+&lt;p&gt;也称为&lt;strong&gt;Micro HDMI&lt;/strong&gt;应用于HDMI1.4版本，总共有19pin, 规格为2.8 mm × 6.4 mm，但脚位定义有所改变。Micro HDMI接口将比现在19针Mini HDMI版接口小50％左右，可为相机、手机等便携设备带来最高1080p的分辨率支持及最快5GB的传输速度。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>WebOS资源分享</title>
+      <link>https://unixetc.com/post/webos-resource-sharing/</link>
+      <pubDate>Mon, 20 Aug 2012 12:59:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/webos-resource-sharing/</guid>
+      <description>&lt;p&gt;对于WebOS还是继续看好，但是出于使用习惯和需求，将已经闲置了两个多月的HP TouchPad出手，新入手了台iPad2 Wifi (32nm)。&lt;/p&gt;
+&lt;p&gt;以下分享一些关于HP TouchPad的WebOS资源，以方便需要的朋友 以下为目录说明:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;G:WebOS
+├─8%及12%无法通过一键修砖 *关于刷机不过的处理方法
+├─cm7alpha3.5 *CM7 for HP TouchPad
+├─cm9alpha2 *CM7 for HP TouchPad
+├─patchs *一些补丁备份，便于安装
+├─soft *收集的一些HP TouchPad软件
+├─touchpad免激活 *HP TouchPad免激活工具
+├─WQI *WebOS Quick Install
+└─zoopda-elite-TP *Zoopda eLite发布的DIY ROM for HP TouchPad
+calibre-0.8.22.msi *电子书管理编辑软件
+KSMediaStreamer_v1.0.7.msi *流媒体分享软件
+NovacomInstaller_x86.msi *驱动程序(Windows)
+patch.txt *Preware补丁推荐
+Splashtop_Streamer_Win_v1.6.0.1.exe *远程桌面服务程序
+TBaccess.exe *TBaccess PC端
+UniversalNovacomInstaller.jar *驱动程序(Linux)
+webOS Nation Moboot.zip *MoBoot主题文件
+webosdoctorp305hstnhwifi.jar *HP TouchPad官网3.0.5 ROM
+WifiMediaSync.msi *媒体文件同步工具
+手动删除android.txt *手动删除CM方法
+
+G:WebOScm7alpha3.5
+ACMEInstaller
+ACMEUninstaller
+gapps-gb-20110828-signed.zip
+moboot_0.3.5.zip
+novacom.exe
+update-cm-7.1.0-tenderloin-a3.5-fullofbugs.zip
+update-cwm_tenderloin-1012.zip
+XRONified_vB2.9.1_odex_01032012.zip
+
+G:WebOScm9alpha2
+ACMEInstaller2
+ACMEUninstaller
+gapps-ics-20120429-signed.zip
+moboot_0.3.5.zip
+novacom.exe
+update-cm-9.0.0-RC0-Touchpad-alpha2-fullofbugs.zip
+update-cwm_tenderloin-1012.zip
+
+G:WebOSpatchs
+ca.canucksoftware.filemgr_2.0.7_all.ipk
+ca.canucksoftware.homebrew-js-service-framework_1.0.0_all.ipk
+ca.canucksoftware.systoolsmgr_1.0.5_all.ipk
+cacanucksoftwareinternalz_15.ipk
+
+G:WebOSsoft
+ca.canuckcoding.comicshelfhd_1.3.0_all.ipk
+chomper.sys.lsmime_0.1.0_armv7.ipk
+com.8bitdevelopment.wifimediasync_3.0.5_all.ipk
+com.amwityga.tpnews_1.0.0_all.ipk
+com.aol.engadgetHD_1.0.5_all_Touchpad.ipk
+com.hedami.musicplayerremix_2.5.5_all.ipk
+com.hp.palm.renren_01.00.022_all.ipk
+com.ingloriousapps.glimpse_1.2.3_all.ipk
+com.ingloriousapps.notesplus-untestedalpha_0.3.1_all.ipk
+com.kalemsoft.ksmplayera_0.5.3_tp.ipk
+com.l337tech.internet-radio-hd-pro_0.0.2_all.ipk
+com.menaka.mvnc_2.0.0_all.ipk
+com.mporting.ime.zh-cn.patch_3.0.4_all.ipk
+com.noteday.opencoursehd_1.0.0_all.ipk
+com.omastudios.filemanager_1.7.0_all.ipk
+com.oscillicious.sodasynthhd_1.0.2_all.ipk
+com.picsel.app.smartoffice_1.8.5_all.ipk
+com.qq.palmqzone_1.0.0_all.ipk
+com.sina.touchpadweibo_1.0.1_all.ipk
+com.smilepig.sohutv_0.0.7_all.ipk
+com.splashtop.remote.webos_1.0.3_all.ipk
+com.syllogithm.webosrdpc_0.2.5_all.ipk
+com.tencent.qq_1.0.0_all.ipk
+com.tudou.video_2.0.0_all.ipk
+com.wordpress.mobilecoder.touchplayer_1.0.6a_all.ipk
+com.xuepx.justradio.hd_2.0.3_all.ipk
+com.youku.touchpad_2.0.0_beta3.ipk
+de.thg_.usbflashmount_0.1.0_all.ipk
+org.webosinternals.preware_1.8.5_arm.ipk
+org.webosinternals.preware_1.9.12_arm.ipk
+
+G:WebOStouchpad免激活
+devicetool-tp
+devicetool-tp.jar
+devicetool.bat
+readme.txt
+
+G:WebOSWQI
+WebOSQuickInstall-4.2.0.jar
+WebOSQuickInstall-4.3.1.jar
+WebOSQuickInstall-4.4.0.jar 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;http://pan.baidu.com/share/link?shareid=308749&amp;amp;uk=1493434283&#34;&gt;下载地址&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

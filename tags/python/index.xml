@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on UNIXETC</title>
+    <link>https://unixetc.com/tags/python/</link>
+    <description>UNIXETC (Python)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Thu, 25 May 2017 15:12:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>树莓派显示天气信息</title>
+      <link>https://unixetc.com/post/weather-according-to-raspberry-pi/</link>
+      <pubDate>Thu, 25 May 2017 15:12:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/weather-according-to-raspberry-pi/</guid>
+      <description>&lt;p&gt;在此介绍一个国外网友的树莓派项目&lt;strong&gt;RARP&lt;/strong&gt;，Weather According to Raspberry Pi&lt;/p&gt;
+&lt;p&gt;顾名思义，Weather According to Raspberry Pi是一个有关天气信息的项目，该项目通过采集&lt;strong&gt;Raspberry Pi&lt;/strong&gt;和&lt;strong&gt;Sense HAT&lt;/strong&gt;的数据，来显示相关的天气信息，比如温度、湿度、压力等&lt;/p&gt;
+&lt;p&gt;项目地址&lt;a href=&#34;http://coded2.herokuapp.com/weather/&#34;&gt;http://coded2.herokuapp.com/weather/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;代码国内下载地址&lt;a href=&#34;http://cdn.lyq.wiki/res/warp_final.zip&#34;&gt;http://cdn.lyq.wiki/res/warp_final.zip&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载后解压，得到&lt;strong&gt;main.py&lt;/strong&gt;和&lt;strong&gt;gauge2.html&lt;/strong&gt;两个文件，其中&lt;strong&gt;main.py&lt;/strong&gt;需要&lt;strong&gt;Python3&lt;/strong&gt;运行，&lt;strong&gt;gauge2.html&lt;/strong&gt;是最终的显示文件&lt;/p&gt;
+&lt;p&gt;安装相关软件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install python3
+sudo apt-get install python3-pip
+pip3 install flask
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;打开&lt;strong&gt;Sense HAT仿真器&lt;/strong&gt;，在程序菜单中，打开后如下图示:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/senseHAT-emu.webp&#34; alt=&#34;SenseHAT Menu&#34;&gt;&lt;/p&gt;
+&lt;p&gt;下来，运行下载的python脚本&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;python3 main.py
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;正常情况下，会提示一个端口为&lt;strong&gt;5000&lt;/strong&gt;的web服务正在运行&lt;/p&gt;
+&lt;p&gt;在浏览器中浏览&lt;strong&gt;localhost:5000&lt;/strong&gt;或者&lt;strong&gt;127.0.0.1:5000&lt;/strong&gt;，最终的浏览如下图&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/warp.webp&#34; alt=&#34;WARP&#34;&gt;&lt;/p&gt;
+&lt;p&gt;三个图表分别显示温度、压力和湿度，这三者的信息均来自&lt;strong&gt;Sense HAT 模拟器&lt;/strong&gt;而不是真正的&lt;strong&gt;Sense HAT&lt;/strong&gt;硬件。&lt;/p&gt;
+&lt;p&gt;如果需要采集&lt;strong&gt;Sense HAT&lt;/strong&gt;扩展板的数据，需要将&lt;strong&gt;Sense HAT&lt;/strong&gt;附加板和&lt;strong&gt;Raspberry Pi&lt;/strong&gt;相连，具体信息参考官网 &lt;a href=&#34;https://www.raspberrypi.org/products/sense-hat/&#34;&gt;https://www.raspberrypi.org/products/sense-hat/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;然后修改代码，打开&lt;strong&gt;main.py&lt;/strong&gt;文件，找到如下行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sense_emu import SenseHat
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;修改为&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sense_hat import SenseHat
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;保存后，重新运行&lt;strong&gt;python3 main.py&lt;/strong&gt;，此时采集的数据就来自真实的&lt;strong&gt;SenseHAT&lt;/strong&gt;硬件。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>python-pip安装实例</title>
+      <link>https://unixetc.com/post/python-pip-installation/</link>
+      <pubDate>Thu, 20 Apr 2017 14:28:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/python-pip-installation/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Python-pip&lt;/strong&gt; 是一个现代的，通用的 &lt;strong&gt;Python&lt;/strong&gt;包管理工具。提供了对 Python 包的查找、下载、安装、卸载的功能。&lt;/p&gt;
+&lt;p&gt;以下为多个操作系统平台下&lt;strong&gt;Python-pip&lt;/strong&gt;安装方法&lt;/p&gt;
+&lt;h3 id=&#34;通用方法&#34;&gt;通用方法&lt;/h3&gt;
+&lt;p&gt;通过&lt;strong&gt;get-pip.py&lt;/strong&gt;文件来安装，建议&lt;strong&gt;Windows&lt;/strong&gt;用户使用，前提是你必须首先安装&lt;strong&gt;Python&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;版本要求Python 2 &amp;gt;=2.7.9 或Python 3 &amp;gt;=3.4，可从官网下载&lt;a href=&#34;http://www.python.org/&#34;&gt;http://www.python.org/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;然后下载&lt;strong&gt;get-pip.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;下载地址 &lt;a href=&#34;https://bootstrap.pypa.io/get-pip.py&#34;&gt;https://bootstrap.pypa.io/get-pip.py&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;通过&lt;code&gt;python get-pip.py&lt;/code&gt;命令来进行安装。&lt;/p&gt;
+&lt;h3 id=&#34;linux下通过软件管理工具来安装python-pip&#34;&gt;Linux下通过软件管理工具来安装Python-pip&lt;/h3&gt;
+&lt;h4 id=&#34;fedora21&#34;&gt;Fedora21&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Python2&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo yum upgrade python-setuptools
+sudo yum install python-pip python-wheel
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Python3&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo yum install python3 python3-wheel
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;fedora22&#34;&gt;Fedora22&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Python2&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo dnf upgrade python-setuptools
+sudo dnf install python-pip python-wheel
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Python3&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo dnf install python3 python3-wheel
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;centosrhel&#34;&gt;CentOS/RHEL&lt;/h4&gt;
+&lt;p&gt;首先得启用&lt;strong&gt;EPEL repository&lt;/strong&gt;,&lt;a href=&#34;https://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F&#34;&gt;可参考此文&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;EPEL 6/EPEL 7&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo yum install python-pip
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;EPEL 7&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bsh&#34; data-lang=&#34;bsh&#34;&gt;sudo yum install python-wheel
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;opensuse&#34;&gt;OpenSUSE&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Python 2:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo zypper install python-pip python-setuptools python-wheel
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Python 3:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo zypper install python3-pip python3-setuptools python3-wheel
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;debianubuntu&#34;&gt;Debian/Ubuntu&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install python-pip
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;当系统安装的是&lt;strong&gt;Python3&lt;/strong&gt;是，则安装&lt;code&gt;python3-pip&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;archlinux&#34;&gt;Archlinux&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Python 2:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo pacman -S python2-pip
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Python 3:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo pacman -S python-pip
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>树莓派动态IP更新器</title>
+      <link>https://unixetc.com/post/raspberrypi-dynamic-ip-updater/</link>
+      <pubDate>Wed, 19 Apr 2017 21:28:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/raspberrypi-dynamic-ip-updater/</guid>
+      <description>&lt;p&gt;这是一个python3的脚本，每隔10分钟监控一次IP地址，如果发生变化则会通过AutoRemote消息通知你。 关于AutoRemote的使用可&lt;a href=&#34;http://www.notenoughtech.com/raspberry-pi/tasker-raspberrypi/&#34;&gt;参考这里&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这里推荐使用&lt;a href=&#34;https://github.com/phoemur/ipgetter&#34;&gt;&lt;strong&gt;ipgetter&lt;/strong&gt;&lt;/a&gt;来获取外网IP，地址为&lt;a href=&#34;https://github.com/phoemur/ipgetter&#34;&gt;https://github.com/phoemur/ipgetter&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;安装ipgetter&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo apt-get install python3 pip
+sudo pip3 install ipgetter
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;你可以从以下地址获取每个通知设备的AutoRemote所需google key&lt;/p&gt;
+&lt;p&gt;​	http://autoremotejoaomgcd.appspot.com/?key=[it&amp;rsquo;s the part that is here]&lt;/p&gt;
+&lt;p&gt;以下为python3脚本:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;import ipgetter
+import urllib.request
+import requests
+
+currentIP &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; ipgetter.myip&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#AutoRemote function to send a notification YOUR_KEY goes here&lt;/span&gt;
+def sendAR&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;x&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;:
+	AR_key &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;YOUR_KEY&amp;#39;&lt;/span&gt;
+	AR_url &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;http://autoremotejoaomgcd.appspot.com/sendmessage?key=&amp;#39;&lt;/span&gt;+ AR_key +&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;amp;message=IP%20&amp;#39;&lt;/span&gt;
+	message &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; AR_url + x
+	response &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; urllib.request.urlopen&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;message&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;.read&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
+	print&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;x&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;	
+&lt;span style=&#34;color:#75715e&#34;&gt;#check the internet  and check if previous file is present&lt;/span&gt;
+try:
+	requests.get&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;http://www.google.com&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+	print&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Internet present&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+	IPfile &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; open&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;ipfile.txt&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;r&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+	lastIP &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; IPfile.read&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;	
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; lastIP &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; currentIP:
+		print&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;No changes last IP: &amp;#39;&lt;/span&gt; + lastIP + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39; current IP: &amp;#39;&lt;/span&gt; + currentIP&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+	&lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;:
+		with open&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;ipfile.txt&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;w+&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; as f:
+			f.write&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;currentIP&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+			f.close&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
+			sendAR&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;currentIP&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+			print&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;IP updated&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#handle no file&lt;/span&gt;			
+except IOError:
+	&lt;span style=&#34;color:#75715e&#34;&gt;#print(IOError)&lt;/span&gt;
+	with open&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;ipfile.txt&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;w+&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; as f:
+		IPfile &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; ipgetter.myip&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
+		f.write&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;IPfile&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+		f.close&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
+		print&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;created file with current IP&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+		sendAR&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;currentIP&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+		quit&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
+&lt;span style=&#34;color:#75715e&#34;&gt;#Handle no internet&lt;/span&gt;		
+except requests.ConnectionError:
+	quit&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;运行脚本后，会监视ip变化，如果发生变化则通知最新ip，如果未发生变化则不通知。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>使用speedtest-cli测试带宽</title>
+      <link>https://unixetc.com/post/use-speedtest-cli-tests-network-bandwidth/</link>
+      <pubDate>Thu, 26 Mar 2015 13:26:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/use-speedtest-cli-tests-network-bandwidth/</guid>
+      <description>&lt;h3 id=&#34;安装speedtest-cli&#34;&gt;安装speedtest-cli&lt;/h3&gt;
+&lt;p&gt;安装speedtest-cli方法如下:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install python-pip
+sudo pip install speedtest-cli
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;或&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip install git+https://github.com/sivel/speedtest-cli.git
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;或&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/sivel/speedtest-cli.git
+python speedtest-cli/setup.py install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;或&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest_cli.py
+chmod +x speedtest-cli
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;或&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -Lo speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest_cli.py
+chmod +x speedtest-cli
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;使用speedtest-cli&#34;&gt;使用speedtest-cli&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;root@MyUbuntuCloud:~# speedtest-cli -h
+usage: speedtest-cli [-h] [--bytes] [--share] [--simple] [--list]
+                 [--server SERVER] [--mini MINI] [--source SOURCE]
+                 [--timeout TIMEOUT] [--version]
+
+Command line interface for testing internet bandwidth using speedtest.net.
+--------------------------------------------------------------------------
+https://github.com/sivel/speedtest-cli
+
+optional arguments:
+  -h, --help         show this help message and exit
+  --bytes            Display values in bytes instead of bits. Does not affect
+                     the image generated by --share
+  --share            Generate and provide a URL to the speedtest.net share
+                     results image
+  --simple           Suppress verbose output, only show basic information
+  --list             Display a list of speedtest.net servers sorted by
+                     distance
+  --server SERVER    Specify a server ID to test against
+  --mini MINI        URL of the Speedtest Mini server
+  --source SOURCE    Source IP address to bind to
+  --timeout TIMEOUT  HTTP timeout in seconds. Default 10
+  --version          Show the version number and exit
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以下为两则实例：&lt;/p&gt;
+&lt;p&gt;HKVPS:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;root@MyUbuntuCloud:~# speedtest-cli --share
+Retrieving speedtest.net configuration...
+Retrieving speedtest.net server list...
+Testing from Shanghai Anchnet Network Technology (118.193.151.193)...
+Selecting best server based on latency...
+Hosted by ChinaTelecom (Guangzhou) [2.51 km]: 6.646 ms
+Testing download speed........................................
+Download: 19.66 Mbit/s
+Testing upload speed..................................................
+Upload: 0.81 Mbit/s
+Share results: https://www.speedtest.net/result/4242720179.png
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/str4242720179.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Raspberry Pi:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pi@araspi ~ $ ./speedtest-cli --share
+Retrieving speedtest.net configuration...
+Retrieving speedtest.net server list...
+Testing from China Unicom Shannxi (123.138.35.2)...
+Selecting best server based on latency...
+Hosted by Xi&#39;an branch,Chinaunicom (Xian) [2.79 km]: 14.556 ms
+Testing download speed........................................
+Download: 38.05 Mbit/s
+Testing upload speed..................................................
+Upload: 7.34 Mbit/s
+Share results: https://www.speedtest.net/result/4242749590.png
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/str4242749590.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>树莓派安装Python开发环境与GPIO库</title>
+      <link>https://unixetc.com/post/raspberry-pi-install-python-development-environment-and-gpio-library/</link>
+      <pubDate>Sun, 02 Mar 2014 12:31:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/raspberry-pi-install-python-development-environment-and-gpio-library/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;安装python&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$sudo apt-get install python-dev
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;更新&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$sudo easy_install -U distribute
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;安装python-pip&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$sudo apt-get install python-pip
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;添加国内pypi镜像&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在&lt;strong&gt;~/.pip/pip.conf&lt;/strong&gt;中添加&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[global]
+index-url = http://mirrors.aliyun.com/pypi/simple/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;安装python的GPIO库&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$sudo pip install rpi.gpio&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Linux下部署goAgent</title>
+      <link>https://unixetc.com/post/linux-deployment-goagent/</link>
+      <pubDate>Thu, 30 May 2013 15:30:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/linux-deployment-goagent/</guid>
+      <description>&lt;h3 id=&#34;准备工作&#34;&gt;准备工作&lt;/h3&gt;
+&lt;p&gt;下载Google Appengine SDK For Pyahont与goAgent&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1.Google App Engine SDK for Python
+https://developers.google.com/appengine/downloads?hl=zh-CN#Google_App_Engine_SDK_for_Python
+
+2.goagent
+https://code.google.com/p/goagent/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;下载后解压，将goagent文件夹放到google_appengine目录下，目录结构如下:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;~/google_appengine/goagent-goagent-d488f2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;准备好Google Application_ID与两步验证密码,如何申请问&lt;a href=&#34;http://google.com&#34;&gt;Google&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;配置goagent&#34;&gt;配置goagent&lt;/h3&gt;
+&lt;p&gt;编辑&lt;strong&gt;~/google_appengine/goagent-goagent-d488f2/local/proxy.ini&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;填写正确的appid，在此建议将profile由默认的&lt;code&gt;google_cn&lt;/code&gt;改为&lt;code&gt;google_hk&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;参考以下步骤执行：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;aquan@edge ~/google_appengine $ python appcfg.py update goagent-goagent-d4488f2/server/python/
+07:03 PM Host: appengine.google.com
+07:03 PM Application: wrchiublog; version: 1
+07:03 PM 
+Starting update of app: wrchiublog, version: 1
+07:03 PM Getting current resource limits.
+Email: wrchiu@126.com  //在此填写googleid
+Password for wrchiu@126.com:    //此处填写两步验证密码，而不是帐号密码
+07:04 PM Scanning files on local disk.
+07:04 PM Cloning 1 static file.
+07:04 PM Cloning 6 application files.
+07:04 PM Uploading 1 files and blobs.
+07:04 PM Uploaded 1 files and blobs
+07:04 PM Compilation starting.
+07:04 PM Compilation completed.
+07:04 PM Starting deployment.
+07:04 PM Checking if deployment succeeded.
+07:04 PM Deployment successful.
+07:04 PM Checking if updated app version is serving.
+07:04 PM Completed update of app: wrchiublog, version: 1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;完成后，在**~/google_appengine/goagent-goagent-d488f2/local/**目录下运行goAgent&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ python proxy.py&amp;amp;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;**注意:**在更新app时出现如下错误&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;aquan@edge ~/google_appengine $ python appcfg.py update goagent-goagent-d4488f2/server/python/
+07:00 PM Host: appengine.google.com
+Error parsing yaml file:
+Unable to assign value &#39;your_appid&#39; to attribute &#39;application&#39;:
+Value &#39;your_appid&#39; for application does not match expression &#39;^(?:(?:[a-z\d\-]{1,100}\~)?(?:(?!\-)[a-z\d\-\.]{1,100}:)?(?!-)[a-z\d\-]{0,99}[a-z\d])$&#39;
+  in &amp;quot;goagent-goagent-d4488f2/server/python/app.yaml&amp;quot;, line 1, column 14
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;按照提示修改&lt;strong&gt;goagent-goagent-d4488f2/server/python/app.yaml&lt;/strong&gt;中的application为正确的appid&lt;/p&gt;
+&lt;p&gt;至此Linux下goAgent部署完成!&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;在此提供包含goagent的压缩包&lt;a href=&#34;http://pan.baidu.com/share/link?shareid=472887&amp;amp;uk=1493434283&#34;&gt;http://pan.baidu.com/share/link?shareid=472887&amp;amp;uk=1493434283&lt;/a&gt;(goagent 3.0.1)&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

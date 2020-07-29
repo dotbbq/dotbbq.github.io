@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>Windows下安装Jekyll - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+
+
+
+<meta property="og:title" content="Windows下安装Jekyll" />
+<meta property="og:description" content="安装Ruby/DevKit 首先从 http://rubyinstaller.org/downloads/ 下载以下两个文件进行安装
+ rubyinstaller-1.9.3-p194.exe DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe  Ruby安装在D:\Ruby200, DevKit安装在D:\rubydevkit
+打开CMD进入到DevKit目录，开始初始化安装
+D:\rubydevkit&gt;ruby dk.rb init[INFO] found RubyInstaller v2.0.0 at d:/Ruby200Initialization complete! Please review and modify the auto-generated&#39;config.yml&#39; file to ensure it contains the root directories to allof the installed Rubies you want enhanced by the DevKit.D:\rubydevkit&gt;ruby dk.rb install[INFO] Updating convenience notice gem override for &#39;d:/Ruby200&#39;[INFO] Installing &#39;d:/Ruby200/lib/ruby/site_ruby/devkit.rb&#39; 替换Gem源
+天朝网路可能会引起gem安装失败，建议更换为ruby.taobao,org源
+$gem sources -r http://rubygems.org/$gem sources -a http://ruby." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unixetc.com/post/install-jekyll-on-windows/" />
+<meta property="article:published_time" content="2015-05-20T15:20:00+00:00" />
+<meta property="article:modified_time" content="2015-05-20T15:20:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Windows下安装Jekyll"/>
+<meta name="twitter:description" content="安装Ruby/DevKit 首先从 http://rubyinstaller.org/downloads/ 下载以下两个文件进行安装
+ rubyinstaller-1.9.3-p194.exe DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe  Ruby安装在D:\Ruby200, DevKit安装在D:\rubydevkit
+打开CMD进入到DevKit目录，开始初始化安装
+D:\rubydevkit&gt;ruby dk.rb init[INFO] found RubyInstaller v2.0.0 at d:/Ruby200Initialization complete! Please review and modify the auto-generated&#39;config.yml&#39; file to ensure it contains the root directories to allof the installed Rubies you want enhanced by the DevKit.D:\rubydevkit&gt;ruby dk.rb install[INFO] Updating convenience notice gem override for &#39;d:/Ruby200&#39;[INFO] Installing &#39;d:/Ruby200/lib/ruby/site_ruby/devkit.rb&#39; 替换Gem源
+天朝网路可能会引起gem安装失败，建议更换为ruby.taobao,org源
+$gem sources -r http://rubygems.org/$gem sources -a http://ruby."/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">Windows下安装Jekyll</h1>
+        </header>
+        <div class="content">
+            <h3 id="安装rubydevkit">安装Ruby/DevKit</h3>
+<p>首先从 <a href="http://rubyinstaller.org/downloads/">http://rubyinstaller.org/downloads/</a>  下载以下两个文件进行安装</p>
+<ul>
+<li><a href="http://pan.baidu.com/share/link?shareid=1353205281&amp;uk=1493434283">rubyinstaller-1.9.3-p194.exe</a></li>
+<li><a href="http://pan.baidu.com/share/link?shareid=1354945070&amp;uk=1493434283">DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe</a></li>
+</ul>
+<p>Ruby安装在<strong>D:\Ruby200</strong>, DevKit安装在<strong>D:\rubydevkit</strong></p>
+<p>打开CMD进入到DevKit目录，开始初始化安装</p>
+<pre><code>D:\rubydevkit&gt;ruby dk.rb init
+[INFO] found RubyInstaller v2.0.0 at d:/Ruby200
+
+Initialization complete! Please review and modify the auto-generated
+'config.yml' file to ensure it contains the root directories to all
+of the installed Rubies you want enhanced by the DevKit.
+
+D:\rubydevkit&gt;ruby dk.rb install
+[INFO] Updating convenience notice gem override for 'd:/Ruby200'
+[INFO] Installing 'd:/Ruby200/lib/ruby/site_ruby/devkit.rb'
+</code></pre>
+<p><strong>替换Gem源</strong></p>
+<p>天朝网路可能会引起gem安装失败，建议更换为ruby.taobao,org源</p>
+<pre><code>$gem sources -r http://rubygems.org/
+$gem sources -a http://ruby.taobao.org/
+</code></pre>
+<h3 id="安装jekyll">安装jekyll</h3>
+<pre><code>D:\rubydevkit&gt;gem install jekyll
+Fetching: yajl-ruby-1.1.0-x86-mingw32.gem (100%)
+Successfully installed yajl-ruby-1.1.0-x86-mingw32
+Fetching: posix-spawn-0.3.6.gem (100%)
+Temporarily enhancing PATH to include DevKit...
+Building native extensions.  This could take a while...
+Successfully installed posix-spawn-0.3.6
+Fetching: pygments.rb-0.4.2.gem (100%)
+Successfully installed pygments.rb-0.4.2
+Fetching: highline-1.6.18.gem (100%)
+Successfully installed highline-1.6.18
+Fetching: commander-4.1.3.gem (100%)
+Successfully installed commander-4.1.3
+Fetching: safe_yaml-0.7.1.gem (100%)
+Successfully installed safe_yaml-0.7.1
+Fetching: colorator-0.1.gem (100%)
+Successfully installed colorator-0.1
+Fetching: jekyll-1.0.1.gem (100%)
+Successfully installed jekyll-1.0.1
+Parsing documentation for yajl-ruby-1.1.0-x86-mingw32
+unable to convert &quot;\x90&quot; from ASCII-8BIT to UTF-8 for lib/yajl/1.8/yajl.so, skip
+ping
+unable to convert &quot;\x90&quot; from ASCII-8BIT to UTF-8 for lib/yajl/1.9/yajl.so, skip
+ping
+Installing ri documentation for yajl-ruby-1.1.0-x86-mingw32
+Parsing documentation for posix-spawn-0.3.6
+Installing ri documentation for posix-spawn-0.3.6
+Parsing documentation for pygments.rb-0.4.2
+Installing ri documentation for pygments.rb-0.4.2
+Parsing documentation for highline-1.6.18
+Installing ri documentation for highline-1.6.18
+Parsing documentation for commander-4.1.3
+Installing ri documentation for commander-4.1.3
+Parsing documentation for safe_yaml-0.7.1
+Installing ri documentation for safe_yaml-0.7.1
+Parsing documentation for colorator-0.1
+Installing ri documentation for colorator-0.1
+Parsing documentation for jekyll-1.0.1
+Installing ri documentation for jekyll-1.0.1
+Done installing documentation for yajl-ruby, posix-spawn, pygments.rb, highline,
+ commander, safe_yaml, colorator, jekyll (7 sec).
+8 gems installed
+</code></pre>
+<p>完成后，可以使用jekyll -v来检查是否安装成功</p>
+<pre><code>D:\rubydevkit&gt;jekyll -v 
+jekyll 1.0.1
+</code></pre>
+<p>有时由于天朝内网路问题，可能造成以上安装中某一个部分中途退出，再次执行安装时出现以下提示:</p>
+<pre><code>D:\rubydevkit&gt;gem install jekyll
+ERROR:  While executing gem ... (NoMethodError)
+    undefined method `size' for nil:NilClass
+</code></pre>
+<p>在此只需要将gem目录下cache文件夹内清空，重新安装即可。</p>
+<p>如果不知道gem目录的可以使用gem env来查看GEM PATHS值，如下所示<strong>d:/Ruby200/lib/ruby/gems/2.0.0</strong></p>
+<pre><code>D:\rubydevkit&gt;gem env
+RubyGems Environment:
+  - RUBYGEMS VERSION: 2.0.0
+  - RUBY VERSION: 2.0.0 (2013-02-24 patchlevel 0) [i386-mingw32]
+  - INSTALLATION DIRECTORY: d:/Ruby200/lib/ruby/gems/2.0.0
+  - RUBY EXECUTABLE: d:/Ruby200/bin/ruby.exe
+  - EXECUTABLE DIRECTORY: d:/Ruby200/bin
+  - RUBYGEMS PLATFORMS:
+    - ruby
+    - x86-mingw32
+  - GEM PATHS:
+     - d:/Ruby200/lib/ruby/gems/2.0.0
+     - C:/Documents and Settings/aquan/.gem/ruby/2.0.0
+  - GEM CONFIGURATION:
+     - :update_sources =&gt; true
+     - :verbose =&gt; true
+     - :backtrace =&gt; false
+     - :bulk_threshold =&gt; 1000
+  - REMOTE SOURCES:
+     - http://ruby.taobao.org/</code></pre>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-05-20</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/jekyll">#Jekyll</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ruby">#Ruby</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/blog">#Blog</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/devkit">#DevKit</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gem">#gem</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

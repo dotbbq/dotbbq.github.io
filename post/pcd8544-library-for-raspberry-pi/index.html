@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>树莓派可用的PCD8544库 - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+
+
+
+<meta property="og:title" content="树莓派可用的PCD8544库" />
+<meta property="og:description" content="Nokia 3310/5110显示器基于PCD8544，在此分享一个树莓派可用的PCD8544库
+使用该库之前，需要安装wiringPi,安装方法可参考树莓派连接DHT11采集温度与湿度
+项目地址：
+https://github.com/binerry/RaspberryPi/tree/master/libraries/c/PCD8544 可通过github download直接下载,不能访问github的，用以下连接下载
+http://cdn.lyq.wiki/res/Raspberry.Pi_PCD8544.Library.zip 解压后，可得到一个c源码和一个h头文件
+PCD8544.cPCD8544.h 以及samples文件夹下的三个示例
+pcd8544_rpi.cpcd8544_test.cpcd8544_test2.c 按照下图所示连接好树莓派和显示器
+ RST —— 复位 接GPIO 0 CE —— 片选 接GPIO 1 或 不接 DC —— 数据/指令选择 接GPIO 2 DIN —— 串行数据线 接GPIO 3 CLK —— 串行时钟线 接GPIO 5 （因为我的GPIO 4已经接了一个DHT11传感器） VCC —— 电源输入 接3.3v BL —— 背光控制端 接3.3v GND —— 地线 接地  编译三个示例程序
+cc -o pcd8544_test pcd8544_test.c ../PCD8544.c -L/usr/local/lib -lwiringPicc -o pcd8544_test2 pcd8544_test2." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unixetc.com/post/pcd8544-library-for-raspberry-pi/" />
+<meta property="article:published_time" content="2017-01-20T11:20:00+00:00" />
+<meta property="article:modified_time" content="2017-01-20T11:20:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="树莓派可用的PCD8544库"/>
+<meta name="twitter:description" content="Nokia 3310/5110显示器基于PCD8544，在此分享一个树莓派可用的PCD8544库
+使用该库之前，需要安装wiringPi,安装方法可参考树莓派连接DHT11采集温度与湿度
+项目地址：
+https://github.com/binerry/RaspberryPi/tree/master/libraries/c/PCD8544 可通过github download直接下载,不能访问github的，用以下连接下载
+http://cdn.lyq.wiki/res/Raspberry.Pi_PCD8544.Library.zip 解压后，可得到一个c源码和一个h头文件
+PCD8544.cPCD8544.h 以及samples文件夹下的三个示例
+pcd8544_rpi.cpcd8544_test.cpcd8544_test2.c 按照下图所示连接好树莓派和显示器
+ RST —— 复位 接GPIO 0 CE —— 片选 接GPIO 1 或 不接 DC —— 数据/指令选择 接GPIO 2 DIN —— 串行数据线 接GPIO 3 CLK —— 串行时钟线 接GPIO 5 （因为我的GPIO 4已经接了一个DHT11传感器） VCC —— 电源输入 接3.3v BL —— 背光控制端 接3.3v GND —— 地线 接地  编译三个示例程序
+cc -o pcd8544_test pcd8544_test.c ../PCD8544.c -L/usr/local/lib -lwiringPicc -o pcd8544_test2 pcd8544_test2."/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">树莓派可用的PCD8544库</h1>
+        </header>
+        <div class="content">
+            <p>Nokia 3310/5110显示器基于PCD8544，在此分享一个树莓派可用的PCD8544库</p>
+<p>使用该库之前，需要安装wiringPi,安装方法可参考<a href="/post/Raspberry-Pi-by-DHT11-collecting-temperature-and-humidity/">树莓派连接DHT11采集温度与湿度</a></p>
+<p>项目地址：</p>
+<pre><code>https://github.com/binerry/RaspberryPi/tree/master/libraries/c/PCD8544
+</code></pre>
+<p>可通过<a href="https://github.com/downloads/binerry/RaspberryPi/Raspberry.Pi_PCD8544.Library.zip">github download</a>直接下载,不能访问github的，用以下连接下载</p>
+<pre><code>http://cdn.lyq.wiki/res/Raspberry.Pi_PCD8544.Library.zip
+</code></pre>
+<p>解压后，可得到一个c源码和一个h头文件</p>
+<pre><code>PCD8544.c
+PCD8544.h
+</code></pre>
+<p>以及samples文件夹下的三个示例</p>
+<pre><code>pcd8544_rpi.c
+pcd8544_test.c
+pcd8544_test2.c
+</code></pre>
+<p>按照下图所示连接好树莓派和显示器</p>
+<p><img src="http://cdn.lyq.wiki/imgs/raspi_pcd8544.webp" alt="raspi_pcd8544"></p>
+<ul>
+<li>RST —— 复位 接GPIO 0</li>
+<li>CE —— 片选 接GPIO 1 或 不接</li>
+<li>DC —— 数据/指令选择 接GPIO 2</li>
+<li>DIN —— 串行数据线 接GPIO 3</li>
+<li>CLK —— 串行时钟线 接GPIO 5 （因为我的GPIO 4已经接了一个DHT11传感器）</li>
+<li>VCC —— 电源输入 接3.3v</li>
+<li>BL —— 背光控制端 接3.3v</li>
+<li>GND —— 地线 接地</li>
+</ul>
+<p>编译三个示例程序</p>
+<pre><code>cc -o pcd8544_test pcd8544_test.c ../PCD8544.c  -L/usr/local/lib -lwiringPi
+cc -o pcd8544_test2 pcd8544_test2.c ../PCD8544.c  -L/usr/local/lib -lwiringPi
+cc -o pcd8544_rpi pcd8544_rpi.c ../PCD8544.c  -L/usr/local/lib -lwiringPi
+</code></pre>
+<p>然后运行之</p>
+<pre><code>sudo ./pcd8544_test
+sudo ./pcd8544_test2
+sudo ./pcd8544_rpi
+</code></pre>
+<p>一下是三个示例运行情况</p>
+<p><img src="http://cdn.lyq.wiki/imgs/nokia-5110-example.webp" alt=""></p>
+<p>参考: <em><a href="http://binerry.de/post/25787954149/pcd8544-library-for-raspberry-pi">http://binerry.de/post/25787954149/pcd8544-library-for-raspberry-pi</a></em></p>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-01-20</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nokia">#nokia</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%AF%BA%E5%9F%BA%E4%BA%9A">#诺基亚</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/pcd8544">#pcd8544</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/3310">#3310</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/5110">#5110</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/wiringpi">#wiringpi</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>

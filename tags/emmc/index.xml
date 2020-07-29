@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>emmc on UNIXETC</title>
+    <link>https://unixetc.com/tags/emmc/</link>
+    <description>UNIXETC (emmc)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Wed, 01 May 2019 12:14:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/emmc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>NokiaN900刷机方法</title>
+      <link>https://unixetc.com/post/nokia-n900-installation-firmware/</link>
+      <pubDate>Wed, 01 May 2019 12:14:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/nokia-n900-installation-firmware/</guid>
+      <description>&lt;p&gt;刷机工具以及固件文件下再地址见文章末尾。&lt;/p&gt;
+&lt;p&gt;首先安装刷机工具&lt;strong&gt;maemo flasher&lt;/strong&gt;，然后下载固件，固件分以下两个文件，下载地址&lt;a href=&#34;https://blbl.dev/NokiaN900/index.html&#34;&gt;https://blbl.dev/NokiaN900/index.html&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;emmc(vanilla)&lt;/li&gt;
+&lt;li&gt;firmware(combined)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;切记，先刷&lt;code&gt;emmc&lt;/code&gt;再刷&lt;code&gt;firmware&lt;/code&gt;，并且两次刷机中间不可以开机。&lt;/p&gt;
+&lt;p&gt;将手机关机，然后按住键盘上的&lt;!-- raw HTML omitted --&gt;u&lt;!-- raw HTML omitted --&gt;键，再用数据线将手机链接电脑，这是手机会显示NOKIA字样界面，并且右上角显示有USB图标，即进入刷机模式。&lt;/p&gt;
+&lt;p&gt;首先写入&lt;code&gt;EMMC&lt;/code&gt;文件，命令如下&lt;code&gt;flasher-3.5 -F emmc.bin -f&lt;/code&gt;，以下为linux下操作实例，以供参考&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;alair@zb14:~/下载$ sudo flasher-3.5 -F RX-51_2009SE_10.2010.13-2.VANILLA_PR_EMMC_MR0_ARM.bin -f
+[sudo] alair 的密码： 
+flasher v2.5.2 (Oct 21 2009)
+
+Image &#39;mmc&#39;, size 255947 kB
+    Version RX-51_2009SE_10.2010.13-2.VANILLA
+USB device found found at bus 002, device address 012.
+Found device RX-51, hardware revision 2204
+NOLO version 1.4.14
+Version of &#39;sw-release&#39;: RX-51_2009SE_21.2011.38-1_PR_MR0
+Booting device into flash mode.
+Suitable USB device not found, waiting.
+USB device found found at bus 002, device address 013.
+Raw data transfer EP found at EP2.
+Image(s) flashed successfully in 27.304 s (9373 kB/s)!   
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后断开链接，取出电池，重新将电池放入再次刷机模式链接电脑，下来写入&lt;code&gt;firmware&lt;/code&gt;文件，命令&lt;code&gt;flasher-3.5 -F firmware.bin -f -R&lt;/code&gt;，以下为Linux操作实例，以供参考。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;alair@zb14:~/下载$ sudo flasher-3.5 -F RX-51_2009SE_20.2010.36-2_PR_COMBINED_MR0_ARM.bin -f -R
+flasher v2.5.2 (Oct 21 2009)
+
+SW version in image: RX-51_2009SE_20.2010.36-2_PR_MR0
+Image &#39;kernel&#39;, size 1705 kB
+    Version 2.6.28-20103103+0m5
+Image &#39;rootfs&#39;, size 185728 kB
+    Version RX-51_2009SE_20.2010.36-2_PR_MR0
+Image &#39;cmt-2nd&#39;, size 81408 bytes
+    Version BB5_09.36
+Image &#39;cmt-algo&#39;, size 519808 bytes
+    Version BB5_09.36
+Image &#39;cmt-mcusw&#39;, size 5826 kB
+    Version rx51_ICPR82_10w08
+Image &#39;2nd&#39;, size 14720 bytes
+    Valid for RX-51: 2217, 2218, 2219, 2220, 2120
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2217, 2218, 2219, 2220, 2120
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2217, 2218, 2219, 2220, 2120
+    Version 1.4.14.9+0m5
+Image &#39;2nd&#39;, size 14720 bytes
+    Valid for RX-51: 2101, 2102, 2103
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2101, 2102, 2103
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2101, 2102, 2103
+    Version 1.4.14.9+0m5
+Image &#39;2nd&#39;, size 14848 bytes
+    Valid for RX-51: 2307, 2308, 2309, 2310
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2307, 2308, 2309, 2310
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2307, 2308, 2309, 2310
+    Version 1.4.14.9+0m5
+Image &#39;2nd&#39;, size 14848 bytes
+    Valid for RX-51: 2407, 2408, 2409, 2410
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2407, 2408, 2409, 2410
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2407, 2408, 2409, 2410
+    Version 1.4.14.9+0m5
+Image &#39;2nd&#39;, size 14848 bytes
+    Valid for RX-51: 2301, 2302, 2303, 2304, 2305, 2306
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2301, 2302, 2303, 2304, 2305, 2306
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2301, 2302, 2303, 2304, 2305, 2306
+    Version 1.4.14.9+0m5
+Image &#39;2nd&#39;, size 14848 bytes
+    Valid for RX-51: 2401, 2402, 2403, 2404, 2405, 2406
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2401, 2402, 2403, 2404, 2405, 2406
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2401, 2402, 2403, 2404, 2405, 2406
+    Version 1.4.14.9+0m5
+Image &#39;2nd&#39;, size 14720 bytes
+    Valid for RX-51: 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115, 2116, 2117, 2118, 2119
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115, 2116, 2117, 2118, 2119
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115, 2116, 2117, 2118, 2119
+    Version 1.4.14.9+0m5
+Image &#39;2nd&#39;, size 14848 bytes
+    Valid for RX-51: 2501, 2502, 2503, 2504, 2505, 2506
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2501, 2502, 2503, 2504, 2505, 2506
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2501, 2502, 2503, 2504, 2505, 2506
+    Version 1.4.14.9+0m5
+Image &#39;2nd&#39;, size 14848 bytes
+    Valid for RX-51: 2607, 2608, 2609, 2610
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2607, 2608, 2609, 2610
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2607, 2608, 2609, 2610
+    Version 1.4.14.9+0m5
+Image &#39;2nd&#39;, size 14848 bytes
+    Valid for RX-51: 2507, 2508, 2509, 2510
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2507, 2508, 2509, 2510
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2507, 2508, 2509, 2510
+    Version 1.4.14.9+0m5
+Image &#39;2nd&#39;, size 14720 bytes
+    Valid for RX-51: 2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216
+    Version 1.4.14.9+0m5
+Image &#39;2nd&#39;, size 14848 bytes
+    Valid for RX-51: 2601, 2602, 2603, 2604, 2605, 2606
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2601, 2602, 2603, 2604, 2605, 2606
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2601, 2602, 2603, 2604, 2605, 2606
+    Version 1.4.14.9+0m5
+Suitable USB device not found, waiting.
+USB device found found at bus 002, device address 016.
+Found device RX-51, hardware revision 2204
+NOLO version 1.4.14
+Version of &#39;sw-release&#39;: RX-51_2009SE_21.2011.38-1_PR_MR0
+Sending xloader image (14 kB)...
+100% (14 of 14 kB, avg. 3625 kB/s)
+Sending secondary image (106 kB)...
+100% (106 of 106 kB, avg. 15267 kB/s)
+Flashing bootloader... done.
+Sending cmt-2nd image (79 kB)...
+100% (79 of 79 kB, avg. 13250 kB/s)
+Sending cmt-algo image (507 kB)...
+100% (507 of 507 kB, avg. 29860 kB/s)
+Sending cmt-mcusw image (5826 kB)...
+100% (5826 of 5826 kB, avg. 36645 kB/s)
+Flashing cmt-mcusw... done.
+Sending kernel image (1705 kB)...
+100% (1705 of 1705 kB, avg. 6742 kB/s)
+Flashing kernel... done.
+Sending and flashing rootfs image (185728 kB)...
+100% (185728 of 185728 kB, avg. 16144 kB/s)
+Finishing flashing... done
+CMT flashed successfully
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;刷机完成后，手机自动重启。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

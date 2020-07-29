@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>png on UNIXETC</title>
+    <link>https://unixetc.com/tags/png/</link>
+    <description>UNIXETC (png)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 11 Jun 2019 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/png/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux中转换图片为webp格式</title>
+      <link>https://unixetc.com/post/convert-images-to-webp-in-linux/</link>
+      <pubDate>Tue, 11 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/convert-images-to-webp-in-linux/</guid>
+      <description>&lt;h3 id=&#34;安装webp&#34;&gt;安装WebP&lt;/h3&gt;
+&lt;p&gt;Ubuntu中可以使用以下命令安装WebP&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$sudo apt install webp 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其他Linux系统，可以从&lt;a href=&#34;https://storage.googleapis.com/downloads.webmproject.org/releases/webp/index.html&#34;&gt;这里&lt;/a&gt;下载对应压缩包，如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.0.2-linux-x86-64.tar.gz
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;解压后得到以下文件：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$tar zxf libwebp-1.0.2-linux-x86-64.tar.gz
+$cd libwebp-1.0.2-linux-x86-64
+$cd bin
+$ll
+total 12M
+-rwxr-xr-x 1 100 users 679K Jan 15 12:47 anim_diff
+-rwxr-xr-x 1 100 users 923K Jan 15 12:47 anim_dump
+-rwxr-xr-x 1 100 users 2.4M Jan 15 12:47 cwebp
+-rwxr-xr-x 1 100 users 915K Jan 15 12:47 dwebp
+-rwxr-xr-x 1 100 users 2.3M Jan 15 12:47 get_disto
+-rwxr-xr-x 1 100 users 703K Jan 15 12:47 gif2webp
+-rwxr-xr-x 1 100 users 2.4M Jan 15 12:47 img2webp
+-rwxr-xr-x 1 100 users 682K Jan 15 12:47 vwebp
+-rwxr-xr-x 1 100 users 359K Jan 15 12:47 webpinfo
+-rwxr-xr-x 1 100 users 375K Jan 15 12:47 webpmux
+-rwxr-xr-x 1 100 users 347K Jan 15 12:47 webp_quality
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;anim_diff – 动画文件差异对比工具&lt;/li&gt;
+&lt;li&gt;anim_dump – 动画文件差异转存工具&lt;/li&gt;
+&lt;li&gt;cwebp – webp编码工具&lt;/li&gt;
+&lt;li&gt;dwebp – webp解码工具&lt;/li&gt;
+&lt;li&gt;gif2webp – 转换gif为webp&lt;/li&gt;
+&lt;li&gt;img2webp – 将一系列图片转换为webp动画文件&lt;/li&gt;
+&lt;li&gt;vwebp – webp查看软件&lt;/li&gt;
+&lt;li&gt;webpinfo – 查看webp图片文件信息&lt;/li&gt;
+&lt;li&gt;webpmux – webp复用工具&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;webp转换实例&#34;&gt;WebP转换实例&lt;/h3&gt;
+&lt;p&gt;将webp工具目录添加至&lt;strong&gt;PATH&lt;/strong&gt;中，编辑&lt;code&gt;~/.bashrc&lt;/code&gt;添加以下内容：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;export PATH=$PATH:~/libwebp-1.0.2-linux-x86-64/bin
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;cwebp&lt;/strong&gt;语法说明：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cwebp [options] input_file -o output_file.webp
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以下为转换实例：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cwebp -q 50 -lossless picture.png -o picture_lossless.webp
+cwebp -q 70 picture_with_alpha.png -o picture_with_alpha.webp
+cwebp -sns 70 -f 50 -size 60000 picture.png -o picture.webp
+cwebp -o picture.webp -- ---picture.png&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Linux下批量转换PNG和JPG</title>
+      <link>https://unixetc.com/post/batch-conversion-png-and-jpg-under-linux/</link>
+      <pubDate>Mon, 17 Jul 2017 07:17:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/batch-conversion-png-and-jpg-under-linux/</guid>
+      <description>&lt;p&gt;我们用到的软件名为&lt;strong&gt;imagemagick&lt;/strong&gt;，一款强大的图片处理软件。&lt;/p&gt;
+&lt;p&gt;Debian系使用&lt;code&gt;apt-get install imagemagick&lt;/code&gt;来安装，Fedora系通过&lt;code&gt;yum install imagemagick&lt;/code&gt;来安装。&lt;/p&gt;
+&lt;p&gt;其他系统可以到官方下载页进行下载安装 &lt;a href=&#34;https://www.imagemagick.org/script/download.php&#34;&gt;https://www.imagemagick.org/script/download.php&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;安装完成后，可以通过&lt;code&gt;convert tst.jpg tsg.png&lt;/code&gt;将JPG文件转换为PNG，反之亦可。&lt;/p&gt;
+&lt;p&gt;下来进行批量替换：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;root@bwgzl:/data/wwwroot/getos.org/images# ll
+total &lt;span style=&#34;color:#ae81ff&#34;&gt;188&lt;/span&gt;
+drwxr-xr-x  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; www www  &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:48 ./
+drwxr-xr-x &lt;span style=&#34;color:#ae81ff&#34;&gt;27&lt;/span&gt; www www  &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:32 ../
+-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; www www &lt;span style=&#34;color:#ae81ff&#34;&gt;18778&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:43 clip_image002.jpg
+-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; www www &lt;span style=&#34;color:#ae81ff&#34;&gt;17637&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:43 clip_image004.jpg
+-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; www www &lt;span style=&#34;color:#ae81ff&#34;&gt;28075&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:43 clip_image006.jpg
+-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; www www &lt;span style=&#34;color:#ae81ff&#34;&gt;30916&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:43 clip_image008.jpg
+-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; www www &lt;span style=&#34;color:#ae81ff&#34;&gt;13538&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:43 clip_image010.jpg
+-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; www www &lt;span style=&#34;color:#ae81ff&#34;&gt;11845&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:43 clip_image012.jpg
+-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; www www &lt;span style=&#34;color:#ae81ff&#34;&gt;14519&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:43 clip_image014.jpg
+-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; www www &lt;span style=&#34;color:#ae81ff&#34;&gt;33052&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:43 clip_image016.jpg
+root@bwgzl:/data/wwwroot/getos.org/images# ls -1 *.jpg | xargs -n &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; bash -c &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;convert &amp;#34;$0&amp;#34; &amp;#34;${0%.jpg}.png&amp;#34;&amp;#39;&lt;/span&gt;
+root@bwgzl:/data/wwwroot/getos.org/images# ls -ltr
+total &lt;span style=&#34;color:#ae81ff&#34;&gt;1172&lt;/span&gt;
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; www  www   &lt;span style=&#34;color:#ae81ff&#34;&gt;18778&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:43 clip_image002.jpg
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; www  www   &lt;span style=&#34;color:#ae81ff&#34;&gt;17637&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:43 clip_image004.jpg
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; www  www   &lt;span style=&#34;color:#ae81ff&#34;&gt;28075&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:43 clip_image006.jpg
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; www  www   &lt;span style=&#34;color:#ae81ff&#34;&gt;30916&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:43 clip_image008.jpg
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; www  www   &lt;span style=&#34;color:#ae81ff&#34;&gt;13538&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:43 clip_image010.jpg
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; www  www   &lt;span style=&#34;color:#ae81ff&#34;&gt;11845&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:43 clip_image012.jpg
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; www  www   &lt;span style=&#34;color:#ae81ff&#34;&gt;14519&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:43 clip_image014.jpg
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; www  www   &lt;span style=&#34;color:#ae81ff&#34;&gt;33052&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:43 clip_image016.jpg
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;132411&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 16:00 clip_image002.png
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;106702&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 16:00 clip_image004.png
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;197143&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 16:00 clip_image006.png
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root  &lt;span style=&#34;color:#ae81ff&#34;&gt;79397&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 16:00 clip_image008.png
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root  &lt;span style=&#34;color:#ae81ff&#34;&gt;37643&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 16:00 clip_image010.png
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root  &lt;span style=&#34;color:#ae81ff&#34;&gt;81090&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 16:00 clip_image012.png
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root  &lt;span style=&#34;color:#ae81ff&#34;&gt;88635&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 16:00 clip_image014.png
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;272537&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 16:00 clip_image016.png
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;注意第二条命令即为批量转换操作&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;ls -1 *.jpg | xargs -n &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; bash -c &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;convert &amp;#34;$0&amp;#34; &amp;#34;${0%.jpg}.png&amp;#34;&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>使用OptiPNG优化压缩图片</title>
+      <link>https://unixetc.com/post/optimize-and-compress-image-by-optipng/</link>
+      <pubDate>Sun, 03 Apr 2016 12:34:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/optimize-and-compress-image-by-optipng/</guid>
+      <description>&lt;p&gt;因工作需要，得处理一张7872x5904体积为178MB的图片，格式为TIFF。&lt;/p&gt;
+&lt;p&gt;网上搜了半天，找到一个名为&lt;strong&gt;OptiPNG&lt;/strong&gt;的软件，主要为PNG优化，但也支持TIFF格式。&lt;/p&gt;
+&lt;p&gt;下面是OptiPNG的官方介绍&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;OptiPNG is a PNG optimizer that recompresses image files to a smaller size, without losing any information. This program also converts external formats (BMP, GIF, PNM and TIFF) to optimized PNG, and performs PNG integrity checks and corrections.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;OptiPNG可以将PNG文件重新压缩，压缩后体积变得更小，并且不会丢失任何信息。同时optipng还支持其他格式的图片，如BMP、GIF、PNM和TIFF。&lt;/p&gt;
+&lt;p&gt;至于OptiPNG的威力如何，请看本次实例&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;root@raspi:~# ls -lh huxian.tif                         
+-rw-r--r-- 1 root root 178M Apr  4 16:54 huxian.tif    //原始文件178MB
+root@raspi:~# optipng huxian.tif
+** Processing: huxian.tif
+Importing TIFF
+7872x5904 pixels, 4x8 bits/pixel, RGB+alpha   //分辨率7872x5904
+Reducing image to 3x8 bits/pixel, RGB
+Input file size = 186000368 bytes
+
+Trying:
+zc = 9  zm = 8  zs = 0  f = 0         IDAT size = 4273133
+
+Selecting parameters:
+zc = 9  zm = 8  zs = 0  f = 0         IDAT size = 4273133
+
+Output file: huxian.png
+
+Output IDAT size = 4273133 bytes
+Output file size = 4273190 bytes (181727178 bytes = 97.70% decrease)
+
+root@raspi:~# ls -lh huxian*
+-rw-r--r-- 1 root root 4.1M Apr  4 17:02 huxian.png   //压缩结果4.1MB
+-rw-r--r-- 1 root root 178M Apr  4 16:54 huxian.tif
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;看来OptiPNG还是很牛的嘛！！!&lt;/p&gt;
+&lt;p&gt;OptiPNG官方地址 &lt;a href=&#34;http://optipng.sourceforge.net/&#34;&gt;http://optipng.sourceforge.net/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;官方提供源码和Windows编译版，Debian/Ubuntu系统可以通过&lt;code&gt;apt-get install optipng&lt;/code&gt;来安装。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>使用Photoshop压缩PNG图片</title>
+      <link>https://unixetc.com/post/photoshop-compressed-png-images/</link>
+      <pubDate>Sun, 13 Sep 2015 12:38:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/photoshop-compressed-png-images/</guid>
+      <description>&lt;p&gt;&lt;!-- raw HTML omitted --&gt;Ctrl+O&lt;!-- raw HTML omitted --&gt; 打开PNG文件&lt;/p&gt;
+&lt;p&gt;图像 -&amp;gt; 调整 -&amp;gt; 色调分离&lt;/p&gt;
+&lt;p&gt;调整&lt;strong&gt;色阶&lt;/strong&gt;值，边调整边预览，找到图片质量变化最小时候的值&lt;/p&gt;
+&lt;p&gt;文件 -&amp;gt; 导出 -&amp;gt; 存储为Web所用格式&lt;/p&gt;
+&lt;p&gt;文件格式选择&lt;strong&gt;PNG-8&lt;/strong&gt;，参考下图全选部分进行调整，完成后保存即可。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/output_png_images.png&#34; alt=&#34;导出设置&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

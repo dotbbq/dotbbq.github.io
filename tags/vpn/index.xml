@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VPN on UNIXETC</title>
+    <link>https://unixetc.com/tags/vpn/</link>
+    <description>UNIXETC (VPN)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Mon, 10 Dec 2018 12:10:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/vpn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CentOS7安装L2TP VPN</title>
+      <link>https://unixetc.com/post/centos7-install-l2tp-vpn/</link>
+      <pubDate>Mon, 10 Dec 2018 12:10:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/centos7-install-l2tp-vpn/</guid>
+      <description>&lt;h3 id=&#34;centos7安装vpn&#34;&gt;Centos7安装VPN&lt;/h3&gt;
+&lt;p&gt;下载安装脚本:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget http://cdn.lyq.wiki/vpnscripts/vpninstall
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;执行安装脚本&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;chmod+x vpninstall
+./vpninstall
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;安装完成后提示如下:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;IPsec VPN server is now ready for use!
+Connect to your new VPN with these details:
+Server IP: 181.53.149.126
+IPsec PSK: EMc6SpQHaBgZCnvNtLX
+Username: vpnuser
+Password: FzfpNGofpRdkBj2B
+Write these down. You&#39;ll need them to connect!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以上为安装完成后提示的帐号信息，其中用户名(username)、密码(passowrd)和IPsec PSK密匙(IPsec PSK)为随即生成。&lt;/p&gt;
+&lt;p&gt;如果为了方便，以上帐号信息可以参考以下方法自定义：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[root@hwcsh ~]# vi /etc/ipsec.secrets  #编辑PSK
+    %any  %any  : PSK &amp;quot;EMc6SpQHaBgZCnvNtLX&amp;quot;
+[root@hwcsh ~]# vi /etc/ppp/chap-secrets  #编辑帐户信息
+    &amp;quot;vpnuser&amp;quot; l2tpd &amp;quot;FzfpNGofpRdkBj2B&amp;quot; *
+[root@hwcsh ~]#systemctl restart ipsec xl2tpd #重启服务
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;iphone6配置l2tp-vpn&#34;&gt;iPhone6配置L2TP VPN&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;设置&lt;/strong&gt;-&amp;gt;&lt;strong&gt;VPN&lt;/strong&gt;-&amp;gt;&lt;strong&gt;添加VPN配置&lt;/strong&gt;，类型选择&lt;strong&gt;L2TP&lt;/strong&gt;，然后参考下图设置。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/2631506123.webp&#34; alt=&#34;iphone_vpn_conf.webp&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu下安装VPN</title>
+      <link>https://unixetc.com/post/install-vpn-on-ubuntu/</link>
+      <pubDate>Sun, 23 Feb 2014 12:23:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/install-vpn-on-ubuntu/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;安装pptpd&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#apt-get install pptpd 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;IP设置&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#vi /etc/pptpd.conf 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;添加以下内容:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;localip 192.18.0.1
+remoteip 192.168.0.200-230
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;设置DNS&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#vi/etc/ppp/pptpd-options
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;添加以下内容：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ms-dns 192.168.1.1
+ms-dns 8.8.8.8
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;添加用户&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#vi /etc/ppp/chap-secrets
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;添加以下内容:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;name * passwd *
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;重启vpn&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#/etc/init.d/pptpd restart 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;允许ip4访问外网&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#vi /etc/sysctl.conf
+
+net.ipv4.ip_forward=1 //取消本行前注释符(*)
+
+#sysctl -p&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

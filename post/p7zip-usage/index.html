@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>p7zip使用实例 - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+
+
+
+<meta property="og:title" content="p7zip使用实例" />
+<meta property="og:description" content="以下是CentOS7中7za的使用实例,CentOS下安装p7zip可以参考此文
+[root@localhost ~]# 7za 7-Zip (a) [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21 p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,1 CPU x64) Usage: 7za &lt;command&gt; [&lt;switches&gt;...] &lt;archive_name&gt; [&lt;file_names&gt;...] [&lt;@listfiles...&gt;] &lt;Commands&gt; a : Add files to archive b : Benchmark d : Delete files from archive e : Extract files from archive (without using directory names) h : Calculate hash values for files i : Show information about supported formats l : List contents of archive rn : Rename files in archive t : Test integrity of archive u : Update files to archive x : eXtract files with full paths &lt;Switches&gt; -- : Stop switches parsing -ai[r[-|0]]{@listfile|!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unixetc.com/post/p7zip-usage/" />
+<meta property="article:published_time" content="2017-06-16T23:12:00+00:00" />
+<meta property="article:modified_time" content="2017-06-16T23:12:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="p7zip使用实例"/>
+<meta name="twitter:description" content="以下是CentOS7中7za的使用实例,CentOS下安装p7zip可以参考此文
+[root@localhost ~]# 7za 7-Zip (a) [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21 p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,1 CPU x64) Usage: 7za &lt;command&gt; [&lt;switches&gt;...] &lt;archive_name&gt; [&lt;file_names&gt;...] [&lt;@listfiles...&gt;] &lt;Commands&gt; a : Add files to archive b : Benchmark d : Delete files from archive e : Extract files from archive (without using directory names) h : Calculate hash values for files i : Show information about supported formats l : List contents of archive rn : Rename files in archive t : Test integrity of archive u : Update files to archive x : eXtract files with full paths &lt;Switches&gt; -- : Stop switches parsing -ai[r[-|0]]{@listfile|!"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header> 
+            
+                <h1 class="site-header">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+
+    <article class="post">
+        <header>
+            <h1 class="post-title">p7zip使用实例</h1>
+        </header>
+        <div class="content">
+            <p>以下是<strong>CentOS7</strong>中<strong>7za</strong>的使用实例,<strong>CentOS</strong>下安装<strong>p7zip</strong>可以<a href="/post/centos7-installation-and-use-p7zip/">参考此文</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>root@localhost ~<span style="color:#f92672">]</span><span style="color:#75715e"># 7za</span>
+
+7-Zip <span style="color:#f92672">(</span>a<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>64<span style="color:#f92672">]</span> 16.02 : Copyright <span style="color:#f92672">(</span>c<span style="color:#f92672">)</span> 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 <span style="color:#f92672">(</span>locale<span style="color:#f92672">=</span>en_US.UTF-8,Utf16<span style="color:#f92672">=</span>on,HugeFiles<span style="color:#f92672">=</span>on,64 bits,1 CPU x64<span style="color:#f92672">)</span>
+
+Usage: 7za &lt;command&gt; <span style="color:#f92672">[</span>&lt;switches&gt;...<span style="color:#f92672">]</span> &lt;archive_name&gt; <span style="color:#f92672">[</span>&lt;file_names&gt;...<span style="color:#f92672">]</span>
+       <span style="color:#f92672">[</span>&lt;@listfiles...&gt;<span style="color:#f92672">]</span>
+
+&lt;Commands&gt;
+  a : Add files to archive
+  b : Benchmark
+  d : Delete files from archive
+  e : Extract files from archive <span style="color:#f92672">(</span>without using directory names<span style="color:#f92672">)</span>
+  h : Calculate hash values <span style="color:#66d9ef">for</span> files
+  i : Show information about supported formats
+  l : List contents of archive
+  rn : Rename files in archive
+  t : Test integrity of archive
+  u : Update files to archive
+  x : eXtract files with full paths
+
+&lt;Switches&gt;
+  -- : Stop switches parsing
+  -ai<span style="color:#f92672">[</span>r<span style="color:#f92672">[</span>-|0<span style="color:#f92672">]]{</span>@listfile|!wildcard<span style="color:#f92672">}</span> : Include archives
+  -ax<span style="color:#f92672">[</span>r<span style="color:#f92672">[</span>-|0<span style="color:#f92672">]]{</span>@listfile|!wildcard<span style="color:#f92672">}</span> : eXclude archives
+  -ao<span style="color:#f92672">{</span>a|s|t|u<span style="color:#f92672">}</span> : set Overwrite mode
+  -an : disable archive_name field
+  -bb<span style="color:#f92672">[</span>0-3<span style="color:#f92672">]</span> : set output log level
+  -bd : disable progress indicator
+  -bs<span style="color:#f92672">{</span>o|e|p<span style="color:#f92672">}{</span>0|1|2<span style="color:#f92672">}</span> : set output stream <span style="color:#66d9ef">for</span> output/error/progress line
+  -bt : show execution time statistics
+  -i<span style="color:#f92672">[</span>r<span style="color:#f92672">[</span>-|0<span style="color:#f92672">]]{</span>@listfile|!wildcard<span style="color:#f92672">}</span> : Include filenames
+  -m<span style="color:#f92672">{</span>Parameters<span style="color:#f92672">}</span> : set compression Method
+    -mmt<span style="color:#f92672">[</span>N<span style="color:#f92672">]</span> : set number of CPU threads
+  -o<span style="color:#f92672">{</span>Directory<span style="color:#f92672">}</span> : set Output directory
+  -p<span style="color:#f92672">{</span>Password<span style="color:#f92672">}</span> : set Password
+  -r<span style="color:#f92672">[</span>-|0<span style="color:#f92672">]</span> : Recurse subdirectories
+  -sa<span style="color:#f92672">{</span>a|e|s<span style="color:#f92672">}</span> : set Archive name mode
+  -scc<span style="color:#f92672">{</span>UTF-8|WIN|DOS<span style="color:#f92672">}</span> : set charset <span style="color:#66d9ef">for</span> <span style="color:#66d9ef">for</span> console input/output
+  -scs<span style="color:#f92672">{</span>UTF-8|UTF-16LE|UTF-16BE|WIN|DOS|<span style="color:#f92672">{</span>id<span style="color:#f92672">}}</span> : set charset <span style="color:#66d9ef">for</span> list files
+  -scrc<span style="color:#f92672">[</span>CRC32|CRC64|SHA1|SHA256|*<span style="color:#f92672">]</span> : set hash <span style="color:#66d9ef">function</span> <span style="color:#66d9ef">for</span> x, e, h commands
+  -sdel : delete files after compression
+  -seml<span style="color:#f92672">[</span>.<span style="color:#f92672">]</span> : send archive by email
+  -sfx<span style="color:#f92672">[{</span>name<span style="color:#f92672">}]</span> : Create SFX archive
+  -si<span style="color:#f92672">[{</span>name<span style="color:#f92672">}]</span> : read data from stdin
+  -slp : set Large Pages mode
+  -slt : show technical information <span style="color:#66d9ef">for</span> l <span style="color:#f92672">(</span>List<span style="color:#f92672">)</span> command
+  -snh : store hard links as links
+  -snl : store symbolic links as links
+  -sni : store NT security information
+  -sns<span style="color:#f92672">[</span>-<span style="color:#f92672">]</span> : store NTFS alternate streams
+  -so : write data to stdout
+  -spd : disable wildcard matching <span style="color:#66d9ef">for</span> file names
+  -spe : eliminate duplication of root folder <span style="color:#66d9ef">for</span> extract command
+  -spf : use fully qualified file paths
+  -ssc<span style="color:#f92672">[</span>-<span style="color:#f92672">]</span> : set sensitive <span style="color:#66d9ef">case</span> mode
+  -ssw : compress shared files
+  -stl : set archive timestamp from the most recently modified file
+  -stm<span style="color:#f92672">{</span>HexMask<span style="color:#f92672">}</span> : set CPU thread affinity mask <span style="color:#f92672">(</span>hexadecimal number<span style="color:#f92672">)</span>
+  -stx<span style="color:#f92672">{</span>Type<span style="color:#f92672">}</span> : exclude archive type
+  -t<span style="color:#f92672">{</span>Type<span style="color:#f92672">}</span> : Set type of archive
+  -u<span style="color:#f92672">[</span>-<span style="color:#f92672">][</span>p#<span style="color:#f92672">][</span>q#<span style="color:#f92672">][</span>r#<span style="color:#f92672">][</span>x#<span style="color:#f92672">][</span>y#<span style="color:#f92672">][</span>z#<span style="color:#f92672">][</span>!newArchiveName<span style="color:#f92672">]</span> : Update options
+  -v<span style="color:#f92672">{</span>Size<span style="color:#f92672">}[</span>b|k|m|g<span style="color:#f92672">]</span> : Create volumes
+  -w<span style="color:#f92672">[{</span>path<span style="color:#f92672">}]</span> : assign Work directory. Empty path means a temporary directory
+  -x<span style="color:#f92672">[</span>r<span style="color:#f92672">[</span>-|0<span style="color:#f92672">]]{</span>@listfile|!wildcard<span style="color:#f92672">}</span> : eXclude filenames
+  -y : assume Yes on all queries
+</code></pre></div><h3 id="压缩文档">压缩文档</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>root@localhost oneinstack<span style="color:#f92672">]</span><span style="color:#75715e"># du -sh     ##当前目录大小</span>
+1.8M    .
+<span style="color:#f92672">[</span>root@localhost oneinstack<span style="color:#f92672">]</span><span style="color:#75715e"># 7za a oi.7z *   ##将当前目录所有文件压缩保存为oi.7z</span>
+
+7-Zip <span style="color:#f92672">(</span>a<span style="color:#f92672">)</span> <span style="color:#f92672">[</span>64<span style="color:#f92672">]</span> 16.02 : Copyright <span style="color:#f92672">(</span>c<span style="color:#f92672">)</span> 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 <span style="color:#f92672">(</span>locale<span style="color:#f92672">=</span>en_US.UTF-8,Utf16<span style="color:#f92672">=</span>on,HugeFiles<span style="color:#f92672">=</span>on,64 bits,1 CPU x64<span style="color:#f92672">)</span>
+
+Scanning the drive:
+<span style="color:#ae81ff">7</span> folders, <span style="color:#ae81ff">128</span> files, <span style="color:#ae81ff">1541017</span> bytes <span style="color:#f92672">(</span><span style="color:#ae81ff">1505</span> KiB<span style="color:#f92672">)</span>
+
+Creating archive: oi.7z
+
+Items to compress: <span style="color:#ae81ff">135</span>
+
+
+Files read from disk: <span style="color:#ae81ff">128</span>
+Archive size: <span style="color:#ae81ff">131726</span> bytes <span style="color:#f92672">(</span><span style="color:#ae81ff">129</span> KiB<span style="color:#f92672">)</span>
+Everything is Ok
+<span style="color:#f92672">[</span>root@localhost oneinstack<span style="color:#f92672">]</span><span style="color:#75715e"># ls -lh oi.7z  ###压缩后大小</span>
+-rw-r--r-- <span style="color:#ae81ff">1</span> root root 129K Jun <span style="color:#ae81ff">16</span> 15:59 oi.7z
+</code></pre></div><p><strong>p7zip</strong>默认使用<strong>7z</strong>格式，当然它还支持一些通用的压缩格式，如7z, lzma, cab, zip, gzip, bzip2, Z 和tar等等……</p>
+<h3 id="解压缩">解压缩</h3>
+<p>解压缩有两个参数可用，<code>e</code>和<code>x</code></p>
+<ul>
+<li><code>e</code>  解压到当前目录，不使用压缩包的目录名</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>root@localhost test<span style="color:#f92672">]</span><span style="color:#75715e"># 7za -e mx9.7z</span>
+<span style="color:#f92672">[</span>root@localhost test<span style="color:#f92672">]</span><span style="color:#75715e"># tree</span>
+.
+├── gor
+├── gor.exe
+├── linux32
+├── linux64
+├── linuxarm
+├── mx9.7z
+├── win32
+└── win64
+</code></pre></div><ul>
+<li><code>x</code> 按照压缩包内文档结构进行解压，<strong>一般这个使用这个参数较多</strong></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>root@localhost test<span style="color:#f92672">]</span><span style="color:#75715e"># 7za x mx9.7z</span>
+<span style="color:#f92672">[</span>root@localhost test<span style="color:#f92672">]</span><span style="color:#75715e"># tree .</span>
+.
+├── gor370
+│   ├── linux32
+│   │   └── gor
+│   ├── linux64
+│   ├── linuxarm
+│   │   └── gor
+│   ├── win32
+│   │   └── gor.exe
+│   └── win64
+│       └── gor.exe
+└── mx9.7z
+</code></pre></div><h3 id="格式设置">格式设置</h3>
+<p>使用<code>-t</code>参数来指定压缩格式，使用如下：</p>
+<pre><code>7z a -tzip archive.zip *.txt
+</code></pre><p>将当前目录下所有<strong>txt</strong>文件打包压缩为<strong>archive.zip</strong></p>
+<pre><code>7z t -t7z.split archive.7z.001
+</code></pre><p>测试<strong>archive.7z.001</strong>中的所有文件，同时还支持多7z存档。</p>
+<pre><code>7z x -t# sfxarchive.exe
+</code></pre><p>使用解析模式提取<strong>sfxarchive.exe</strong>文件</p>
+<pre><code>7z x -tiso archive.iso
+</code></pre><p>以<strong>ISO</strong>存档模式解压<strong>archive.iso</strong>文件</p>
+<pre><code>7z x -tudf archive.iso
+
+</code></pre><p>以<strong>UDF</strong>存档模式解压<strong>archive.iso</strong>文件，<strong>UDF</strong>说明<a href="https://en.wikipedia.org/wiki/Universal_Disk_Format">在此</a></p>
+<h3 id="压缩模式设置">压缩模式设置</h3>
+<p>使用<code>-m</code>参数来设置模式，此项设置与文档类型有关。</p>
+<p><strong>7z</strong>类型的压缩模式参数：</p>
+<ul>
+<li><code>-mx</code>  设置压缩级别，x=[0 | 1 | 3 | 5 | 7 | 9 ]</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>等级</th>
+<th>模式</th>
+<th>字典</th>
+<th>FastBytes</th>
+<th>MatchFinder</th>
+<th>Filter</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>Copy</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>无压缩</td>
+</tr>
+<tr>
+<td>1</td>
+<td>LZMA2</td>
+<td>64 KB</td>
+<td>32</td>
+<td>HC4</td>
+<td>BCJ</td>
+<td>最快压缩</td>
+</tr>
+<tr>
+<td>3</td>
+<td>LZMA2</td>
+<td>1 MB</td>
+<td>32</td>
+<td>HC4</td>
+<td>BCJk</td>
+<td>快速压缩</td>
+</tr>
+<tr>
+<td>5</td>
+<td>LZMA2</td>
+<td>16 MB</td>
+<td>32</td>
+<td>BT4</td>
+<td>BCJ</td>
+<td>一般压缩</td>
+</tr>
+<tr>
+<td>7</td>
+<td>LZMA2</td>
+<td>32 MB</td>
+<td>64</td>
+<td>BT4</td>
+<td>BCJz</td>
+<td>最大压缩</td>
+</tr>
+<tr>
+<td>9</td>
+<td>LZMA2</td>
+<td>64 MB</td>
+<td>64</td>
+<td>BT4</td>
+<td>BCJ2j</td>
+<td>极致压缩</td>
+</tr>
+</tbody>
+</table>
+<p><strong>实例如下</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>root@localhost ~<span style="color:#f92672">]</span><span style="color:#75715e">#7za -mx=0 a mx0.7z gor370/*</span>
+<span style="color:#f92672">[</span>root@localhost ~<span style="color:#f92672">]</span><span style="color:#75715e">#7za -mx=1 a mx1.7z gor370/*</span>
+<span style="color:#f92672">[</span>root@localhost ~<span style="color:#f92672">]</span><span style="color:#75715e">#7za -mx=3 a mx3.7z gor370/*</span>
+<span style="color:#f92672">[</span>root@localhost ~<span style="color:#f92672">]</span><span style="color:#75715e">#7za -mx=5 a mx5.7z gor370/*</span>
+<span style="color:#f92672">[</span>root@localhost ~<span style="color:#f92672">]</span><span style="color:#75715e">#7za -mx=7 a mx7.7z gor370/*</span>
+<span style="color:#f92672">[</span>root@localhost ~<span style="color:#f92672">]</span><span style="color:#75715e">#7za -mx=9 a mx9.7z gor370/*</span>
+<span style="color:#f92672">[</span>root@localhost ~<span style="color:#f92672">]</span><span style="color:#75715e"># du -sh gor370/</span>
+31M     gor370/
+<span style="color:#f92672">[</span>root@localhost ~<span style="color:#f92672">]</span><span style="color:#75715e"># ls -lh m*.7z</span>
+-rw-r--r-- <span style="color:#ae81ff">1</span> root root  31M Jun <span style="color:#ae81ff">16</span> 16:34 mx0.7z
+-rw-r--r-- <span style="color:#ae81ff">1</span> root root 8.0M Jun <span style="color:#ae81ff">16</span> 16:34 mx1.7z
+-rw-r--r-- <span style="color:#ae81ff">1</span> root root 7.8M Jun <span style="color:#ae81ff">16</span> 16:34 mx3.7z
+-rw-r--r-- <span style="color:#ae81ff">1</span> root root 6.6M Jun <span style="color:#ae81ff">16</span> 16:34 mx5.7z
+-rw-r--r-- <span style="color:#ae81ff">1</span> root root 6.5M Jun <span style="color:#ae81ff">16</span> 16:35 mx7.7z
+-rw-r--r-- <span style="color:#ae81ff">1</span> root root 6.4M Jun <span style="color:#ae81ff">16</span> 16:35 mx9.7z
+</code></pre></div><p>可以看出压缩级别越高，压缩后的文件体积越小。</p>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-06-16</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/p7zip">#p7zip</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/7z">#7z</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/7za">#7za</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/lzma">#lzma</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/tar">#tar</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/zip">#zip</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/cab">#cab</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gzip">#gzip</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/bzip2">#bzip2</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+
+        </main>
+        <footer>
+            
+                
+                
+
+                <p>© Alair, 2020<br>
+Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+</p>
+            
+        </footer>
+    </div>
+</body>
+</html>
