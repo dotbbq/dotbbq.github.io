@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
 
 
 
@@ -72,10 +72,10 @@
     <div class="content post-summary">
         注册noip 首先在http://noip.com注册账户
 然后在主机管理(Manage Hosts)中添加主机(Add A Host)，根据提示设置二级域名，IP可以随意填写。
-安装Noip客户端 wget https://www.noip.com/client/linux/noip-duc-linux.tar.gztar zxf noip-duc-linux.tar.gzcd noip-2.1.9-1sudo make install 安装过程中，按照提示输入noip帐号信息，时间间隔建议设为5s，默认30s
+安装Noip客户端 wget https://www.noip.com/client/linux/noip-duc-linux.tar.gz tar zxf noip-duc-linux.tar.gz cd noip-2.1.9-1 sudo make install  安装过程中，按照提示输入noip帐号信息，时间间隔建议设为5s，默认30s
 设置开机启动 在/etc/init.d/中建立noip2脚本
-sudo vi /etc/init.d/noip2 脚本内容如下
-#! /bin/sh### BEGIN INIT INFO# Provides: noip2# Required-Start: $syslog# Required-Stop: $syslog# Default-Start: 2 3 4 5# Default-Stop: 0 1 6# Short-Description: noip.com client service### END INIT INFO# . /lib/lsb/init-functionscase &quot;$1&quot; instart)echo &quot;Starting noip2.
+sudo vi /etc/init.d/noip2  脚本内容如下
+#! /bin/sh ### BEGIN INIT INFO # Provides: noip2 # Required-Start: $syslog # Required-Stop: $syslog # Default-Start: 2 3 4 5 # Default-Stop: 0 1 6 # Short-Description: noip.com client service ### END INIT INFO # . /lib/lsb/init-functions case &quot;$1&quot; in start) echo &quot;Starting noip2.
     </div>
 
     
@@ -131,7 +131,7 @@ sudo vi /etc/init.d/noip2 脚本内容如下
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

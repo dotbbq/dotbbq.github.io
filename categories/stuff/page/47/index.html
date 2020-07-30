@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
 
 
 
@@ -73,12 +73,12 @@
         Windows下使用shadowsocks 安装设置Shadowsocks for Windows
 推荐Shadowsocks for Windows，项目地址 https://github.com/clowwindy/shadowsocks-csharp
 下载后打开即可，参考以下设置：
-Server IP 服务器IPServer Port 服务器端口Password 密码Encryption 加密类型，推荐aes-256-cfbProxy Port 代理端口Remarks 备注 完成设置即可。
+Server IP 服务器IP Server Port 服务器端口 Password 密码 Encryption 加密类型，推荐aes-256-cfb Proxy Port 代理端口 Remarks 备注  完成设置即可。
 使用
 推荐以下组合：
  Firefox+AutoProxy Chrome+SwitchSharp  代理服务器信息：
-代理地址:127.0.0.1端口:1080代理方式:socks5 配置切换规则:
-勾选:在线规则列表勾选:AutoProxy兼容列表URL中输入:http://autoproxy-gfwlist.googlecode.com/svn/trunk/gfwlist.txt情景模式选择上一步创建的模式. Android使用shadowsocks(影梭) 影梭下载地址： https://play.google.com/store/apps/details?id=com.github.shadowsocks
+代理地址:127.0.0.1 端口:1080 代理方式:socks5  配置切换规则:
+勾选:在线规则列表 勾选:AutoProxy兼容列表 URL中输入:http://autoproxy-gfwlist.googlecode.com/svn/trunk/gfwlist.txt 情景模式选择上一步创建的模式.  Android使用shadowsocks(影梭) 影梭下载地址： https://play.google.com/store/apps/details?id=com.github.shadowsocks
     </div>
 
     
@@ -128,9 +128,9 @@ Server IP 服务器IPServer Port 服务器端口Password 密码Encryption 加
 
     <div class="content post-summary">
         树莓派的swap大小在/etc/dphys-swapfile中定义，默认为100M
-pi@raspi:~$ cat /etc/dphys-swapfile CONF_SWAPSIZE=1000pi@raspi:/mnt$ free -htotal used free shared buffers cachedMem: 437M 36M 401M 0B 2.1M 12M-/+ buffers/cache: 22M 415MSwap: 99M 0B 99Mpi@raspi:/mnt$  可以自己修改CONF_SWAPSIZE的值，单位为兆(MB)
+pi@raspi:~$ cat /etc/dphys-swapfile CONF_SWAPSIZE=1000 pi@raspi:/mnt$ free -h total used free shared buffers cached Mem: 437M 36M 401M 0B 2.1M 12M -/+ buffers/cache: 22M 415M Swap: 99M 0B 99M pi@raspi:/mnt$  可以自己修改CONF_SWAPSIZE的值，单位为兆(MB)
 修改后重启树莓派生效，如下：
-pi@raspi:~$ cat /etc/dphys-swapfile CONF_SWAPSIZE=1000pi@raspi:~$ free -htotal used free shared buffers cachedMem: 437M 53M 383M 0B 7.9M 23M-/+ buffers/cache: 22M 415MSwap: 999M 0B 999M 
+pi@raspi:~$ cat /etc/dphys-swapfile CONF_SWAPSIZE=1000 pi@raspi:~$ free -h total used free shared buffers cached Mem: 437M 53M 383M 0B 7.9M 23M -/+ buffers/cache: 22M 415M Swap: 999M 0B 999M 
     </div>
 
     
@@ -181,7 +181,7 @@ pi@raspi:~$ cat /etc/dphys-swapfile CONF_SWAPSIZE=1000pi@raspi:~$ free -htotal
     <div class="content post-summary">
         功率/电平（dBm):放大器的输出能力，一般单位为W、mW、dBm。dBm是取1mw作基准值，以分贝表示的绝对功率电平。
 换算公式：
-电平（dBm）=10lgW 示例：
+电平（dBm）=10lgW  示例：
  5W → 10lg5000 = 37dBm 10W → 10lg10000 = 40dBm 20W → 10lg20000 = 43dBm  从上不难看出，功率每增加一倍，电平值增加3dBm
 功率单位mW和dBm的换算表
     </div>
@@ -254,7 +254,7 @@ pi@raspi:~$ cat /etc/dphys-swapfile CONF_SWAPSIZE=1000pi@raspi:~$ free -htotal
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

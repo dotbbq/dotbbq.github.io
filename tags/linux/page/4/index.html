@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
 
 
 
@@ -71,7 +71,7 @@
 
     <div class="content post-summary">
         首先使用bash &lt;(curl -L -s https://install.direct/go.sh)来快捷安装v2ray，如下：
-root@vm:~# bash &lt;(curl -L -s https://install.direct/go.sh)Installing V2Ray v4.18.0 on x86_64Downloading V2Ray: https://github.com/v2ray/v2ray-core/releases/download/v4.18.0/v2ray-linux-64.zip% Total % Received % Xferd Average Speed Time Time Time CurrentDload Upload Total Spent Left Speed100 608 0 608 0 0 581 0 --:--:-- 0:00:01 --:--:-- 581100 10.5M 100 10.5M 0 0 172k 0 0:01:02 0:01:02 --:--:-- 194kExtracting V2Ray package to /tmp/v2ray.Archive: /tmp/v2ray/v2ray.zipinflating: /tmp/v2ray/config.json creating: /tmp/v2ray/doc/inflating: /tmp/v2ray/doc/readme.
+root@vm:~# bash &lt;(curl -L -s https://install.direct/go.sh) Installing V2Ray v4.18.0 on x86_64 Downloading V2Ray: https://github.com/v2ray/v2ray-core/releases/download/v4.18.0/v2ray-linux-64.zip % Total % Received % Xferd Average Speed Time Time Time Current Dload Upload Total Spent Left Speed 100 608 0 608 0 0 581 0 --:--:-- 0:00:01 --:--:-- 581 100 10.5M 100 10.5M 0 0 172k 0 0:01:02 0:01:02 --:--:-- 194k Extracting V2Ray package to /tmp/v2ray. Archive: /tmp/v2ray/v2ray.zip inflating: /tmp/v2ray/config.json creating: /tmp/v2ray/doc/ inflating: /tmp/v2ray/doc/readme.
     </div>
 
     
@@ -130,10 +130,10 @@ Alpine Linux 网站首页注明“Small！Simple！Secure！Alpine Linux is a se
 然后是网络代理和网络时间同步(NTP)设置
 接下里选择软件源镜像(mirrors)，我选择了兰州大学的镜像：
 然后选择SSH服务程序，设置安装磁盘以及使用方式，完成安装后会提示**Installation is complete. Please reboot.**至此安装完成。
-安装Awesome桌面 添加普通用户 #adduser alair 启用Community Repository vi /etc/apk/repositories编辑软件源配置，去掉其中Community Repository前面的注释符(#)
+安装Awesome桌面 添加普通用户 #adduser alair  启用Community Repository vi /etc/apk/repositories编辑软件源配置，去掉其中Community Repository前面的注释符(#)
 apk update&amp;&amp;apk upgrade更新软件。
 安装awesome 使用以下命令安装awesome、lua、feh和lxterminal
-#apk add awesome lua feh lxterminal 其他桌面应用可以按需添加，比如firefox, gnumeric, xchat, gimp, pidgin, geany, vim等。
+#apk add awesome lua feh lxterminal  其他桌面应用可以按需添加，比如firefox, gnumeric, xchat, gimp, pidgin, geany, vim等。
     </div>
 
     
@@ -183,7 +183,7 @@ apk update&amp;&amp;apk upgrade更新软件。
  emmc(vanilla) firmware(combined)  切记，先刷emmc再刷firmware，并且两次刷机中间不可以开机。
 将手机关机，然后按住键盘上的u键，再用数据线将手机链接电脑，这是手机会显示NOKIA字样界面，并且右上角显示有USB图标，即进入刷机模式。
 首先写入EMMC文件，命令如下flasher-3.5 -F emmc.bin -f，以下为linux下操作实例，以供参考
-alair@zb14:~/下载$ sudo flasher-3.5 -F RX-51_2009SE_10.2010.13-2.VANILLA_PR_EMMC_MR0_ARM.bin -f[sudo] alair 的密码： flasher v2.5.2 (Oct 21 2009)Image 'mmc', size 255947 kBVersion RX-51_2009SE_10.2010.13-2.VANILLAUSB device found found at bus 002, device address 012.Found device RX-51, hardware revision 2204NOLO version 1.4.14Version of 'sw-release': RX-51_2009SE_21.2011.38-1_PR_MR0Booting device into flash mode.Suitable USB device not found, waiting.USB device found found at bus 002, device address 013.
+alair@zb14:~/下载$ sudo flasher-3.5 -F RX-51_2009SE_10.2010.13-2.VANILLA_PR_EMMC_MR0_ARM.bin -f [sudo] alair 的密码： flasher v2.5.2 (Oct 21 2009) Image 'mmc', size 255947 kB Version RX-51_2009SE_10.2010.13-2.VANILLA USB device found found at bus 002, device address 012. Found device RX-51, hardware revision 2204 NOLO version 1.4.14 Version of 'sw-release': RX-51_2009SE_21.2011.38-1_PR_MR0 Booting device into flash mode. Suitable USB device not found, waiting. USB device found found at bus 002, device address 013.
     </div>
 
     
@@ -264,7 +264,7 @@ alair@zb14:~/下载$ sudo flasher-3.5 -F RX-51_2009SE_10.2010.13-2.VANILLA_PR_EM
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

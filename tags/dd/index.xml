@@ -82,14 +82,14 @@ make install
 &lt;p&gt;以下介绍几款Linux Live USB制作工具，个人推荐Linux Live USB Creator!&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;注:需要主板BIOS开启USB Boot功能。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Universal USB Installer&lt;/strong&gt; &lt;a href=&#34;http://www.pendrivelinux.com&#34;&gt;http://www.pendrivelinux.com&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;1，选择Linux版本，勾选后面的Download the iso(Optional).则从互联网下载所选镜像。 
-2，选择本地镜像文件(iso)。 
+&lt;p&gt;1，选择Linux版本，勾选后面的Download the iso(Optional).则从互联网下载所选镜像。
+2，选择本地镜像文件(iso)。
 3，选择将要写入的USB设备，勾选Show all Drives可以看到所有本地磁盘，需要写入移动硬盘就需要勾选此项。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;UNetbootin&lt;/strong&gt; &lt;a href=&#34;http://unetbootin.sourceforge.net&#34;&gt;http://unetbootin.sourceforge.net&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;1，选择镜像源，从网络下载或者本地iso文件 
+&lt;p&gt;1，选择镜像源，从网络下载或者本地iso文件
 2，在类型中选择usb设备或者硬盘，然后在驱动器栏选择具体的盘符。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;LinuxLive USB Creator&lt;/strong&gt; &lt;a href=&#34;http://www.linuxliveusb.com/&#34;&gt;http://www.linuxliveusb.com/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;1，选择需要写入的USB设备 
+&lt;p&gt;1，选择需要写入的USB设备
 2，选择安装源（ISO文件、光驱、网路下载）&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Image Writer for Microsoft Windows (Win32DiskImager)&lt;/strong&gt; &lt;a href=&#34;https://launchpad.net/win32-image-writer&#34;&gt;https://launchpad.net/win32-image-writer&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;这个操作相对很简单，并且只单一的适用于img镜像文件，如Meego就是采用这种发行方式&lt;/p&gt;

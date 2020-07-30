@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
 
 
 
@@ -190,12 +190,12 @@
         Nokia 3310/5110显示器基于PCD8544，在此分享一个树莓派可用的PCD8544库
 使用该库之前，需要安装wiringPi,安装方法可参考树莓派连接DHT11采集温度与湿度
 项目地址：
-https://github.com/binerry/RaspberryPi/tree/master/libraries/c/PCD8544 可通过github download直接下载,不能访问github的，用以下连接下载
-http://cdn.lyq.wiki/res/Raspberry.Pi_PCD8544.Library.zip 解压后，可得到一个c源码和一个h头文件
-PCD8544.cPCD8544.h 以及samples文件夹下的三个示例
-pcd8544_rpi.cpcd8544_test.cpcd8544_test2.c 按照下图所示连接好树莓派和显示器
+https://github.com/binerry/RaspberryPi/tree/master/libraries/c/PCD8544  可通过github download直接下载,不能访问github的，用以下连接下载
+http://cdn.lyq.wiki/res/Raspberry.Pi_PCD8544.Library.zip  解压后，可得到一个c源码和一个h头文件
+PCD8544.c PCD8544.h  以及samples文件夹下的三个示例
+pcd8544_rpi.c pcd8544_test.c pcd8544_test2.c  按照下图所示连接好树莓派和显示器
  RST —— 复位 接GPIO 0 CE —— 片选 接GPIO 1 或 不接 DC —— 数据/指令选择 接GPIO 2 DIN —— 串行数据线 接GPIO 3 CLK —— 串行时钟线 接GPIO 5 （因为我的GPIO 4已经接了一个DHT11传感器） VCC —— 电源输入 接3.3v BL —— 背光控制端 接3.3v GND —— 地线 接地  编译三个示例程序
-cc -o pcd8544_test pcd8544_test.c ../PCD8544.c -L/usr/local/lib -lwiringPicc -o pcd8544_test2 pcd8544_test2.
+cc -o pcd8544_test pcd8544_test.c ../PCD8544.c -L/usr/local/lib -lwiringPi cc -o pcd8544_test2 pcd8544_test2.
     </div>
 
     
@@ -266,7 +266,7 @@ cc -o pcd8544_test pcd8544_test.c ../PCD8544.c -L/usr/local/lib -lwiringPicc -o
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

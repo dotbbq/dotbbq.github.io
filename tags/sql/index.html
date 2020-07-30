@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
 
 
 
@@ -77,7 +77,7 @@
 将Typecho文章导出为Markdown文件(.md) Github上有现成的工具typecho-exporter，主页为https://github.com/aneasystone/typecho-exporter
 这个工具可以将所有的文章导出为Markdown文件，但是以文章标题为文件名，不利于后期处理，建议使用slug为文件名。
 编辑下载的main.py，将75行的p.title = r[1]替换为`p.title = r[2]'，如下:
-results = cur.fetchall()for r in results:p = Post()p.id = r[0]p.title = r[2]p.content = r[5]posts.append(p) 原来的r[1]对应typecho_contentsSQL表中的title列，我的r[2]对应slug列，可以根据实际情况更改。
+results = cur.fetchall() for r in results: p = Post() p.id = r[0] p.title = r[2] p.content = r[5] posts.append(p)  原来的r[1]对应typecho_contentsSQL表中的title列，我的r[2]对应slug列，可以根据实际情况更改。
 编辑typecho-exporter的config.ini文件，设置数据库访问方式。
 运行main.py，完成后会在typecho-exporter目录下生成files文件夹，里面就是导出的Markdown文件。
 后期整理 导出后的Markdown没有Gor需要的文件头格式，需要手动整理
@@ -198,15 +198,15 @@ SQL查询时，选择需要交叉的两个图层
     <div class="content post-summary">
         误删除了vps上的phpmyadmin，不得已翻阅了半天mysql指南，以下是一些mysql使用实例
 连接管理 链接数据库
-mysql -h localhost -u root -p 退出数据库
-mysql&gt;quit; 数据库管理 查看数据库
-mysql&gt;show databases; 建立数据库
-mysql&gt;create database name; 备份(导出)数据库
-mysqldump -u username -p database &gt; backup_db.sql 还原(导入)数据库
-mysql -u username -p database &lt; backup_db.sql 用户管理 添加用户
-mysql&gt;grant all privileges on databasename.* 'username'@'localhost' identified by 'userpassword' with grant optiton; 删除用户
-mysql&gt;drop user username; 修改密码
-mysql&gt;set password for 'username'@'localhost' = password('userpassword'); 一个创建数据库并添加专用用户的示例:
+mysql -h localhost -u root -p  退出数据库
+mysql&gt;quit;  数据库管理 查看数据库
+mysql&gt;show databases;  建立数据库
+mysql&gt;create database name;  备份(导出)数据库
+mysqldump -u username -p database &gt; backup_db.sql  还原(导入)数据库
+mysql -u username -p database &lt; backup_db.sql  用户管理 添加用户
+mysql&gt;grant all privileges on databasename.* 'username'@'localhost' identified by 'userpassword' with grant optiton;  删除用户
+mysql&gt;drop user username;  修改密码
+mysql&gt;set password for 'username'@'localhost' = password('userpassword');  一个创建数据库并添加专用用户的示例:
     </div>
 
     
@@ -250,7 +250,7 @@ mysql&gt;set password for 'username'@'localhost' = password('userpassword'); �
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-	<meta name="generator" content="Hugo 0.74.3" />
+	<meta name="generator" content="Hugo 0.73.0" />
     
         
 <meta charset="utf-8">
@@ -16,7 +16,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070679" />
 
 
 
@@ -88,10 +88,10 @@ Armbian_5.98_Aml-g12_Debian_buster_dev_5.4.0-rc4_20191025.img.xz
  然后输入adb shell reboot update开始从U盘引导Armbian系统，盒子重启后成功引导armbian，此时可以将usb刷机线拔掉，插入一个外接键盘，开始后面操作。
 Armbian系统默认账号为root，密码为1234，按照提示输入账号信息进行登录，登录后会有更改默认密码提示，按照提示更改默认密码。
 接下来会有新建账号提示:
-Creating a new user account. Press &lt;Ctrl-C&gt; to abortPlease provide a username (eg. your forename):可以按照该提示新建账号，或者按Ctrl+c终止，继续用root账号登录。
+Creating a new user account. Press &lt;Ctrl-C&gt; to abort Please provide a username (eg. your forename): 可以按照该提示新建账号，或者按Ctrl+c终止，继续用root账号登录。
 将Armbian安装到N1中 以上只是从U盘成功引导登录Armbian，接下来我们将Armbian安装到N1内置存储(eMMC)，即可拔掉U盘了。
 如果是通过root登录的话，那么直接运行root目录下install.sh即可安装，如下：
- root@aml:~# ./install. shStart script create MBR and filesystem/dev/mmcblk1Start backup u-boot default4＋0 records in4＋0 records out4194304 bytes（4.
+ root@aml:~# ./install. sh Start script create MBR and filesystem /dev/mmcblk1 Start backup u-boot default 4＋0 records in 4＋0 records out 4194304 bytes（4.
     </div>
 
     
@@ -147,7 +147,7 @@ Creating a new user account. Press &lt;Ctrl-C&gt; to abortPlease provide a user
 
     <div class="content post-summary">
         一加3T 一加3T运行的是UbuntuTouch系统
-一加3T系统信息 phablet@ubuntu-phablet:~$ inxi -FResuming in non X mode: xrandr not found. For package install advice run: inxi --recommendsSystem: Host: android Kernel: 3.18.31-halium-gca027546546e-01041-g7961eb763e61 aarch64 (32 bit) Desktop: N/ADistro: Ubuntu 16.04 xenialMachine: No /sys/class/dmi; using dmidecode: dmidecode is not installed.CPU: Quad core AArch64 Processor rev 1 (aarch64) (-MCP-) (ARM)clock speeds: max: 2188 MHz 1: 1593 MHz 2: 1593 MHz 3: 1593 MHz 4: 1593 MHzGraphics: Card: Failed to Detect Video Card!
+一加3T系统信息 phablet@ubuntu-phablet:~$ inxi -F Resuming in non X mode: xrandr not found. For package install advice run: inxi --recommends System: Host: android Kernel: 3.18.31-halium-gca027546546e-01041-g7961eb763e61 aarch64 (32 bit) Desktop: N/A Distro: Ubuntu 16.04 xenial Machine: No /sys/class/dmi; using dmidecode: dmidecode is not installed. CPU: Quad core AArch64 Processor rev 1 (aarch64) (-MCP-) (ARM) clock speeds: max: 2188 MHz 1: 1593 MHz 2: 1593 MHz 3: 1593 MHz 4: 1593 MHz Graphics: Card: Failed to Detect Video Card!
     </div>
 
     
@@ -279,7 +279,7 @@ Y913刷机  将手机关机，进入FASTBOOT模式连接电脑 下载对应版�
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

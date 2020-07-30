@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
 
 
 
@@ -78,7 +78,7 @@
 进入到/private/etc/apt/sources.list.d/目录，将里面除了cydia.list文件，其他的全部删除。然后编辑cydia.list文件，只留下一行deb http://apt.saurik.com/ 即可，保存之。
 手机上打开cydia，重新刷新软件源。然后按需添加需要的第三方源。
 至于如何编辑cydia目录，一般可以使用itools等软件，但是这样比较繁琐。简单直接的方法是通过ssh连接手机进行操作，可参考通过SSH连接IOS设备
-aPhone:~ root# cd /private/etc/apt/sources.list.d/aPhone:/private/etc/apt/sources.list.d root# ls -ltotal 24-rwxr-xr-x 1 root wheel 259 May 25 23:01 appvv.list*-rw-r--r-- 1 root wheel 357 Jun 16 13:59 cydia.list-rw-r--r-- 1 root wheel 227 May 25 23:01 saurik.listaPhone:/private/etc/apt/sources.list.d root# cat cydia.listdeb http://apt.saurik.com/ ios/690.10 maindeb http://apt.178.com/ ./deb http://download.voicecloud.cn/cydia/ ./deb http://cydia.zodttd.com/repo/cydia/ stable maindeb http://repo666.ultrasn0w.com/ .
+aPhone:~ root# cd /private/etc/apt/sources.list.d/ aPhone:/private/etc/apt/sources.list.d root# ls -l total 24 -rwxr-xr-x 1 root wheel 259 May 25 23:01 appvv.list* -rw-r--r-- 1 root wheel 357 Jun 16 13:59 cydia.list -rw-r--r-- 1 root wheel 227 May 25 23:01 saurik.list aPhone:/private/etc/apt/sources.list.d root# cat cydia.list deb http://apt.saurik.com/ ios/690.10 main deb http://apt.178.com/ ./ deb http://download.voicecloud.cn/cydia/ ./ deb http://cydia.zodttd.com/repo/cydia/ stable main deb http://repo666.ultrasn0w.com/ .
     </div>
 
     
@@ -130,7 +130,7 @@ aPhone:~ root# cd /private/etc/apt/sources.list.d/aPhone:/private/etc/apt/sourc
         N900采用的maemo是基于debian的linux系统，通过自带的application manager管理软件时，操作体验还有待改进，所以这里推荐通过ssh连接，使用cli来进行相应操作。 需要在手机端安装OpenSSH来开启SSH服务，在application manager的system目录下，找到openssh Client and Server安装，当然如果你不需要在手机端进行SSH登陆的话，那可以只安装server即可。 安装时会提示输入密码，这个就是以后连接手机SSH的服务密码。 安装完成后SSH server会默认启动，现在你可以通过wifi连接局域网，然后需要知道自己当前的IP（可以通过Tp-link后台查看，或者手机端安装Personal IP Address开显示)，再推荐安装SSH Status and Swither，可以在手机的status显示SSH状态，并管理SSH server启动/停止。 然后推荐使用Putty进行链接，在CLI模式下管理软件，可以在http://maemo.org/上查看软件目录以及简介，通过apt-get install命令来安装，以下为一些apt-get使用简介
 使用方法: apt-get [选项] 命令 apt-get [选项] install|remove pkg1 [pkg2 &hellip;] apt-get [选项] source pkg1 [pkg2 &hellip;]
 命令:
-update - 更新软件列表upgrade - 升级软件install - 安装软件(pkg 是软件名)remove - 删除软件autoremove - 自动删除一些无效的软件purge - 删除软件并清理配置source - 下载软件源码build-dep - 配置软件源码的build-dependenciesdist-upgrade - 升级系统clean - 清除建立的软件包列表autoclean - 同上check - 校验软件包是否有异常 选项:
+update - 更新软件列表 upgrade - 升级软件 install - 安装软件(pkg 是软件名) remove - 删除软件 autoremove - 自动删除一些无效的软件 purge - 删除软件并清理配置 source - 下载软件源码 build-dep - 配置软件源码的build-dependencies dist-upgrade - 升级系统 clean - 清除建立的软件包列表 autoclean - 同上 check - 校验软件包是否有异常  选项:
     </div>
 
     
@@ -180,7 +180,7 @@ update - 更新软件列表upgrade - 升级软件install - 安装软件(pkg �
 
     <div class="content post-summary">
         ###通过自带的application manager（软件管理）安装 打开application manager，首次会自动更新软件列表，然后可以在download目录中按分类安装软件。 ###通过apt-get在线安装 使用apt-get前提为已经安装了rootsh（可通过第一种方法安装），打开 x terminal
-$sudo gainroot /*切换到root帐户*/#apt-get install pkg /*安装pkg*/ #apt-get install pkg1,pkg2 /*安装多个软件*/ #apt-get remove pkg /*卸载软件*/ #apt-get remove –purge pkg /*卸载并清除配置文件*/ #apt-get update /*更新软件源*/ #apt-get upgrade /*更新软件*/ #apt-get dist-upgrade /*更新系统*/ #apt-get clean /*清除软件列表以节省空间*/ ###通过dpkg安装本地软件包(.deb)
+$sudo gainroot /*切换到root帐户*/ #apt-get install pkg /*安装pkg*/ #apt-get install pkg1,pkg2 /*安装多个软件*/ #apt-get remove pkg /*卸载软件*/ #apt-get remove –purge pkg /*卸载并清除配置文件*/ #apt-get update /*更新软件源*/ #apt-get upgrade /*更新软件*/ #apt-get dist-upgrade /*更新系统*/ #apt-get clean /*清除软件列表以节省空间*/  ###通过dpkg安装本地软件包(.deb)
 可以通过数据线，先将下载的软件包拷贝到机子内，然后使用dpkg来安装
 #dpkg -i pkg.deb  可以在这里http://repository.maemo.org/下载官方的.deb包进行安装
     </div>
@@ -249,7 +249,7 @@ $sudo gainroot /*切换到root帐户*/#apt-get install pkg /*安装pkg*/ #apt-g
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

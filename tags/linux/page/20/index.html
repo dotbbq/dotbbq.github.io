@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
 
 
 
@@ -74,7 +74,7 @@
 DietPi下载地址 http://fuzon.co.uk/downloads/DietPi.7z
 这个压缩包91MB，解压后的img文件522MB,比官方的小多了。
 然后将镜像写入到SD卡中，linux下使用dd
-dd if=DietPi_v74.img of=/dev/sdc bs=2M Windows下使用Win32 Disk Imager，戳这里
+dd if=DietPi_v74.img of=/dev/sdc bs=2M  Windows下使用Win32 Disk Imager，戳这里
 写入完成后将SD卡插入树莓派，加电启动。
 预设置Wifi链接 首次使用时，可以通过编辑dietpi.txt来进行wifi预设置。
 将TF卡插入电脑读卡器，打开对应的磁盘，找到dietpi.txt文件，打开。
@@ -83,10 +83,10 @@ dd if=DietPi_v74.img of=/dev/sdc bs=2M Windows下使用Win32 Disk Imager，戳�
 配置DietPi DietPi默认用户名密码为root dietpi，第一次启动DietPi提示检测升级，按提示操作。
 不过由于天朝网路问题，可能升级比较缓慢，建议Ctrl+c终止升级，修改sources.list为朝内镜像。
 DietPi默认没有vi,使用nano进行编辑，添加Aliyun源。
-deb http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contribdeb-src http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib 更新软件
-apt-get update&amp;&amp;apt-get upgrade -y 然后运行dietpi-config进行配置。
+deb http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib deb-src http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib  更新软件
+apt-get update&amp;&amp;apt-get upgrade -y  然后运行dietpi-config进行配置。
 DietPi - Config
- ┌────┤ ---------- DietPi-Config ---------- ├─────┐│ Hardware : Raspberry Pi 1 (512MB) ││ ││ 1 Display Options ││ 2 Audio Options ││ 3 Performance Options ││ 4 Advanced Options ││ 5 Language/Regional Options ││ 6 Security Options ││ 7 Networking Options ││ 8 AutoBoot Options ││ 9 Tools ││ ││ ││ &lt;Ok&gt; &lt;Exit&gt; ││ │└────────────────────────────────────────────────┘ 推荐配置：
+ ┌────┤ ---------- DietPi-Config ---------- ├─────┐ │ Hardware : Raspberry Pi 1 (512MB) │ │ │ │ 1 Display Options │ │ 2 Audio Options │ │ 3 Performance Options │ │ 4 Advanced Options │ │ 5 Language/Regional Options │ │ 6 Security Options │ │ 7 Networking Options │ │ 8 AutoBoot Options │ │ 9 Tools │ │ │ │ │ │ &lt;Ok&gt; &lt;Exit&gt; │ │ │ └────────────────────────────────────────────────┘  推荐配置：
     </div>
 
     
@@ -132,7 +132,7 @@ DietPi - Config
 
     <div class="content post-summary">
         VPS配置:
-Ubuntu 14.04 x86RAM 512MSWAP 64MDISK 5G 准备工作 sudo apt-get update&amp;&amp;apt-get upgrade -ysudo apt-get install build-essential zlib1g-dev libpcre3 libpcre3-dev unzip libssl-dev -y 下载ngx_pagespeed cdNPS_VERSION=1.9.32.4wget https://github.com/pagespeed/ngx_pagespeed/archive/release-${NPS_VERSION}-beta.zipunzip release-${NPS_VERSION}-beta.zipcd ngx_pagespeed-release-${NPS_VERSION}-beta/wget https://dl.google.com/dl/page-speed/psol/${NPS_VERSION}.tar.gztar -xzvf ${NPS_VERSION}.tar.gz  安装Nginx cdgroupadd wwwuseradd -s /sbin/nologin -g www wwwNGINX_VERSION=1.8.0wget http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gztar -xvzf nginx-${NGINX_VERSION}.tar.gzcd nginx-${NGINX_VERSION}/./configure \--user=www \--group=www \--prefix=/usr/local/nginx \--with-http_stub_status_module \--with-http_ssl_module \--with-http_spdy_module \--with-http_gzip_static_module \--with-http_sub_module \--add-module=$HOME/ngx_pagespeed-release-${NPS_VERSION}-beta \sudo makesudo make installsudo ln -sf /usr/local/nginx/sbin/nginx /usr/bin/nginx 配置/etc/init.
+Ubuntu 14.04 x86 RAM 512M SWAP 64M DISK 5G  准备工作 sudo apt-get update&amp;&amp;apt-get upgrade -y sudo apt-get install build-essential zlib1g-dev libpcre3 libpcre3-dev unzip libssl-dev -y  下载ngx_pagespeed cd NPS_VERSION=1.9.32.4 wget https://github.com/pagespeed/ngx_pagespeed/archive/release-${NPS_VERSION}-beta.zip unzip release-${NPS_VERSION}-beta.zip cd ngx_pagespeed-release-${NPS_VERSION}-beta/ wget https://dl.google.com/dl/page-speed/psol/${NPS_VERSION}.tar.gz tar -xzvf ${NPS_VERSION}.tar.gz  安装Nginx cd groupadd www useradd -s /sbin/nologin -g www www NGINX_VERSION=1.8.0 wget http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz tar -xvzf nginx-${NGINX_VERSION}.tar.gz cd nginx-${NGINX_VERSION}/ ./configure \ --user=www \ --group=www \ --prefix=/usr/local/nginx \ --with-http_stub_status_module \ --with-http_ssl_module \ --with-http_spdy_module \ --with-http_gzip_static_module \ --with-http_sub_module \ --add-module=$HOME/ngx_pagespeed-release-${NPS_VERSION}-beta \ sudo make sudo make install sudo ln -sf /usr/local/nginx/sbin/nginx /usr/bin/nginx  配置/etc/init.
     </div>
 
     
@@ -176,11 +176,11 @@ Ubuntu 14.04 x86RAM 512MSWAP 64MDISK 5G 准备工作 sudo apt-get update&amp
 
     <div class="content post-summary">
         安装必须的软件 预备工具软件
-#apt-get install autoconf automake m4 build-essential libssl-dev 必选
-#apt-get install openssl libssl-dev 以下为可选包，可自行搜索安装
+#apt-get install autoconf automake m4 build-essential  libssl-dev 必选
+#apt-get install openssl libssl-dev  以下为可选包，可自行搜索安装
  libuv libyaml wslay  安装H2O 下载安装最新版h2o https://github.com/h2o/h2o/releases
-#wget https://github.com/h2o/h2o/archive/v1.4.1.tar.gz#tar zxf v1.4.1.tar.gz#cd h2o-1.4.1#cmake -DWITH_BUNDLED_SSL=on .#make#sudo make install 编辑H2O站点配置文件 以下是一个简单的http与https配置文件，可自行参考修改
-hosts:&quot;www.example.com&quot;:listen:port: 80listen:port: 443ssl:certificate-file: /path/to/server-certificate.crtkey-file: /path/to/private-key.crtpaths:&quot;/&quot;:file.dir: /path/to/doc-rootaccess-log: /path/to/the/access-logerror-log: /path/to/the/error-logpid-file: /path/to/the/pid-filehttp2-reprioritize-blocking-assets: ON # performance tuning option 启动H2O
+#wget https://github.com/h2o/h2o/archive/v1.4.1.tar.gz #tar zxf v1.4.1.tar.gz #cd h2o-1.4.1 #cmake -DWITH_BUNDLED_SSL=on . #make #sudo make install  编辑H2O站点配置文件 以下是一个简单的http与https配置文件，可自行参考修改
+hosts: &quot;www.example.com&quot;: listen: port: 80 listen: port: 443 ssl: certificate-file: /path/to/server-certificate.crt key-file: /path/to/private-key.crt paths: &quot;/&quot;: file.dir: /path/to/doc-root access-log: /path/to/the/access-log error-log: /path/to/the/error-log pid-file: /path/to/the/pid-file http2-reprioritize-blocking-assets: ON # performance tuning option  启动H2O
     </div>
 
     
@@ -257,7 +257,7 @@ hosts:&quot;www.example.com&quot;:listen:port: 80listen:port: 443ssl:cert
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

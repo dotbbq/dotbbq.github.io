@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
 
 
 
@@ -74,7 +74,7 @@
 找到php.ini文件，我的在/usr/local/php/etc/php.ini
 将cgi.fix_pathinfo的值改为1即可
 重启php
-service php-fpm restart 完了！
+service php-fpm restart  完了！
     </div>
 
     
@@ -124,8 +124,8 @@ service php-fpm restart 完了！
         家里放了台老旧的台式机，显卡是GTX 660Ti，windows下必须安装特定的驱动版本才能显示最佳分辨率(1680x1050)，如果更新到最新的Nvidia驱动，反而显示器无法正常显示(1024x768)。
 没想到，这种情况在Linux下依然存在，不论是安装Debian还是Linux Mint或者Ubuntu，默认都是1024x768。
 网上找到了修复分辨率异常的方法，整理如下。
-检查当前显卡硬件情况 $ lspci |grep VGA01:00.0 VGA compatible controller: NVIDIA Corporation GK104 [GeForce GTX 660 Ti] (rev a2) 可以看到，显卡硬件识别正常。
-检查显卡分辨率情况 $ xrandrScreen 0: minimum 320 x 200, current 1024 x 768, maximum 8192 x 8192VGA-1 disconnected (normal left inverted right x axis y axis)DVI-I-1 connected primary 1024x768+0+0 (normal left inverted right x axis y axis) 0mm x 0mm1024x768 60.00* 800x600 60.
+检查当前显卡硬件情况 $ lspci |grep VGA 01:00.0 VGA compatible controller: NVIDIA Corporation GK104 [GeForce GTX 660 Ti] (rev a2)  可以看到，显卡硬件识别正常。
+检查显卡分辨率情况 $ xrandr Screen 0: minimum 320 x 200, current 1024 x 768, maximum 8192 x 8192 VGA-1 disconnected (normal left inverted right x axis y axis) DVI-I-1 connected primary 1024x768+0+0 (normal left inverted right x axis y axis) 0mm x 0mm 1024x768 60.00* 800x600 60.
     </div>
 
     
@@ -239,7 +239,7 @@ service php-fpm restart 完了！
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

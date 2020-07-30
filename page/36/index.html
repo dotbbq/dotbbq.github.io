@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-	<meta name="generator" content="Hugo 0.74.3" />
+	<meta name="generator" content="Hugo 0.73.0" />
     
         
 <meta charset="utf-8">
@@ -16,7 +16,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070679" />
 
 
 
@@ -91,7 +91,7 @@
 接下来添加域名
 接下来将文本框中的内容保存为一个**.crt**文件
 配置Nginx 贴出我的配置文件，大家参考一下
-server {listen 80;location /{return 301 https://$host$request_uri;}}server{listen 443;#listen 80;#listen [::]:80;server_name ciux.org;index index.html index.htm index.php default.html default.htm default.php;root /home/ciux/compiled;ssl on;ssl_certificate /home/bk/ssl/ciuxsss.crt;ssl_certificate_key /home/bk/ssl/ciuxsss.key;ssl_session_timeout 5m;ssl_protocols SSLv2 SSLv3 TLSv1;ssl_ciphers ALL:!
+server { listen 80; location /{ return 301 https://$host$request_uri; } } server { listen 443; #listen 80; #listen [::]:80; server_name ciux.org; index index.html index.htm index.php default.html default.htm default.php; root /home/ciux/compiled; ssl on; ssl_certificate /home/bk/ssl/ciuxsss.crt; ssl_certificate_key /home/bk/ssl/ciuxsss.key; ssl_session_timeout 5m; ssl_protocols SSLv2 SSLv3 TLSv1; ssl_ciphers ALL:!
     </div>
 
     
@@ -143,7 +143,7 @@ server {listen 80;location /{return 301 https://$host$request_uri;}}server
 在Gandi上购买SSL证书，选择标准版，在结算的时候系统会自动判断是否免单，正常情况下会0元结单，完成后接着配置SSL证书。
 首先提交CSR，这里需要自己生产CSR。
 在此以3c.lc域名为例，在Ubuntu中操作。
-openssl req -nodes -newkey rsa:2048 -sha1 -keyout 3clc.key -out 3clc.csr 然后根据提示填写以下内容：
+openssl req -nodes -newkey rsa:2048 -sha1 -keyout 3clc.key -out 3clc.csr  然后根据提示填写以下内容：
  Country Name (2 letter code) [AU]: #国家代码，中国为CN
 State or Province Name (full name) [Some-State]: #省份
 Locality Name (eg, city) []: #城市
@@ -296,7 +296,7 @@ GFW让中国本来开放的互联网环境，变成了一个巨大的企业内�
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

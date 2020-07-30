@@ -14,14 +14,14 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070679" />
 
 
 
 <meta property="og:title" content="CentOS中Crontab安装和使用" />
-<meta property="og:description" content="安装crontab: [root@CentOS ~]# yum install vixie-cron[root@CentOS ~]# yum install crontabs 说明：
+<meta property="og:description" content="安装crontab: [root@CentOS ~]# yum install vixie-cron [root@CentOS ~]# yum install crontabs  说明：
  vixie-cron软件包是cron的主程序； crontabs软件包是用来安装、卸装、或列举用来驱动 cron 守护进程的表格的程序。  cron 是linux的内置服务，但它不自动起来，可以用以下的方法启动、关闭这个服务：
-/sbin/service crond start //启动服务/sbin/service crond stop //关闭服务/sbin/service crond restart //重启服务/sbin/service crond reload //重新载入配置 查看crontab服务状态：service crond status
+/sbin/service crond start //启动服务 /sbin/service crond stop //关闭服务 /sbin/service crond restart //重启服务 /sbin/service crond reload //重新载入配置  查看crontab服务状态：service crond status
 手动启动crontab服务：service crond start
 查看crontab服务是否已设置为开机启动，执行命令：ntsysv
 加入开机自动启动:chkconfig --level 35 crond on
@@ -36,9 +36,9 @@ rontab命令 功能说明： 设置计时器。
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="CentOS中Crontab安装和使用"/>
-<meta name="twitter:description" content="安装crontab: [root@CentOS ~]# yum install vixie-cron[root@CentOS ~]# yum install crontabs 说明：
+<meta name="twitter:description" content="安装crontab: [root@CentOS ~]# yum install vixie-cron [root@CentOS ~]# yum install crontabs  说明：
  vixie-cron软件包是cron的主程序； crontabs软件包是用来安装、卸装、或列举用来驱动 cron 守护进程的表格的程序。  cron 是linux的内置服务，但它不自动起来，可以用以下的方法启动、关闭这个服务：
-/sbin/service crond start //启动服务/sbin/service crond stop //关闭服务/sbin/service crond restart //重启服务/sbin/service crond reload //重新载入配置 查看crontab服务状态：service crond status
+/sbin/service crond start //启动服务 /sbin/service crond stop //关闭服务 /sbin/service crond restart //重启服务 /sbin/service crond reload //重新载入配置  查看crontab服务状态：service crond status
 手动启动crontab服务：service crond start
 查看crontab服务是否已设置为开机启动，执行命令：ntsysv
 加入开机自动启动:chkconfig --level 35 crond on
@@ -112,9 +112,9 @@ crontab [-u &lt;用户名称&gt;][配置文件] 或 crontab [-u &lt;用户名称
 Minute Hour Day Month DayOFWeek Command</p>
 <p><strong>参数:</strong></p>
 <blockquote>
-<p>-e 　编辑该用户的计时器设置。 
--l 　列出该用户的计时器设置。 
--r 　删除该用户的计时器设置。 
+<p>-e 　编辑该用户的计时器设置。
+-l 　列出该用户的计时器设置。
+-r 　删除该用户的计时器设置。
 -u&lt;用户名称&gt; 　指定要设定计时器的用户名称。</p>
 </blockquote>
 <h4 id="crontab-格式">crontab 格式</h4>
@@ -213,7 +213,7 @@ Minute Hour Day Month DayOFWeek Command</p>
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

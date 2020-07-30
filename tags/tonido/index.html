@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070682" />
 
 
 
@@ -70,9 +70,9 @@
     </header>
 
     <div class="content post-summary">
-        安装Tonido sudo mkdir /usr/local/tonidocd /usr/local/tonidosudo wget http://patch.codelathe.com/tonido/live/installer/armv6l-rpi/tonido.tar.gzsudo tar -zxvf tonido.tar.gz./tonido.sh start 浏览器打开http://ip:10001开始注册设置 ip为树莓派的地址
+        安装Tonido sudo mkdir /usr/local/tonido cd /usr/local/tonido sudo wget http://patch.codelathe.com/tonido/live/installer/armv6l-rpi/tonido.tar.gz sudo tar -zxvf tonido.tar.gz ./tonido.sh start  浏览器打开http://ip:10001开始注册设置 ip为树莓派的地址
 安装多媒体解码器 Tonido支持在线播放音频，但需要安装设置解码器
-cd /usr/local/tonidosudo apt-get install ffmpegsudo ln -s /usr/bin/ffmpeg ffmpeg.exesudo ln -s /usr/bin/ffmpeg ffmpegv.exe 设置开机启动  下载脚本文件tonido wget http://cdn.lyq.wiki/res/tonido 设置脚本权限 sudo cp tonido /etc/init.d/ sudo chmod +x /etc/init.d/tonido 安装脚本 sudo update-rc.d tonido defaults  客户端下载 Tonido Sync for Windows http://www.tonido.com/download.php?TonidoSync.exe Tonido Sync for Mac http://www.tonido.com/download.php?TonidoSync.dmg Tonido Sync for Linux http://www.
+cd /usr/local/tonido sudo apt-get install ffmpeg sudo ln -s /usr/bin/ffmpeg ffmpeg.exe sudo ln -s /usr/bin/ffmpeg ffmpegv.exe  设置开机启动  下载脚本文件tonido wget http://cdn.lyq.wiki/res/tonido 设置脚本权限 sudo cp tonido /etc/init.d/ sudo chmod +x /etc/init.d/tonido 安装脚本 sudo update-rc.d tonido defaults  客户端下载 Tonido Sync for Windows http://www.tonido.com/download.php?TonidoSync.exe Tonido Sync for Mac http://www.tonido.com/download.php?TonidoSync.dmg Tonido Sync for Linux http://www.
     </div>
 
     
@@ -122,7 +122,7 @@ cd /usr/local/tonidosudo apt-get install ffmpegsudo ln -s /usr/bin/ffmpeg ffmp
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

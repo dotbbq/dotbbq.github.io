@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-	<meta name="generator" content="Hugo 0.74.3" />
+	<meta name="generator" content="Hugo 0.73.0" />
     
         
 <meta charset="utf-8">
@@ -16,7 +16,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
 
 
 
@@ -73,12 +73,12 @@
 
     <div class="content post-summary">
         准备工作 下载Google Appengine SDK For Pyahont与goAgent
-1.Google App Engine SDK for Pythonhttps://developers.google.com/appengine/downloads?hl=zh-CN#Google_App_Engine_SDK_for_Python2.goagenthttps://code.google.com/p/goagent/ 下载后解压，将goagent文件夹放到google_appengine目录下，目录结构如下:
-~/google_appengine/goagent-goagent-d488f2 准备好Google Application_ID与两步验证密码,如何申请问Google
+1.Google App Engine SDK for Python https://developers.google.com/appengine/downloads?hl=zh-CN#Google_App_Engine_SDK_for_Python 2.goagent https://code.google.com/p/goagent/  下载后解压，将goagent文件夹放到google_appengine目录下，目录结构如下:
+~/google_appengine/goagent-goagent-d488f2  准备好Google Application_ID与两步验证密码,如何申请问Google
 配置goagent 编辑~/google_appengine/goagent-goagent-d488f2/local/proxy.ini
 填写正确的appid，在此建议将profile由默认的google_cn改为google_hk
 参考以下步骤执行：
-aquan@edge ~/google_appengine $ python appcfg.py update goagent-goagent-d4488f2/server/python/07:03 PM Host: appengine.google.com07:03 PM Application: wrchiublog; version: 107:03 PM Starting update of app: wrchiublog, version: 107:03 PM Getting current resource limits.Email: wrchiu@126.com //在此填写googleidPassword for wrchiu@126.com: //此处填写两步验证密码，而不是帐号密码07:04 PM Scanning files on local disk.
+aquan@edge ~/google_appengine $ python appcfg.py update goagent-goagent-d4488f2/server/python/ 07:03 PM Host: appengine.google.com 07:03 PM Application: wrchiublog; version: 1 07:03 PM Starting update of app: wrchiublog, version: 1 07:03 PM Getting current resource limits. Email: wrchiu@126.com //在此填写googleid Password for wrchiu@126.com: //此处填写两步验证密码，而不是帐号密码 07:04 PM Scanning files on local disk.
     </div>
 
     
@@ -122,11 +122,11 @@ aquan@edge ~/google_appengine $ python appcfg.py update goagent-goagent-d4488f2/
 
     <div class="content post-summary">
         安装所有软件
-#aptitude install openbox firefox ttf-wqy-microhei#aptitude install vnc4server 设置openbox启动
-#update-alternatives --config x-session-manager然后选择openbox-session 设置vncserver密码:
-#vncpasswdPassword: ******Verify:***** 运行vncserver
-# vncserver //运行# vncserver -kill :1 //终止 编辑~/.vnc/xstartup文件
-#vi ~/.vnc/xstartup#!/bin/sh# Uncomment the following two lines for normal desktop:# unset SESSION_MANAGER# exec /etc/X11/xinit/xinitrc[ -x /etc/vnc/xstartup ] &amp;&amp; exec /etc/vnc/xstartup[ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresourcesxsetroot -solid greyvncconfig -iconic &amp;x-terminal-emulator -geometry 80x24+10+10 -ls -title &quot;$VNCDESKTOP Desktop&quot; &amp;x-window-manager &amp;startx&amp; //添加此行 链接VNC
+#aptitude install openbox firefox ttf-wqy-microhei #aptitude install vnc4server  设置openbox启动
+#update-alternatives --config x-session-manager 然后选择openbox-session  设置vncserver密码:
+#vncpasswd Password: ****** Verify:*****  运行vncserver
+# vncserver //运行 # vncserver -kill :1 //终止  编辑~/.vnc/xstartup文件
+#vi ~/.vnc/xstartup #!/bin/sh # Uncomment the following two lines for normal desktop: # unset SESSION_MANAGER # exec /etc/X11/xinit/xinitrc [ -x /etc/vnc/xstartup ] &amp;&amp; exec /etc/vnc/xstartup [ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresources xsetroot -solid grey vncconfig -iconic &amp; x-terminal-emulator -geometry 80x24+10+10 -ls -title &quot;$VNCDESKTOP Desktop&quot; &amp; x-window-manager &amp; startx&amp; //添加此行  链接VNC
     </div>
 
     
@@ -168,8 +168,8 @@ aquan@edge ~/google_appengine $ python appcfg.py update goagent-goagent-d4488f2/
 
     <div class="content post-summary">
         安装apt-spy
-#apt-get install apt-spy 使用apt-spy选择最佳源
-#apt-spy update#apt-spy -d stable -a asia -t 3 结果保存在/etc/apt/sources.list.d/apt-spy.list，可手动替换到/etc/apt/sources.list
+#apt-get install apt-spy  使用apt-spy选择最佳源
+#apt-spy update #apt-spy -d stable -a asia -t 3  结果保存在/etc/apt/sources.list.d/apt-spy.list，可手动替换到/etc/apt/sources.list
 apt-spy选项:
  -d 系统版本，可选stable,testing,unstable -a 区域,如asia,europe等，可用项可cat /etc/apt-spy.conf -t 超时阀值(s)，可筛掉长时间不响应的地址  
     </div>
@@ -234,7 +234,7 @@ apt-spy选项:
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

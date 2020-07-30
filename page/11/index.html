@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-	<meta name="generator" content="Hugo 0.74.3" />
+	<meta name="generator" content="Hugo 0.73.0" />
     
         
 <meta charset="utf-8">
@@ -16,7 +16,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070679" />
 
 
 
@@ -75,14 +75,14 @@
         树莓派Zero因为相对来说太小巧，没有提供初始化的网卡，所以我们除了通过串口连接以外，树莓派Zero也提供了USB直接连接的方式。即通过Ethernet Gadget模式来连接pc，并进行ssh连接。
  Ethernet Gadget模式即USB网卡模式，比较常见的就是我们通过android手机的usb接口对pc进行网络共享的一种手段。一般电脑都会自动识别这种设备，并开启网卡进行共享。
  修改配置文件 为了进行USB连接，我们需要修改BOOT文件夹下的config.txt与cmdline.txt配置文件。 首先在config.txt最末行处换行添加如下代码，打开usb网卡模式：
-dtoverlay=dwc2 其次在cmdline.txt文件中找到rootwait字段，并在其后面空格添加如下信息，在打开系统时开启USB网卡模式。
-modules-load=dwc2,g_ether 在boot分区新建ssh文件，以打开ssh访问功能。
-touch ssh 通过usb连接设备 树莓派zero有两个MicroUSB口，一个是电源插口，职司供电的功能，另外一个就是USB接口，它除了供电以外还提供OTG的功能，我们也是通过这个接口来连接PC。 此时我们可以通过以下代码连接树莓派zero：
-ssh pi@raspberrypi.local 但此时ip段为DHCP模式获取，如果我们希望通过ip来连接，则我们需要给树莓派的usb网卡设置ip。
+dtoverlay=dwc2  其次在cmdline.txt文件中找到rootwait字段，并在其后面空格添加如下信息，在打开系统时开启USB网卡模式。
+modules-load=dwc2,g_ether  在boot分区新建ssh文件，以打开ssh访问功能。
+touch ssh  通过usb连接设备 树莓派zero有两个MicroUSB口，一个是电源插口，职司供电的功能，另外一个就是USB接口，它除了供电以外还提供OTG的功能，我们也是通过这个接口来连接PC。 此时我们可以通过以下代码连接树莓派zero：
+ssh pi@raspberrypi.local  但此时ip段为DHCP模式获取，如果我们希望通过ip来连接，则我们需要给树莓派的usb网卡设置ip。
 设置USB网卡的IP 我们可以通过ifconfig -a来查看我们现在的网卡设备，此时我们可以看到，USB0网卡设备，我们就是通过该设备连接的pc，所以我们需要设置该网卡的ip。
-sudo nano /etc/network/interfaces 打开网卡配置界面，在最末行添加如下代码来设置固定IP：
-allow-hotplug usb0iface usb0 inet staticaddress 192.168.7.2netmask 255.255.255.0network 192.168.7.0broadcast 192.168.7.255gateway 192.168.7.1 然后重启usb0网卡：
-sudo ifdown usb0sudo ifup usb0ifconfig usb0 但树莓派此时实际上是从机，我们需要通过设置pc主机的ip来让树莓派0的usb网卡真正运作起来，那么我们对刚才的usb设备设置如下IP：
+sudo nano /etc/network/interfaces  打开网卡配置界面，在最末行添加如下代码来设置固定IP：
+allow-hotplug usb0 iface usb0 inet static address 192.168.7.2 netmask 255.255.255.0 network 192.168.7.0 broadcast 192.168.7.255 gateway 192.168.7.1  然后重启usb0网卡：
+sudo ifdown usb0 sudo ifup usb0 ifconfig usb0  但树莓派此时实际上是从机，我们需要通过设置pc主机的ip来让树莓派0的usb网卡真正运作起来，那么我们对刚才的usb设备设置如下IP：
  IP: 192.168.7.1 掩码: 255.255.255.0 路由: 192.168.7.1
  此时我们就可以通过ip来进行ssh连接了：
     </div>
@@ -134,7 +134,7 @@ sudo ifdown usb0sudo ifup usb0ifconfig usb0 但树莓派此时实际上是从
         上月不知什么原因VPS流量提前消耗完了，然后通知这月10号重新reset，于是只能临时开了一个月的locvps进行过渡。好不容易熬到昨儿，reset后赶紧把数据和站点又搬回来。 今儿偶尔登录vps，突然发现流量消耗咋一直很高，两天不到就消耗了170G，额滴神呐!查看详细使用统计，发现从昨儿reset以来，OUT bps一直维持在19M左右，瞬间脑袋瓜嗡嗡的！
 于是赶紧动手找找，看看消耗流量的元凶到底是谁？
 首先，安装iftop来检查网络使用情况。官网在这里http://www.ex-parrot.com/~pdw/iftop/，CentOS安装方法如下：
-yum install -y flex byacc libpcap ncurses ncurses-devel libpcap-devel #安装需求软件wget http://www.ex-parrot.com/~pdw/iftop/download/iftop-0.17.tar.gztar zxf iftop-0.17.tar.gzcd iftop-0.17./configuremake &amp;&amp; make install 安装完成后，可以通过iftop来运行，建议加上-P参数，显示使用端口信息，如下：
+yum install -y flex byacc libpcap ncurses ncurses-devel libpcap-devel #安装需求软件 wget http://www.ex-parrot.com/~pdw/iftop/download/iftop-0.17.tar.gz tar zxf iftop-0.17.tar.gz cd iftop-0.17 ./configure make &amp;&amp; make install  安装完成后，可以通过iftop来运行，建议加上-P参数，显示使用端口信息，如下：
 主界面中左侧为本地端，右侧为远端，中间的&lt;=和=&gt;表示流量方向。 下面的TX：发送流量/RX：接收流量/TOTAL：总流量/Cumm：运行iftop到目前时间的总流量/peak：流量峰值/rates：分别表示过去 2s 10s 40s 的平均流量
 从上图来看，本地IP一直在向一个140.249.34.53发送数据，从peak统计来看，速率在22.3Mb左右，和网站统计相符。 知道端口后，可以通过 netstat -ntlup|grep 端口号来查看具体进程，没有的话可以通过yum install net-tools来安装。
 我试着查了下这个IP，发现是山东青岛的，再通过IP反查域名，真想才出来了，原来是百度云的相关IP。这才想起来，我安装了BaiduPCS-Go百度网盘客户端，用来对vps数据进行备份，原来搞鬼的是这个东西。找到元凶就好办了，首先把这个IP给禁了iptables -A INPUT -p tcp -s 140.249.34.53 -j DROP 禁完后，实时流量一下子就降了下来，如下所示：
@@ -259,7 +259,7 @@ yum install -y flex byacc libpcap ncurses ncurses-devel libpcap-devel #安装需
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

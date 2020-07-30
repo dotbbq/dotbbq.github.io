@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
 
 
 
@@ -70,8 +70,8 @@
     </header>
 
     <div class="content post-summary">
-        更新系统 apt-get update &amp;&amp; apt-get upgrade -y &amp;&amp; apt-get dist-upgrade -y &amp;&amp; apt-get autoremove --purge -y &amp;&amp; apt-get autoclean -y 安装必备软件 apt-get install locate git cmake build-essential checkinstall autoconf pkg-config libtool python-sphinx wget libcunit1-dev nettle-dev libyaml-dev libuv-dev -y 安装wslay git clone https://github.com/tatsuhiro-t/wslay.gitcd wslay/autoreconf -iautomakeautoconf./configuremakemake install 安装完成后检查lib文件，如下所示：
-ls /usr/local/lib/libuv.a libuv.so.1 libwslay.la libwslay.so.0.0.1 python3.4libuv.la libuv.so.1.0.0 libwslay.so pkgconfiglibuv.so libwslay.a libwslay.so.0 python2.
+        更新系统 apt-get update &amp;&amp; apt-get upgrade -y &amp;&amp; apt-get dist-upgrade -y &amp;&amp; apt-get autoremove --purge -y &amp;&amp; apt-get autoclean -y  安装必备软件 apt-get install locate git cmake build-essential checkinstall autoconf pkg-config libtool python-sphinx wget libcunit1-dev nettle-dev libyaml-dev libuv-dev -y  安装wslay git clone https://github.com/tatsuhiro-t/wslay.git cd wslay/ autoreconf -i automake autoconf ./configure make make install  安装完成后检查lib文件，如下所示：
+ls /usr/local/lib/ libuv.a libuv.so.1 libwslay.la libwslay.so.0.0.1 python3.4 libuv.la libuv.so.1.0.0 libwslay.so pkgconfig libuv.so libwslay.a libwslay.so.0 python2.
     </div>
 
     
@@ -127,8 +127,8 @@ TCP还有一个特性则是拥塞控制。当发送端检测到链路发生丢�
 目前程序起名net-speeder，相对于修改协议栈来讲，由于后者需要重新升级编译内核，使用用户态程序部署更方便，稳定性更高，兼容性更好。缺点则是性能开销稍大和自由度有损失。总体比较起来，个人使用还是使用用户态程序更合适一些，特别是在虚拟机中使用（OpenVZ，LXC等虚拟机无法自己定制内核）。
  摘自http://www.snooda.com/read/324
 net_speeder项目主页 https://github.com/snooda/net-speeder
-安装net_speeder apt-get install libnet-dev libpcap-dev -ygit clone https://github.com/snooda/net-speeder.gitcd net-speedersh build.shmv net_speeder /usr/local/bin/ 使用net_speeder 使用ifconfig查看网卡端口，我的端口为venet0
-nohup net_speeder venet0 &quot;ip&quot; &gt;/dev/null 2&gt;&amp;1 &amp; 添加到开机启动
+安装net_speeder apt-get install libnet-dev libpcap-dev -y git clone https://github.com/snooda/net-speeder.git cd net-speeder sh build.sh mv net_speeder /usr/local/bin/  使用net_speeder 使用ifconfig查看网卡端口，我的端口为venet0
+nohup net_speeder venet0 &quot;ip&quot; &gt;/dev/null 2&gt;&amp;1 &amp;  添加到开机启动
 echo 'nohup net_speeder venet0 &quot;ip&quot; &gt;/dev/null 2&gt;&amp;1 &amp;' &gt;&gt; /etc/rc.local 
     </div>
 
@@ -178,8 +178,8 @@ echo 'nohup net_speeder venet0 &quot;ip&quot; &gt;/dev/null 2&gt;&amp;1 &amp;' &
 该软件的具体解释为Coreutils Progress Viewer，即核心程序进度查看，用它可以监视很多linux程序的执行情况，比如cp、mv、dd、tar,、gzip、cat等等，甚至于firefox的下载进度或者nginx的运行情况。
 安装progress progress主页 https://github.com/Xfennec/progress
 安装progress方法
-git clone https://github.com/Xfennec/progress.gitcd progressmakemake install 使用progress 简单的执行方法
-progress 几个示例：
+git clone https://github.com/Xfennec/progress.git cd progress make make install  使用progress 简单的执行方法
+progress  几个示例：
   监控所有可监控软件的执行情况
 watch progress -q
   然后进行文件操作即可看到如下内容:
@@ -254,7 +254,7 @@ progress -c nginx
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

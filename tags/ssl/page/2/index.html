@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
 
 
 
@@ -89,7 +89,7 @@
 接下来添加域名
 接下来将文本框中的内容保存为一个**.crt**文件
 配置Nginx 贴出我的配置文件，大家参考一下
-server {listen 80;location /{return 301 https://$host$request_uri;}}server{listen 443;#listen 80;#listen [::]:80;server_name ciux.org;index index.html index.htm index.php default.html default.htm default.php;root /home/ciux/compiled;ssl on;ssl_certificate /home/bk/ssl/ciuxsss.crt;ssl_certificate_key /home/bk/ssl/ciuxsss.key;ssl_session_timeout 5m;ssl_protocols SSLv2 SSLv3 TLSv1;ssl_ciphers ALL:!
+server { listen 80; location /{ return 301 https://$host$request_uri; } } server { listen 443; #listen 80; #listen [::]:80; server_name ciux.org; index index.html index.htm index.php default.html default.htm default.php; root /home/ciux/compiled; ssl on; ssl_certificate /home/bk/ssl/ciuxsss.crt; ssl_certificate_key /home/bk/ssl/ciuxsss.key; ssl_session_timeout 5m; ssl_protocols SSLv2 SSLv3 TLSv1; ssl_ciphers ALL:!
     </div>
 
     
@@ -141,7 +141,7 @@ server {listen 80;location /{return 301 https://$host$request_uri;}}server
 在Gandi上购买SSL证书，选择标准版，在结算的时候系统会自动判断是否免单，正常情况下会0元结单，完成后接着配置SSL证书。
 首先提交CSR，这里需要自己生产CSR。
 在此以3c.lc域名为例，在Ubuntu中操作。
-openssl req -nodes -newkey rsa:2048 -sha1 -keyout 3clc.key -out 3clc.csr 然后根据提示填写以下内容：
+openssl req -nodes -newkey rsa:2048 -sha1 -keyout 3clc.key -out 3clc.csr  然后根据提示填写以下内容：
  Country Name (2 letter code) [AU]: #国家代码，中国为CN
 State or Province Name (full name) [Some-State]: #省份
 Locality Name (eg, city) []: #城市
@@ -200,13 +200,13 @@ Please enter the following &lsquo;extra&rsquo; attributes
     <div class="content post-summary">
         申请Wosign免费SSL证书 申请地址: https://www.wosign.com/products/free_ssl.htm
 申请成功后，收到类似于aquan.me_sha256_cn.zip的文件,解压后包含如下文件
-for Apache.zipfor IIS.zipfor Nginx.zipfor Other Server.zipfor Tomcat.zip 其中for Nginx.zip中包含如下两个文件，将其上传到VPS自定义位置。
+for Apache.zip for IIS.zip for Nginx.zip for Other Server.zip for Tomcat.zip  其中for Nginx.zip中包含如下两个文件，将其上传到VPS自定义位置。
  1_aquan.me_bundle.crt 2_aquan.me.key  配置Nginx 不多说了，直接贴代码:
-#### Add Wosign SSL Start ####listen 443;ssl on;ssl_certificate /usr/local/nginx/ssl/ssl.crt;ssl_certificate_key /usr/local/nginx/ssl/ssl.key;ssl_session_timeout 5m;ssl_protocols SSLv2 SSLv3 TLSv1;ssl_ciphers ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP;ssl_prefer_server_ciphers on;#### Add Wosign SSL End #### 将以上代码插入listen 80;之后。
+#### Add Wosign SSL Start #### listen 443; ssl on; ssl_certificate /usr/local/nginx/ssl/ssl.crt; ssl_certificate_key /usr/local/nginx/ssl/ssl.key; ssl_session_timeout 5m; ssl_protocols SSLv2 SSLv3 TLSv1; ssl_ciphers ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP; ssl_prefer_server_ciphers on; #### Add Wosign SSL End ####  将以上代码插入listen 80;之后。
 重启Nginx生效
-/etc/init.d/nginx restart 以上设置完成，就可以通过https来浏览网站，同时http也可以浏览。
+/etc/init.d/nginx restart  以上设置完成，就可以通过https来浏览网站，同时http也可以浏览。
 合并Wosign根证书 有的浏览器会提示不信任证书，可以通过合并Wosign根证书来解决
-wget https://www.wosign.com/Root/Bundle_DV_St.crt cat Bundle_DV_St.crt &gt;&gt; /usr/local/nginx/ssl/ssl.crt 设置http跳转https 如果想将http跳转至https，可以进行如下设置:
+wget https://www.wosign.com/Root/Bundle_DV_St.crt cat Bundle_DV_St.crt &gt;&gt; /usr/local/nginx/ssl/ssl.crt  设置http跳转https 如果想将http跳转至https，可以进行如下设置:
     </div>
 
     
@@ -275,7 +275,7 @@ wget https://www.wosign.com/Root/Bundle_DV_St.crt cat Bundle_DV_St.crt &gt;&gt; 
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

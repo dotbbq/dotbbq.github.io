@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070682" />
 
 
 
@@ -73,8 +73,8 @@
         ubuntu中可以使用apt-get install golang来安装go，但是版本稍旧
 如果需要安装最新版的golang，那就得自己动手咧
 安装golang 从官网下载最新版，手动安装
-apt-get install build-essentialwget https://storage.googleapis.com/golang/go1.4.2.linux-386.tar.gztar zxf go1.4.2.linux-386.tar.gzcd go/src./all.bash 设置PATH 安装完成后需要设置PATH才能随地使用go
-export PATH=&quot;/root/go/bin:$PATH&quot; 检查版本 go versiongo version go1.4.2 linux/386 
+apt-get install build-essential wget https://storage.googleapis.com/golang/go1.4.2.linux-386.tar.gz tar zxf go1.4.2.linux-386.tar.gz cd go/src ./all.bash  设置PATH 安装完成后需要设置PATH才能随地使用go
+export PATH=&quot;/root/go/bin:$PATH&quot;  检查版本 go version go version go1.4.2 linux/386 
     </div>
 
     
@@ -124,13 +124,13 @@ export PATH=&quot;/root/go/bin:$PATH&quot; 检查版本 go versiongo version g
         安装pptpd
 #apt-get install pptpd  IP设置
 #vi /etc/pptpd.conf  添加以下内容:
-localip 192.18.0.1remoteip 192.168.0.200-230 设置DNS
-#vi/etc/ppp/pptpd-options 添加以下内容：
-ms-dns 192.168.1.1ms-dns 8.8.8.8 添加用户
-#vi /etc/ppp/chap-secrets 添加以下内容:
-name * passwd * 重启vpn
+localip 192.18.0.1 remoteip 192.168.0.200-230  设置DNS
+#vi/etc/ppp/pptpd-options  添加以下内容：
+ms-dns 192.168.1.1 ms-dns 8.8.8.8  添加用户
+#vi /etc/ppp/chap-secrets  添加以下内容:
+name * passwd *  重启vpn
 #/etc/init.d/pptpd restart  允许ip4访问外网
-#vi /etc/sysctl.confnet.ipv4.ip_forward=1 //取消本行前注释符(*)#sysctl -p 
+#vi /etc/sysctl.conf net.ipv4.ip_forward=1 //取消本行前注释符(*) #sysctl -p 
     </div>
 
     
@@ -174,11 +174,11 @@ name * passwd * 重启vpn
 
     <div class="content post-summary">
         安装所有软件
-#aptitude install openbox firefox ttf-wqy-microhei#aptitude install vnc4server 设置openbox启动
-#update-alternatives --config x-session-manager然后选择openbox-session 设置vncserver密码:
-#vncpasswdPassword: ******Verify:***** 运行vncserver
-# vncserver //运行# vncserver -kill :1 //终止 编辑~/.vnc/xstartup文件
-#vi ~/.vnc/xstartup#!/bin/sh# Uncomment the following two lines for normal desktop:# unset SESSION_MANAGER# exec /etc/X11/xinit/xinitrc[ -x /etc/vnc/xstartup ] &amp;&amp; exec /etc/vnc/xstartup[ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresourcesxsetroot -solid greyvncconfig -iconic &amp;x-terminal-emulator -geometry 80x24+10+10 -ls -title &quot;$VNCDESKTOP Desktop&quot; &amp;x-window-manager &amp;startx&amp; //添加此行 链接VNC
+#aptitude install openbox firefox ttf-wqy-microhei #aptitude install vnc4server  设置openbox启动
+#update-alternatives --config x-session-manager 然后选择openbox-session  设置vncserver密码:
+#vncpasswd Password: ****** Verify:*****  运行vncserver
+# vncserver //运行 # vncserver -kill :1 //终止  编辑~/.vnc/xstartup文件
+#vi ~/.vnc/xstartup #!/bin/sh # Uncomment the following two lines for normal desktop: # unset SESSION_MANAGER # exec /etc/X11/xinit/xinitrc [ -x /etc/vnc/xstartup ] &amp;&amp; exec /etc/vnc/xstartup [ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresources xsetroot -solid grey vncconfig -iconic &amp; x-terminal-emulator -geometry 80x24+10+10 -ls -title &quot;$VNCDESKTOP Desktop&quot; &amp; x-window-manager &amp; startx&amp; //添加此行  链接VNC
     </div>
 
     
@@ -237,7 +237,7 @@ name * passwd * 重启vpn
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

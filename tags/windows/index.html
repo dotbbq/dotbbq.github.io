@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070682" />
 
 
 
@@ -72,7 +72,7 @@
     <div class="content post-summary">
         使用的系统为Ubuntu 19.10，Windows系统分区lable为sys
 参考如下操作：
-alair@e6440:~$ sudo mkdir /usr/share/fonts/winfonts[sudo] alair 的密码： alair@e6440:~$ sudo cp /media/alair/sys/Windows/Fonts/* /usr/share/fonts/winfonts/ alair@e6440:~$ sudo rm -rf /usr/share/fonts/winfonts/*.fonalair@e6440:~$ sudo mkfontscale alair@e6440:~$ sudo mkfontdir alair@e6440:~$ sudo fc-cache 打完收工！
+alair@e6440:~$ sudo mkdir /usr/share/fonts/winfonts [sudo] alair 的密码： alair@e6440:~$ sudo cp /media/alair/sys/Windows/Fonts/* /usr/share/fonts/winfonts/ alair@e6440:~$ sudo rm -rf /usr/share/fonts/winfonts/*.fon alair@e6440:~$ sudo mkfontscale alair@e6440:~$ sudo mkfontdir alair@e6440:~$ sudo fc-cache 打完收工！
     </div>
 
     
@@ -117,7 +117,7 @@ alair@e6440:~$ sudo mkdir /usr/share/fonts/winfonts[sudo] alair 的密码： al
     <div class="content post-summary">
         Windows10中可以通过修改注册表的方法找回照片查看器。
 新建ton.reg注册表文件，内容如下：
-Windows Registry Editor Version 5.00; Change Extension's File Type[HKEY_CURRENT_USER\Software\Classes\.jpg]@=&quot;PhotoViewer.FileAssoc.Tiff&quot;; Change Extension's File Type[HKEY_CURRENT_USER\Software\Classes\.jpeg]@=&quot;PhotoViewer.FileAssoc.Tiff&quot;; Change Extension's File Type[HKEY_CURRENT_USER\Software\Classes\.gif]@=&quot;PhotoViewer.FileAssoc.Tiff&quot;; Change Extension's File Type[HKEY_CURRENT_USER\Software\Classes\.png]@=&quot;PhotoViewer.FileAssoc.Tiff&quot;; Change Extension's File Type[HKEY_CURRENT_USER\Software\Classes\.bmp]@=&quot;PhotoViewer.FileAssoc.Tiff&quot;; Change Extension's File Type[HKEY_CURRENT_USER\Software\Classes\.tiff]@=&quot;PhotoViewer.FileAssoc.Tiff&quot;; Change Extension's File Type[HKEY_CURRENT_USER\Software\Classes\.ico]@=&quot;PhotoViewer.FileAssoc.Tiff&quot; 保存后，双击运行即可，然后右键打开方式中即可看到照片查看器。
+Windows Registry Editor Version 5.00 ; Change Extension's File Type [HKEY_CURRENT_USER\Software\Classes\.jpg] @=&quot;PhotoViewer.FileAssoc.Tiff&quot; ; Change Extension's File Type [HKEY_CURRENT_USER\Software\Classes\.jpeg] @=&quot;PhotoViewer.FileAssoc.Tiff&quot; ; Change Extension's File Type [HKEY_CURRENT_USER\Software\Classes\.gif] @=&quot;PhotoViewer.FileAssoc.Tiff&quot; ; Change Extension's File Type [HKEY_CURRENT_USER\Software\Classes\.png] @=&quot;PhotoViewer.FileAssoc.Tiff&quot; ; Change Extension's File Type [HKEY_CURRENT_USER\Software\Classes\.bmp] @=&quot;PhotoViewer.FileAssoc.Tiff&quot; ; Change Extension's File Type [HKEY_CURRENT_USER\Software\Classes\.tiff] @=&quot;PhotoViewer.FileAssoc.Tiff&quot; ; Change Extension's File Type [HKEY_CURRENT_USER\Software\Classes\.ico] @=&quot;PhotoViewer.FileAssoc.Tiff&quot;  保存后，双击运行即可，然后右键打开方式中即可看到照片查看器。
     </div>
 
     
@@ -166,7 +166,7 @@ Windows Registry Editor Version 5.00; Change Extension's File Type[HKEY_CURREN
 UTC相当于本初子午线(即经度0度)上的平均太阳时，过去曾用格林威治平均时(GMT)来表示。北京时间比UTC时间早8小时，以1999年1月1日0000UTC为例，UTC时间是零点，北京时间为1999年1月1日早上8点整。所以我们在时间上面相隔了8个小时。这个时候bios的时间和系统的时间当然是不一致，一个代表UTC时间，一个代表CST(＋8时区)，即上海的时间。
  旧版Ubuntu（Ubuntu10左右）：  编辑/etc/default/rcS 将UTC=yes改成UTC=no
  新版Ubuntu（Ubuntu16.04）：  新版Ubuntu使用systemd作为管理系统，时间由timedatectl来管理，以下为修改方法：
-$sudo timedatectl set-local-rtc 1 重启完成。
+$sudo timedatectl set-local-rtc 1  重启完成。
     </div>
 
     
@@ -233,7 +233,7 @@ $sudo timedatectl set-local-rtc 1 重启完成。
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

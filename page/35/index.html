@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-	<meta name="generator" content="Hugo 0.74.3" />
+	<meta name="generator" content="Hugo 0.73.0" />
     
         
 <meta charset="utf-8">
@@ -16,7 +16,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070679" />
 
 
 
@@ -73,8 +73,8 @@
 
     <div class="content post-summary">
         先安装h264编码器
-#!/bin/bashcd /usr/srcgit clone git://git.videolan.org/x264cd x264./configure --host=arm-unknown-linux-gnueabi --enable-static --disable-openclmakesudo make install 下载源码编译安装ffmpeg
-cd /usr/srcgit clone git://source.ffmpeg.org/ffmpeg.gitcd ffmpegsudo ./configure --arch=armel --target-os=linux --enable-gpl --enable-libx264 --enable-nonfreemakesudo make install 由于树莓派原因，这个过程很长……很长…… 建议开screen，然后Ctrl+a+d
+#!/bin/bash cd /usr/src git clone git://git.videolan.org/x264 cd x264 ./configure --host=arm-unknown-linux-gnueabi --enable-static --disable-opencl make sudo make install  下载源码编译安装ffmpeg
+cd /usr/src git clone git://source.ffmpeg.org/ffmpeg.git cd ffmpeg sudo ./configure --arch=armel --target-os=linux --enable-gpl --enable-libx264 --enable-nonfree make sudo make install  由于树莓派原因，这个过程很长……很长…… 建议开screen，然后Ctrl+a+d
     </div>
 
     
@@ -121,8 +121,8 @@ cd /usr/srcgit clone git://source.ffmpeg.org/ffmpeg.gitcd ffmpegsudo ./config
     <div class="content post-summary">
         安装软件
 apt-get install mpg321 vorbis-tools  使用如下命令转换
-mpg321 tweet.mp3 -w raw &amp;&amp; oggenc raw -o tweet.ogg &amp;&amp; rm -rf raw 示例:
-root@hkvps:/home/res# mpg321 tweet.mp3 -w raw &amp;&amp; oggenc raw -o tweet.ogg &amp;&amp; rm -rf rawHigh Performance MPEG 1.0/2.0/2.5 Audio Player for Layer 1, 2, and 3.Version 0.3.2-1 (2012/03/25). Written and copyrights by Joe Drew,now maintained by Nanakos Chrysostomos and others.Uses code from various people. See 'README' for more!
+mpg321 tweet.mp3 -w raw &amp;&amp; oggenc raw -o tweet.ogg &amp;&amp; rm -rf raw  示例:
+root@hkvps:/home/res# mpg321 tweet.mp3 -w raw &amp;&amp; oggenc raw -o tweet.ogg &amp;&amp; rm -rf raw High Performance MPEG 1.0/2.0/2.5 Audio Player for Layer 1, 2, and 3. Version 0.3.2-1 (2012/03/25). Written and copyrights by Joe Drew, now maintained by Nanakos Chrysostomos and others. Uses code from various people. See 'README' for more!
     </div>
 
     
@@ -234,7 +234,7 @@ root@hkvps:/home/res# mpg321 tweet.mp3 -w raw &amp;&amp; oggenc raw -o tweet.ogg
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

@@ -676,11 +676,11 @@ sysctl net.ipv4.tcp_congestion_control
 02:00.0 Network controller: Intel Corporation Wireless 7260 (rev 73)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;搜索Inter相关固件
-​	
+​
 alair@zb14:~$ apt-cache search iwlwifi
 firmware-iwlwifi - Binary firmware for Intel Wireless cards&lt;/p&gt;
 &lt;p&gt;安装之
-​	
+​
 &lt;code&gt;alair@zb14:~$ apt-get install firmware-iwlwifi&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;重启完事儿！&lt;/p&gt;
 </description>

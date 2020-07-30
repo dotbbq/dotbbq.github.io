@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
 
 
 
@@ -73,11 +73,11 @@
         Nokia N900系统优化脚本，更加省电，操作更加流畅！
 脚本下载地址http://cdn.lyq.wiki/res/speedpatch-ALTERNATIVE.tar.gz.rar
 使用方法： 通过USB连接手机，将脚本传到磁盘根目录(/home/user/MyDocs)，以下操作可以使用XT或者SSH连接电脑进行(Root权限下)
-#cd /home/user/MyDocs#tar xzvf speedpatch-ALTERNATIVE.tar.gz#mkdir /wp-content/local/sbin#cp /root/.profile /root/.profile.bak#cp ./.profile_root /root/.profile#cp ./.profile /home/user/#cp ./speedpatch /etc/event.d/#cp ./cgroup_clean /wp-content/local/sbin#chmod +rwx /wp-content/local/sbin/cgroup_clean#rm ./.profile_root#rm ./.profile#rm ./speedpatch#rm ./cgroup_clean 应用transition.ini文件:
+#cd /home/user/MyDocs #tar xzvf speedpatch-ALTERNATIVE.tar.gz #mkdir /wp-content/local/sbin #cp /root/.profile /root/.profile.bak #cp ./.profile_root /root/.profile #cp ./.profile /home/user/ #cp ./speedpatch /etc/event.d/ #cp ./cgroup_clean /wp-content/local/sbin #chmod +rwx /wp-content/local/sbin/cgroup_clean #rm ./.profile_root #rm ./.profile #rm ./speedpatch #rm ./cgroup_clean  应用transition.ini文件:
 1.使用theme-customizer
-#cp /home/user/MyDocs/transitions.ini /opt/theme-customizer 2.使用系统默认主题
-#cp /home/user/MyDocs/transitions.ini /wp-content/share/hildon-desktop/ 3.删除优化脚本
-#cp /root/.profile.bak /root/.profile#rm /etc/event.d/speedpatch#rm /home/user/.profile#rm /wp-content/local/sbin/cgroup_clean 
+#cp /home/user/MyDocs/transitions.ini /opt/theme-customizer  2.使用系统默认主题
+#cp /home/user/MyDocs/transitions.ini /wp-content/share/hildon-desktop/  3.删除优化脚本
+#cp /root/.profile.bak /root/.profile #rm /etc/event.d/speedpatch #rm /home/user/.profile #rm /wp-content/local/sbin/cgroup_clean 
     </div>
 
     
@@ -123,14 +123,14 @@
 
     <div class="content post-summary">
         安装LNMP 更新系统
-#yum check-update#yum update 安装Screen
-#yum install screen 开始安装Lnmp
-#screen -S lnmp#wget -c http://soft.vpser.net/lnmp/lnmp0.8.tar.gz //最新版请查阅lnmp官网#tar zxvf lnmp0.8.tar.gz#./lnmp0.8/centos.sh | tee lnmp.log //输出log文件，以备出错时查阅 接下来按照提示设定域名和MysQL密码，程序会自动下载相关程序，而后编译安装
+#yum check-update #yum update  安装Screen
+#yum install screen  开始安装Lnmp
+#screen -S lnmp #wget -c http://soft.vpser.net/lnmp/lnmp0.8.tar.gz //最新版请查阅lnmp官网 #tar zxvf lnmp0.8.tar.gz #./lnmp0.8/centos.sh | tee lnmp.log //输出log文件，以备出错时查阅  接下来按照提示设定域名和MysQL密码，程序会自动下载相关程序，而后编译安装
 安装PureFTP
-#./lnmp0.8/pureftp.sh 按提示输入MySQL和Ftp管理员密码，安装完成后可以通过http://vpsip/ftp/来登录管理ftp帐号
+#./lnmp0.8/pureftp.sh  按提示输入MySQL和Ftp管理员密码，安装完成后可以通过http://vpsip/ftp/来登录管理ftp帐号
 使用Lnmp 添加虚拟主机
-#/root/vhost.sh 按照提示填入域名、目录、rewrite规则文件，如下所示：
-root@buyvm256:~#/root/vhost.sh=========================================================================Add Virtual Host for LNMP V0.9 , Written by Licess =========================================================================LNMP is a tool to auto-compile &amp; install Nginx+MySQL+PHP on Linux This script is a tool to add virtual host for nginx For more information please visit http://www.
+#/root/vhost.sh  按照提示填入域名、目录、rewrite规则文件，如下所示：
+root@buyvm256:~#/root/vhost.sh ========================================================================= Add Virtual Host for LNMP V0.9 , Written by Licess ========================================================================= LNMP is a tool to auto-compile &amp; install Nginx+MySQL+PHP on Linux This script is a tool to add virtual host for nginx For more information please visit http://www.
     </div>
 
     
@@ -244,7 +244,7 @@ root@buyvm256:~#/root/vhost.sh=================================================
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

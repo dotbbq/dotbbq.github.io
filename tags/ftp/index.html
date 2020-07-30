@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
 
 
 
@@ -73,10 +73,10 @@
         LFTP介绍 lftp是一个功能强大的ftp/http客户端，作者是 Alexander Lukyanov。
 lftp支持多种传输协议，如ftp、http、https、sftp、exp等。
 如同BASH一样，lftp支持任务管理。并且具备书签管理、内置镜像和多线程传送功能。
-使用LFTP 登录服务器 lftp ftp://user:password@ip:port 以上是一个完整的lftp登录示例，其中包含协议(ftp)、用户名(user)、密码(password)、主机(ip)以及端口(port)
+使用LFTP 登录服务器 lftp ftp://user:password@ip:port  以上是一个完整的lftp登录示例，其中包含协议(ftp)、用户名(user)、密码(password)、主机(ip)以及端口(port)
 默认情况下lftp直接访问ftp服务，默认登录端口为22，因此我们可以使用以下方法来便捷登录主机
-lftp user@ip 然后系统会提示输入password，完成后登录成功！
-lftp命令行参数 lftp :~&gt; help!&lt;shell-command&gt; (commands)alias [&lt;name&gt; [&lt;value&gt;]] attach [PID]bookmark [SUBCMD] cache [SUBCMD]cat [-b] &lt;files&gt; cd &lt;rdir&gt;chmod [OPTS] mode file... close [-a][re]cls [opts] [path/][pattern] debug [&lt;level&gt;|off] [-o &lt;file&gt;]du [options] &lt;dirs&gt; exit [&lt;code&gt;|bg]get [OPTS] &lt;rfile&gt; [-o &lt;lfile&gt;] glob [OPTS] &lt;cmd&gt; &lt;args&gt;help [&lt;cmd&gt;] history -w file|-r file|-c|-l [cnt]jobs [-v] [&lt;job_no.
+lftp user@ip  然后系统会提示输入password，完成后登录成功！
+lftp命令行参数 lftp :~&gt; help !&lt;shell-command&gt; (commands) alias [&lt;name&gt; [&lt;value&gt;]] attach [PID] bookmark [SUBCMD] cache [SUBCMD] cat [-b] &lt;files&gt; cd &lt;rdir&gt; chmod [OPTS] mode file... close [-a] [re]cls [opts] [path/][pattern] debug [&lt;level&gt;|off] [-o &lt;file&gt;] du [options] &lt;dirs&gt; exit [&lt;code&gt;|bg] get [OPTS] &lt;rfile&gt; [-o &lt;lfile&gt;] glob [OPTS] &lt;cmd&gt; &lt;args&gt; help [&lt;cmd&gt;] history -w file|-r file|-c|-l [cnt] jobs [-v] [&lt;job_no.
     </div>
 
     
@@ -122,14 +122,14 @@ lftp命令行参数 lftp :~&gt; help!&lt;shell-command&gt; (commands)alias [&l
 
     <div class="content post-summary">
         安装LNMP 更新系统
-#yum check-update#yum update 安装Screen
-#yum install screen 开始安装Lnmp
-#screen -S lnmp#wget -c http://soft.vpser.net/lnmp/lnmp0.8.tar.gz //最新版请查阅lnmp官网#tar zxvf lnmp0.8.tar.gz#./lnmp0.8/centos.sh | tee lnmp.log //输出log文件，以备出错时查阅 接下来按照提示设定域名和MysQL密码，程序会自动下载相关程序，而后编译安装
+#yum check-update #yum update  安装Screen
+#yum install screen  开始安装Lnmp
+#screen -S lnmp #wget -c http://soft.vpser.net/lnmp/lnmp0.8.tar.gz //最新版请查阅lnmp官网 #tar zxvf lnmp0.8.tar.gz #./lnmp0.8/centos.sh | tee lnmp.log //输出log文件，以备出错时查阅  接下来按照提示设定域名和MysQL密码，程序会自动下载相关程序，而后编译安装
 安装PureFTP
-#./lnmp0.8/pureftp.sh 按提示输入MySQL和Ftp管理员密码，安装完成后可以通过http://vpsip/ftp/来登录管理ftp帐号
+#./lnmp0.8/pureftp.sh  按提示输入MySQL和Ftp管理员密码，安装完成后可以通过http://vpsip/ftp/来登录管理ftp帐号
 使用Lnmp 添加虚拟主机
-#/root/vhost.sh 按照提示填入域名、目录、rewrite规则文件，如下所示：
-root@buyvm256:~#/root/vhost.sh=========================================================================Add Virtual Host for LNMP V0.9 , Written by Licess =========================================================================LNMP is a tool to auto-compile &amp; install Nginx+MySQL+PHP on Linux This script is a tool to add virtual host for nginx For more information please visit http://www.
+#/root/vhost.sh  按照提示填入域名、目录、rewrite规则文件，如下所示：
+root@buyvm256:~#/root/vhost.sh ========================================================================= Add Virtual Host for LNMP V0.9 , Written by Licess ========================================================================= LNMP is a tool to auto-compile &amp; install Nginx+MySQL+PHP on Linux This script is a tool to add virtual host for nginx For more information please visit http://www.
     </div>
 
     
@@ -185,7 +185,7 @@ root@buyvm256:~#/root/vhost.sh=================================================
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

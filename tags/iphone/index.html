@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
 
 
 
@@ -199,7 +199,7 @@ Win+R打开运行窗口，输入&quot;%ProgramFiles%\iTunes\iTunes.exe&quot; /se
 进入到/private/etc/apt/sources.list.d/目录，将里面除了cydia.list文件，其他的全部删除。然后编辑cydia.list文件，只留下一行deb http://apt.saurik.com/ 即可，保存之。
 手机上打开cydia，重新刷新软件源。然后按需添加需要的第三方源。
 至于如何编辑cydia目录，一般可以使用itools等软件，但是这样比较繁琐。简单直接的方法是通过ssh连接手机进行操作，可参考通过SSH连接IOS设备
-aPhone:~ root# cd /private/etc/apt/sources.list.d/aPhone:/private/etc/apt/sources.list.d root# ls -ltotal 24-rwxr-xr-x 1 root wheel 259 May 25 23:01 appvv.list*-rw-r--r-- 1 root wheel 357 Jun 16 13:59 cydia.list-rw-r--r-- 1 root wheel 227 May 25 23:01 saurik.listaPhone:/private/etc/apt/sources.list.d root# cat cydia.listdeb http://apt.saurik.com/ ios/690.10 maindeb http://apt.178.com/ ./deb http://download.voicecloud.cn/cydia/ ./deb http://cydia.zodttd.com/repo/cydia/ stable maindeb http://repo666.ultrasn0w.com/ .
+aPhone:~ root# cd /private/etc/apt/sources.list.d/ aPhone:/private/etc/apt/sources.list.d root# ls -l total 24 -rwxr-xr-x 1 root wheel 259 May 25 23:01 appvv.list* -rw-r--r-- 1 root wheel 357 Jun 16 13:59 cydia.list -rw-r--r-- 1 root wheel 227 May 25 23:01 saurik.list aPhone:/private/etc/apt/sources.list.d root# cat cydia.list deb http://apt.saurik.com/ ios/690.10 main deb http://apt.178.com/ ./ deb http://download.voicecloud.cn/cydia/ ./ deb http://cydia.zodttd.com/repo/cydia/ stable main deb http://repo666.ultrasn0w.com/ .
     </div>
 
     
@@ -266,7 +266,7 @@ aPhone:~ root# cd /private/etc/apt/sources.list.d/aPhone:/private/etc/apt/sourc
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
 
 
 
@@ -71,18 +71,18 @@
 
     <div class="content post-summary">
         VPS系统版本: Ubuntu 12.04 32bit
-最简单的办法 #apt-get install python-pip#pip install shadowsocks 启动Shadowsock
-#ssserver -p 4000 -k sss4k -d start -p后定义端口号，-k后面设定密码，-d start代表以daemon方式启动
+最简单的办法 #apt-get install python-pip #pip install shadowsocks  启动Shadowsock
+#ssserver -p 4000 -k sss4k -d start  -p后定义端口号，-k后面设定密码，-d start代表以daemon方式启动
  下面是另外一种方法:
 安装shadowsocks-libev 先用aptitude show查看libssl-dev版本
-aptitude show libssl-dev 然后根据版本执行以下修改：
+aptitude show libssl-dev  然后根据版本执行以下修改：
 libssl &gt; 1.0.1
 在/etc/apt/sources.list添加下行：
-deb http://shadowsocks.org/debian wheezy main libssl &gt; 0.9.8 但 &lt; 1.0.0
+deb http://shadowsocks.org/debian wheezy main  libssl &gt; 0.9.8 但 &lt; 1.0.0
 在/etc/apt/sources.list添加下行：
-deb http://shadowsocks.org/debian squeeze main 添加GPG
-wget http://shadowsocks.org/debian/1D27208A.gpgsudo apt-key add 1D27208A.gpg 添加完成后更新软件源，然后安装shadowsocks
-sudo apt-get updatesudo apt-get install python-m2cryptosudo apt-get install shadowsocks-libev 配置/管理shadowsocks服务 配置
+deb http://shadowsocks.org/debian squeeze main  添加GPG
+wget http://shadowsocks.org/debian/1D27208A.gpg sudo apt-key add 1D27208A.gpg  添加完成后更新软件源，然后安装shadowsocks
+sudo apt-get update sudo apt-get install python-m2crypto sudo apt-get install shadowsocks-libev  配置/管理shadowsocks服务 配置
     </div>
 
     
@@ -128,7 +128,7 @@ sudo apt-get updatesudo apt-get install python-m2cryptosudo apt-get install sh
         树莓派用的是8g的TF卡，想作为小型NAS有点小，存不了多少东西，于是将一个闲置的32G U盘挂载上，当作存储分区
 以下为操作过程：
 查看磁盘信息
-pi@raspberrypi ~ $ sudo fdisk -lDisk /dev/mmcblk0: 7990 MB, 7990149120 bytes4 heads, 16 sectors/track, 243840 cylinders, total 15605760 sectorsUnits = sectors of 1 * 512 = 512 bytesSector size (logical/physical): 512 bytes / 512 bytesI/O size (minimum/optimal): 512 bytes / 512 bytesDisk identifier: 0x000981cbDevice Boot Start End Blocks Id System/dev/mmcblk0p1 8192 122879 57344 c W95 FAT32 (LBA)/dev/mmcblk0p2 122880 15605759 7741440 83 LinuxDisk /dev/sda: 32.
+pi@raspberrypi ~ $ sudo fdisk -l Disk /dev/mmcblk0: 7990 MB, 7990149120 bytes 4 heads, 16 sectors/track, 243840 cylinders, total 15605760 sectors Units = sectors of 1 * 512 = 512 bytes Sector size (logical/physical): 512 bytes / 512 bytes I/O size (minimum/optimal): 512 bytes / 512 bytes Disk identifier: 0x000981cb Device Boot Start End Blocks Id System /dev/mmcblk0p1 8192 122879 57344 c W95 FAT32 (LBA) /dev/mmcblk0p2 122880 15605759 7741440 83 Linux Disk /dev/sda: 32.
     </div>
 
     
@@ -186,13 +186,13 @@ pi@raspberrypi ~ $ sudo fdisk -lDisk /dev/mmcblk0: 7990 MB, 7990149120 bytes4 
         首先在ngrok https://ngrok.com/注册登录
 架设已经在树莓派上安装了Nginx，端口为80
 那么下载Linux/ARM版ngrok到树莓派，执行如下命令：
-ngrok -authtoken UfATi0wi98gGMqQ+/GsP 80 其中UfATi0wi98gGMqQ+/GsP为你的auth token
+ngrok -authtoken UfATi0wi98gGMqQ+/GsP 80  其中UfATi0wi98gGMqQ+/GsP为你的auth token
 然后就会出现如下提示:
 Forwarding http://36772918.ngrok.com -&gt; 127.0.0.1:80 Forwarding https://36772918.ngrok.com -&gt; 127.0.0.1:80  按照提示，可以通过那两个二级域名来浏览web服务。
 以上验证只需要输入一次，下次可以直接使用如下命令来运行
-ngrok 80 ngrok其他用法
+ngrok 80  ngrok其他用法
  自定义二级域名  使用自定义的字符串代替系统分配的数字
-ngrok -subdomain mysubd 80   开启密码保护
+ngrok -subdomain mysubd 80    开启密码保护
 ngrok -httpauth &ldquo;user:password&rdquo; 80
   TCP隧道
 ngrok tcp 22
@@ -261,7 +261,7 @@ ngrok tcp 22
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

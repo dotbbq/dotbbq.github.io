@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070682" />
 
 
 
@@ -71,11 +71,11 @@
 
     <div class="content post-summary">
         Centos7安装VPN 下载安装脚本:
-wget http://cdn.lyq.wiki/vpnscripts/vpninstall 执行安装脚本
-chmod+x vpninstall./vpninstall 安装完成后提示如下:
-IPsec VPN server is now ready for use!Connect to your new VPN with these details:Server IP: 181.53.149.126IPsec PSK: EMc6SpQHaBgZCnvNtLXUsername: vpnuserPassword: FzfpNGofpRdkBj2BWrite these down. You'll need them to connect! 以上为安装完成后提示的帐号信息，其中用户名(username)、密码(passowrd)和IPsec PSK密匙(IPsec PSK)为随即生成。
+wget http://cdn.lyq.wiki/vpnscripts/vpninstall  执行安装脚本
+chmod+x vpninstall ./vpninstall  安装完成后提示如下:
+IPsec VPN server is now ready for use! Connect to your new VPN with these details: Server IP: 181.53.149.126 IPsec PSK: EMc6SpQHaBgZCnvNtLX Username: vpnuser Password: FzfpNGofpRdkBj2B Write these down. You'll need them to connect!  以上为安装完成后提示的帐号信息，其中用户名(username)、密码(passowrd)和IPsec PSK密匙(IPsec PSK)为随即生成。
 如果为了方便，以上帐号信息可以参考以下方法自定义：
-[root@hwcsh ~]# vi /etc/ipsec.secrets #编辑PSK%any %any : PSK &quot;EMc6SpQHaBgZCnvNtLX&quot;[root@hwcsh ~]# vi /etc/ppp/chap-secrets #编辑帐户信息&quot;vpnuser&quot; l2tpd &quot;FzfpNGofpRdkBj2B&quot; *[root@hwcsh ~]#systemctl restart ipsec xl2tpd #重启服务 iPhone6配置L2TP VPN 设置-&gt;VPN-&gt;添加VPN配置，类型选择L2TP，然后参考下图设置。
+[root@hwcsh ~]# vi /etc/ipsec.secrets #编辑PSK %any %any : PSK &quot;EMc6SpQHaBgZCnvNtLX&quot; [root@hwcsh ~]# vi /etc/ppp/chap-secrets #编辑帐户信息 &quot;vpnuser&quot; l2tpd &quot;FzfpNGofpRdkBj2B&quot; * [root@hwcsh ~]#systemctl restart ipsec xl2tpd #重启服务  iPhone6配置L2TP VPN 设置-&gt;VPN-&gt;添加VPN配置，类型选择L2TP，然后参考下图设置。
     </div>
 
     
@@ -121,13 +121,13 @@ IPsec VPN server is now ready for use!Connect to your new VPN with these detail
         安装pptpd
 #apt-get install pptpd  IP设置
 #vi /etc/pptpd.conf  添加以下内容:
-localip 192.18.0.1remoteip 192.168.0.200-230 设置DNS
-#vi/etc/ppp/pptpd-options 添加以下内容：
-ms-dns 192.168.1.1ms-dns 8.8.8.8 添加用户
-#vi /etc/ppp/chap-secrets 添加以下内容:
-name * passwd * 重启vpn
+localip 192.18.0.1 remoteip 192.168.0.200-230  设置DNS
+#vi/etc/ppp/pptpd-options  添加以下内容：
+ms-dns 192.168.1.1 ms-dns 8.8.8.8  添加用户
+#vi /etc/ppp/chap-secrets  添加以下内容:
+name * passwd *  重启vpn
 #/etc/init.d/pptpd restart  允许ip4访问外网
-#vi /etc/sysctl.confnet.ipv4.ip_forward=1 //取消本行前注释符(*)#sysctl -p 
+#vi /etc/sysctl.conf net.ipv4.ip_forward=1 //取消本行前注释符(*) #sysctl -p 
     </div>
 
     
@@ -175,7 +175,7 @@ name * passwd * 重启vpn
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

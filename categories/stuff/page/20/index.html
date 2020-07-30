@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
 
 
 
@@ -75,10 +75,10 @@ Anbox官方介绍为Android in a Box,Run Android applications on any GNU/Linux o
 Anbox现在还处于测试阶段，很多功能还不完善和稳定，请谨慎使用。
 安装Anbox 首先得安装Snaps,官方地址为https://snapcraft.io/
 LinuxMint中安装Snaps和必须包
-sudo apt install snapdsudo apt install pulseaudio 接下来按照官方指南安装Anbox
-snap install --classic anbox-installer &amp;&amp; anbox-installer 我试着通过snap来安装一直存在权限问题，一般权限不能运行snap install --classic anbox-installer，root运行完snap install --classic anbox-installer后，但运行anbox-installer又提示不能使用root权限，一般权限根本无法运行anbox-installer，搞了半天都没有成功，于是就有了下文。
+sudo apt install snapd sudo apt install pulseaudio  接下来按照官方指南安装Anbox
+snap install --classic anbox-installer &amp;&amp; anbox-installer  我试着通过snap来安装一直存在权限问题，一般权限不能运行snap install --classic anbox-installer，root运行完snap install --classic anbox-installer后，但运行anbox-installer又提示不能使用root权限，一般权限根本无法运行anbox-installer，搞了半天都没有成功，于是就有了下文。
 通过常规方法安装Anbox
-wget https://raw.githubusercontent.com/anbox/anbox-installer/master/installer.sh -O anbox-installerchmod +x ./anbox-installer./anbox-installer 安装完成后会有重启系统的提示
+wget https://raw.githubusercontent.com/anbox/anbox-installer/master/installer.sh -O anbox-installer chmod +x ./anbox-installer ./anbox-installer  安装完成后会有重启系统的提示
  To ensure all changes made to your system you should now reboot your system. If you don&rsquo;t do this no Android applications will show up in the system application launcher.
     </div>
 
@@ -127,7 +127,7 @@ wget https://raw.githubusercontent.com/anbox/anbox-installer/master/installer.sh
         在此只推荐从源码安装p7zip，下载地址 http://www.7-zip.org/download.html
 源码在这里下载 https://sourceforge.net/projects/p7zip/files/p7zip/
 wget https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_all.tar.bz2 tar jxf p7zip_16.02_src_all.tar.bz2 cd p7zip_16.02 make make install 使用p7zip
-[root@localhost ~]# 7za 7-Zip (a) [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21 p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,1 CPU x64) Usage: 7za &lt;command&gt; [&lt;switches&gt;...] &lt;archive_name&gt; [&lt;file_names&gt;...] [&lt;@listfiles...&gt;] &lt;Commands&gt; a : Add files to archive b : Benchmark d : Delete files from archive e : Extract files from archive (without using directory names) h : Calculate hash values for files i : Show information about supported formats l : List contents of archive rn : Rename files in archive t : Test integrity of archive u : Update files to archive x : eXtract files with full paths 压缩文件
+[root@localhost ~]# 7za  7-Zip (a) [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21 p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,1 CPU x64) Usage: 7za &lt;command&gt; [&lt;switches&gt;...] &lt;archive_name&gt; [&lt;file_names&gt;...] [&lt;@listfiles...&gt;] &lt;Commands&gt; a : Add files to archive b : Benchmark d : Delete files from archive e : Extract files from archive (without using directory names) h : Calculate hash values for files i : Show information about supported formats l : List contents of archive rn : Rename files in archive t : Test integrity of archive u : Update files to archive x : eXtract files with full paths 压缩文件
     </div>
 
     
@@ -178,15 +178,15 @@ wget https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_al
 代码国内下载地址http://cdn.lyq.wiki/res/warp_final.zip
 下载后解压，得到main.py和gauge2.html两个文件，其中main.py需要Python3运行，gauge2.html是最终的显示文件
 安装相关软件
-sudo apt-get install python3sudo apt-get install python3-pippip3 install flask 打开Sense HAT仿真器，在程序菜单中，打开后如下图示:
+sudo apt-get install python3 sudo apt-get install python3-pip pip3 install flask  打开Sense HAT仿真器，在程序菜单中，打开后如下图示:
 下来，运行下载的python脚本
-python3 main.py 正常情况下，会提示一个端口为5000的web服务正在运行
+python3 main.py  正常情况下，会提示一个端口为5000的web服务正在运行
 在浏览器中浏览localhost:5000或者127.0.0.1:5000，最终的浏览如下图
 三个图表分别显示温度、压力和湿度，这三者的信息均来自Sense HAT 模拟器而不是真正的Sense HAT硬件。
 如果需要采集Sense HAT扩展板的数据，需要将Sense HAT附加板和Raspberry Pi相连，具体信息参考官网 https://www.raspberrypi.org/products/sense-hat/
 然后修改代码，打开main.py文件，找到如下行
-from sense_emu import SenseHat 修改为
-from sense_hat import SenseHat 保存后，重新运行python3 main.py，此时采集的数据就来自真实的SenseHAT硬件。
+from sense_emu import SenseHat  修改为
+from sense_hat import SenseHat  保存后，重新运行python3 main.py，此时采集的数据就来自真实的SenseHAT硬件。
     </div>
 
     
@@ -273,7 +273,7 @@ from sense_hat import SenseHat 保存后，重新运行python3 main.py，此时
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

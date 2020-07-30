@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
 
 
 
@@ -71,7 +71,7 @@
 
     <div class="content post-summary">
         工具菜单如下：
- Title OnePlus 3/3T Unified ToolKit v5.0U by @ahmed_radaideh======================= Menu =======================Enter a Number to select a Task.1) Install USB Drivers On PC2) Unlock - ReLock Bootloader3) Check Device Status4) Check Bootloader Status5) Flash - Boot TWRP Recovery6) Flash - Boot Stock Recovery7) Push Systemless Root8) Push Debloater Script9) Wipe Cache Your Device10) Force Decryption Device [WIPE]11) Get Logs your Device12) Restart Menu13) Check for new Version14) XDA Thread15) Donate!
+ Title OnePlus 3/3T Unified ToolKit v5.0U by @ahmed_radaideh ====================== = Menu = ====================== Enter a Number to select a Task. 1) Install USB Drivers On PC 2) Unlock - ReLock Bootloader 3) Check Device Status 4) Check Bootloader Status 5) Flash - Boot TWRP Recovery 6) Flash - Boot Stock Recovery 7) Push Systemless Root 8) Push Debloater Script 9) Wipe Cache Your Device 10) Force Decryption Device [WIPE] 11) Get Logs your Device 12) Restart Menu 13) Check for new Version 14) XDA Thread 15) Donate!
     </div>
 
     
@@ -129,10 +129,10 @@ Anbox官方介绍为Android in a Box,Run Android applications on any GNU/Linux o
 Anbox现在还处于测试阶段，很多功能还不完善和稳定，请谨慎使用。
 安装Anbox 首先得安装Snaps,官方地址为https://snapcraft.io/
 LinuxMint中安装Snaps和必须包
-sudo apt install snapdsudo apt install pulseaudio 接下来按照官方指南安装Anbox
-snap install --classic anbox-installer &amp;&amp; anbox-installer 我试着通过snap来安装一直存在权限问题，一般权限不能运行snap install --classic anbox-installer，root运行完snap install --classic anbox-installer后，但运行anbox-installer又提示不能使用root权限，一般权限根本无法运行anbox-installer，搞了半天都没有成功，于是就有了下文。
+sudo apt install snapd sudo apt install pulseaudio  接下来按照官方指南安装Anbox
+snap install --classic anbox-installer &amp;&amp; anbox-installer  我试着通过snap来安装一直存在权限问题，一般权限不能运行snap install --classic anbox-installer，root运行完snap install --classic anbox-installer后，但运行anbox-installer又提示不能使用root权限，一般权限根本无法运行anbox-installer，搞了半天都没有成功，于是就有了下文。
 通过常规方法安装Anbox
-wget https://raw.githubusercontent.com/anbox/anbox-installer/master/installer.sh -O anbox-installerchmod +x ./anbox-installer./anbox-installer 安装完成后会有重启系统的提示
+wget https://raw.githubusercontent.com/anbox/anbox-installer/master/installer.sh -O anbox-installer chmod +x ./anbox-installer ./anbox-installer  安装完成后会有重启系统的提示
  To ensure all changes made to your system you should now reboot your system. If you don&rsquo;t do this no Android applications will show up in the system application launcher.
     </div>
 
@@ -182,10 +182,10 @@ wget https://raw.githubusercontent.com/anbox/anbox-installer/master/installer.sh
 Syncthing官网地址 **https://syncthing.net/**Github地址 https://github.com/syncthing/syncthing
 安装Syncthing Syncthing官网提供多平台安装包，下载地址为 https://github.com/syncthing/syncthing/releases/
 并且针对Debian/Ubuntu平台，官方提供了apt-get安装方法
-# Add the release PGP keys:curl -s https://syncthing.net/release-key.txt | sudo apt-key add -# Add the &quot;release&quot; channel to your APT sources:echo &quot;deb http://apt.syncthing.net/ syncthing release&quot; | sudo tee /etc/apt/sources.list.d/syncthing.list# Update and install syncthing:sudo apt-get updatesudo apt-get install syncthing 运行Syncthing Linux下直接使用syncthing命令运行
-syncthing &amp; Windows下直接打开下载的syncthing.exe文件，而后浏览器自动打开http://127.0.0.1:8384进行设置管理。
+# Add the release PGP keys: curl -s https://syncthing.net/release-key.txt | sudo apt-key add - # Add the &quot;release&quot; channel to your APT sources: echo &quot;deb http://apt.syncthing.net/ syncthing release&quot; | sudo tee /etc/apt/sources.list.d/syncthing.list # Update and install syncthing: sudo apt-get update sudo apt-get install syncthing  运行Syncthing Linux下直接使用syncthing命令运行
+syncthing &amp;  Windows下直接打开下载的syncthing.exe文件，而后浏览器自动打开http://127.0.0.1:8384进行设置管理。
 管理Syncthing 如果是在VPS上安装Syncthing ,运行syncthing后，只能通过http://127.0.0.1:8384进行管理，我们可以通过以下方法在本地管理。
-ssl -L 9891:localhost:8384 root@ip 输入root密码登录成功后，即可本地浏览http://127.0.0.1:9891对VPS上的Synchting进行管理。
+ssl -L 9891:localhost:8384 root@ip  输入root密码登录成功后，即可本地浏览http://127.0.0.1:9891对VPS上的Synchting进行管理。
 添加设备 每个设备均有一个设备标识，可以通过操作-&gt;显示设备标识来查看。
     </div>
 
@@ -255,7 +255,7 @@ ssl -L 9891:localhost:8384 root@ip 输入root密码登录成功后，即可本�
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

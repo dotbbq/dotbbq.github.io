@@ -131,7 +131,7 @@ deb http://apt.25pp.com/ ./&lt;/code&gt;&lt;/pre&gt;
       <description>&lt;p&gt;首先，需要iPhone已经越狱，并且安装了OpenSSH&lt;/p&gt;
 &lt;p&gt;脚本文件下载：&lt;a href=&#34;http://cdn.lyq.wiki/res/langpack2.2.zip&#34;&gt;http://cdn.lyq.wiki/res/langpack2.2.zip&lt;/a&gt;，解压出脚本文件langpack2.2.sh&lt;/p&gt;
 &lt;p&gt;通过itools或者其他管理软件，将脚本文件复制到/var/mobile目录&lt;/p&gt;
-&lt;p&gt;通过&lt;a href=&#34;https://unixetc.com/post/iphone-and-ssh/&#34;&gt;ssh连接手机&lt;/a&gt;，进入/var/mobile目录开始操作 
+&lt;p&gt;通过&lt;a href=&#34;https://unixetc.com/post/iphone-and-ssh/&#34;&gt;ssh连接手机&lt;/a&gt;，进入/var/mobile目录开始操作
 &lt;strong&gt;注意：此时请关闭手机的定时锁屏功能，以防意外终止操作而失败！！&lt;/strong&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;#chmod 777 langpack2.2.sh   //为脚本添加执行权限
 #./langpack2.2.sh  //运行脚本

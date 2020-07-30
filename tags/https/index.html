@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
 
 
 
@@ -75,8 +75,8 @@
 第一次只是将nginx配置文件中的alair.cn全部替换为its0k.com，通过its0k.com浏览新站完全没问题
 但是试着从alair.cn跳转浏览新站，浏览器出现了证书安全告警，告警具体原因为证书未包含alair.cn域名，我才想起来旧域名alair.cn已经添加进了HSTS列表，因此不能简单的只为新域名签名，而是需要证书签名时包含新旧两个域名。
 重新签名了证书，包含以下四个域名
-its0k.com www.its0k.com alair.cn www.alair.cn 以下为更改完成后的nginx配置文件，请注意名相关的部分
-server {listen 443 ssl http2;ssl_certificate /root/ssls/its0k.crt;ssl_certificate_key /root/ssls/its0k.key;ssl_session_timeout 60m;ssl_protocols TLSv1 TLSv1.1 TLSv1.2;ssl_ciphers ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-RC4-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:RC4-SHA:!aNULL:!eNULL:!EXPORT:!DES:!3DES:!MD5:!DSS:!PKS;ssl_prefer_server_ciphers on;ssl_session_cache builtin:1000 shared:SSL:10m;ssl_dhparam /etc/ssl/certs/dhparam.pem;add_header Strict-Transport-Security &quot;max-age=63072000; includeSubdomains; preload&quot;;add_header X-Frame-Options &quot;DENY&quot;;ssl_stapling on;ssl_stapling_verify on;resolver 8.8.8.8 8.8.4.4 valid=300s;resolver_timeout 5s;server_name its0k.com www.its0k.com alair.cn www.alair.cn;access_log off;index index.html index.htm;include /usr/local/nginx/conf/rewrite/ps.conf;root /data/wwwroot/its0k.com/compiled;error_page 403 404 500 503 505 = https://its0k.
+its0k.com www.its0k.com alair.cn www.alair.cn  以下为更改完成后的nginx配置文件，请注意名相关的部分
+server { listen 443 ssl http2; ssl_certificate /root/ssls/its0k.crt; ssl_certificate_key /root/ssls/its0k.key; ssl_session_timeout 60m; ssl_protocols TLSv1 TLSv1.1 TLSv1.2; ssl_ciphers ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-RC4-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:RC4-SHA:!aNULL:!eNULL:!EXPORT:!DES:!3DES:!MD5:!DSS:!PKS; ssl_prefer_server_ciphers on; ssl_session_cache builtin:1000 shared:SSL:10m; ssl_dhparam /etc/ssl/certs/dhparam.pem; add_header Strict-Transport-Security &quot;max-age=63072000; includeSubdomains; preload&quot;; add_header X-Frame-Options &quot;DENY&quot;; ssl_stapling on; ssl_stapling_verify on; resolver 8.8.8.8 8.8.4.4 valid=300s; resolver_timeout 5s; server_name its0k.com www.its0k.com alair.cn www.alair.cn; access_log off; index index.html index.htm; include /usr/local/nginx/conf/rewrite/ps.conf; root /data/wwwroot/its0k.com/compiled; error_page 403 404 500 503 505 = https://its0k.
     </div>
 
     
@@ -124,10 +124,10 @@ server {listen 443 ssl http2;ssl_certificate /root/ssls/its0k.crt;ssl_certifi
         网站的Let&rsquo;s encrypt证书快到期了，看了官方的续期方法比较繁琐，于是在网上找了找简单方便做法，结果找到了墓地小企鹅写的一个脚本(shell script)，使用这个脚本可以方便的生成以及更新Let&rsquo;s encrypt 证书。
 脚本地址 https://github.com/xdtianyu/scripts/tree/master/lets-encrypt
 下载脚本
-wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.confwget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh 配置
-root@rnse:~/lesh# cat letsencrypt.conf# only modify the values, key files will be generated automaticly.ACCOUNT_KEY=&quot;letsencrypt-account.key&quot;DOMAIN_KEY=&quot;alair.key&quot;DOMAIN_DIR=&quot;/data/wwwroot/alair.cn/compiled&quot;DOMAINS=&quot;DNS:alair.cn,DNS:www.alair.cn&quot;#ECC=TRUE#LIGHTTPD=TRUE 按照需要自定义DOMAIN_KEY、DOMAIN_DIR、DOMAINS三部分。
+wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.conf wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh  配置
+root@rnse:~/lesh# cat letsencrypt.conf # only modify the values, key files will be generated automaticly. ACCOUNT_KEY=&quot;letsencrypt-account.key&quot; DOMAIN_KEY=&quot;alair.key&quot; DOMAIN_DIR=&quot;/data/wwwroot/alair.cn/compiled&quot; DOMAINS=&quot;DNS:alair.cn,DNS:www.alair.cn&quot; #ECC=TRUE #LIGHTTPD=TRUE  按照需要自定义DOMAIN_KEY、DOMAIN_DIR、DOMAINS三部分。
 生成证书
-root@rnse:~/lesh#chmod +x letsencrypt.shroot@rnse:~/lesh# ./letsencrypt.sh letsencrypt.confGenerate account key...Generating RSA private key, 4096 bit long modulus..............................++....++e is 65537 (0x10001)Generate domain key...Generating RSA private key, 2048 bit long modulus.
+root@rnse:~/lesh#chmod +x letsencrypt.sh root@rnse:~/lesh# ./letsencrypt.sh letsencrypt.conf Generate account key... Generating RSA private key, 4096 bit long modulus ..............................++ ....++ e is 65537 (0x10001) Generate domain key... Generating RSA private key, 2048 bit long modulus .
     </div>
 
     
@@ -174,7 +174,7 @@ root@rnse:~/lesh#chmod +x letsencrypt.shroot@rnse:~/lesh# ./letsencrypt.sh lets
     <div class="content post-summary">
         先贴出本站的SSL安全评级,测试地址为https://www.ssllabs.com/ssltest/analyze.html?d=alair.cn
 以下是本站Nginx配置中关于SSL部分
-listen 443 ssl http2;ssl_certificate /etc/letsencrypt/live/alair.cn/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/alair.cn/privkey.pem; ssl_session_timeout 60m;ssl_protocols TLSv1 TLSv1.1 TLSv1.2;ssl_ciphers ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-RC4-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:RC4-SHA:!aNULL:!eNULL:!EXPORT:!DES:!3DES:!MD5:!DSS:!PKS;ssl_prefer_server_ciphers on;ssl_session_cache builtin:1000 shared:SSL:10m;ssl_dhparam /etc/ssl/certs/dhparam.pem;ssl_stapling on;ssl_stapling_verify on;add_header Strict-Transport-Security &quot;max-age=63072000; includeSubdomains; preload&quot;;add_header X-Frame-Options &quot;DENY&quot;; 说明：
+listen 443 ssl http2; ssl_certificate /etc/letsencrypt/live/alair.cn/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/alair.cn/privkey.pem; ssl_session_timeout 60m; ssl_protocols TLSv1 TLSv1.1 TLSv1.2; ssl_ciphers ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-RC4-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:RC4-SHA:!aNULL:!eNULL:!EXPORT:!DES:!3DES:!MD5:!DSS:!PKS; ssl_prefer_server_ciphers on; ssl_session_cache builtin:1000 shared:SSL:10m; ssl_dhparam /etc/ssl/certs/dhparam.pem; ssl_stapling on; ssl_stapling_verify on; add_header Strict-Transport-Security &quot;max-age=63072000; includeSubdomains; preload&quot;; add_header X-Frame-Options &quot;DENY&quot;;  说明：
 dhparam.pem可以使用openssl dhparam -out dhparam.pem 4096命令生成，这个命令会执行很长时间，也可以将字节数改为2048
     </div>
 
@@ -242,7 +242,7 @@ dhparam.pem可以使用openssl dhparam -out dhparam.pem 4096命令生成，这�
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

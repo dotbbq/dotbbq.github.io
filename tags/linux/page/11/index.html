@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
 
 
 
@@ -121,17 +121,17 @@
     <div class="content post-summary">
         首次安装Termux后，内含一个基础系统，包括apt软件包管理功能，并且集成了一些busybox系统工具。
 其余的软件包可使用apt进行安装管理，命令如下：
-apt update 更新可用软件包清单。
-apt search &lt;query&gt; 按名称搜索可用软件。
-apt install &lt;package&gt; 安装软件
-apt upgrade 更新所有可更新软件。
-apt show &lt;package&gt; 显示软件信息
-apt list 列出可用软件清单
-apt list --installed 列出所有已安装软件清单
-apt remove &lt;package&gt; 卸载已安装软件
+apt update  更新可用软件包清单。
+apt search &lt;query&gt;  按名称搜索可用软件。
+apt install &lt;package&gt;  安装软件
+apt upgrade  更新所有可更新软件。
+apt show &lt;package&gt;  显示软件信息
+apt list  列出可用软件清单
+apt list --installed  列出所有已安装软件清单
+apt remove &lt;package&gt;  卸载已安装软件
 Apt是基于dpkg格式的软件管理工具，一般没必要直接使用dpkg来进行操作，不过以下两个例子可以参考：
-dpkg -L &lt;package&gt; 列出已安装软件
-dpkg --verify 验证已安装软件的完整性
+dpkg -L &lt;package&gt;  列出已安装软件
+dpkg --verify  验证已安装软件的完整性
 更多信息请检阅apt manual page (通过apt install man来安装)
     </div>
 
@@ -182,12 +182,12 @@ dpkg --verify 验证已安装软件的完整性
 只有最基本的系统命令ls,cat等可以用
 看来安装lnmp后，我的PATH变量被动了
 先临时修改下PATH，便于后面操作
-export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:$PATH 然后检查~/.profile,/etc/profile是否存在，存在
+export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:$PATH  然后检查~/.profile,/etc/profile是否存在，存在
 检查其中的PATH赋值是否异常
 经过排查，发现/etc/profile中的PATH赋值异常，修改之重启OK！
 在此分享正确的原始~/.profile和/etc/profile文件
 ~/.profile 内容
-# ~/.profile: executed by the command interpreter for login shells.# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login# exists.# see /usr/share/doc/bash/examples/startup-files for examples.# the files are located in the bash-doc package.# the default umask is set in /etc/profile; for setting the umask# for ssh logins, install and configure the libpam-umask package.
+# ~/.profile: executed by the command interpreter for login shells. # This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login # exists. # see /usr/share/doc/bash/examples/startup-files for examples. # the files are located in the bash-doc package. # the default umask is set in /etc/profile; for setting the umask # for ssh logins, install and configure the libpam-umask package.
     </div>
 
     
@@ -252,7 +252,7 @@ export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:$PATH 
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

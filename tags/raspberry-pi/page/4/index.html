@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
 
 
 
@@ -72,10 +72,10 @@
     <div class="content post-summary">
         注册noip 首先在http://noip.com注册账户
 然后在主机管理(Manage Hosts)中添加主机(Add A Host)，根据提示设置二级域名，IP可以随意填写。
-安装Noip客户端 wget https://www.noip.com/client/linux/noip-duc-linux.tar.gztar zxf noip-duc-linux.tar.gzcd noip-2.1.9-1sudo make install 安装过程中，按照提示输入noip帐号信息，时间间隔建议设为5s，默认30s
+安装Noip客户端 wget https://www.noip.com/client/linux/noip-duc-linux.tar.gz tar zxf noip-duc-linux.tar.gz cd noip-2.1.9-1 sudo make install  安装过程中，按照提示输入noip帐号信息，时间间隔建议设为5s，默认30s
 设置开机启动 在/etc/init.d/中建立noip2脚本
-sudo vi /etc/init.d/noip2 脚本内容如下
-#! /bin/sh### BEGIN INIT INFO# Provides: noip2# Required-Start: $syslog# Required-Stop: $syslog# Default-Start: 2 3 4 5# Default-Stop: 0 1 6# Short-Description: noip.com client service### END INIT INFO# . /lib/lsb/init-functionscase &quot;$1&quot; instart)echo &quot;Starting noip2.
+sudo vi /etc/init.d/noip2  脚本内容如下
+#! /bin/sh ### BEGIN INIT INFO # Provides: noip2 # Required-Start: $syslog # Required-Stop: $syslog # Default-Start: 2 3 4 5 # Default-Stop: 0 1 6 # Short-Description: noip.com client service ### END INIT INFO # . /lib/lsb/init-functions case &quot;$1&quot; in start) echo &quot;Starting noip2.
     </div>
 
     
@@ -127,15 +127,15 @@ sudo vi /etc/init.d/noip2 脚本内容如下
 
     <div class="content post-summary">
         域名解析 首先得有个域名，在域名管理中将域名DNS设为he.net的DNS地址，如下：
-ns1.he.netns2.he.netns3.he.netns4.he.netns5.he.net 然后在http://dns.he.net注册账号，添加域名(Add a new domain)
+ns1.he.net ns2.he.net ns3.he.net ns4.he.net ns5.he.net  然后在http://dns.he.net注册账号，添加域名(Add a new domain)
 接下来添加A记录(New A)，勾选允许动态域名解析(Enable entry for dynamic dns)
 点击域名后DDNS列中的刷新按钮，新建一个DDNS密匙(Generate a DDNS key.)
 安装设置ddclient 在树莓派上安装ddclient
-sudo apt-get install ddclient 编辑ddclient配置文件，路径为/etc/ddclient.conf
-protocol=dyndns2use=web,web=myip.dnsomatic.comserver=dyn.dns.he.netlogin=raspi.inpassword='ddnskey'www.raspi.in,raspi.in 其中password为设置DDNS时的key
+sudo apt-get install ddclient  编辑ddclient配置文件，路径为/etc/ddclient.conf
+protocol=dyndns2 use=web,web=myip.dnsomatic.com server=dyn.dns.he.net login=raspi.in password='ddnskey' www.raspi.in,raspi.in  其中password为设置DDNS时的key
 重启ddclient服务
-service ddclient restart 验证IP查询结果
-sudo ddclient -queryuse=if, if=eth0 address is 192.168.1.111use=if, if=lo address is 127.0.0.1use=web, web=dnspark address is 36.40.143.235use=web, web=dyndns address is NOT FOUNDuse=web, web=loopia address is 36.
+service ddclient restart  验证IP查询结果
+sudo ddclient -query use=if, if=eth0 address is 192.168.1.111 use=if, if=lo address is 127.0.0.1 use=web, web=dnspark address is 36.40.143.235 use=web, web=dyndns address is NOT FOUND use=web, web=loopia address is 36.
     </div>
 
     
@@ -189,9 +189,9 @@ sudo ddclient -queryuse=if, if=eth0 address is 192.168.1.111use=if, if=lo addr
 
     <div class="content post-summary">
         首先查看树莓派cpu信息
-pi@raspi:~ $ cat /proc/cpuinfoprocessor : 0model name : ARMv6-compatible processor rev 7 (v6l)BogoMIPS : 2.00Features : half thumb fastmult vfp edsp java tlsCPU implementer : 0x41CPU architecture: 7CPU variant : 0x0CPU part : 0xb76CPU revision : 7Hardware : BCM2708Revision : 000eSerial : 000000004a8acb6d 看清楚cpu构架，是ARMv6
+pi@raspi:~ $ cat /proc/cpuinfo processor : 0 model name : ARMv6-compatible processor rev 7 (v6l) BogoMIPS : 2.00 Features : half thumb fastmult vfp edsp java tls CPU implementer : 0x41 CPU architecture: 7 CPU variant : 0x0 CPU part : 0xb76 CPU revision : 7 Hardware : BCM2708 Revision : 000e Serial : 000000004a8acb6d  看清楚cpu构架，是ARMv6
 然后在node.js官网下载对应版本的包，下载地址https://nodejs.org/dist/
-# wget https://nodejs.org/dist/v4.2.2/node-v4.2.2-linux-arm64.tar.gz# tar zxf node-v4.2.2-linux-arm64.tar.gz# mv node-v4.2.2-linux-arm64 /usr/nodejs422 方便使用期间，做个链接
+# wget https://nodejs.org/dist/v4.2.2/node-v4.2.2-linux-arm64.tar.gz # tar zxf node-v4.2.2-linux-arm64.tar.gz # mv node-v4.2.2-linux-arm64 /usr/nodejs422  方便使用期间，做个链接
     </div>
 
     
@@ -268,7 +268,7 @@ pi@raspi:~ $ cat /proc/cpuinfoprocessor : 0model name : ARMv6-compatible proce
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

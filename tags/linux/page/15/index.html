@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
 
 
 
@@ -72,11 +72,11 @@
     <div class="content post-summary">
         Google Authenticator开源版主页 https://github.com/google/google-authenticator
 安装Google Authenticator Ubuntu已经包含libpam-google-authenticator软件(Ubuntu 11.10以上版本),可以直接使用apt-get安装
-apt-get install libpam-google-authenticator 其他系统可以通过源码编译安装
-git clone https://github.com/google/google-authenticator-libpam.gitcd google-authenticator-libpam/./bootstrap.sh./configuremakemake install 注意：在Debian7中执行./configure时可能存在以下错误提示
-configure: error: Unable to find the PAM library or the PAM header files 在此需要安装libpam0g-dev和libtool
-apt-get -y install libpam0g-dev libtool 设置Google Authenticator 在手机端搜索安装Google Authenticator
-google-authenticatorDo you want authentication tokens to be time-based (y/n) y 然后出现二维码，使用手机端Google Authenticator扫码,接下来服务器端继续设置
+apt-get install libpam-google-authenticator  其他系统可以通过源码编译安装
+git clone https://github.com/google/google-authenticator-libpam.git cd google-authenticator-libpam/ ./bootstrap.sh ./configure make make install  注意：在Debian7中执行./configure时可能存在以下错误提示
+configure: error: Unable to find the PAM library or the PAM header files  在此需要安装libpam0g-dev和libtool
+apt-get -y install libpam0g-dev libtool  设置Google Authenticator 在手机端搜索安装Google Authenticator
+google-authenticator Do you want authentication tokens to be time-based (y/n) y  然后出现二维码，使用手机端Google Authenticator扫码,接下来服务器端继续设置
 如果没有出现二维码，可以将提示的以**https://www.google.com/chart?**开头的连接复制到浏览器中，就可以看到二维码了
 Do you want me to update your &quot;/root/.
     </div>
@@ -136,11 +136,11 @@ Do you want me to update your &quot;/root/.
 
     <div class="content post-summary">
         天朝的dns服务商尿性不是一般的大，动不动就抽风或者劫持，为了避免这种情况，可以在树莓派上安装Dnsmasq来加速dns解析，提高网络浏览体验。
-安装配置dnsmasq apt-get install dnsmasq 配置dnsmasq,vi /etc/dnsmasq.conf
+安装配置dnsmasq apt-get install dnsmasq  配置dnsmasq,vi /etc/dnsmasq.conf
 我的配置文件如下：
-domain=Raspi2resolv-file=/etc/resolv.dnsmasqconf-dir=/etc/dnsmasq.dmin-port=4096server=114.114.114.114server=114.114.115.115server=223.5.5.5server=223.6.6.6server=119.29.29.29server=182.254.116.116server=112.124.47.27server=114.215.126.16server=101.226.4.6server=218.30.118.6server=42.120.21.30server=199.91.73.222server=178.79.131.110server=8.8.8.8server=8.8.4.4cache-size=10000 配置完重启dnsmasq服务
-service dnsmasq restart 其中的server字段为上游DNS
-配置dnsmasq-china-list git clone https://github.com/felixonmars/dnsmasq-china-list.gitcd dnsmasq-china-list/cp *.conf /etc/dnsmasq.d/service dnsmasq restart 至此设置完成，可以在路由器中将首选dns设为树莓派ip，这样局域网内的所有设备都可以体验dns解析加速了！
+domain=Raspi2 resolv-file=/etc/resolv.dnsmasq conf-dir=/etc/dnsmasq.d min-port=4096 server=114.114.114.114 server=114.114.115.115 server=223.5.5.5 server=223.6.6.6 server=119.29.29.29 server=182.254.116.116 server=112.124.47.27 server=114.215.126.16 server=101.226.4.6 server=218.30.118.6 server=42.120.21.30 server=199.91.73.222 server=178.79.131.110 server=8.8.8.8 server=8.8.4.4 cache-size=10000  配置完重启dnsmasq服务
+service dnsmasq restart  其中的server字段为上游DNS
+配置dnsmasq-china-list git clone https://github.com/felixonmars/dnsmasq-china-list.git cd dnsmasq-china-list/ cp *.conf /etc/dnsmasq.d/ service dnsmasq restart  至此设置完成，可以在路由器中将首选dns设为树莓派ip，这样局域网内的所有设备都可以体验dns解析加速了！
     </div>
 
     
@@ -193,10 +193,10 @@ service dnsmasq restart 其中的server字段为上游DNS
     <div class="content post-summary">
         注册noip 首先在http://noip.com注册账户
 然后在主机管理(Manage Hosts)中添加主机(Add A Host)，根据提示设置二级域名，IP可以随意填写。
-安装Noip客户端 wget https://www.noip.com/client/linux/noip-duc-linux.tar.gztar zxf noip-duc-linux.tar.gzcd noip-2.1.9-1sudo make install 安装过程中，按照提示输入noip帐号信息，时间间隔建议设为5s，默认30s
+安装Noip客户端 wget https://www.noip.com/client/linux/noip-duc-linux.tar.gz tar zxf noip-duc-linux.tar.gz cd noip-2.1.9-1 sudo make install  安装过程中，按照提示输入noip帐号信息，时间间隔建议设为5s，默认30s
 设置开机启动 在/etc/init.d/中建立noip2脚本
-sudo vi /etc/init.d/noip2 脚本内容如下
-#! /bin/sh### BEGIN INIT INFO# Provides: noip2# Required-Start: $syslog# Required-Stop: $syslog# Default-Start: 2 3 4 5# Default-Stop: 0 1 6# Short-Description: noip.com client service### END INIT INFO# . /lib/lsb/init-functionscase &quot;$1&quot; instart)echo &quot;Starting noip2.
+sudo vi /etc/init.d/noip2  脚本内容如下
+#! /bin/sh ### BEGIN INIT INFO # Provides: noip2 # Required-Start: $syslog # Required-Stop: $syslog # Default-Start: 2 3 4 5 # Default-Stop: 0 1 6 # Short-Description: noip.com client service ### END INIT INFO # . /lib/lsb/init-functions case &quot;$1&quot; in start) echo &quot;Starting noip2.
     </div>
 
     
@@ -267,7 +267,7 @@ sudo vi /etc/init.d/noip2 脚本内容如下
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

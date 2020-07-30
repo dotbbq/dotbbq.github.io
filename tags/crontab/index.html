@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
 
 
 
@@ -70,9 +70,9 @@
     </header>
 
     <div class="content post-summary">
-        安装crontab: [root@CentOS ~]# yum install vixie-cron[root@CentOS ~]# yum install crontabs 说明：
+        安装crontab: [root@CentOS ~]# yum install vixie-cron [root@CentOS ~]# yum install crontabs  说明：
  vixie-cron软件包是cron的主程序； crontabs软件包是用来安装、卸装、或列举用来驱动 cron 守护进程的表格的程序。  cron 是linux的内置服务，但它不自动起来，可以用以下的方法启动、关闭这个服务：
-/sbin/service crond start //启动服务/sbin/service crond stop //关闭服务/sbin/service crond restart //重启服务/sbin/service crond reload //重新载入配置 查看crontab服务状态：service crond status
+/sbin/service crond start //启动服务 /sbin/service crond stop //关闭服务 /sbin/service crond restart //重启服务 /sbin/service crond reload //重新载入配置  查看crontab服务状态：service crond status
 手动启动crontab服务：service crond start
 查看crontab服务是否已设置为开机启动，执行命令：ntsysv
 加入开机自动启动:chkconfig --level 35 crond on
@@ -121,9 +121,9 @@ rontab命令 功能说明： 设置计时器。
 
     <div class="content post-summary">
         新建脚本，名为autoback.sh
-#vi autoback.sh 脚本(autoback.sh)内容如下:
-#!/bin/sh#备份网站目录/home/www/tar zcvf /home/backup/www$(date + &quot;%Y%m%d&quot;).tar.gz /home/www/*#备份数据库 www/usr/local/mysql/bin/mysqldump -uroot -ppassword dbname &gt; /home/backup/dbname$(date +&quot;%Y%m%d&quot;).sql#删除三天前的备份cd /home/backup/rm -f *$(date -d -3day +&quot;%Y%m%d&quot;)* 将脚本(autoback.sh)添加到自动执行任务列表:
-#chmod +x autoback.sh#crontab -e59 23 * * * /root/autoback.sh 推荐注册Dropbox，参考**Linux下CLI模式使用Dropbox**，将备份文件自动同步到Dropbox。
+#vi autoback.sh  脚本(autoback.sh)内容如下:
+#!/bin/sh #备份网站目录/home/www/ tar zcvf /home/backup/www$(date + &quot;%Y%m%d&quot;).tar.gz /home/www/* #备份数据库 www /usr/local/mysql/bin/mysqldump -uroot -ppassword dbname &gt; /home/backup/dbname$(date +&quot;%Y%m%d&quot;).sql #删除三天前的备份 cd /home/backup/ rm -f *$(date -d -3day +&quot;%Y%m%d&quot;)*  将脚本(autoback.sh)添加到自动执行任务列表:
+#chmod +x autoback.sh #crontab -e 59 23 * * * /root/autoback.sh  推荐注册Dropbox，参考**Linux下CLI模式使用Dropbox**，将备份文件自动同步到Dropbox。
     </div>
 
     
@@ -173,7 +173,7 @@ rontab命令 功能说明： 设置计时器。
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

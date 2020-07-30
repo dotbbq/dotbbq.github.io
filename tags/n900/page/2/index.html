@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
 
 
 
@@ -72,9 +72,9 @@
     <div class="content post-summary">
         准备
  安装最新uboot 一张至少4g以上的TF卡  下载地址http://releases.nemomobile.org/releases/ 以最新目录为例，下载http://releases.nemomobile.org/releases/latest/images/nemo-armv7hl-n900/里的nemo-armv7hl-n900-mmcblk0p.raw.bz2 解压出raw文件，然后改后缀为img。Windows下用Win32DiskImager将镜像文件写入TF卡。 Linux下可以使用dd命令直接写入，不需要改后缀名：
-alair@e6440:/media/alair/bak/downloads$ sudo dd if=nemo-armv7hl-n900-mmcblk0p.raw of=/dev/sdc bs=1M[sudo] alair 的密码： 记录了3640+1 的读入记录了3640+1 的写出3816816641 bytes (3.8 GB, 3.6 GiB) copied, 185.35 s, 20.6 MB/s Windwos中用winscp在你的N900的/etc/bootmenu.d/新建一个40-nemo.item文件，贴入以下内容：
-ITEM_NAME=&quot;Mer-Nemo Mobile&quot;ITEM_ID=&quot;nemo&quot;ITEM_DEVICE=&quot;${EXT_CARD}p3&quot;ITEM_KERNEL=&quot;uImage&quot;ITEM_FSTYPE=&quot;vfat&quot;ITEM_CMDLINE=&quot;root=/dev/mmcblk0p1 rootwait ro console=ttyO2,115200n8 console=tty0 omapfb.vram=0:2M,1:2M,2:2M mtdoops.mtddev=2 quiet&quot;ITEM_OMAPATAG=1 Linux系统下可以直接SSH连接N900进行操作。 然后root运行
-u-boot-update-bootmenu 关机，插入TF卡，然后推开键盘开机，选Mer-Nemo Mobile进入即可。
+alair@e6440:/media/alair/bak/downloads$ sudo dd if=nemo-armv7hl-n900-mmcblk0p.raw of=/dev/sdc bs=1M [sudo] alair 的密码： 记录了3640+1 的读入 记录了3640+1 的写出 3816816641 bytes (3.8 GB, 3.6 GiB) copied, 185.35 s, 20.6 MB/s  Windwos中用winscp在你的N900的/etc/bootmenu.d/新建一个40-nemo.item文件，贴入以下内容：
+ITEM_NAME=&quot;Mer-Nemo Mobile&quot; ITEM_ID=&quot;nemo&quot; ITEM_DEVICE=&quot;${EXT_CARD}p3&quot; ITEM_KERNEL=&quot;uImage&quot; ITEM_FSTYPE=&quot;vfat&quot; ITEM_CMDLINE=&quot;root=/dev/mmcblk0p1 rootwait ro console=ttyO2,115200n8 console=tty0 omapfb.vram=0:2M,1:2M,2:2M mtdoops.mtddev=2 quiet&quot; ITEM_OMAPATAG=1  Linux系统下可以直接SSH连接N900进行操作。 然后root运行
+u-boot-update-bootmenu  关机，插入TF卡，然后推开键盘开机，选Mer-Nemo Mobile进入即可。
     </div>
 
     
@@ -258,7 +258,7 @@ u-boot-update-bootmenu 关机，插入TF卡，然后推开键盘开机，选Mer
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

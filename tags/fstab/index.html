@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
 
 
 
@@ -73,7 +73,7 @@
         树莓派用的是8g的TF卡，想作为小型NAS有点小，存不了多少东西，于是将一个闲置的32G U盘挂载上，当作存储分区
 以下为操作过程：
 查看磁盘信息
-pi@raspberrypi ~ $ sudo fdisk -lDisk /dev/mmcblk0: 7990 MB, 7990149120 bytes4 heads, 16 sectors/track, 243840 cylinders, total 15605760 sectorsUnits = sectors of 1 * 512 = 512 bytesSector size (logical/physical): 512 bytes / 512 bytesI/O size (minimum/optimal): 512 bytes / 512 bytesDisk identifier: 0x000981cbDevice Boot Start End Blocks Id System/dev/mmcblk0p1 8192 122879 57344 c W95 FAT32 (LBA)/dev/mmcblk0p2 122880 15605759 7741440 83 LinuxDisk /dev/sda: 32.
+pi@raspberrypi ~ $ sudo fdisk -l Disk /dev/mmcblk0: 7990 MB, 7990149120 bytes 4 heads, 16 sectors/track, 243840 cylinders, total 15605760 sectors Units = sectors of 1 * 512 = 512 bytes Sector size (logical/physical): 512 bytes / 512 bytes I/O size (minimum/optimal): 512 bytes / 512 bytes Disk identifier: 0x000981cb Device Boot Start End Blocks Id System /dev/mmcblk0p1 8192 122879 57344 c W95 FAT32 (LBA) /dev/mmcblk0p2 122880 15605759 7741440 83 Linux Disk /dev/sda: 32.
     </div>
 
     
@@ -130,9 +130,9 @@ pi@raspberrypi ~ $ sudo fdisk -lDisk /dev/mmcblk0: 7990 MB, 7990149120 bytes4 
     <div class="content post-summary">
         使用fdisk -l查看分区信息
 以下为需要自动挂载的分区:
-分区 | 格式------------------------------/dev/sd1 | NTFS/dev/sd5 | NTFS/dev/sd6 | NTFS/dev/sd7 | NTFS/dev/sd8 | NTFS 新建挂载目录
-#mkdir /media/{a,b,c,d,e} 编辑fstab文件vi /etc/fstab写入以下内容
-/dev/sda1 /media/a ntfs-3g defaults,iocharset=gb2312 0 0/dev/sda5 /media/b ntfs-3g defaults,iocharset=gb2312 0 0/dev/sda6 /media/c ntfs-3g defaults,iocharset=gb2312 0 0/dev/sda7 /media/d ntfs-3g defaults,iocharset=gb2312 0 0/dev/sda8 /media/e ntfs-3g defaults,iocharset=gb2312 0 0 说明:
+分区 | 格式 ------------------------------ /dev/sd1 | NTFS /dev/sd5 | NTFS /dev/sd6 | NTFS /dev/sd7 | NTFS /dev/sd8 | NTFS  新建挂载目录
+#mkdir /media/{a,b,c,d,e}  编辑fstab文件vi /etc/fstab写入以下内容
+/dev/sda1 /media/a ntfs-3g defaults,iocharset=gb2312 0 0 /dev/sda5 /media/b ntfs-3g defaults,iocharset=gb2312 0 0 /dev/sda6 /media/c ntfs-3g defaults,iocharset=gb2312 0 0 /dev/sda7 /media/d ntfs-3g defaults,iocharset=gb2312 0 0 /dev/sda8 /media/e ntfs-3g defaults,iocharset=gb2312 0 0  说明:
  /dev/sdax 表示分区 /mnt/xxx 表示挂载点 vat/ntfs-3g 表示分区格式 iocharset=xxx 设置字符集,为了支持windows中文目录，应设为gb2312  
     </div>
 
@@ -185,7 +185,7 @@ pi@raspberrypi ~ $ sudo fdisk -lDisk /dev/mmcblk0: 7990 MB, 7990149120 bytes4 
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

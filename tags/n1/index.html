@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
 
 
 
@@ -72,9 +72,9 @@
     <div class="content post-summary">
         上一篇文章介绍了如何在斐迅N1上安装Armbian，现在介绍如何更改软件源为国内镜像。
 编辑/etc/apt/sources.list替换为以下内容：
-deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-freedeb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-freedeb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-freedeb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-freedeb http://ftp.debian.org/debian jessie-backports main接着编辑/etc/apt/sources.list.d/armbian.list ，替换为以下内容：
-deb http://mirrors.tuna.tsinghua.edu.cn/armbian/ buster main buster-utils buster-desktop保存后，刷新缓存更新系统：
-sudo apt updatesudo apt upgrade -y
+deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free deb http://ftp.debian.org/debian jessie-backports main 接着编辑/etc/apt/sources.list.d/armbian.list ，替换为以下内容：
+deb http://mirrors.tuna.tsinghua.edu.cn/armbian/ buster main buster-utils buster-desktop 保存后，刷新缓存更新系统：
+sudo apt update sudo apt upgrade -y 
     </div>
 
     
@@ -145,10 +145,10 @@ Armbian_5.98_Aml-g12_Debian_buster_dev_5.4.0-rc4_20191025.img.xz
  然后输入adb shell reboot update开始从U盘引导Armbian系统，盒子重启后成功引导armbian，此时可以将usb刷机线拔掉，插入一个外接键盘，开始后面操作。
 Armbian系统默认账号为root，密码为1234，按照提示输入账号信息进行登录，登录后会有更改默认密码提示，按照提示更改默认密码。
 接下来会有新建账号提示:
-Creating a new user account. Press &lt;Ctrl-C&gt; to abortPlease provide a username (eg. your forename):可以按照该提示新建账号，或者按Ctrl+c终止，继续用root账号登录。
+Creating a new user account. Press &lt;Ctrl-C&gt; to abort Please provide a username (eg. your forename): 可以按照该提示新建账号，或者按Ctrl+c终止，继续用root账号登录。
 将Armbian安装到N1中 以上只是从U盘成功引导登录Armbian，接下来我们将Armbian安装到N1内置存储(eMMC)，即可拔掉U盘了。
 如果是通过root登录的话，那么直接运行root目录下install.sh即可安装，如下：
- root@aml:~# ./install. shStart script create MBR and filesystem/dev/mmcblk1Start backup u-boot default4＋0 records in4＋0 records out4194304 bytes（4.
+ root@aml:~# ./install. sh Start script create MBR and filesystem /dev/mmcblk1 Start backup u-boot default 4＋0 records in 4＋0 records out 4194304 bytes（4.
     </div>
 
     
@@ -208,7 +208,7 @@ Creating a new user account. Press &lt;Ctrl-C&gt; to abortPlease provide a user
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

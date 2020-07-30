@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
 
 
 
@@ -72,7 +72,7 @@
     <div class="content post-summary">
         登录路由器后台，系统管理&gt;系统设置，将Enable SSH设置为LAN only。
 通过SSH登录路由器，参考以下执行，在此推荐Putty。
-#cd /tmp#wget https://github.com/hq450/fancyss_history_package/raw/master/fancyss_arm/shadowsocks_4.1.1.tar.gz#tar -zxvf shadowsocks_4.1.1.tar.gz#cd shadowsocks#chmod +x install.sh#./install.sh2017年11月19日 14:40:36: 固件平台【koolshare merlinarmv7l】符合安装要求，开始安装插件！2017年11月19日 14:40:36: 清理旧文件2017年11月19日 14:40:36: 开始复制文件！2017年11月19日 14:40:36: 复制相关二进制文件！2017年11月19日 14:40:42: 创建一些二进制文件的软链接！2017年11月19日 14:40:42: 复制ss的脚本文件！2017年11月19日 14:40:44: 复制网页文件！2017年11月19日 14:40:44: 移除安装包！2017年11月19日 14:40:44: 为新安装文件赋予执行权限...2017年11月19日 14:40:44: 设置一些默认值2017年11月19日 14:40:47: 一点点清理工作...2017年11月19日 14:40:47: 插件安装成功，你为什么这么屌？！2017年11月19日 14:40:47: 更新完毕，请等待网页自动刷新！ 完成后重启路由器，在软件中心中即可看到影梭已经安装成功！
+#cd /tmp #wget https://github.com/hq450/fancyss_history_package/raw/master/fancyss_arm/shadowsocks_4.1.1.tar.gz #tar -zxvf shadowsocks_4.1.1.tar.gz #cd shadowsocks #chmod +x install.sh #./install.sh 2017年11月19日 14:40:36: 固件平台【koolshare merlinarmv7l】符合安装要求，开始安装插件！ 2017年11月19日 14:40:36: 清理旧文件 2017年11月19日 14:40:36: 开始复制文件！ 2017年11月19日 14:40:36: 复制相关二进制文件！ 2017年11月19日 14:40:42: 创建一些二进制文件的软链接！ 2017年11月19日 14:40:42: 复制ss的脚本文件！ 2017年11月19日 14:40:44: 复制网页文件！ 2017年11月19日 14:40:44: 移除安装包！ 2017年11月19日 14:40:44: 为新安装文件赋予执行权限... 2017年11月19日 14:40:44: 设置一些默认值 2017年11月19日 14:40:47: 一点点清理工作... 2017年11月19日 14:40:47: 插件安装成功，你为什么这么屌？！ 2017年11月19日 14:40:47: 更新完毕，请等待网页自动刷新！  完成后重启路由器，在软件中心中即可看到影梭已经安装成功！
     </div>
 
     
@@ -135,11 +135,11 @@ Bootloader 意思为引导加载器，即为用于加载操作系统的程序。
 接着，在浏览器地址栏输入http://192.168.2.1/goform/Diagnosis?pingAddr=192.168.2.100|echo&quot;&ldquo;|telnetd回车
 浏览器会跳转到网络测试页面，这个不用理会。
 打开CMD (WIN+R)，telnet连接路由器
-telnet 192.168.2.1 使用路由器管理员帐号登录，默认为admin/admin
+telnet 192.168.2.1  使用路由器管理员帐号登录，默认为admin/admin
 下载Breed到路由器
-cd /tmpwget http://breed.hackpascal.net/breed-mt7620-reset1.bin 刷入Breed
-mtd_write write breed-mt7620-reset1.bin Bootloader 重启路由器
-reboot 相关截图：
+cd /tmp wget http://breed.hackpascal.net/breed-mt7620-reset1.bin  刷入Breed
+mtd_write write breed-mt7620-reset1.bin Bootloader  重启路由器
+reboot  相关截图：
 刷华硕固件 路由器断电，插电时按住Reset键5秒。
 网线连接电脑，浏览192.168.1.1进入Breed Web恢复控制台。
 左侧菜单点击固件更新，在右侧选择固件文件，开始上传更新。
@@ -204,7 +204,7 @@ reboot 相关截图：
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

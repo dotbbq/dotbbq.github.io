@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-	<meta name="generator" content="Hugo 0.74.3" />
+	<meta name="generator" content="Hugo 0.73.0" />
     
         
 <meta charset="utf-8">
@@ -16,7 +16,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
 
 
 
@@ -74,15 +74,15 @@
     <div class="content post-summary">
         误删除了vps上的phpmyadmin，不得已翻阅了半天mysql指南，以下是一些mysql使用实例
 连接管理 链接数据库
-mysql -h localhost -u root -p 退出数据库
-mysql&gt;quit; 数据库管理 查看数据库
-mysql&gt;show databases; 建立数据库
-mysql&gt;create database name; 备份(导出)数据库
-mysqldump -u username -p database &gt; backup_db.sql 还原(导入)数据库
-mysql -u username -p database &lt; backup_db.sql 用户管理 添加用户
-mysql&gt;grant all privileges on databasename.* 'username'@'localhost' identified by 'userpassword' with grant optiton; 删除用户
-mysql&gt;drop user username; 修改密码
-mysql&gt;set password for 'username'@'localhost' = password('userpassword'); 一个创建数据库并添加专用用户的示例:
+mysql -h localhost -u root -p  退出数据库
+mysql&gt;quit;  数据库管理 查看数据库
+mysql&gt;show databases;  建立数据库
+mysql&gt;create database name;  备份(导出)数据库
+mysqldump -u username -p database &gt; backup_db.sql  还原(导入)数据库
+mysql -u username -p database &lt; backup_db.sql  用户管理 添加用户
+mysql&gt;grant all privileges on databasename.* 'username'@'localhost' identified by 'userpassword' with grant optiton;  删除用户
+mysql&gt;drop user username;  修改密码
+mysql&gt;set password for 'username'@'localhost' = password('userpassword');  一个创建数据库并添加专用用户的示例:
     </div>
 
     
@@ -126,13 +126,13 @@ mysql&gt;set password for 'username'@'localhost' = password('userpassword'); �
 刷9G Home
 下载9G-home刷机包:http://pan.baidu.com/share/link?shareid=1527292529&amp;uk=1493434283
 打开CMD，进入到flasher目录，输入如下命令（具体依照本机目录输入）:
-flasher-3.5.exe -F 9ghomeemmc.bin -f 出现提示Suitable USB device not found,waiting. 时，关闭手机，按住U键连接数据线，等待cmd提示开始写入时可放开U键，等待提示完成。 不要开机，切记！
+flasher-3.5.exe -F 9ghomeemmc.bin -f  出现提示Suitable USB device not found,waiting. 时，关闭手机，按住U键连接数据线，等待cmd提示开始写入时可放开U键，等待提示完成。 不要开机，切记！
 接着重新刷Rom文件，即COMBIND那个文件。继续别开机！
 N900超频
 接下来刷入超频包，以下是几个不同等级的超频包
  zImage-700mhz zImage-750mhz zImage-800mhz zImage-850mhz-450dsp zImage-900mhz zImage-900mhz-500dsp zImage-930mhz zImage-930mhz-500dsp zImage-950mhz zImage-950mhz-500dsp  下载地址:http://pan.baidu.com/share/link?shareid=1567324549&amp;uk=1493434283
 这里以超750MHz为例
-flasher-3.5.exe -k zImage-750mhz -f 等到提示完成后，开机即可。 给大家贴出前后两张对比图
+flasher-3.5.exe -k zImage-750mhz -f  等到提示完成后，开机即可。 给大家贴出前后两张对比图
     </div>
 
     
@@ -178,12 +178,12 @@ flasher-3.5.exe -k zImage-750mhz -f 等到提示完成后，开机即可。 给
         感谢NITDroid Project 的辛苦工作，使N900更加的神机！
 使用Nitdroid刷入Android后，系统运行在/home目录，所以/home必须空间足够，N900默认的为 1.9G是不可以的，需要增大/home的容量，推荐参考N900超频和刷9G-home,将/home增大到9G
 添加软件源 确保已添加以下软件源，一般前四个系统已经添加，没有的自己添加。
-名称：Nokia Applications网址：https://downloads.maemo.nokia.com/fremantle/ssu/apps/发布：./组件：空名称：Nokia System Software Updats网址：https://downloads.maemo.nokia.com/fremantle/ssu/mr0发布：./组件：空名称：Ovi网址：https://downloads.maemo.nokia.com/fremantle1.2/ovi/发布：./组件：空名称：maemo.org网址：http://repository.maemo.ory/extras/发布：frmantle−1.3组件：free non−free名称：Fremantle Extras−testing网址：http://repository.maemo.org/extras-testing/发布：fremantle组件：free non−free名称：Fremantle Extras−devel网址：http://repository.maemo.org/extras-devel/发布：fremantle组件：free non−free 开刷 下载N12_UMay.tar.bz2与nitdroid-kernel-2.6.28-07_rc3_armel.deb
+名称：Nokia Applications 网址：https://downloads.maemo.nokia.com/fremantle/ssu/apps/ 发布：./ 组件：空 名称：Nokia System Software Updats 网址：https://downloads.maemo.nokia.com/fremantle/ssu/mr0 发布：./ 组件：空 名称：Ovi 网址：https://downloads.maemo.nokia.com/fremantle1.2/ovi/ 发布：./ 组件：空 名称：maemo.org 网址：http://repository.maemo.ory/extras/ 发布：frmantle−1.3 组件：free non−free 名称：Fremantle Extras−testing 网址：http://repository.maemo.org/extras-testing/ 发布：fremantle 组件：free non−free 名称：Fremantle Extras−devel 网址：http://repository.maemo.org/extras-devel/ 发布：fremantle 组件：free non−free  开刷 下载N12_UMay.tar.bz2与nitdroid-kernel-2.6.28-07_rc3_armel.deb
 115网盘下载地址: http://u.115.com/file/aqpmpqhl http://u.115.com/file/dna7jt6r
 最新的文件在官网的http://downloads.nitdroid.com/e-yes/页，如发现跟新可自行下载最新版本 注意，网盘中提供的N12_UMay.tar.bz2已经解压为N12_UMay.tar，官网的下载后自行解压
 将两个文件拷贝至USB连接模式下的根目录，即**/home/user/MyDocs/**
 建议通过SSH连接N900，在PC上使用Putty操作，要么就在手机上运行x-terminal
-# apt-get install nitdroid-installer# mkdir /and# mount /home /and# cd /and# tar xvf /home/user/MyDocs/N12_UMay.tar #注意这里已经是.tar格式# dpkg -i /home/user/MyDocs/nitdroid-kernel-2.
+# apt-get install nitdroid-installer # mkdir /and # mount /home /and # cd /and # tar xvf /home/user/MyDocs/N12_UMay.tar #注意这里已经是.tar格式 # dpkg -i /home/user/MyDocs/nitdroid-kernel-2.
     </div>
 
     
@@ -248,7 +248,7 @@ flasher-3.5.exe -k zImage-750mhz -f 等到提示完成后，开机即可。 给
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

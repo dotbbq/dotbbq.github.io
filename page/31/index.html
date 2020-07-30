@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-	<meta name="generator" content="Hugo 0.74.3" />
+	<meta name="generator" content="Hugo 0.73.0" />
     
         
 <meta charset="utf-8">
@@ -16,7 +16,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070679" />
 
 
 
@@ -76,8 +76,8 @@
 该软件的具体解释为Coreutils Progress Viewer，即核心程序进度查看，用它可以监视很多linux程序的执行情况，比如cp、mv、dd、tar,、gzip、cat等等，甚至于firefox的下载进度或者nginx的运行情况。
 安装progress progress主页 https://github.com/Xfennec/progress
 安装progress方法
-git clone https://github.com/Xfennec/progress.gitcd progressmakemake install 使用progress 简单的执行方法
-progress 几个示例：
+git clone https://github.com/Xfennec/progress.git cd progress make make install  使用progress 简单的执行方法
+progress  几个示例：
   监控所有可监控软件的执行情况
 watch progress -q
   然后进行文件操作即可看到如下内容:
@@ -134,11 +134,11 @@ progress -c nginx
     <div class="content post-summary">
         Google Authenticator开源版主页 https://github.com/google/google-authenticator
 安装Google Authenticator Ubuntu已经包含libpam-google-authenticator软件(Ubuntu 11.10以上版本),可以直接使用apt-get安装
-apt-get install libpam-google-authenticator 其他系统可以通过源码编译安装
-git clone https://github.com/google/google-authenticator-libpam.gitcd google-authenticator-libpam/./bootstrap.sh./configuremakemake install 注意：在Debian7中执行./configure时可能存在以下错误提示
-configure: error: Unable to find the PAM library or the PAM header files 在此需要安装libpam0g-dev和libtool
-apt-get -y install libpam0g-dev libtool 设置Google Authenticator 在手机端搜索安装Google Authenticator
-google-authenticatorDo you want authentication tokens to be time-based (y/n) y 然后出现二维码，使用手机端Google Authenticator扫码,接下来服务器端继续设置
+apt-get install libpam-google-authenticator  其他系统可以通过源码编译安装
+git clone https://github.com/google/google-authenticator-libpam.git cd google-authenticator-libpam/ ./bootstrap.sh ./configure make make install  注意：在Debian7中执行./configure时可能存在以下错误提示
+configure: error: Unable to find the PAM library or the PAM header files  在此需要安装libpam0g-dev和libtool
+apt-get -y install libpam0g-dev libtool  设置Google Authenticator 在手机端搜索安装Google Authenticator
+google-authenticator Do you want authentication tokens to be time-based (y/n) y  然后出现二维码，使用手机端Google Authenticator扫码,接下来服务器端继续设置
 如果没有出现二维码，可以将提示的以**https://www.google.com/chart?**开头的连接复制到浏览器中，就可以看到二维码了
 Do you want me to update your &quot;/root/.
     </div>
@@ -198,11 +198,11 @@ Do you want me to update your &quot;/root/.
 
     <div class="content post-summary">
         天朝的dns服务商尿性不是一般的大，动不动就抽风或者劫持，为了避免这种情况，可以在树莓派上安装Dnsmasq来加速dns解析，提高网络浏览体验。
-安装配置dnsmasq apt-get install dnsmasq 配置dnsmasq,vi /etc/dnsmasq.conf
+安装配置dnsmasq apt-get install dnsmasq  配置dnsmasq,vi /etc/dnsmasq.conf
 我的配置文件如下：
-domain=Raspi2resolv-file=/etc/resolv.dnsmasqconf-dir=/etc/dnsmasq.dmin-port=4096server=114.114.114.114server=114.114.115.115server=223.5.5.5server=223.6.6.6server=119.29.29.29server=182.254.116.116server=112.124.47.27server=114.215.126.16server=101.226.4.6server=218.30.118.6server=42.120.21.30server=199.91.73.222server=178.79.131.110server=8.8.8.8server=8.8.4.4cache-size=10000 配置完重启dnsmasq服务
-service dnsmasq restart 其中的server字段为上游DNS
-配置dnsmasq-china-list git clone https://github.com/felixonmars/dnsmasq-china-list.gitcd dnsmasq-china-list/cp *.conf /etc/dnsmasq.d/service dnsmasq restart 至此设置完成，可以在路由器中将首选dns设为树莓派ip，这样局域网内的所有设备都可以体验dns解析加速了！
+domain=Raspi2 resolv-file=/etc/resolv.dnsmasq conf-dir=/etc/dnsmasq.d min-port=4096 server=114.114.114.114 server=114.114.115.115 server=223.5.5.5 server=223.6.6.6 server=119.29.29.29 server=182.254.116.116 server=112.124.47.27 server=114.215.126.16 server=101.226.4.6 server=218.30.118.6 server=42.120.21.30 server=199.91.73.222 server=178.79.131.110 server=8.8.8.8 server=8.8.4.4 cache-size=10000  配置完重启dnsmasq服务
+service dnsmasq restart  其中的server字段为上游DNS
+配置dnsmasq-china-list git clone https://github.com/felixonmars/dnsmasq-china-list.git cd dnsmasq-china-list/ cp *.conf /etc/dnsmasq.d/ service dnsmasq restart  至此设置完成，可以在路由器中将首选dns设为树莓派ip，这样局域网内的所有设备都可以体验dns解析加速了！
     </div>
 
     
@@ -273,7 +273,7 @@ service dnsmasq restart 其中的server字段为上游DNS
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

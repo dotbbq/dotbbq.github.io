@@ -180,8 +180,8 @@ curl -s -v --request PUT --header &amp;quot;X-ApiKey: ${API_KEY}&amp;quot; --dat
 &lt;p&gt;&lt;strong&gt;树莓派GPIO针脚说明&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/Pi-GPIO-header-26-sm.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;DHT11与树莓派链接&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;VCC连接+3V3 
-DATA连接GPIO4 
+&lt;p&gt;VCC连接+3V3
+DATA连接GPIO4
 GND链接GND&lt;/p&gt;
 &lt;h3 id=&#34;软件部分&#34;&gt;软件部分&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;安装wiringPi&lt;/strong&gt;&lt;/p&gt;

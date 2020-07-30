@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
 
 
 
@@ -71,11 +71,11 @@
 
     <div class="content post-summary">
         安装speedtest-cli 安装speedtest-cli方法如下:
-sudo apt-get install python-pipsudo pip install speedtest-cli 或
-pip install git+https://github.com/sivel/speedtest-cli.git 或
-git clone https://github.com/sivel/speedtest-cli.gitpython speedtest-cli/setup.py install 或
-wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest_cli.pychmod +x speedtest-cli 或
-curl -Lo speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest_cli.pychmod +x speedtest-cli 使用speedtest-cli root@MyUbuntuCloud:~# speedtest-cli -husage: speedtest-cli [-h] [--bytes] [--share] [--simple] [--list][--server SERVER] [--mini MINI] [--source SOURCE][--timeout TIMEOUT] [--version]Command line interface for testing internet bandwidth using speedtest.
+sudo apt-get install python-pip sudo pip install speedtest-cli  或
+pip install git+https://github.com/sivel/speedtest-cli.git  或
+git clone https://github.com/sivel/speedtest-cli.git python speedtest-cli/setup.py install  或
+wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest_cli.py chmod +x speedtest-cli  或
+curl -Lo speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest_cli.py chmod +x speedtest-cli  使用speedtest-cli root@MyUbuntuCloud:~# speedtest-cli -h usage: speedtest-cli [-h] [--bytes] [--share] [--simple] [--list] [--server SERVER] [--mini MINI] [--source SOURCE] [--timeout TIMEOUT] [--version] Command line interface for testing internet bandwidth using speedtest.
     </div>
 
     
@@ -129,11 +129,11 @@ curl -Lo speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/mas
 
     <div class="content post-summary">
         安装python
-$sudo apt-get install python-dev 更新
-$sudo easy_install -U distribute 安装python-pip
-$sudo apt-get install python-pip 添加国内pypi镜像
+$sudo apt-get install python-dev  更新
+$sudo easy_install -U distribute  安装python-pip
+$sudo apt-get install python-pip  添加国内pypi镜像
 在~/.pip/pip.conf中添加
-[global]index-url = http://mirrors.aliyun.com/pypi/simple/ 安装python的GPIO库
+[global] index-url = http://mirrors.aliyun.com/pypi/simple/  安装python的GPIO库
 $sudo pip install rpi.gpio 
     </div>
 
@@ -184,12 +184,12 @@ $sudo pip install rpi.gpio
 
     <div class="content post-summary">
         准备工作 下载Google Appengine SDK For Pyahont与goAgent
-1.Google App Engine SDK for Pythonhttps://developers.google.com/appengine/downloads?hl=zh-CN#Google_App_Engine_SDK_for_Python2.goagenthttps://code.google.com/p/goagent/ 下载后解压，将goagent文件夹放到google_appengine目录下，目录结构如下:
-~/google_appengine/goagent-goagent-d488f2 准备好Google Application_ID与两步验证密码,如何申请问Google
+1.Google App Engine SDK for Python https://developers.google.com/appengine/downloads?hl=zh-CN#Google_App_Engine_SDK_for_Python 2.goagent https://code.google.com/p/goagent/  下载后解压，将goagent文件夹放到google_appengine目录下，目录结构如下:
+~/google_appengine/goagent-goagent-d488f2  准备好Google Application_ID与两步验证密码,如何申请问Google
 配置goagent 编辑~/google_appengine/goagent-goagent-d488f2/local/proxy.ini
 填写正确的appid，在此建议将profile由默认的google_cn改为google_hk
 参考以下步骤执行：
-aquan@edge ~/google_appengine $ python appcfg.py update goagent-goagent-d4488f2/server/python/07:03 PM Host: appengine.google.com07:03 PM Application: wrchiublog; version: 107:03 PM Starting update of app: wrchiublog, version: 107:03 PM Getting current resource limits.Email: wrchiu@126.com //在此填写googleidPassword for wrchiu@126.com: //此处填写两步验证密码，而不是帐号密码07:04 PM Scanning files on local disk.
+aquan@edge ~/google_appengine $ python appcfg.py update goagent-goagent-d4488f2/server/python/ 07:03 PM Host: appengine.google.com 07:03 PM Application: wrchiublog; version: 1 07:03 PM Starting update of app: wrchiublog, version: 1 07:03 PM Getting current resource limits. Email: wrchiu@126.com //在此填写googleid Password for wrchiu@126.com: //此处填写两步验证密码，而不是帐号密码 07:04 PM Scanning files on local disk.
     </div>
 
     
@@ -250,7 +250,7 @@ aquan@edge ~/google_appengine $ python appcfg.py update goagent-goagent-d4488f2/
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

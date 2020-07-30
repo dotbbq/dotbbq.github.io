@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
 
 
 
@@ -117,8 +117,8 @@ apt-get install python-software-properties apt-get install software-properties-c
 
     <div class="content post-summary">
         中国国内推荐阿里云的开源镜像服务，地址为http://mirrors.aliyun.com/
-vi /etc/apt/sources.list 将默认的raspbian.org源注释(#)掉，加入阿里云的raspbian源
-deb http://mirrors.aliyun.com/raspbian/raspbian/ jessie main non-free contribdeb-src http://mirrors.aliyun.com/raspbian/raspbian/ jessie main non-free contrib 更新系统
+vi /etc/apt/sources.list  将默认的raspbian.org源注释(#)掉，加入阿里云的raspbian源
+deb http://mirrors.aliyun.com/raspbian/raspbian/ jessie main non-free contrib deb-src http://mirrors.aliyun.com/raspbian/raspbian/ jessie main non-free contrib  更新系统
 apt-get update&amp;&amp;apt-get upgrade -y 
     </div>
 
@@ -169,8 +169,8 @@ apt-get update&amp;&amp;apt-get upgrade -y
 
     <div class="content post-summary">
         安装apt-spy
-#apt-get install apt-spy 使用apt-spy选择最佳源
-#apt-spy update#apt-spy -d stable -a asia -t 3 结果保存在/etc/apt/sources.list.d/apt-spy.list，可手动替换到/etc/apt/sources.list
+#apt-get install apt-spy  使用apt-spy选择最佳源
+#apt-spy update #apt-spy -d stable -a asia -t 3  结果保存在/etc/apt/sources.list.d/apt-spy.list，可手动替换到/etc/apt/sources.list
 apt-spy选项:
  -d 系统版本，可选stable,testing,unstable -a 区域,如asia,europe等，可用项可cat /etc/apt-spy.conf -t 超时阀值(s)，可筛掉长时间不响应的地址  
     </div>
@@ -233,7 +233,7 @@ apt-spy选项:
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

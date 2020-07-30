@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
 
 
 
@@ -88,7 +88,7 @@ qemu-system-i386 -cdrom image.iso -hdd disk.img -boot d
 其中-boot后面的d代表从光盘启动，可用引导项：a, b (软驱 1,2), c (第一块硬盘), d (第一个CD-ROM), n-p (从网络启动), 默认为第一块硬盘。
   注释
 以上qemu-system-i386命令，为启动i386虚拟环境命令，同样qemu可以模拟其他环境，可使用命令如下：
-qemu-system-aarch64.exeqemu-system-aarch64w.exeqemu-system-alpha.exeqemu-system-alphaw.
+qemu-system-aarch64.exe qemu-system-aarch64w.exe qemu-system-alpha.exe qemu-system-alphaw.
     </div>
 
     
@@ -127,12 +127,12 @@ qemu-system-aarch64.exeqemu-system-aarch64w.exeqemu-system-alpha.exeqemu-syst
     </header>
 
     <div class="content post-summary">
-        pdksh替代bash $sudo apt-get install pdksh$sudo vi /etc/shells 添加/bin/pdksh到/etc/shells文件
-$chsh -s /bin/pdksh 重新登录即可。
+        pdksh替代bash $sudo apt-get install pdksh $sudo vi /etc/shells  添加/bin/pdksh到/etc/shells文件
+$chsh -s /bin/pdksh  重新登录即可。
 修改SSH端口 #vi /etc/ssh/sshd_config  将Port 22中的22改为自定义数字即可
-# /etc/init.d/ssh restart dropbear替代openssh $sudo apt-get install dropbear$sudo /etc/init.d/ssh stop$sudo vi /etc/default/dropbear 修改NO_START=0,修改DROPBEAR_PORT为自定义端口号
-$sudo /etc/init.d/dropbear start$sudo apt-get remove openssh-server$sudo apt-get autoremove 关闭多余的TTY Ubuntu 12.04 server如下操作
-#cd /etc/init/#mv tty2.conf tty2.conf.bak#mv tty3.conf tty2.conf.bak#mv tty4.conf tty2.conf.bak#mv tty5.conf tty2.conf.bak#mv tty6.conf tty2.conf.bak#reboot Debian 7如下操作
+# /etc/init.d/ssh restart  dropbear替代openssh $sudo apt-get install dropbear $sudo /etc/init.d/ssh stop $sudo vi /etc/default/dropbear  修改NO_START=0,修改DROPBEAR_PORT为自定义端口号
+$sudo /etc/init.d/dropbear start $sudo apt-get remove openssh-server $sudo apt-get autoremove  关闭多余的TTY Ubuntu 12.04 server如下操作
+#cd /etc/init/ #mv tty2.conf tty2.conf.bak #mv tty3.conf tty2.conf.bak #mv tty4.conf tty2.conf.bak #mv tty5.conf tty2.conf.bak #mv tty6.conf tty2.conf.bak #reboot  Debian 7如下操作
     </div>
 
     
@@ -187,11 +187,11 @@ $sudo /etc/init.d/dropbear start$sudo apt-get remove openssh-server$sudo apt-g
 在此提供镜像下载http://www.getos.org/btsync/
 安装BitTorrent Sync Windows版本，双击下载后的EXE文件安装。
 Linux版，解压下载后的btsync_i386.tar.gz，运行即可
-tar zxvf btsync_i386.tar.gzcp btsync /usr/bin./btsync 然后可以通过127.0.0.1:8888来进行设置管理
+tar zxvf btsync_i386.tar.gz cp btsync /usr/bin ./btsync  然后可以通过127.0.0.1:8888来进行设置管理
 为了安全期间，不推荐使用默认配置，建议自定义端口
-btsync --dump-sample-config&gt;bs.confvi bs.conf 找到如下内容，将8888修改为自定义端口号
-&quot;webui&quot; :{&quot;listen&quot; : &quot;0.0.0.0:8888&quot; // remove field to disable WebUI 然后通过以下命令加载自定义配置文件
-btsync --config bs.conf  Windows版与Linux版的软件界面大致相同，以下以linux为例说明。
+btsync --dump-sample-config&gt;bs.conf vi bs.conf  找到如下内容，将8888修改为自定义端口号
+&quot;webui&quot; : { &quot;listen&quot; : &quot;0.0.0.0:8888&quot; // remove field to disable WebUI  然后通过以下命令加载自定义配置文件
+btsync --config bs.conf   Windows版与Linux版的软件界面大致相同，以下以linux为例说明。
 配置BitTorrent Sync 第一次使用BitTorrent Sync需要进行一系列设置，如下所示：
 设置管理员账号以及密码 *Windows不需要
 账号设定完成后BitTorrent Sync会提示登录以继续使用，登录后继续下面设置。
@@ -259,7 +259,7 @@ btsync --config bs.conf  Windows版与Linux版的软件界面大致相同，以
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

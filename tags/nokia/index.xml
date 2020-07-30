@@ -1130,10 +1130,10 @@ sudo ./pcd8544_rpi
       <description>&lt;p&gt;N900采用的maemo是基于debian的linux系统，通过自带的application manager管理软件时，操作体验还有待改进，所以这里推荐通过ssh连接，使用cli来进行相应操作。
 需要在手机端安装OpenSSH来开启SSH服务，在application manager的system目录下，找到&lt;strong&gt;openssh Client and Server&lt;/strong&gt;安装，当然如果你不需要在手机端进行SSH登陆的话，那可以只安装server即可。
 安装时会提示输入密码，这个就是以后连接手机SSH的服务密码。
-安装完成后SSH server会默认启动，现在你可以通过wifi连接局域网，然后需要知道自己当前的IP（可以通过Tp-link后台查看，或者手机端安装&lt;strong&gt;Personal IP Address&lt;/strong&gt;开显示)，再推荐安装&lt;strong&gt;SSH Status and Swither&lt;/strong&gt;，可以在手机的status显示SSH状态，并管理SSH server启动/停止。 
+安装完成后SSH server会默认启动，现在你可以通过wifi连接局域网，然后需要知道自己当前的IP（可以通过Tp-link后台查看，或者手机端安装&lt;strong&gt;Personal IP Address&lt;/strong&gt;开显示)，再推荐安装&lt;strong&gt;SSH Status and Swither&lt;/strong&gt;，可以在手机的status显示SSH状态，并管理SSH server启动/停止。
 &lt;img src=&#34;https://unixetc.com/imgs/698163850.webp&#34; alt=&#34;ssh status&#34;&gt;&lt;/p&gt;
 &lt;p&gt;然后推荐使用Putty进行链接，在CLI模式下管理软件，可以在&lt;a href=&#34;http://maemo.org/&#34;&gt;http://maemo.org/&lt;/a&gt;上查看软件目录以及简介，通过&lt;code&gt;apt-get install&lt;/code&gt;命令来安装，以下为一些apt-get使用简介&lt;/p&gt;
-&lt;p&gt;使用方法: 
+&lt;p&gt;使用方法:
 apt-get [选项] 命令
 apt-get [选项] install|remove pkg1 [pkg2 &amp;hellip;]
 apt-get [选项] source pkg1 [pkg2 &amp;hellip;]&lt;/p&gt;

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-	<meta name="generator" content="Hugo 0.74.3" />
+	<meta name="generator" content="Hugo 0.73.0" />
     
         
 <meta charset="utf-8">
@@ -16,7 +16,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
 
 
 
@@ -73,11 +73,11 @@
 
     <div class="content post-summary">
         首先查看usb设备
-pi@raspi ~ $ lsusbBus 001 Device 002: ID 0424:9514 Standard Microsystems Corp.Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hubBus 001 Device 003: ID 0424:ec00 Standard Microsystems Corp.Bus 001 Device 004: ID 0ace:1215 ZyDAS ZD1211B 802.11g 注意，最后一行为无线网卡信息
+pi@raspi ~ $ lsusb Bus 001 Device 002: ID 0424:9514 Standard Microsystems Corp. Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub Bus 001 Device 003: ID 0424:ec00 Standard Microsystems Corp. Bus 001 Device 004: ID 0ace:1215 ZyDAS ZD1211B 802.11g  注意，最后一行为无线网卡信息
 打开https://wiki.debian.org/WiFi，查看是否有对照型号的固件
 安装对应的固件
-pi@raspi ~ $ sudo apt-get install zd1211-firmware 完成后使用iwconfig检查是否已经安装成功
-pi@raspi ~ $ iwconfigwlan0 IEEE 802.11bg ESSID:off/anyMode:Managed Access Point: Not-Associated Tx-Power=20 dBmRetry long limit:7 RTS thr:off Fragment thr:offPower Management:offlo no wireless extensions.
+pi@raspi ~ $ sudo apt-get install zd1211-firmware  完成后使用iwconfig检查是否已经安装成功
+pi@raspi ~ $ iwconfig wlan0 IEEE 802.11bg ESSID:off/any Mode:Managed Access Point: Not-Associated Tx-Power=20 dBm Retry long limit:7 RTS thr:off Fragment thr:off Power Management:off lo no wireless extensions.
     </div>
 
     
@@ -136,9 +136,9 @@ pi@raspi ~ $ iwconfigwlan0 IEEE 802.11bg ESSID:off/anyMode:Managed Access Poin
     <div class="content post-summary">
         什么是youtube-dl youtube-dl是一个简单的下载youtube视频脚本工具，基于Python。
 安装youtube-dl 官方安装方法
-sudo curl https://yt-dl.org/latest/youtube-dl -o /usr/local/bin/youtube-dlsudo chmod a+x /usr/local/bin/youtube-dl 或者
-sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dlsudo chmod a+x /usr/local/bin/youtube-dl 还有两种方法:
-sudo pip install youtube-dlbrew install youtube-dl 使用youtube-dl youtube-dl [OPTIONS] URL [URL...] youtube-dl官网 https://github.com/rg3/youtube-dl/
+sudo curl https://yt-dl.org/latest/youtube-dl -o /usr/local/bin/youtube-dl sudo chmod a+x /usr/local/bin/youtube-dl  或者
+sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl sudo chmod a+x /usr/local/bin/youtube-dl  还有两种方法:
+sudo pip install youtube-dl brew install youtube-dl  使用youtube-dl youtube-dl [OPTIONS] URL [URL...]  youtube-dl官网 https://github.com/rg3/youtube-dl/
     </div>
 
     
@@ -187,8 +187,8 @@ tzselect
   然后根据提示，选择时区
  手动设置**/etc/localtime**
 rm /etc/localtime ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-  安装配置NTP sudo apt-get install ntp ntpdate 编辑ntp配置文件**/etc/ntp.conf**，添加以下内容
-server 0.asia.pool.ntp.orgserver 1.asia.pool.ntp.orgserver 2.asia.pool.ntp.orgserver 3.asia.pool.ntp.org 重启ntp服务
+  安装配置NTP sudo apt-get install ntp ntpdate  编辑ntp配置文件**/etc/ntp.conf**，添加以下内容
+server 0.asia.pool.ntp.org server 1.asia.pool.ntp.org server 2.asia.pool.ntp.org server 3.asia.pool.ntp.org  重启ntp服务
 service ntp restart 
     </div>
 
@@ -254,7 +254,7 @@ service ntp restart
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

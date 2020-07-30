@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
 
 
 
@@ -71,8 +71,8 @@
 
     <div class="content post-summary">
         先安装h264编码器
-#!/bin/bashcd /usr/srcgit clone git://git.videolan.org/x264cd x264./configure --host=arm-unknown-linux-gnueabi --enable-static --disable-openclmakesudo make install 下载源码编译安装ffmpeg
-cd /usr/srcgit clone git://source.ffmpeg.org/ffmpeg.gitcd ffmpegsudo ./configure --arch=armel --target-os=linux --enable-gpl --enable-libx264 --enable-nonfreemakesudo make install 由于树莓派原因，这个过程很长……很长…… 建议开screen，然后Ctrl+a+d
+#!/bin/bash cd /usr/src git clone git://git.videolan.org/x264 cd x264 ./configure --host=arm-unknown-linux-gnueabi --enable-static --disable-opencl make sudo make install  下载源码编译安装ffmpeg
+cd /usr/src git clone git://source.ffmpeg.org/ffmpeg.git cd ffmpeg sudo ./configure --arch=armel --target-os=linux --enable-gpl --enable-libx264 --enable-nonfree make sudo make install  由于树莓派原因，这个过程很长……很长…… 建议开screen，然后Ctrl+a+d
     </div>
 
     
@@ -118,11 +118,11 @@ cd /usr/srcgit clone git://source.ffmpeg.org/ffmpeg.gitcd ffmpegsudo ./config
 
     <div class="content post-summary">
         树莓派挂载移动存储 可以挂载移动硬盘或者大容量的U盘，参考以下文章：
- 树莓派挂载U盘作为存储分区 fdisk分区实例  安装配置minidlna #sudo apt-get install -y minidlna 编辑minidlna配置文件/etc/minidlna.conf，内容如下：
-media_dir=/home/pi/dlnadoc #媒体文件目录db_dir=/var/lib/minidlna #minidlna通过SQLite来建立媒体库索引，因此需要定义数据库目录listening_ip=192.168.1.111 #树莓派IPport=8200	#web端口，可以通过ip:port查看索引状态friendly_name=Raspi_DLNA #服务器命名 重启minidlna服务
-sudo service minidlna restart 强制刷新
-sudo service minidlna force-reload 查看索引状态,浏览http://192.168.1.111:8200
-MiniDLNA statusAudio files: 0Video files: 2Image files: 0 DLNA客户端 PC
+ 树莓派挂载U盘作为存储分区 fdisk分区实例  安装配置minidlna #sudo apt-get install -y minidlna  编辑minidlna配置文件/etc/minidlna.conf，内容如下：
+media_dir=/home/pi/dlnadoc #媒体文件目录 db_dir=/var/lib/minidlna #minidlna通过SQLite来建立媒体库索引，因此需要定义数据库目录 listening_ip=192.168.1.111 #树莓派IP port=8200	#web端口，可以通过ip:port查看索引状态 friendly_name=Raspi_DLNA #服务器命名  重启minidlna服务
+sudo service minidlna restart  强制刷新
+sudo service minidlna force-reload  查看索引状态,浏览http://192.168.1.111:8200
+MiniDLNA status Audio files: 0 Video files: 2 Image files: 0  DLNA客户端 PC
 Windows7下将网络设置为家庭网络，完成后刷新，在网络中媒体设备下就可以自动发现Rasp_DLNA。
 点击进去就可以使用MediaPlayer来浏览。
 Android
@@ -187,7 +187,7 @@ RushPlayer
 DietPi下载地址 http://fuzon.co.uk/downloads/DietPi.7z
 这个压缩包91MB，解压后的img文件522MB,比官方的小多了。
 然后将镜像写入到SD卡中，linux下使用dd
-dd if=DietPi_v74.img of=/dev/sdc bs=2M Windows下使用Win32 Disk Imager，戳这里
+dd if=DietPi_v74.img of=/dev/sdc bs=2M  Windows下使用Win32 Disk Imager，戳这里
 写入完成后将SD卡插入树莓派，加电启动。
 预设置Wifi链接 首次使用时，可以通过编辑dietpi.txt来进行wifi预设置。
 将TF卡插入电脑读卡器，打开对应的磁盘，找到dietpi.txt文件，打开。
@@ -196,10 +196,10 @@ dd if=DietPi_v74.img of=/dev/sdc bs=2M Windows下使用Win32 Disk Imager，戳�
 配置DietPi DietPi默认用户名密码为root dietpi，第一次启动DietPi提示检测升级，按提示操作。
 不过由于天朝网路问题，可能升级比较缓慢，建议Ctrl+c终止升级，修改sources.list为朝内镜像。
 DietPi默认没有vi,使用nano进行编辑，添加Aliyun源。
-deb http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contribdeb-src http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib 更新软件
-apt-get update&amp;&amp;apt-get upgrade -y 然后运行dietpi-config进行配置。
+deb http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib deb-src http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib  更新软件
+apt-get update&amp;&amp;apt-get upgrade -y  然后运行dietpi-config进行配置。
 DietPi - Config
- ┌────┤ ---------- DietPi-Config ---------- ├─────┐│ Hardware : Raspberry Pi 1 (512MB) ││ ││ 1 Display Options ││ 2 Audio Options ││ 3 Performance Options ││ 4 Advanced Options ││ 5 Language/Regional Options ││ 6 Security Options ││ 7 Networking Options ││ 8 AutoBoot Options ││ 9 Tools ││ ││ ││ &lt;Ok&gt; &lt;Exit&gt; ││ │└────────────────────────────────────────────────┘ 推荐配置：
+ ┌────┤ ---------- DietPi-Config ---------- ├─────┐ │ Hardware : Raspberry Pi 1 (512MB) │ │ │ │ 1 Display Options │ │ 2 Audio Options │ │ 3 Performance Options │ │ 4 Advanced Options │ │ 5 Language/Regional Options │ │ 6 Security Options │ │ 7 Networking Options │ │ 8 AutoBoot Options │ │ 9 Tools │ │ │ │ │ │ &lt;Ok&gt; &lt;Exit&gt; │ │ │ └────────────────────────────────────────────────┘  推荐配置：
     </div>
 
     
@@ -264,7 +264,7 @@ DietPi - Config
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

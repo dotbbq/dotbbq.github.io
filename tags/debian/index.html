@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
 
 
 
@@ -70,7 +70,7 @@
     </header>
 
     <div class="content post-summary">
-        系统信息 alair@aml:~ $ inxi -FSystem: Host: aml Kernel: 5.5.0-rc6-aml-s9xxx aarch64 bits: 32 Console: tty 0 Distro: Ubuntu 18.04.4 LTSMachine: No /sys/class/dmi; using dmidecode: dmidecode is not installed.CPU: Quad core ARMv8 rev 4 (v8l) (-MCP-) (ARM)clock speeds: max: 1512 MHz 1: 1512 MHz 2: 1512 MHz 3: 1512 MHz 4: 1512 MHzGraphics: Card: Failed to Detect Video Card!Display Server: N/A driver: N/A tty size: 254x72 Advanced Data: N/A out of XAudio: Card AMLGX driver: AMLGX Sound: ALSA v: k5.
+        系统信息 alair@aml:~ $ inxi -F System: Host: aml Kernel: 5.5.0-rc6-aml-s9xxx aarch64 bits: 32 Console: tty 0 Distro: Ubuntu 18.04.4 LTS Machine: No /sys/class/dmi; using dmidecode: dmidecode is not installed. CPU: Quad core ARMv8 rev 4 (v8l) (-MCP-) (ARM) clock speeds: max: 1512 MHz 1: 1512 MHz 2: 1512 MHz 3: 1512 MHz 4: 1512 MHz Graphics: Card: Failed to Detect Video Card! Display Server: N/A driver: N/A tty size: 254x72 Advanced Data: N/A out of X Audio: Card AMLGX driver: AMLGX Sound: ALSA v: k5.
     </div>
 
     
@@ -122,7 +122,7 @@
  Low system resource requirements. Faster file reading and writing speeds. Faster syncing with the Yandex.Disk server. Manage files offline.  控制台客户端可以安装在以下操作系统上：
  Ubuntu Linux 8.04 及以上版本 Debian 5 及以上版本 Fedora 9 及以上版本 Red Hat Enterprise Linux 6 及以上版本 CentOS 6 及以上版本  安装客户端 要自动安装客户端，请使用命令进行快速软件包安装。
 .deb软件包 安装示例
-echo &quot;deb http://repo.yandex.ru/yandex-disk/deb/ stable main&quot; | sudo tee -a /etc/apt/sources.list.d/yandex-disk.list &gt; /dev/nullwget http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG -O- | sudo apt-key add - sudo apt-get updatesudo apt-get install -y yandex-disk要手动安装客户端，请从下面的相应链接下载相应版本的软件包。
+echo &quot;deb http://repo.yandex.ru/yandex-disk/deb/ stable main&quot; | sudo tee -a /etc/apt/sources.list.d/yandex-disk.list &gt; /dev/null wget http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG -O- | sudo apt-key add - sudo apt-get update sudo apt-get install -y yandex-disk 要手动安装客户端，请从下面的相应链接下载相应版本的软件包。
     </div>
 
     
@@ -173,9 +173,9 @@ echo &quot;deb http://repo.yandex.ru/yandex-disk/deb/ stable main&quot; | sudo t
     <div class="content post-summary">
         上一篇文章介绍了如何在斐迅N1上安装Armbian，现在介绍如何更改软件源为国内镜像。
 编辑/etc/apt/sources.list替换为以下内容：
-deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-freedeb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-freedeb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-freedeb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free# deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-freedeb http://ftp.debian.org/debian jessie-backports main接着编辑/etc/apt/sources.list.d/armbian.list ，替换为以下内容：
-deb http://mirrors.tuna.tsinghua.edu.cn/armbian/ buster main buster-utils buster-desktop保存后，刷新缓存更新系统：
-sudo apt updatesudo apt upgrade -y
+deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free deb http://ftp.debian.org/debian jessie-backports main 接着编辑/etc/apt/sources.list.d/armbian.list ，替换为以下内容：
+deb http://mirrors.tuna.tsinghua.edu.cn/armbian/ buster main buster-utils buster-desktop 保存后，刷新缓存更新系统：
+sudo apt update sudo apt upgrade -y 
     </div>
 
     
@@ -248,7 +248,7 @@ sudo apt updatesudo apt upgrade -y
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

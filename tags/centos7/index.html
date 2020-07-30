@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
 
 
 
@@ -73,17 +73,17 @@
         Firefox Send是什么？ Firefox Send是一个简单、私密的文件分享服务，使用Firefox Send端到端加密分享文件，链接到期即焚。分享更私密，文件到期真正无痕迹。
 安装ffsend ffsend是一款Firefox Send的客户端，支持多种操作系统(Linux、Windows、MacOS&hellip;)
 以下为CentOS7安装ffsend实例：
-#wget https://glare.now.sh/timvisee/ffsend/linux-x64-static -o /usr/local/bin/ffsend#chmod +x /usr/local/bin/ffsend 其他版本安装可以参考ffsend官网和ffsend官方下载
+#wget https://glare.now.sh/timvisee/ffsend/linux-x64-static -o /usr/local/bin/ffsend #chmod +x /usr/local/bin/ffsend  其他版本安装可以参考ffsend官网和ffsend官方下载
 ffsend使用方法 上传文件
-ffsend upload fenix.apkUpload completehttps://send.firefox.com/download/4cecb9c1ab628f8e/#m5is-YRSfnBIQ-pBaSds0A 高级上传
+ffsend upload fenix.apk Upload complete https://send.firefox.com/download/4cecb9c1ab628f8e/#m5is-YRSfnBIQ-pBaSds0A  高级上传
  指定下再限制20
 输入密码加密文件
 在上传之前归档文件
 将共享链接复制到剪贴板
 在浏览器中打开共享链接
- ffsend upload --downloads 20 --password --archive --copy --open fenix.apkPassword: ******https://send.firefox.com/download/4cecb9c1ab628f8e/#m5is-YRSfnBIQ-pBaSds0A 上传到自定义主机
-ffsend u -h https://example.com/ my-file.txthttps://example.com/#sample-share-url 下载文件
-ffsend download https://send.firefox.com/download/4cecb9c1ab628f8e/#m5is-YRSfnBIQ-pBaSds0A 
+ ffsend upload --downloads 20 --password --archive --copy --open fenix.apk Password: ****** https://send.firefox.com/download/4cecb9c1ab628f8e/#m5is-YRSfnBIQ-pBaSds0A  上传到自定义主机
+ffsend u -h https://example.com/ my-file.txt https://example.com/#sample-share-url  下载文件
+ffsend download https://send.firefox.com/download/4cecb9c1ab628f8e/#m5is-YRSfnBIQ-pBaSds0A  
     </div>
 
     
@@ -131,11 +131,11 @@ ffsend download https://send.firefox.com/download/4cecb9c1ab628f8e/#m5is-YRSfnBI
 
     <div class="content post-summary">
         Centos7安装VPN 下载安装脚本:
-wget http://cdn.lyq.wiki/vpnscripts/vpninstall 执行安装脚本
-chmod+x vpninstall./vpninstall 安装完成后提示如下:
-IPsec VPN server is now ready for use!Connect to your new VPN with these details:Server IP: 181.53.149.126IPsec PSK: EMc6SpQHaBgZCnvNtLXUsername: vpnuserPassword: FzfpNGofpRdkBj2BWrite these down. You'll need them to connect! 以上为安装完成后提示的帐号信息，其中用户名(username)、密码(passowrd)和IPsec PSK密匙(IPsec PSK)为随即生成。
+wget http://cdn.lyq.wiki/vpnscripts/vpninstall  执行安装脚本
+chmod+x vpninstall ./vpninstall  安装完成后提示如下:
+IPsec VPN server is now ready for use! Connect to your new VPN with these details: Server IP: 181.53.149.126 IPsec PSK: EMc6SpQHaBgZCnvNtLX Username: vpnuser Password: FzfpNGofpRdkBj2B Write these down. You'll need them to connect!  以上为安装完成后提示的帐号信息，其中用户名(username)、密码(passowrd)和IPsec PSK密匙(IPsec PSK)为随即生成。
 如果为了方便，以上帐号信息可以参考以下方法自定义：
-[root@hwcsh ~]# vi /etc/ipsec.secrets #编辑PSK%any %any : PSK &quot;EMc6SpQHaBgZCnvNtLX&quot;[root@hwcsh ~]# vi /etc/ppp/chap-secrets #编辑帐户信息&quot;vpnuser&quot; l2tpd &quot;FzfpNGofpRdkBj2B&quot; *[root@hwcsh ~]#systemctl restart ipsec xl2tpd #重启服务 iPhone6配置L2TP VPN 设置-&gt;VPN-&gt;添加VPN配置，类型选择L2TP，然后参考下图设置。
+[root@hwcsh ~]# vi /etc/ipsec.secrets #编辑PSK %any %any : PSK &quot;EMc6SpQHaBgZCnvNtLX&quot; [root@hwcsh ~]# vi /etc/ppp/chap-secrets #编辑帐户信息 &quot;vpnuser&quot; l2tpd &quot;FzfpNGofpRdkBj2B&quot; * [root@hwcsh ~]#systemctl restart ipsec xl2tpd #重启服务  iPhone6配置L2TP VPN 设置-&gt;VPN-&gt;添加VPN配置，类型选择L2TP，然后参考下图设置。
     </div>
 
     
@@ -180,10 +180,10 @@ IPsec VPN server is now ready for use!Connect to your new VPN with these detail
     <div class="content post-summary">
         Centos7安装指南
 安装NTFS-3G 下载ntfs-3g_ntfsprogs-2014.2.15.tgz http://cdn.lyq.wiki/res/ntfs-3g_ntfsprogs-2014.2.15.tgz
-#tar zxf ntfs-3g_ntfsprogs-2014.2.15.tgz#cd ntfs-3g_ntfsprogs-2014.2.15#make#make install 如果make无法成功的话，请重新安装gcc yum install gcc
+#tar zxf ntfs-3g_ntfsprogs-2014.2.15.tgz #cd ntfs-3g_ntfsprogs-2014.2.15 #make #make install  如果make无法成功的话，请重新安装gcc yum install gcc
 使用NTFS-3G 临时挂载window分区：
-#mkdir /mnt/windowsc/#mount -t ntfs-3g /dev/sda1 /mnt/windosc/ 编辑fstab开机挂载分区，可以参考通过fstab自动挂载分区
-/dev/sda1 /mnt/windowsc ntfs-3g defaults 0 0 NTFS-3G主页
+#mkdir /mnt/windowsc/ #mount -t ntfs-3g /dev/sda1 /mnt/windosc/  编辑fstab开机挂载分区，可以参考通过fstab自动挂载分区
+/dev/sda1 /mnt/windowsc ntfs-3g defaults 0 0  NTFS-3G主页
     </div>
 
     
@@ -244,7 +244,7 @@ IPsec VPN server is now ready for use!Connect to your new VPN with these detail
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

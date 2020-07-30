@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
 
 
 
@@ -74,7 +74,7 @@
 DietPi下载地址 http://fuzon.co.uk/downloads/DietPi.7z
 这个压缩包91MB，解压后的img文件522MB,比官方的小多了。
 然后将镜像写入到SD卡中，linux下使用dd
-dd if=DietPi_v74.img of=/dev/sdc bs=2M Windows下使用Win32 Disk Imager，戳这里
+dd if=DietPi_v74.img of=/dev/sdc bs=2M  Windows下使用Win32 Disk Imager，戳这里
 写入完成后将SD卡插入树莓派，加电启动。
 预设置Wifi链接 首次使用时，可以通过编辑dietpi.txt来进行wifi预设置。
 将TF卡插入电脑读卡器，打开对应的磁盘，找到dietpi.txt文件，打开。
@@ -83,10 +83,10 @@ dd if=DietPi_v74.img of=/dev/sdc bs=2M Windows下使用Win32 Disk Imager，戳�
 配置DietPi DietPi默认用户名密码为root dietpi，第一次启动DietPi提示检测升级，按提示操作。
 不过由于天朝网路问题，可能升级比较缓慢，建议Ctrl+c终止升级，修改sources.list为朝内镜像。
 DietPi默认没有vi,使用nano进行编辑，添加Aliyun源。
-deb http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contribdeb-src http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib 更新软件
-apt-get update&amp;&amp;apt-get upgrade -y 然后运行dietpi-config进行配置。
+deb http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib deb-src http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib  更新软件
+apt-get update&amp;&amp;apt-get upgrade -y  然后运行dietpi-config进行配置。
 DietPi - Config
- ┌────┤ ---------- DietPi-Config ---------- ├─────┐│ Hardware : Raspberry Pi 1 (512MB) ││ ││ 1 Display Options ││ 2 Audio Options ││ 3 Performance Options ││ 4 Advanced Options ││ 5 Language/Regional Options ││ 6 Security Options ││ 7 Networking Options ││ 8 AutoBoot Options ││ 9 Tools ││ ││ ││ &lt;Ok&gt; &lt;Exit&gt; ││ │└────────────────────────────────────────────────┘ 推荐配置：
+ ┌────┤ ---------- DietPi-Config ---------- ├─────┐ │ Hardware : Raspberry Pi 1 (512MB) │ │ │ │ 1 Display Options │ │ 2 Audio Options │ │ 3 Performance Options │ │ 4 Advanced Options │ │ 5 Language/Regional Options │ │ 6 Security Options │ │ 7 Networking Options │ │ 8 AutoBoot Options │ │ 9 Tools │ │ │ │ │ │ &lt;Ok&gt; &lt;Exit&gt; │ │ │ └────────────────────────────────────────────────┘  推荐配置：
     </div>
 
     
@@ -137,7 +137,7 @@ DietPi - Config
 添加传感器 我的物联 -&gt; 感器与控制器，新建传感器。
 其中标识为提交数据依据，建议英文。
 向乐为物联提交数据 lewei.sh代码如下 http://cdn.lyq.wiki/res/lewei.sh
-#!/bin/bashLURL=http://www.lewei50.com/api/V1/Gateway/UpdateSensors/01KEY=&quot;2fasdfsdfsdf9ffadsf62dfbfsdfa1&quot;sys_load=`cat /proc/loadavg | awk '{print $2}'`st=`/usr/bin/sen_t`sh=`/usr/bin/sen_h`for i in 1 2 3 4 5; dosys_temp=`cat /sys/class/thermal/thermal_zone0/temp | awk '{print $1/1000}'`if [[ &quot;${sys_temp}&quot; =~ ^- ]]thensys_temp='0.0'elseecho ${sys_temp}breakfidoneecho &quot;Printf Values&quot;echo &quot;sys_temp:&quot;${sys_temp}echo &quot;sys_load:&quot;${sys_load}echo &quot;sensor_t:&quot;${st}echo &quot;sensor_h:&quot;${sh}echo &quot;Done!&quot;echo &quot;Sumbit Data to Lewei&quot;curl --request POST ${LURL} --header &quot;userkey:${KEY}&quot; --data &quot;[{'Name':'load','Value':'${sys_load}'},{'Name':'temp','Value':'${sys_temp}'},{'Name':'sd','Value':'${sh}'},{'Name':'wd','Value':'${st}'}]&quot;  其中LURL后面的01为设备标识,KEY为用户Userkey,JSON数据中的Name对应相应的传感器标识。
+#!/bin/bash LURL=http://www.lewei50.com/api/V1/Gateway/UpdateSensors/01 KEY=&quot;2fasdfsdfsdf9ffadsf62dfbfsdfa1&quot; sys_load=`cat /proc/loadavg | awk '{print $2}'` st=`/usr/bin/sen_t` sh=`/usr/bin/sen_h` for i in 1 2 3 4 5; do sys_temp=`cat /sys/class/thermal/thermal_zone0/temp | awk '{print $1/1000}'` if [[ &quot;${sys_temp}&quot; =~ ^- ]] then sys_temp='0.0' else echo ${sys_temp} break fi done echo &quot;Printf Values&quot; echo &quot;sys_temp:&quot;${sys_temp} echo &quot;sys_load:&quot;${sys_load} echo &quot;sensor_t:&quot;${st} echo &quot;sensor_h:&quot;${sh} echo &quot;Done!&quot; echo &quot;Sumbit Data to Lewei&quot; curl --request POST ${LURL} --header &quot;userkey:${KEY}&quot; --data &quot;[{'Name':'load','Value':'${sys_load}'},{'Name':'temp','Value':'${sys_temp}'},{'Name':'sd','Value':'${sh}'},{'Name':'wd','Value':'${st}'}]&quot;  其中LURL后面的01为设备标识,KEY为用户Userkey,JSON数据中的Name对应相应的传感器标识。
     </div>
 
     
@@ -206,9 +206,9 @@ DietPi - Config
 设置API Key 进入Device详情页，在API Keys中点击Add Key添加一个Key,将Permissions中的Read,Create,Update,Delete全部勾选，Label随便填。
 向Xively提交数据 在这里通过CURL向xively提交JSON格式的数据
 JSON数据格式
-{&quot;datastreams&quot;: [{&quot;id&quot;: &quot;load&quot;,&quot;current_value&quot;: &quot;9.00&quot;},{&quot;id&quot;: &quot;temp&quot;,&quot;current_value&quot;: &quot;89.15&quot;}]} 其中每个id为数据定义的idcurrent_value为提交的值
+{ &quot;datastreams&quot;: [ { &quot;id&quot;: &quot;load&quot;, &quot;current_value&quot;: &quot;9.00&quot; }, { &quot;id&quot;: &quot;temp&quot;, &quot;current_value&quot;: &quot;89.15&quot; } ] }  其中每个id为数据定义的idcurrent_value为提交的值
 脚本文件send_xively.sh
-#!/bin/bashLOCATION='/home/pi/xively_data' #Path of Xively JSON DATA fileAPI_KEY='orxUhgjqSYPDbv5243534tG65464345eArxSVY9pE8ITnE' #API KeyFEED_ID='1354438558' #FEED_ID####################################################COSM_URL=https://api.xively.com/v2/feeds/${FEED_ID}?timezone=+8cpu_load=`cat /proc/loadavg | awk '{print $2}'`sen_t=`sudo /home/pi/st`sen_h=`sudo /home/pi/sh`for i in 1 2 3 4 5; docpu_t=`cat /sys/class/thermal/thermal_zone0/temp | awk '{print $1/1000}'`if [[ &quot;${cpu_t}&quot; =~ ^- ]]thencpu_t='0.
+#!/bin/bash LOCATION='/home/pi/xively_data' #Path of Xively JSON DATA file API_KEY='orxUhgjqSYPDbv5243534tG65464345eArxSVY9pE8ITnE' #API Key FEED_ID='1354438558' #FEED_ID #################################################### COSM_URL=https://api.xively.com/v2/feeds/${FEED_ID}?timezone=+8 cpu_load=`cat /proc/loadavg | awk '{print $2}'` sen_t=`sudo /home/pi/st` sen_h=`sudo /home/pi/sh` for i in 1 2 3 4 5; do cpu_t=`cat /sys/class/thermal/thermal_zone0/temp | awk '{print $1/1000}'` if [[ &quot;${cpu_t}&quot; =~ ^- ]] then cpu_t='0.
     </div>
 
     
@@ -289,7 +289,7 @@ JSON数据格式
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
 
 
 
@@ -71,8 +71,8 @@
 
     <div class="content post-summary">
         先安装h264编码器
-#!/bin/bashcd /usr/srcgit clone git://git.videolan.org/x264cd x264./configure --host=arm-unknown-linux-gnueabi --enable-static --disable-openclmakesudo make install 下载源码编译安装ffmpeg
-cd /usr/srcgit clone git://source.ffmpeg.org/ffmpeg.gitcd ffmpegsudo ./configure --arch=armel --target-os=linux --enable-gpl --enable-libx264 --enable-nonfreemakesudo make install 由于树莓派原因，这个过程很长……很长…… 建议开screen，然后Ctrl+a+d
+#!/bin/bash cd /usr/src git clone git://git.videolan.org/x264 cd x264 ./configure --host=arm-unknown-linux-gnueabi --enable-static --disable-opencl make sudo make install  下载源码编译安装ffmpeg
+cd /usr/src git clone git://source.ffmpeg.org/ffmpeg.git cd ffmpeg sudo ./configure --arch=armel --target-os=linux --enable-gpl --enable-libx264 --enable-nonfree make sudo make install  由于树莓派原因，这个过程很长……很长…… 建议开screen，然后Ctrl+a+d
     </div>
 
     
@@ -122,7 +122,7 @@ cd /usr/srcgit clone git://source.ffmpeg.org/ffmpeg.gitcd ffmpegsudo ./config
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

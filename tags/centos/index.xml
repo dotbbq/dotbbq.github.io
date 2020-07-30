@@ -415,9 +415,9 @@ crontab [-u &amp;lt;用户名称&amp;gt;][配置文件] 或 crontab [-u &amp;lt;
 Minute Hour Day Month DayOFWeek Command&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;参数:&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;-e 　编辑该用户的计时器设置。 
--l 　列出该用户的计时器设置。 
--r 　删除该用户的计时器设置。 
+&lt;p&gt;-e 　编辑该用户的计时器设置。
+-l 　列出该用户的计时器设置。
+-r 　删除该用户的计时器设置。
 -u&amp;lt;用户名称&amp;gt; 　指定要设定计时器的用户名称。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h4 id=&#34;crontab-格式&#34;&gt;crontab 格式&lt;/h4&gt;

@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
 
 
 
@@ -71,9 +71,9 @@
 
     <div class="content post-summary">
         先运行update-grub命令生成一次grub配置，顺便查看一下识别出来的引导菜单内容
-root@alairpc:~# update-grubGenerating grub configuration file ...Found linux image: /boot/vmlinuz-4.4.0-21-genericFound initrd image: /boot/initrd.img-4.4.0-21-genericFound memtest86+ image: /boot/memtest86+.elfFound memtest86+ image: /boot/memtest86+.binFound Windows 7 (loader) on /dev/sda1doneroot@alairpc:~#  注意看，以上共有5个菜单项，最后一个是windows7
+root@alairpc:~# update-grub Generating grub configuration file ... Found linux image: /boot/vmlinuz-4.4.0-21-generic Found initrd image: /boot/initrd.img-4.4.0-21-generic Found memtest86+ image: /boot/memtest86+.elf Found memtest86+ image: /boot/memtest86+.bin Found Windows 7 (loader) on /dev/sda1 done root@alairpc:~#  注意看，以上共有5个菜单项，最后一个是windows7
 接下来我们来看看gurb配置文件/etc/default/grub
-root@alairpc:~# cat /etc/default/grub # If you change this file, run 'update-grub' afterwards to update# /boot/grub/grub.cfg.# For full documentation of the options in this file, see:# info -f grub -n 'Simple configuration'GRUB_DEFAULT=4#GRUB_HIDDEN_TIMEOUT=0GRUB_HIDDEN_TIMEOUT_QUIET=trueGRUB_TIMEOUT=3GRUB_DISTRIBUTOR=`lsb_release -i -s 2&gt; /dev/null || echo Debian`GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot;GRUB_CMDLINE_LINUX=&quot;locale=zh_CN&quot;# Uncomment to enable BadRAM filtering, modify to suit your needs# This works with Linux (no patch required) and with any kernel that obtains# the memory map information from GRUB (GNU Mach, kernel of FreeBSD .
+root@alairpc:~# cat /etc/default/grub # If you change this file, run 'update-grub' afterwards to update # /boot/grub/grub.cfg. # For full documentation of the options in this file, see: # info -f grub -n 'Simple configuration' GRUB_DEFAULT=4 #GRUB_HIDDEN_TIMEOUT=0 GRUB_HIDDEN_TIMEOUT_QUIET=true GRUB_TIMEOUT=3 GRUB_DISTRIBUTOR=`lsb_release -i -s 2&gt; /dev/null || echo Debian` GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot; GRUB_CMDLINE_LINUX=&quot;locale=zh_CN&quot; # Uncomment to enable BadRAM filtering, modify to suit your needs # This works with Linux (no patch required) and with any kernel that obtains # the memory map information from GRUB (GNU Mach, kernel of FreeBSD .
     </div>
 
     
@@ -117,10 +117,10 @@ root@alairpc:~# cat /etc/default/grub # If you change this file, run 'update-gru
         网站的Let&rsquo;s encrypt证书快到期了，看了官方的续期方法比较繁琐，于是在网上找了找简单方便做法，结果找到了墓地小企鹅写的一个脚本(shell script)，使用这个脚本可以方便的生成以及更新Let&rsquo;s encrypt 证书。
 脚本地址 https://github.com/xdtianyu/scripts/tree/master/lets-encrypt
 下载脚本
-wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.confwget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh 配置
-root@rnse:~/lesh# cat letsencrypt.conf# only modify the values, key files will be generated automaticly.ACCOUNT_KEY=&quot;letsencrypt-account.key&quot;DOMAIN_KEY=&quot;alair.key&quot;DOMAIN_DIR=&quot;/data/wwwroot/alair.cn/compiled&quot;DOMAINS=&quot;DNS:alair.cn,DNS:www.alair.cn&quot;#ECC=TRUE#LIGHTTPD=TRUE 按照需要自定义DOMAIN_KEY、DOMAIN_DIR、DOMAINS三部分。
+wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.conf wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh  配置
+root@rnse:~/lesh# cat letsencrypt.conf # only modify the values, key files will be generated automaticly. ACCOUNT_KEY=&quot;letsencrypt-account.key&quot; DOMAIN_KEY=&quot;alair.key&quot; DOMAIN_DIR=&quot;/data/wwwroot/alair.cn/compiled&quot; DOMAINS=&quot;DNS:alair.cn,DNS:www.alair.cn&quot; #ECC=TRUE #LIGHTTPD=TRUE  按照需要自定义DOMAIN_KEY、DOMAIN_DIR、DOMAINS三部分。
 生成证书
-root@rnse:~/lesh#chmod +x letsencrypt.shroot@rnse:~/lesh# ./letsencrypt.sh letsencrypt.confGenerate account key...Generating RSA private key, 4096 bit long modulus..............................++....++e is 65537 (0x10001)Generate domain key...Generating RSA private key, 2048 bit long modulus.
+root@rnse:~/lesh#chmod +x letsencrypt.sh root@rnse:~/lesh# ./letsencrypt.sh letsencrypt.conf Generate account key... Generating RSA private key, 4096 bit long modulus ..............................++ ....++ e is 65537 (0x10001) Generate domain key... Generating RSA private key, 2048 bit long modulus .
     </div>
 
     
@@ -169,10 +169,10 @@ root@rnse:~/lesh#chmod +x letsencrypt.shroot@rnse:~/lesh# ./letsencrypt.sh lets
 Syncthing官网地址 **https://syncthing.net/**Github地址 https://github.com/syncthing/syncthing
 安装Syncthing Syncthing官网提供多平台安装包，下载地址为 https://github.com/syncthing/syncthing/releases/
 并且针对Debian/Ubuntu平台，官方提供了apt-get安装方法
-# Add the release PGP keys:curl -s https://syncthing.net/release-key.txt | sudo apt-key add -# Add the &quot;release&quot; channel to your APT sources:echo &quot;deb http://apt.syncthing.net/ syncthing release&quot; | sudo tee /etc/apt/sources.list.d/syncthing.list# Update and install syncthing:sudo apt-get updatesudo apt-get install syncthing 运行Syncthing Linux下直接使用syncthing命令运行
-syncthing &amp; Windows下直接打开下载的syncthing.exe文件，而后浏览器自动打开http://127.0.0.1:8384进行设置管理。
+# Add the release PGP keys: curl -s https://syncthing.net/release-key.txt | sudo apt-key add - # Add the &quot;release&quot; channel to your APT sources: echo &quot;deb http://apt.syncthing.net/ syncthing release&quot; | sudo tee /etc/apt/sources.list.d/syncthing.list # Update and install syncthing: sudo apt-get update sudo apt-get install syncthing  运行Syncthing Linux下直接使用syncthing命令运行
+syncthing &amp;  Windows下直接打开下载的syncthing.exe文件，而后浏览器自动打开http://127.0.0.1:8384进行设置管理。
 管理Syncthing 如果是在VPS上安装Syncthing ,运行syncthing后，只能通过http://127.0.0.1:8384进行管理，我们可以通过以下方法在本地管理。
-ssl -L 9891:localhost:8384 root@ip 输入root密码登录成功后，即可本地浏览http://127.0.0.1:9891对VPS上的Synchting进行管理。
+ssl -L 9891:localhost:8384 root@ip  输入root密码登录成功后，即可本地浏览http://127.0.0.1:9891对VPS上的Synchting进行管理。
 添加设备 每个设备均有一个设备标识，可以通过操作-&gt;显示设备标识来查看。
     </div>
 
@@ -242,7 +242,7 @@ ssl -L 9891:localhost:8384 root@ip 输入root密码登录成功后，即可本�
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

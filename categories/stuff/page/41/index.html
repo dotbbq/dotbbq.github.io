@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
 
 
 
@@ -76,11 +76,11 @@ DHT11针脚说明
 DHT11与树莓派链接
 VCC连接+3V3 DATA连接GPIO4 GND链接GND
 软件部分 安装wiringPi
-sudo apt-get install git-coregit clone git://git.drogon.net/wiringPicd wiringPi./build 如果由于网络原因无法git clone成功，可以从此下载wiringPi http://cdn.lyq.wiki/res/wiringPi_v2.3.1.zip
+sudo apt-get install git-core git clone git://git.drogon.net/wiringPi cd wiringPi ./build  如果由于网络原因无法git clone成功，可以从此下载wiringPi http://cdn.lyq.wiki/res/wiringPi_v2.3.1.zip
 验证是否安装成功
-gpio -vgpio readall 下载编译C语言程序代码
-wget http://cdn.lyq.wiki/res/sensor.cgcc -o sensor sensor.c -lwiringPi 运行程序
-sudo ./sensor24,39 输出结果，第一个为湿度，第二个为温度
+gpio -v gpio readall  下载编译C语言程序代码
+wget http://cdn.lyq.wiki/res/sensor.c gcc -o sensor sensor.c -lwiringPi  运行程序
+sudo ./sensor 24,39  输出结果，第一个为湿度，第二个为温度
     </div>
 
     
@@ -131,17 +131,17 @@ sudo ./sensor24,39 输出结果，第一个为湿度，第二个为温度
     </header>
 
     <div class="content post-summary">
-        安装Nodejs sudo add-apt-repository ppa:chris-lea/node.jssudo apt-get updatesudo apt-get install nodejs 检查是否安装成功
-root@hkvps:~# node -vv0.10.37root@hkvps:~# npm -v1.4.28 安装Ghost Ghost下载地址https://ghost.org/download/
-wget https://ghost.org/zip/ghost-0.6.4.zipunzip ghost-0.6.4.zip -d ghostcd ghostnpm install --production 运行Ghost
-npm start 可以通过127.0.0.1:2368来访问
+        安装Nodejs sudo add-apt-repository ppa:chris-lea/node.js sudo apt-get update sudo apt-get install nodejs  检查是否安装成功
+root@hkvps:~# node -v v0.10.37 root@hkvps:~# npm -v 1.4.28  安装Ghost Ghost下载地址https://ghost.org/download/
+wget https://ghost.org/zip/ghost-0.6.4.zip unzip ghost-0.6.4.zip -d ghost cd ghost npm install --production  运行Ghost
+npm start  可以通过127.0.0.1:2368来访问
 通过nmp start来运行Ghost，退出后就会停止，因此需要一个方法让Ghost一直运行
 让Ghost一直运行 安装forever
-npm install forever -g 进入ghost目录，执行以下命令，让Ghost一直运行
-NODE_ENV=production forever start index.js 停止ghost
-forever stop index.js 查看forever运行列表
-forever list 结合Nginx配置域名 安装Nginx
-sudo apt-get install nginx 编辑配置文件
+npm install forever -g  进入ghost目录，执行以下命令，让Ghost一直运行
+NODE_ENV=production forever start index.js  停止ghost
+forever stop index.js  查看forever运行列表
+forever list  结合Nginx配置域名 安装Nginx
+sudo apt-get install nginx  编辑配置文件
     </div>
 
     
@@ -190,13 +190,13 @@ sudo apt-get install nginx 编辑配置文件
     <div class="content post-summary">
         申请Wosign免费SSL证书 申请地址: https://www.wosign.com/products/free_ssl.htm
 申请成功后，收到类似于aquan.me_sha256_cn.zip的文件,解压后包含如下文件
-for Apache.zipfor IIS.zipfor Nginx.zipfor Other Server.zipfor Tomcat.zip 其中for Nginx.zip中包含如下两个文件，将其上传到VPS自定义位置。
+for Apache.zip for IIS.zip for Nginx.zip for Other Server.zip for Tomcat.zip  其中for Nginx.zip中包含如下两个文件，将其上传到VPS自定义位置。
  1_aquan.me_bundle.crt 2_aquan.me.key  配置Nginx 不多说了，直接贴代码:
-#### Add Wosign SSL Start ####listen 443;ssl on;ssl_certificate /usr/local/nginx/ssl/ssl.crt;ssl_certificate_key /usr/local/nginx/ssl/ssl.key;ssl_session_timeout 5m;ssl_protocols SSLv2 SSLv3 TLSv1;ssl_ciphers ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP;ssl_prefer_server_ciphers on;#### Add Wosign SSL End #### 将以上代码插入listen 80;之后。
+#### Add Wosign SSL Start #### listen 443; ssl on; ssl_certificate /usr/local/nginx/ssl/ssl.crt; ssl_certificate_key /usr/local/nginx/ssl/ssl.key; ssl_session_timeout 5m; ssl_protocols SSLv2 SSLv3 TLSv1; ssl_ciphers ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP; ssl_prefer_server_ciphers on; #### Add Wosign SSL End ####  将以上代码插入listen 80;之后。
 重启Nginx生效
-/etc/init.d/nginx restart 以上设置完成，就可以通过https来浏览网站，同时http也可以浏览。
+/etc/init.d/nginx restart  以上设置完成，就可以通过https来浏览网站，同时http也可以浏览。
 合并Wosign根证书 有的浏览器会提示不信任证书，可以通过合并Wosign根证书来解决
-wget https://www.wosign.com/Root/Bundle_DV_St.crt cat Bundle_DV_St.crt &gt;&gt; /usr/local/nginx/ssl/ssl.crt 设置http跳转https 如果想将http跳转至https，可以进行如下设置:
+wget https://www.wosign.com/Root/Bundle_DV_St.crt cat Bundle_DV_St.crt &gt;&gt; /usr/local/nginx/ssl/ssl.crt  设置http跳转https 如果想将http跳转至https，可以进行如下设置:
     </div>
 
     
@@ -267,7 +267,7 @@ wget https://www.wosign.com/Root/Bundle_DV_St.crt cat Bundle_DV_St.crt &gt;&gt; 
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

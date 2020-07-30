@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-	<meta name="generator" content="Hugo 0.74.3" />
+	<meta name="generator" content="Hugo 0.73.0" />
     
         
 <meta charset="utf-8">
@@ -16,7 +16,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070679" />
 
 
 
@@ -77,12 +77,12 @@
 只有最基本的系统命令ls,cat等可以用
 看来安装lnmp后，我的PATH变量被动了
 先临时修改下PATH，便于后面操作
-export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:$PATH 然后检查~/.profile,/etc/profile是否存在，存在
+export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:$PATH  然后检查~/.profile,/etc/profile是否存在，存在
 检查其中的PATH赋值是否异常
 经过排查，发现/etc/profile中的PATH赋值异常，修改之重启OK！
 在此分享正确的原始~/.profile和/etc/profile文件
 ~/.profile 内容
-# ~/.profile: executed by the command interpreter for login shells.# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login# exists.# see /usr/share/doc/bash/examples/startup-files for examples.# the files are located in the bash-doc package.# the default umask is set in /etc/profile; for setting the umask# for ssh logins, install and configure the libpam-umask package.
+# ~/.profile: executed by the command interpreter for login shells. # This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login # exists. # see /usr/share/doc/bash/examples/startup-files for examples. # the files are located in the bash-doc package. # the default umask is set in /etc/profile; for setting the umask # for ssh logins, install and configure the libpam-umask package.
     </div>
 
     
@@ -134,12 +134,12 @@ export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:$PATH 
  qshell_linux_386	Linux 32位系统 qshell_linux_amd64	Linux 64位系统 qshell_linux_arm	Linux ARM CPU qshell_windows_386.exe	Windows 32位系统 qshell_windows_amd64.exe	Windows 64位系统 qshell_darwin_386	Mac 32位系统，这种系统很老了 qshell_darwin_amd64	Mac 64位系统，主流的系统  解压后，将对应的版本软件放到自定义目录
 在此以windows版实例操作
 帐号设置 使用qshell前，需要进行帐号验证，可以通过qshell account ak sk格式来进行验证，其中ak和sk对应个人面板-&gt;密匙管理中的AccessKey/SecretKey
-qshell account yW!DRel0y8ERbjw%so^?X8 6pfC4OlL$TZtjpNuR4bLxRsD 设置完成后，可以通过qshell account来查看已设置帐号详情
-qshell accountAccessKey:yW!DRel0y8ERbjw%so^?X8SecretKey:6pfC4OlL$TZtjpNuR4bLxRsD 设置完帐号后，我们就可以使用qshell对帐号对应的空间进行操作
-列出当前帐号下所有空间 qshell bucketscname cname为空间名
-列出空间中所有文件 qshell listbucket cname cname.list.txt cname为空间名,cname.list.txt为结果输出文件。
-批量上传 qshell qupload up.cfg up.cfg上传操作配置文件，如下：
-{&quot;src_dir&quot; : &quot;D:\\abc&quot;,&quot;bucket&quot; : &quot;cname&quot;} src_dir为本地文件夹，Wdinwos下必须使用如上格式
+qshell account yW!DRel0y8ERbjw%so^?X8 6pfC4OlL$TZtjpNuR4bLxRsD  设置完成后，可以通过qshell account来查看已设置帐号详情
+qshell account AccessKey:yW!DRel0y8ERbjw%so^?X8 SecretKey:6pfC4OlL$TZtjpNuR4bLxRsD  设置完帐号后，我们就可以使用qshell对帐号对应的空间进行操作
+列出当前帐号下所有空间 qshell buckets cname  cname为空间名
+列出空间中所有文件 qshell listbucket cname cname.list.txt  cname为空间名,cname.list.txt为结果输出文件。
+批量上传 qshell qupload up.cfg  up.cfg上传操作配置文件，如下：
+{ &quot;src_dir&quot; : &quot;D:\\abc&quot;, &quot;bucket&quot; : &quot;cname&quot; }  src_dir为本地文件夹，Wdinwos下必须使用如上格式
     </div>
 
     
@@ -185,12 +185,12 @@ qshell accountAccessKey:yW!DRel0y8ERbjw%so^?X8SecretKey:6pfC4OlL$TZtjpNuR4bLxR
         Nokia 3310/5110显示器基于PCD8544，在此分享一个树莓派可用的PCD8544库
 使用该库之前，需要安装wiringPi,安装方法可参考树莓派连接DHT11采集温度与湿度
 项目地址：
-https://github.com/binerry/RaspberryPi/tree/master/libraries/c/PCD8544 可通过github download直接下载,不能访问github的，用以下连接下载
-http://cdn.lyq.wiki/res/Raspberry.Pi_PCD8544.Library.zip 解压后，可得到一个c源码和一个h头文件
-PCD8544.cPCD8544.h 以及samples文件夹下的三个示例
-pcd8544_rpi.cpcd8544_test.cpcd8544_test2.c 按照下图所示连接好树莓派和显示器
+https://github.com/binerry/RaspberryPi/tree/master/libraries/c/PCD8544  可通过github download直接下载,不能访问github的，用以下连接下载
+http://cdn.lyq.wiki/res/Raspberry.Pi_PCD8544.Library.zip  解压后，可得到一个c源码和一个h头文件
+PCD8544.c PCD8544.h  以及samples文件夹下的三个示例
+pcd8544_rpi.c pcd8544_test.c pcd8544_test2.c  按照下图所示连接好树莓派和显示器
  RST —— 复位 接GPIO 0 CE —— 片选 接GPIO 1 或 不接 DC —— 数据/指令选择 接GPIO 2 DIN —— 串行数据线 接GPIO 3 CLK —— 串行时钟线 接GPIO 5 （因为我的GPIO 4已经接了一个DHT11传感器） VCC —— 电源输入 接3.3v BL —— 背光控制端 接3.3v GND —— 地线 接地  编译三个示例程序
-cc -o pcd8544_test pcd8544_test.c ../PCD8544.c -L/usr/local/lib -lwiringPicc -o pcd8544_test2 pcd8544_test2.
+cc -o pcd8544_test pcd8544_test.c ../PCD8544.c -L/usr/local/lib -lwiringPi cc -o pcd8544_test2 pcd8544_test2.
     </div>
 
     
@@ -261,7 +261,7 @@ cc -o pcd8544_test pcd8544_test.c ../PCD8544.c -L/usr/local/lib -lwiringPicc -o
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

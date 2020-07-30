@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
 
 
 
@@ -70,17 +70,17 @@
     </header>
 
     <div class="content post-summary">
-        安装Nodejs sudo add-apt-repository ppa:chris-lea/node.jssudo apt-get updatesudo apt-get install nodejs 检查是否安装成功
-root@hkvps:~# node -vv0.10.37root@hkvps:~# npm -v1.4.28 安装Ghost Ghost下载地址https://ghost.org/download/
-wget https://ghost.org/zip/ghost-0.6.4.zipunzip ghost-0.6.4.zip -d ghostcd ghostnpm install --production 运行Ghost
-npm start 可以通过127.0.0.1:2368来访问
+        安装Nodejs sudo add-apt-repository ppa:chris-lea/node.js sudo apt-get update sudo apt-get install nodejs  检查是否安装成功
+root@hkvps:~# node -v v0.10.37 root@hkvps:~# npm -v 1.4.28  安装Ghost Ghost下载地址https://ghost.org/download/
+wget https://ghost.org/zip/ghost-0.6.4.zip unzip ghost-0.6.4.zip -d ghost cd ghost npm install --production  运行Ghost
+npm start  可以通过127.0.0.1:2368来访问
 通过nmp start来运行Ghost，退出后就会停止，因此需要一个方法让Ghost一直运行
 让Ghost一直运行 安装forever
-npm install forever -g 进入ghost目录，执行以下命令，让Ghost一直运行
-NODE_ENV=production forever start index.js 停止ghost
-forever stop index.js 查看forever运行列表
-forever list 结合Nginx配置域名 安装Nginx
-sudo apt-get install nginx 编辑配置文件
+npm install forever -g  进入ghost目录，执行以下命令，让Ghost一直运行
+NODE_ENV=production forever start index.js  停止ghost
+forever stop index.js  查看forever运行列表
+forever list  结合Nginx配置域名 安装Nginx
+sudo apt-get install nginx  编辑配置文件
     </div>
 
     
@@ -132,7 +132,7 @@ sudo apt-get install nginx 编辑配置文件
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

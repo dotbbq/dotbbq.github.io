@@ -929,43 +929,43 @@ finished. total time: 0.529s
 &lt;p&gt;&lt;strong&gt;一些三方软件&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;以下为部分软件清单，详细清单请转至&lt;a href=&#34;https://dotbbq.pipipan.com/dir/18418398-35291410-d4d981/&#34;&gt;下载目录&amp;raquo;&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;WDMyCloud_AcronisTrueImage_2015.bin	
-WDMyCloud_Adminer_4.2.5.bin	
-WDMyCloud_Arcus_2.5325088.bin	
-WDMyCloud_BitTorrentSync_2.3.8.bin	
-WDMyCloud_ChrootedDebian_8.0-1.bin	
-WDMyCloud_CustomAppList_0.5.bin	
-WDMyCloud_DVBLink_5.50.bin	
-WDMyCloud_Dropbox_2.00.bin	
-WDMyCloud_IceCast_1.04.bin	
-WDMyCloud_Joomla_1.03.bin	
-WDMyCloud_MediaWiki_1.23.15.bin	
-WDMyCloud_QuikFynd2_2.0.1.bin	
-WDMyCloud_Sitebar_3-1.bin	
-WDMyCloud_SqueezeCenter_1.03.bin	
-WDMyCloud_Transmission_2.92-2.bin	
-WDMyCloud_UtilsUpdate-extras_1.0.0.bin	
+&lt;p&gt;WDMyCloud_AcronisTrueImage_2015.bin
+WDMyCloud_Adminer_4.2.5.bin
+WDMyCloud_Arcus_2.5325088.bin
+WDMyCloud_BitTorrentSync_2.3.8.bin
+WDMyCloud_ChrootedDebian_8.0-1.bin
+WDMyCloud_CustomAppList_0.5.bin
+WDMyCloud_DVBLink_5.50.bin
+WDMyCloud_Dropbox_2.00.bin
+WDMyCloud_IceCast_1.04.bin
+WDMyCloud_Joomla_1.03.bin
+WDMyCloud_MediaWiki_1.23.15.bin
+WDMyCloud_QuikFynd2_2.0.1.bin
+WDMyCloud_Sitebar_3-1.bin
+WDMyCloud_SqueezeCenter_1.03.bin
+WDMyCloud_Transmission_2.92-2.bin
+WDMyCloud_UtilsUpdate-extras_1.0.0.bin
 WDMyCloud_UtilsUpdate_17.bin
 WDMyCloud_WDFacebook_0.1.bin
-WDMyCloud_WDSleepFix_1.0.bin	
-WDMyCloud_WDTimeline_0.1.bin	
-WDMyCloud_WordPress_1.03.bin	
-WDMyCloud_WordPress_4.7.2.bin	
-WDMyCloud_WordPress_4.7.bin	
-WDMyCloud_Z-Way-Server_2.22.bin	
-WDMyCloud_aMule_1.05.bin	
-WDMyCloud_abFiles_1.55.bin	
-WDMyCloud_cdc-acm_0.1.bin	
-WDMyCloud_clamAV_1.12.bin	
-WDMyCloud_cops_1.0.1.bin	
+WDMyCloud_WDSleepFix_1.0.bin
+WDMyCloud_WDTimeline_0.1.bin
+WDMyCloud_WordPress_1.03.bin
+WDMyCloud_WordPress_4.7.2.bin
+WDMyCloud_WordPress_4.7.bin
+WDMyCloud_Z-Way-Server_2.22.bin
+WDMyCloud_aMule_1.05.bin
+WDMyCloud_abFiles_1.55.bin
+WDMyCloud_cdc-acm_0.1.bin
+WDMyCloud_clamAV_1.12.bin
+WDMyCloud_cops_1.0.1.bin
 WDMyCloud_git_1.40.bin
-WDMyCloud_hamachi_2.1.0.174.bin	
-WDMyCloud_nzbget_1.23.bin	
-WDMyCloud_pawfaliki_0.5.2-2.bin	
-WDMyCloud_phormer_3.3.1-1.bin	
-WDMyCloud_phpBB_1.03.bin	
-WDMyCloud_phpMyAdmin_4.0.10.18.bin	
-WDMyCloud_phpSysInfo_3.2.6-2.bin	
+WDMyCloud_hamachi_2.1.0.174.bin
+WDMyCloud_nzbget_1.23.bin
+WDMyCloud_pawfaliki_0.5.2-2.bin
+WDMyCloud_phormer_3.3.1-1.bin
+WDMyCloud_phpBB_1.03.bin
+WDMyCloud_phpMyAdmin_4.0.10.18.bin
+WDMyCloud_phpSysInfo_3.2.6-2.bin
 WDMyCloud_plexmediaserver_1.16.0.1226.bin&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
@@ -2405,7 +2405,7 @@ machine_type=M576_intl_official
 Gadget模式即USB网卡模式，比较常见的就是我们通过android手机的usb接口对pc进行网络共享的一种手段。一般电脑都会自动识别这种设备，并开启网卡进行共享。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;修改配置文件&#34;&gt;修改配置文件&lt;/h3&gt;
-&lt;p&gt;为了进行USB连接，我们需要修改BOOT文件夹下的&lt;strong&gt;config.txt&lt;/strong&gt;与&lt;strong&gt;cmdline.txt&lt;/strong&gt;配置文件。 
+&lt;p&gt;为了进行USB连接，我们需要修改BOOT文件夹下的&lt;strong&gt;config.txt&lt;/strong&gt;与&lt;strong&gt;cmdline.txt&lt;/strong&gt;配置文件。
 首先在&lt;strong&gt;config.txt&lt;/strong&gt;最末行处换行添加如下代码，打开usb网卡模式：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;dtoverlay=dwc2
 &lt;/code&gt;&lt;/pre&gt;
@@ -2441,8 +2441,8 @@ ifconfig usb0
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;但树莓派此时实际上是从机，我们需要通过设置pc主机的ip来让树莓派0的usb网卡真正运作起来，那么我们对刚才的usb设备设置如下IP：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;IP:  192.168.7.1 
-掩码: 255.255.255.0 
+&lt;p&gt;IP:  192.168.7.1
+掩码: 255.255.255.0
 路由: 192.168.7.1&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;此时我们就可以通过ip来进行ssh连接了：&lt;/p&gt;
@@ -5056,11 +5056,11 @@ sudo ./pcd8544_rpi
 02:00.0 Network controller: Intel Corporation Wireless 7260 (rev 73)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;搜索Inter相关固件
-​	
+​
 alair@zb14:~$ apt-cache search iwlwifi
 firmware-iwlwifi - Binary firmware for Intel Wireless cards&lt;/p&gt;
 &lt;p&gt;安装之
-​	
+​
 &lt;code&gt;alair@zb14:~$ apt-get install firmware-iwlwifi&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;重启完事儿！&lt;/p&gt;
 </description>
@@ -7466,8 +7466,8 @@ If you have any questions, visit Online Support or call us at (480) 505-8877.
 &lt;p&gt;&lt;strong&gt;树莓派GPIO针脚说明&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/Pi-GPIO-header-26-sm.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;DHT11与树莓派链接&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;VCC连接+3V3 
-DATA连接GPIO4 
+&lt;p&gt;VCC连接+3V3
+DATA连接GPIO4
 GND链接GND&lt;/p&gt;
 &lt;h3 id=&#34;软件部分&#34;&gt;软件部分&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;安装wiringPi&lt;/strong&gt;&lt;/p&gt;
@@ -8828,9 +8828,9 @@ crontab [-u &amp;lt;用户名称&amp;gt;][配置文件] 或 crontab [-u &amp;lt;
 Minute Hour Day Month DayOFWeek Command&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;参数:&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;-e 　编辑该用户的计时器设置。 
--l 　列出该用户的计时器设置。 
--r 　删除该用户的计时器设置。 
+&lt;p&gt;-e 　编辑该用户的计时器设置。
+-l 　列出该用户的计时器设置。
+-r 　删除该用户的计时器设置。
 -u&amp;lt;用户名称&amp;gt; 　指定要设定计时器的用户名称。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h4 id=&#34;crontab-格式&#34;&gt;crontab 格式&lt;/h4&gt;
@@ -10795,14 +10795,14 @@ WebOSQuickInstall-4.4.0.jar
 &lt;p&gt;以下介绍几款Linux Live USB制作工具，个人推荐Linux Live USB Creator!&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;注:需要主板BIOS开启USB Boot功能。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Universal USB Installer&lt;/strong&gt; &lt;a href=&#34;http://www.pendrivelinux.com&#34;&gt;http://www.pendrivelinux.com&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;1，选择Linux版本，勾选后面的Download the iso(Optional).则从互联网下载所选镜像。 
-2，选择本地镜像文件(iso)。 
+&lt;p&gt;1，选择Linux版本，勾选后面的Download the iso(Optional).则从互联网下载所选镜像。
+2，选择本地镜像文件(iso)。
 3，选择将要写入的USB设备，勾选Show all Drives可以看到所有本地磁盘，需要写入移动硬盘就需要勾选此项。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;UNetbootin&lt;/strong&gt; &lt;a href=&#34;http://unetbootin.sourceforge.net&#34;&gt;http://unetbootin.sourceforge.net&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;1，选择镜像源，从网络下载或者本地iso文件 
+&lt;p&gt;1，选择镜像源，从网络下载或者本地iso文件
 2，在类型中选择usb设备或者硬盘，然后在驱动器栏选择具体的盘符。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;LinuxLive USB Creator&lt;/strong&gt; &lt;a href=&#34;http://www.linuxliveusb.com/&#34;&gt;http://www.linuxliveusb.com/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;1，选择需要写入的USB设备 
+&lt;p&gt;1，选择需要写入的USB设备
 2，选择安装源（ISO文件、光驱、网路下载）&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Image Writer for Microsoft Windows (Win32DiskImager)&lt;/strong&gt; &lt;a href=&#34;https://launchpad.net/win32-image-writer&#34;&gt;https://launchpad.net/win32-image-writer&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;这个操作相对很简单，并且只单一的适用于img镜像文件，如Meego就是采用这种发行方式&lt;/p&gt;
@@ -10861,7 +10861,7 @@ deb http://apt.25pp.com/ ./&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;最后在webos-internals.org上找到了方法，地址在这里&lt;a href=&#34;http://www.webos-internals.org/wiki/How_To_Recover&#34;&gt;http://www.webos-internals.org/wiki/How_To_Recover&lt;/a&gt;，里面列出了几个不能正常recovery的实例，参考里面的Doctor disconnects at 8%条目，就可以解决刷机12%的问题。
 从里面说明来看，造成这些问题的主要原因就是存储问题，所以可能是由于我使用了一键清除工具的原因。&lt;/p&gt;
 &lt;p&gt;主要步骤如下：&lt;/p&gt;
-&lt;p&gt;1，重启手机，进入到recovery模式下(Power+音量上） 
+&lt;p&gt;1，重启手机，进入到recovery模式下(Power+音量上）
 2，使用novacom刷入uImage&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;#novacom boot mem://&amp;lt; nova-installer-image-broadway.uImage
 &lt;/code&gt;&lt;/pre&gt;
@@ -11116,10 +11116,10 @@ Query OK, 0 rows affected (0.03 sec)&lt;/code&gt;&lt;/pre&gt;
       <description>&lt;p&gt;N900采用的maemo是基于debian的linux系统，通过自带的application manager管理软件时，操作体验还有待改进，所以这里推荐通过ssh连接，使用cli来进行相应操作。
 需要在手机端安装OpenSSH来开启SSH服务，在application manager的system目录下，找到&lt;strong&gt;openssh Client and Server&lt;/strong&gt;安装，当然如果你不需要在手机端进行SSH登陆的话，那可以只安装server即可。
 安装时会提示输入密码，这个就是以后连接手机SSH的服务密码。
-安装完成后SSH server会默认启动，现在你可以通过wifi连接局域网，然后需要知道自己当前的IP（可以通过Tp-link后台查看，或者手机端安装&lt;strong&gt;Personal IP Address&lt;/strong&gt;开显示)，再推荐安装&lt;strong&gt;SSH Status and Swither&lt;/strong&gt;，可以在手机的status显示SSH状态，并管理SSH server启动/停止。 
+安装完成后SSH server会默认启动，现在你可以通过wifi连接局域网，然后需要知道自己当前的IP（可以通过Tp-link后台查看，或者手机端安装&lt;strong&gt;Personal IP Address&lt;/strong&gt;开显示)，再推荐安装&lt;strong&gt;SSH Status and Swither&lt;/strong&gt;，可以在手机的status显示SSH状态，并管理SSH server启动/停止。
 &lt;img src=&#34;https://unixetc.com/imgs/698163850.webp&#34; alt=&#34;ssh status&#34;&gt;&lt;/p&gt;
 &lt;p&gt;然后推荐使用Putty进行链接，在CLI模式下管理软件，可以在&lt;a href=&#34;http://maemo.org/&#34;&gt;http://maemo.org/&lt;/a&gt;上查看软件目录以及简介，通过&lt;code&gt;apt-get install&lt;/code&gt;命令来安装，以下为一些apt-get使用简介&lt;/p&gt;
-&lt;p&gt;使用方法: 
+&lt;p&gt;使用方法:
 apt-get [选项] 命令
 apt-get [选项] install|remove pkg1 [pkg2 &amp;hellip;]
 apt-get [选项] source pkg1 [pkg2 &amp;hellip;]&lt;/p&gt;
@@ -11160,7 +11160,7 @@ check - 校验软件包是否有异常
       <description>&lt;p&gt;首先，需要iPhone已经越狱，并且安装了OpenSSH&lt;/p&gt;
 &lt;p&gt;脚本文件下载：&lt;a href=&#34;http://cdn.lyq.wiki/res/langpack2.2.zip&#34;&gt;http://cdn.lyq.wiki/res/langpack2.2.zip&lt;/a&gt;，解压出脚本文件langpack2.2.sh&lt;/p&gt;
 &lt;p&gt;通过itools或者其他管理软件，将脚本文件复制到/var/mobile目录&lt;/p&gt;
-&lt;p&gt;通过&lt;a href=&#34;https://unixetc.com/post/iphone-and-ssh/&#34;&gt;ssh连接手机&lt;/a&gt;，进入/var/mobile目录开始操作 
+&lt;p&gt;通过&lt;a href=&#34;https://unixetc.com/post/iphone-and-ssh/&#34;&gt;ssh连接手机&lt;/a&gt;，进入/var/mobile目录开始操作
 &lt;strong&gt;注意：此时请关闭手机的定时锁屏功能，以防意外终止操作而失败！！&lt;/strong&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;#chmod 777 langpack2.2.sh   //为脚本添加执行权限
 #./langpack2.2.sh  //运行脚本

@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
 
 
 
@@ -72,10 +72,10 @@
     <div class="content post-summary">
         Centos7安装指南
 安装NTFS-3G 下载ntfs-3g_ntfsprogs-2014.2.15.tgz http://cdn.lyq.wiki/res/ntfs-3g_ntfsprogs-2014.2.15.tgz
-#tar zxf ntfs-3g_ntfsprogs-2014.2.15.tgz#cd ntfs-3g_ntfsprogs-2014.2.15#make#make install 如果make无法成功的话，请重新安装gcc yum install gcc
+#tar zxf ntfs-3g_ntfsprogs-2014.2.15.tgz #cd ntfs-3g_ntfsprogs-2014.2.15 #make #make install  如果make无法成功的话，请重新安装gcc yum install gcc
 使用NTFS-3G 临时挂载window分区：
-#mkdir /mnt/windowsc/#mount -t ntfs-3g /dev/sda1 /mnt/windosc/ 编辑fstab开机挂载分区，可以参考通过fstab自动挂载分区
-/dev/sda1 /mnt/windowsc ntfs-3g defaults 0 0 NTFS-3G主页
+#mkdir /mnt/windowsc/ #mount -t ntfs-3g /dev/sda1 /mnt/windosc/  编辑fstab开机挂载分区，可以参考通过fstab自动挂载分区
+/dev/sda1 /mnt/windowsc ntfs-3g defaults 0 0  NTFS-3G主页
     </div>
 
     
@@ -120,7 +120,7 @@
     <div class="content post-summary">
         下载Centos7安装镜像: http://mirrors.aliyun.com/centos/7.0.1406/isos/x86_64/CentOS-7.0-1406-x86_64-GnomeLive.iso
 将下载后的镜像写入U盘:
-#dd if=CentOS-7.0-1406-x86_64-GnomeLive.iso of=/dev/sdb bs=4M &amp;&amp; sync 关闭电脑，从U盘启动。
+#dd if=CentOS-7.0-1406-x86_64-GnomeLive.iso of=/dev/sdb bs=4M &amp;&amp; sync  关闭电脑，从U盘启动。
 进入桌面后，点击Install to Hard Drive开始安装。
 选择语言
 这里选择简体中文(中国)
@@ -182,13 +182,13 @@
 
     <div class="content post-summary">
         进入/etc/grub.d/目录
-#cd /etc/grub.d/ 新建15_Windows文件，写入以下内容：
-#! /bin/sh -eecho &quot;#Adding Windows&quot; &gt;&amp;2cat &lt;&lt; EOFmenuentry &quot;Windows&quot; {set root=(hd0,1)chainloader +1}EOF 其中(hd0,1)是本地磁盘windows主扇区号，可以通过fdisk -l来查看确定。
+#cd /etc/grub.d/  新建15_Windows文件，写入以下内容：
+#! /bin/sh -e echo &quot;#Adding Windows&quot; &gt;&amp;2 cat &lt;&lt; EOF menuentry &quot;Windows&quot; { set root=(hd0,1) chainloader +1 } EOF  其中(hd0,1)是本地磁盘windows主扇区号，可以通过fdisk -l来查看确定。
 设定文件权限
-#chmod 755 15_Windows 编辑/etc/default/grub来设定菜单等待时间
-GRUB_TIMEOUT=2GRUB_DISTRIBUTOR=&quot;$(sed 's, release .*$,,g' /etc/system-release)&quot;GRUB_DEFAULT=savedGRUB_DISABLE_SUBMENU=trueGRUB_TERMINAL_OUTPUT=&quot;console&quot;GRUB_CMDLINE_LINUX=&quot;vconsole.keymap=us crashkernel=auto vconsole.font=latarcyrheb-sun16 rhgb quiet&quot;GRUB_DISABLE_RECOVERY=&quot;true&quot; 修改GRUB_TIMEOUT值即可。
+#chmod 755 15_Windows  编辑/etc/default/grub来设定菜单等待时间
+GRUB_TIMEOUT=2 GRUB_DISTRIBUTOR=&quot;$(sed 's, release .*$,,g' /etc/system-release)&quot; GRUB_DEFAULT=saved GRUB_DISABLE_SUBMENU=true GRUB_TERMINAL_OUTPUT=&quot;console&quot; GRUB_CMDLINE_LINUX=&quot;vconsole.keymap=us crashkernel=auto vconsole.font=latarcyrheb-sun16 rhgb quiet&quot; GRUB_DISABLE_RECOVERY=&quot;true&quot;  修改GRUB_TIMEOUT值即可。
 设置Windows为默认启动项
-#grub2-set-default &quot;windows&quot; 然后运行以下命令，使以上修改生效：
+#grub2-set-default &quot;windows&quot;  然后运行以下命令，使以上修改生效：
 # grub2-mkconfig -o /boot/grub2/grub.cfg 
     </div>
 
@@ -252,7 +252,7 @@ GRUB_TIMEOUT=2GRUB_DISTRIBUTOR=&quot;$(sed 's, release .*$,,g' /etc/system-rele
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

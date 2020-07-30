@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
 
 
 
@@ -80,7 +80,7 @@ Pages服务设置 建立完成后，在项目设置中找到Pages服务服务进
  强制HTTPS访问  打开该选项，则为你的域名自动申请设置** Let&rsquo;s Encrypt**证书，并开启**https**访问。
  Hosted by Coding Pages  新站点都会有coding pages跳转页，按照Hosted by Coding Pages说明，在首页添加规定连接后，可以提交申请不显示跳转页。
 使用Git部署站点 首先推荐配置SSH公钥以便于操作。
-$ ssh-keygen -t rsa -C &quot;name@domain.com&quot; //在此设置为coding.net帐号邮箱Generating public/private rsa key pair.Enter file in which to save the key (/c/Users/dotbbq/.ssh/id_rsa):Created directory '/c/Users/dotbbq/.ssh'.Enter passphrase (empty for no passphrase):Enter same passphrase again:Your identification has been saved in /c/Users/dotbbq/.
+$ ssh-keygen -t rsa -C &quot;name@domain.com&quot; //在此设置为coding.net帐号邮箱 Generating public/private rsa key pair. Enter file in which to save the key (/c/Users/dotbbq/.ssh/id_rsa): Created directory '/c/Users/dotbbq/.ssh'. Enter passphrase (empty for no passphrase): Enter same passphrase again: Your identification has been saved in /c/Users/dotbbq/.
     </div>
 
     
@@ -122,11 +122,11 @@ $ ssh-keygen -t rsa -C &quot;name@domain.com&quot; //在此设置为coding.net�
 
     <div class="content post-summary">
         天朝的dns服务商尿性不是一般的大，动不动就抽风或者劫持，为了避免这种情况，可以在树莓派上安装Dnsmasq来加速dns解析，提高网络浏览体验。
-安装配置dnsmasq apt-get install dnsmasq 配置dnsmasq,vi /etc/dnsmasq.conf
+安装配置dnsmasq apt-get install dnsmasq  配置dnsmasq,vi /etc/dnsmasq.conf
 我的配置文件如下：
-domain=Raspi2resolv-file=/etc/resolv.dnsmasqconf-dir=/etc/dnsmasq.dmin-port=4096server=114.114.114.114server=114.114.115.115server=223.5.5.5server=223.6.6.6server=119.29.29.29server=182.254.116.116server=112.124.47.27server=114.215.126.16server=101.226.4.6server=218.30.118.6server=42.120.21.30server=199.91.73.222server=178.79.131.110server=8.8.8.8server=8.8.4.4cache-size=10000 配置完重启dnsmasq服务
-service dnsmasq restart 其中的server字段为上游DNS
-配置dnsmasq-china-list git clone https://github.com/felixonmars/dnsmasq-china-list.gitcd dnsmasq-china-list/cp *.conf /etc/dnsmasq.d/service dnsmasq restart 至此设置完成，可以在路由器中将首选dns设为树莓派ip，这样局域网内的所有设备都可以体验dns解析加速了！
+domain=Raspi2 resolv-file=/etc/resolv.dnsmasq conf-dir=/etc/dnsmasq.d min-port=4096 server=114.114.114.114 server=114.114.115.115 server=223.5.5.5 server=223.6.6.6 server=119.29.29.29 server=182.254.116.116 server=112.124.47.27 server=114.215.126.16 server=101.226.4.6 server=218.30.118.6 server=42.120.21.30 server=199.91.73.222 server=178.79.131.110 server=8.8.8.8 server=8.8.4.4 cache-size=10000  配置完重启dnsmasq服务
+service dnsmasq restart  其中的server字段为上游DNS
+配置dnsmasq-china-list git clone https://github.com/felixonmars/dnsmasq-china-list.git cd dnsmasq-china-list/ cp *.conf /etc/dnsmasq.d/ service dnsmasq restart  至此设置完成，可以在路由器中将首选dns设为树莓派ip，这样局域网内的所有设备都可以体验dns解析加速了！
     </div>
 
     
@@ -184,7 +184,7 @@ service dnsmasq restart 其中的server字段为上游DNS
 将Typecho文章导出为Markdown文件(.md) Github上有现成的工具typecho-exporter，主页为https://github.com/aneasystone/typecho-exporter
 这个工具可以将所有的文章导出为Markdown文件，但是以文章标题为文件名，不利于后期处理，建议使用slug为文件名。
 编辑下载的main.py，将75行的p.title = r[1]替换为`p.title = r[2]'，如下:
-results = cur.fetchall()for r in results:p = Post()p.id = r[0]p.title = r[2]p.content = r[5]posts.append(p) 原来的r[1]对应typecho_contentsSQL表中的title列，我的r[2]对应slug列，可以根据实际情况更改。
+results = cur.fetchall() for r in results: p = Post() p.id = r[0] p.title = r[2] p.content = r[5] posts.append(p)  原来的r[1]对应typecho_contentsSQL表中的title列，我的r[2]对应slug列，可以根据实际情况更改。
 编辑typecho-exporter的config.ini文件，设置数据库访问方式。
 运行main.py，完成后会在typecho-exporter目录下生成files文件夹，里面就是导出的Markdown文件。
 后期整理 导出后的Markdown没有Gor需要的文件头格式，需要手动整理
@@ -271,7 +271,7 @@ results = cur.fetchall()for r in results:p = Post()p.id = r[0]p.title = r[2]
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

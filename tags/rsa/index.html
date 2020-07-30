@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
 
 
 
@@ -72,7 +72,7 @@
     <div class="content post-summary">
         在一加3T上安装完UbuntuTouch后，可以通过以下方法开启SSH登录。
 打开终端(Terminal)，输入以下命令开启ssh服务。
-sudo android-gadget-service enable ssh 然后就可以通过ssh phablet@ip来登录设备。
+sudo android-gadget-service enable ssh  然后就可以通过ssh phablet@ip来登录设备。
     </div>
 
     
@@ -118,12 +118,12 @@ sudo android-gadget-service enable ssh 然后就可以通过ssh phablet@ip来�
 
     <div class="content post-summary">
         生成ssh密匙文件 ssh-keygen -t rsa -C &quot;user@domain.com&quot;  接下来会提示输入密码，推荐自定义密码，当然也可以置空
-Enter passphrase(empty for no passphrase):Enter same passphrase again: 完成后会在用户目录下的.ssh文件夹中新建id_rsa与is_rsa.pub两个文件。
+Enter passphrase(empty for no passphrase): Enter same passphrase again:  完成后会在用户目录下的.ssh文件夹中新建id_rsa与is_rsa.pub两个文件。
 添加ssh密匙到github用户 登录至github.com,点击右上角的Account Settings
 在左侧选择SSH Keys菜单，然后在右侧点击Add SSH Key按钮
 将上一步生成的id_rsa.pub文件内容复制进去保存。
-本地连接至github.com ssh -T git@github.com 如果前面设置了passphrase，那么就按照提示输入passphrase。如果置空的话，就直接点击回车。成功后会有如下提示：
-Hi wrchiu! You`ve successfully authenticated, but GitHub does note provide shell access. 参考以上设置完成后，以后git push时就不需要每次输入密码了！
+本地连接至github.com ssh -T git@github.com  如果前面设置了passphrase，那么就按照提示输入passphrase。如果置空的话，就直接点击回车。成功后会有如下提示：
+Hi wrchiu! You`ve successfully authenticated, but GitHub does note provide shell access.  参考以上设置完成后，以后git push时就不需要每次输入密码了！
     </div>
 
     
@@ -171,7 +171,7 @@ Hi wrchiu! You`ve successfully authenticated, but GitHub does note provide shell
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

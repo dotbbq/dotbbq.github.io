@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
 
 
 
@@ -77,7 +77,7 @@
 突然想到grub是否可以引导iso？ 网上找了下，还真可以，于是下载了个WinPE镜像文件，打算通过grub来引导以修复Windows。
 具体操作如下：
 安装grub-imageboot
-alair@e6440:~$ apt search memdisk正在排序... 完成全文搜索... 完成 grub-imageboot/bionic,bionic 0.6 allboot iso, harddisk and floppy images with grub2 and syslinux memdiskalair@e6440:~$ sudo apt install grub-imageboot[sudo] alair 的密码： 正在读取软件包列表... 完成正在分析软件包的依赖关系树 正在读取状态信息... 完成 将会同时安装下列软件：syslinux-common下列【新】软件包将被安装：grub-imageboot syslinux-common升级了 0 个软件包，新安装了 2 个软件包，要卸载 0 个软件包，有 4 个软件包未被升级。需要下载 1,176 kB 的归档。解压缩后会消耗 3,684 kB 的额外空间。您希望继续执行吗？ [Y/n] y获取:1 http://mirrors.cqu.edu.cn/ubuntu bionic/main amd64 syslinux-common all 3:6.
+alair@e6440:~$ apt search memdisk 正在排序... 完成 全文搜索... 完成 grub-imageboot/bionic,bionic 0.6 all boot iso, harddisk and floppy images with grub2 and syslinux memdisk alair@e6440:~$ sudo apt install grub-imageboot [sudo] alair 的密码： 正在读取软件包列表... 完成 正在分析软件包的依赖关系树 正在读取状态信息... 完成 将会同时安装下列软件： syslinux-common 下列【新】软件包将被安装： grub-imageboot syslinux-common 升级了 0 个软件包，新安装了 2 个软件包，要卸载 0 个软件包，有 4 个软件包未被升级。 需要下载 1,176 kB 的归档。 解压缩后会消耗 3,684 kB 的额外空间。 您希望继续执行吗？ [Y/n] y 获取:1 http://mirrors.cqu.edu.cn/ubuntu bionic/main amd64 syslinux-common all 3:6.
     </div>
 
     
@@ -137,7 +137,7 @@ alair@e6440:~$ apt search memdisk正在排序... 完成全文搜索... 完成 
 按照下一步提示进行操作，启用CLS服务。
 运行完成后即成功启用CLS服务。
 检查CLS服务配置状态可以使用以下命令:
-alair@e6440:~$ sudo canonical-livepatch status --verboseclient-version: 8.0.2machine-id: 08e0*****************750dbmachine-token: 4753a054c*****************a2eb84c7architecture: x86_64cpu-model: Intel(R) Core(TM) i5-4310M CPU @ 2.70GHzlast-check: 2018-05-25T19:55:15.537634075+08:00boot-time: 2018-05-25T19:47:51+08:00uptime: 14m43sstatus:- kernel: 4.15.0-22.24-genericrunning: truelivepatch:checkState: checkedpatchState: nothing-to-applyversion: &quot;&quot;fixes: &quot;&quot;
+alair@e6440:~$ sudo canonical-livepatch status --verbose client-version: 8.0.2 machine-id: 08e0*****************750db machine-token: 4753a054c*****************a2eb84c7 architecture: x86_64 cpu-model: Intel(R) Core(TM) i5-4310M CPU @ 2.70GHz last-check: 2018-05-25T19:55:15.537634075+08:00 boot-time: 2018-05-25T19:47:51+08:00 uptime: 14m43s status: - kernel: 4.15.0-22.24-generic running: true livepatch: checkState: checked patchState: nothing-to-apply version: &quot;&quot; fixes: &quot;&quot; 
     </div>
 
     
@@ -187,8 +187,8 @@ alair@e6440:~$ sudo canonical-livepatch status --verboseclient-version: 8.0.2m
         家里放了台老旧的台式机，显卡是GTX 660Ti，windows下必须安装特定的驱动版本才能显示最佳分辨率(1680x1050)，如果更新到最新的Nvidia驱动，反而显示器无法正常显示(1024x768)。
 没想到，这种情况在Linux下依然存在，不论是安装Debian还是Linux Mint或者Ubuntu，默认都是1024x768。
 网上找到了修复分辨率异常的方法，整理如下。
-检查当前显卡硬件情况 $ lspci |grep VGA01:00.0 VGA compatible controller: NVIDIA Corporation GK104 [GeForce GTX 660 Ti] (rev a2) 可以看到，显卡硬件识别正常。
-检查显卡分辨率情况 $ xrandrScreen 0: minimum 320 x 200, current 1024 x 768, maximum 8192 x 8192VGA-1 disconnected (normal left inverted right x axis y axis)DVI-I-1 connected primary 1024x768+0+0 (normal left inverted right x axis y axis) 0mm x 0mm1024x768 60.00* 800x600 60.
+检查当前显卡硬件情况 $ lspci |grep VGA 01:00.0 VGA compatible controller: NVIDIA Corporation GK104 [GeForce GTX 660 Ti] (rev a2)  可以看到，显卡硬件识别正常。
+检查显卡分辨率情况 $ xrandr Screen 0: minimum 320 x 200, current 1024 x 768, maximum 8192 x 8192 VGA-1 disconnected (normal left inverted right x axis y axis) DVI-I-1 connected primary 1024x768+0+0 (normal left inverted right x axis y axis) 0mm x 0mm 1024x768 60.00* 800x600 60.
     </div>
 
     
@@ -257,7 +257,7 @@ alair@e6440:~$ sudo canonical-livepatch status --verboseclient-version: 8.0.2m
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

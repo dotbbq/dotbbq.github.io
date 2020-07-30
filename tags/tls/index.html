@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070682" />
 
 
 
@@ -72,10 +72,10 @@
     <div class="content post-summary">
         Project V 提供了单一的内核和多种界面操作方式。内核（V2Ray）用于实际的网络交互、路由等针对网络数据的处理，而外围的用户界面程序提供了方便直接的操作流程。 V2Ray 的主要作用是根据用户的配置，对于传入的网络连接进行一定处理，然后发往指定的服务器。它是一个命令行程序，可以接受一个 JSON 格式的配置文件。
 VPS安装服务端 使用下面命令一键安装:
-bash &lt;(curl -L -s https://install.direct/go.sh) 或者从https://github.com/v2ray/v2ray-core/releases下载预编译包进行安装。
+bash &lt;(curl -L -s https://install.direct/go.sh)  或者从https://github.com/v2ray/v2ray-core/releases下载预编译包进行安装。
 安装完成后，使用service v2ray start启动v2ray服务。
 Windows安装本地端 从https://github.com/v2ray/v2ray-core/releases下载Windows客户端，解压后编辑config.json文件，内容如下：
-{&quot;inbound&quot;: {&quot;port&quot;: 1080, // 监听端口&quot;protocol&quot;: &quot;socks&quot;, // 入口协议为 SOCKS 5&quot;domainOverride&quot;: [&quot;tls&quot;,&quot;http&quot;],&quot;settings&quot;: {&quot;auth&quot;: &quot;noauth&quot; //socks的认证设置，noauth 代表不认证，由于 socks 通常在客户端使用，所以这里不认证}},&quot;outbound&quot;: {&quot;protocol&quot;: &quot;vmess&quot;, // 出口协议&quot;settings&quot;: {&quot;vnext&quot;: [{&quot;address&quot;: &quot;10.0.0.1&quot;, // 服务器地址，请修改为你自己的服务器 ip 或域名&quot;port&quot;: 31892, // 服务器端口&quot;users&quot;: [{&quot;id&quot;: &quot;3efd584f-8a7d-43af-9c75-35266df4ceb0&quot;, // 用户 ID，必须与服务器端配置相同&quot;alterId&quot;: 64 // 此处的值也应当与服务器相同}]}]}}} 以上的id和alterId，在vps上使用cat /etc/v2ray/config.
+{ &quot;inbound&quot;: { &quot;port&quot;: 1080, // 监听端口 &quot;protocol&quot;: &quot;socks&quot;, // 入口协议为 SOCKS 5 &quot;domainOverride&quot;: [&quot;tls&quot;,&quot;http&quot;], &quot;settings&quot;: { &quot;auth&quot;: &quot;noauth&quot; //socks的认证设置，noauth 代表不认证，由于 socks 通常在客户端使用，所以这里不认证 } }, &quot;outbound&quot;: { &quot;protocol&quot;: &quot;vmess&quot;, // 出口协议 &quot;settings&quot;: { &quot;vnext&quot;: [ { &quot;address&quot;: &quot;10.0.0.1&quot;, // 服务器地址，请修改为你自己的服务器 ip 或域名 &quot;port&quot;: 31892, // 服务器端口 &quot;users&quot;: [ { &quot;id&quot;: &quot;3efd584f-8a7d-43af-9c75-35266df4ceb0&quot;, // 用户 ID，必须与服务器端配置相同 &quot;alterId&quot;: 64 // 此处的值也应当与服务器相同 } ] } ] } } }  以上的id和alterId，在vps上使用cat /etc/v2ray/config.
     </div>
 
     
@@ -135,7 +135,7 @@ Windows安装本地端 从https://github.com/v2ray/v2ray-core/releases下载Wind
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

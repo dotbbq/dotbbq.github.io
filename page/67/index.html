@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-	<meta name="generator" content="Hugo 0.74.3" />
+	<meta name="generator" content="Hugo 0.73.0" />
     
         
 <meta charset="utf-8">
@@ -16,7 +16,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
 
 
 
@@ -78,18 +78,18 @@ http://mirrors.163.com/archlinux/iso/2012.12.01/archlinux-2012.12.01-dual.iso.to
 完成后重启电脑进入到Archlinux CD开始进行安装。
 设置网络连接
 整个安装过程，本机需要连接互联网以下载所需文件，在此推荐使用网线连接自动获取IP，如果是这样那么当你进入到archlinux时网络已经连接成功了，可以使用ping来查看是否成功
-#ping -c 5 aotee.com 如果不是自动获取IP，可以参考以下相关命令设置网络连接：
+#ping -c 5 aotee.com  如果不是自动获取IP，可以参考以下相关命令设置网络连接：
 开启|关闭网络设备
-# ip link set eth0 up# ip link set eth0 down 自动获取IP(DHCP)
-# dhcpcd eth0 查看状态
-# ip addr show dev eth0 如果是无线网卡，请参考这里进行设置。
+# ip link set eth0 up # ip link set eth0 down  自动获取IP(DHCP)
+# dhcpcd eth0  查看状态
+# ip addr show dev eth0  如果是无线网卡，请参考这里进行设置。
 设置键盘布局
-#loadkeys us 准备硬盘分区
+#loadkeys us  准备硬盘分区
 设置硬盘分区时可以使用自己熟悉的工具进行操作，以下是我的分区方案
-/dev/sda9 /boot/dev/sda10 swap/dev/sda11 //dev/sda12 /home 我使用LinuxMint LiveCD的磁盘工具进行分区，分区完成后可以使用lsblk /dev/sda来查看结果。
+/dev/sda9 /boot /dev/sda10 swap /dev/sda11 / /dev/sda12 /home  我使用LinuxMint LiveCD的磁盘工具进行分区，分区完成后可以使用lsblk /dev/sda来查看结果。
 格式化分区
 参考以下命令对已有的分区进行格式化
-#mkfs -t ext2 /dev/sda9#mkfs -t ext4 /dev/sda11#mkfs -t ext4 /dev/sda12#mkswap /dev/sda10#swapon /dev/sda10 挂载分区
+#mkfs -t ext2 /dev/sda9 #mkfs -t ext4 /dev/sda11 #mkfs -t ext4 /dev/sda12 #mkswap /dev/sda10 #swapon /dev/sda10  挂载分区
     </div>
 
     
@@ -139,11 +139,11 @@ http://mirrors.163.com/archlinux/iso/2012.12.01/archlinux-2012.12.01-dual.iso.to
 进入到LiveCD后会弹出一个Welcome弹窗，可以点击其中的CLI Installer开始安装，或者先使用系统(Try it)，需要安装时在系统菜单中找到Cinnarch Installer CLI点击打开，也可以开始安装。
 打开安装程序前，请确认电脑已经可以联网使用，因为一切软件包都是实时从mirror下载的，并且安装好的系统和archlinux一样，可以滚动升级(Rolling upgrade)。
 打开安装程序，首先提示更新软件list，更新完成后会出现一个welcome的对话框，确认后进入到安装主菜单，如下：
-0 Set Language and Keyboard1 Set Time and Date2 Prepare Hard Drive3 Select Source4 Install System5 Configure System6 Exit Install  设置语言与键盘 (Set Language and Keyboard)
+0 Set Language and Keyboard 1 Set Time and Date 2 Prepare Hard Drive 3 Select Source 4 Install System 5 Configure System 6 Exit Install  设置语言与键盘 (Set Language and Keyboard)
 选择进入设置菜单，在此主要设置语言选项，键盘布局可以不设置，采用默认即可。 语言设置为zh_CN.UTF-8 设置键盘布局(Set Keymap)时可以直接选择返回主菜单(Return to Main Menu)
 设置时间与日期(Set Time And Date)
 此项用于设置时间与日期，此项下面有三个子菜单：
-1 Select Region and Timezone2 Set Time and Date3 Return to Main Menu 第一项菜单用于设置区域与时区，此次区域(Region)设置为Asia，时区(Timezone)设置为Chongqing(或者Beijing/Shanghai)
+1 Select Region and Timezone 2 Set Time and Date 3 Return to Main Menu  第一项菜单用于设置区域与时区，此次区域(Region)设置为Asia，时区(Timezone)设置为Chongqing(或者Beijing/Shanghai)
     </div>
 
     
@@ -188,7 +188,7 @@ http://mirrors.163.com/archlinux/iso/2012.12.01/archlinux-2012.12.01-dual.iso.to
     <div class="content post-summary">
         对于WebOS还是继续看好，但是出于使用习惯和需求，将已经闲置了两个多月的HP TouchPad出手，新入手了台iPad2 Wifi (32nm)。
 以下分享一些关于HP TouchPad的WebOS资源，以方便需要的朋友 以下为目录说明:
-G:WebOS├─8%及12%无法通过一键修砖 *关于刷机不过的处理方法├─cm7alpha3.5 *CM7 for HP TouchPad├─cm9alpha2 *CM7 for HP TouchPad├─patchs *一些补丁备份，便于安装├─soft *收集的一些HP TouchPad软件├─touchpad免激活 *HP TouchPad免激活工具├─WQI *WebOS Quick Install└─zoopda-elite-TP *Zoopda eLite发布的DIY ROM for HP TouchPadcalibre-0.8.22.msi *电子书管理编辑软件KSMediaStreamer_v1.0.7.msi *流媒体分享软件NovacomInstaller_x86.msi *驱动程序(Windows)patch.txt *Preware补丁推荐Splashtop_Streamer_Win_v1.6.0.1.exe *远程桌面服务程序TBaccess.exe *TBaccess PC端UniversalNovacomInstaller.jar *驱动程序(Linux)webOS Nation Moboot.zip *MoBoot主题文件webosdoctorp305hstnhwifi.jar *HP TouchPad官网3.0.5 ROMWifiMediaSync.msi *媒体文件同步工具手动删除android.txt *手动删除CM方法G:WebOScm7alpha3.5ACMEInstallerACMEUninstallergapps-gb-20110828-signed.zipmoboot_0.
+G:WebOS ├─8%及12%无法通过一键修砖 *关于刷机不过的处理方法 ├─cm7alpha3.5 *CM7 for HP TouchPad ├─cm9alpha2 *CM7 for HP TouchPad ├─patchs *一些补丁备份，便于安装 ├─soft *收集的一些HP TouchPad软件 ├─touchpad免激活 *HP TouchPad免激活工具 ├─WQI *WebOS Quick Install └─zoopda-elite-TP *Zoopda eLite发布的DIY ROM for HP TouchPad calibre-0.8.22.msi *电子书管理编辑软件 KSMediaStreamer_v1.0.7.msi *流媒体分享软件 NovacomInstaller_x86.msi *驱动程序(Windows) patch.txt *Preware补丁推荐 Splashtop_Streamer_Win_v1.6.0.1.exe *远程桌面服务程序 TBaccess.exe *TBaccess PC端 UniversalNovacomInstaller.jar *驱动程序(Linux) webOS Nation Moboot.zip *MoBoot主题文件 webosdoctorp305hstnhwifi.jar *HP TouchPad官网3.0.5 ROM WifiMediaSync.msi *媒体文件同步工具 手动删除android.txt *手动删除CM方法 G:WebOScm7alpha3.5 ACMEInstaller ACMEUninstaller gapps-gb-20110828-signed.zip moboot_0.
     </div>
 
     
@@ -255,7 +255,7 @@ G:WebOS├─8%及12%无法通过一键修砖 *关于刷机不过的处理方�
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

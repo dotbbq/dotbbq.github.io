@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
 
 
 
@@ -86,10 +86,10 @@ Armbian_5.98_Aml-g12_Debian_buster_dev_5.4.0-rc4_20191025.img.xz
  然后输入adb shell reboot update开始从U盘引导Armbian系统，盒子重启后成功引导armbian，此时可以将usb刷机线拔掉，插入一个外接键盘，开始后面操作。
 Armbian系统默认账号为root，密码为1234，按照提示输入账号信息进行登录，登录后会有更改默认密码提示，按照提示更改默认密码。
 接下来会有新建账号提示:
-Creating a new user account. Press &lt;Ctrl-C&gt; to abortPlease provide a username (eg. your forename):可以按照该提示新建账号，或者按Ctrl+c终止，继续用root账号登录。
+Creating a new user account. Press &lt;Ctrl-C&gt; to abort Please provide a username (eg. your forename): 可以按照该提示新建账号，或者按Ctrl+c终止，继续用root账号登录。
 将Armbian安装到N1中 以上只是从U盘成功引导登录Armbian，接下来我们将Armbian安装到N1内置存储(eMMC)，即可拔掉U盘了。
 如果是通过root登录的话，那么直接运行root目录下install.sh即可安装，如下：
- root@aml:~# ./install. shStart script create MBR and filesystem/dev/mmcblk1Start backup u-boot default4＋0 records in4＋0 records out4194304 bytes（4.
+ root@aml:~# ./install. sh Start script create MBR and filesystem /dev/mmcblk1 Start backup u-boot default 4＋0 records in 4＋0 records out 4194304 bytes（4.
     </div>
 
     
@@ -148,7 +148,7 @@ Creating a new user account. Press &lt;Ctrl-C&gt; to abortPlease provide a user
  This file MUST be edited with the &lsquo;visudo&rsquo; command as root.
  但奇葩的是系统中没有visudo命令，apt搜索也搜不到，-_-!
 因此只能通过以下方法来编辑：
-#echo &quot;alair ALL=(ALL:ALL) ALL&quot; &gt;&gt; /etc/sudoers 保存后用户alair就可以使用sudo命令来进行root权限操作了。
+#echo &quot;alair ALL=(ALL:ALL) ALL&quot; &gt;&gt; /etc/sudoers  保存后用户alair就可以使用sudo命令来进行root权限操作了。
     </div>
 
     
@@ -200,17 +200,17 @@ Creating a new user account. Press &lt;Ctrl-C&gt; to abortPlease provide a user
         Firefox Send是什么？ Firefox Send是一个简单、私密的文件分享服务，使用Firefox Send端到端加密分享文件，链接到期即焚。分享更私密，文件到期真正无痕迹。
 安装ffsend ffsend是一款Firefox Send的客户端，支持多种操作系统(Linux、Windows、MacOS&hellip;)
 以下为CentOS7安装ffsend实例：
-#wget https://glare.now.sh/timvisee/ffsend/linux-x64-static -o /usr/local/bin/ffsend#chmod +x /usr/local/bin/ffsend 其他版本安装可以参考ffsend官网和ffsend官方下载
+#wget https://glare.now.sh/timvisee/ffsend/linux-x64-static -o /usr/local/bin/ffsend #chmod +x /usr/local/bin/ffsend  其他版本安装可以参考ffsend官网和ffsend官方下载
 ffsend使用方法 上传文件
-ffsend upload fenix.apkUpload completehttps://send.firefox.com/download/4cecb9c1ab628f8e/#m5is-YRSfnBIQ-pBaSds0A 高级上传
+ffsend upload fenix.apk Upload complete https://send.firefox.com/download/4cecb9c1ab628f8e/#m5is-YRSfnBIQ-pBaSds0A  高级上传
  指定下再限制20
 输入密码加密文件
 在上传之前归档文件
 将共享链接复制到剪贴板
 在浏览器中打开共享链接
- ffsend upload --downloads 20 --password --archive --copy --open fenix.apkPassword: ******https://send.firefox.com/download/4cecb9c1ab628f8e/#m5is-YRSfnBIQ-pBaSds0A 上传到自定义主机
-ffsend u -h https://example.com/ my-file.txthttps://example.com/#sample-share-url 下载文件
-ffsend download https://send.firefox.com/download/4cecb9c1ab628f8e/#m5is-YRSfnBIQ-pBaSds0A 
+ ffsend upload --downloads 20 --password --archive --copy --open fenix.apk Password: ****** https://send.firefox.com/download/4cecb9c1ab628f8e/#m5is-YRSfnBIQ-pBaSds0A  上传到自定义主机
+ffsend u -h https://example.com/ my-file.txt https://example.com/#sample-share-url  下载文件
+ffsend download https://send.firefox.com/download/4cecb9c1ab628f8e/#m5is-YRSfnBIQ-pBaSds0A  
     </div>
 
     
@@ -277,7 +277,7 @@ ffsend download https://send.firefox.com/download/4cecb9c1ab628f8e/#m5is-YRSfnBI
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

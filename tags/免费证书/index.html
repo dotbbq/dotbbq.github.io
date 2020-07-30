@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070682" />
 
 
 
@@ -71,8 +71,8 @@
 
     <div class="content post-summary">
         在此介绍如何使用Let&rsquo;s Encrypt的免费SSL证书，需要在有管理权限的VPS上操作，然后参考以下方法自签域名证书。
-git clone https://github.com/letsencrypt/letsencrypt.gitcd letsencryptmkdir -p /home/webroot/.well-known/acme-challenge #/home/webroot为网站目录./letsencrypt-auto certonly --email me@alair.cn -d alair.cn,www.alair.cn --webroot -w /home/webroot --agree-tos #注意email、域名、和网站目录 签发成功后，会提示如/etc/letsencrypt/live/www.alair.cn/fullchain.pem;的证书路径信息。
-IMPORTANT NOTES:- Congratulations! Your certificate and chain have been saved at/etc/letsencrypt/live/www.alair.cn/fullchain.pem. Your cert willexpire on 2016-03-14. To obtain a new version of the certificate inthe future, simply run Let's Encrypt again.- If like Let's Encrypt, please consider supporting our work by:Donating to ISRG / Let's Encrypt: https://letsencrypt.
+git clone https://github.com/letsencrypt/letsencrypt.git cd letsencrypt mkdir -p /home/webroot/.well-known/acme-challenge #/home/webroot为网站目录 ./letsencrypt-auto certonly --email me@alair.cn -d alair.cn,www.alair.cn --webroot -w /home/webroot --agree-tos #注意email、域名、和网站目录  签发成功后，会提示如/etc/letsencrypt/live/www.alair.cn/fullchain.pem;的证书路径信息。
+IMPORTANT NOTES: - Congratulations! Your certificate and chain have been saved at /etc/letsencrypt/live/www.alair.cn/fullchain.pem. Your cert will expire on 2016-03-14. To obtain a new version of the certificate in the future, simply run Let's Encrypt again. - If like Let's Encrypt, please consider supporting our work by: Donating to ISRG / Let's Encrypt: https://letsencrypt.
     </div>
 
     
@@ -136,7 +136,7 @@ IMPORTANT NOTES:- Congratulations! Your certificate and chain have been saved a
 接下来添加域名
 接下来将文本框中的内容保存为一个**.crt**文件
 配置Nginx 贴出我的配置文件，大家参考一下
-server {listen 80;location /{return 301 https://$host$request_uri;}}server{listen 443;#listen 80;#listen [::]:80;server_name ciux.org;index index.html index.htm index.php default.html default.htm default.php;root /home/ciux/compiled;ssl on;ssl_certificate /home/bk/ssl/ciuxsss.crt;ssl_certificate_key /home/bk/ssl/ciuxsss.key;ssl_session_timeout 5m;ssl_protocols SSLv2 SSLv3 TLSv1;ssl_ciphers ALL:!
+server { listen 80; location /{ return 301 https://$host$request_uri; } } server { listen 443; #listen 80; #listen [::]:80; server_name ciux.org; index index.html index.htm index.php default.html default.htm default.php; root /home/ciux/compiled; ssl on; ssl_certificate /home/bk/ssl/ciuxsss.crt; ssl_certificate_key /home/bk/ssl/ciuxsss.key; ssl_session_timeout 5m; ssl_protocols SSLv2 SSLv3 TLSv1; ssl_ciphers ALL:!
     </div>
 
     
@@ -188,7 +188,7 @@ server {listen 80;location /{return 301 https://$host$request_uri;}}server
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

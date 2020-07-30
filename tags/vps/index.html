@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070682" />
 
 
 
@@ -81,8 +81,8 @@ TCP还有一个特性则是拥塞控制。当发送端检测到链路发生丢�
 目前程序起名net-speeder，相对于修改协议栈来讲，由于后者需要重新升级编译内核，使用用户态程序部署更方便，稳定性更高，兼容性更好。缺点则是性能开销稍大和自由度有损失。总体比较起来，个人使用还是使用用户态程序更合适一些，特别是在虚拟机中使用（OpenVZ，LXC等虚拟机无法自己定制内核）。
  摘自http://www.snooda.com/read/324
 net_speeder项目主页 https://github.com/snooda/net-speeder
-安装net_speeder apt-get install libnet-dev libpcap-dev -ygit clone https://github.com/snooda/net-speeder.gitcd net-speedersh build.shmv net_speeder /usr/local/bin/ 使用net_speeder 使用ifconfig查看网卡端口，我的端口为venet0
-nohup net_speeder venet0 &quot;ip&quot; &gt;/dev/null 2&gt;&amp;1 &amp; 添加到开机启动
+安装net_speeder apt-get install libnet-dev libpcap-dev -y git clone https://github.com/snooda/net-speeder.git cd net-speeder sh build.sh mv net_speeder /usr/local/bin/  使用net_speeder 使用ifconfig查看网卡端口，我的端口为venet0
+nohup net_speeder venet0 &quot;ip&quot; &gt;/dev/null 2&gt;&amp;1 &amp;  添加到开机启动
 echo 'nohup net_speeder venet0 &quot;ip&quot; &gt;/dev/null 2&gt;&amp;1 &amp;' &gt;&gt; /etc/rc.local 
     </div>
 
@@ -130,11 +130,11 @@ echo 'nohup net_speeder venet0 &quot;ip&quot; &gt;/dev/null 2&gt;&amp;1 &amp;' &
     <div class="content post-summary">
         Google Authenticator开源版主页 https://github.com/google/google-authenticator
 安装Google Authenticator Ubuntu已经包含libpam-google-authenticator软件(Ubuntu 11.10以上版本),可以直接使用apt-get安装
-apt-get install libpam-google-authenticator 其他系统可以通过源码编译安装
-git clone https://github.com/google/google-authenticator-libpam.gitcd google-authenticator-libpam/./bootstrap.sh./configuremakemake install 注意：在Debian7中执行./configure时可能存在以下错误提示
-configure: error: Unable to find the PAM library or the PAM header files 在此需要安装libpam0g-dev和libtool
-apt-get -y install libpam0g-dev libtool 设置Google Authenticator 在手机端搜索安装Google Authenticator
-google-authenticatorDo you want authentication tokens to be time-based (y/n) y 然后出现二维码，使用手机端Google Authenticator扫码,接下来服务器端继续设置
+apt-get install libpam-google-authenticator  其他系统可以通过源码编译安装
+git clone https://github.com/google/google-authenticator-libpam.git cd google-authenticator-libpam/ ./bootstrap.sh ./configure make make install  注意：在Debian7中执行./configure时可能存在以下错误提示
+configure: error: Unable to find the PAM library or the PAM header files  在此需要安装libpam0g-dev和libtool
+apt-get -y install libpam0g-dev libtool  设置Google Authenticator 在手机端搜索安装Google Authenticator
+google-authenticator Do you want authentication tokens to be time-based (y/n) y  然后出现二维码，使用手机端Google Authenticator扫码,接下来服务器端继续设置
 如果没有出现二维码，可以将提示的以**https://www.google.com/chart?**开头的连接复制到浏览器中，就可以看到二维码了
 Do you want me to update your &quot;/root/.
     </div>
@@ -194,7 +194,7 @@ Do you want me to update your &quot;/root/.
 
     <div class="content post-summary">
         VPS配置:
-Ubuntu 14.04 x86RAM 512MSWAP 64MDISK 5G 准备工作 sudo apt-get update&amp;&amp;apt-get upgrade -ysudo apt-get install build-essential zlib1g-dev libpcre3 libpcre3-dev unzip libssl-dev -y 下载ngx_pagespeed cdNPS_VERSION=1.9.32.4wget https://github.com/pagespeed/ngx_pagespeed/archive/release-${NPS_VERSION}-beta.zipunzip release-${NPS_VERSION}-beta.zipcd ngx_pagespeed-release-${NPS_VERSION}-beta/wget https://dl.google.com/dl/page-speed/psol/${NPS_VERSION}.tar.gztar -xzvf ${NPS_VERSION}.tar.gz  安装Nginx cdgroupadd wwwuseradd -s /sbin/nologin -g www wwwNGINX_VERSION=1.8.0wget http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gztar -xvzf nginx-${NGINX_VERSION}.tar.gzcd nginx-${NGINX_VERSION}/./configure \--user=www \--group=www \--prefix=/usr/local/nginx \--with-http_stub_status_module \--with-http_ssl_module \--with-http_spdy_module \--with-http_gzip_static_module \--with-http_sub_module \--add-module=$HOME/ngx_pagespeed-release-${NPS_VERSION}-beta \sudo makesudo make installsudo ln -sf /usr/local/nginx/sbin/nginx /usr/bin/nginx 配置/etc/init.
+Ubuntu 14.04 x86 RAM 512M SWAP 64M DISK 5G  准备工作 sudo apt-get update&amp;&amp;apt-get upgrade -y sudo apt-get install build-essential zlib1g-dev libpcre3 libpcre3-dev unzip libssl-dev -y  下载ngx_pagespeed cd NPS_VERSION=1.9.32.4 wget https://github.com/pagespeed/ngx_pagespeed/archive/release-${NPS_VERSION}-beta.zip unzip release-${NPS_VERSION}-beta.zip cd ngx_pagespeed-release-${NPS_VERSION}-beta/ wget https://dl.google.com/dl/page-speed/psol/${NPS_VERSION}.tar.gz tar -xzvf ${NPS_VERSION}.tar.gz  安装Nginx cd groupadd www useradd -s /sbin/nologin -g www www NGINX_VERSION=1.8.0 wget http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz tar -xvzf nginx-${NGINX_VERSION}.tar.gz cd nginx-${NGINX_VERSION}/ ./configure \ --user=www \ --group=www \ --prefix=/usr/local/nginx \ --with-http_stub_status_module \ --with-http_ssl_module \ --with-http_spdy_module \ --with-http_gzip_static_module \ --with-http_sub_module \ --add-module=$HOME/ngx_pagespeed-release-${NPS_VERSION}-beta \ sudo make sudo make install sudo ln -sf /usr/local/nginx/sbin/nginx /usr/bin/nginx  配置/etc/init.
     </div>
 
     
@@ -255,7 +255,7 @@ Ubuntu 14.04 x86RAM 512MSWAP 64MDISK 5G 准备工作 sudo apt-get update&amp
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

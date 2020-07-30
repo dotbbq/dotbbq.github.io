@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
 
 
 
@@ -71,11 +71,11 @@
 
     <div class="content post-summary">
         下载Dropbox 32-bit:
-cd ~ &amp;&amp; wget -O - &quot;https://www.dropbox.com/download?plat=lnx.x86&quot; | tar xzf - 64-bit:
-cd ~ &amp;&amp; wget -O - &quot;https://www.dropbox.com/download?plat=lnx.x86_64&quot; | tar xzf - 连接到Dropbox ~/.dropbox-dist/dropboxd 按照提示，在浏览器中打开链接，确认授权。
+cd ~ &amp;&amp; wget -O - &quot;https://www.dropbox.com/download?plat=lnx.x86&quot; | tar xzf -  64-bit:
+cd ~ &amp;&amp; wget -O - &quot;https://www.dropbox.com/download?plat=lnx.x86_64&quot; | tar xzf -  连接到Dropbox ~/.dropbox-dist/dropboxd  按照提示，在浏览器中打开链接，确认授权。
 CLI模式使用Dropbox 下载执行脚本:
-wget https://www.dropbox.com/download?dl=packages/dropbox.pychmod +x dropbox.py dropbox.py使用
-root@hkvps:~# ./dropbox.py helpDropbox command-line interfacecommands:Note: use dropbox help &lt;command&gt; to view usage for a specific command.status get current status of the dropboxdhelp provide helppuburl get public url of a file in your dropboxstop stop dropboxdrunning return whether dropbox is runningstart start dropboxdfilestatus get current sync status of one or more filesls list directory contents with current sync statusautostart automatically start dropbox at loginexclude ignores/excludes a directory from syncinglansync enables or disables LAN sync 
+wget https://www.dropbox.com/download?dl=packages/dropbox.py chmod +x dropbox.py  dropbox.py使用
+root@hkvps:~# ./dropbox.py help Dropbox command-line interface commands: Note: use dropbox help &lt;command&gt; to view usage for a specific command. status get current status of the dropboxd help provide help puburl get public url of a file in your dropbox stop stop dropboxd running return whether dropbox is running start start dropboxd filestatus get current sync status of one or more files ls list directory contents with current sync status autostart automatically start dropbox at login exclude ignores/excludes a directory from syncing lansync enables or disables LAN sync 
     </div>
 
     
@@ -119,9 +119,9 @@ root@hkvps:~# ./dropbox.py helpDropbox command-line interfacecommands:Note: u
         Raspbian版本 2014-01-07-wheezy-raspbian.img
 下载地址为http://cdn.lyq.wiki/res/8188eu-20140616.tar.gz
 首先固网链接树莓派，通过SSH登录
-wget http://cdn.lyq.wiki/res/8188eu_31024_614.zipunzip 8188eu_31024_614.zipsudo mv 8188eu.ko /lib/modules/`uname -r`/kernel/drivers/net/wirelesssudo chown root:root /lib/modules/`uname -r`/kernel/drivers/net/wireless/8188eu.kosudo mv rtl8188eufw.bin /lib/firmware/rtlwifi/sudo chown root:root /lib/firmware/rtlwifi/rtl8188eufw.binsudo depmod -asudo modprobe 8188eu 然后编辑/etc/netwok/interfaces，添加以下内容
-allow-hotplug wlan0auto wlan0iface wlan0 inet manualwpa-roam /etc/mywpa.confiface default inet dhcp 新建mywpa.conf写入链接配置vi /etc/mywpa.conf
-network={ssid=&quot;YOUR SSID&quot;proto=RSNkey_mgmt=WPA-PSKpairwise=CCMP TKIPgroup=CCMP TKIPpsk=&quot;YOUR PASSWORD&quot;} 重启系统
+wget http://cdn.lyq.wiki/res/8188eu_31024_614.zip unzip 8188eu_31024_614.zip sudo mv 8188eu.ko /lib/modules/`uname -r`/kernel/drivers/net/wireless sudo chown root:root /lib/modules/`uname -r`/kernel/drivers/net/wireless/8188eu.ko sudo mv rtl8188eufw.bin /lib/firmware/rtlwifi/ sudo chown root:root /lib/firmware/rtlwifi/rtl8188eufw.bin sudo depmod -a sudo modprobe 8188eu  然后编辑/etc/netwok/interfaces，添加以下内容
+allow-hotplug wlan0 auto wlan0 iface wlan0 inet manual wpa-roam /etc/mywpa.conf iface default inet dhcp  新建mywpa.conf写入链接配置vi /etc/mywpa.conf
+network={ ssid=&quot;YOUR SSID&quot; proto=RSN key_mgmt=WPA-PSK pairwise=CCMP TKIP group=CCMP TKIP psk=&quot;YOUR PASSWORD&quot; }  重启系统
     </div>
 
     
@@ -178,7 +178,7 @@ network={ssid=&quot;YOUR SSID&quot;proto=RSNkey_mgmt=WPA-PSKpairwise=CCMP TK
     <div class="content post-summary">
         下载Centos7安装镜像: http://mirrors.aliyun.com/centos/7.0.1406/isos/x86_64/CentOS-7.0-1406-x86_64-GnomeLive.iso
 将下载后的镜像写入U盘:
-#dd if=CentOS-7.0-1406-x86_64-GnomeLive.iso of=/dev/sdb bs=4M &amp;&amp; sync 关闭电脑，从U盘启动。
+#dd if=CentOS-7.0-1406-x86_64-GnomeLive.iso of=/dev/sdb bs=4M &amp;&amp; sync  关闭电脑，从U盘启动。
 进入桌面后，点击Install to Hard Drive开始安装。
 选择语言
 这里选择简体中文(中国)
@@ -259,7 +259,7 @@ network={ssid=&quot;YOUR SSID&quot;proto=RSNkey_mgmt=WPA-PSKpairwise=CCMP TK
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

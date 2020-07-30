@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
 
 
 
@@ -73,10 +73,10 @@
         网站的Let&rsquo;s encrypt证书快到期了，看了官方的续期方法比较繁琐，于是在网上找了找简单方便做法，结果找到了墓地小企鹅写的一个脚本(shell script)，使用这个脚本可以方便的生成以及更新Let&rsquo;s encrypt 证书。
 脚本地址 https://github.com/xdtianyu/scripts/tree/master/lets-encrypt
 下载脚本
-wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.confwget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh 配置
-root@rnse:~/lesh# cat letsencrypt.conf# only modify the values, key files will be generated automaticly.ACCOUNT_KEY=&quot;letsencrypt-account.key&quot;DOMAIN_KEY=&quot;alair.key&quot;DOMAIN_DIR=&quot;/data/wwwroot/alair.cn/compiled&quot;DOMAINS=&quot;DNS:alair.cn,DNS:www.alair.cn&quot;#ECC=TRUE#LIGHTTPD=TRUE 按照需要自定义DOMAIN_KEY、DOMAIN_DIR、DOMAINS三部分。
+wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.conf wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh  配置
+root@rnse:~/lesh# cat letsencrypt.conf # only modify the values, key files will be generated automaticly. ACCOUNT_KEY=&quot;letsencrypt-account.key&quot; DOMAIN_KEY=&quot;alair.key&quot; DOMAIN_DIR=&quot;/data/wwwroot/alair.cn/compiled&quot; DOMAINS=&quot;DNS:alair.cn,DNS:www.alair.cn&quot; #ECC=TRUE #LIGHTTPD=TRUE  按照需要自定义DOMAIN_KEY、DOMAIN_DIR、DOMAINS三部分。
 生成证书
-root@rnse:~/lesh#chmod +x letsencrypt.shroot@rnse:~/lesh# ./letsencrypt.sh letsencrypt.confGenerate account key...Generating RSA private key, 4096 bit long modulus..............................++....++e is 65537 (0x10001)Generate domain key...Generating RSA private key, 2048 bit long modulus.
+root@rnse:~/lesh#chmod +x letsencrypt.sh root@rnse:~/lesh# ./letsencrypt.sh letsencrypt.conf Generate account key... Generating RSA private key, 4096 bit long modulus ..............................++ ....++ e is 65537 (0x10001) Generate domain key... Generating RSA private key, 2048 bit long modulus .
     </div>
 
     
@@ -122,9 +122,9 @@ root@rnse:~/lesh#chmod +x letsencrypt.shroot@rnse:~/lesh# ./letsencrypt.sh lets
 
     <div class="content post-summary">
         首先查看树莓派cpu信息
-pi@raspi:~ $ cat /proc/cpuinfoprocessor : 0model name : ARMv6-compatible processor rev 7 (v6l)BogoMIPS : 2.00Features : half thumb fastmult vfp edsp java tlsCPU implementer : 0x41CPU architecture: 7CPU variant : 0x0CPU part : 0xb76CPU revision : 7Hardware : BCM2708Revision : 000eSerial : 000000004a8acb6d 看清楚cpu构架，是ARMv6
+pi@raspi:~ $ cat /proc/cpuinfo processor : 0 model name : ARMv6-compatible processor rev 7 (v6l) BogoMIPS : 2.00 Features : half thumb fastmult vfp edsp java tls CPU implementer : 0x41 CPU architecture: 7 CPU variant : 0x0 CPU part : 0xb76 CPU revision : 7 Hardware : BCM2708 Revision : 000e Serial : 000000004a8acb6d  看清楚cpu构架，是ARMv6
 然后在node.js官网下载对应版本的包，下载地址https://nodejs.org/dist/
-# wget https://nodejs.org/dist/v4.2.2/node-v4.2.2-linux-arm64.tar.gz# tar zxf node-v4.2.2-linux-arm64.tar.gz# mv node-v4.2.2-linux-arm64 /usr/nodejs422 方便使用期间，做个链接
+# wget https://nodejs.org/dist/v4.2.2/node-v4.2.2-linux-arm64.tar.gz # tar zxf node-v4.2.2-linux-arm64.tar.gz # mv node-v4.2.2-linux-arm64 /usr/nodejs422  方便使用期间，做个链接
     </div>
 
     
@@ -183,9 +183,9 @@ pi@raspi:~ $ cat /proc/cpuinfoprocessor : 0model name : ARMv6-compatible proce
     <div class="content post-summary">
         下载ScrollUp https://github.com/markgoodyear/scrollup
 在网页中引用jquery.scrollUp.js、jquery.easing.js、jquery.min.js三个JavaScript脚本，注意顺序
-&lt;script src=&quot;jquery.min.js&quot;&gt;&lt;/script&gt;&lt;script src=&quot;jquery.easing.js&quot;&gt;&lt;/script&gt;&lt;script src=&quot;jquery.scrollUp.js&quot;&gt;&lt;/script&gt; 然后加入控制代码
-&lt;script&gt;$(function () {$.scrollUp();});&lt;/script&gt; 以上是最简单的使用方法，还有一种带参数的方法
-$(function () {$.scrollUp({scrollName: 'scrollUp', // Element IDscrollDistance: 300, // Distance from top/bottom before showing element (px)scrollFrom: 'top', // 'top' or 'bottom'scrollSpeed: 300, // Speed back to top (ms)easingType: 'linear', // Scroll to top easing (see http://easings.net/)animation: 'fade', // Fade, slide, noneanimationSpeed: 200, // Animation speed (ms)scrollTrigger: false, // Set a custom triggering element.
+&lt;script src=&quot;jquery.min.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;jquery.easing.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;jquery.scrollUp.js&quot;&gt;&lt;/script&gt;  然后加入控制代码
+&lt;script&gt; $(function () { $.scrollUp(); }); &lt;/script&gt;  以上是最简单的使用方法，还有一种带参数的方法
+$(function () { $.scrollUp({ scrollName: 'scrollUp', // Element ID scrollDistance: 300, // Distance from top/bottom before showing element (px) scrollFrom: 'top', // 'top' or 'bottom' scrollSpeed: 300, // Speed back to top (ms) easingType: 'linear', // Scroll to top easing (see http://easings.net/) animation: 'fade', // Fade, slide, none animationSpeed: 200, // Animation speed (ms) scrollTrigger: false, // Set a custom triggering element.
     </div>
 
     
@@ -248,7 +248,7 @@ $(function () {$.scrollUp({scrollName: 'scrollUp', // Element IDscrollDistanc
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

@@ -2694,11 +2694,11 @@ fi
 02:00.0 Network controller: Intel Corporation Wireless 7260 (rev 73)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;搜索Inter相关固件
-​	
+​
 alair@zb14:~$ apt-cache search iwlwifi
 firmware-iwlwifi - Binary firmware for Intel Wireless cards&lt;/p&gt;
 &lt;p&gt;安装之
-​	
+​
 &lt;code&gt;alair@zb14:~$ apt-get install firmware-iwlwifi&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;重启完事儿！&lt;/p&gt;
 </description>
@@ -4769,9 +4769,9 @@ crontab [-u &amp;lt;用户名称&amp;gt;][配置文件] 或 crontab [-u &amp;lt;
 Minute Hour Day Month DayOFWeek Command&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;参数:&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;-e 　编辑该用户的计时器设置。 
--l 　列出该用户的计时器设置。 
--r 　删除该用户的计时器设置。 
+&lt;p&gt;-e 　编辑该用户的计时器设置。
+-l 　列出该用户的计时器设置。
+-r 　删除该用户的计时器设置。
 -u&amp;lt;用户名称&amp;gt; 　指定要设定计时器的用户名称。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h4 id=&#34;crontab-格式&#34;&gt;crontab 格式&lt;/h4&gt;
@@ -5730,14 +5730,14 @@ UEFI_i386   i386 UEFI
 &lt;p&gt;以下介绍几款Linux Live USB制作工具，个人推荐Linux Live USB Creator!&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;注:需要主板BIOS开启USB Boot功能。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Universal USB Installer&lt;/strong&gt; &lt;a href=&#34;http://www.pendrivelinux.com&#34;&gt;http://www.pendrivelinux.com&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;1，选择Linux版本，勾选后面的Download the iso(Optional).则从互联网下载所选镜像。 
-2，选择本地镜像文件(iso)。 
+&lt;p&gt;1，选择Linux版本，勾选后面的Download the iso(Optional).则从互联网下载所选镜像。
+2，选择本地镜像文件(iso)。
 3，选择将要写入的USB设备，勾选Show all Drives可以看到所有本地磁盘，需要写入移动硬盘就需要勾选此项。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;UNetbootin&lt;/strong&gt; &lt;a href=&#34;http://unetbootin.sourceforge.net&#34;&gt;http://unetbootin.sourceforge.net&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;1，选择镜像源，从网络下载或者本地iso文件 
+&lt;p&gt;1，选择镜像源，从网络下载或者本地iso文件
 2，在类型中选择usb设备或者硬盘，然后在驱动器栏选择具体的盘符。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;LinuxLive USB Creator&lt;/strong&gt; &lt;a href=&#34;http://www.linuxliveusb.com/&#34;&gt;http://www.linuxliveusb.com/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;1，选择需要写入的USB设备 
+&lt;p&gt;1，选择需要写入的USB设备
 2，选择安装源（ISO文件、光驱、网路下载）&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Image Writer for Microsoft Windows (Win32DiskImager)&lt;/strong&gt; &lt;a href=&#34;https://launchpad.net/win32-image-writer&#34;&gt;https://launchpad.net/win32-image-writer&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;这个操作相对很简单，并且只单一的适用于img镜像文件，如Meego就是采用这种发行方式&lt;/p&gt;

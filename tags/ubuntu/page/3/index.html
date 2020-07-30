@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070682" />
 
 
 
@@ -74,7 +74,7 @@
 UTC相当于本初子午线(即经度0度)上的平均太阳时，过去曾用格林威治平均时(GMT)来表示。北京时间比UTC时间早8小时，以1999年1月1日0000UTC为例，UTC时间是零点，北京时间为1999年1月1日早上8点整。所以我们在时间上面相隔了8个小时。这个时候bios的时间和系统的时间当然是不一致，一个代表UTC时间，一个代表CST(＋8时区)，即上海的时间。
  旧版Ubuntu（Ubuntu10左右）：  编辑/etc/default/rcS 将UTC=yes改成UTC=no
  新版Ubuntu（Ubuntu16.04）：  新版Ubuntu使用systemd作为管理系统，时间由timedatectl来管理，以下为修改方法：
-$sudo timedatectl set-local-rtc 1 重启完成。
+$sudo timedatectl set-local-rtc 1  重启完成。
     </div>
 
     
@@ -199,7 +199,7 @@ $sudo timedatectl set-local-rtc 1 重启完成。
 按照下一步提示进行操作，启用CLS服务。
 运行完成后即成功启用CLS服务。
 检查CLS服务配置状态可以使用以下命令:
-alair@e6440:~$ sudo canonical-livepatch status --verboseclient-version: 8.0.2machine-id: 08e0*****************750dbmachine-token: 4753a054c*****************a2eb84c7architecture: x86_64cpu-model: Intel(R) Core(TM) i5-4310M CPU @ 2.70GHzlast-check: 2018-05-25T19:55:15.537634075+08:00boot-time: 2018-05-25T19:47:51+08:00uptime: 14m43sstatus:- kernel: 4.15.0-22.24-genericrunning: truelivepatch:checkState: checkedpatchState: nothing-to-applyversion: &quot;&quot;fixes: &quot;&quot;
+alair@e6440:~$ sudo canonical-livepatch status --verbose client-version: 8.0.2 machine-id: 08e0*****************750db machine-token: 4753a054c*****************a2eb84c7 architecture: x86_64 cpu-model: Intel(R) Core(TM) i5-4310M CPU @ 2.70GHz last-check: 2018-05-25T19:55:15.537634075+08:00 boot-time: 2018-05-25T19:47:51+08:00 uptime: 14m43s status: - kernel: 4.15.0-22.24-generic running: true livepatch: checkState: checked patchState: nothing-to-apply version: &quot;&quot; fixes: &quot;&quot; 
     </div>
 
     
@@ -266,7 +266,7 @@ alair@e6440:~$ sudo canonical-livepatch status --verboseclient-version: 8.0.2m
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

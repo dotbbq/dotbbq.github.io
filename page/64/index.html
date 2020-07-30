@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-	<meta name="generator" content="Hugo 0.74.3" />
+	<meta name="generator" content="Hugo 0.73.0" />
     
         
 <meta charset="utf-8">
@@ -16,7 +16,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
 
 
 
@@ -73,12 +73,12 @@
 
     <div class="content post-summary">
         生成ssh密匙文件 ssh-keygen -t rsa -C &quot;user@domain.com&quot;  接下来会提示输入密码，推荐自定义密码，当然也可以置空
-Enter passphrase(empty for no passphrase):Enter same passphrase again: 完成后会在用户目录下的.ssh文件夹中新建id_rsa与is_rsa.pub两个文件。
+Enter passphrase(empty for no passphrase): Enter same passphrase again:  完成后会在用户目录下的.ssh文件夹中新建id_rsa与is_rsa.pub两个文件。
 添加ssh密匙到github用户 登录至github.com,点击右上角的Account Settings
 在左侧选择SSH Keys菜单，然后在右侧点击Add SSH Key按钮
 将上一步生成的id_rsa.pub文件内容复制进去保存。
-本地连接至github.com ssh -T git@github.com 如果前面设置了passphrase，那么就按照提示输入passphrase。如果置空的话，就直接点击回车。成功后会有如下提示：
-Hi wrchiu! You`ve successfully authenticated, but GitHub does note provide shell access. 参考以上设置完成后，以后git push时就不需要每次输入密码了！
+本地连接至github.com ssh -T git@github.com  如果前面设置了passphrase，那么就按照提示输入passphrase。如果置空的话，就直接点击回车。成功后会有如下提示：
+Hi wrchiu! You`ve successfully authenticated, but GitHub does note provide shell access.  参考以上设置完成后，以后git push时就不需要每次输入密码了！
     </div>
 
     
@@ -127,7 +127,7 @@ cell2只需提供基站号，设置为整个基站的功能
 查看cell2表单的 12页，找到 FORTY NGBR 项，经该项值设置为 y
 编辑ceqface (CELL EQUIPAGE FACE)表单 进入ceqafce表单，这里得提供具体的扇区号，然后查看第 9页，找到 Maximum Neighbor List Number Sent to Mobile，将其设置为 40
 编辑fci (FACE CODE INFORMATION)表单 进入fci表，这里需要设置具体的扇区号，然后查看第 21页，找到如下行：
-Expanded (40) Neighbor Lists Enable .................. 569) n 编辑改行，将后面的值设为 y
+Expanded (40) Neighbor Lists Enable .................. 569) n  编辑改行，将后面的值设为 y
 经过以上设置，所对应的扇区40个邻区列表功能正常开启，现在就可以在19页继续添加邻区了。
     </div>
 
@@ -191,7 +191,7 @@ Expanded (40) Neighbor Lists Enable .................. 569) n 编辑改行，�
     <div class="content post-summary">
         当linux内核更新后，开机的GRUB引导菜单中会存在新旧内核多个引导菜单，当新内核使用稳定后，我们可以将旧的内核删除以减少开机引导项，以下是在fedora与ubuntu中删除旧内核的方法，其他的YUM系或APT系系统可以参考参考
 fedora中删除旧内核:
-[aquan@localhost ~]$ uname -r2.6.32-220.13.1.el6.i686[aquan@localhost ~]$ rpm -qa|grep kernelkernel-2.6.32-220.13.1.el6.i686kernel-2.6.32-220.el6.i686kernel-firmware-2.6.32-220.13.1.el6.noarchdracut-kernel-004-256.el6_2.1.noarch[aquan@localhost ~]$ sudo yum remove kernel-2.6.32-220.el6.i686 ubunu中删除旧内核:
+[aquan@localhost ~]$ uname -r 2.6.32-220.13.1.el6.i686 [aquan@localhost ~]$ rpm -qa|grep kernel kernel-2.6.32-220.13.1.el6.i686 kernel-2.6.32-220.el6.i686 kernel-firmware-2.6.32-220.13.1.el6.noarch dracut-kernel-004-256.el6_2.1.noarch [aquan@localhost ~]$ sudo yum remove kernel-2.6.32-220.el6.i686  ubunu中删除旧内核:
 sudo apt-get purge ~ilinux-image-.*\(\!`uname -r`\) 
     </div>
 
@@ -253,7 +253,7 @@ sudo apt-get purge ~ilinux-image-.*\(\!`uname -r`\)
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

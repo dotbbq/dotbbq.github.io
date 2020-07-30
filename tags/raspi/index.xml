@@ -222,7 +222,7 @@ System Benchmarks Index Score                                         437.9
 Gadget模式即USB网卡模式，比较常见的就是我们通过android手机的usb接口对pc进行网络共享的一种手段。一般电脑都会自动识别这种设备，并开启网卡进行共享。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;修改配置文件&#34;&gt;修改配置文件&lt;/h3&gt;
-&lt;p&gt;为了进行USB连接，我们需要修改BOOT文件夹下的&lt;strong&gt;config.txt&lt;/strong&gt;与&lt;strong&gt;cmdline.txt&lt;/strong&gt;配置文件。 
+&lt;p&gt;为了进行USB连接，我们需要修改BOOT文件夹下的&lt;strong&gt;config.txt&lt;/strong&gt;与&lt;strong&gt;cmdline.txt&lt;/strong&gt;配置文件。
 首先在&lt;strong&gt;config.txt&lt;/strong&gt;最末行处换行添加如下代码，打开usb网卡模式：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;dtoverlay=dwc2
 &lt;/code&gt;&lt;/pre&gt;
@@ -258,8 +258,8 @@ ifconfig usb0
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;但树莓派此时实际上是从机，我们需要通过设置pc主机的ip来让树莓派0的usb网卡真正运作起来，那么我们对刚才的usb设备设置如下IP：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;IP:  192.168.7.1 
-掩码: 255.255.255.0 
+&lt;p&gt;IP:  192.168.7.1
+掩码: 255.255.255.0
 路由: 192.168.7.1&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;此时我们就可以通过ip来进行ssh连接了：&lt;/p&gt;
@@ -1452,8 +1452,8 @@ curl -s -v --request PUT --header &amp;quot;X-ApiKey: ${API_KEY}&amp;quot; --dat
 &lt;p&gt;&lt;strong&gt;树莓派GPIO针脚说明&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/Pi-GPIO-header-26-sm.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;DHT11与树莓派链接&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;VCC连接+3V3 
-DATA连接GPIO4 
+&lt;p&gt;VCC连接+3V3
+DATA连接GPIO4
 GND链接GND&lt;/p&gt;
 &lt;h3 id=&#34;软件部分&#34;&gt;软件部分&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;安装wiringPi&lt;/strong&gt;&lt;/p&gt;

@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070682" />
 
 
 
@@ -73,14 +73,14 @@
         这里使用的工具名为Exitwp，项目主页为https://github.com/thomasf/exitwp
 安装Exitwp 必备组件
  Python html2text PyYAML Beautiful soup  ubuntu下安装软件:
-# aptitude install python git build-essential# aptitude install python-pip python-yaml python-bs4 python-html2text# aptitude install libyaml-dev python-dev libxml2-utils 安装Exitwp git clone https://github.com/thomasf/exitwp ###使用Exitwp转换wordpress数据
+# aptitude install python git build-essential # aptitude install python-pip python-yaml python-bs4 python-html2text # aptitude install libyaml-dev python-dev libxml2-utils  安装Exitwp git clone https://github.com/thomasf/exitwp  ###使用Exitwp转换wordpress数据
 首先，登录wordpress后台，使用自带的导出工具将wordpress导出为xml文件
 将导出的xml文件下载，复制到 ./exitwp/wordpress-xml/
 进入 ./exitwp/wordpress-xml/，使用xmllint格式化xml文件
-xmllint --format wp.xml 最后，执行exitwp.py脚本来处理xml文件
-python exitwp.py 生成的md文件，存放在 ./exitwp/build/
+xmllint --format wp.xml  最后，执行exitwp.py脚本来处理xml文件
+python exitwp.py  生成的md文件，存放在 ./exitwp/build/
 后续的工作 将处理后的md文件复制出来，拷贝至jekyll站点的_post目录，然后使用
-jekyll serve 生成预览，按照提示处理有问题的md文件，直至OK！
+jekyll serve  生成预览，按照提示处理有问题的md文件，直至OK！
     </div>
 
     
@@ -126,7 +126,7 @@ jekyll serve 生成预览，按照提示处理有问题的md文件，直至OK�
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-	<meta name="generator" content="Hugo 0.74.3" />
+	<meta name="generator" content="Hugo 0.73.0" />
     
         
 <meta charset="utf-8">
@@ -16,7 +16,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004749" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070679" />
 
 
 
@@ -73,8 +73,8 @@
 
     <div class="content post-summary">
         在此介绍如何使用Let&rsquo;s Encrypt的免费SSL证书，需要在有管理权限的VPS上操作，然后参考以下方法自签域名证书。
-git clone https://github.com/letsencrypt/letsencrypt.gitcd letsencryptmkdir -p /home/webroot/.well-known/acme-challenge #/home/webroot为网站目录./letsencrypt-auto certonly --email me@alair.cn -d alair.cn,www.alair.cn --webroot -w /home/webroot --agree-tos #注意email、域名、和网站目录 签发成功后，会提示如/etc/letsencrypt/live/www.alair.cn/fullchain.pem;的证书路径信息。
-IMPORTANT NOTES:- Congratulations! Your certificate and chain have been saved at/etc/letsencrypt/live/www.alair.cn/fullchain.pem. Your cert willexpire on 2016-03-14. To obtain a new version of the certificate inthe future, simply run Let's Encrypt again.- If like Let's Encrypt, please consider supporting our work by:Donating to ISRG / Let's Encrypt: https://letsencrypt.
+git clone https://github.com/letsencrypt/letsencrypt.git cd letsencrypt mkdir -p /home/webroot/.well-known/acme-challenge #/home/webroot为网站目录 ./letsencrypt-auto certonly --email me@alair.cn -d alair.cn,www.alair.cn --webroot -w /home/webroot --agree-tos #注意email、域名、和网站目录  签发成功后，会提示如/etc/letsencrypt/live/www.alair.cn/fullchain.pem;的证书路径信息。
+IMPORTANT NOTES: - Congratulations! Your certificate and chain have been saved at /etc/letsencrypt/live/www.alair.cn/fullchain.pem. Your cert will expire on 2016-03-14. To obtain a new version of the certificate in the future, simply run Let's Encrypt again. - If like Let's Encrypt, please consider supporting our work by: Donating to ISRG / Let's Encrypt: https://letsencrypt.
     </div>
 
     
@@ -122,9 +122,9 @@ IMPORTANT NOTES:- Congratulations! Your certificate and chain have been saved a
         md5sum命令用于生成和校验文件的md5值。它会逐位对文件的内容进行校验。是文件的内容，与文件名无关，也就是文件内容相同，其md5值相同。md5值是一个128位的二进制数据，转换成16进制则是32（128/4）位的进制值。
 md5校验，有很小的概率不同的文件生成的md5可能相同。比md5更安全的校验算法还有SHA*系列的。
 在网络传输时，我们校验源文件获得其md5sum，传输完毕后，校验其目标文件，并对比如果源文件和目标文件md5 一致的话，则表示文件传输无异常。否则说明文件在传输过程中未正确传输。
-md5sum示例 生成文件md5 pi@raspi:~ $ md5sum bs.conffcd3e1243d1cd5903d4e38c46671b84f bs.conf md5sum校验是根据文件内容为准，与名称无关，意思是即便文件名修改了，但md5校验值应该不会改变，如下：
-pi@raspi:~ $ cp bs.conf bs.conf.bakpi@raspi:~ $ md5sum bs*fcd3e1243d1cd5903d4e38c46671b84f bs.conffcd3e1243d1cd5903d4e38c46671b84f bs.conf.bak 根据md5校验文件是否更改 一般网上分享的大文件都会附带一个.md5文件，这就是所分享文件的md5值，可以使用-c参数来直接使用.md5文件来检验文件是否完整
-pi@raspi:~ $ md5sum bs.conf&gt;bs.conf.md5pi@raspi:~ $ md5sum -c bs.conf.md5bs.conf: OK 如上例，将bs.conf的md5值定向到一个bs.conf.md5文件，然后使用md5sum -c bs.conf.md5直接检验相应文件是否完整一致，校验通过的话会输出提示OK，如果文件经过修改，内容已经不一致，则不会通过校验，则会显示FAILED
+md5sum示例 生成文件md5 pi@raspi:~ $ md5sum bs.conf fcd3e1243d1cd5903d4e38c46671b84f bs.conf  md5sum校验是根据文件内容为准，与名称无关，意思是即便文件名修改了，但md5校验值应该不会改变，如下：
+pi@raspi:~ $ cp bs.conf bs.conf.bak pi@raspi:~ $ md5sum bs* fcd3e1243d1cd5903d4e38c46671b84f bs.conf fcd3e1243d1cd5903d4e38c46671b84f bs.conf.bak  根据md5校验文件是否更改 一般网上分享的大文件都会附带一个.md5文件，这就是所分享文件的md5值，可以使用-c参数来直接使用.md5文件来检验文件是否完整
+pi@raspi:~ $ md5sum bs.conf&gt;bs.conf.md5 pi@raspi:~ $ md5sum -c bs.conf.md5 bs.conf: OK  如上例，将bs.conf的md5值定向到一个bs.conf.md5文件，然后使用md5sum -c bs.conf.md5直接检验相应文件是否完整一致，校验通过的话会输出提示OK，如果文件经过修改，内容已经不一致，则不会通过校验，则会显示FAILED
     </div>
 
     
@@ -170,10 +170,10 @@ pi@raspi:~ $ md5sum bs.conf&gt;bs.conf.md5pi@raspi:~ $ md5sum -c bs.conf.md5bs
 
     <div class="content post-summary">
         示例：用户名root 地址 2.33.153.67
-下载文件 scp root@2.33.153.67:/root/test.mp4 /home/pi/ 将服务器上的/root/test.mp4下载到本地/home/pi文件夹
-上传文件 scp /home/pi/ok.txt root@2.33.153.67:/root 将本地/home/pi/ok.txt上传至服务器/root文件夹
-下载文件夹 scp -r root@2.33.153.67:/root/ebooks /home/pi 将服务器上的/root/ebooks文件夹下载至本地/home/pi下
-上传文件夹 scp -r /home/pi/music root@2.33.153.67:/media 将本地/home/pi/music文件夹上传至服务器/media下
+下载文件 scp root@2.33.153.67:/root/test.mp4 /home/pi/  将服务器上的/root/test.mp4下载到本地/home/pi文件夹
+上传文件 scp /home/pi/ok.txt root@2.33.153.67:/root  将本地/home/pi/ok.txt上传至服务器/root文件夹
+下载文件夹 scp -r root@2.33.153.67:/root/ebooks /home/pi  将服务器上的/root/ebooks文件夹下载至本地/home/pi下
+上传文件夹 scp -r /home/pi/music root@2.33.153.67:/media  将本地/home/pi/music文件夹上传至服务器/media下
     </div>
 
     
@@ -234,7 +234,7 @@ pi@raspi:~ $ md5sum bs.conf&gt;bs.conf.md5pi@raspi:~ $ md5sum -c bs.conf.md5bs
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>

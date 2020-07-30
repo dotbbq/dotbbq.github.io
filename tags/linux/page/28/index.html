@@ -15,7 +15,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596004750" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
 
 
 
@@ -70,10 +70,10 @@
     </header>
 
     <div class="content post-summary">
-        安装Rvm $sudo aptitude install curl$curl -L get.rvm.io | bash -s stable 加载Rvm
-$source ~/.rvm/scripts/rvm 检查安装必备组件
-$rvm requirements 安装 Ruby 1.9.3 $rvm install 1.9.3$ruby -v$gem -v 更改Gem软件源
-$gem sources -a http://ruby.taobao.org/$gem sources -r http://rubygems.org/$gem sources -l 安装Jekyll $gem install jekyll$jekyll -v 打完收工!
+        安装Rvm $sudo aptitude install curl $curl -L get.rvm.io | bash -s stable  加载Rvm
+$source ~/.rvm/scripts/rvm  检查安装必备组件
+$rvm requirements  安装 Ruby 1.9.3 $rvm install 1.9.3 $ruby -v $gem -v  更改Gem软件源
+$gem sources -a http://ruby.taobao.org/ $gem sources -r http://rubygems.org/ $gem sources -l  安装Jekyll $gem install jekyll $jekyll -v  打完收工!
     </div>
 
     
@@ -124,7 +124,7 @@ $gem sources -a http://ruby.taobao.org/$gem sources -r http://rubygems.org/$ge
     <div class="content post-summary">
         当linux内核更新后，开机的GRUB引导菜单中会存在新旧内核多个引导菜单，当新内核使用稳定后，我们可以将旧的内核删除以减少开机引导项，以下是在fedora与ubuntu中删除旧内核的方法，其他的YUM系或APT系系统可以参考参考
 fedora中删除旧内核:
-[aquan@localhost ~]$ uname -r2.6.32-220.13.1.el6.i686[aquan@localhost ~]$ rpm -qa|grep kernelkernel-2.6.32-220.13.1.el6.i686kernel-2.6.32-220.el6.i686kernel-firmware-2.6.32-220.13.1.el6.noarchdracut-kernel-004-256.el6_2.1.noarch[aquan@localhost ~]$ sudo yum remove kernel-2.6.32-220.el6.i686 ubunu中删除旧内核:
+[aquan@localhost ~]$ uname -r 2.6.32-220.13.1.el6.i686 [aquan@localhost ~]$ rpm -qa|grep kernel kernel-2.6.32-220.13.1.el6.i686 kernel-2.6.32-220.el6.i686 kernel-firmware-2.6.32-220.13.1.el6.noarch dracut-kernel-004-256.el6_2.1.noarch [aquan@localhost ~]$ sudo yum remove kernel-2.6.32-220.el6.i686  ubunu中删除旧内核:
 sudo apt-get purge ~ilinux-image-.*\(\!`uname -r`\) 
     </div>
 
@@ -167,12 +167,12 @@ sudo apt-get purge ~ilinux-image-.*\(\!`uname -r`\)
 
     <div class="content post-summary">
         准备工作 下载Google Appengine SDK For Pyahont与goAgent
-1.Google App Engine SDK for Pythonhttps://developers.google.com/appengine/downloads?hl=zh-CN#Google_App_Engine_SDK_for_Python2.goagenthttps://code.google.com/p/goagent/ 下载后解压，将goagent文件夹放到google_appengine目录下，目录结构如下:
-~/google_appengine/goagent-goagent-d488f2 准备好Google Application_ID与两步验证密码,如何申请问Google
+1.Google App Engine SDK for Python https://developers.google.com/appengine/downloads?hl=zh-CN#Google_App_Engine_SDK_for_Python 2.goagent https://code.google.com/p/goagent/  下载后解压，将goagent文件夹放到google_appengine目录下，目录结构如下:
+~/google_appengine/goagent-goagent-d488f2  准备好Google Application_ID与两步验证密码,如何申请问Google
 配置goagent 编辑~/google_appengine/goagent-goagent-d488f2/local/proxy.ini
 填写正确的appid，在此建议将profile由默认的google_cn改为google_hk
 参考以下步骤执行：
-aquan@edge ~/google_appengine $ python appcfg.py update goagent-goagent-d4488f2/server/python/07:03 PM Host: appengine.google.com07:03 PM Application: wrchiublog; version: 107:03 PM Starting update of app: wrchiublog, version: 107:03 PM Getting current resource limits.Email: wrchiu@126.com //在此填写googleidPassword for wrchiu@126.com: //此处填写两步验证密码，而不是帐号密码07:04 PM Scanning files on local disk.
+aquan@edge ~/google_appengine $ python appcfg.py update goagent-goagent-d4488f2/server/python/ 07:03 PM Host: appengine.google.com 07:03 PM Application: wrchiublog; version: 1 07:03 PM Starting update of app: wrchiublog, version: 1 07:03 PM Getting current resource limits. Email: wrchiu@126.com //在此填写googleid Password for wrchiu@126.com: //此处填写两步验证密码，而不是帐号密码 07:04 PM Scanning files on local disk.
     </div>
 
     
@@ -235,7 +235,7 @@ aquan@edge ~/google_appengine $ python appcfg.py update goagent-goagent-d4488f2/
 
                 <p>© Alair, 2020<br>
 Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.
+CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
 </p>
             
         </footer>
