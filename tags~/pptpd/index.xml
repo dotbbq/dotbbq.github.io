@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pptpd on UNIXETC</title>
+    <link>https://unixetc.com/tags/pptpd/</link>
+    <description>UNIXETC (pptpd)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 23 Feb 2014 12:23:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/pptpd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ubuntu下安装VPN</title>
+      <link>https://unixetc.com/post/install-vpn-on-ubuntu/</link>
+      <pubDate>Sun, 23 Feb 2014 12:23:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/install-vpn-on-ubuntu/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;安装pptpd&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#apt-get install pptpd 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;IP设置&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#vi /etc/pptpd.conf 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;添加以下内容:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;localip 192.18.0.1
+remoteip 192.168.0.200-230
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;设置DNS&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#vi/etc/ppp/pptpd-options
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;添加以下内容：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ms-dns 192.168.1.1
+ms-dns 8.8.8.8
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;添加用户&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#vi /etc/ppp/chap-secrets
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;添加以下内容:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;name * passwd *
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;重启vpn&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#/etc/init.d/pptpd restart 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;允许ip4访问外网&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#vi /etc/sysctl.conf
+
+net.ipv4.ip_forward=1 //取消本行前注释符(*)
+
+#sysctl -p&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

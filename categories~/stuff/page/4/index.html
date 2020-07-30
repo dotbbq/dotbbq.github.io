@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-cn" data-theme="">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>STUFF - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/categories/stuff/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103042" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103042" />
+
+
+
+
+
+<meta property="og:title" content="STUFF" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/categories/stuff/" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="STUFF"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <h1 class="site-title">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <h1>Category: STUFF</h1>
+    <div class="post-info">
+        <a href="https://unixetc.com/categories">To all categories</a>
+    </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/retrieve-windows10-photo-viewer/">找回windows10照片查看器</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        Windows10中可以通过修改注册表的方法找回照片查看器。
+新建ton.reg注册表文件，内容如下：
+Windows Registry Editor Version 5.00 ; Change Extension's File Type [HKEY_CURRENT_USER\Software\Classes\.jpg] @=&quot;PhotoViewer.FileAssoc.Tiff&quot; ; Change Extension's File Type [HKEY_CURRENT_USER\Software\Classes\.jpeg] @=&quot;PhotoViewer.FileAssoc.Tiff&quot; ; Change Extension's File Type [HKEY_CURRENT_USER\Software\Classes\.gif] @=&quot;PhotoViewer.FileAssoc.Tiff&quot; ; Change Extension's File Type [HKEY_CURRENT_USER\Software\Classes\.png] @=&quot;PhotoViewer.FileAssoc.Tiff&quot; ; Change Extension's File Type [HKEY_CURRENT_USER\Software\Classes\.bmp] @=&quot;PhotoViewer.FileAssoc.Tiff&quot; ; Change Extension's File Type [HKEY_CURRENT_USER\Software\Classes\.tiff] @=&quot;PhotoViewer.FileAssoc.Tiff&quot; ; Change Extension's File Type [HKEY_CURRENT_USER\Software\Classes\.ico] @=&quot;PhotoViewer.FileAssoc.Tiff&quot;  保存后，双击运行即可，然后右键打开方式中即可看到照片查看器。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2019-07-28</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/windows10">#Windows10</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%85%A7%E7%89%87%E6%9F%A5%E7%9C%8B%E5%99%A8">#照片查看器</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8%E6%96%87%E4%BB%B6">#注册表文件</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/regedit">#Regedit</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/sudo-configuration-in-debian10/">Debian10中sudo配置</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        Debian10中/etc/sudoers中提示了需要通过visudo来编辑该文件，如下：
+ This file MUST be edited with the &lsquo;visudo&rsquo; command as root.
+ 但奇葩的是系统中没有visudo命令，apt搜索也搜不到，-_-!
+因此只能通过以下方法来编辑：
+#echo &quot;alair ALL=(ALL:ALL) ALL&quot; &gt;&gt; /etc/sudoers  保存后用户alair就可以使用sudo命令来进行root权限操作了。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2019-07-10</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/debian">#Debian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/debian10">#Debian10</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/sudo">#sudo</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/visudo">#visudo</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/sudoers">#sudoers</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%A5%87%E8%91%A9">#奇葩</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/ubuntu-windows-dual-system-time-is-inconsistent/">Ubuntu/Widnows双系统时间不一致解决方法</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装Ubuntu和Windows双系统的情况下，Ubuntu的时间总会和Windows的时间相差8小时，原因在于widows认为BIOS时间是本地时间，Ubuntu认为BIOS时间是UTC时间，即协调世界时(Universal Time Coordinated)，是由国际无线电咨询委员会规定和推荐,并由国际时间局(BIH)负责保持的以秒为基础的时间标度。
+UTC相当于本初子午线(即经度0度)上的平均太阳时，过去曾用格林威治平均时(GMT)来表示。北京时间比UTC时间早8小时，以1999年1月1日0000UTC为例，UTC时间是零点，北京时间为1999年1月1日早上8点整。所以我们在时间上面相隔了8个小时。这个时候bios的时间和系统的时间当然是不一致，一个代表UTC时间，一个代表CST(＋8时区)，即上海的时间。
+ 旧版Ubuntu（Ubuntu10左右）：  编辑/etc/default/rcS 将UTC=yes改成UTC=no
+ 新版Ubuntu（Ubuntu16.04）：  新版Ubuntu使用systemd作为管理系统，时间由timedatectl来管理，以下为修改方法：
+$sudo timedatectl set-local-rtc 1  重启完成。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2019-07-09</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%97%B6%E9%97%B4">#时间</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/rtc">#RTC</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/utc">#UTC</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/cst">#CST</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gmt">#GMT</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/centos7-install-ffsend-to-share-files/">CentOS7安装ffsend快速分享文件</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        Firefox Send是什么？ Firefox Send是一个简单、私密的文件分享服务，使用Firefox Send端到端加密分享文件，链接到期即焚。分享更私密，文件到期真正无痕迹。
+安装ffsend ffsend是一款Firefox Send的客户端，支持多种操作系统(Linux、Windows、MacOS&hellip;)
+以下为CentOS7安装ffsend实例：
+#wget https://glare.now.sh/timvisee/ffsend/linux-x64-static -o /usr/local/bin/ffsend #chmod +x /usr/local/bin/ffsend  其他版本安装可以参考ffsend官网和ffsend官方下载
+ffsend使用方法 上传文件
+ffsend upload fenix.apk Upload complete https://send.firefox.com/download/4cecb9c1ab628f8e/#m5is-YRSfnBIQ-pBaSds0A  高级上传
+ 指定下再限制20
+输入密码加密文件
+在上传之前归档文件
+将共享链接复制到剪贴板
+在浏览器中打开共享链接
+ ffsend upload --downloads 20 --password --archive --copy --open fenix.apk Password: ****** https://send.firefox.com/download/4cecb9c1ab628f8e/#m5is-YRSfnBIQ-pBaSds0A  上传到自定义主机
+ffsend u -h https://example.com/ my-file.txt https://example.com/#sample-share-url  下载文件
+ffsend download https://send.firefox.com/download/4cecb9c1ab628f8e/#m5is-YRSfnBIQ-pBaSds0A  
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2019-07-04</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/centos7">#CentOS7</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/centos">#CentOS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/firefox">#Firefox</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ffsend">#ffsend</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/firefox-send">#Firefox Send</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/convert-images-to-webp-in-linux/">Linux中转换图片为webp格式</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装WebP Ubuntu中可以使用以下命令安装WebP
+$sudo apt install webp  其他Linux系统，可以从这里下载对应压缩包，如下：
+wget https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.0.2-linux-x86-64.tar.gz  解压后得到以下文件：
+$tar zxf libwebp-1.0.2-linux-x86-64.tar.gz $cd libwebp-1.0.2-linux-x86-64 $cd bin $ll total 12M -rwxr-xr-x 1 100 users 679K Jan 15 12:47 anim_diff -rwxr-xr-x 1 100 users 923K Jan 15 12:47 anim_dump -rwxr-xr-x 1 100 users 2.4M Jan 15 12:47 cwebp -rwxr-xr-x 1 100 users 915K Jan 15 12:47 dwebp -rwxr-xr-x 1 100 users 2.3M Jan 15 12:47 get_disto -rwxr-xr-x 1 100 users 703K Jan 15 12:47 gif2webp -rwxr-xr-x 1 100 users 2.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2019-06-11</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/webp">#webp</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/png">#png</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/google">#google</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/libwebp">#libwebp</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+    
+        
+    <div class="pagination">
+        <div class="left pagination-item ">
+            
+                <a href="/categories/stuff/page/3/">To new posts</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/categories/stuff/page/5/">To old posts</a>
+            
+        </div>
+    </div>
+
+
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
+    </div>
+</body>
+</html>

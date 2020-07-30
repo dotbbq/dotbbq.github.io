@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>udo on UNIXETC</title>
+    <link>https://unixetc.com/tags/udo/</link>
+    <description>UNIXETC (udo)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 18 Sep 2015 21:28:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/udo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>树莓派开启root登录</title>
+      <link>https://unixetc.com/post/raspberry-pi-allow-root-login/</link>
+      <pubDate>Fri, 18 Sep 2015 21:28:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/raspberry-pi-allow-root-login/</guid>
+      <description>&lt;p&gt;想要通过ssh登录树莓派进行管理，使用默认的&lt;strong&gt;pi&lt;/strong&gt;用户有时真的不便，对于linux老手来说，可以直接开启&lt;strong&gt;root&lt;/strong&gt;用户ssh登录，这就方便多了，方法如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo passwd root
+sudo passwd --unlock root
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;设置SSH&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo vi /etc/ssh/sshd_config
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;将其中的&lt;code&gt;PermitRootLogin without-password&lt;/code&gt;改为&lt;code&gt;PermitRootLogin yes&lt;/code&gt;，然后重启ssh服务&lt;code&gt;sudo service ssh restart&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Over!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

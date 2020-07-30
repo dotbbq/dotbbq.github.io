@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sync on UNIXETC</title>
+    <link>https://unixetc.com/tags/sync/</link>
+    <description>UNIXETC (Sync)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 06 May 2016 15:16:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/sync/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用Syncthing在多个设备之间同步文件</title>
+      <link>https://unixetc.com/post/use-syncthing-synchronize-files-between-multiple-devices/</link>
+      <pubDate>Fri, 06 May 2016 15:16:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/use-syncthing-synchronize-files-between-multiple-devices/</guid>
+      <description>&lt;p&gt;Syncthing是一款开源的多平台同步软件，使用他可以在多个设备间进行文件同步，并且带有版本控制功能。&lt;/p&gt;
+&lt;p&gt;Syncthing官网地址 **&lt;a href=&#34;https://syncthing.net/&#34;&gt;https://syncthing.net/&lt;/a&gt;**Github地址 &lt;strong&gt;&lt;a href=&#34;https://github.com/syncthing/syncthing&#34;&gt;https://github.com/syncthing/syncthing&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;安装syncthing&#34;&gt;安装Syncthing&lt;/h3&gt;
+&lt;p&gt;Syncthing官网提供多平台安装包，下载地址为 &lt;a href=&#34;https://github.com/syncthing/syncthing/releases/&#34;&gt;https://github.com/syncthing/syncthing/releases/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;并且针对Debian/Ubuntu平台，官方提供了apt-get安装方法&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Add the release PGP keys:
+curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
+
+# Add the &amp;quot;release&amp;quot; channel to your APT sources:
+echo &amp;quot;deb http://apt.syncthing.net/ syncthing release&amp;quot; | sudo tee /etc/apt/sources.list.d/syncthing.list
+
+# Update and install syncthing:
+sudo apt-get update
+sudo apt-get install syncthing
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;运行syncthing&#34;&gt;运行Syncthing&lt;/h3&gt;
+&lt;p&gt;Linux下直接使用&lt;code&gt;syncthing&lt;/code&gt;命令运行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;syncthing &amp;amp;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Windows下直接打开下载的&lt;strong&gt;syncthing.exe&lt;/strong&gt;文件，而后浏览器自动打开&lt;code&gt;http://127.0.0.1:8384&lt;/code&gt;进行设置管理。&lt;/p&gt;
+&lt;h3 id=&#34;管理syncthing&#34;&gt;管理Syncthing&lt;/h3&gt;
+&lt;p&gt;如果是在VPS上安装Syncthing ,运行&lt;code&gt;syncthing&lt;/code&gt;后，只能通过&lt;code&gt;http://127.0.0.1:8384&lt;/code&gt;进行管理，我们可以通过以下方法在本地管理。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ssl -L 9891:localhost:8384 root@ip
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;输入root密码登录成功后，即可本地浏览&lt;code&gt;http://127.0.0.1:9891&lt;/code&gt;对VPS上的Synchting进行管理。&lt;/p&gt;
+&lt;h4 id=&#34;添加设备&#34;&gt;添加设备&lt;/h4&gt;
+&lt;p&gt;每个设备均有一个&lt;strong&gt;设备标识&lt;/strong&gt;，可以通过操作-&amp;gt;显示设备标识来查看。&lt;/p&gt;
+&lt;p&gt;不同的设备之间进行链接，就是通过添加对方的&lt;strong&gt;设备标志&lt;/strong&gt;来实现。&lt;/p&gt;
+&lt;p&gt;例如，在本地点击&lt;strong&gt;添加远程设备&lt;/strong&gt;，然后将VPS端的&lt;strong&gt;设备标识&lt;/strong&gt;填写入，设备名称可以置空。&lt;/p&gt;
+&lt;p&gt;在此提醒勾选&lt;strong&gt;介绍人设备&lt;/strong&gt;选项，这样当对方添加了其他第三方设备，可以自动添加到本设备中，而不需要在本设备与第三方设备间进行再次添加。&lt;/p&gt;
+&lt;h4 id=&#34;添加同步文件&#34;&gt;添加同步文件&lt;/h4&gt;
+&lt;p&gt;点击&lt;strong&gt;添加文件夹&lt;/strong&gt;来设置进行共享的文件内容。&lt;/p&gt;
+&lt;p&gt;首先设置&lt;strong&gt;文件夹标识&lt;/strong&gt;和&lt;strong&gt;文件夹路径&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;然后如果已经添加了其他远程设备，在&lt;strong&gt;共享给&lt;/strong&gt;下方勾选需要进行同步的远程设备。&lt;/p&gt;
+&lt;h4 id=&#34;接收同步文件夹&#34;&gt;接收同步文件夹&lt;/h4&gt;
+&lt;p&gt;Syncthing共享操作时双向的，通过上一步进行分享文件夹后，还需要在另外一个设备上进行确认共享。&lt;/p&gt;
+&lt;p&gt;收到远程设备的共享信息后，选择确认共享，然后设置共享文件夹接收目录即可。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

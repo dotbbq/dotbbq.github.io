@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on UNIXETC</title>
+    <link>https://unixetc.com/tags/windows/</link>
+    <description>UNIXETC (Windows)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 21 Nov 2019 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>在Linux中安装Windows字体</title>
+      <link>https://unixetc.com/post/linux-install-windows-fonts/</link>
+      <pubDate>Thu, 21 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/linux-install-windows-fonts/</guid>
+      <description>&lt;p&gt;使用的系统为&lt;strong&gt;Ubuntu 19.10&lt;/strong&gt;，Windows系统分区lable为&lt;strong&gt;sys&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;参考如下操作：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;alair@e6440:~$ sudo mkdir /usr/share/fonts/winfonts
+[sudo] alair 的密码： 
+alair@e6440:~$ sudo cp /media/alair/sys/Windows/Fonts/* /usr/share/fonts/winfonts/  
+alair@e6440:~$ sudo rm -rf /usr/share/fonts/winfonts/*.fon
+alair@e6440:~$ sudo mkfontscale 
+alair@e6440:~$ sudo mkfontdir 
+alair@e6440:~$ sudo fc-cache 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;打完收工！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>找回windows10照片查看器</title>
+      <link>https://unixetc.com/post/retrieve-windows10-photo-viewer/</link>
+      <pubDate>Sun, 28 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/retrieve-windows10-photo-viewer/</guid>
+      <description>&lt;p&gt;Windows10中可以通过修改注册表的方法找回照片查看器。&lt;/p&gt;
+&lt;p&gt;新建&lt;code&gt;ton.reg&lt;/code&gt;注册表文件，内容如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Windows Registry Editor Version 5.00
+; Change Extension&#39;s File Type
+[HKEY_CURRENT_USER\Software\Classes\.jpg]
+@=&amp;quot;PhotoViewer.FileAssoc.Tiff&amp;quot;
+
+; Change Extension&#39;s File Type
+[HKEY_CURRENT_USER\Software\Classes\.jpeg]
+@=&amp;quot;PhotoViewer.FileAssoc.Tiff&amp;quot;
+
+; Change Extension&#39;s File Type
+[HKEY_CURRENT_USER\Software\Classes\.gif]
+@=&amp;quot;PhotoViewer.FileAssoc.Tiff&amp;quot;
+
+; Change Extension&#39;s File Type
+[HKEY_CURRENT_USER\Software\Classes\.png]
+@=&amp;quot;PhotoViewer.FileAssoc.Tiff&amp;quot;
+
+; Change Extension&#39;s File Type
+[HKEY_CURRENT_USER\Software\Classes\.bmp]
+@=&amp;quot;PhotoViewer.FileAssoc.Tiff&amp;quot;
+
+; Change Extension&#39;s File Type
+[HKEY_CURRENT_USER\Software\Classes\.tiff]
+@=&amp;quot;PhotoViewer.FileAssoc.Tiff&amp;quot;
+
+; Change Extension&#39;s File Type
+[HKEY_CURRENT_USER\Software\Classes\.ico]
+@=&amp;quot;PhotoViewer.FileAssoc.Tiff&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;保存后，双击运行即可，然后右键打开方式中即可看到照片查看器。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu/Widnows双系统时间不一致解决方法</title>
+      <link>https://unixetc.com/post/ubuntu-windows-dual-system-time-is-inconsistent/</link>
+      <pubDate>Tue, 09 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/ubuntu-windows-dual-system-time-is-inconsistent/</guid>
+      <description>&lt;p&gt;安装Ubuntu和Windows双系统的情况下，Ubuntu的时间总会和Windows的时间相差8小时，原因在于widows认为BIOS时间是本地时间，Ubuntu认为BIOS时间是UTC时间，即协调世界时(Universal Time Coordinated)，是由国际无线电咨询委员会规定和推荐,并由国际时间局(BIH)负责保持的以秒为基础的时间标度。&lt;/p&gt;
+&lt;p&gt;UTC相当于本初子午线(即经度0度)上的平均太阳时，过去曾用格林威治平均时(GMT)来表示。北京时间比UTC时间早8小时，以1999年1月1日0000UTC为例，UTC时间是零点，北京时间为1999年1月1日早上8点整。所以我们在时间上面相隔了8个小时。这个时候bios的时间和系统的时间当然是不一致，一个代表UTC时间，一个代表CST(＋8时区)，即上海的时间。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;旧版Ubuntu（Ubuntu10左右）：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;编辑&lt;code&gt;/etc/default/rcS&lt;/code&gt; 将&lt;code&gt;UTC=yes&lt;/code&gt;改成&lt;code&gt;UTC=no&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;新版Ubuntu（Ubuntu16.04）：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;新版Ubuntu使用systemd作为管理系统，时间由timedatectl来管理，以下为修改方法：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$sudo timedatectl set-local-rtc 1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;重启完成。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>GRUB引导ISO镜像</title>
+      <link>https://unixetc.com/post/grub-boot-iso-image-file/</link>
+      <pubDate>Sun, 08 Jul 2018 17:18:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/grub-boot-iso-image-file/</guid>
+      <description>&lt;p&gt;家里电脑安装了双系统(Xubuntu+Windows7)，平时一直不关机，开着TeamViewer便于在办公室远程操作。&lt;/p&gt;
+&lt;p&gt;这次不知怎么回事儿，远程掉了，回家一看Windows意外关机，再开机直接蓝屏。&lt;/p&gt;
+&lt;p&gt;由于为了省资源，关闭了系统保护，没法进行还原，多次试着拯救都没能解决，无限蓝屏……&lt;/p&gt;
+&lt;p&gt;手头刚好没有WinPE的U盘，没法ghost恢复或重装Windows，只有xubuntu可用，一筹莫展。&lt;/p&gt;
+&lt;p&gt;突然想到grub是否可以引导iso？ 网上找了下，还真可以，于是下载了个WinPE镜像文件，打算通过grub来引导以修复Windows。&lt;/p&gt;
+&lt;p&gt;具体操作如下：&lt;/p&gt;
+&lt;p&gt;安装&lt;strong&gt;grub-imageboot&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;alair@e6440:~$ apt search memdisk
+正在排序... 完成
+全文搜索... 完成  
+grub-imageboot/bionic,bionic 0.6 all
+boot iso, harddisk and floppy images with grub2 and syslinux memdisk
+
+alair@e6440:~$ sudo apt install grub-imageboot
+[sudo] alair 的密码： 
+正在读取软件包列表... 完成
+正在分析软件包的依赖关系树       
+正在读取状态信息... 完成       
+将会同时安装下列软件：
+syslinux-common
+下列【新】软件包将被安装：
+grub-imageboot syslinux-common
+升级了 0 个软件包，新安装了 2 个软件包，要卸载 0 个软件包，有 4 个软件包未被升级。
+需要下载 1,176 kB 的归档。
+解压缩后会消耗 3,684 kB 的额外空间。
+您希望继续执行吗？ [Y/n] y
+获取:1 http://mirrors.cqu.edu.cn/ubuntu bionic/main amd64 syslinux-common all 3:6.03+dfsg1-2 [1,171 kB]
+获取:2 http://mirrors.cqu.edu.cn/ubuntu bionic/universe amd64 grub-imageboot all 0.6 [4,424 B]
+已下载 1,176 kB，耗时 1秒 (1,947 kB/s)
+正在选中未选择的软件包 syslinux-common。
+(正在读取数据库 ... 系统当前共安装有 181845 个文件和目录。)
+正准备解包 .../syslinux-common_3%3a6.03+dfsg1-2_all.deb  ...
+正在解包 syslinux-common (3:6.03+dfsg1-2) ...
+正在选中未选择的软件包 grub-imageboot。
+正准备解包 .../grub-imageboot_0.6_all.deb  ...
+正在解包 grub-imageboot (0.6) ...
+正在设置 syslinux-common (3:6.03+dfsg1-2) ...
+正在设置 grub-imageboot (0.6) ...
+Copy syslinux memdisk to /boot/memdisk
+alair@e6440:~$ 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;下载WinPE镜像文件(efi.iso)，拷贝至&lt;code&gt;/boot/&lt;/code&gt;目录&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;alair@e6440:~$sudo cp efi.iso /boot/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;编辑&lt;code&gt;/etc/grub.d/40_custom&lt;/code&gt;文件，加入以下内容：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;menuentry &amp;quot;WinPE&amp;quot; { 
+linux16 /boot/memdisk iso raw
+initrd16 /boot/efi.iso
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;运行&lt;code&gt;sudo update-grub&lt;/code&gt;使设置生效，完成后重启时grub中会出现&lt;strong&gt;WinPE&lt;/strong&gt;菜单，选择该项则加载自定义winpe镜像，下来就在WinPE下恢复Windows系统咯!!!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>python-pip安装实例</title>
+      <link>https://unixetc.com/post/python-pip-installation/</link>
+      <pubDate>Thu, 20 Apr 2017 14:28:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/python-pip-installation/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Python-pip&lt;/strong&gt; 是一个现代的，通用的 &lt;strong&gt;Python&lt;/strong&gt;包管理工具。提供了对 Python 包的查找、下载、安装、卸载的功能。&lt;/p&gt;
+&lt;p&gt;以下为多个操作系统平台下&lt;strong&gt;Python-pip&lt;/strong&gt;安装方法&lt;/p&gt;
+&lt;h3 id=&#34;通用方法&#34;&gt;通用方法&lt;/h3&gt;
+&lt;p&gt;通过&lt;strong&gt;get-pip.py&lt;/strong&gt;文件来安装，建议&lt;strong&gt;Windows&lt;/strong&gt;用户使用，前提是你必须首先安装&lt;strong&gt;Python&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;版本要求Python 2 &amp;gt;=2.7.9 或Python 3 &amp;gt;=3.4，可从官网下载&lt;a href=&#34;http://www.python.org/&#34;&gt;http://www.python.org/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;然后下载&lt;strong&gt;get-pip.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;下载地址 &lt;a href=&#34;https://bootstrap.pypa.io/get-pip.py&#34;&gt;https://bootstrap.pypa.io/get-pip.py&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;通过&lt;code&gt;python get-pip.py&lt;/code&gt;命令来进行安装。&lt;/p&gt;
+&lt;h3 id=&#34;linux下通过软件管理工具来安装python-pip&#34;&gt;Linux下通过软件管理工具来安装Python-pip&lt;/h3&gt;
+&lt;h4 id=&#34;fedora21&#34;&gt;Fedora21&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Python2&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo yum upgrade python-setuptools
+sudo yum install python-pip python-wheel
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Python3&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo yum install python3 python3-wheel
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;fedora22&#34;&gt;Fedora22&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Python2&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo dnf upgrade python-setuptools
+sudo dnf install python-pip python-wheel
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Python3&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo dnf install python3 python3-wheel
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;centosrhel&#34;&gt;CentOS/RHEL&lt;/h4&gt;
+&lt;p&gt;首先得启用&lt;strong&gt;EPEL repository&lt;/strong&gt;,&lt;a href=&#34;https://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F&#34;&gt;可参考此文&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;EPEL 6/EPEL 7&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo yum install python-pip
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;EPEL 7&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bsh&#34; data-lang=&#34;bsh&#34;&gt;sudo yum install python-wheel
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;opensuse&#34;&gt;OpenSUSE&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Python 2:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo zypper install python-pip python-setuptools python-wheel
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Python 3:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo zypper install python3-pip python3-setuptools python3-wheel
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;debianubuntu&#34;&gt;Debian/Ubuntu&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install python-pip
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;当系统安装的是&lt;strong&gt;Python3&lt;/strong&gt;是，则安装&lt;code&gt;python3-pip&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;archlinux&#34;&gt;Archlinux&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Python 2:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo pacman -S python2-pip
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Python 3:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo pacman -S python-pip
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Windows10开启Linux子系统</title>
+      <link>https://unixetc.com/post/windows10-enabled-linux-subsystem/</link>
+      <pubDate>Fri, 10 Mar 2017 11:13:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/windows10-enabled-linux-subsystem/</guid>
+      <description>&lt;h3 id=&#34;打开功能&#34;&gt;打开功能&lt;/h3&gt;
+&lt;p&gt;设置-系统-应用和功能，右侧下拉到底，点击“相关设置”下的“程序和功能”&lt;/p&gt;
+&lt;p&gt;在打开的“程序和功能”左侧菜单中，找到“启用或关闭windows功能”，点击打开。&lt;/p&gt;
+&lt;p&gt;在接下来的“windows功能”菜单中，下拉勾选“适用于linux的windows子系统（beta）”，确认后重启系统。&lt;/p&gt;
+&lt;h3 id=&#34;开启开发人员模式&#34;&gt;开启开发人员模式&lt;/h3&gt;
+&lt;p&gt;设置-更新和安全-针对开发人员，在右侧打开“开发人员模式”&lt;/p&gt;
+&lt;h3 id=&#34;安装linux子系统&#34;&gt;安装linux子系统&lt;/h3&gt;
+&lt;p&gt;Win+R输入cmd回车，打开cmd&lt;/p&gt;
+&lt;p&gt;输入“bash”按照提示安装设置用户名密码即可使用。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/windows10-linux-subsystem.png&#34; alt=&#34;Windows 10 Linux Subsystem&#34;&gt;&lt;/p&gt;
+&lt;p&gt;然后就可以使用ubuntu提供的linux子系统了。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>使用Syncthing在多个设备之间同步文件</title>
+      <link>https://unixetc.com/post/use-syncthing-synchronize-files-between-multiple-devices/</link>
+      <pubDate>Fri, 06 May 2016 15:16:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/use-syncthing-synchronize-files-between-multiple-devices/</guid>
+      <description>&lt;p&gt;Syncthing是一款开源的多平台同步软件，使用他可以在多个设备间进行文件同步，并且带有版本控制功能。&lt;/p&gt;
+&lt;p&gt;Syncthing官网地址 **&lt;a href=&#34;https://syncthing.net/&#34;&gt;https://syncthing.net/&lt;/a&gt;**Github地址 &lt;strong&gt;&lt;a href=&#34;https://github.com/syncthing/syncthing&#34;&gt;https://github.com/syncthing/syncthing&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;安装syncthing&#34;&gt;安装Syncthing&lt;/h3&gt;
+&lt;p&gt;Syncthing官网提供多平台安装包，下载地址为 &lt;a href=&#34;https://github.com/syncthing/syncthing/releases/&#34;&gt;https://github.com/syncthing/syncthing/releases/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;并且针对Debian/Ubuntu平台，官方提供了apt-get安装方法&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Add the release PGP keys:
+curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
+
+# Add the &amp;quot;release&amp;quot; channel to your APT sources:
+echo &amp;quot;deb http://apt.syncthing.net/ syncthing release&amp;quot; | sudo tee /etc/apt/sources.list.d/syncthing.list
+
+# Update and install syncthing:
+sudo apt-get update
+sudo apt-get install syncthing
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;运行syncthing&#34;&gt;运行Syncthing&lt;/h3&gt;
+&lt;p&gt;Linux下直接使用&lt;code&gt;syncthing&lt;/code&gt;命令运行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;syncthing &amp;amp;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Windows下直接打开下载的&lt;strong&gt;syncthing.exe&lt;/strong&gt;文件，而后浏览器自动打开&lt;code&gt;http://127.0.0.1:8384&lt;/code&gt;进行设置管理。&lt;/p&gt;
+&lt;h3 id=&#34;管理syncthing&#34;&gt;管理Syncthing&lt;/h3&gt;
+&lt;p&gt;如果是在VPS上安装Syncthing ,运行&lt;code&gt;syncthing&lt;/code&gt;后，只能通过&lt;code&gt;http://127.0.0.1:8384&lt;/code&gt;进行管理，我们可以通过以下方法在本地管理。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ssl -L 9891:localhost:8384 root@ip
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;输入root密码登录成功后，即可本地浏览&lt;code&gt;http://127.0.0.1:9891&lt;/code&gt;对VPS上的Synchting进行管理。&lt;/p&gt;
+&lt;h4 id=&#34;添加设备&#34;&gt;添加设备&lt;/h4&gt;
+&lt;p&gt;每个设备均有一个&lt;strong&gt;设备标识&lt;/strong&gt;，可以通过操作-&amp;gt;显示设备标识来查看。&lt;/p&gt;
+&lt;p&gt;不同的设备之间进行链接，就是通过添加对方的&lt;strong&gt;设备标志&lt;/strong&gt;来实现。&lt;/p&gt;
+&lt;p&gt;例如，在本地点击&lt;strong&gt;添加远程设备&lt;/strong&gt;，然后将VPS端的&lt;strong&gt;设备标识&lt;/strong&gt;填写入，设备名称可以置空。&lt;/p&gt;
+&lt;p&gt;在此提醒勾选&lt;strong&gt;介绍人设备&lt;/strong&gt;选项，这样当对方添加了其他第三方设备，可以自动添加到本设备中，而不需要在本设备与第三方设备间进行再次添加。&lt;/p&gt;
+&lt;h4 id=&#34;添加同步文件&#34;&gt;添加同步文件&lt;/h4&gt;
+&lt;p&gt;点击&lt;strong&gt;添加文件夹&lt;/strong&gt;来设置进行共享的文件内容。&lt;/p&gt;
+&lt;p&gt;首先设置&lt;strong&gt;文件夹标识&lt;/strong&gt;和&lt;strong&gt;文件夹路径&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;然后如果已经添加了其他远程设备，在&lt;strong&gt;共享给&lt;/strong&gt;下方勾选需要进行同步的远程设备。&lt;/p&gt;
+&lt;h4 id=&#34;接收同步文件夹&#34;&gt;接收同步文件夹&lt;/h4&gt;
+&lt;p&gt;Syncthing共享操作时双向的，通过上一步进行分享文件夹后，还需要在另外一个设备上进行确认共享。&lt;/p&gt;
+&lt;p&gt;收到远程设备的共享信息后，选择确认共享，然后设置共享文件夹接收目录即可。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>windows7开启telnet客户端</title>
+      <link>https://unixetc.com/post/windows7-enable-telnet-client/</link>
+      <pubDate>Wed, 10 Feb 2016 12:11:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/windows7-enable-telnet-client/</guid>
+      <description>&lt;p&gt;安装完成windows7后，默认可能没有开启telnet功能，这样在cmd下输入telnet时会提示无命令，可以参考下文开启telnet功能。&lt;/p&gt;
+&lt;p&gt;开始 -&amp;gt; 控制面板 -&amp;gt; 程序和功能&lt;/p&gt;
+&lt;p&gt;在左侧边栏找到&lt;strong&gt;打开或关闭windows功能&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在打开的窗口中找到&lt;strong&gt;Telnet客户端&lt;/strong&gt;，勾选，确认。&lt;/p&gt;
+&lt;p&gt;Over!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Windows下安装Jekyll</title>
+      <link>https://unixetc.com/post/install-jekyll-on-windows/</link>
+      <pubDate>Wed, 20 May 2015 15:20:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/install-jekyll-on-windows/</guid>
+      <description>&lt;h3 id=&#34;安装rubydevkit&#34;&gt;安装Ruby/DevKit&lt;/h3&gt;
+&lt;p&gt;首先从 &lt;a href=&#34;http://rubyinstaller.org/downloads/&#34;&gt;http://rubyinstaller.org/downloads/&lt;/a&gt;  下载以下两个文件进行安装&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://pan.baidu.com/share/link?shareid=1353205281&amp;amp;uk=1493434283&#34;&gt;rubyinstaller-1.9.3-p194.exe&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://pan.baidu.com/share/link?shareid=1354945070&amp;amp;uk=1493434283&#34;&gt;DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ruby安装在&lt;strong&gt;D:\Ruby200&lt;/strong&gt;, DevKit安装在&lt;strong&gt;D:\rubydevkit&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;打开CMD进入到DevKit目录，开始初始化安装&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;D:\rubydevkit&amp;gt;ruby dk.rb init
+[INFO] found RubyInstaller v2.0.0 at d:/Ruby200
+
+Initialization complete! Please review and modify the auto-generated
+&#39;config.yml&#39; file to ensure it contains the root directories to all
+of the installed Rubies you want enhanced by the DevKit.
+
+D:\rubydevkit&amp;gt;ruby dk.rb install
+[INFO] Updating convenience notice gem override for &#39;d:/Ruby200&#39;
+[INFO] Installing &#39;d:/Ruby200/lib/ruby/site_ruby/devkit.rb&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;替换Gem源&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;天朝网路可能会引起gem安装失败，建议更换为ruby.taobao,org源&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$gem sources -r http://rubygems.org/
+$gem sources -a http://ruby.taobao.org/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;安装jekyll&#34;&gt;安装jekyll&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;D:\rubydevkit&amp;gt;gem install jekyll
+Fetching: yajl-ruby-1.1.0-x86-mingw32.gem (100%)
+Successfully installed yajl-ruby-1.1.0-x86-mingw32
+Fetching: posix-spawn-0.3.6.gem (100%)
+Temporarily enhancing PATH to include DevKit...
+Building native extensions.  This could take a while...
+Successfully installed posix-spawn-0.3.6
+Fetching: pygments.rb-0.4.2.gem (100%)
+Successfully installed pygments.rb-0.4.2
+Fetching: highline-1.6.18.gem (100%)
+Successfully installed highline-1.6.18
+Fetching: commander-4.1.3.gem (100%)
+Successfully installed commander-4.1.3
+Fetching: safe_yaml-0.7.1.gem (100%)
+Successfully installed safe_yaml-0.7.1
+Fetching: colorator-0.1.gem (100%)
+Successfully installed colorator-0.1
+Fetching: jekyll-1.0.1.gem (100%)
+Successfully installed jekyll-1.0.1
+Parsing documentation for yajl-ruby-1.1.0-x86-mingw32
+unable to convert &amp;quot;\x90&amp;quot; from ASCII-8BIT to UTF-8 for lib/yajl/1.8/yajl.so, skip
+ping
+unable to convert &amp;quot;\x90&amp;quot; from ASCII-8BIT to UTF-8 for lib/yajl/1.9/yajl.so, skip
+ping
+Installing ri documentation for yajl-ruby-1.1.0-x86-mingw32
+Parsing documentation for posix-spawn-0.3.6
+Installing ri documentation for posix-spawn-0.3.6
+Parsing documentation for pygments.rb-0.4.2
+Installing ri documentation for pygments.rb-0.4.2
+Parsing documentation for highline-1.6.18
+Installing ri documentation for highline-1.6.18
+Parsing documentation for commander-4.1.3
+Installing ri documentation for commander-4.1.3
+Parsing documentation for safe_yaml-0.7.1
+Installing ri documentation for safe_yaml-0.7.1
+Parsing documentation for colorator-0.1
+Installing ri documentation for colorator-0.1
+Parsing documentation for jekyll-1.0.1
+Installing ri documentation for jekyll-1.0.1
+Done installing documentation for yajl-ruby, posix-spawn, pygments.rb, highline,
+ commander, safe_yaml, colorator, jekyll (7 sec).
+8 gems installed
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;完成后，可以使用jekyll -v来检查是否安装成功&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;D:\rubydevkit&amp;gt;jekyll -v 
+jekyll 1.0.1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;有时由于天朝内网路问题，可能造成以上安装中某一个部分中途退出，再次执行安装时出现以下提示:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;D:\rubydevkit&amp;gt;gem install jekyll
+ERROR:  While executing gem ... (NoMethodError)
+    undefined method `size&#39; for nil:NilClass
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在此只需要将gem目录下cache文件夹内清空，重新安装即可。&lt;/p&gt;
+&lt;p&gt;如果不知道gem目录的可以使用gem env来查看GEM PATHS值，如下所示&lt;strong&gt;d:/Ruby200/lib/ruby/gems/2.0.0&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;D:\rubydevkit&amp;gt;gem env
+RubyGems Environment:
+  - RUBYGEMS VERSION: 2.0.0
+  - RUBY VERSION: 2.0.0 (2013-02-24 patchlevel 0) [i386-mingw32]
+  - INSTALLATION DIRECTORY: d:/Ruby200/lib/ruby/gems/2.0.0
+  - RUBY EXECUTABLE: d:/Ruby200/bin/ruby.exe
+  - EXECUTABLE DIRECTORY: d:/Ruby200/bin
+  - RUBYGEMS PLATFORMS:
+    - ruby
+    - x86-mingw32
+  - GEM PATHS:
+     - d:/Ruby200/lib/ruby/gems/2.0.0
+     - C:/Documents and Settings/aquan/.gem/ruby/2.0.0
+  - GEM CONFIGURATION:
+     - :update_sources =&amp;gt; true
+     - :verbose =&amp;gt; true
+     - :backtrace =&amp;gt; false
+     - :bulk_threshold =&amp;gt; 1000
+  - REMOTE SOURCES:
+     - http://ruby.taobao.org/&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Centos7配置grub添加windows引导菜单</title>
+      <link>https://unixetc.com/post/centos7-configuration-grub-to-add-the-windows-boot-menu/</link>
+      <pubDate>Sat, 09 Aug 2014 08:09:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/centos7-configuration-grub-to-add-the-windows-boot-menu/</guid>
+      <description>&lt;p&gt;进入&lt;code&gt;/etc/grub.d/&lt;/code&gt;目录&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#cd /etc/grub.d/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;新建&lt;code&gt;15_Windows&lt;/code&gt;文件，写入以下内容：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#! /bin/sh -e
+echo &amp;quot;#Adding Windows&amp;quot; &amp;gt;&amp;amp;2
+cat &amp;lt;&amp;lt; EOF
+menuentry &amp;quot;Windows&amp;quot; {
+set root=(hd0,1)
+chainloader +1
+}
+EOF
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中(hd0,1)是本地磁盘windows主扇区号，可以通过&lt;code&gt;fdisk -l&lt;/code&gt;来查看确定。&lt;/p&gt;
+&lt;p&gt;设定文件权限&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#chmod 755 15_Windows
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;编辑&lt;code&gt;/etc/default/grub&lt;/code&gt;来设定菜单等待时间&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;GRUB_TIMEOUT=2
+GRUB_DISTRIBUTOR=&amp;quot;$(sed &#39;s, release .*$,,g&#39; /etc/system-release)&amp;quot;
+GRUB_DEFAULT=saved
+GRUB_DISABLE_SUBMENU=true
+GRUB_TERMINAL_OUTPUT=&amp;quot;console&amp;quot;
+GRUB_CMDLINE_LINUX=&amp;quot;vconsole.keymap=us crashkernel=auto  vconsole.font=latarcyrheb-sun16 rhgb quiet&amp;quot;
+GRUB_DISABLE_RECOVERY=&amp;quot;true&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;修改&lt;strong&gt;GRUB_TIMEOUT&lt;/strong&gt;值即可。&lt;/p&gt;
+&lt;p&gt;设置Windows为默认启动项&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#grub2-set-default &amp;quot;windows&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;然后运行以下命令，使以上修改生效：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# grub2-mkconfig -o /boot/grub2/grub.cfg&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>创建固定大小的文件</title>
+      <link>https://unixetc.com/post/create-a-fixed-size-file/</link>
+      <pubDate>Thu, 10 Jul 2014 07:10:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/create-a-fixed-size-file/</guid>
+      <description>&lt;p&gt;有时我们需要新建指定大小的文件，很多人可能使用压缩软件的分割功能，分割出指定大小的文件。&lt;/p&gt;
+&lt;p&gt;其实操作系统本身自带的命令就可以胜任以上任务。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Windows&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;新建名为1G-File，大小1G的文件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;fsutil file createnew 1G-File 1073741824
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Linux&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;新建名为2G-File，大小为2G的文件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;dd if=/dev/zero  of=./2G-File bs=1M count=2048&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>修复grub引导</title>
+      <link>https://unixetc.com/post/repair-grub-boot/</link>
+      <pubDate>Thu, 12 Dec 2013 12:13:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/repair-grub-boot/</guid>
+      <description>&lt;p&gt;笔记本原来安装的Linux/Windows XP双系统，今天重新安装了Windows7，但是开机的grub引导被搞掉了，找了下grub的man看了半天，摸索出来如何修复原来的grub引导。&lt;/p&gt;
+&lt;p&gt;首先，使用Linux live cd引导系统，然后按照以下操作：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;检查分区信息&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ubuntu@ubuntu:~$ sudo -s
+root@ubuntu:~# lsblk 
+NAME    MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sda       8:0    0 465.8G  0 disk 
+├─sda1    8:1    0    40G  0 part 
+├─sda2    8:2    0     1K  0 part 
+├─sda5    8:5    0     4G  0 part [SWAP]
+├─sda6    8:6    0    20G  0 part 
+├─sda7    8:7    0    20G  0 part 
+├─sda8    8:8    0   100G  0 part 
+├─sda9    8:9    0   200G  0 part 
+└─sda10   8:10   0  81.8G  0 part 
+sr0      11:0    1   1.6G  0 rom  /cdrom
+loop0     7:0    0   1.5G  1 loop /rofs
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以上的sda6是我的/home目录，根目录为sda7&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;挂载相应分区，重新安装grub&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;root@ubuntu:~# mount /dev/sda7 /mnt/
+root@ubuntu:~# mount /dev/sda6 /mnt/home/
+root@ubuntu:~# grub-install --root-directory=/mnt/ /dev/sda
+Installation finished. No error reported.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;至此所有操作完成，重启后即可看到原来的引导菜单。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Windows下Jekyll乱码问题</title>
+      <link>https://unixetc.com/post/jekyll-chinese-garbled-windows/</link>
+      <pubDate>Sat, 21 Sep 2013 19:21:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/jekyll-chinese-garbled-windows/</guid>
+      <description>&lt;p&gt;在Ruby目录中搜索&lt;strong&gt;convertible.rb&lt;/strong&gt;，找到大概27行如下内容:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;self.content = File.read(File.join(base, name))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;替换为&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;self.content = File.read(File.join(base, name), :encoding =&amp;gt; &#39;utf-8&#39;) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在windows环境变量中，添加以下两个环境变量&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;LANG=zh_CN.UTF-8
+LC_ALL=zh_CN.UTF-8&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

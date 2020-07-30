@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>proinfo on UNIXETC</title>
+    <link>https://unixetc.com/tags/proinfo/</link>
+    <description>UNIXETC (proinfo)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 20 Apr 2019 19:37:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/proinfo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>魅族PRO 5安装Ubuntu Touch系统</title>
+      <link>https://unixetc.com/post/meizu-pro-5-installs-ubuntu-touch-system/</link>
+      <pubDate>Sat, 20 Apr 2019 19:37:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/meizu-pro-5-installs-ubuntu-touch-system/</guid>
+      <description>&lt;p&gt;首先，下载以下几个文件:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;魅族PRO 5国行出厂刷机包 &lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-367112641&#34;&gt;Download&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;魅族PRO 5国际版刷机包 &lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-367112495&#34;&gt;Download&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Fastboot工具 &lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-367110371&#34;&gt;Download&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;SuperSU &lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-367110383&#34;&gt;Download&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Busybox &lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-367110353&#34;&gt;Download&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;RootBrowser &lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-367110365&#34;&gt;Download&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;刷出厂版rom&#34;&gt;刷出厂版ROM&lt;/h3&gt;
+&lt;p&gt;给魅族PRO 5刷出厂版ROM，请将出厂版ROM的文件名命名为“update.zip”，把它放在手机内置存储根目录，同时按住&lt;strong&gt;音量增加&lt;/strong&gt;和&lt;strong&gt;电源&lt;/strong&gt;，等待数秒，直至手机重启至Recovery模式。手机成功重启至Recovery模式后，手机屏幕将显示以下画面：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://wx3.sinaimg.cn/mw690/02e071fely1g27wse2qkdj20bu05175b.jpg&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+&lt;p&gt;点击“开始”按钮刷机。&lt;/p&gt;
+&lt;h3 id=&#34;打开root权限&#34;&gt;打开Root权限&lt;/h3&gt;
+&lt;p&gt;刷机完成后，我们进入刚刚刷入的系统，登录你的Flyme帐户，然后，在“设置-指纹和安全”里开启系统的Root权限。Root权限开启成功后，手机将重启一次。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://wx1.sinaimg.cn/mw690/02e071fely1g27wu9l1ahj20fl0oc11t.jpg&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;安装supersu&#34;&gt;安装SuperSU&lt;/h3&gt;
+&lt;p&gt;安装SuperSU并打开，选择“极客”模式并进入，SuperSU将提示你更新二进制文件，以“常规方式”安装即可。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://wx1.sinaimg.cn/mw690/02e071fely1g27ww61kpej20eu0cfgop.jpg&#34; alt=&#34;请输入图片描述&#34;&gt;
+在安装二进制文件的过程中，SuperSU将申请Root权限，请同意申请。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://wx1.sinaimg.cn/mw690/02e071fely1g27x1pwdnej20fp06njrs.jpg&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+&lt;p&gt;更新过二进制文件后，请重启手机。&lt;/p&gt;
+&lt;h3 id=&#34;安装busybox&#34;&gt;安装Busybox&lt;/h3&gt;
+&lt;p&gt;安装Busybox并打开，点击屏幕右下角的“INSTALL”按钮。
+在安装的过程中，Busybox将申请系统的Root权限，请同意申请（此时Root授权将由SuperSU接管）。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://wx4.sinaimg.cn/mw690/02e071fely1g27x3cdwbij20dk0dcdhu.jpg&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+&lt;p&gt;如果Busybox的安装一切顺利，其安装日志如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://wx4.sinaimg.cn/mw690/02e071fely1g27x69n58yj20fj09ajtv.jpg&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;修改系统标识&#34;&gt;修改系统标识&lt;/h3&gt;
+&lt;p&gt;安装并打开RootBrowser，导航至以下目录：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;/dev/block/platform/15570000.ufs/by-name/
+找到文件：proinfo，点击文件，选择“Open as…”，选择“Text file”，再选择“RB Text Editor”。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://wx3.sinaimg.cn/mw690/02e071fely1g27x8a1zbij20dh0fnjth.jpg&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+&lt;p&gt;这期间，RootBrowser将申请系统的Root权限，请同意申请。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://wx1.sinaimg.cn/mw690/02e071fely1g27x9bctyfj20dr0dkgnr.jpg&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+&lt;p&gt;在“proinfo”里找到以下行：
+machine_type=M576_mobile_public
+将其改为：
+machine_type=M576_intl_official
+如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://wx3.sinaimg.cn/mw690/02e071fely1g27xahydyrj20gf05y3ze.jpg&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+&lt;p&gt;改过之后请保存更改，然后退出RootBrowser，重启手机。
+手机重启过之后，请再次在RootBrowser里查看proinfo的状态。如果“machine_type=”后的文本为“M576_intl_official”，则说明我们的操作成功了。&lt;/p&gt;
+&lt;h3 id=&#34;刷国际版rom&#34;&gt;刷国际版ROM&lt;/h3&gt;
+&lt;p&gt;将国际版Flyme的刷机包命名为“update.zip”，将其放置在手机内置存储的根目录。
+同时按住手机的音量增加键和电源键，等待数秒，直至手机重启到Recovery。
+刷机的步骤和给魅族PRO 5刷出厂版系统一样，在Recovery里点“开始”按钮即可。
+刷机完成后，国际版Flyme的桌面如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://wx1.sinaimg.cn/mw690/02e071fely1g27xc9zwswj20er0hx44s.jpg&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;解锁bootloader&#34;&gt;解锁bootloader&lt;/h3&gt;
+&lt;p&gt;同时按住手机的音量减小键和电源键，等待数秒，直至其重启到Fastboot模式。
+将手机通过数据线连接到计算机（请保证Fastboot驱动已经正确安装），进入Fastboot工具文件夹，在文件资源管理器里按住Shift键的同时单击鼠标右键，选择“在此处打开Powershell窗口”，并在Powershell里执行以下命令：
+./fastboot oem unlock
+成功解锁后，手机屏幕的右下角将显示“unlocked”字样如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://wx3.sinaimg.cn/mw690/02e071fely1g27xdkqc47j20g004wabs.jpg&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;安装ubuntu-touch&#34;&gt;安装Ubuntu Touch&lt;/h3&gt;
+&lt;p&gt;进入&lt;a href=&#34;https://github.com/ubports/ubports-installer&#34;&gt;https://github.com/ubports/ubports-installer&lt;/a&gt;，下载适应版本的UBports Installer安装程序
+打开ubports installer，点击“Select device manually”按钮，在机型列表里选择“Meizu PRO 5”。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://wx3.sinaimg.cn/mw690/02e071fely1g27xhwr8lwj20gg08fdgi.jpg&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+&lt;p&gt;将处于Fastboot模式的手机连接到计算机，手机将被刷机工具识别。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://wx3.sinaimg.cn/mw690/02e071fely1g27xj6vvuaj20g507qq38.jpg&#34; alt=&#34;请输入图片描述&#34;&gt;&lt;/p&gt;
+&lt;p&gt;点击“Change options按钮”，“Channel”处选择“15.04/stable”，“Wipe”项勾选。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/1206089250.webp&#34; alt=&#34;02e071fely1g27xk2v2u1j20g107sjru.webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;点击“Close”按钮后，再点击“Install”按钮。
+接着刷机工具将为你的手机刷入Ubuntu Recovery，Recovery刷入完成后，请根据刷机工具的提示同时按住音量增加键和电源键，直至手机重启至Recovery模式。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/2417442005.webp&#34; alt=&#34;02e071fely1g27xkxueiaj20g707taal.webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;手机重启至Recovery模式后，刷机工具将为你的手机下载并刷入Ubuntu Touch，这个过程需要一点时间，请耐心等待，不要关闭刷机工具，也不要断开手机和计算机的连接。
+手机刷入Ubuntu Touch完成后，刷机工具将提示如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/3310896332.webp&#34; alt=&#34;02e071fely1g27xlyl7i0j20g107ogm9.webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;至此，魅族PRO 5刷入Ubuntu Touch即完成了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/2900843031.webp&#34; alt=&#34;3925646014.webp&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

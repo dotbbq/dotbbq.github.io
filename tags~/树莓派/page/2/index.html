@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-cn" data-theme="">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>树莓派 - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103044" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103044" />
+
+
+
+
+
+<meta property="og:title" content="树莓派" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" />
+<meta property="og:updated_time" content="2019-09-07T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="树莓派"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <h1 class="site-title">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <h1>Tag: 树莓派</h1>
+    <div class="post-info">
+        <a href="https://unixetc.com/tags">To all tags</a>
+    </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/install-configure-noip-client-in-raspberry-pi/">树莓派下安装配置Noip</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        注册noip 首先在http://noip.com注册账户
+然后在主机管理(Manage Hosts)中添加主机(Add A Host)，根据提示设置二级域名，IP可以随意填写。
+安装Noip客户端 wget https://www.noip.com/client/linux/noip-duc-linux.tar.gz tar zxf noip-duc-linux.tar.gz cd noip-2.1.9-1 sudo make install  安装过程中，按照提示输入noip帐号信息，时间间隔建议设为5s，默认30s
+设置开机启动 在/etc/init.d/中建立noip2脚本
+sudo vi /etc/init.d/noip2  脚本内容如下
+#! /bin/sh ### BEGIN INIT INFO # Provides: noip2 # Required-Start: $syslog # Required-Stop: $syslog # Default-Start: 2 3 4 5 # Default-Stop: 0 1 6 # Short-Description: noip.com client service ### END INIT INFO # . /lib/lsb/init-functions case &quot;$1&quot; in start) echo &quot;Starting noip2.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-01-11</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ddns">#DDNS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%8A%A8%E6%80%81%E5%9F%9F%E5%90%8D">#动态域名</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/noip">#noip</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-install-nodejs/">树莓派安装Node.js</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        首先查看树莓派cpu信息
+pi@raspi:~ $ cat /proc/cpuinfo processor : 0 model name : ARMv6-compatible processor rev 7 (v6l) BogoMIPS : 2.00 Features : half thumb fastmult vfp edsp java tls CPU implementer : 0x41 CPU architecture: 7 CPU variant : 0x0 CPU part : 0xb76 CPU revision : 7 Hardware : BCM2708 Revision : 000e Serial : 000000004a8acb6d  看清楚cpu构架，是ARMv6
+然后在node.js官网下载对应版本的包，下载地址https://nodejs.org/dist/
+# wget https://nodejs.org/dist/v4.2.2/node-v4.2.2-linux-arm64.tar.gz # tar zxf node-v4.2.2-linux-arm64.tar.gz # mv node-v4.2.2-linux-arm64 /usr/nodejs422  方便使用期间，做个链接
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-12-03</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/js">#JS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/npm">#npm</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/node.js">#node.js</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ode">#ode</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/node">#node</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/arm6">#arm6</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/cpuinfo">#cpuinfo</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-install-ffmpeg/">树莓派安装ffmpeg</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        先安装h264编码器
+#!/bin/bash cd /usr/src git clone git://git.videolan.org/x264 cd x264 ./configure --host=arm-unknown-linux-gnueabi --enable-static --disable-opencl make sudo make install  下载源码编译安装ffmpeg
+cd /usr/src git clone git://source.ffmpeg.org/ffmpeg.git cd ffmpeg sudo ./configure --arch=armel --target-os=linux --enable-gpl --enable-libx264 --enable-nonfree make sudo make install  由于树莓派原因，这个过程很长……很长…… 建议开screen，然后Ctrl+a+d
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-11-07</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ffmpeg">#ffmpeg</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-allow-root-login/">树莓派开启root登录</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        想要通过ssh登录树莓派进行管理，使用默认的pi用户有时真的不便，对于linux老手来说，可以直接开启root用户ssh登录，这就方便多了，方法如下：
+sudo passwd root sudo passwd --unlock root  设置SSH
+sudo vi /etc/ssh/sshd_config  将其中的PermitRootLogin without-password改为PermitRootLogin yes，然后重启ssh服务sudo service ssh restart
+Over!
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-09-18</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/root">#Root</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/udo">#udo</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/sudo">#sudo</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-install-minidlna-to-create-digital-media-server/">树莓派安装配置minidlna</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        树莓派挂载移动存储 可以挂载移动硬盘或者大容量的U盘，参考以下文章：
+ 树莓派挂载U盘作为存储分区 fdisk分区实例  安装配置minidlna #sudo apt-get install -y minidlna  编辑minidlna配置文件/etc/minidlna.conf，内容如下：
+media_dir=/home/pi/dlnadoc #媒体文件目录 db_dir=/var/lib/minidlna #minidlna通过SQLite来建立媒体库索引，因此需要定义数据库目录 listening_ip=192.168.1.111 #树莓派IP port=8200	#web端口，可以通过ip:port查看索引状态 friendly_name=Raspi_DLNA #服务器命名  重启minidlna服务
+sudo service minidlna restart  强制刷新
+sudo service minidlna force-reload  查看索引状态,浏览http://192.168.1.111:8200
+MiniDLNA status Audio files: 0 Video files: 2 Image files: 0  DLNA客户端 PC
+Windows7下将网络设置为家庭网络，完成后刷新，在网络中媒体设备下就可以自动发现Rasp_DLNA。
+点击进去就可以使用MediaPlayer来浏览。
+Android
+VPlayer+ VPlayer uPnP DLNA Plugin
+IOS
+RushPlayer
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-08-06</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dlna">#dlna</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/upnp">#upnp</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ms">#ms</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dms">#dms</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vplayer">#vplayer</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+    
+        
+    <div class="pagination">
+        <div class="left pagination-item ">
+            
+                <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">To new posts</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/page/3/">To old posts</a>
+            
+        </div>
+    </div>
+
+
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
+    </div>
+</body>
+</html>

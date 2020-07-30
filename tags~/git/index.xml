@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on UNIXETC</title>
+    <link>https://unixetc.com/tags/git/</link>
+    <description>UNIXETC (Git)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 25 Nov 2017 11:25:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>将静态站点部署到Coding.net</title>
+      <link>https://unixetc.com/post/deploy-the-static-site-to-the-coding-net/</link>
+      <pubDate>Sat, 25 Nov 2017 11:25:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/deploy-the-static-site-to-the-coding-net/</guid>
+      <description>&lt;p&gt;本站是基于&lt;a href=&#34;https://github.com/wendal/gor&#34;&gt;https://github.com/wendal/gor&lt;/a&gt;生成的静态站点。&lt;/p&gt;
+&lt;p&gt;下面介绍如何将静态站点部署到coding.net上。&lt;/p&gt;
+&lt;h3 id=&#34;注册coding并新建项目&#34;&gt;注册coding并新建项目&lt;/h3&gt;
+&lt;p&gt;首先注册coding.net，注册完后新建项目。&lt;/p&gt;
+&lt;p&gt;项目名称为&lt;code&gt;*.coding.me&lt;/code&gt;，以此格式新建的项目可以使用&lt;strong&gt;Coding Pages&lt;/strong&gt;服务。&lt;/p&gt;
+&lt;h3 id=&#34;pages服务设置&#34;&gt;Pages服务设置&lt;/h3&gt;
+&lt;p&gt;建立完成后，在项目设置中找到&lt;strong&gt;Pages服务&lt;/strong&gt;服务进行设置。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;部署来源&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;选择&lt;strong&gt;master分支&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;自定义域名&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;添加自定义域名，建议同时添加domain.com和www.domain.com，并且设置一个为首选项，另一个跳转到首选项。然后将自己的域名&lt;strong&gt;CNAME&lt;/strong&gt;指向&lt;strong&gt;pages.coding.me&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;强制HTTPS访问&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;打开该选项，则为你的域名自动申请设置** Let&amp;rsquo;s Encrypt**证书，并开启**https**访问。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Hosted by Coding Pages&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;新站点都会有coding pages跳转页，按照&lt;strong&gt;Hosted by Coding Pages&lt;/strong&gt;说明，在首页添加规定连接后，可以提交申请不显示跳转页。&lt;/p&gt;
+&lt;h3 id=&#34;使用git部署站点&#34;&gt;使用Git部署站点&lt;/h3&gt;
+&lt;p&gt;首先推荐配置&lt;strong&gt;SSH公钥&lt;/strong&gt;以便于操作。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ ssh-keygen -t rsa -C &amp;quot;name@domain.com&amp;quot;  //在此设置为coding.net帐号邮箱
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/dotbbq/.ssh/id_rsa):
+Created directory &#39;/c/Users/dotbbq/.ssh&#39;.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/dotbbq/.ssh/id_rsa.
+Your public key has been saved in /c/Users/dotbbq/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:Tt/3424234sdfasdfadfs1234234sdfafdsi0 name@domain.com
+The key&#39;s randomart image is:
++---[RSA 2048]----+
+|     ... ...o  . |
+|      + o o   +..|
+|*... + * . o . o+|
+|    o = + o . ..o|
+| . . o =S+ o .. .|
+|. o   Bo+. .o.   |
+| +.+   ......    |
+|o.=.o o  .+ .    |
+|.. ..+ .oo.o     |
++----[SHA256]-----+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;生成完后，将&lt;code&gt;/c/Users/dotbbq/.ssh/id_rsa.pub&lt;/code&gt;的内容粘贴到coding.net的&lt;strong&gt;个人设置&lt;/strong&gt;-&amp;gt;&lt;strong&gt;SSH公钥&lt;/strong&gt;中进行添加。&lt;/p&gt;
+&lt;p&gt;下来进行验证&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ ssh -T git@git.coding.net
+The authenticity of host &#39;git.coding.net (123.59.85.184)&#39; can&#39;t be established.
+RSA key fingerprint is SHA256:3424234sdfasdfadfs1234234sdfafdsi0+Vg/Ik.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added &#39;git.coding.net,123.59.85.184&#39; (RSA) to the list of known hosts.
+Coding 提示: Hello alairs, You&#39;ve connected to Coding.net via SSH. This is a personal key.
+alairs，你好，你已经通过 SSH 协议认证 Coding.net 服务，这是一个个人公钥
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;设置git用户名和email&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ git config --global user.name &amp;quot;name&amp;quot;                //coding.net用户名
+$ git config --global user.email &amp;quot;name@domain&amp;quot;        //coding.net邮箱
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;将远程的项目clone下来&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ git clone git@git.coding.net:name/name.coding.me.git
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;将静态站点文件拷贝至&lt;code&gt;name.coding.me&lt;/code&gt;目录&lt;/p&gt;
+&lt;p&gt;部署文件到coding.net&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ git add .
+$ git commit -m &amp;quot;update&amp;quot;
+$ git push&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>树莓派安装Dnsmasq加速DNS解析</title>
+      <link>https://unixetc.com/post/raspberry-pi-install-dnsmasq-and-dnsmasq-china-list/</link>
+      <pubDate>Mon, 18 Jan 2016 21:28:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/raspberry-pi-install-dnsmasq-and-dnsmasq-china-list/</guid>
+      <description>&lt;p&gt;天朝的dns服务商尿性不是一般的大，动不动就抽风或者劫持，为了避免这种情况，可以在树莓派上安装Dnsmasq来加速dns解析，提高网络浏览体验。&lt;/p&gt;
+&lt;h3 id=&#34;安装配置dnsmasq&#34;&gt;安装配置dnsmasq&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;apt-get install dnsmasq
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;配置dnsmasq,&lt;code&gt;vi /etc/dnsmasq.conf&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;我的配置文件如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;domain=Raspi2
+resolv-file=/etc/resolv.dnsmasq
+conf-dir=/etc/dnsmasq.d
+min-port=4096
+server=114.114.114.114
+server=114.114.115.115
+server=223.5.5.5
+server=223.6.6.6
+server=119.29.29.29
+server=182.254.116.116
+server=112.124.47.27
+server=114.215.126.16
+server=101.226.4.6
+server=218.30.118.6
+server=42.120.21.30
+server=199.91.73.222
+server=178.79.131.110
+server=8.8.8.8
+server=8.8.4.4
+
+cache-size=10000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;配置完重启dnsmasq服务&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;service dnsmasq restart
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中的&lt;code&gt;server&lt;/code&gt;字段为上游DNS&lt;/p&gt;
+&lt;h3 id=&#34;配置dnsmasq-china-list&#34;&gt;配置dnsmasq-china-list&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/felixonmars/dnsmasq-china-list.git
+cd dnsmasq-china-list/
+cp *.conf  /etc/dnsmasq.d/
+service dnsmasq restart
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;至此设置完成，可以在路由器中将首选dns设为树莓派ip，这样局域网内的所有设备都可以体验dns解析加速了！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>将博客从Typcho转移至Gor</title>
+      <link>https://unixetc.com/post/typecho-converted-to-gor/</link>
+      <pubDate>Mon, 20 Jul 2015 17:20:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/typecho-converted-to-gor/</guid>
+      <description>&lt;h3 id=&#34;缘由&#34;&gt;缘由&lt;/h3&gt;
+&lt;p&gt;VPS快到期了，不想继续维护，太累，并且香港VPS价格也不菲。&lt;/p&gt;
+&lt;p&gt;于是打算选择一个静态博客平台，原来用过的不少:jekyll,hexo,gor,pelican，最后决定Gor&lt;/p&gt;
+&lt;p&gt;选择Gor的理由有两点&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;安装方便&lt;/li&gt;
+&lt;li&gt;执行效率高&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;安装gor&#34;&gt;安装Gor&lt;/h3&gt;
+&lt;p&gt;参考Gor主页&lt;a href=&#34;https://github.com/wendal/gor&#34;&gt;https://github.com/wendal/gor&lt;/a&gt;安装Gor&lt;/p&gt;
+&lt;h3 id=&#34;将typecho文章导出为markdown文件md&#34;&gt;将Typecho文章导出为Markdown文件(.md)&lt;/h3&gt;
+&lt;p&gt;Github上有现成的工具&lt;strong&gt;typecho-exporter&lt;/strong&gt;，主页为&lt;a href=&#34;https://github.com/aneasystone/typecho-exporter&#34;&gt;https://github.com/aneasystone/typecho-exporter&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这个工具可以将所有的文章导出为Markdown文件，但是以文章标题为文件名，不利于后期处理，建议使用slug为文件名。&lt;/p&gt;
+&lt;p&gt;编辑下载的&lt;code&gt;main.py&lt;/code&gt;，将75行的&lt;code&gt;p.title = r[1]&lt;/code&gt;替换为`p.title = r[2]&#39;，如下:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;results = cur.fetchall()
+for r in results:
+    p = Post()
+    p.id = r[0]
+    p.title = r[2]
+    p.content = r[5]
+    posts.append(p)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;原来的&lt;code&gt;r[1]&lt;/code&gt;对应&lt;code&gt;typecho_contents&lt;/code&gt;SQL表中的&lt;code&gt;title&lt;/code&gt;列，我的&lt;code&gt;r[2]&lt;/code&gt;对应&lt;code&gt;slug&lt;/code&gt;列，可以根据实际情况更改。&lt;/p&gt;
+&lt;p&gt;编辑&lt;strong&gt;typecho-exporter&lt;/strong&gt;的&lt;code&gt;config.ini&lt;/code&gt;文件，设置数据库访问方式。&lt;/p&gt;
+&lt;p&gt;运行&lt;code&gt;main.py&lt;/code&gt;，完成后会在&lt;strong&gt;typecho-exporter&lt;/strong&gt;目录下生成&lt;strong&gt;files&lt;/strong&gt;文件夹，里面就是导出的Markdown文件。&lt;/p&gt;
+&lt;h3 id=&#34;后期整理&#34;&gt;后期整理&lt;/h3&gt;
+&lt;p&gt;导出后的Markdown没有Gor需要的文件头格式，需要手动整理&lt;/p&gt;
+&lt;p&gt;这里推荐使用Notepad++批量替换&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/insert_gor_markdown_header.png&#34; alt=&#34;插入Hexo的Markdown头格式&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;查找目标:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;替换为&amp;mdash;\n
+title: title\ndate: 2015-07-20\ndescription: \npermalink: \ncategories: \ntags: \n&amp;mdash;\n&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;记得将查找模式重的扩展打开。&lt;/p&gt;
+&lt;p&gt;经过以上替换，就大概有了个Gor的Markdown头格式，后面的手动工作就少了多了。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>使用speedtest-cli测试带宽</title>
+      <link>https://unixetc.com/post/use-speedtest-cli-tests-network-bandwidth/</link>
+      <pubDate>Thu, 26 Mar 2015 13:26:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/use-speedtest-cli-tests-network-bandwidth/</guid>
+      <description>&lt;h3 id=&#34;安装speedtest-cli&#34;&gt;安装speedtest-cli&lt;/h3&gt;
+&lt;p&gt;安装speedtest-cli方法如下:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install python-pip
+sudo pip install speedtest-cli
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;或&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip install git+https://github.com/sivel/speedtest-cli.git
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;或&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/sivel/speedtest-cli.git
+python speedtest-cli/setup.py install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;或&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest_cli.py
+chmod +x speedtest-cli
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;或&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -Lo speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest_cli.py
+chmod +x speedtest-cli
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;使用speedtest-cli&#34;&gt;使用speedtest-cli&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;root@MyUbuntuCloud:~# speedtest-cli -h
+usage: speedtest-cli [-h] [--bytes] [--share] [--simple] [--list]
+                 [--server SERVER] [--mini MINI] [--source SOURCE]
+                 [--timeout TIMEOUT] [--version]
+
+Command line interface for testing internet bandwidth using speedtest.net.
+--------------------------------------------------------------------------
+https://github.com/sivel/speedtest-cli
+
+optional arguments:
+  -h, --help         show this help message and exit
+  --bytes            Display values in bytes instead of bits. Does not affect
+                     the image generated by --share
+  --share            Generate and provide a URL to the speedtest.net share
+                     results image
+  --simple           Suppress verbose output, only show basic information
+  --list             Display a list of speedtest.net servers sorted by
+                     distance
+  --server SERVER    Specify a server ID to test against
+  --mini MINI        URL of the Speedtest Mini server
+  --source SOURCE    Source IP address to bind to
+  --timeout TIMEOUT  HTTP timeout in seconds. Default 10
+  --version          Show the version number and exit
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以下为两则实例：&lt;/p&gt;
+&lt;p&gt;HKVPS:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;root@MyUbuntuCloud:~# speedtest-cli --share
+Retrieving speedtest.net configuration...
+Retrieving speedtest.net server list...
+Testing from Shanghai Anchnet Network Technology (118.193.151.193)...
+Selecting best server based on latency...
+Hosted by ChinaTelecom (Guangzhou) [2.51 km]: 6.646 ms
+Testing download speed........................................
+Download: 19.66 Mbit/s
+Testing upload speed..................................................
+Upload: 0.81 Mbit/s
+Share results: https://www.speedtest.net/result/4242720179.png
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/str4242720179.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Raspberry Pi:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pi@araspi ~ $ ./speedtest-cli --share
+Retrieving speedtest.net configuration...
+Retrieving speedtest.net server list...
+Testing from China Unicom Shannxi (123.138.35.2)...
+Selecting best server based on latency...
+Hosted by Xi&#39;an branch,Chinaunicom (Xian) [2.79 km]: 14.556 ms
+Testing download speed........................................
+Download: 38.05 Mbit/s
+Testing upload speed..................................................
+Upload: 7.34 Mbit/s
+Share results: https://www.speedtest.net/result/4242749590.png
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/str4242749590.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>使用SSH密匙登录Github</title>
+      <link>https://unixetc.com/post/use-the-ssh-key-to-login-github/</link>
+      <pubDate>Tue, 03 Sep 2013 19:23:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/use-the-ssh-key-to-login-github/</guid>
+      <description>&lt;h3 id=&#34;生成ssh密匙文件&#34;&gt;生成ssh密匙文件&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;ssh-keygen -t rsa -C &amp;quot;user@domain.com&amp;quot;   
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;接下来会提示输入密码，推荐自定义密码，当然也可以置空&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Enter passphrase(empty for no passphrase):
+Enter same passphrase again:
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;完成后会在用户目录下的.ssh文件夹中新建&lt;!-- raw HTML omitted --&gt;id_rsa&lt;!-- raw HTML omitted --&gt;与&lt;!-- raw HTML omitted --&gt;is_rsa.pub&lt;!-- raw HTML omitted --&gt;两个文件。&lt;/p&gt;
+&lt;h3 id=&#34;添加ssh密匙到github用户&#34;&gt;添加ssh密匙到github用户&lt;/h3&gt;
+&lt;p&gt;登录至github.com,点击右上角的&lt;strong&gt;Account Settings&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在左侧选择&lt;strong&gt;SSH Keys&lt;/strong&gt;菜单，然后在右侧点击&lt;strong&gt;Add SSH Key&lt;/strong&gt;按钮&lt;/p&gt;
+&lt;p&gt;将上一步生成的&lt;strong&gt;id_rsa.pub&lt;/strong&gt;文件内容复制进去保存。&lt;/p&gt;
+&lt;h3 id=&#34;本地连接至githubcom&#34;&gt;本地连接至github.com&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;ssh -T git@github.com
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果前面设置了passphrase，那么就按照提示输入passphrase。如果置空的话，就直接点击&lt;strong&gt;回车&lt;/strong&gt;。成功后会有如下提示：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Hi wrchiu! You`ve successfully authenticated, but GitHub does note provide shell access.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;参考以上设置完成后，以后git push时就不需要每次输入密码了！&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

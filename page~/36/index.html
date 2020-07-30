@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-cn" data-theme="">
+<head>
+	<meta name="generator" content="Hugo 0.73.0" />
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>UNIXETC - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103041" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103041" />
+
+
+
+
+
+<meta property="og:title" content="UNIXETC" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="UNIXETC"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <h1 class="site-title">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <div class="homepage-content">
+        
+    </div>
+
+    
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/install-vpn-on-ubuntu/">Ubuntu下安装VPN</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装pptpd
+#apt-get install pptpd  IP设置
+#vi /etc/pptpd.conf  添加以下内容:
+localip 192.18.0.1 remoteip 192.168.0.200-230  设置DNS
+#vi/etc/ppp/pptpd-options  添加以下内容：
+ms-dns 192.168.1.1 ms-dns 8.8.8.8  添加用户
+#vi /etc/ppp/chap-secrets  添加以下内容:
+name * passwd *  重启vpn
+#/etc/init.d/pptpd restart  允许ip4访问外网
+#vi /etc/sysctl.conf net.ipv4.ip_forward=1 //取消本行前注释符(*) #sysctl -p 
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-02-23</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vpn">#VPN</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/pptpd">#pptpd</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/qemu-for-windows-usages/">Qemu for windows 使用实例</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        下载安装QEMU for Windows
+32Bit下载地址 64Bit下载地址
+双击下载后的exe文件完成安装。
+QEMU for Windows使用   直接启动QEMU
+qemu-system-i386
+  加载光盘镜像
+qemu-system-i386 -cdrom image.iso
+  创建磁盘镜像
+qemu-img create disk.img 100M
+  加载磁盘镜像
+qemu-system-i386 -hdd disk.img
+  指定内存大小与CPU数
+qemu-system-i386 -m 256M -smp 2 -hdd disk.img
+  同时加载磁盘镜像与光盘镜像，并且从光盘镜像启动
+qemu-system-i386 -cdrom image.iso -hdd disk.img -boot d
+其中-boot后面的d代表从光盘启动，可用引导项：a, b (软驱 1,2), c (第一块硬盘), d (第一个CD-ROM), n-p (从网络启动), 默认为第一块硬盘。
+  注释
+以上qemu-system-i386命令，为启动i386虚拟环境命令，同样qemu可以模拟其他环境，可使用命令如下：
+qemu-system-aarch64.exe qemu-system-aarch64w.exe qemu-system-alpha.exe qemu-system-alphaw.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-02-11</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/qemu">#qemu</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/virtual">#virtual</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/optimization-vps/">VPS优化</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        pdksh替代bash $sudo apt-get install pdksh $sudo vi /etc/shells  添加/bin/pdksh到/etc/shells文件
+$chsh -s /bin/pdksh  重新登录即可。
+修改SSH端口 #vi /etc/ssh/sshd_config  将Port 22中的22改为自定义数字即可
+# /etc/init.d/ssh restart  dropbear替代openssh $sudo apt-get install dropbear $sudo /etc/init.d/ssh stop $sudo vi /etc/default/dropbear  修改NO_START=0,修改DROPBEAR_PORT为自定义端口号
+$sudo /etc/init.d/dropbear start $sudo apt-get remove openssh-server $sudo apt-get autoremove  关闭多余的TTY Ubuntu 12.04 server如下操作
+#cd /etc/init/ #mv tty2.conf tty2.conf.bak #mv tty3.conf tty2.conf.bak #mv tty4.conf tty2.conf.bak #mv tty5.conf tty2.conf.bak #mv tty6.conf tty2.conf.bak #reboot  Debian 7如下操作
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-02-01</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vps">#VPS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/openssh">#OpenSSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/pdksh">#pdksh</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dropbear">#dropbear</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/getty">#getty</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/bittorrent-sync-usages/">BitTorrent Sync使用实例</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        BitTorrent Sync是BitTorrent Inc推出的一款多平台同步工具，支持Windows、Linux、MAC、FreeBSD、IOS、Android、Windows Phone，还有许多NAS设备。
+具体的功能介绍请转至官网 https://www.getsync.com/intl/zh_cn/features
+下载地址 https://www.getsync.com/intl/zh_cn/platforms/desktop
+在此提供镜像下载http://www.getos.org/btsync/
+安装BitTorrent Sync Windows版本，双击下载后的EXE文件安装。
+Linux版，解压下载后的btsync_i386.tar.gz，运行即可
+tar zxvf btsync_i386.tar.gz cp btsync /usr/bin ./btsync  然后可以通过127.0.0.1:8888来进行设置管理
+为了安全期间，不推荐使用默认配置，建议自定义端口
+btsync --dump-sample-config&gt;bs.conf vi bs.conf  找到如下内容，将8888修改为自定义端口号
+&quot;webui&quot; : { &quot;listen&quot; : &quot;0.0.0.0:8888&quot; // remove field to disable WebUI  然后通过以下命令加载自定义配置文件
+btsync --config bs.conf   Windows版与Linux版的软件界面大致相同，以下以linux为例说明。
+配置BitTorrent Sync 第一次使用BitTorrent Sync需要进行一系列设置，如下所示：
+设置管理员账号以及密码 *Windows不需要
+账号设定完成后BitTorrent Sync会提示登录以继续使用，登录后继续下面设置。
+然后是使用条款和Pro版本试用(30天)提示，直接同意。
+下来选择连接设备，一般选择This is my first Sync device，如果你已经在其他设备上安装了BitTorrent Sync，并且需要将该设备的内容全部同步到新设备，可以选择Link a device already running Sync，这个在后边再讲。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-01-21</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/bittorrent">#BitTorrent</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/bittorrent-sync">#BitTorrent Sync</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/btsync">#btsync</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%90%8C%E6%AD%A5">#同步</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/automatic-backup-files-and-database-on-vps/">VPS下自动备份文件和数据库</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        新建脚本，名为autoback.sh
+#vi autoback.sh  脚本(autoback.sh)内容如下:
+#!/bin/sh #备份网站目录/home/www/ tar zcvf /home/backup/www$(date + &quot;%Y%m%d&quot;).tar.gz /home/www/* #备份数据库 www /usr/local/mysql/bin/mysqldump -uroot -ppassword dbname &gt; /home/backup/dbname$(date +&quot;%Y%m%d&quot;).sql #删除三天前的备份 cd /home/backup/ rm -f *$(date -d -3day +&quot;%Y%m%d&quot;)*  将脚本(autoback.sh)添加到自动执行任务列表:
+#chmod +x autoback.sh #crontab -e 59 23 * * * /root/autoback.sh  推荐注册Dropbox，参考**Linux下CLI模式使用Dropbox**，将备份文件自动同步到Dropbox。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-01-13</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vps">#VPS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/mysql">#MySQL</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/crontab">#crontab</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dropbox">#Dropbox</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+    
+        
+    <div class="pagination">
+        <div class="left pagination-item ">
+            
+                <a href="/page/35/">To new posts</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/page/37/">To old posts</a>
+            
+        </div>
+    </div>
+
+
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
+    </div>
+</body>
+</html>

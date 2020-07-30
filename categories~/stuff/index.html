@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-cn" data-theme="">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>STUFF - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/categories/stuff/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103042" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103042" />
+
+
+
+
+
+<meta property="og:title" content="STUFF" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/categories/stuff/" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="STUFF"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <h1 class="site-title">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <h1>Category: STUFF</h1>
+    <div class="post-info">
+        <a href="https://unixetc.com/categories">To all categories</a>
+    </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/nginx-v2ray-websocket/">Nginx V2ray and WebSocket</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装v2ray/nginx v2ray安装可以参考Ubuntu中v2ray客户端配置实例.
+Nginx安装推荐使用OneinStack一键安装脚本
+准备好使用的域名，这里以v.fuckgfw.cn为例。
+v2ray/nginx服务端配置 v2ray安装好后，服务端配置/etc/v2ray/config.json如下:
+{ &quot;inbounds&quot;: [{ &quot;port&quot;: 99999, //代理端口号 &quot;listen&quot;: &quot;127.0.0.1&quot;, &quot;protocol&quot;: &quot;vmess&quot;, &quot;settings&quot;: { &quot;clients&quot;: [{ &quot;id&quot;: &quot;5c1eed18-fse4-41fs-9as9-e85s45bds9ef&quot;, &quot;level&quot;: 1, &quot;alterId&quot;: 64 }] }, &quot;streamSettings&quot;: { &quot;network&quot;: &quot;ws&quot;, &quot;wsSettings&quot;: { &quot;path&quot;: &quot;/fcgfw&quot; //代理目录 } } }], &quot;outbounds&quot;: [{ &quot;protocol&quot;: &quot;freedom&quot;, &quot;settings&quot;: {} }, { &quot;protocol&quot;: &quot;blackhole&quot;, &quot;settings&quot;: {}, &quot;tag&quot;: &quot;blocked&quot; }], &quot;routing&quot;: { &quot;rules&quot;: [{ &quot;type&quot;: &quot;field&quot;, &quot;ip&quot;: [&quot;geoip:private&quot;], &quot;outboundTag&quot;: &quot;blocked&quot; }] } } 使用OneinStack一键脚本新建一个站点，域名为v.fuckgfw.cn，采用SSL加密模式，完成后编辑/usr/local/nginx/conf/vhost/v.fuckgfw.cn.conf文件
+参考以下修改：
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2020-07-30</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/vps">#VPS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/v2ray">#V2ray</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/websocket">#WebSocket</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/phicomm-n1-unixbench-score-and-system-information/">斐讯N1系统信息和UNIXBENCH跑分</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        系统信息 alair@aml:~ $ inxi -F System: Host: aml Kernel: 5.5.0-rc6-aml-s9xxx aarch64 bits: 32 Console: tty 0 Distro: Ubuntu 18.04.4 LTS Machine: No /sys/class/dmi; using dmidecode: dmidecode is not installed. CPU: Quad core ARMv8 rev 4 (v8l) (-MCP-) (ARM) clock speeds: max: 1512 MHz 1: 1512 MHz 2: 1512 MHz 3: 1512 MHz 4: 1512 MHz Graphics: Card: Failed to Detect Video Card! Display Server: N/A driver: N/A tty size: 254x72 Advanced Data: N/A out of X Audio: Card AMLGX driver: AMLGX Sound: ALSA v: k5.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2020-03-02</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/debian">#Debian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/unixbench">#Unixbench</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%B7%91%E5%88%86">#跑分</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/inxi">#inxi</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/yandex-disk-console-client-for-linux/">YandexDisk命令行客户端</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        Linux的Yandex.Disk控制台客户端使您可以在Yandex.Disk上管理文件，而无需使用窗口界面或支持WebDAV的程序。
+与WebDAV连接相比，使用控制台客户端的优势：
+ Low system resource requirements. Faster file reading and writing speeds. Faster syncing with the Yandex.Disk server. Manage files offline.  控制台客户端可以安装在以下操作系统上：
+ Ubuntu Linux 8.04 及以上版本 Debian 5 及以上版本 Fedora 9 及以上版本 Red Hat Enterprise Linux 6 及以上版本 CentOS 6 及以上版本  安装客户端 要自动安装客户端，请使用命令进行快速软件包安装。
+.deb软件包 安装示例
+echo &quot;deb http://repo.yandex.ru/yandex-disk/deb/ stable main&quot; | sudo tee -a /etc/apt/sources.list.d/yandex-disk.list &gt; /dev/null wget http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG -O- | sudo apt-key add - sudo apt-get update sudo apt-get install -y yandex-disk 要手动安装客户端，请从下面的相应链接下载相应版本的软件包。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2020-02-29</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/centos">#CentOS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/debian">#Debian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/yandexdisk">#YandexDisk</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/yandex">#Yandex</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%BD%91%E7%9B%98">#网盘</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%90%8C%E6%AD%A5">#同步</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/centos-install-hugo-via-repo/">CentOS安装Hugo</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        Hugo是由Go语言实现的静态网站生成器。简单、易用、高效、易扩展、快速部署。
+新建hugo.repo文件，sudo vi /etc/yum.repos.d/hugo.repo，填入以下内容。
+[daftaupe-hugo] name=Copr repo for hugo owned by daftaupe baseurl=https://copr-be.cloud.fedoraproject.org/results/daftaupe/hugo/epel-7-$basearch/ type=rpm-md skip_if_unavailable=True gpgcheck=1 gpgkey=https://copr-be.cloud.fedoraproject.org/results/daftaupe/hugo/pubkey.gpg repo_gpgcheck=0 enabled=1 保存后更新安装Hugo
+sudo yum update sudo yum install hugo -y 
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2020-02-04</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/centos">#CentOS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/hugo">#Hugo</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E9%9D%99%E6%80%81%E7%AB%99%E7%82%B9">#静态站点</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/golang">#golang</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/gnome-landscaping-guide/">Gnome美化简介</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装必要软件 sudo apt install gnome-tweak-tool chrome-gnome-shell 安装Gnome Shell Extensions 使用Firefox浏览https://extensions.gnome.org/，第一次访问根据提示安装Firefox插件，如下图:
+安装完成后，访问https://extensions.gnome.org/搜索安装以下三个GnomeShellExtension
+ User Themes 加载用户主题，加载目录为~/.local/share/themes Dash to Dock 定制 Dash/Dock Gnome Global Application Menu Gnome全局菜单  安装方法如下，进入到扩展详情后，点击标题后的开关，按照提示安装即可
+安装主题 访问https://www.gnome-look.org/，在GTK3 Themes分类下下载主题，下载后解压拷贝至~/.local/share/themes下，然后打开gnome-tweak，在外观中即可选择已安装的主题。
+在~/.local/share/下新建themes、icons和fonts三个目录，分别对应主题、图标、字体，这些资源都可以在https://www.gnome-look.org/找得到。
+以下为本人的桌面截图，仅供参考：
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2019-12-08</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/gnome">#Gnome</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%AD%97%E4%BD%93">#字体</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%BE%8E%E5%8C%96">#美化</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E4%B8%BB%E9%A2%98">#主题</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%9B%BE%E6%A0%87">#图标</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%A3%81%E7%BA%B8">#壁纸</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+    
+        
+    <div class="pagination">
+        <div class="left pagination-item disabled">
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/categories/stuff/page/2/">To old posts</a>
+            
+        </div>
+    </div>
+
+
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
+    </div>
+</body>
+</html>

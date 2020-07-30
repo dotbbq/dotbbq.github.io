@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>go on UNIXETC</title>
+    <link>https://unixetc.com/tags/go/</link>
+    <description>UNIXETC (go)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 11 May 2015 15:11:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux下安装最新版golang</title>
+      <link>https://unixetc.com/post/install-the-last-version-golang-for-linux/</link>
+      <pubDate>Mon, 11 May 2015 15:11:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/install-the-last-version-golang-for-linux/</guid>
+      <description>&lt;p&gt;ubuntu中可以使用&lt;code&gt;apt-get install golang&lt;/code&gt;来安装go，但是版本稍旧&lt;/p&gt;
+&lt;p&gt;如果需要安装最新版的golang，那就得自己动手咧&lt;/p&gt;
+&lt;h3 id=&#34;安装golang&#34;&gt;安装golang&lt;/h3&gt;
+&lt;p&gt;从官网下载最新版，手动安装&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;apt-get install build-essential
+wget https://storage.googleapis.com/golang/go1.4.2.linux-386.tar.gz
+tar zxf go1.4.2.linux-386.tar.gz
+cd go/src
+./all.bash
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;设置path&#34;&gt;设置PATH&lt;/h3&gt;
+&lt;p&gt;安装完成后需要设置PATH才能随地使用&lt;code&gt;go&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;export PATH=&amp;quot;/root/go/bin:$PATH&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;检查版本&#34;&gt;检查版本&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;go version
+go version go1.4.2 linux/386&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-cn" data-theme="">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>ssh over usb - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/tags/ssh-over-usb/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103043" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103043" />
+
+
+
+
+
+<meta property="og:title" content="ssh over usb" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/tags/ssh-over-usb/" />
+<meta property="og:updated_time" content="2019-04-19T09:46:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ssh over usb"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <h1 class="site-title">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <h1>Tag: ssh over usb</h1>
+    <div class="post-info">
+        <a href="https://unixetc.com/tags">To all tags</a>
+    </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-zero-with-ssh-over-usb/">通过SSH Over USB管理树莓派Zero</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        树莓派Zero因为相对来说太小巧，没有提供初始化的网卡，所以我们除了通过串口连接以外，树莓派Zero也提供了USB直接连接的方式。即通过Ethernet Gadget模式来连接pc，并进行ssh连接。
+ Ethernet Gadget模式即USB网卡模式，比较常见的就是我们通过android手机的usb接口对pc进行网络共享的一种手段。一般电脑都会自动识别这种设备，并开启网卡进行共享。
+ 修改配置文件 为了进行USB连接，我们需要修改BOOT文件夹下的config.txt与cmdline.txt配置文件。 首先在config.txt最末行处换行添加如下代码，打开usb网卡模式：
+dtoverlay=dwc2  其次在cmdline.txt文件中找到rootwait字段，并在其后面空格添加如下信息，在打开系统时开启USB网卡模式。
+modules-load=dwc2,g_ether  在boot分区新建ssh文件，以打开ssh访问功能。
+touch ssh  通过usb连接设备 树莓派zero有两个MicroUSB口，一个是电源插口，职司供电的功能，另外一个就是USB接口，它除了供电以外还提供OTG的功能，我们也是通过这个接口来连接PC。 此时我们可以通过以下代码连接树莓派zero：
+ssh pi@raspberrypi.local  但此时ip段为DHCP模式获取，如果我们希望通过ip来连接，则我们需要给树莓派的usb网卡设置ip。
+设置USB网卡的IP 我们可以通过ifconfig -a来查看我们现在的网卡设备，此时我们可以看到，USB0网卡设备，我们就是通过该设备连接的pc，所以我们需要设置该网卡的ip。
+sudo nano /etc/network/interfaces  打开网卡配置界面，在最末行添加如下代码来设置固定IP：
+allow-hotplug usb0 iface usb0 inet static address 192.168.7.2 netmask 255.255.255.0 network 192.168.7.0 broadcast 192.168.7.255 gateway 192.168.7.1  然后重启usb0网卡：
+sudo ifdown usb0 sudo ifup usb0 ifconfig usb0  但树莓派此时实际上是从机，我们需要通过设置pc主机的ip来让树莓派0的usb网卡真正运作起来，那么我们对刚才的usb设备设置如下IP：
+ IP: 192.168.7.1 掩码: 255.255.255.0 路由: 192.168.7.1
+ 此时我们就可以通过ip来进行ssh连接了：
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2019-04-19</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi-zero">#Raspberry Pi Zero</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh-over-usb">#ssh over usb</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
+    </div>
+</body>
+</html>

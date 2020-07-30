@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-cn" data-theme="">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>STUFF - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/categories/stuff/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103042" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103042" />
+
+
+
+
+
+<meta property="og:title" content="STUFF" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/categories/stuff/" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="STUFF"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <h1 class="site-title">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <h1>Category: STUFF</h1>
+    <div class="post-info">
+        <a href="https://unixetc.com/categories">To all categories</a>
+    </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-install-dnsmasq-and-dnsmasq-china-list/">树莓派安装Dnsmasq加速DNS解析</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        天朝的dns服务商尿性不是一般的大，动不动就抽风或者劫持，为了避免这种情况，可以在树莓派上安装Dnsmasq来加速dns解析，提高网络浏览体验。
+安装配置dnsmasq apt-get install dnsmasq  配置dnsmasq,vi /etc/dnsmasq.conf
+我的配置文件如下：
+domain=Raspi2 resolv-file=/etc/resolv.dnsmasq conf-dir=/etc/dnsmasq.d min-port=4096 server=114.114.114.114 server=114.114.115.115 server=223.5.5.5 server=223.6.6.6 server=119.29.29.29 server=182.254.116.116 server=112.124.47.27 server=114.215.126.16 server=101.226.4.6 server=218.30.118.6 server=42.120.21.30 server=199.91.73.222 server=178.79.131.110 server=8.8.8.8 server=8.8.4.4 cache-size=10000  配置完重启dnsmasq服务
+service dnsmasq restart  其中的server字段为上游DNS
+配置dnsmasq-china-list git clone https://github.com/felixonmars/dnsmasq-china-list.git cd dnsmasq-china-list/ cp *.conf /etc/dnsmasq.d/ service dnsmasq restart  至此设置完成，可以在路由器中将首选dns设为树莓派ip，这样局域网内的所有设备都可以体验dns解析加速了！
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-01-18</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/git">#Git</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dns">#DNS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dnsmasq">#dnsmasq</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/install-configure-noip-client-in-raspberry-pi/">树莓派下安装配置Noip</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        注册noip 首先在http://noip.com注册账户
+然后在主机管理(Manage Hosts)中添加主机(Add A Host)，根据提示设置二级域名，IP可以随意填写。
+安装Noip客户端 wget https://www.noip.com/client/linux/noip-duc-linux.tar.gz tar zxf noip-duc-linux.tar.gz cd noip-2.1.9-1 sudo make install  安装过程中，按照提示输入noip帐号信息，时间间隔建议设为5s，默认30s
+设置开机启动 在/etc/init.d/中建立noip2脚本
+sudo vi /etc/init.d/noip2  脚本内容如下
+#! /bin/sh ### BEGIN INIT INFO # Provides: noip2 # Required-Start: $syslog # Required-Stop: $syslog # Default-Start: 2 3 4 5 # Default-Stop: 0 1 6 # Short-Description: noip.com client service ### END INIT INFO # . /lib/lsb/init-functions case &quot;$1&quot; in start) echo &quot;Starting noip2.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-01-11</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ddns">#DDNS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%8A%A8%E6%80%81%E5%9F%9F%E5%90%8D">#动态域名</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/noip">#noip</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-using-ddclient-and-ddns/">树莓派使用ddclient和DDNS</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        域名解析 首先得有个域名，在域名管理中将域名DNS设为he.net的DNS地址，如下：
+ns1.he.net ns2.he.net ns3.he.net ns4.he.net ns5.he.net  然后在http://dns.he.net注册账号，添加域名(Add a new domain)
+接下来添加A记录(New A)，勾选允许动态域名解析(Enable entry for dynamic dns)
+点击域名后DDNS列中的刷新按钮，新建一个DDNS密匙(Generate a DDNS key.)
+安装设置ddclient 在树莓派上安装ddclient
+sudo apt-get install ddclient  编辑ddclient配置文件，路径为/etc/ddclient.conf
+protocol=dyndns2 use=web,web=myip.dnsomatic.com server=dyn.dns.he.net login=raspi.in password='ddnskey' www.raspi.in,raspi.in  其中password为设置DDNS时的key
+重启ddclient服务
+service ddclient restart  验证IP查询结果
+sudo ddclient -query use=if, if=eth0 address is 192.168.1.111 use=if, if=lo address is 127.0.0.1 use=web, web=dnspark address is 36.40.143.235 use=web, web=dyndns address is NOT FOUND use=web, web=loopia address is 36.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-01-07</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ddns">#DDNS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dns">#DNS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/domain">#Domain</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/he.net">#he.net</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ddclient">#ddclient</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/ssl-security-optimization/">SSL安全优化</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        先贴出本站的SSL安全评级,测试地址为https://www.ssllabs.com/ssltest/analyze.html?d=alair.cn
+以下是本站Nginx配置中关于SSL部分
+listen 443 ssl http2; ssl_certificate /etc/letsencrypt/live/alair.cn/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/alair.cn/privkey.pem; ssl_session_timeout 60m; ssl_protocols TLSv1 TLSv1.1 TLSv1.2; ssl_ciphers ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-RC4-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:RC4-SHA:!aNULL:!eNULL:!EXPORT:!DES:!3DES:!MD5:!DSS:!PKS; ssl_prefer_server_ciphers on; ssl_session_cache builtin:1000 shared:SSL:10m; ssl_dhparam /etc/ssl/certs/dhparam.pem; ssl_stapling on; ssl_stapling_verify on; add_header Strict-Transport-Security &quot;max-age=63072000; includeSubdomains; preload&quot;; add_header X-Frame-Options &quot;DENY&quot;;  说明：
+dhparam.pem可以使用openssl dhparam -out dhparam.pem 4096命令生成，这个命令会执行很长时间，也可以将字节数改为2048
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-12-21</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/https">#https</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssl">#ssl</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/http2">#http2</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dhparam">#dhparam</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/use-letsencrypt-free-ssl-certificate/">使用免费Let&#39;s Encrypt证书</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        在此介绍如何使用Let&rsquo;s Encrypt的免费SSL证书，需要在有管理权限的VPS上操作，然后参考以下方法自签域名证书。
+git clone https://github.com/letsencrypt/letsencrypt.git cd letsencrypt mkdir -p /home/webroot/.well-known/acme-challenge #/home/webroot为网站目录 ./letsencrypt-auto certonly --email me@alair.cn -d alair.cn,www.alair.cn --webroot -w /home/webroot --agree-tos #注意email、域名、和网站目录  签发成功后，会提示如/etc/letsencrypt/live/www.alair.cn/fullchain.pem;的证书路径信息。
+IMPORTANT NOTES: - Congratulations! Your certificate and chain have been saved at /etc/letsencrypt/live/www.alair.cn/fullchain.pem. Your cert will expire on 2016-03-14. To obtain a new version of the certificate in the future, simply run Let's Encrypt again. - If like Let's Encrypt, please consider supporting our work by: Donating to ISRG / Let's Encrypt: https://letsencrypt.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-12-15</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/https">#https</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssl">#ssl</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/letsencrypt">#letsencrypt</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%85%8D%E8%B4%B9%E8%AF%81%E4%B9%A6">#免费证书</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+    
+        
+    <div class="pagination">
+        <div class="left pagination-item ">
+            
+                <a href="/categories/stuff/page/18/">To new posts</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/categories/stuff/page/20/">To old posts</a>
+            
+        </div>
+    </div>
+
+
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
+    </div>
+</body>
+</html>

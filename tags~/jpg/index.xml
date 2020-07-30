@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>jpg on UNIXETC</title>
+    <link>https://unixetc.com/tags/jpg/</link>
+    <description>UNIXETC (jpg)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 17 Jul 2017 07:17:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/jpg/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux下批量转换PNG和JPG</title>
+      <link>https://unixetc.com/post/batch-conversion-png-and-jpg-under-linux/</link>
+      <pubDate>Mon, 17 Jul 2017 07:17:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/batch-conversion-png-and-jpg-under-linux/</guid>
+      <description>&lt;p&gt;我们用到的软件名为&lt;strong&gt;imagemagick&lt;/strong&gt;，一款强大的图片处理软件。&lt;/p&gt;
+&lt;p&gt;Debian系使用&lt;code&gt;apt-get install imagemagick&lt;/code&gt;来安装，Fedora系通过&lt;code&gt;yum install imagemagick&lt;/code&gt;来安装。&lt;/p&gt;
+&lt;p&gt;其他系统可以到官方下载页进行下载安装 &lt;a href=&#34;https://www.imagemagick.org/script/download.php&#34;&gt;https://www.imagemagick.org/script/download.php&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;安装完成后，可以通过&lt;code&gt;convert tst.jpg tsg.png&lt;/code&gt;将JPG文件转换为PNG，反之亦可。&lt;/p&gt;
+&lt;p&gt;下来进行批量替换：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;root@bwgzl:/data/wwwroot/getos.org/images# ll
+total &lt;span style=&#34;color:#ae81ff&#34;&gt;188&lt;/span&gt;
+drwxr-xr-x  &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; www www  &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:48 ./
+drwxr-xr-x &lt;span style=&#34;color:#ae81ff&#34;&gt;27&lt;/span&gt; www www  &lt;span style=&#34;color:#ae81ff&#34;&gt;4096&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:32 ../
+-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; www www &lt;span style=&#34;color:#ae81ff&#34;&gt;18778&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:43 clip_image002.jpg
+-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; www www &lt;span style=&#34;color:#ae81ff&#34;&gt;17637&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:43 clip_image004.jpg
+-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; www www &lt;span style=&#34;color:#ae81ff&#34;&gt;28075&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:43 clip_image006.jpg
+-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; www www &lt;span style=&#34;color:#ae81ff&#34;&gt;30916&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:43 clip_image008.jpg
+-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; www www &lt;span style=&#34;color:#ae81ff&#34;&gt;13538&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:43 clip_image010.jpg
+-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; www www &lt;span style=&#34;color:#ae81ff&#34;&gt;11845&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:43 clip_image012.jpg
+-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; www www &lt;span style=&#34;color:#ae81ff&#34;&gt;14519&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:43 clip_image014.jpg
+-rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; www www &lt;span style=&#34;color:#ae81ff&#34;&gt;33052&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:43 clip_image016.jpg
+root@bwgzl:/data/wwwroot/getos.org/images# ls -1 *.jpg | xargs -n &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; bash -c &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;convert &amp;#34;$0&amp;#34; &amp;#34;${0%.jpg}.png&amp;#34;&amp;#39;&lt;/span&gt;
+root@bwgzl:/data/wwwroot/getos.org/images# ls -ltr
+total &lt;span style=&#34;color:#ae81ff&#34;&gt;1172&lt;/span&gt;
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; www  www   &lt;span style=&#34;color:#ae81ff&#34;&gt;18778&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:43 clip_image002.jpg
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; www  www   &lt;span style=&#34;color:#ae81ff&#34;&gt;17637&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:43 clip_image004.jpg
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; www  www   &lt;span style=&#34;color:#ae81ff&#34;&gt;28075&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:43 clip_image006.jpg
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; www  www   &lt;span style=&#34;color:#ae81ff&#34;&gt;30916&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:43 clip_image008.jpg
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; www  www   &lt;span style=&#34;color:#ae81ff&#34;&gt;13538&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:43 clip_image010.jpg
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; www  www   &lt;span style=&#34;color:#ae81ff&#34;&gt;11845&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:43 clip_image012.jpg
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; www  www   &lt;span style=&#34;color:#ae81ff&#34;&gt;14519&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:43 clip_image014.jpg
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; www  www   &lt;span style=&#34;color:#ae81ff&#34;&gt;33052&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 15:43 clip_image016.jpg
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;132411&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 16:00 clip_image002.png
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;106702&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 16:00 clip_image004.png
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;197143&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 16:00 clip_image006.png
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root  &lt;span style=&#34;color:#ae81ff&#34;&gt;79397&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 16:00 clip_image008.png
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root  &lt;span style=&#34;color:#ae81ff&#34;&gt;37643&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 16:00 clip_image010.png
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root  &lt;span style=&#34;color:#ae81ff&#34;&gt;81090&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 16:00 clip_image012.png
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root  &lt;span style=&#34;color:#ae81ff&#34;&gt;88635&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 16:00 clip_image014.png
+-rw-r--r-- &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; root root &lt;span style=&#34;color:#ae81ff&#34;&gt;272537&lt;/span&gt; Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;4&lt;/span&gt; 16:00 clip_image016.png
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;注意第二条命令即为批量转换操作&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;ls -1 *.jpg | xargs -n &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; bash -c &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;convert &amp;#34;$0&amp;#34; &amp;#34;${0%.jpg}.png&amp;#34;&amp;#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

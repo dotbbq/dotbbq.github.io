@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>libpcap on UNIXETC</title>
+    <link>https://unixetc.com/tags/libpcap/</link>
+    <description>UNIXETC (libpcap)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 11 Apr 2019 22:23:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/libpcap/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>查出VPS流量消耗元凶</title>
+      <link>https://unixetc.com/post/find-the-vps-traffic-consumption-culprit/</link>
+      <pubDate>Thu, 11 Apr 2019 22:23:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/find-the-vps-traffic-consumption-culprit/</guid>
+      <description>&lt;p&gt;上月不知什么原因VPS流量提前消耗完了，然后通知这月10号重新reset，于是只能临时开了一个月的locvps进行过渡。好不容易熬到昨儿，reset后赶紧把数据和站点又搬回来。
+今儿偶尔登录vps，突然发现流量消耗咋一直很高，两天不到就消耗了170G，额滴神呐!查看详细使用统计，发现从昨儿reset以来，OUT bps一直维持在19M左右，瞬间脑袋瓜嗡嗡的！&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/3715399508.webp&#34; alt=&#34;3119891104.webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/1518624033.webp&#34; alt=&#34;1516117547.webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;于是赶紧动手找找，看看消耗流量的元凶到底是谁？&lt;/p&gt;
+&lt;p&gt;首先，安装&lt;strong&gt;iftop&lt;/strong&gt;来检查网络使用情况。官网在这里&lt;a href=&#34;http://www.ex-parrot.com/~pdw/iftop/&#34;&gt;http://www.ex-parrot.com/~pdw/iftop/&lt;/a&gt;，CentOS安装方法如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;yum install -y flex byacc libpcap ncurses ncurses-devel libpcap-devel #安装需求软件
+wget http://www.ex-parrot.com/~pdw/iftop/download/iftop-0.17.tar.gz
+tar zxf iftop-0.17.tar.gz
+cd iftop-0.17
+./configure
+make &amp;amp;&amp;amp; make install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;安装完成后，可以通过iftop来运行，建议加上-P参数，显示使用端口信息，如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/594645281.png&#34; alt=&#34;1554992334.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;主界面中左侧为本地端，右侧为远端，中间的&amp;lt;=和=&amp;gt;表示流量方向。
+下面的TX：发送流量/RX：接收流量/TOTAL：总流量/Cumm：运行iftop到目前时间的总流量/peak：流量峰值/rates：分别表示过去 2s 10s 40s 的平均流量&lt;/p&gt;
+&lt;p&gt;从上图来看，本地IP一直在向一个&lt;strong&gt;140.249.34.53&lt;/strong&gt;发送数据，从peak统计来看，速率在&lt;strong&gt;22.3Mb&lt;/strong&gt;左右，和网站统计相符。
+知道端口后，可以通过 &lt;code&gt;netstat -ntlup|grep 端口号&lt;/code&gt;来查看具体进程，没有的话可以通过&lt;code&gt;yum install net-tools&lt;/code&gt;来安装。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/4210544047.png&#34; alt=&#34;1554992405.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;我试着查了下这个IP，发现是山东青岛的，再通过IP反查域名，真想才出来了，原来是百度云的相关IP。这才想起来，我安装了BaiduPCS-Go百度网盘客户端，用来对vps数据进行备份，原来搞鬼的是这个东西。找到元凶就好办了，首先把这个IP给禁了&lt;code&gt;iptables -A INPUT -p tcp -s 140.249.34.53 -j DROP&lt;/code&gt;
+禁完后，实时流量一下子就降了下来，如下所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/730509471.png&#34; alt=&#34;1554992503.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;而后将BaiduPCS-Go删除，以绝后患！&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

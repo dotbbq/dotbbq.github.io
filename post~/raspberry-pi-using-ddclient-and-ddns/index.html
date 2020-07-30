@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-cn" data-theme="">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>树莓派使用ddclient和DDNS - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103041" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103041" />
+
+
+
+
+
+<meta property="og:title" content="树莓派使用ddclient和DDNS" />
+<meta property="og:description" content="域名解析 首先得有个域名，在域名管理中将域名DNS设为he.net的DNS地址，如下：
+ns1.he.net ns2.he.net ns3.he.net ns4.he.net ns5.he.net  然后在http://dns.he.net注册账号，添加域名(Add a new domain)
+接下来添加A记录(New A)，勾选允许动态域名解析(Enable entry for dynamic dns)
+点击域名后DDNS列中的刷新按钮，新建一个DDNS密匙(Generate a DDNS key.)
+安装设置ddclient 在树莓派上安装ddclient
+sudo apt-get install ddclient  编辑ddclient配置文件，路径为/etc/ddclient.conf
+protocol=dyndns2 use=web,web=myip.dnsomatic.com server=dyn.dns.he.net login=raspi.in password=&#39;ddnskey&#39; www.raspi.in,raspi.in  其中password为设置DDNS时的key
+重启ddclient服务
+service ddclient restart  验证IP查询结果
+sudo ddclient -query use=if, if=eth0 address is 192.168.1.111 use=if, if=lo address is 127.0.0.1 use=web, web=dnspark address is 36.40.143.235 use=web, web=dyndns address is NOT FOUND use=web, web=loopia address is 36." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unixetc.com/post/raspberry-pi-using-ddclient-and-ddns/" />
+<meta property="article:published_time" content="2016-01-07T12:31:00+00:00" />
+<meta property="article:modified_time" content="2016-01-07T12:31:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="树莓派使用ddclient和DDNS"/>
+<meta name="twitter:description" content="域名解析 首先得有个域名，在域名管理中将域名DNS设为he.net的DNS地址，如下：
+ns1.he.net ns2.he.net ns3.he.net ns4.he.net ns5.he.net  然后在http://dns.he.net注册账号，添加域名(Add a new domain)
+接下来添加A记录(New A)，勾选允许动态域名解析(Enable entry for dynamic dns)
+点击域名后DDNS列中的刷新按钮，新建一个DDNS密匙(Generate a DDNS key.)
+安装设置ddclient 在树莓派上安装ddclient
+sudo apt-get install ddclient  编辑ddclient配置文件，路径为/etc/ddclient.conf
+protocol=dyndns2 use=web,web=myip.dnsomatic.com server=dyn.dns.he.net login=raspi.in password=&#39;ddnskey&#39; www.raspi.in,raspi.in  其中password为设置DDNS时的key
+重启ddclient服务
+service ddclient restart  验证IP查询结果
+sudo ddclient -query use=if, if=eth0 address is 192.168.1.111 use=if, if=lo address is 127.0.0.1 use=web, web=dnspark address is 36.40.143.235 use=web, web=dyndns address is NOT FOUND use=web, web=loopia address is 36."/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <h1 class="site-title">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    
+    
+    <article class="post">
+        <header class="post-header">
+            <h1 class="post-title">树莓派使用ddclient和DDNS</h1>
+        </header>
+        <div class="content">
+            <h3 id="域名解析">域名解析</h3>
+<p>首先得有个域名，在域名管理中将域名DNS设为he.net的DNS地址，如下：</p>
+<pre><code>ns1.he.net
+ns2.he.net
+ns3.he.net
+ns4.he.net
+ns5.he.net
+</code></pre>
+<p>然后在<a href="http://dns.he.net">http://dns.he.net</a>注册账号，添加域名(Add a new domain)</p>
+<p>接下来添加A记录(New A)，勾选允许动态域名解析(Enable entry for dynamic dns)</p>
+<p>点击域名后DDNS列中的刷新按钮，新建一个DDNS密匙(Generate a DDNS key.)</p>
+<h3 id="安装设置ddclient">安装设置ddclient</h3>
+<p>在树莓派上安装ddclient</p>
+<pre><code>sudo apt-get install ddclient
+</code></pre>
+<p>编辑ddclient配置文件，路径为<code>/etc/ddclient.conf</code></p>
+<pre><code>protocol=dyndns2
+use=web,web=myip.dnsomatic.com
+server=dyn.dns.he.net
+login=raspi.in
+password='ddnskey'
+www.raspi.in,raspi.in
+</code></pre>
+<p>其中<strong>password</strong>为设置DDNS时的key</p>
+<p>重启ddclient服务</p>
+<pre><code>service ddclient restart
+</code></pre>
+<p>验证IP查询结果</p>
+<pre><code>sudo ddclient -query
+use=if, if=eth0 address is 192.168.1.111
+use=if, if=lo address is 127.0.0.1
+use=web, web=dnspark address is 36.40.143.235
+use=web, web=dyndns address is NOT FOUND
+use=web, web=loopia address is 36.40.143.235
+</code></pre>
+<p>其中if方式查询到的是内网地址和本机地址，web方式查询到的时外网IP</p>
+<p>至此设置完成，可以ping一下域名试试咯！</p>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-01-07</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ddns">#DDNS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dns">#DNS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/domain">#Domain</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/he.net">#he.net</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ddclient">#ddclient</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
+    </div>
+</body>
+</html>

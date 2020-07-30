@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>xposed on UNIXETC</title>
+    <link>https://unixetc.com/tags/xposed/</link>
+    <description>UNIXETC (xposed)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 14 Mar 2015 13:23:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/xposed/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>推荐几个Xposed模块</title>
+      <link>https://unixetc.com/post/the-xposed-module-is-recommended/</link>
+      <pubDate>Sat, 14 Mar 2015 13:23:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/the-xposed-module-is-recommended/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;MinMinGuard&lt;/li&gt;
+&lt;li&gt;Statusbar Scroll to Top&lt;/li&gt;
+&lt;li&gt;WiFiKeyView&lt;/li&gt;
+&lt;li&gt;SwipeBack&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/xposed_modules.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

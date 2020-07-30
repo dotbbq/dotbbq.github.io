@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>getty on UNIXETC</title>
+    <link>https://unixetc.com/tags/getty/</link>
+    <description>UNIXETC (getty)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 01 Feb 2014 12:31:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/getty/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>VPS优化</title>
+      <link>https://unixetc.com/post/optimization-vps/</link>
+      <pubDate>Sat, 01 Feb 2014 12:31:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/optimization-vps/</guid>
+      <description>&lt;h3 id=&#34;pdksh替代bash&#34;&gt;pdksh替代bash&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;$sudo apt-get install pdksh
+$sudo vi /etc/shells
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;添加/bin/pdksh到/etc/shells文件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$chsh -s /bin/pdksh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;重新登录即可。&lt;/p&gt;
+&lt;h3 id=&#34;修改ssh端口&#34;&gt;修改SSH端口&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;#vi /etc/ssh/sshd_config    
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;将Port 22中的22改为自定义数字即可&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# /etc/init.d/ssh restart
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;dropbear替代openssh&#34;&gt;dropbear替代openssh&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;$sudo apt-get install dropbear
+$sudo /etc/init.d/ssh stop
+$sudo vi /etc/default/dropbear
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;修改NO_START=&lt;strong&gt;0&lt;/strong&gt;,修改DROPBEAR_PORT为自定义端口号&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$sudo /etc/init.d/dropbear start
+$sudo apt-get remove openssh-server
+$sudo apt-get autoremove
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;关闭多余的tty&#34;&gt;关闭多余的TTY&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Ubuntu 12.04 server&lt;/strong&gt;如下操作&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#cd /etc/init/
+#mv tty2.conf tty2.conf.bak
+#mv tty3.conf tty2.conf.bak
+#mv tty4.conf tty2.conf.bak
+#mv tty5.conf tty2.conf.bak
+#mv tty6.conf tty2.conf.bak
+#reboot
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Debian 7&lt;/strong&gt;如下操作&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#vi /etc/inittab
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;找到如下行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1:2345:respawn:/sbin/getty 38400 tty1
+2:23:respawn:/sbin/getty 38400 tty2
+3:23:respawn:/sbin/getty 38400 tty3
+4:23:respawn:/sbin/getty 38400 tty4
+5:23:respawn:/sbin/getty 38400 tty5
+6:23:respawn:/sbin/getty 38400 tty6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;将不需要的行注释掉(#)即可，重启完成。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

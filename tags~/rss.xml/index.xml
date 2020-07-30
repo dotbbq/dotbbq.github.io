@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rss.xml on UNIXETC</title>
+    <link>https://unixetc.com/tags/rss.xml/</link>
+    <description>UNIXETC (rss.xml)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 18 Sep 2013 09:18:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/rss.xml/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>为Jekyll站点添加rss.xml</title>
+      <link>https://unixetc.com/post/add-rssxml-to-the-jekyll-site/</link>
+      <pubDate>Wed, 18 Sep 2013 09:18:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/add-rssxml-to-the-jekyll-site/</guid>
+      <description>&lt;p&gt;在网站根目录中新建&lt;code&gt;rss.xml&lt;/code&gt;文件，写入以下内容：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/jekyll_rss.webp&#34; alt=&#34;rss.xml 代码&#34; title=&#34;rss.xml 代码&#34;&gt;&lt;/p&gt;
+&lt;p&gt;参考以上代码，其中的域名等信息自定义。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>UbuntuTouch on UNIXETC</title>
+    <link>https://unixetc.com/tags/ubuntutouch/</link>
+    <description>UNIXETC (UbuntuTouch)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 07 Sep 2019 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/ubuntutouch/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>一加3t和树莓派UNIXBench跑分对比</title>
+      <link>https://unixetc.com/post/oneplus3t-and-raspberry-pi-unixbench-score-comparison/</link>
+      <pubDate>Sat, 07 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/oneplus3t-and-raspberry-pi-unixbench-score-comparison/</guid>
+      <description>&lt;h3 id=&#34;一加3t&#34;&gt;一加3T&lt;/h3&gt;
+&lt;p&gt;一加3T运行的是&lt;a href=&#34;https://unixetc.com/post/oneplus-3t-install-ubuntutouch/&#34;&gt;UbuntuTouch&lt;/a&gt;系统&lt;/p&gt;
+&lt;h4 id=&#34;一加3t系统信息&#34;&gt;一加3T系统信息&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;phablet@ubuntu-phablet:~$ inxi -F
+Resuming in non X mode: xrandr not found. For package install advice run: inxi --recommends
+System:    Host: android Kernel: 3.18.31-halium-gca027546546e-01041-g7961eb763e61 aarch64 (32 bit) Desktop: N/A
+        Distro: Ubuntu 16.04 xenial
+Machine:   No /sys/class/dmi; using dmidecode: dmidecode is not installed.
+CPU:       Quad core AArch64 Processor rev 1 (aarch64) (-MCP-) (ARM)
+        clock speeds: max: 2188 MHz 1: 1593 MHz 2: 1593 MHz 3: 1593 MHz 4: 1593 MHz
+Graphics:  Card: Failed to Detect Video Card!
+        Display Server: N/A driver: N/A Resolution: 165x47
+Audio:     Card msm8996-tasha-mtp-snd-card driver: msm8996-tasha-m
+        Sound: Advanced Linux Sound Architecture v: k3.18.31-halium-gca027546546e-01041-g7961eb763e61
+Network:   Card-1: Qualcomm Atheros QCA6174 802.11ac Wireless Network Adapter driver: cnss_wlan_pci
+        IF: rename8 state: down mac: c2:ee:fb:e8:e2:ea
+        Card-2: Qualcomm Atheros QCA6174 802.11ac Wireless Network Adapter driver: cnss_wlan_pci
+        IF: wlp1s0 state: up mac: c0:ee:fb:e8:e2:ea
+Drives:    HDD Total Size: 64.0GB (8.3% used) ID-1: /dev/sda model: KLUCG4J1CB size: 57.9GB
+        ID-2: /dev/sdb model: KLUCG4J1CB size: 0.0GB ID-3: /dev/sdc model: KLUCG4J1CB size: 0.0GB
+        ID-4: /dev/sdd model: KLUCG4J1CB size: 0.1GB ID-5: /dev/sde model: KLUCG4J1CB size: 4.3GB
+        ID-6: /dev/sdf model: KLUCG4J1CB size: 1.6GB
+Partition: ID-1: / size: 2.9G used: 1.9G (67%) fs: ext4 dev: /dev/loop0
+Sensors:   None detected - is lm-sensors installed and configured?
+Info:      Processes: 551 Uptime: 1:02 Memory: 1668.1/5736.9MB Init: Upstart runlevel: 2
+        Client: Shell (bash) inxi: 2.2.35
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;一加3t-unixbench跑分&#34;&gt;一加3T unixbench跑分&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;========================================================================
+BYTE UNIX Benchmarks (Version 5.1.3)
+
+System: ubuntu-phablet: GNU/Linux
+OS: GNU/Linux -- 3.18.31-halium-gca027546546e-01041-g7961eb763e61 -- #1 SMP PREEMPT Wed Aug 21 20:33:17 CEST 2019
+Machine: aarch64 (aarch64)
+Language: en_US.utf8 (charmap=&amp;quot;UTF-8&amp;quot;, collate=&amp;quot;UTF-8&amp;quot;)
+11:39:26 up 58 min,  2 users,  load average: 6.59, 7.93, 8.16; runlevel 2
+
+------------------------------------------------------------------------
+Benchmark Run: 六 9月 07 2019 11:39:26 - 12:07:49
+0 CPUs in system; running 1 parallel copy of tests
+
+Dhrystone 2 using register variables       13089762.3 lps   (10.0 s, 7 samples)
+Double-Precision Whetstone                     3000.5 MWIPS (9.8 s, 7 samples)
+Execl Throughput                               1381.2 lps   (29.9 s, 2 samples)
+File Copy 1024 bufsize 2000 maxblocks        254749.2 KBps  (30.0 s, 2 samples)
+File Copy 256 bufsize 500 maxblocks           75714.9 KBps  (30.0 s, 2 samples)
+File Copy 4096 bufsize 8000 maxblocks        813273.2 KBps  (30.0 s, 2 samples)
+Pipe Throughput                              650583.5 lps   (10.0 s, 7 samples)
+Pipe-based Context Switching                  22716.1 lps   (10.0 s, 7 samples)
+Process Creation                                835.5 lps   (30.0 s, 2 samples)
+Shell Scripts (1 concurrent)                   2556.9 lpm   (60.0 s, 2 samples)
+Shell Scripts (8 concurrent)                    938.3 lpm   (60.0 s, 2 samples)
+System Call Overhead                         988399.2 lps   (10.0 s, 7 samples)
+
+System Benchmarks Index Values               BASELINE       RESULT    INDEX
+Dhrystone 2 using register variables         116700.0   13089762.3   1121.7
+Double-Precision Whetstone                       55.0       3000.5    545.5
+Execl Throughput                                 43.0       1381.2    321.2
+File Copy 1024 bufsize 2000 maxblocks          3960.0     254749.2    643.3
+File Copy 256 bufsize 500 maxblocks            1655.0      75714.9    457.5
+File Copy 4096 bufsize 8000 maxblocks          5800.0     813273.2   1402.2
+Pipe Throughput                               12440.0     650583.5    523.0
+Pipe-based Context Switching                   4000.0      22716.1     56.8
+Process Creation                                126.0        835.5     66.3
+Shell Scripts (1 concurrent)                     42.4       2556.9    603.1
+Shell Scripts (8 concurrent)                      6.0        938.3   1563.9
+System Call Overhead                          15000.0     988399.2    658.9
+                                                                ========
+System Benchmarks Index Score                                         463.9
+
+
+
+======= Script description and score comparison completed! =======
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;树莓派&#34;&gt;树莓派&lt;/h3&gt;
+&lt;p&gt;树莓派运行的是官方Raspbian Buster Lite版&lt;/p&gt;
+&lt;h4 id=&#34;树莓派系统信息&#34;&gt;树莓派系统信息&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;pi@raspberrypi:~ $ inxi -F
+System:    Host: raspberrypi Kernel: 4.19.66-v7+ armv7l bits: 32 Desktop: N/A Distro: Raspbian GNU/Linux 10 (buster)
+Machine:   Type: ARM Device System: Raspberry Pi 2 Model B Rev 1.1 details: BCM2835 rev: a21041 serial: 00000000d81b63a8
+CPU:       Topology: Quad Core model: ARMv7 v7l variant: cortex-a7 bits: 32 type: MCP
+        Speed: 1000 MHz min/max: 600/1000 MHz Core speeds (MHz): 1: 1000 2: 1000 3: 1000 4: 1000
+Graphics:  Device-1: bcm2708-fb driver: bcm2708_fb v: kernel
+        Device-2: bcm2835-hdmi driver: N/A
+        Display: tty server: N/A driver: N/A tty: 165x47
+        Message: No advanced graphics data found on this system.
+Audio:     Device-1: bcm2835-audio driver: bcm2835_audio
+        Device-2: bcm2835-hdmi driver: N/A
+        Sound Server: ALSA v: k4.19.66-v7+
+Network:   Device-1: Standard Microsystems SMSC9512/9514 Fast Ethernet Adapter type: USB driver: smsc95xx
+        IF: eth0 state: up speed: 100 Mbps duplex: full mac: b8:27:eb:1b:63:a8
+        Device-2: Realtek RTL8188EUS 802.11n Wireless Network Adapter type: USB driver: r8188eu
+        IF: wlan0 state: down mac: 14:cf:92:1d:84:a0
+        Device-3: Realtek RTL8188CUS 802.11n WLAN Adapter type: USB driver: rtl8192cu
+        IF: wlan1 state: down mac: e8:4e:06:1c:3e:67
+Drives:    Local Storage: total: 29.73 GiB used: 1.35 GiB (4.5%)
+        ID-1: /dev/mmcblk0 vendor: TDK model: TF32G size: 29.73 GiB
+Partition: ID-1: / size: 29.00 GiB used: 1.31 GiB (4.5%) fs: ext4 dev: /dev/mmcblk0p2
+        ID-2: /boot size: 252.0 MiB used: 39.1 MiB (15.5%) fs: vfat dev: /dev/mmcblk0p1
+Sensors:   Message: No sensors data was found. Is sensors configured?
+Info:      Processes: 129 Uptime: 44m Memory: 1002.1 MiB used: 182.8 MiB (18.2%) gpu: 76.0 MiB Shell: bash inxi: 3.0.32
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&#34;树莓派unixbench跑分&#34;&gt;树莓派unixbench跑分&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;========================================================================
+BYTE UNIX Benchmarks (Version 5.1.3)
+
+System: raspberrypi: GNU/Linux
+OS: GNU/Linux -- 4.19.66-v7+ -- #1253 SMP Thu Aug 15 11:49:46 BST 2019
+Machine: armv7l (unknown)
+Language: en_US.utf8 (charmap=&amp;quot;ANSI_X3.4-1968&amp;quot;, collate=&amp;quot;ANSI_X3.4-1968&amp;quot;)
+CPU 0: ARMv7 Processor rev 5 (v7l) (0.0 bogomips)
+
+CPU 1: ARMv7 Processor rev 5 (v7l) (0.0 bogomips)
+
+CPU 2: ARMv7 Processor rev 5 (v7l) (0.0 bogomips)
+
+CPU 3: ARMv7 Processor rev 5 (v7l) (0.0 bogomips)
+
+11:06:28 up 5 min,  1 user,  load average: 1.15, 0.40, 0.15; runlevel 5
+
+------------------------------------------------------------------------
+Benchmark Run: 六 9月 07 2019 11:06:28 - 11:34:53
+4 CPUs in system; running 1 parallel copy of tests
+
+Dhrystone 2 using register variables        3337362.1 lps   (10.0 s, 7 samples)
+Double-Precision Whetstone                      753.3 MWIPS (10.0 s, 7 samples)
+Execl Throughput                                490.1 lps   (29.9 s, 2 samples)
+File Copy 1024 bufsize 2000 maxblocks         73075.5 KBps  (30.0 s, 2 samples)
+File Copy 256 bufsize 500 maxblocks           21292.0 KBps  (30.0 s, 2 samples)
+File Copy 4096 bufsize 8000 maxblocks        194738.9 KBps  (30.0 s, 2 samples)
+Pipe Throughput                              177539.0 lps   (10.0 s, 7 samples)
+Pipe-based Context Switching                  26085.6 lps   (10.0 s, 7 samples)
+Process Creation                               1112.2 lps   (30.0 s, 2 samples)
+Shell Scripts (1 concurrent)                   1167.8 lpm   (60.0 s, 2 samples)
+Shell Scripts (8 concurrent)                    327.1 lpm   (60.2 s, 2 samples)
+System Call Overhead                         451875.9 lps   (10.0 s, 7 samples)
+
+System Benchmarks Index Values               BASELINE       RESULT    INDEX
+Dhrystone 2 using register variables         116700.0    3337362.1    286.0
+Double-Precision Whetstone                       55.0        753.3    137.0
+Execl Throughput                                 43.0        490.1    114.0
+File Copy 1024 bufsize 2000 maxblocks          3960.0      73075.5    184.5
+File Copy 256 bufsize 500 maxblocks            1655.0      21292.0    128.7
+File Copy 4096 bufsize 8000 maxblocks          5800.0     194738.9    335.8
+Pipe Throughput                               12440.0     177539.0    142.7
+Pipe-based Context Switching                   4000.0      26085.6     65.2
+Process Creation                                126.0       1112.2     88.3
+Shell Scripts (1 concurrent)                     42.4       1167.8    275.4
+Shell Scripts (8 concurrent)                      6.0        327.1    545.2
+System Call Overhead                          15000.0     451875.9    301.3
+                                                                ========
+System Benchmarks Index Score                                         182.0
+
+------------------------------------------------------------------------
+Benchmark Run: 六 9月 07 2019 11:34:53 - 12:04:00
+4 CPUs in system; running 4 parallel copies of tests
+
+Dhrystone 2 using register variables       13191650.7 lps   (10.0 s, 7 samples)
+Double-Precision Whetstone                     2978.2 MWIPS (10.0 s, 7 samples)
+Execl Throughput                               1235.3 lps   (29.9 s, 2 samples)
+File Copy 1024 bufsize 2000 maxblocks         85443.5 KBps  (30.0 s, 2 samples)
+File Copy 256 bufsize 500 maxblocks           33157.0 KBps  (30.0 s, 2 samples)
+File Copy 4096 bufsize 8000 maxblocks        295618.5 KBps  (30.0 s, 2 samples)
+Pipe Throughput                              697215.8 lps   (10.0 s, 7 samples)
+Pipe-based Context Switching                 106460.7 lps   (10.0 s, 7 samples)
+Process Creation                               2599.0 lps   (30.0 s, 2 samples)
+Shell Scripts (1 concurrent)                   2615.3 lpm   (60.1 s, 2 samples)
+Shell Scripts (8 concurrent)                    352.7 lpm   (60.3 s, 2 samples)
+System Call Overhead                        1724986.2 lps   (10.0 s, 7 samples)
+
+System Benchmarks Index Values               BASELINE       RESULT    INDEX
+Dhrystone 2 using register variables         116700.0   13191650.7   1130.4
+Double-Precision Whetstone                       55.0       2978.2    541.5
+Execl Throughput                                 43.0       1235.3    287.3
+File Copy 1024 bufsize 2000 maxblocks          3960.0      85443.5    215.8
+File Copy 256 bufsize 500 maxblocks            1655.0      33157.0    200.3
+File Copy 4096 bufsize 8000 maxblocks          5800.0     295618.5    509.7
+Pipe Throughput                               12440.0     697215.8    560.5
+Pipe-based Context Switching                   4000.0     106460.7    266.2
+Process Creation                                126.0       2599.0    206.3
+Shell Scripts (1 concurrent)                     42.4       2615.3    616.8
+Shell Scripts (8 concurrent)                      6.0        352.7    587.9
+System Call Overhead                          15000.0    1724986.2   1150.0
+                                                                ========
+System Benchmarks Index Score                                         437.9
+
+
+
+======= Script description and score comparison completed! =======
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>一加3T安装UbuntuTouch</title>
+      <link>https://unixetc.com/post/oneplus-3t-install-ubuntutouch/</link>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/oneplus-3t-install-ubuntutouch/</guid>
+      <description>&lt;p&gt;Ubuntu Touch（又称Ubuntu Phone）是Canonical公司与Ubuntu社区所开发的移动设备操作系统，专为触屏行动设备所设计，例如：智能手机和平板电脑。&lt;/p&gt;
+&lt;p&gt;现在国外开发者Vince1171放出了Oneplus3/3t的UbuntuTouch适配版，现在我们就安装试试。&lt;/p&gt;
+&lt;p&gt;首先下载所需文件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://tc5.us/file/18418398-416068360&#34;&gt;TWRP Recovery&lt;/a&gt; Recovery&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://tc5.us/file/18418398-395414726&#34;&gt; OnePlus_3T_Stable_9.0.3_Firmware_Modem.zip&lt;/a&gt;  OnePlus3T底包&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://tc5.us/file/18418398-415954047&#34;&gt;LineageOS&lt;/a&gt; LineageOS ROM&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://tc5.us/file/18418398-415952593&#34;&gt;halium-install.sh&lt;/a&gt; 安装脚本&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://tc5.us/file/18418398-415952666&#34;&gt;halium-boot.img&lt;/a&gt;引导镜像&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://tc5.us/file/18418398-415952924&#34;&gt;system.img&lt;/a&gt; 系统镜像&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://tc5.us/file/18418398-416068353&#34;&gt;ubports-touch.rootfs-xenial-armhf.tar.gz&lt;/a&gt; UbuntuTouch系统镜像&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下载完成后下来开始安装，本地PC环境为LinuxMint(类Ubuntu)，建议以下操作在&lt;strong&gt;root&lt;/strong&gt;权限下操作。&lt;/p&gt;
+&lt;h2 id=&#34;安装工具&#34;&gt;安装工具&lt;/h2&gt;
+&lt;p&gt;首先安装&lt;code&gt;adb&lt;/code&gt;以及&lt;code&gt;fastboot&lt;/code&gt;工具&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt install adb fastboot
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;解锁手机&#34;&gt;解锁手机&lt;/h2&gt;
+&lt;p&gt;接下来设置手机，&lt;strong&gt;设置&lt;/strong&gt;-&amp;gt;&lt;strong&gt;关于手机&lt;/strong&gt;，连击&lt;strong&gt;版本号&lt;/strong&gt;打开&lt;strong&gt;开发者选项&lt;/strong&gt;，进入&lt;strong&gt;开发者选项&lt;/strong&gt;打开&lt;strong&gt;OEM解锁&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;然后关闭手机，按住&lt;strong&gt;电源&lt;/strong&gt;+&lt;strong&gt;音量上&lt;/strong&gt;进入fastboot模式，链接手机和电脑。&lt;/p&gt;
+&lt;p&gt;在电脑端运行以下命令解锁&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;fastboot oem unlock
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;按照手机提示，选择&lt;strong&gt;YES&lt;/strong&gt;开始解锁，完成后手机重启。&lt;/p&gt;
+&lt;h2 id=&#34;安装recovery&#34;&gt;安装Recovery&lt;/h2&gt;
+&lt;p&gt;重启手机进入fastboot模式&lt;/p&gt;
+&lt;p&gt;接下来通过以下命令安装&lt;strong&gt;Recovery&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;fastboot flash recovery TWRP_recovery.img
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;安装完成后，关闭手机，按&lt;strong&gt;电源&lt;/strong&gt;+&lt;strong&gt;音量减&lt;/strong&gt;进入Recovery&lt;/p&gt;
+&lt;h2 id=&#34;安装lineageos&#34;&gt;安装LineageOS&lt;/h2&gt;
+&lt;p&gt;通过TWRP Recovery来刷入&lt;strong&gt;LineageOS ROM&lt;/strong&gt;，完成后双清重启再次进入&lt;strong&gt;Recovery&lt;/strong&gt;，通过数据线连接手机，进行后面操作。&lt;/p&gt;
+&lt;h2 id=&#34;安装ubuntutouch&#34;&gt;安装UbuntuTouch&lt;/h2&gt;
+&lt;p&gt;手机进入&lt;strong&gt;Recovery&lt;/strong&gt;模式，通过数据线连接电脑，然后开始按照以下进行安装。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;root@hpzb14:/media/alair/data# ./halium-install.sh -p ut ubports-touch.rootfs-xenial-armhf.tar.gz system.img 
+Debug: Chosen rootfs is ubports-touch.rootfs-xenial-armhf.tar.gz
+Debug: Chosen android image is system.img
+Debug: Chosen release is ut
+
+I: Writing rootfs into mountable image
+I: Writing android image into mountable image
+I: Running post installation tasks
+enabling Mir ... [done]
+enabling SSH ... [done]
+Please enter a new password for the user &#39;phablet&#39;:
+输入新的 UNIX 密码： 
+重新输入新的 UNIX 密码： 
+passwd: password updated successfully
+I: Unmounting images
+I: Shrinking images
+e2fsck 1.44.1 (24-Mar-2018)
+resize2fs 1.44.1 (24-Mar-2018)
+将 .halium-install-imgs.6Kcou/system.img 上的文件系统调整为 120200 个块（每块 4k）。
+开始第 2 步（共 32687 步）
+正在重定位块            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+开始第 3 步（共 24 步）
+正在扫描inode表          XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+.halium-install-imgs.6Kcou/system.img 上的文件系统现在为 120200 个块（每块 4k）。
+
+I: Pushing rootfs and android image to /data via ADB
+.halium-install-imgs.6Kcou/rootfs.img: 1 file pushed. 7.1 MB/s (3221225472 bytes in 433.702s)
+.halium-install-imgs.6Kcou/system.img: 1 file pushed. 7.7 MB/s (492339200 bytes in 61.329s)
+I: Cleaning up host
+I: Cleaning up device
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后继续在&lt;strong&gt;Recovery&lt;/strong&gt;模式下:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;adb shell &#39;touch /data/.writable_image; mkdir /a; mount /data/rootfs.img /a; echo manual | tee /a/etc/init/rsyslog.override; touch /a/.writable_device_image; umount /a; sync&#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;以上操作完后，重启手机进入&lt;strong&gt;fastboot模式&lt;/strong&gt;，按照以下安装引导系统程序。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;root@hpzb14:/media/alair/data# fastboot flash boot halium-boot.img 
+&amp;lt; waiting for any device &amp;gt;
+target reported max download size of 435159040 bytes
+sending &#39;boot&#39; (15468 KB)...
+OKAY [  0.410s]
+writing &#39;boot&#39;...
+OKAY [  0.119s]
+finished. total time: 0.529s
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;至此安装完成，重启即可进入UbuntuTouch系统。&lt;/p&gt;
+&lt;h4 id=&#34;重要提示&#34;&gt;重要提示&lt;/h4&gt;
+&lt;p&gt;进入系统后，打开&lt;strong&gt;Terminal&lt;/strong&gt;输入&lt;code&gt;sudo ubports-qa install xenial_-_haliumfixup &amp;amp;&amp;amp; sudo apt install pulseaudio-modules-droid-glue-24&lt;/code&gt;更新音频模块。如果默认软件源速度太慢，可以&lt;a href=&#34;https://unixetc.com/post/ubuntu-touch-change-mirror/&#34;&gt;参考此文&lt;/a&gt;先更换为国内源。&lt;/p&gt;
+&lt;h3 id=&#34;ubuntutouch系统截图&#34;&gt;UbuntuTouch系统截图&lt;/h3&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/Vince1171/OnePlus3-T-Halium-Prebuild&#34;&gt;https://github.com/Vince1171/OnePlus3-T-Halium-Prebuild&lt;/a&gt;&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>UbuntuTouch更换国内源</title>
+      <link>https://unixetc.com/post/ubuntu-touch-change-mirror/</link>
+      <pubDate>Sun, 04 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/ubuntu-touch-change-mirror/</guid>
+      <description>&lt;p&gt;在&lt;a href=&#34;https://unixetc.com/post/oneplus-3t-install-ubuntutouch/&#34;&gt;一加3T上安装完UbuntuTouch&lt;/a&gt;后，参考&lt;a href=&#34;https://unixetc.com/post/shell-access-ubuntu-touch-via-ssh/&#34;&gt;此文开启SSH&lt;/a&gt;登录。&lt;/p&gt;
+&lt;p&gt;接下来就是更换软件源了，国内推荐USTC和清华大学开源镜像。&lt;/p&gt;
+&lt;p&gt;通过&lt;code&gt;vi /etc/apt/sources.list&lt;/code&gt; 编辑软件源,然后在vi中通过以下命令进行替换操作：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;:%s/ports.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;保存后即可。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>通过SSH访问UbuntuTouch</title>
+      <link>https://unixetc.com/post/shell-access-ubuntu-touch-via-ssh/</link>
+      <pubDate>Thu, 01 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/shell-access-ubuntu-touch-via-ssh/</guid>
+      <description>&lt;p&gt;在&lt;a href=&#34;https://unixetc.com/post/oneplus-3t-install-ubuntutouch/&#34;&gt;一加3T上安装完UbuntuTouch&lt;/a&gt;后，可以通过以下方法开启SSH登录。&lt;/p&gt;
+&lt;p&gt;打开终端(Terminal)，输入以下命令开启ssh服务。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo android-gadget-service enable ssh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后就可以通过&lt;code&gt;ssh phablet@ip&lt;/code&gt;来登录设备。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/access_ubuntu_touch_via_ssh.png&#34; alt=&#34;&amp;ldquo;access ubuntutouch via ssh&amp;rdquo;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

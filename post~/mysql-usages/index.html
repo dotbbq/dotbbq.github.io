@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-cn" data-theme="">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>MySQL使用实例 - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103041" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103041" />
+
+
+
+
+
+<meta property="og:title" content="MySQL使用实例" />
+<meta property="og:description" content="误删除了vps上的phpmyadmin，不得已翻阅了半天mysql指南，以下是一些mysql使用实例
+连接管理 链接数据库
+mysql -h localhost -u root -p  退出数据库
+mysql&gt;quit;  数据库管理 查看数据库
+mysql&gt;show databases;  建立数据库
+mysql&gt;create database name;  备份(导出)数据库
+mysqldump -u username -p database &gt; backup_db.sql  还原(导入)数据库
+mysql -u username -p database &lt; backup_db.sql  用户管理 添加用户
+mysql&gt;grant all privileges on databasename.* &#39;username&#39;@&#39;localhost&#39; identified by &#39;userpassword&#39; with grant optiton;  删除用户
+mysql&gt;drop user username;  修改密码
+mysql&gt;set password for &#39;username&#39;@&#39;localhost&#39; = password(&#39;userpassword&#39;);  一个创建数据库并添加专用用户的示例:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unixetc.com/post/mysql-usages/" />
+<meta property="article:published_time" content="2012-04-19T14:19:00+00:00" />
+<meta property="article:modified_time" content="2012-04-19T14:19:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="MySQL使用实例"/>
+<meta name="twitter:description" content="误删除了vps上的phpmyadmin，不得已翻阅了半天mysql指南，以下是一些mysql使用实例
+连接管理 链接数据库
+mysql -h localhost -u root -p  退出数据库
+mysql&gt;quit;  数据库管理 查看数据库
+mysql&gt;show databases;  建立数据库
+mysql&gt;create database name;  备份(导出)数据库
+mysqldump -u username -p database &gt; backup_db.sql  还原(导入)数据库
+mysql -u username -p database &lt; backup_db.sql  用户管理 添加用户
+mysql&gt;grant all privileges on databasename.* &#39;username&#39;@&#39;localhost&#39; identified by &#39;userpassword&#39; with grant optiton;  删除用户
+mysql&gt;drop user username;  修改密码
+mysql&gt;set password for &#39;username&#39;@&#39;localhost&#39; = password(&#39;userpassword&#39;);  一个创建数据库并添加专用用户的示例:"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <h1 class="site-title">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    
+    
+    <article class="post">
+        <header class="post-header">
+            <h1 class="post-title">MySQL使用实例</h1>
+        </header>
+        <div class="content">
+            <p>误删除了vps上的phpmyadmin，不得已翻阅了半天mysql指南，以下是一些mysql使用实例</p>
+<h3 id="连接管理">连接管理</h3>
+<p>链接数据库</p>
+<pre><code>mysql -h localhost -u root -p
+</code></pre>
+<p>退出数据库</p>
+<pre><code>mysql&gt;quit;
+</code></pre>
+<h3 id="数据库管理">数据库管理</h3>
+<p>查看数据库</p>
+<pre><code>mysql&gt;show databases;
+</code></pre>
+<p>建立数据库</p>
+<pre><code>mysql&gt;create database name;
+</code></pre>
+<p>备份(导出)数据库</p>
+<pre><code>mysqldump -u username -p database &gt; backup_db.sql
+</code></pre>
+<p>还原(导入)数据库</p>
+<pre><code>mysql -u username -p database &lt; backup_db.sql
+</code></pre>
+<h3 id="用户管理">用户管理</h3>
+<p>添加用户</p>
+<pre><code>mysql&gt;grant all privileges on databasename.* 'username'@'localhost' identified by 'userpassword' with grant optiton;
+</code></pre>
+<p>删除用户</p>
+<pre><code>mysql&gt;drop user username;
+</code></pre>
+<p>修改密码</p>
+<pre><code>mysql&gt;set password for 'username'@'localhost' = password('userpassword');
+</code></pre>
+<p><strong>一个创建数据库并添加专用用户的示例:</strong></p>
+<pre><code>mysql&gt; create database wp;
+Query OK, 1 row affected (0.01 sec)
+
+mysql&gt; show databases;
++--------------------+
+| Database         |
++--------------------+
+| information_schema |
+| mysql              |
+| wp                 |
++--------------------+
+3 rows in set (0.00 sec)
+
+mysql&gt; use up
+ERROR 1049 (42000): Unknown database 'up'
+mysql&gt; use wp;
+Database changed
+mysql&gt; show tables;
+Empty set (0.00 sec)
+
+mysql&gt; grant select,insert,update,delete,create,drop
+    -&gt; on wordpress.*
+    -&gt; to 'wordpress'@'localhost'
+    -&gt; identified by 'passwd';
+Query OK, 0 rows affected (0.03 sec)</code></pre>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2012-04-19</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/mysql">#MySQL</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/sql">#sql</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
+    </div>
+</body>
+</html>

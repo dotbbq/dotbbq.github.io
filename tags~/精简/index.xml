@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>精简 on UNIXETC</title>
+    <link>https://unixetc.com/tags/%E7%B2%BE%E7%AE%80/</link>
+    <description>UNIXETC (精简)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 06 Sep 2019 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/%E7%B2%BE%E7%AE%80/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Vivo Y913精简版线刷包</title>
+      <link>https://unixetc.com/post/vivo-y913-simplify-version-brush-pack/</link>
+      <pubDate>Fri, 06 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/vivo-y913-simplify-version-brush-pack/</guid>
+      <description>&lt;p&gt;刷机所需文件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-396657758&#34;&gt;vivo_Y913_RevA_PD1304CV_A_1.18.4.7z&lt;/a&gt; A版线刷包&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-396657769&#34;&gt;vivo_Y913_RevB_PD1304CV_B_2.2.1.7z&lt;/a&gt; B版线刷包&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-396656652&#34;&gt;vivo_driver_v2.0.0.3.7z&lt;/a&gt; VIVO手机驱动&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;提示:&lt;strong&gt;解压密码为&lt;/strong&gt;alair&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;如何判断y913版本&#34;&gt;如何判断Y913版本？&lt;/h3&gt;
+&lt;p&gt;关机，按住&lt;strong&gt;电源减&lt;/strong&gt;+&lt;strong&gt;电源键&lt;/strong&gt;进入&lt;strong&gt;FASTBOOT MODE&lt;/strong&gt;，Version字段中PD1304CV后为版本号，分为A和B。&lt;/p&gt;
+&lt;h3 id=&#34;安装y913驱动&#34;&gt;安装Y913驱动&lt;/h3&gt;
+&lt;p&gt;下载驱动软件安装，完成后打开，按照提示安装&lt;strong&gt;adb&lt;/strong&gt;驱动，其他两个可选。&lt;/p&gt;
+&lt;h3 id=&#34;y913刷机&#34;&gt;Y913刷机&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;将手机关机，进入&lt;strong&gt;FASTBOOT&lt;/strong&gt;模式连接电脑&lt;/li&gt;
+&lt;li&gt;下载对应版本的刷机包，解压后进入&lt;strong&gt;BrushPack&lt;/strong&gt;目录，打开&lt;strong&gt;Fastboot刷机工具&lt;/strong&gt;，将同目录下的&lt;strong&gt;flash_all.bat&lt;/strong&gt;拖放到&lt;strong&gt;Fastboot刷机工具&lt;/strong&gt;窗口，点击&lt;strong&gt;开始刷机&lt;/strong&gt;，按照提示刷机完成后手机自动重启。&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>NokiaN900删除不必要的软件</title>
+      <link>https://unixetc.com/post/n900-removes-unnecessary-software-and-games/</link>
+      <pubDate>Tue, 30 Apr 2019 13:40:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/n900-removes-unnecessary-software-and-games/</guid>
+      <description>&lt;p&gt;NokiaN900自带的软件不少，还有一些游戏，以下为这些软件的删除方式。&lt;/p&gt;
+&lt;p&gt;首先，建议安装&lt;code&gt;rootsh&lt;/code&gt;以&lt;a href=&#34;https://unixetc.com/post/nokia-n900-and-ssh/&#34;&gt;获取ROOT权限&lt;/a&gt;，然后在xTermianl进行以下操作。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;名称&lt;/th&gt;
+&lt;th&gt;说明&lt;/th&gt;
+&lt;th&gt;删除命令&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Mahjong&lt;/td&gt;
+&lt;td&gt;游戏&lt;/td&gt;
+&lt;td&gt;apt-get remove -y osso-mahjong&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Chess&lt;/td&gt;
+&lt;td&gt;游戏&lt;/td&gt;
+&lt;td&gt;apt-get remove -y gnuchess&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Blocks&lt;/td&gt;
+&lt;td&gt;游戏&lt;/td&gt;
+&lt;td&gt;apt-get remove -y maemoblocks&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Marbles&lt;/td&gt;
+&lt;td&gt;游戏&lt;/td&gt;
+&lt;td&gt;apt-get remove -y osso-lmarbles&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AP News&lt;/td&gt;
+&lt;td&gt;软件&lt;/td&gt;
+&lt;td&gt;apt-get remove -y ap-installer&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Docs To Go&lt;/td&gt;
+&lt;td&gt;软件&lt;/td&gt;
+&lt;td&gt;apt-get remove -y dtg-installer&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Sketch&lt;/td&gt;
+&lt;td&gt;画图&lt;/td&gt;
+&lt;td&gt;apt-get remove -y osso-sketch&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Backup&lt;/td&gt;
+&lt;td&gt;备份&lt;/td&gt;
+&lt;td&gt;apt-get remove -y osso-backup&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PDF reader&lt;/td&gt;
+&lt;td&gt;PDF阅读&lt;/td&gt;
+&lt;td&gt;apt-get remove -y osso-pdf-viewer&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RSS&lt;/td&gt;
+&lt;td&gt;RSS订阅&lt;/td&gt;
+&lt;td&gt;apt-get remove -y osso-rss-feed-reader&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Notes&lt;/td&gt;
+&lt;td&gt;记事本&lt;/td&gt;
+&lt;td&gt;apt-get remove -y osso-notes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Amazon&lt;/td&gt;
+&lt;td&gt;Amazon安装快捷方式&lt;/td&gt;
+&lt;td&gt;rm   /usr/share/maemo-installer-utils/amazon.install        rm /usr/share/applications/hildon/amazon.desktop&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Facebook&lt;/td&gt;
+&lt;td&gt;Facebook安装快捷方式&lt;/td&gt;
+&lt;td&gt;rm   /usr/share/applications/hildon/facebook.desktop       rm /usr/share/maemo-installer-utils/facebook.install&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Maps&lt;/td&gt;
+&lt;td&gt;Nokia地图&lt;/td&gt;
+&lt;td&gt;apt-get remove -y nokia-maps*&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Force Weather&lt;/td&gt;
+&lt;td&gt;天气预报安装快捷方式&lt;/td&gt;
+&lt;td&gt;rm   /usr/share/maemo-installer-utils/foreca.install      rm /usr/share/applications/hildon/foreca.desktop&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;User Guide&lt;/td&gt;
+&lt;td&gt;用户手册快捷方式&lt;/td&gt;
+&lt;td&gt;rm /usr/share/applications/hildon/user-guide.desktop&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Get started&lt;/td&gt;
+&lt;td&gt;开始使用指南&lt;/td&gt;
+&lt;td&gt;apt-get remove -y tutorial-home-applet&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Store&lt;/td&gt;
+&lt;td&gt;Nokia商店快捷方式&lt;/td&gt;
+&lt;td&gt;rm /usr/share/applications/hildon/ovi.desktop&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

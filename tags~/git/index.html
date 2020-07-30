@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-cn" data-theme="">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>Git - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/tags/git/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103042" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103042" />
+
+
+
+
+
+<meta property="og:title" content="Git" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/tags/git/" />
+<meta property="og:updated_time" content="2017-11-25T11:25:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Git"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <h1 class="site-title">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <h1>Tag: Git</h1>
+    <div class="post-info">
+        <a href="https://unixetc.com/tags">To all tags</a>
+    </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/deploy-the-static-site-to-the-coding-net/">将静态站点部署到Coding.net</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        本站是基于https://github.com/wendal/gor生成的静态站点。
+下面介绍如何将静态站点部署到coding.net上。
+注册coding并新建项目 首先注册coding.net，注册完后新建项目。
+项目名称为*.coding.me，以此格式新建的项目可以使用Coding Pages服务。
+Pages服务设置 建立完成后，在项目设置中找到Pages服务服务进行设置。
+ 部署来源  选择master分支
+ 自定义域名  添加自定义域名，建议同时添加domain.com和www.domain.com，并且设置一个为首选项，另一个跳转到首选项。然后将自己的域名CNAME指向pages.coding.me
+ 强制HTTPS访问  打开该选项，则为你的域名自动申请设置** Let&rsquo;s Encrypt**证书，并开启**https**访问。
+ Hosted by Coding Pages  新站点都会有coding pages跳转页，按照Hosted by Coding Pages说明，在首页添加规定连接后，可以提交申请不显示跳转页。
+使用Git部署站点 首先推荐配置SSH公钥以便于操作。
+$ ssh-keygen -t rsa -C &quot;name@domain.com&quot; //在此设置为coding.net帐号邮箱 Generating public/private rsa key pair. Enter file in which to save the key (/c/Users/dotbbq/.ssh/id_rsa): Created directory '/c/Users/dotbbq/.ssh'. Enter passphrase (empty for no passphrase): Enter same passphrase again: Your identification has been saved in /c/Users/dotbbq/.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-11-25</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/coding">#Coding</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/git">#Git</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gor">#gor</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-install-dnsmasq-and-dnsmasq-china-list/">树莓派安装Dnsmasq加速DNS解析</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        天朝的dns服务商尿性不是一般的大，动不动就抽风或者劫持，为了避免这种情况，可以在树莓派上安装Dnsmasq来加速dns解析，提高网络浏览体验。
+安装配置dnsmasq apt-get install dnsmasq  配置dnsmasq,vi /etc/dnsmasq.conf
+我的配置文件如下：
+domain=Raspi2 resolv-file=/etc/resolv.dnsmasq conf-dir=/etc/dnsmasq.d min-port=4096 server=114.114.114.114 server=114.114.115.115 server=223.5.5.5 server=223.6.6.6 server=119.29.29.29 server=182.254.116.116 server=112.124.47.27 server=114.215.126.16 server=101.226.4.6 server=218.30.118.6 server=42.120.21.30 server=199.91.73.222 server=178.79.131.110 server=8.8.8.8 server=8.8.4.4 cache-size=10000  配置完重启dnsmasq服务
+service dnsmasq restart  其中的server字段为上游DNS
+配置dnsmasq-china-list git clone https://github.com/felixonmars/dnsmasq-china-list.git cd dnsmasq-china-list/ cp *.conf /etc/dnsmasq.d/ service dnsmasq restart  至此设置完成，可以在路由器中将首选dns设为树莓派ip，这样局域网内的所有设备都可以体验dns解析加速了！
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-01-18</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/git">#Git</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dns">#DNS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dnsmasq">#dnsmasq</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/typecho-converted-to-gor/">将博客从Typcho转移至Gor</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        缘由 VPS快到期了，不想继续维护，太累，并且香港VPS价格也不菲。
+于是打算选择一个静态博客平台，原来用过的不少:jekyll,hexo,gor,pelican，最后决定Gor
+选择Gor的理由有两点
+ 安装方便 执行效率高  安装Gor 参考Gor主页https://github.com/wendal/gor安装Gor
+将Typecho文章导出为Markdown文件(.md) Github上有现成的工具typecho-exporter，主页为https://github.com/aneasystone/typecho-exporter
+这个工具可以将所有的文章导出为Markdown文件，但是以文章标题为文件名，不利于后期处理，建议使用slug为文件名。
+编辑下载的main.py，将75行的p.title = r[1]替换为`p.title = r[2]'，如下:
+results = cur.fetchall() for r in results: p = Post() p.id = r[0] p.title = r[2] p.content = r[5] posts.append(p)  原来的r[1]对应typecho_contentsSQL表中的title列，我的r[2]对应slug列，可以根据实际情况更改。
+编辑typecho-exporter的config.ini文件，设置数据库访问方式。
+运行main.py，完成后会在typecho-exporter目录下生成files文件夹，里面就是导出的Markdown文件。
+后期整理 导出后的Markdown没有Gor需要的文件头格式，需要手动整理
+这里推荐使用Notepad++批量替换
+  查找目标:
+  替换为&mdash;\n title: title\ndate: 2015-07-20\ndescription: \npermalink: \ncategories: \ntags: \n&mdash;\n
+  记得将查找模式重的扩展打开。
+经过以上替换，就大概有了个Gor的Markdown头格式，后面的手动工作就少了多了。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-07-20</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/google">#Google</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/git">#Git</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gor">#gor</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/github">#Github</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vps">#VPS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/mysql">#MySQL</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/markdown">#Markdown</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/golang">#golang</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/blog">#Blog</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/typecho">#typecho</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/php">#php</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/sql">#sql</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/notepad&#43;&#43;">#notepad&#43;&#43;</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/use-speedtest-cli-tests-network-bandwidth/">使用speedtest-cli测试带宽</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装speedtest-cli 安装speedtest-cli方法如下:
+sudo apt-get install python-pip sudo pip install speedtest-cli  或
+pip install git+https://github.com/sivel/speedtest-cli.git  或
+git clone https://github.com/sivel/speedtest-cli.git python speedtest-cli/setup.py install  或
+wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest_cli.py chmod +x speedtest-cli  或
+curl -Lo speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest_cli.py chmod +x speedtest-cli  使用speedtest-cli root@MyUbuntuCloud:~# speedtest-cli -h usage: speedtest-cli [-h] [--bytes] [--share] [--simple] [--list] [--server SERVER] [--mini MINI] [--source SOURCE] [--timeout TIMEOUT] [--version] Command line interface for testing internet bandwidth using speedtest.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-03-26</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/git">#Git</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/python">#Python</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/bandwidth">#Bandwidth</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%B8%A6%E5%AE%BD">#带宽</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%BD%91%E9%80%9F">#网速</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/speedtest">#speedtest</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/speedtest-cli">#speedtest-cli</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/pip">#pip</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/use-the-ssh-key-to-login-github/">使用SSH密匙登录Github</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        生成ssh密匙文件 ssh-keygen -t rsa -C &quot;user@domain.com&quot;  接下来会提示输入密码，推荐自定义密码，当然也可以置空
+Enter passphrase(empty for no passphrase): Enter same passphrase again:  完成后会在用户目录下的.ssh文件夹中新建id_rsa与is_rsa.pub两个文件。
+添加ssh密匙到github用户 登录至github.com,点击右上角的Account Settings
+在左侧选择SSH Keys菜单，然后在右侧点击Add SSH Key按钮
+将上一步生成的id_rsa.pub文件内容复制进去保存。
+本地连接至github.com ssh -T git@github.com  如果前面设置了passphrase，那么就按照提示输入passphrase。如果置空的话，就直接点击回车。成功后会有如下提示：
+Hi wrchiu! You`ve successfully authenticated, but GitHub does note provide shell access.  参考以上设置完成后，以后git push时就不需要每次输入密码了！
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2013-09-03</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/git">#Git</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/github">#Github</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/rsa">#RSA</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
+    </div>
+</body>
+</html>

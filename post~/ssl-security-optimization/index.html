@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-cn" data-theme="">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>SSL安全优化 - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103041" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103041" />
+
+
+
+
+
+<meta property="og:title" content="SSL安全优化" />
+<meta property="og:description" content="先贴出本站的SSL安全评级,测试地址为https://www.ssllabs.com/ssltest/analyze.html?d=alair.cn
+以下是本站Nginx配置中关于SSL部分
+listen 443 ssl http2; ssl_certificate /etc/letsencrypt/live/alair.cn/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/alair.cn/privkey.pem; ssl_session_timeout 60m; ssl_protocols TLSv1 TLSv1.1 TLSv1.2; ssl_ciphers ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-RC4-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:RC4-SHA:!aNULL:!eNULL:!EXPORT:!DES:!3DES:!MD5:!DSS:!PKS; ssl_prefer_server_ciphers on; ssl_session_cache builtin:1000 shared:SSL:10m; ssl_dhparam /etc/ssl/certs/dhparam.pem; ssl_stapling on; ssl_stapling_verify on; add_header Strict-Transport-Security &quot;max-age=63072000; includeSubdomains; preload&quot;; add_header X-Frame-Options &quot;DENY&quot;;  说明：
+dhparam.pem可以使用openssl dhparam -out dhparam.pem 4096命令生成，这个命令会执行很长时间，也可以将字节数改为2048" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unixetc.com/post/ssl-security-optimization/" />
+<meta property="article:published_time" content="2015-12-21T12:21:00+00:00" />
+<meta property="article:modified_time" content="2015-12-21T12:21:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SSL安全优化"/>
+<meta name="twitter:description" content="先贴出本站的SSL安全评级,测试地址为https://www.ssllabs.com/ssltest/analyze.html?d=alair.cn
+以下是本站Nginx配置中关于SSL部分
+listen 443 ssl http2; ssl_certificate /etc/letsencrypt/live/alair.cn/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/alair.cn/privkey.pem; ssl_session_timeout 60m; ssl_protocols TLSv1 TLSv1.1 TLSv1.2; ssl_ciphers ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-RC4-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:RC4-SHA:!aNULL:!eNULL:!EXPORT:!DES:!3DES:!MD5:!DSS:!PKS; ssl_prefer_server_ciphers on; ssl_session_cache builtin:1000 shared:SSL:10m; ssl_dhparam /etc/ssl/certs/dhparam.pem; ssl_stapling on; ssl_stapling_verify on; add_header Strict-Transport-Security &quot;max-age=63072000; includeSubdomains; preload&quot;; add_header X-Frame-Options &quot;DENY&quot;;  说明：
+dhparam.pem可以使用openssl dhparam -out dhparam.pem 4096命令生成，这个命令会执行很长时间，也可以将字节数改为2048"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <h1 class="site-title">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    
+    
+    <article class="post">
+        <header class="post-header">
+            <h1 class="post-title">SSL安全优化</h1>
+        </header>
+        <div class="content">
+            <p>先贴出本站的SSL安全评级,测试地址为<a href="https://www.ssllabs.com/ssltest/analyze.html?d=alair.cn">https://www.ssllabs.com/ssltest/analyze.html?d=alair.cn</a></p>
+<p><img src="http://cdn.lyq.wiki/imgs/ssl-rank.webp" alt=""></p>
+<p>以下是本站<strong>Nginx</strong>配置中关于SSL部分</p>
+<pre><code>listen 443 ssl http2;
+
+ssl_certificate /etc/letsencrypt/live/alair.cn/fullchain.pem;  
+ssl_certificate_key /etc/letsencrypt/live/alair.cn/privkey.pem; 
+
+ssl_session_timeout 60m;
+ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+ssl_ciphers ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-RC4-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:RC4-SHA:!aNULL:!eNULL:!EXPORT:!DES:!3DES:!MD5:!DSS:!PKS;
+
+ssl_prefer_server_ciphers on;
+ssl_session_cache builtin:1000 shared:SSL:10m;
+ssl_dhparam /etc/ssl/certs/dhparam.pem;
+ssl_stapling on;
+ssl_stapling_verify on;
+
+add_header Strict-Transport-Security &quot;max-age=63072000; includeSubdomains; preload&quot;;
+add_header X-Frame-Options &quot;DENY&quot;;
+</code></pre>
+<p>说明：</p>
+<p><strong>dhparam.pem</strong>可以使用<code>openssl dhparam -out dhparam.pem 4096</code>命令生成，这个命令会执行很长时间，也可以将字节数改为2048</p>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-12-21</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/https">#https</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssl">#ssl</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/http2">#http2</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dhparam">#dhparam</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
+    </div>
+</body>
+</html>

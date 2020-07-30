@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>电平 on UNIXETC</title>
+    <link>https://unixetc.com/tags/%E7%94%B5%E5%B9%B3/</link>
+    <description>UNIXETC (电平)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 27 Oct 2014 10:17:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/%E7%94%B5%E5%B9%B3/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>功率单位mW与dBm换算</title>
+      <link>https://unixetc.com/post/unit-of-power-mw-and-dbm-conversion/</link>
+      <pubDate>Mon, 27 Oct 2014 10:17:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/unit-of-power-mw-and-dbm-conversion/</guid>
+      <description>&lt;p&gt;功率/电平（dBm):放大器的输出能力，一般单位为W、mW、dBm。dBm是取1mw作基准值，以分贝表示的绝对功率电平。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;换算公式：&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;电平（dBm）=10lgW
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;5W  → 10lg5000  = 37dBm&lt;/li&gt;
+&lt;li&gt;10W → 10lg10000 = 40dBm&lt;/li&gt;
+&lt;li&gt;20W → 10lg20000 = 43dBm&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;从上不难看出，功率每增加一倍，电平值增加3dBm&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;功率单位mW和dBm的换算表&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/db_dbm.png&#34; alt=&#34;mW和dBm的换算表&#34; title=&#34;mW和dBm的换算表&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

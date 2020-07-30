@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Firefox Send on UNIXETC</title>
+    <link>https://unixetc.com/tags/firefox-send/</link>
+    <description>UNIXETC (Firefox Send)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 04 Jul 2019 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/firefox-send/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CentOS7安装ffsend快速分享文件</title>
+      <link>https://unixetc.com/post/centos7-install-ffsend-to-share-files/</link>
+      <pubDate>Thu, 04 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/centos7-install-ffsend-to-share-files/</guid>
+      <description>&lt;h3 id=&#34;firefox-send是什么&#34;&gt;Firefox Send是什么？&lt;/h3&gt;
+&lt;p&gt;Firefox Send是一个简单、私密的文件分享服务，使用Firefox Send端到端加密分享文件，链接到期即焚。分享更私密，文件到期真正无痕迹。&lt;/p&gt;
+&lt;h3 id=&#34;安装ffsend&#34;&gt;安装ffsend&lt;/h3&gt;
+&lt;p&gt;ffsend是一款Firefox Send的客户端，支持多种操作系统(Linux、Windows、MacOS&amp;hellip;)&lt;/p&gt;
+&lt;p&gt;以下为CentOS7安装ffsend实例：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#wget https://glare.now.sh/timvisee/ffsend/linux-x64-static -o /usr/local/bin/ffsend
+#chmod +x /usr/local/bin/ffsend
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其他版本安装可以参考&lt;a href=&#34;https://github.com/timvisee/ffsend&#34;&gt;ffsend官网&lt;/a&gt;和&lt;a href=&#34;https://github.com/timvisee/ffsend/releases&#34;&gt;ffsend官方下载&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;ffsend使用方法&#34;&gt;ffsend使用方法&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;上传文件&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ffsend upload fenix.apk
+Upload complete
+https://send.firefox.com/download/4cecb9c1ab628f8e/#m5is-YRSfnBIQ-pBaSds0A
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;高级上传&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;指定下再限制20&lt;/p&gt;
+&lt;p&gt;输入密码加密文件&lt;/p&gt;
+&lt;p&gt;在上传之前归档文件&lt;/p&gt;
+&lt;p&gt;将共享链接复制到剪贴板&lt;/p&gt;
+&lt;p&gt;在浏览器中打开共享链接&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;ffsend upload --downloads 20 --password --archive --copy --open fenix.apk
+Password: ******
+https://send.firefox.com/download/4cecb9c1ab628f8e/#m5is-YRSfnBIQ-pBaSds0A
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;上传到自定义主机&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ffsend u -h https://example.com/ my-file.txt
+https://example.com/#sample-share-url
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;下载文件&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ffsend download https://send.firefox.com/download/4cecb9c1ab628f8e/#m5is-YRSfnBIQ-pBaSds0A
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

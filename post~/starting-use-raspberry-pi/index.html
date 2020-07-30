@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-cn" data-theme="">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>开始使用树莓派 - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103041" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103041" />
+
+
+
+
+
+<meta property="og:title" content="开始使用树莓派" />
+<meta property="og:description" content="安装系统 从官网下载系统镜像，推荐Raspbian
+http://downloads.raspberrypi.org/raspbian_latest
+将下载后的zip文件解压，得到2014-01-07-wheezy-raspbian.img文件。
+准备一张SD卡，最好容量大于4GB，Class10
+将镜像写入SD卡
+ Linux下推荐使用dd名来写入镜像  使用fdisk -l检查分区信息，比如sd卡设备为**/dev/sdb**，使用以下命令写入：
+#dd if=2014-01-07-wheezy-raspbian.img of=/dev/sdb bs=1M   Windows下推荐使用Win32DiskImager写入镜像  Win32DiskImager下载地址：http://sourceforge.net/projects/win32diskimager/
+下载后打开软件，选择好镜像文件与USB设备，然后点击Write写入。
+开机进入系统 将已写入系统的SD卡插入Raspberry Pi，通过固网链接路由器，然后使用USB供电启动。
+正常启动后，板载的ACT，PWR、FDX、LNK、100五个指示灯均点亮。
+通过SSH连接Raspberry Pi
+查看Raspberry Pi IP地址
+#nmap -sP 192.168.1/24  检查出MAC后标注(Raspberry Pi Foundation)的即为Raspberry Pi主机。
+然后通过SSH来链接主机
+#ssh 192.168.1.127  用户名为pi，默认密码为raspberry
+Widnows下推荐使用Putty
+设置Raspberry 运行设置工具sudo raspi-config
+ 选择Expand Filesystem扩展文件系统 Change User Passwd 修改默认用户pi的密码，当然也可以在系统中使用passwd命令来更改。 Advanced Options-&gt;Hostname 修改主机名 Overclock 超频，建议900Mhz  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unixetc.com/post/starting-use-raspberry-pi/" />
+<meta property="article:published_time" content="2014-02-28T12:28:00+00:00" />
+<meta property="article:modified_time" content="2014-02-28T12:28:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="开始使用树莓派"/>
+<meta name="twitter:description" content="安装系统 从官网下载系统镜像，推荐Raspbian
+http://downloads.raspberrypi.org/raspbian_latest
+将下载后的zip文件解压，得到2014-01-07-wheezy-raspbian.img文件。
+准备一张SD卡，最好容量大于4GB，Class10
+将镜像写入SD卡
+ Linux下推荐使用dd名来写入镜像  使用fdisk -l检查分区信息，比如sd卡设备为**/dev/sdb**，使用以下命令写入：
+#dd if=2014-01-07-wheezy-raspbian.img of=/dev/sdb bs=1M   Windows下推荐使用Win32DiskImager写入镜像  Win32DiskImager下载地址：http://sourceforge.net/projects/win32diskimager/
+下载后打开软件，选择好镜像文件与USB设备，然后点击Write写入。
+开机进入系统 将已写入系统的SD卡插入Raspberry Pi，通过固网链接路由器，然后使用USB供电启动。
+正常启动后，板载的ACT，PWR、FDX、LNK、100五个指示灯均点亮。
+通过SSH连接Raspberry Pi
+查看Raspberry Pi IP地址
+#nmap -sP 192.168.1/24  检查出MAC后标注(Raspberry Pi Foundation)的即为Raspberry Pi主机。
+然后通过SSH来链接主机
+#ssh 192.168.1.127  用户名为pi，默认密码为raspberry
+Widnows下推荐使用Putty
+设置Raspberry 运行设置工具sudo raspi-config
+ 选择Expand Filesystem扩展文件系统 Change User Passwd 修改默认用户pi的密码，当然也可以在系统中使用passwd命令来更改。 Advanced Options-&gt;Hostname 修改主机名 Overclock 超频，建议900Mhz  "/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <h1 class="site-title">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    
+    
+    <article class="post">
+        <header class="post-header">
+            <h1 class="post-title">开始使用树莓派</h1>
+        </header>
+        <div class="content">
+            <h3 id="安装系统">安装系统</h3>
+<p>从官网下载系统镜像，推荐Raspbian</p>
+<p><a href="http://downloads.raspberrypi.org/raspbian_latest">http://downloads.raspberrypi.org/raspbian_latest</a></p>
+<p>将下载后的zip文件解压，得到<strong>2014-01-07-wheezy-raspbian.img</strong>文件。</p>
+<p>准备一张SD卡，最好容量大于4GB，Class10</p>
+<p><strong>将镜像写入SD卡</strong></p>
+<ul>
+<li>Linux下推荐使用<code>dd</code>名来写入镜像</li>
+</ul>
+<p>使用<code>fdisk -l</code>检查分区信息，比如sd卡设备为**/dev/sdb**，使用以下命令写入：</p>
+<pre><code>#dd if=2014-01-07-wheezy-raspbian.img of=/dev/sdb bs=1M
+</code></pre>
+<ul>
+<li>Windows下推荐使用<strong>Win32DiskImager</strong>写入镜像</li>
+</ul>
+<p>Win32DiskImager下载地址：<a href="http://sourceforge.net/projects/win32diskimager/">http://sourceforge.net/projects/win32diskimager/</a></p>
+<p>下载后打开软件，选择好镜像文件与USB设备，然后点击<strong>Write</strong>写入。</p>
+<h3 id="开机进入系统">开机进入系统</h3>
+<p>将已写入系统的SD卡插入Raspberry Pi，通过固网链接路由器，然后使用USB供电启动。</p>
+<p>正常启动后，板载的<strong>ACT</strong>，<strong>PWR</strong>、<strong>FDX</strong>、<strong>LNK</strong>、<strong>100</strong>五个指示灯均点亮。</p>
+<p><strong>通过SSH连接Raspberry Pi</strong></p>
+<p>查看Raspberry Pi IP地址</p>
+<pre><code>#nmap -sP 192.168.1/24
+</code></pre>
+<p>检查出MAC后标注(Raspberry Pi Foundation)的即为Raspberry Pi主机。</p>
+<p>然后通过SSH来链接主机</p>
+<pre><code>#ssh 192.168.1.127
+</code></pre>
+<p>用户名为<strong>pi</strong>，默认密码为<strong>raspberry</strong></p>
+<p>Widnows下推荐使用<a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/" title="PuTTY: a free telnet/ssh client">Putty</a></p>
+<h3 id="设置raspberry">设置Raspberry</h3>
+<p>运行设置工具<code>sudo raspi-config</code></p>
+<ul>
+<li>选择<code>Expand Filesystem</code>扩展文件系统</li>
+<li><code>Change User Passwd</code> 修改默认用户<code>pi</code>的密码，当然也可以在系统中使用<code>passwd</code>命令来更改。</li>
+<li><code>Advanced Options</code>-&gt;<code>Hostname</code> 修改主机名</li>
+<li><code>Overclock</code> 超频，建议900Mhz</li>
+</ul>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-02-28</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/debian">#Debian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/overlock">#overlock</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%B6%85%E9%A2%91">#超频</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/win32diskimager">#win32diskimager</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
+    </div>
+</body>
+</html>

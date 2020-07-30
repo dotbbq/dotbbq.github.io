@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-cn" data-theme="">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>raspi - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/tags/raspi/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103043" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103043" />
+
+
+
+
+
+<meta property="og:title" content="raspi" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/tags/raspi/" />
+<meta property="og:updated_time" content="2019-09-07T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="raspi"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <h1 class="site-title">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <h1>Tag: raspi</h1>
+    <div class="post-info">
+        <a href="https://unixetc.com/tags">To all tags</a>
+    </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-use-dietpi/">树莓派使用DietPi</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        下载安装DietPi DietPi项目主页 http://dietpi.com/
+DietPi下载地址 http://fuzon.co.uk/downloads/DietPi.7z
+这个压缩包91MB，解压后的img文件522MB,比官方的小多了。
+然后将镜像写入到SD卡中，linux下使用dd
+dd if=DietPi_v74.img of=/dev/sdc bs=2M  Windows下使用Win32 Disk Imager，戳这里
+写入完成后将SD卡插入树莓派，加电启动。
+预设置Wifi链接 首次使用时，可以通过编辑dietpi.txt来进行wifi预设置。
+将TF卡插入电脑读卡器，打开对应的磁盘，找到dietpi.txt文件，打开。
+找到Wifi_Enabled=0，将其设置为1
+然后找到Wifi_SSID和Wifi_KEY分别设置wifi节点名和密码，保存即可。
+配置DietPi DietPi默认用户名密码为root dietpi，第一次启动DietPi提示检测升级，按提示操作。
+不过由于天朝网路问题，可能升级比较缓慢，建议Ctrl+c终止升级，修改sources.list为朝内镜像。
+DietPi默认没有vi,使用nano进行编辑，添加Aliyun源。
+deb http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib deb-src http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib  更新软件
+apt-get update&amp;&amp;apt-get upgrade -y  然后运行dietpi-config进行配置。
+DietPi - Config
+ ┌────┤ ---------- DietPi-Config ---------- ├─────┐ │ Hardware : Raspberry Pi 1 (512MB) │ │ │ │ 1 Display Options │ │ 2 Audio Options │ │ 3 Performance Options │ │ 4 Advanced Options │ │ 5 Language/Regional Options │ │ 6 Security Options │ │ 7 Networking Options │ │ 8 AutoBoot Options │ │ 9 Tools │ │ │ │ │ │ &lt;Ok&gt; &lt;Exit&gt; │ │ │ └────────────────────────────────────────────────┘  推荐配置：
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-08-04</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/debian">#Debian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dietpi">#dietpi</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/sumbit-raspberry-pi-data-to-lewei50/">将树莓派数据上传至乐为物联</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        进入http://www.lewei50.com/注册登录
+添加设备(Add Device) 我的物联 -&gt; 我的设备，添加新设备，类型选择其他，不使用模板。
+请自定义设备标识，后面要用到。
+添加传感器 我的物联 -&gt; 感器与控制器，新建传感器。
+其中标识为提交数据依据，建议英文。
+向乐为物联提交数据 lewei.sh代码如下 http://cdn.lyq.wiki/res/lewei.sh
+#!/bin/bash LURL=http://www.lewei50.com/api/V1/Gateway/UpdateSensors/01 KEY=&quot;2fasdfsdfsdf9ffadsf62dfbfsdfa1&quot; sys_load=`cat /proc/loadavg | awk '{print $2}'` st=`/usr/bin/sen_t` sh=`/usr/bin/sen_h` for i in 1 2 3 4 5; do sys_temp=`cat /sys/class/thermal/thermal_zone0/temp | awk '{print $1/1000}'` if [[ &quot;${sys_temp}&quot; =~ ^- ]] then sys_temp='0.0' else echo ${sys_temp} break fi done echo &quot;Printf Values&quot; echo &quot;sys_temp:&quot;${sys_temp} echo &quot;sys_load:&quot;${sys_load} echo &quot;sensor_t:&quot;${st} echo &quot;sensor_h:&quot;${sh} echo &quot;Done!&quot; echo &quot;Sumbit Data to Lewei&quot; curl --request POST ${LURL} --header &quot;userkey:${KEY}&quot; --data &quot;[{'Name':'load','Value':'${sys_load}'},{'Name':'temp','Value':'${sys_temp}'},{'Name':'sd','Value':'${sh}'},{'Name':'wd','Value':'${st}'}]&quot;  其中LURL后面的01为设备标识,KEY为用户Userkey,JSON数据中的Name对应相应的传感器标识。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-07-30</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/humidity">#Humidity</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E4%BC%A0%E6%84%9F%E5%99%A8">#传感器</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%B9%BF%E5%BA%A6">#湿度</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%B8%A9%E5%BA%A6">#温度</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/json">#JSON</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/seneor">#Seneor</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%89%A9%E8%81%94%E7%BD%91">#物联网</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/temperature">#Temperature</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E4%B9%90%E4%B8%BA%E7%89%A9%E8%81%94">#乐为物联</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/lewei50">#lewei50</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dht11">#dht11</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/use-xively-monitor-raspberry-pi/">Xively与树莓派监控温度与湿度</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        进入https://www.xively.com/注册登录
+添加设备(Add Device) 在Development Devices页面点击Add Device添加设备
+填写Device Name和Device Description，将Privacy设定为Public Device
+设置API Key 进入Device详情页，在API Keys中点击Add Key添加一个Key,将Permissions中的Read,Create,Update,Delete全部勾选，Label随便填。
+向Xively提交数据 在这里通过CURL向xively提交JSON格式的数据
+JSON数据格式
+{ &quot;datastreams&quot;: [ { &quot;id&quot;: &quot;load&quot;, &quot;current_value&quot;: &quot;9.00&quot; }, { &quot;id&quot;: &quot;temp&quot;, &quot;current_value&quot;: &quot;89.15&quot; } ] }  其中每个id为数据定义的idcurrent_value为提交的值
+脚本文件send_xively.sh
+#!/bin/bash LOCATION='/home/pi/xively_data' #Path of Xively JSON DATA file API_KEY='orxUhgjqSYPDbv5243534tG65464345eArxSVY9pE8ITnE' #API Key FEED_ID='1354438558' #FEED_ID #################################################### COSM_URL=https://api.xively.com/v2/feeds/${FEED_ID}?timezone=+8 cpu_load=`cat /proc/loadavg | awk '{print $2}'` sen_t=`sudo /home/pi/st` sen_h=`sudo /home/pi/sh` for i in 1 2 3 4 5; do cpu_t=`cat /sys/class/thermal/thermal_zone0/temp | awk '{print $1/1000}'` if [[ &quot;${cpu_t}&quot; =~ ^- ]] then cpu_t='0.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-07-14</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/humidity">#Humidity</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E4%BC%A0%E6%84%9F%E5%99%A8">#传感器</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%B9%BF%E5%BA%A6">#湿度</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%B8%A9%E5%BA%A6">#温度</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/xively">#Xively</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/json">#JSON</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/seneor">#Seneor</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%89%A9%E8%81%94%E7%BD%91">#物联网</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/temperature">#Temperature</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-by-dht11-collecting-temperature-and-humidity/">树莓派连接DHT11采集温度与湿度</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        DHT11介绍 DHT11是一款有已校准数字信号输出的温湿度传感器。 精度湿度+-5%RH， 温度+-2℃，量程湿度20-90%RH， 温度0~50℃。
+DHT11针脚说明
+ VCC	供电 3－5.5VDC DATA	串行数据，单总线 N/A	空脚，请悬空 GND	接地，电源负极  硬件连接 树莓派GPIO针脚说明
+DHT11与树莓派链接
+VCC连接+3V3 DATA连接GPIO4 GND链接GND
+软件部分 安装wiringPi
+sudo apt-get install git-core git clone git://git.drogon.net/wiringPi cd wiringPi ./build  如果由于网络原因无法git clone成功，可以从此下载wiringPi http://cdn.lyq.wiki/res/wiringPi_v2.3.1.zip
+验证是否安装成功
+gpio -v gpio readall  下载编译C语言程序代码
+wget http://cdn.lyq.wiki/res/sensor.c gcc -o sensor sensor.c -lwiringPi  运行程序
+sudo ./sensor 24,39  输出结果，第一个为湿度，第二个为温度
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-06-21</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/humidity">#Humidity</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E4%BC%A0%E6%84%9F%E5%99%A8">#传感器</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/seneor">#Seneor</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/temperature">#Temperature</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dht11">#dht11</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/starting-raspberry-pi-2-model-b/">入手树莓派2 Model B</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        树莓派 2 Mode B 配置详情
+  A 900MHz quad-core ARM Cortex-A7 CPU
+  1GB RAM
+  4 USB ports
+  40 GPIO pins
+  Full HDMI port
+  Ethernet port
+  Combined 3.5mm audio jack and composite video
+  Camera interface (CSI)
+  Display interface (DSI)
+  Micro SD card slot
+  VideoCore IV 3D graphics core
+  
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-03-12</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+    
+        
+    <div class="pagination">
+        <div class="left pagination-item ">
+            
+                <a href="/tags/raspi/page/3/">To new posts</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/tags/raspi/page/5/">To old posts</a>
+            
+        </div>
+    </div>
+
+
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
+    </div>
+</body>
+</html>

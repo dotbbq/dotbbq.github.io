@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>加速 on UNIXETC</title>
+    <link>https://unixetc.com/tags/%E5%8A%A0%E9%80%9F/</link>
+    <description>UNIXETC (加速)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 07 Feb 2016 12:32:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/%E5%8A%A0%E9%80%9F/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用net_speeder加速VPS</title>
+      <link>https://unixetc.com/post/use-net-speeder-accelerate-vps/</link>
+      <pubDate>Sun, 07 Feb 2016 12:32:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/use-net-speeder-accelerate-vps/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;当使用国外服务器时，经常会发现，下载速度只有十几k。平时可能不太注意，认为服务器带宽不足，或者自己使用的宽带不给力，其实很有可能原因并不在此。&lt;/p&gt;
+&lt;p&gt;由于光速的局限性，延迟会比较高（即使光沿直线传播，太平洋一个往返也要一百多毫秒）。并且由于距离较远，途径路由跳数较多，并且网络拥堵的原因。经常会发生丢包的情况。&lt;/p&gt;
+&lt;p&gt;对于平时使用最广泛的TCP协议来讲，发送端发出包后，接收端会回复ACK，表示自己收到了。用这种机制来保证可靠性。但对于高延迟链路来讲，如果每发送一个包都等待应答，那么大部分时间都在等待数据包到达，而链路则空置了。为此一般会采用滑动窗口技术。即在窗口满之前，发送端一直发送包，然后收到应答后将确认收到的包从窗口中移除。这样可以提高链路利用率。&lt;/p&gt;
+&lt;p&gt;TCP还有一个特性则是拥塞控制。当发送端检测到链路发生丢包时，则会主动缩小窗口大小以减慢发送速度，避免拥塞。不过对于跳数较多的链路来讲，只要有一个路由不够稳定丢包，就会被发送端判断为拥塞，从而影响网络速度。&lt;/p&gt;
+&lt;p&gt;为了解决丢包问题，最简单粗暴的方法就是双倍发送，即同一份数据包发送两份。这样的话在服务器带宽充足情况下，丢包率会平方级降低。&lt;/p&gt;
+&lt;p&gt;这种方式下，直接优点是降低丢包率，直接缺点是耗费双倍流量。一些延伸影响是更容易触发快速恢复逻辑，避免了丢包时窗口缩减过快。一定程度也能提高网络速度。&lt;/p&gt;
+&lt;p&gt;最近比较忙，空闲时间做了一个最简单的程序，试用效果很好，在一台VPS上测试后发现，未开启时单线程下载、ssh管道速度在十几K级别。开启后可以达到平均300KB+的速度。效果非常明显。但对于不加速就可以跑满带宽的类型来讲（多线程下载），开启后反而由于多出来的无效流量，导致速度减半。所以对于多线程/高速链路，这个方案是不适合的。&lt;/p&gt;
+&lt;p&gt;目前版本是最简单的逻辑，未来会进行细化（主动触发快速恢复、快速重传等），降低流量浪费，提升加速效果。&lt;/p&gt;
+&lt;p&gt;目前程序起名net-speeder，相对于修改协议栈来讲，由于后者需要重新升级编译内核，使用用户态程序部署更方便，稳定性更高，兼容性更好。缺点则是性能开销稍大和自由度有损失。总体比较起来，个人使用还是使用用户态程序更合适一些，特别是在虚拟机中使用（OpenVZ，LXC等虚拟机无法自己定制内核）。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;摘自http://www.snooda.com/read/324&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;net_speeder项目主页 &lt;a href=&#34;https://github.com/snooda/net-speeder&#34;&gt;https://github.com/snooda/net-speeder&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;安装net_speeder&#34;&gt;安装net_speeder&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;apt-get install libnet-dev libpcap-dev -y
+git clone https://github.com/snooda/net-speeder.git
+cd net-speeder
+sh build.sh
+mv net_speeder /usr/local/bin/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;使用net_speeder&#34;&gt;使用net_speeder&lt;/h3&gt;
+&lt;p&gt;使用&lt;code&gt;ifconfig&lt;/code&gt;查看网卡端口，我的端口为&lt;code&gt;venet0&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;nohup net_speeder venet0 &amp;quot;ip&amp;quot; &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 &amp;amp;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;添加到开机启动&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;echo &#39;nohup net_speeder venet0 &amp;quot;ip&amp;quot; &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 &amp;amp;&#39; &amp;gt;&amp;gt; /etc/rc.local&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

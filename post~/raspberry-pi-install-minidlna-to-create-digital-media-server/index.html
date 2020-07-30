@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-cn" data-theme="">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>树莓派安装配置minidlna - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103041" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103041" />
+
+
+
+
+
+<meta property="og:title" content="树莓派安装配置minidlna" />
+<meta property="og:description" content="树莓派挂载移动存储 可以挂载移动硬盘或者大容量的U盘，参考以下文章：
+ 树莓派挂载U盘作为存储分区 fdisk分区实例  安装配置minidlna #sudo apt-get install -y minidlna  编辑minidlna配置文件/etc/minidlna.conf，内容如下：
+media_dir=/home/pi/dlnadoc #媒体文件目录 db_dir=/var/lib/minidlna #minidlna通过SQLite来建立媒体库索引，因此需要定义数据库目录 listening_ip=192.168.1.111 #树莓派IP port=8200	#web端口，可以通过ip:port查看索引状态 friendly_name=Raspi_DLNA #服务器命名  重启minidlna服务
+sudo service minidlna restart  强制刷新
+sudo service minidlna force-reload  查看索引状态,浏览http://192.168.1.111:8200
+MiniDLNA status Audio files: 0 Video files: 2 Image files: 0  DLNA客户端 PC
+Windows7下将网络设置为家庭网络，完成后刷新，在网络中媒体设备下就可以自动发现Rasp_DLNA。
+点击进去就可以使用MediaPlayer来浏览。
+Android
+VPlayer&#43; VPlayer uPnP DLNA Plugin
+IOS
+RushPlayer" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unixetc.com/post/raspberry-pi-install-minidlna-to-create-digital-media-server/" />
+<meta property="article:published_time" content="2015-08-06T18:26:00+00:00" />
+<meta property="article:modified_time" content="2015-08-06T18:26:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="树莓派安装配置minidlna"/>
+<meta name="twitter:description" content="树莓派挂载移动存储 可以挂载移动硬盘或者大容量的U盘，参考以下文章：
+ 树莓派挂载U盘作为存储分区 fdisk分区实例  安装配置minidlna #sudo apt-get install -y minidlna  编辑minidlna配置文件/etc/minidlna.conf，内容如下：
+media_dir=/home/pi/dlnadoc #媒体文件目录 db_dir=/var/lib/minidlna #minidlna通过SQLite来建立媒体库索引，因此需要定义数据库目录 listening_ip=192.168.1.111 #树莓派IP port=8200	#web端口，可以通过ip:port查看索引状态 friendly_name=Raspi_DLNA #服务器命名  重启minidlna服务
+sudo service minidlna restart  强制刷新
+sudo service minidlna force-reload  查看索引状态,浏览http://192.168.1.111:8200
+MiniDLNA status Audio files: 0 Video files: 2 Image files: 0  DLNA客户端 PC
+Windows7下将网络设置为家庭网络，完成后刷新，在网络中媒体设备下就可以自动发现Rasp_DLNA。
+点击进去就可以使用MediaPlayer来浏览。
+Android
+VPlayer&#43; VPlayer uPnP DLNA Plugin
+IOS
+RushPlayer"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <h1 class="site-title">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    
+    
+    <article class="post">
+        <header class="post-header">
+            <h1 class="post-title">树莓派安装配置minidlna</h1>
+        </header>
+        <div class="content">
+            <h3 id="树莓派挂载移动存储">树莓派挂载移动存储</h3>
+<p>可以挂载移动硬盘或者大容量的U盘，参考以下文章：</p>
+<ul>
+<li><a href="/post/raspberry-pi-mount-udisk-as-the-storage-partition/">树莓派挂载U盘作为存储分区</a></li>
+<li><a href="/post/examples-of-fdisk-partition/">fdisk分区实例</a></li>
+</ul>
+<h3 id="安装配置minidlna">安装配置minidlna</h3>
+<pre><code>#sudo apt-get install -y minidlna
+</code></pre>
+<p>编辑minidlna配置文件<code>/etc/minidlna.conf</code>，内容如下：</p>
+<pre><code>media_dir=/home/pi/dlnadoc  #媒体文件目录
+db_dir=/var/lib/minidlna    #minidlna通过SQLite来建立媒体库索引，因此需要定义数据库目录
+listening_ip=192.168.1.111  #树莓派IP
+port=8200					#web端口，可以通过ip:port查看索引状态
+friendly_name=Raspi_DLNA    #服务器命名
+</code></pre>
+<p>重启<code>minidlna</code>服务</p>
+<pre><code>sudo service minidlna restart
+</code></pre>
+<p>强制刷新</p>
+<pre><code>sudo service minidlna force-reload
+</code></pre>
+<p>查看索引状态,浏览http://192.168.1.111:8200</p>
+<pre><code>MiniDLNA status
+Audio files: 0
+Video files: 2
+Image files: 0
+</code></pre>
+<h3 id="dlna客户端">DLNA客户端</h3>
+<p><strong>PC</strong></p>
+<p>Windows7下将网络设置为<strong>家庭网络</strong>，完成后刷新，在<strong>网络</strong>中<strong>媒体设备</strong>下就可以自动发现<strong>Rasp_DLNA</strong>。</p>
+<p>点击进去就可以使用MediaPlayer来浏览。</p>
+<p><strong>Android</strong></p>
+<p>VPlayer+ VPlayer uPnP DLNA Plugin</p>
+<p><strong>IOS</strong></p>
+<p>RushPlayer</p>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-08-06</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dlna">#dlna</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/upnp">#upnp</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ms">#ms</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dms">#dms</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vplayer">#vplayer</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>add-apt-repository on UNIXETC</title>
+    <link>https://unixetc.com/tags/add-apt-repository/</link>
+    <description>UNIXETC (add-apt-repository)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 23 Aug 2015 08:23:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/add-apt-repository/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>无法使用add-apt-repository命令</title>
+      <link>https://unixetc.com/post/can-not-use-add-apt-repository/</link>
+      <pubDate>Sun, 23 Aug 2015 08:23:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/can-not-use-add-apt-repository/</guid>
+      <description>&lt;p&gt;在Ubuntu中使用&lt;strong&gt;PPA&lt;/strong&gt;安装软件时，需要用到&lt;code&gt;add-apt-repository&lt;/code&gt;命令，但有的&lt;strong&gt;VPS&lt;/strong&gt;系统因为体量原因，可能没有该命令，因此需要通过以下方法来安装：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;apt-get install python-software-properties 
+apt-get install software-properties-common&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-cn" data-theme="">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>JS - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/tags/js/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103043" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103043" />
+
+
+
+
+
+<meta property="og:title" content="JS" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/tags/js/" />
+<meta property="og:updated_time" content="2016-05-09T15:28:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JS"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <h1 class="site-title">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <h1>Tag: JS</h1>
+    <div class="post-info">
+        <a href="https://unixetc.com/tags">To all tags</a>
+    </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/letsencrypt-certificate-quickly-generate-script/">Let&#39;s encrypt 证书快速生成脚本</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        网站的Let&rsquo;s encrypt证书快到期了，看了官方的续期方法比较繁琐，于是在网上找了找简单方便做法，结果找到了墓地小企鹅写的一个脚本(shell script)，使用这个脚本可以方便的生成以及更新Let&rsquo;s encrypt 证书。
+脚本地址 https://github.com/xdtianyu/scripts/tree/master/lets-encrypt
+下载脚本
+wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.conf wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh  配置
+root@rnse:~/lesh# cat letsencrypt.conf # only modify the values, key files will be generated automaticly. ACCOUNT_KEY=&quot;letsencrypt-account.key&quot; DOMAIN_KEY=&quot;alair.key&quot; DOMAIN_DIR=&quot;/data/wwwroot/alair.cn/compiled&quot; DOMAINS=&quot;DNS:alair.cn,DNS:www.alair.cn&quot; #ECC=TRUE #LIGHTTPD=TRUE  按照需要自定义DOMAIN_KEY、DOMAIN_DIR、DOMAINS三部分。
+生成证书
+root@rnse:~/lesh#chmod +x letsencrypt.sh root@rnse:~/lesh# ./letsencrypt.sh letsencrypt.conf Generate account key... Generating RSA private key, 4096 bit long modulus ..............................++ ....++ e is 65537 (0x10001) Generate domain key... Generating RSA private key, 2048 bit long modulus .
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-05-09</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/js">#JS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/https">#https</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssl">#ssl</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/letsencrypt">#letsencrypt</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/shell">#shell</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-install-nodejs/">树莓派安装Node.js</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        首先查看树莓派cpu信息
+pi@raspi:~ $ cat /proc/cpuinfo processor : 0 model name : ARMv6-compatible processor rev 7 (v6l) BogoMIPS : 2.00 Features : half thumb fastmult vfp edsp java tls CPU implementer : 0x41 CPU architecture: 7 CPU variant : 0x0 CPU part : 0xb76 CPU revision : 7 Hardware : BCM2708 Revision : 000e Serial : 000000004a8acb6d  看清楚cpu构架，是ARMv6
+然后在node.js官网下载对应版本的包，下载地址https://nodejs.org/dist/
+# wget https://nodejs.org/dist/v4.2.2/node-v4.2.2-linux-arm64.tar.gz # tar zxf node-v4.2.2-linux-arm64.tar.gz # mv node-v4.2.2-linux-arm64 /usr/nodejs422  方便使用期间，做个链接
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-12-03</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/js">#JS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/npm">#npm</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/node.js">#node.js</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ode">#ode</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/node">#node</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/arm6">#arm6</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/cpuinfo">#cpuinfo</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/use-scrollup-to-add-scroll-to-top-feature/">使用ScrollUp添加返回顶部功能</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        下载ScrollUp https://github.com/markgoodyear/scrollup
+在网页中引用jquery.scrollUp.js、jquery.easing.js、jquery.min.js三个JavaScript脚本，注意顺序
+&lt;script src=&quot;jquery.min.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;jquery.easing.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;jquery.scrollUp.js&quot;&gt;&lt;/script&gt;  然后加入控制代码
+&lt;script&gt; $(function () { $.scrollUp(); }); &lt;/script&gt;  以上是最简单的使用方法，还有一种带参数的方法
+$(function () { $.scrollUp({ scrollName: 'scrollUp', // Element ID scrollDistance: 300, // Distance from top/bottom before showing element (px) scrollFrom: 'top', // 'top' or 'bottom' scrollSpeed: 300, // Speed back to top (ms) easingType: 'linear', // Scroll to top easing (see http://easings.net/) animation: 'fade', // Fade, slide, none animationSpeed: 200, // Animation speed (ms) scrollTrigger: false, // Set a custom triggering element.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-09-08</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/javascript">#JavaScript</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/js">#JS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/jquery">#jQuery</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/scrollup">#ScrollUp</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%BF%94%E5%9B%9E%E9%A1%B6%E9%83%A8">#返回顶部</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/ubuntu-install-ghost-blog-system/">Ubuntu下安装Ghost博客系统</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装Nodejs sudo add-apt-repository ppa:chris-lea/node.js sudo apt-get update sudo apt-get install nodejs  检查是否安装成功
+root@hkvps:~# node -v v0.10.37 root@hkvps:~# npm -v 1.4.28  安装Ghost Ghost下载地址https://ghost.org/download/
+wget https://ghost.org/zip/ghost-0.6.4.zip unzip ghost-0.6.4.zip -d ghost cd ghost npm install --production  运行Ghost
+npm start  可以通过127.0.0.1:2368来访问
+通过nmp start来运行Ghost，退出后就会停止，因此需要一个方法让Ghost一直运行
+让Ghost一直运行 安装forever
+npm install forever -g  进入ghost目录，执行以下命令，让Ghost一直运行
+NODE_ENV=production forever start index.js  停止ghost
+forever stop index.js  查看forever运行列表
+forever list  结合Nginx配置域名 安装Nginx
+sudo apt-get install nginx  编辑配置文件
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-06-06</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/js">#JS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ghost">#ghost</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nodejs">#nodejs</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/npm">#npm</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/examples-javascript-array/">JavaScript数组使用实例</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        GF办公用需要一个小系统，原要求是VBA实现，不过我没弄过那玩意儿。C语言倒是熟悉，但CLI的东西她使用不方便。
+于是做一个web系统，php比较熟悉，不过她的工作不能使用外网，额滴神！最后还是选择了用javascript实现，现学现卖吧。
+由于不能使用数据库，所以需要构建一个三维数组来存储数据，以下是javascript中数组使用的一些实例。
+定义数组并赋值
+var jz = newArry(); jz[0] = 10; jz[1] = &quot;hello&quot;; jz[2] = 23.4;  以上是一个简单的一维数组，其中三个值分别为:10整数，hello字符串,23.4浮点数，可以通过以下方法使用
+alert(&quot;jz[0] is &quot;+jz[0]+&quot;\n jz[1] is &quot;+jz[1]+&quot;\n jz[2] is &quot;+jz[2]);  二维数组的定义方法:为一维数组的单个值赋予数组值，那么就可以构成二维数组
+实例
+var jz = newArry(); jz[0] = newArry(1,2); jz[1] = newArry(3,4); jz[2] = newArry(5,6);  可以通过jz[0][0]、jz[0][1]、jz[0][2]来访问。
+以下是一个简单的三维数组实例
+var jz newArry(); jz[0] = newArry([100,200],[300,400],[500,600]) jz[1] = newArry(['str1','str2'],['str3','str4'],['str5','str6']); jz[2] = newArry([2.24,3.2],[12.9,89.01],[38.04,7.6]);  方位方法如jz[0][1][0]
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2013-09-24</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/javascript">#JavaScript</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/array">#Array</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%95%B0%E7%BB%84">#数组</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/js">#JS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%BC%96%E7%A8%8B">#编程</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
+    </div>
+</body>
+</html>

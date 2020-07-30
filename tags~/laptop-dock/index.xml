@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Laptop Dock on UNIXETC</title>
+    <link>https://unixetc.com/tags/laptop-dock/</link>
+    <description>UNIXETC (Laptop Dock)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 25 May 2017 15:12:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/laptop-dock/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>树莓派显示天气信息</title>
+      <link>https://unixetc.com/post/weather-according-to-raspberry-pi/</link>
+      <pubDate>Thu, 25 May 2017 15:12:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/weather-according-to-raspberry-pi/</guid>
+      <description>&lt;p&gt;在此介绍一个国外网友的树莓派项目&lt;strong&gt;RARP&lt;/strong&gt;，Weather According to Raspberry Pi&lt;/p&gt;
+&lt;p&gt;顾名思义，Weather According to Raspberry Pi是一个有关天气信息的项目，该项目通过采集&lt;strong&gt;Raspberry Pi&lt;/strong&gt;和&lt;strong&gt;Sense HAT&lt;/strong&gt;的数据，来显示相关的天气信息，比如温度、湿度、压力等&lt;/p&gt;
+&lt;p&gt;项目地址&lt;a href=&#34;http://coded2.herokuapp.com/weather/&#34;&gt;http://coded2.herokuapp.com/weather/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;代码国内下载地址&lt;a href=&#34;http://cdn.lyq.wiki/res/warp_final.zip&#34;&gt;http://cdn.lyq.wiki/res/warp_final.zip&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载后解压，得到&lt;strong&gt;main.py&lt;/strong&gt;和&lt;strong&gt;gauge2.html&lt;/strong&gt;两个文件，其中&lt;strong&gt;main.py&lt;/strong&gt;需要&lt;strong&gt;Python3&lt;/strong&gt;运行，&lt;strong&gt;gauge2.html&lt;/strong&gt;是最终的显示文件&lt;/p&gt;
+&lt;p&gt;安装相关软件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install python3
+sudo apt-get install python3-pip
+pip3 install flask
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;打开&lt;strong&gt;Sense HAT仿真器&lt;/strong&gt;，在程序菜单中，打开后如下图示:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/senseHAT-emu.webp&#34; alt=&#34;SenseHAT Menu&#34;&gt;&lt;/p&gt;
+&lt;p&gt;下来，运行下载的python脚本&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;python3 main.py
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;正常情况下，会提示一个端口为&lt;strong&gt;5000&lt;/strong&gt;的web服务正在运行&lt;/p&gt;
+&lt;p&gt;在浏览器中浏览&lt;strong&gt;localhost:5000&lt;/strong&gt;或者&lt;strong&gt;127.0.0.1:5000&lt;/strong&gt;，最终的浏览如下图&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/warp.webp&#34; alt=&#34;WARP&#34;&gt;&lt;/p&gt;
+&lt;p&gt;三个图表分别显示温度、压力和湿度，这三者的信息均来自&lt;strong&gt;Sense HAT 模拟器&lt;/strong&gt;而不是真正的&lt;strong&gt;Sense HAT&lt;/strong&gt;硬件。&lt;/p&gt;
+&lt;p&gt;如果需要采集&lt;strong&gt;Sense HAT&lt;/strong&gt;扩展板的数据，需要将&lt;strong&gt;Sense HAT&lt;/strong&gt;附加板和&lt;strong&gt;Raspberry Pi&lt;/strong&gt;相连，具体信息参考官网 &lt;a href=&#34;https://www.raspberrypi.org/products/sense-hat/&#34;&gt;https://www.raspberrypi.org/products/sense-hat/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;然后修改代码，打开&lt;strong&gt;main.py&lt;/strong&gt;文件，找到如下行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sense_emu import SenseHat
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;修改为&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sense_hat import SenseHat
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;保存后，重新运行&lt;strong&gt;python3 main.py&lt;/strong&gt;，此时采集的数据就来自真实的&lt;strong&gt;SenseHAT&lt;/strong&gt;硬件。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>组装ATRIX 4G Laptop Dock和树莓派</title>
+      <link>https://unixetc.com/post/assemble-atrix-4g-pc-docking-and-raspberry-pi/</link>
+      <pubDate>Sat, 28 Feb 2015 02:28:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/assemble-atrix-4g-pc-docking-and-raspberry-pi/</guid>
+      <description>&lt;p&gt;清单如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Raspberry Pi B+&lt;/li&gt;
+&lt;li&gt;Laptop Dock for Motorola ATRIX 4G&lt;/li&gt;
+&lt;li&gt;Micro-HDMI 母对母转接头&lt;/li&gt;
+&lt;li&gt;HDMI-Micro HDMI 公对公连接线&lt;/li&gt;
+&lt;li&gt;Micro USB 母对母延长线&lt;/li&gt;
+&lt;li&gt;USB-Micro USB充电线一根&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以下为实物图:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/laptopdock.webp&#34; alt=&#34;Laptop Dock for Motorola ATRIX 4G&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/microhdmigg.webp&#34; alt=&#34;Micro HDMI 母对母转接头&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/hdmimicrohdmi.webp&#34; alt=&#34;HDMI Micro HDMI 公对公连接线&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/mircousbmm.webp&#34; alt=&#34;Micro USB 母对母延长线&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/usbcabe.webp&#34; alt=&#34;USB-Micro USB充电线一根&#34;&gt;&lt;/p&gt;
+&lt;p&gt;操作:&lt;/p&gt;
+&lt;p&gt;主要是将一个Micro USB母口和一对USB/Micro USb公口相连，然后就可以通过Laptop Dock进行供电，并且链接Laptop Dock键盘。&lt;/p&gt;
+&lt;p&gt;下图是一张Laptop Dock接口的照片:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/dockport.webp&#34; alt=&#34;Laptop Dock接口&#34;&gt;&lt;/p&gt;
+&lt;p&gt;以下为USB引脚定义:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;红 电源+&lt;/li&gt;
+&lt;li&gt;白 数据-&lt;/li&gt;
+&lt;li&gt;绿 数据+&lt;/li&gt;
+&lt;li&gt;黑 接地&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因此需要将Laptop上的Micro USB引出的电路进行改造，将其中的&lt;strong&gt;电源&lt;/strong&gt;接到Micro USB公口上给树莓派供电，将&lt;strong&gt;数据&lt;/strong&gt;接到USB公口上链接键盘，线路改造图示如下:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/dockwithrspi.png&#34; alt=&#34;线路改造图示&#34;&gt;&lt;/p&gt;
+&lt;p&gt;接下来就是考验动手能力了，完成后的实物图如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/1f2usb.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/wctlr.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

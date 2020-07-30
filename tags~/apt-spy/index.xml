@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>apt-spy on UNIXETC</title>
+    <link>https://unixetc.com/tags/apt-spy/</link>
+    <description>UNIXETC (apt-spy)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 09 May 2013 05:09:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/apt-spy/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Debian使用apt-spy选择最佳源</title>
+      <link>https://unixetc.com/post/debian-use-apt-spy-to-select-the-best-source/</link>
+      <pubDate>Thu, 09 May 2013 05:09:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/debian-use-apt-spy-to-select-the-best-source/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;安装apt-spy&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#apt-get install apt-spy
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;使用apt-spy选择最佳源&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#apt-spy update
+#apt-spy -d stable -a asia -t 3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;结果保存在&lt;code&gt;/etc/apt/sources.list.d/apt-spy.list&lt;/code&gt;，可手动替换到&lt;code&gt;/etc/apt/sources.list&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;apt-spy选项:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;-d 系统版本，可选stable,testing,unstable&lt;/li&gt;
+&lt;li&gt;-a 区域,如asia,europe等，可用项可cat /etc/apt-spy.conf&lt;/li&gt;
+&lt;li&gt;-t 超时阀值(s)，可筛掉长时间不响应的地址&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

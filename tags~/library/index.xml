@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Library on UNIXETC</title>
+    <link>https://unixetc.com/tags/library/</link>
+    <description>UNIXETC (Library)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 15 Aug 2014 15:15:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/library/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>VC运行库全集</title>
+      <link>https://unixetc.com/post/vc-runtime-library-collection/</link>
+      <pubDate>Fri, 15 Aug 2014 15:15:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/vc-runtime-library-collection/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;VC运行库全集&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;VC2005,VC2008,VC2010,VC2013&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;VC++ Redistributable Package Collection&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;VCRP:
+    |   
+    +---vcpp_2005
+    |       vcredist_x86.exe       
+    +---vcpp_2008
+    |       vcredist_x86.exe      
+    +---vcpp_2010
+    |       vcredist_x64.exe
+    |       vcredist_x86.exe       
+    +---vcpp_2012
+    |       vcredist_x64.exe
+    |       vcredist_x86.exe
+    |       vozqco_70591.exe   
+    \---vcpp_2013
+        vcredist_arm.exe
+        vcredist_x64.exe
+        vcredist_x86.exe
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;VC运行库下载地址&lt;strong&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-315802255&#34;&gt;https://dotbbq.pipipan.com/fs/18418398-315802255&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

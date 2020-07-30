@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>影梭 on UNIXETC</title>
+    <link>https://unixetc.com/tags/%E5%BD%B1%E6%A2%AD/</link>
+    <description>UNIXETC (影梭)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 13 Dec 2014 23:12:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/%E5%BD%B1%E6%A2%AD/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux VPS中安装Shadowsocks</title>
+      <link>https://unixetc.com/post/linux-vps-install-shadowsocks/</link>
+      <pubDate>Sat, 13 Dec 2014 23:12:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/linux-vps-install-shadowsocks/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;VPS系统版本:&lt;/strong&gt; Ubuntu 12.04 32bit&lt;/p&gt;
+&lt;h3 id=&#34;最简单的办法&#34;&gt;最简单的办法&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;#apt-get install python-pip
+#pip install shadowsocks
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;启动Shadowsock&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#ssserver -p 4000 -k sss4k -d start
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;-p&lt;/code&gt;后定义端口号，&lt;code&gt;-k&lt;/code&gt;后面设定密码，&lt;code&gt;-d start&lt;/code&gt;代表以&lt;strong&gt;daemon&lt;/strong&gt;方式启动&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;下面是另外一种方法:&lt;/p&gt;
+&lt;h3 id=&#34;安装shadowsocks-libev&#34;&gt;安装shadowsocks-libev&lt;/h3&gt;
+&lt;p&gt;先用&lt;code&gt;aptitude show&lt;/code&gt;查看libssl-dev版本&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;aptitude show libssl-dev
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后根据版本执行以下修改：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;libssl &amp;gt; 1.0.1&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在&lt;code&gt;/etc/apt/sources.list&lt;/code&gt;添加下行：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;deb http://shadowsocks.org/debian wheezy main
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;libssl &amp;gt; 0.9.8 但 &amp;lt; 1.0.0&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在&lt;code&gt;/etc/apt/sources.list&lt;/code&gt;添加下行：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;deb http://shadowsocks.org/debian squeeze main
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;添加GPG&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget http://shadowsocks.org/debian/1D27208A.gpg
+sudo apt-key add 1D27208A.gpg
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;添加完成后更新软件源，然后安装shadowsocks&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get update
+sudo apt-get install python-m2crypto
+sudo apt-get install shadowsocks-libev
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;配置管理shadowsocks服务&#34;&gt;配置/管理shadowsocks服务&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;配置&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo vim /etc/shadowsocks-libev/config.json
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以下为一则配置实例：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;root@hkvps:~# cat /etc/shadowsocks-libev/config.json 
+{
+    &amp;quot;server&amp;quot;:&amp;quot;118.193.151.193&amp;quot;,
+    &amp;quot;server_port&amp;quot;:&amp;quot;8388&amp;quot;,
+    &amp;quot;local_port&amp;quot;:&amp;quot;1080&amp;quot;,
+    &amp;quot;password&amp;quot;:&amp;quot;foolish&amp;quot;,
+    &amp;quot;timeout&amp;quot;:&amp;quot;60&amp;quot;,
+    &amp;quot;method&amp;quot;:&amp;quot;aes-256-cfb&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;管理shadowsocks服务&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo /etc/init.d/shadowsocks-libev start  //开启服务
+sudo /etc/init.d/shadowsocks-libev stop   //关闭服务&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

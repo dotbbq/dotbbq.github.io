@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-cn" data-theme="">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>fstab自动挂载分区 - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103041" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103041" />
+
+
+
+
+
+<meta property="og:title" content="fstab自动挂载分区" />
+<meta property="og:description" content="使用fdisk -l查看分区信息
+以下为需要自动挂载的分区:
+分区 | 格式 ------------------------------ /dev/sd1 | NTFS /dev/sd5 | NTFS /dev/sd6 | NTFS /dev/sd7 | NTFS /dev/sd8 | NTFS  新建挂载目录
+#mkdir /media/{a,b,c,d,e}  编辑fstab文件vi /etc/fstab写入以下内容
+/dev/sda1 /media/a ntfs-3g defaults,iocharset=gb2312 0 0 /dev/sda5 /media/b ntfs-3g defaults,iocharset=gb2312 0 0 /dev/sda6 /media/c ntfs-3g defaults,iocharset=gb2312 0 0 /dev/sda7 /media/d ntfs-3g defaults,iocharset=gb2312 0 0 /dev/sda8 /media/e ntfs-3g defaults,iocharset=gb2312 0 0  说明:
+ /dev/sdax 表示分区 /mnt/xxx 表示挂载点 vat/ntfs-3g 表示分区格式 iocharset=xxx 设置字符集,为了支持windows中文目录，应设为gb2312  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unixetc.com/post/fstab-automatically-mount-partitions/" />
+<meta property="article:published_time" content="2013-09-08T19:18:00+00:00" />
+<meta property="article:modified_time" content="2013-09-08T19:18:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="fstab自动挂载分区"/>
+<meta name="twitter:description" content="使用fdisk -l查看分区信息
+以下为需要自动挂载的分区:
+分区 | 格式 ------------------------------ /dev/sd1 | NTFS /dev/sd5 | NTFS /dev/sd6 | NTFS /dev/sd7 | NTFS /dev/sd8 | NTFS  新建挂载目录
+#mkdir /media/{a,b,c,d,e}  编辑fstab文件vi /etc/fstab写入以下内容
+/dev/sda1 /media/a ntfs-3g defaults,iocharset=gb2312 0 0 /dev/sda5 /media/b ntfs-3g defaults,iocharset=gb2312 0 0 /dev/sda6 /media/c ntfs-3g defaults,iocharset=gb2312 0 0 /dev/sda7 /media/d ntfs-3g defaults,iocharset=gb2312 0 0 /dev/sda8 /media/e ntfs-3g defaults,iocharset=gb2312 0 0  说明:
+ /dev/sdax 表示分区 /mnt/xxx 表示挂载点 vat/ntfs-3g 表示分区格式 iocharset=xxx 设置字符集,为了支持windows中文目录，应设为gb2312  "/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <h1 class="site-title">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    
+    
+    <article class="post">
+        <header class="post-header">
+            <h1 class="post-title">fstab自动挂载分区</h1>
+        </header>
+        <div class="content">
+            <p>使用<code>fdisk -l</code>查看分区信息</p>
+<p>以下为需要自动挂载的分区:</p>
+<pre><code>分区       |      格式
+------------------------------
+/dev/sd1   |    NTFS
+/dev/sd5   |    NTFS
+/dev/sd6   |    NTFS
+/dev/sd7   |    NTFS
+/dev/sd8   |    NTFS
+</code></pre>
+<p>新建挂载目录</p>
+<pre><code>#mkdir /media/{a,b,c,d,e}
+</code></pre>
+<p>编辑fstab文件<code>vi /etc/fstab</code>写入以下内容</p>
+<pre><code>/dev/sda1 /media/a ntfs-3g defaults,iocharset=gb2312 0 0
+/dev/sda5 /media/b ntfs-3g defaults,iocharset=gb2312 0 0
+/dev/sda6 /media/c ntfs-3g defaults,iocharset=gb2312 0 0
+/dev/sda7 /media/d ntfs-3g defaults,iocharset=gb2312 0 0
+/dev/sda8 /media/e ntfs-3g defaults,iocharset=gb2312 0 0
+</code></pre>
+<p><strong>说明:</strong></p>
+<ul>
+<li>/dev/sdax      表示分区</li>
+<li>/mnt/xxx       表示挂载点</li>
+<li>vat/ntfs-3g    表示分区格式</li>
+<li>iocharset=xxx  设置字符集,为了支持windows中文目录，应设为<strong>gb2312</strong></li>
+</ul>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2013-09-08</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ntfs-3g">#ntfs-3g</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/fdisk">#fdisk</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/partition">#Partition</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/fstab">#fstab</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/mount">#mount</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
+    </div>
+</body>
+</html>

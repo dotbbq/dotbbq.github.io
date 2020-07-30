@@ -1,0 +1,1262 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nokia on UNIXETC</title>
+    <link>https://unixetc.com/tags/nokia/</link>
+    <description>UNIXETC (nokia)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 04 May 2019 17:05:01 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/nokia/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mplayer和N900镜头</title>
+      <link>https://unixetc.com/post/mplayer-and-the-n900-cameras/</link>
+      <pubDate>Sat, 04 May 2019 17:05:01 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/mplayer-and-the-n900-cameras/</guid>
+      <description>&lt;p&gt;诺基亚N900有前后两个镜头，前置640x480(0.3M)后置848*480(0.4M)，这两个镜头都是&lt;strong&gt;V4L2&lt;/strong&gt;设备，分别对应**/dev/video0&lt;strong&gt;和&lt;/strong&gt;/dev/video1**，因此可以方便的通过&lt;strong&gt;mplayer&lt;/strong&gt;或&lt;strong&gt;gstreamer&lt;/strong&gt;；来访问它们。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Video4Linux或V4L是一个视频截取及设备输出API，以及Linux的驱动程序框架，支持很多USB摄像头、电视调谐卡以及其他设备。
+V4L2是V4L的第二个版本。Video4Linux2修复了一些设计上的程序错误，最先在2.5.X版的核心中出现。Video4Linux2的驱动程序包含了一个对Video4Linux1应用程序的兼容模式，虽然支持并不完整，并且建议在V4L2模式下使用Video4Linux1设备。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;mplayer访问镜头：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ mplayer tv:// -tv device=/dev/video0   # 后置镜头
+$ mplayer tv:// -tv device=/dev/video1   # 前置镜头
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果使用前置镜头，建议使用镜像模式&lt;code&gt;-vf mirror&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ mplayer tv:// -tv device=/dev/video1 -vf mirror&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>NokiaN900刷机方法</title>
+      <link>https://unixetc.com/post/nokia-n900-installation-firmware/</link>
+      <pubDate>Wed, 01 May 2019 12:14:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/nokia-n900-installation-firmware/</guid>
+      <description>&lt;p&gt;刷机工具以及固件文件下再地址见文章末尾。&lt;/p&gt;
+&lt;p&gt;首先安装刷机工具&lt;strong&gt;maemo flasher&lt;/strong&gt;，然后下载固件，固件分以下两个文件，下载地址&lt;a href=&#34;https://blbl.dev/NokiaN900/index.html&#34;&gt;https://blbl.dev/NokiaN900/index.html&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;emmc(vanilla)&lt;/li&gt;
+&lt;li&gt;firmware(combined)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;切记，先刷&lt;code&gt;emmc&lt;/code&gt;再刷&lt;code&gt;firmware&lt;/code&gt;，并且两次刷机中间不可以开机。&lt;/p&gt;
+&lt;p&gt;将手机关机，然后按住键盘上的&lt;!-- raw HTML omitted --&gt;u&lt;!-- raw HTML omitted --&gt;键，再用数据线将手机链接电脑，这是手机会显示NOKIA字样界面，并且右上角显示有USB图标，即进入刷机模式。&lt;/p&gt;
+&lt;p&gt;首先写入&lt;code&gt;EMMC&lt;/code&gt;文件，命令如下&lt;code&gt;flasher-3.5 -F emmc.bin -f&lt;/code&gt;，以下为linux下操作实例，以供参考&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;alair@zb14:~/下载$ sudo flasher-3.5 -F RX-51_2009SE_10.2010.13-2.VANILLA_PR_EMMC_MR0_ARM.bin -f
+[sudo] alair 的密码： 
+flasher v2.5.2 (Oct 21 2009)
+
+Image &#39;mmc&#39;, size 255947 kB
+    Version RX-51_2009SE_10.2010.13-2.VANILLA
+USB device found found at bus 002, device address 012.
+Found device RX-51, hardware revision 2204
+NOLO version 1.4.14
+Version of &#39;sw-release&#39;: RX-51_2009SE_21.2011.38-1_PR_MR0
+Booting device into flash mode.
+Suitable USB device not found, waiting.
+USB device found found at bus 002, device address 013.
+Raw data transfer EP found at EP2.
+Image(s) flashed successfully in 27.304 s (9373 kB/s)!   
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后断开链接，取出电池，重新将电池放入再次刷机模式链接电脑，下来写入&lt;code&gt;firmware&lt;/code&gt;文件，命令&lt;code&gt;flasher-3.5 -F firmware.bin -f -R&lt;/code&gt;，以下为Linux操作实例，以供参考。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;alair@zb14:~/下载$ sudo flasher-3.5 -F RX-51_2009SE_20.2010.36-2_PR_COMBINED_MR0_ARM.bin -f -R
+flasher v2.5.2 (Oct 21 2009)
+
+SW version in image: RX-51_2009SE_20.2010.36-2_PR_MR0
+Image &#39;kernel&#39;, size 1705 kB
+    Version 2.6.28-20103103+0m5
+Image &#39;rootfs&#39;, size 185728 kB
+    Version RX-51_2009SE_20.2010.36-2_PR_MR0
+Image &#39;cmt-2nd&#39;, size 81408 bytes
+    Version BB5_09.36
+Image &#39;cmt-algo&#39;, size 519808 bytes
+    Version BB5_09.36
+Image &#39;cmt-mcusw&#39;, size 5826 kB
+    Version rx51_ICPR82_10w08
+Image &#39;2nd&#39;, size 14720 bytes
+    Valid for RX-51: 2217, 2218, 2219, 2220, 2120
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2217, 2218, 2219, 2220, 2120
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2217, 2218, 2219, 2220, 2120
+    Version 1.4.14.9+0m5
+Image &#39;2nd&#39;, size 14720 bytes
+    Valid for RX-51: 2101, 2102, 2103
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2101, 2102, 2103
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2101, 2102, 2103
+    Version 1.4.14.9+0m5
+Image &#39;2nd&#39;, size 14848 bytes
+    Valid for RX-51: 2307, 2308, 2309, 2310
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2307, 2308, 2309, 2310
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2307, 2308, 2309, 2310
+    Version 1.4.14.9+0m5
+Image &#39;2nd&#39;, size 14848 bytes
+    Valid for RX-51: 2407, 2408, 2409, 2410
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2407, 2408, 2409, 2410
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2407, 2408, 2409, 2410
+    Version 1.4.14.9+0m5
+Image &#39;2nd&#39;, size 14848 bytes
+    Valid for RX-51: 2301, 2302, 2303, 2304, 2305, 2306
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2301, 2302, 2303, 2304, 2305, 2306
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2301, 2302, 2303, 2304, 2305, 2306
+    Version 1.4.14.9+0m5
+Image &#39;2nd&#39;, size 14848 bytes
+    Valid for RX-51: 2401, 2402, 2403, 2404, 2405, 2406
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2401, 2402, 2403, 2404, 2405, 2406
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2401, 2402, 2403, 2404, 2405, 2406
+    Version 1.4.14.9+0m5
+Image &#39;2nd&#39;, size 14720 bytes
+    Valid for RX-51: 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115, 2116, 2117, 2118, 2119
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115, 2116, 2117, 2118, 2119
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2104, 2105, 2106, 2107, 2108, 2109, 2110, 2111, 2112, 2113, 2114, 2115, 2116, 2117, 2118, 2119
+    Version 1.4.14.9+0m5
+Image &#39;2nd&#39;, size 14848 bytes
+    Valid for RX-51: 2501, 2502, 2503, 2504, 2505, 2506
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2501, 2502, 2503, 2504, 2505, 2506
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2501, 2502, 2503, 2504, 2505, 2506
+    Version 1.4.14.9+0m5
+Image &#39;2nd&#39;, size 14848 bytes
+    Valid for RX-51: 2607, 2608, 2609, 2610
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2607, 2608, 2609, 2610
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2607, 2608, 2609, 2610
+    Version 1.4.14.9+0m5
+Image &#39;2nd&#39;, size 14848 bytes
+    Valid for RX-51: 2507, 2508, 2509, 2510
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2507, 2508, 2509, 2510
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2507, 2508, 2509, 2510
+    Version 1.4.14.9+0m5
+Image &#39;2nd&#39;, size 14720 bytes
+    Valid for RX-51: 2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215, 2216
+    Version 1.4.14.9+0m5
+Image &#39;2nd&#39;, size 14848 bytes
+    Valid for RX-51: 2601, 2602, 2603, 2604, 2605, 2606
+    Version 1.4.14.9+0m5
+Image &#39;xloader&#39;, size 14848 bytes
+    Valid for RX-51: 2601, 2602, 2603, 2604, 2605, 2606
+    Version 1.4.14.9+0m5
+Image &#39;secondary&#39;, size 109440 bytes
+    Valid for RX-51: 2601, 2602, 2603, 2604, 2605, 2606
+    Version 1.4.14.9+0m5
+Suitable USB device not found, waiting.
+USB device found found at bus 002, device address 016.
+Found device RX-51, hardware revision 2204
+NOLO version 1.4.14
+Version of &#39;sw-release&#39;: RX-51_2009SE_21.2011.38-1_PR_MR0
+Sending xloader image (14 kB)...
+100% (14 of 14 kB, avg. 3625 kB/s)
+Sending secondary image (106 kB)...
+100% (106 of 106 kB, avg. 15267 kB/s)
+Flashing bootloader... done.
+Sending cmt-2nd image (79 kB)...
+100% (79 of 79 kB, avg. 13250 kB/s)
+Sending cmt-algo image (507 kB)...
+100% (507 of 507 kB, avg. 29860 kB/s)
+Sending cmt-mcusw image (5826 kB)...
+100% (5826 of 5826 kB, avg. 36645 kB/s)
+Flashing cmt-mcusw... done.
+Sending kernel image (1705 kB)...
+100% (1705 of 1705 kB, avg. 6742 kB/s)
+Flashing kernel... done.
+Sending and flashing rootfs image (185728 kB)...
+100% (185728 of 185728 kB, avg. 16144 kB/s)
+Finishing flashing... done
+CMT flashed successfully
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;刷机完成后，手机自动重启。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>N900安装最新版Nemo</title>
+      <link>https://unixetc.com/post/nokia-n900-install-nemo/</link>
+      <pubDate>Sun, 28 Apr 2019 15:56:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/nokia-n900-install-nemo/</guid>
+      <description>&lt;p&gt;准备&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;安装最新uboot&lt;/li&gt;
+&lt;li&gt;一张至少4g以上的TF卡&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下载地址&lt;a href=&#34;http://releases.nemomobile.org/releases/&#34;&gt;http://releases.nemomobile.org/releases/&lt;/a&gt;
+以最新目录为例，下载&lt;a href=&#34;http://releases.nemomobile.org/releases/latest/images/nemo-armv7hl-n900/&#34;&gt;http://releases.nemomobile.org/releases/latest/images/nemo-armv7hl-n900/&lt;/a&gt;里的&lt;strong&gt;nemo-armv7hl-n900-mmcblk0p.raw.bz2&lt;/strong&gt;
+解压出raw文件，然后改后缀为img。Windows下用&lt;strong&gt;Win32DiskImager&lt;/strong&gt;将镜像文件写入TF卡。
+Linux下可以使用&lt;code&gt;dd&lt;/code&gt;命令直接写入，不需要改后缀名：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;alair@e6440:/media/alair/bak/downloads$ sudo dd if=nemo-armv7hl-n900-mmcblk0p.raw of=/dev/sdc bs=1M
+[sudo] alair 的密码： 
+记录了3640+1 的读入
+记录了3640+1 的写出
+3816816641 bytes (3.8 GB, 3.6 GiB) copied, 185.35 s, 20.6 MB/s
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Windwos中用&lt;strong&gt;winscp&lt;/strong&gt;在你的N900的&lt;code&gt;/etc/bootmenu.d/&lt;/code&gt;新建一个&lt;code&gt;40-nemo.item&lt;/code&gt;文件，贴入以下内容：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ITEM_NAME=&amp;quot;Mer-Nemo Mobile&amp;quot;
+ITEM_ID=&amp;quot;nemo&amp;quot;
+ITEM_DEVICE=&amp;quot;${EXT_CARD}p3&amp;quot;
+ITEM_KERNEL=&amp;quot;uImage&amp;quot;
+ITEM_FSTYPE=&amp;quot;vfat&amp;quot;
+ITEM_CMDLINE=&amp;quot;root=/dev/mmcblk0p1 rootwait ro console=ttyO2,115200n8 console=tty0 omapfb.vram=0:2M,1:2M,2:2M mtdoops.mtddev=2 quiet&amp;quot;
+ITEM_OMAPATAG=1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Linux系统下可以直接&lt;a href=&#34;https://unixetc.com/post/nokia-n900-and-ssh/&#34;&gt;SSH连接N900&lt;/a&gt;进行操作。
+然后root运行&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;u-boot-update-bootmenu
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;关机，插入TF卡，然后推开键盘开机，选&lt;strong&gt;Mer-Nemo Mobile&lt;/strong&gt;进入即可。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>再次入手NokiaN900</title>
+      <link>https://unixetc.com/post/start-with-nokian900-again/</link>
+      <pubDate>Mon, 22 Apr 2019 11:20:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/start-with-nokian900-again/</guid>
+      <description>&lt;p&gt;时隔八年，再次入手Nokia N900&lt;/p&gt;
+&lt;h3 id=&#34;系统截图&#34;&gt;系统截图&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/2343602920.webp&#34; alt=&#34;homepage&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/4001251822.webp&#34; alt=&#34;menu&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/3223841748.webp&#34; alt=&#34;seting&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;nokia-n900配置&#34;&gt;Nokia N900配置&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;参数&lt;/th&gt;
+&lt;th&gt;属性&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;网络&lt;/td&gt;
+&lt;td&gt;GSM / HSPA&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2G bands&lt;/td&gt;
+&lt;td&gt;GSM 850 / 900 / 1800 / 1900&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3G bands&lt;/td&gt;
+&lt;td&gt;HSDPA 900 / 1700 / 2100&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;速率&lt;/td&gt;
+&lt;td&gt;HSPA 10.2/2 Mbps&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GPRS&lt;/td&gt;
+&lt;td&gt;Class 32&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;EDGE&lt;/td&gt;
+&lt;td&gt;Class 32&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;发布&lt;/td&gt;
+&lt;td&gt;2009, August. Released 2009, November&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;状态&lt;/td&gt;
+&lt;td&gt;停产&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;外观尺寸&lt;/td&gt;
+&lt;td&gt;110.9 x 59.8 x 18 mm, 113 cc   (4.37 x 2.35 x 0.71 in)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;重量&lt;/td&gt;
+&lt;td&gt;181 g (6.38 oz)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;键盘&lt;/td&gt;
+&lt;td&gt;QWERTY&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SIM&lt;/td&gt;
+&lt;td&gt;Mini-SIM&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;类型&lt;/td&gt;
+&lt;td&gt;TFT resistive touchscreen, 65K   colors&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;尺寸&lt;/td&gt;
+&lt;td&gt;3.5 inches, 34.9 cm2 (~52.6% screen-to-body ratio)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;分辨率&lt;/td&gt;
+&lt;td&gt;800 x   480 pixels, 5:3 ratio (~267 ppi density)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;操作系统&lt;/td&gt;
+&lt;td&gt;Maemo 5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;平台&lt;/td&gt;
+&lt;td&gt;TI OMAP 3430&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CPU&lt;/td&gt;
+&lt;td&gt;600 MHz Cortex-A8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GPU&lt;/td&gt;
+&lt;td&gt;PowerVR SGX530&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;外置存储&lt;/td&gt;
+&lt;td&gt;microSD, up to 16 GB (dedicated   slot)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;内置存储&lt;/td&gt;
+&lt;td&gt;32 GB,   256 MB RAM&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;摄像头&lt;/td&gt;
+&lt;td&gt;5 MP, AF&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;特性&lt;/td&gt;
+&lt;td&gt;Carl Zeiss optics, Dual-LED   flash&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;视频&lt;/td&gt;
+&lt;td&gt;480p@25fps&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;制式&lt;/td&gt;
+&lt;td&gt;VGA&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;外放&lt;/td&gt;
+&lt;td&gt;Yes, with stereo speakers&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3.5mm接口&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;WLAN&lt;/td&gt;
+&lt;td&gt;Wi-Fi 802.11 b/g, DLNA&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;蓝牙&lt;/td&gt;
+&lt;td&gt;2.1, A2DP&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GPS&lt;/td&gt;
+&lt;td&gt;Yes, with A-GPS; Ovi Maps&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;红外&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;广播&lt;/td&gt;
+&lt;td&gt;Stereo FM radio (via third party   software); FM transmitter&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;USB&lt;/td&gt;
+&lt;td&gt;microUSB 2.0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;传感器&lt;/td&gt;
+&lt;td&gt;Accelerometer, proximity&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;浏览器&lt;/td&gt;
+&lt;td&gt;xHTML, HTML, Adobe Flash&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;多媒体&lt;/td&gt;
+&lt;td&gt;MP3/WMA/WAV/eAAC+   player&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;多媒体&lt;/td&gt;
+&lt;td&gt;WMV/RealVideo/MP4/AVI/XviD/DivX   player&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;视频输出&lt;/td&gt;
+&lt;td&gt;TV-out&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;文档&lt;/td&gt;
+&lt;td&gt;PDF document viewer&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;图片&lt;/td&gt;
+&lt;td&gt;Photo editor&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;电池&lt;/td&gt;
+&lt;td&gt;Removable Li-Ion 1320 mAh   battery (BL-5J)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;待机&lt;/td&gt;
+&lt;td&gt;Up to 278 h (2G) / Up to 250 h   (3G)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;通话时长&lt;/td&gt;
+&lt;td&gt;Up to 6 h 30 min (2G) / Up to 4   h 30 min (3G)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;音频播放&lt;/td&gt;
+&lt;td&gt;Up to   24 h 30 min&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;颜色&lt;/td&gt;
+&lt;td&gt;Black&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SAR&lt;/td&gt;
+&lt;td&gt;0.92 W/kg (head)     0.82   W/kg (body)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SAR EU&lt;/td&gt;
+&lt;td&gt;0.80 W/kg (head)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;价格&lt;/td&gt;
+&lt;td&gt;About 160 EUR&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;外放&lt;/td&gt;
+&lt;td&gt;Voice 66dB / Noise 66dB / Ring 70dB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;音频质量&lt;/td&gt;
+&lt;td&gt;Noise -93.7dB / Crosstalk -86.9dB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Maemo发布版本历史</title>
+      <link>https://unixetc.com/post/maemo-release-history/</link>
+      <pubDate>Sun, 21 Apr 2019 21:31:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/maemo-release-history/</guid>
+      <description>&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;系统&lt;/th&gt;
+&lt;th&gt;版本&lt;/th&gt;
+&lt;th&gt;代号&lt;/th&gt;
+&lt;th&gt;构建标识&lt;/th&gt;
+&lt;th&gt;发布时间&lt;/th&gt;
+&lt;th&gt;首发设备&lt;/th&gt;
+&lt;th&gt;备注&lt;/th&gt;
+&lt;th&gt;支持设备&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2005&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;2.2005.45-1&lt;/td&gt;
+&lt;td&gt;2005/11/1&lt;/td&gt;
+&lt;td&gt;770&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2005&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;3.2005.51-13&lt;/td&gt;
+&lt;td&gt;2005/12/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2005&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;5.2006.13-7&lt;/td&gt;
+&lt;td&gt;2006/4/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2006&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Mistral&lt;/td&gt;
+&lt;td&gt;0.2006.22-21&lt;/td&gt;
+&lt;td&gt;2006/5/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2006&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;Mistral&lt;/td&gt;
+&lt;td&gt;1.2006.26-8&lt;/td&gt;
+&lt;td&gt;2006/5/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2006&lt;/td&gt;
+&lt;td&gt;2.1&lt;/td&gt;
+&lt;td&gt;Scirocco&lt;/td&gt;
+&lt;td&gt;2.2006.39-14&lt;/td&gt;
+&lt;td&gt;2006/11/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2006&lt;/td&gt;
+&lt;td&gt;2.2&lt;/td&gt;
+&lt;td&gt;Gregale&lt;/td&gt;
+&lt;td&gt;3.2006.49-2&lt;/td&gt;
+&lt;td&gt;2007/1/1&lt;/td&gt;
+&lt;td&gt;770&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2007&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;Bora&lt;/td&gt;
+&lt;td&gt;2.2006.51-6&lt;/td&gt;
+&lt;td&gt;2007/1/1&lt;/td&gt;
+&lt;td&gt;N800&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770*, N800&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2007&lt;/td&gt;
+&lt;td&gt;3.1&lt;/td&gt;
+&lt;td&gt;Bora&lt;/td&gt;
+&lt;td&gt;3.2007.10-7&lt;/td&gt;
+&lt;td&gt;2007/3/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770*, N800&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2007&lt;/td&gt;
+&lt;td&gt;3.2&lt;/td&gt;
+&lt;td&gt;Bora&lt;/td&gt;
+&lt;td&gt;4.2007.26-8&lt;/td&gt;
+&lt;td&gt;2007/7/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770*, N800&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2007&lt;/td&gt;
+&lt;td&gt;3.2&lt;/td&gt;
+&lt;td&gt;Bora&lt;/td&gt;
+&lt;td&gt;4.2007.38-2&lt;/td&gt;
+&lt;td&gt;2007/10/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770*, N800&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2008&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;Chinook&lt;/td&gt;
+&lt;td&gt;1.2007.42-18&lt;/td&gt;
+&lt;td&gt;2007/11/1&lt;/td&gt;
+&lt;td&gt;N810&lt;/td&gt;
+&lt;td&gt;(N810 only)&lt;/td&gt;
+&lt;td&gt;N810&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2008&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;Chinook&lt;/td&gt;
+&lt;td&gt;1.2007.42-19&lt;/td&gt;
+&lt;td&gt;2007/11/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;(N810 only)&lt;/td&gt;
+&lt;td&gt;N810&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2008&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;Chinook&lt;/td&gt;
+&lt;td&gt;1.2007.44-4&lt;/td&gt;
+&lt;td&gt;2007/11/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;(N800 only)&lt;/td&gt;
+&lt;td&gt;N800&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2008&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;Chinook&lt;/td&gt;
+&lt;td&gt;2.2007.50-2&lt;/td&gt;
+&lt;td&gt;2007/11/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770*, N800, N810&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2008&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;Chinook&lt;/td&gt;
+&lt;td&gt;2.2007.51-3&lt;/td&gt;
+&lt;td&gt;2008/1/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;770*, N800, N810&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2008&lt;/td&gt;
+&lt;td&gt;4.1&lt;/td&gt;
+&lt;td&gt;Diablo&lt;/td&gt;
+&lt;td&gt;4.2008.23-14&lt;/td&gt;
+&lt;td&gt;2008/6/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;N800, N810&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2008&lt;/td&gt;
+&lt;td&gt;4.1&lt;/td&gt;
+&lt;td&gt;Diablo&lt;/td&gt;
+&lt;td&gt;4.2008.30-2&lt;/td&gt;
+&lt;td&gt;2008/8/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;N800, N810&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2008&lt;/td&gt;
+&lt;td&gt;4.1&lt;/td&gt;
+&lt;td&gt;Diablo&lt;/td&gt;
+&lt;td&gt;4.2008.36-5&lt;/td&gt;
+&lt;td&gt;2008/9/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;N800, N810&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OS2008&lt;/td&gt;
+&lt;td&gt;4.1&lt;/td&gt;
+&lt;td&gt;Diablo&lt;/td&gt;
+&lt;td&gt;5.2008.43-7&lt;/td&gt;
+&lt;td&gt;2008/12/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;N800, N810&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Maemo 5&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;Fremantle&lt;/td&gt;
+&lt;td&gt;1.2009.42-11&lt;/td&gt;
+&lt;td&gt;2009/11/1&lt;/td&gt;
+&lt;td&gt;N900&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;N900&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Maemo 5&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;Fremantle&lt;/td&gt;
+&lt;td&gt;1.2009.44-1&lt;/td&gt;
+&lt;td&gt;2010/1/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;N900&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Maemo 5&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;Fremantle&lt;/td&gt;
+&lt;td&gt;2.2009.51-1&lt;/td&gt;
+&lt;td&gt;2010/1/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;PR1.1&lt;/td&gt;
+&lt;td&gt;N900&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Maemo 5&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;Fremantle&lt;/td&gt;
+&lt;td&gt;3.2010.02-8&lt;/td&gt;
+&lt;td&gt;2010/2/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;PR1.1.1&lt;/td&gt;
+&lt;td&gt;N900&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Maemo 5&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;Fremantle&lt;/td&gt;
+&lt;td&gt;10.2010.12-9&lt;/td&gt;
+&lt;td&gt;2010/5/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;PR1.2&lt;/td&gt;
+&lt;td&gt;N900&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Maemo 5&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;Fremantle&lt;/td&gt;
+&lt;td&gt;10.2010.19-1&lt;/td&gt;
+&lt;td&gt;2010/5/1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;PR1.2&lt;/td&gt;
+&lt;td&gt;N900&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Maemo 5&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;Fremantle&lt;/td&gt;
+&lt;td&gt;20.2010.36-2&lt;/td&gt;
+&lt;td&gt;2010/10/25&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;PR1.3&lt;/td&gt;
+&lt;td&gt;N900&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Maemo 5&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;Fremantle&lt;/td&gt;
+&lt;td&gt;21.2011.38-1&lt;/td&gt;
+&lt;td&gt;2011/10/26&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;PR1.3.1&lt;/td&gt;
+&lt;td&gt;N900&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MeeGo&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;Arlington&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2010/5/26&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;N900, etc.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MeeGo&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;Irvine&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;2010/10/28&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;Aava and Nokia N900&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MeeGo&lt;/td&gt;
+&lt;td&gt;1.2&lt;/td&gt;
+&lt;td&gt;Harmattan&lt;/td&gt;
+&lt;td&gt;1.2011.34-2&lt;/td&gt;
+&lt;td&gt;–&lt;/td&gt;
+&lt;td&gt;N950&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;N9, N950&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>树莓派可用的PCD8544库</title>
+      <link>https://unixetc.com/post/pcd8544-library-for-raspberry-pi/</link>
+      <pubDate>Fri, 20 Jan 2017 11:20:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/pcd8544-library-for-raspberry-pi/</guid>
+      <description>&lt;p&gt;Nokia 3310/5110显示器基于PCD8544，在此分享一个树莓派可用的PCD8544库&lt;/p&gt;
+&lt;p&gt;使用该库之前，需要安装wiringPi,安装方法可参考&lt;a href=&#34;https://unixetc.com/post/Raspberry-Pi-by-DHT11-collecting-temperature-and-humidity/&#34;&gt;树莓派连接DHT11采集温度与湿度&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;项目地址：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;https://github.com/binerry/RaspberryPi/tree/master/libraries/c/PCD8544
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;可通过&lt;a href=&#34;https://github.com/downloads/binerry/RaspberryPi/Raspberry.Pi_PCD8544.Library.zip&#34;&gt;github download&lt;/a&gt;直接下载,不能访问github的，用以下连接下载&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;http://cdn.lyq.wiki/res/Raspberry.Pi_PCD8544.Library.zip
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;解压后，可得到一个c源码和一个h头文件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;PCD8544.c
+PCD8544.h
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以及samples文件夹下的三个示例&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pcd8544_rpi.c
+pcd8544_test.c
+pcd8544_test2.c
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;按照下图所示连接好树莓派和显示器&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/raspi_pcd8544.webp&#34; alt=&#34;raspi_pcd8544&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;RST —— 复位 接GPIO 0&lt;/li&gt;
+&lt;li&gt;CE —— 片选 接GPIO 1 或 不接&lt;/li&gt;
+&lt;li&gt;DC —— 数据/指令选择 接GPIO 2&lt;/li&gt;
+&lt;li&gt;DIN —— 串行数据线 接GPIO 3&lt;/li&gt;
+&lt;li&gt;CLK —— 串行时钟线 接GPIO 5 （因为我的GPIO 4已经接了一个DHT11传感器）&lt;/li&gt;
+&lt;li&gt;VCC —— 电源输入 接3.3v&lt;/li&gt;
+&lt;li&gt;BL —— 背光控制端 接3.3v&lt;/li&gt;
+&lt;li&gt;GND —— 地线 接地&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;编译三个示例程序&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cc -o pcd8544_test pcd8544_test.c ../PCD8544.c  -L/usr/local/lib -lwiringPi
+cc -o pcd8544_test2 pcd8544_test2.c ../PCD8544.c  -L/usr/local/lib -lwiringPi
+cc -o pcd8544_rpi pcd8544_rpi.c ../PCD8544.c  -L/usr/local/lib -lwiringPi
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后运行之&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo ./pcd8544_test
+sudo ./pcd8544_test2
+sudo ./pcd8544_rpi
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;一下是三个示例运行情况&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/nokia-5110-example.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;参考: &lt;em&gt;&lt;a href=&#34;http://binerry.de/post/25787954149/pcd8544-library-for-raspberry-pi&#34;&gt;http://binerry.de/post/25787954149/pcd8544-library-for-raspberry-pi&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>NokiaN900产品码</title>
+      <link>https://unixetc.com/post/product-codes-of-nokia-n900/</link>
+      <pubDate>Fri, 26 Apr 2013 22:26:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/product-codes-of-nokia-n900/</guid>
+      <description>&lt;p&gt;电池仓贴纸上面的CODE即是&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;0595085: N900 RX-51 TMN (Telecomunicacoes Moveis Nacionais S.A.*) PT V1 - Black&lt;/li&gt;
+&lt;li&gt;0582648: RX-51 Belgium&lt;/li&gt;
+&lt;li&gt;0584571: RX-51 Croatia Makedonia&lt;/li&gt;
+&lt;li&gt;0584572: RX-51 Czech&lt;/li&gt;
+&lt;li&gt;0591362: RX-51 Estonia&lt;/li&gt;
+&lt;li&gt;0574180: RX-51 France&lt;/li&gt;
+&lt;li&gt;0574383: RX-51 Germany&lt;/li&gt;
+&lt;li&gt;0591474: RX-51 Hungary&lt;/li&gt;
+&lt;li&gt;0591474: RX-51 Hungary&lt;/li&gt;
+&lt;li&gt;0574385: RX-51 Italy&lt;/li&gt;
+&lt;li&gt;0583516: RX-51 Light Swap&lt;/li&gt;
+&lt;li&gt;0582647: RX-51 MENA&lt;/li&gt;
+&lt;li&gt;0585168: RX-51 Montenegro Greece&lt;/li&gt;
+&lt;li&gt;0582645: RX-51 Netherlands&lt;/li&gt;
+&lt;li&gt;0582644: RX-51 Poland&lt;/li&gt;
+&lt;li&gt;0574386: RX-51 Russia&lt;/li&gt;
+&lt;li&gt;0574179: RX-51 Scandinavia Finland Sweden&lt;/li&gt;
+&lt;li&gt;0587236: RX-51 Scandinavia Norway Denmark&lt;/li&gt;
+&lt;li&gt;0584570: RX-51 Slovakia&lt;/li&gt;
+&lt;li&gt;0584570: RX-51 Slovakia&lt;/li&gt;
+&lt;li&gt;0574384: RX-51 Spain Portugal&lt;/li&gt;
+&lt;li&gt;0584598: RX-51 Swap&lt;/li&gt;
+&lt;li&gt;0584598: RX-51 Swap&lt;/li&gt;
+&lt;li&gt;0587813: RX-51 Swap France&lt;/li&gt;
+&lt;li&gt;0587810: RX-51 Swap Russia&lt;/li&gt;
+&lt;li&gt;0587812: RX-51 Swap USA&lt;/li&gt;
+&lt;li&gt;0560826: RX-51 UK Ireland&lt;/li&gt;
+&lt;li&gt;0580952: RX-51 USA&lt;/li&gt;
+&lt;li&gt;0593611: UK CV&lt;/li&gt;
+&lt;li&gt;0595421: Vodafone UK GB Contract black&lt;/li&gt;
+&lt;li&gt;1.2009.42.2(發布)&lt;/li&gt;
+&lt;li&gt;0574383: RX-51 Germany&lt;/li&gt;
+&lt;li&gt;0574383: RX-51 Germany&lt;/li&gt;
+&lt;li&gt;1.2009.44.1(發布)&lt;/li&gt;
+&lt;li&gt;0595085: N900 RX-51 TMN (Telecomunicacoes Moveis Nacionais S.A.*) PT V1 - Black&lt;/li&gt;
+&lt;li&gt;0582648: RX-51 Belgium&lt;/li&gt;
+&lt;li&gt;0584571: RX-51 Croatia Makedonia&lt;/li&gt;
+&lt;li&gt;0584572: RX-51 Czech&lt;/li&gt;
+&lt;li&gt;0591362: RX-51 Estonia&lt;/li&gt;
+&lt;li&gt;0574180: RX-51 France&lt;/li&gt;
+&lt;li&gt;0574383: RX-51 Germany&lt;/li&gt;
+&lt;li&gt;0591474: RX-51 Hungary&lt;/li&gt;
+&lt;li&gt;0574385: RX-51 Italy&lt;/li&gt;
+&lt;li&gt;0583516: RX-51 Light Swap&lt;/li&gt;
+&lt;li&gt;0582647: RX-51 MENA&lt;/li&gt;
+&lt;li&gt;0585168: RX-51 Montenegro Greece&lt;/li&gt;
+&lt;li&gt;0582645: RX-51 Netherlands&lt;/li&gt;
+&lt;li&gt;0582644: RX-51 Poland&lt;/li&gt;
+&lt;li&gt;0574386: RX-51 Russia&lt;/li&gt;
+&lt;li&gt;0574179: RX-51 Scandinavia Finland Sweden&lt;/li&gt;
+&lt;li&gt;0587236: RX-51 Scandinavia Norway Denmark&lt;/li&gt;
+&lt;li&gt;0584570: RX-51 Slovakia&lt;/li&gt;
+&lt;li&gt;0574384: RX-51 Spain Portugal&lt;/li&gt;
+&lt;li&gt;0584598: RX-51 Swap&lt;/li&gt;
+&lt;li&gt;0587813: RX-51 Swap France&lt;/li&gt;
+&lt;li&gt;0587810: RX-51 Swap Russia&lt;/li&gt;
+&lt;li&gt;0587812: RX-51 Swap USA&lt;/li&gt;
+&lt;li&gt;0593709: RX-51 Switzerland&lt;/li&gt;
+&lt;li&gt;0560826: RX-51 UK Ireland&lt;/li&gt;
+&lt;li&gt;0580952: RX-51 USA&lt;/li&gt;
+&lt;li&gt;0593611: UK CV&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;0593611: N900 RX-51 Country Variant United Kingdom GB V1 Black&lt;/li&gt;
+&lt;li&gt;0595085: N900 RX-51 TMN (Telecomunicacoes Moveis Nacionais S.A.*) PT V1 - Black&lt;/li&gt;
+&lt;li&gt;0582648: RX-51 Belgium&lt;/li&gt;
+&lt;li&gt;0584571: RX-51 Croatia Makedonia&lt;/li&gt;
+&lt;li&gt;0584572: RX-51 Czech&lt;/li&gt;
+&lt;li&gt;0591362: RX-51 Estonia&lt;/li&gt;
+&lt;li&gt;0574180: RX-51 France&lt;/li&gt;
+&lt;li&gt;0574383: RX-51 Germany&lt;/li&gt;
+&lt;li&gt;0591474: RX-51 Hungary&lt;/li&gt;
+&lt;li&gt;0574385: RX-51 Italy&lt;/li&gt;
+&lt;li&gt;0582647: RX-51 MENA&lt;/li&gt;
+&lt;li&gt;0585168: RX-51 Montenegro Greece&lt;/li&gt;
+&lt;li&gt;0582645: RX-51 Netherlands&lt;/li&gt;
+&lt;li&gt;0582644: RX-51 Poland&lt;/li&gt;
+&lt;li&gt;0574386: RX-51 Russia&lt;/li&gt;
+&lt;li&gt;0574179: RX-51 Scandinavia Finland Sweden&lt;/li&gt;
+&lt;li&gt;0587236: RX-51 Scandinavia Norway Denmark&lt;/li&gt;
+&lt;li&gt;0584570: RX-51 Slovakia&lt;/li&gt;
+&lt;li&gt;0574384: RX-51 Spain Portugal&lt;/li&gt;
+&lt;li&gt;0593709: RX-51 Switzerland&lt;/li&gt;
+&lt;li&gt;0560826: RX-51 UK Ireland&lt;/li&gt;
+&lt;li&gt;0580952: RX-51 USA&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;0583566: RX-51 Australia&lt;/li&gt;
+&lt;li&gt;0583566: RX-51 Australia&lt;/li&gt;
+&lt;li&gt;0582648: RX-51 Belgium&lt;/li&gt;
+&lt;li&gt;0584571: RX-51 Croatia Makedonia&lt;/li&gt;
+&lt;li&gt;0584572: RX-51 Czech&lt;/li&gt;
+&lt;li&gt;0591362: RX-51 Estonia&lt;/li&gt;
+&lt;li&gt;0574180: RX-51 France&lt;/li&gt;
+&lt;li&gt;0574383: RX-51 Germany&lt;/li&gt;
+&lt;li&gt;0591474: RX-51 Hungary&lt;/li&gt;
+&lt;li&gt;0583572: RX-51 Indonesia,Vietnam,Cambodia&lt;/li&gt;
+&lt;li&gt;0583572: RX-51 Indonesia,Vietnam,Cambodia&lt;/li&gt;
+&lt;li&gt;0574385: RX-51 Italy&lt;/li&gt;
+&lt;li&gt;0582647: RX-51 MENA&lt;/li&gt;
+&lt;li&gt;0582647: RX-51 MENA&lt;/li&gt;
+&lt;li&gt;0585168: RX-51 Montenegro Greece&lt;/li&gt;
+&lt;li&gt;0582645: RX-51 Netherlands&lt;/li&gt;
+&lt;li&gt;0583569: RX-51 Philippines&lt;/li&gt;
+&lt;li&gt;0583569: RX-51 Philippines&lt;/li&gt;
+&lt;li&gt;0583569: RX-51 Philippines&lt;/li&gt;
+&lt;li&gt;0582644: RX-51 Poland&lt;/li&gt;
+&lt;li&gt;0574386: RX-51 Russia&lt;/li&gt;
+&lt;li&gt;0574179: RX-51 Scandinavia Finland Sweden&lt;/li&gt;
+&lt;li&gt;0587236: RX-51 Scandinavia Norway Denmark&lt;/li&gt;
+&lt;li&gt;0583571: RX-51 Singapore&lt;/li&gt;
+&lt;li&gt;0583571: RX-51 Singapore&lt;/li&gt;
+&lt;li&gt;0584570: RX-51 Slovakia&lt;/li&gt;
+&lt;li&gt;0598090: RX-51 South-Asia(Nepal,Sri Lanka)&lt;/li&gt;
+&lt;li&gt;0598090: RX-51 South-Asia(Nepal,Sri Lanka)&lt;/li&gt;
+&lt;li&gt;0582646: RX-51 South Africa&lt;/li&gt;
+&lt;li&gt;0582646: RX-51 South Africa&lt;/li&gt;
+&lt;li&gt;0574384: RX-51 Spain Portugal&lt;/li&gt;
+&lt;li&gt;0593709: RX-51 Switzerland&lt;/li&gt;
+&lt;li&gt;0599194: RX-51 Taiwan&lt;/li&gt;
+&lt;li&gt;0599194: RX-51 Taiwan&lt;/li&gt;
+&lt;li&gt;0583568: RX-51 Thailand&lt;/li&gt;
+&lt;li&gt;0583568: RX-51 Thailand&lt;/li&gt;
+&lt;li&gt;0583568: RX-51 Thailand&lt;/li&gt;
+&lt;li&gt;0560826: RX-51 UK Ireland&lt;/li&gt;
+&lt;li&gt;0591467: RX-51 Ukraine&lt;/li&gt;
+&lt;li&gt;0580952: RX-51 USA&lt;/li&gt;
+&lt;li&gt;0599195 HK（即全球版）&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>NokiaN900设置无线链接</title>
+      <link>https://unixetc.com/post/nokia-n900-set-up-wireless/</link>
+      <pubDate>Sun, 22 Apr 2012 12:40:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/nokia-n900-set-up-wireless/</guid>
+      <description>&lt;p&gt;首页点击左上角网络区域&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/3989903888.webp&#34; alt=&#34;915222263.webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;进入网络设置&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/3531008835.webp&#34; alt=&#34;2062123496.webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;在网络设置中，可以选择wifi或者GPRS链接&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/3040336154.webp&#34; alt=&#34;2811909545.webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;点击GPRS的话，将使用运营商的数据业务，点击wifi节点名的话，会出现输入密码提示，输入密码连接完成&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/3147522416.webp&#34; alt=&#34;1151275348.webp&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>N900超频与刷9G-Home</title>
+      <link>https://unixetc.com/post/n900-overclock-and-brush-9ghome/</link>
+      <pubDate>Sun, 08 Apr 2012 14:18:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/n900-overclock-and-brush-9ghome/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;什么是9G-home?&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在linux中/home为用户主用目录，N900默认为/home分配的空间大概1.9G左右，而为了刷Android等第三方系统，我们需要更大的/home来存放文件，所以改变/home目录大小称之为XG-home(x有3/5/6/9等)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;刷9G Home&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;下载9G-home刷机包:http://pan.baidu.com/share/link?shareid=1527292529&amp;amp;uk=1493434283&lt;/p&gt;
+&lt;p&gt;打开CMD，进入到flasher目录，输入如下命令（具体依照本机目录输入）:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;flasher-3.5.exe -F 9ghomeemmc.bin -f
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;出现提示&lt;strong&gt;Suitable USB device not found,waiting.&lt;/strong&gt; 时，关闭手机，按住U键连接数据线，等待cmd提示开始写入时可放开U键，等待提示完成。 &lt;strong&gt;不要开机，切记！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;接着重新刷Rom文件，即COMBIND那个文件。&lt;strong&gt;继续别开机！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;N900超频&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;接下来刷入超频包，以下是几个不同等级的超频包&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;zImage-700mhz&lt;/li&gt;
+&lt;li&gt;zImage-750mhz&lt;/li&gt;
+&lt;li&gt;zImage-800mhz&lt;/li&gt;
+&lt;li&gt;zImage-850mhz-450dsp&lt;/li&gt;
+&lt;li&gt;zImage-900mhz&lt;/li&gt;
+&lt;li&gt;zImage-900mhz-500dsp&lt;/li&gt;
+&lt;li&gt;zImage-930mhz&lt;/li&gt;
+&lt;li&gt;zImage-930mhz-500dsp&lt;/li&gt;
+&lt;li&gt;zImage-950mhz&lt;/li&gt;
+&lt;li&gt;zImage-950mhz-500dsp&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下载地址:http://pan.baidu.com/share/link?shareid=1567324549&amp;amp;uk=1493434283&lt;/p&gt;
+&lt;p&gt;这里以超750MHz为例&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;flasher-3.5.exe -k zImage-750mhz -f
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;等到提示完成后，开机即可。 给大家贴出前后两张对比图&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/752251483.webp&#34; alt=&#34;n900_bf_oc.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/1611504914.webp&#34; alt=&#34;n900_af_oc.png&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Nokia N900 and Android</title>
+      <link>https://unixetc.com/post/nokia-n900-and-android/</link>
+      <pubDate>Sat, 07 Apr 2012 14:27:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/nokia-n900-and-android/</guid>
+      <description>&lt;p&gt;感谢&lt;strong&gt;NITDroid Project&lt;/strong&gt; 的辛苦工作，使&lt;strong&gt;N900&lt;/strong&gt;更加的神机！&lt;/p&gt;
+&lt;p&gt;使用Nitdroid刷入Android后，系统运行在/home目录，所以/home必须空间足够，N900默认的为 1.9G是不可以的，需要增大/home的容量，推荐参考N900超频和刷9G-home,将/home增大到9G&lt;/p&gt;
+&lt;h3 id=&#34;添加软件源&#34;&gt;添加软件源&lt;/h3&gt;
+&lt;p&gt;确保已添加以下软件源，一般前四个系统已经添加，没有的自己添加。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;名称：Nokia Applications
+网址：https://downloads.maemo.nokia.com/fremantle/ssu/apps/
+发布：./
+组件：空
+
+名称：Nokia System Software Updats
+网址：https://downloads.maemo.nokia.com/fremantle/ssu/mr0
+发布：./
+组件：空
+
+名称：Ovi
+网址：https://downloads.maemo.nokia.com/fremantle1.2/ovi/
+发布：./
+组件：空
+
+名称：maemo.org
+网址：http://repository.maemo.ory/extras/
+发布：frmantle−1.3
+组件：free non−free
+
+名称：Fremantle Extras−testing
+网址：http://repository.maemo.org/extras-testing/
+发布：fremantle
+组件：free non−free
+
+名称：Fremantle Extras−devel
+网址：http://repository.maemo.org/extras-devel/
+发布：fremantle
+组件：free non−free
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;开刷&#34;&gt;开刷&lt;/h3&gt;
+&lt;p&gt;下载N12_UMay.tar.bz2与nitdroid-kernel-2.6.28-07_rc3_armel.deb&lt;/p&gt;
+&lt;p&gt;115网盘下载地址: &lt;a href=&#34;http://u.115.com/file/aqpmpqhl&#34;&gt;http://u.115.com/file/aqpmpqhl&lt;/a&gt; &lt;a href=&#34;http://u.115.com/file/dna7jt6r&#34;&gt;http://u.115.com/file/dna7jt6r&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;最新的文件在官网的&lt;a href=&#34;http://downloads.nitdroid.com/e-yes/&#34;&gt;http://downloads.nitdroid.com/e-yes/&lt;/a&gt;页，如发现跟新可自行下载最新版本 注意，网盘中提供的N12_UMay.tar.bz2已经解压为N12_UMay.tar，官网的下载后自行解压&lt;/p&gt;
+&lt;p&gt;将两个文件拷贝至USB连接模式下的根目录，即**/home/user/MyDocs/**&lt;/p&gt;
+&lt;p&gt;建议通过SSH连接N900，在PC上使用&lt;strong&gt;Putty&lt;/strong&gt;操作，要么就在手机上运行&lt;strong&gt;x-terminal&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# apt-get install nitdroid-installer
+# mkdir /and
+# mount /home /and
+# cd /and
+# tar xvf /home/user/MyDocs/N12_UMay.tar #注意这里已经是.tar格式
+# dpkg -i /home/user/MyDocs/nitdroid-kernel-2.6.28-07_rc3_armel.deb
+# reboot
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;重启后会出现多系统选择,1为Maemo,2为Nitdroid&lt;/p&gt;
+&lt;p&gt;N900的android菜单映射:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;电源键=锁屏
+长按电源键=关机/重启菜单
+照相键=返回
+长按照相键=最近使用的程序
+锁屏键=选项&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Nokia N900 and SSH</title>
+      <link>https://unixetc.com/post/nokia-n900-and-ssh/</link>
+      <pubDate>Mon, 02 Apr 2012 14:12:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/nokia-n900-and-ssh/</guid>
+      <description>&lt;p&gt;N900采用的maemo是基于debian的linux系统，通过自带的application manager管理软件时，操作体验还有待改进，所以这里推荐通过ssh连接，使用cli来进行相应操作。
+需要在手机端安装OpenSSH来开启SSH服务，在application manager的system目录下，找到&lt;strong&gt;openssh Client and Server&lt;/strong&gt;安装，当然如果你不需要在手机端进行SSH登陆的话，那可以只安装server即可。
+安装时会提示输入密码，这个就是以后连接手机SSH的服务密码。
+安装完成后SSH server会默认启动，现在你可以通过wifi连接局域网，然后需要知道自己当前的IP（可以通过Tp-link后台查看，或者手机端安装&lt;strong&gt;Personal IP Address&lt;/strong&gt;开显示)，再推荐安装&lt;strong&gt;SSH Status and Swither&lt;/strong&gt;，可以在手机的status显示SSH状态，并管理SSH server启动/停止。
+&lt;img src=&#34;https://unixetc.com/imgs/698163850.webp&#34; alt=&#34;ssh status&#34;&gt;&lt;/p&gt;
+&lt;p&gt;然后推荐使用Putty进行链接，在CLI模式下管理软件，可以在&lt;a href=&#34;http://maemo.org/&#34;&gt;http://maemo.org/&lt;/a&gt;上查看软件目录以及简介，通过&lt;code&gt;apt-get install&lt;/code&gt;命令来安装，以下为一些apt-get使用简介&lt;/p&gt;
+&lt;p&gt;使用方法:
+apt-get [选项] 命令
+apt-get [选项] install|remove pkg1 [pkg2 &amp;hellip;]
+apt-get [选项] source pkg1 [pkg2 &amp;hellip;]&lt;/p&gt;
+&lt;p&gt;命令:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;update - 更新软件列表
+upgrade - 升级软件
+install - 安装软件(pkg 是软件名)
+remove - 删除软件
+autoremove - 自动删除一些无效的软件
+purge - 删除软件并清理配置
+source - 下载软件源码
+build-dep - 配置软件源码的build-dependencies
+dist-upgrade - 升级系统
+clean - 清除建立的软件包列表
+autoclean - 同上
+check - 校验软件包是否有异常
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;选项:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;-h  输出help信息
+-d  仅下载软件包
+-y  安装是对所有的提示选择Yes
+-u  显示已经升级的软件列表
+-b  下载源码后开始构建
+-V  显示详细的版本号
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;通过本地包安装软件，命令为&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;dpkg -i pkg.deb
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>N900软件管理</title>
+      <link>https://unixetc.com/post/nokia-n900-software-manager/</link>
+      <pubDate>Sat, 31 Mar 2012 13:31:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/nokia-n900-software-manager/</guid>
+      <description>&lt;p&gt;###通过自带的application manager（软件管理）安装
+打开application manager，首次会自动更新软件列表，然后可以在download目录中按分类安装软件。
+###通过apt-get在线安装
+使用apt-get前提为已经安装了rootsh（可通过第一种方法安装），打开 x terminal&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$sudo gainroot /*切换到root帐户*/
+#apt-get install pkg /*安装pkg*/ 
+#apt-get install pkg1,pkg2 /*安装多个软件*/ 
+#apt-get remove pkg /*卸载软件*/ 
+#apt-get remove –purge pkg /*卸载并清除配置文件*/ 
+#apt-get update /*更新软件源*/ 
+#apt-get upgrade /*更新软件*/ 
+#apt-get dist-upgrade /*更新系统*/ 
+#apt-get clean /*清除软件列表以节省空间*/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;###通过dpkg安装本地软件包(.deb)&lt;/p&gt;
+&lt;p&gt;可以通过数据线，先将下载的软件包拷贝到机子内，然后使用dpkg来安装&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#dpkg -i pkg.deb 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;可以在这里&lt;a href=&#34;http://repository.maemo.org/&#34;&gt;http://repository.maemo.org/&lt;/a&gt;下载官方的.deb包进行安装&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Nokia N900系统优化脚本</title>
+      <link>https://unixetc.com/post/system-optimization-script-for-nokia-n900/</link>
+      <pubDate>Wed, 28 Mar 2012 13:28:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/system-optimization-script-for-nokia-n900/</guid>
+      <description>&lt;p&gt;Nokia N900系统优化脚本，更加省电，操作更加流畅！&lt;/p&gt;
+&lt;p&gt;脚本下载地址&lt;a href=&#34;http://cdn.lyq.wiki/res/speedpatch-ALTERNATIVE.tar.gz.rar&#34;&gt;http://cdn.lyq.wiki/res/speedpatch-ALTERNATIVE.tar.gz.rar&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;使用方法： 通过USB连接手机，将脚本传到磁盘根目录(/home/user/MyDocs)，以下操作可以使用XT或者SSH连接电脑进行(Root权限下)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#cd /home/user/MyDocs
+#tar xzvf speedpatch-ALTERNATIVE.tar.gz
+#mkdir /wp-content/local/sbin
+#cp /root/.profile /root/.profile.bak
+#cp ./.profile_root /root/.profile
+#cp ./.profile /home/user/
+#cp ./speedpatch /etc/event.d/
+#cp ./cgroup_clean /wp-content/local/sbin
+#chmod +rwx /wp-content/local/sbin/cgroup_clean
+#rm ./.profile_root
+#rm ./.profile
+#rm ./speedpatch
+#rm ./cgroup_clean
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;应用transition.ini文件:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1.使用theme-customizer&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#cp /home/user/MyDocs/transitions.ini /opt/theme-customizer
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;2.使用系统默认主题&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#cp /home/user/MyDocs/transitions.ini /wp-content/share/hildon-desktop/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;3.删除优化脚本&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#cp /root/.profile.bak /root/.profile
+#rm /etc/event.d/speedpatch
+#rm /home/user/.profile
+#rm /wp-content/local/sbin/cgroup_clean&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>诺基亚n900快捷键</title>
+      <link>https://unixetc.com/post/nokia-n900-shortcuts/</link>
+      <pubDate>Tue, 20 Mar 2012 13:20:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/nokia-n900-shortcuts/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;Ctrl + Backspace：如果在一个程序里，用了后会回到多程序选择画面。&lt;/li&gt;
+&lt;li&gt;Ctrl + C：复制&lt;/li&gt;
+&lt;li&gt;Ctrl + V：粘贴&lt;/li&gt;
+&lt;li&gt;Ctrl + X：剪贴&lt;/li&gt;
+&lt;li&gt;Ctrl + A：全选&lt;/li&gt;
+&lt;li&gt;Ctrl + 左箭头：回到第一个字或一句话的最前边&lt;/li&gt;
+&lt;li&gt;Ctrl + 右箭头：回到最后一个字或一句话的最后边&lt;/li&gt;
+&lt;li&gt;Ctrl + N：网页浏览器里打开一个新窗口&lt;/li&gt;
+&lt;li&gt;Ctrl + R：网页浏览器里重读此页&lt;/li&gt;
+&lt;li&gt;Ctrl + B：网页浏览器里打开一个书签&lt;/li&gt;
+&lt;li&gt;Ctrl + D：网页浏览器里增加一个书签&lt;/li&gt;
+&lt;li&gt;Ctrl + 回车：在电子邮件里发送一个邮件&lt;/li&gt;
+&lt;li&gt;Ctrl + R：在电子邮件里回复一个邮件&lt;/li&gt;
+&lt;li&gt;Ctrl + Shift（白色上箭头：管大写的）+P：屏幕截图功能(目录&lt;code&gt;/home/user/MyDocs/.images/Screenshots/&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Ctrl + Shift + O：可以启动网页浏览器竖屏功能&lt;/li&gt;
+&lt;li&gt;Backspace：后退功能，回到前一个浏览页面&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

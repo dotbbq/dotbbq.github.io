@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-cn" data-theme="">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>SSH - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/tags/ssh/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103043" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103043" />
+
+
+
+
+
+<meta property="og:title" content="SSH" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/tags/ssh/" />
+<meta property="og:updated_time" content="2019-08-17T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SSH"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <h1 class="site-title">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <h1>Tag: SSH</h1>
+    <div class="post-info">
+        <a href="https://unixetc.com/tags">To all tags</a>
+    </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/use-google-authenticator-set-2step-verification-strengthening-ssh-login/">使用Google Authenticator两步验证加强SSH登录</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        Google Authenticator开源版主页 https://github.com/google/google-authenticator
+安装Google Authenticator Ubuntu已经包含libpam-google-authenticator软件(Ubuntu 11.10以上版本),可以直接使用apt-get安装
+apt-get install libpam-google-authenticator  其他系统可以通过源码编译安装
+git clone https://github.com/google/google-authenticator-libpam.git cd google-authenticator-libpam/ ./bootstrap.sh ./configure make make install  注意：在Debian7中执行./configure时可能存在以下错误提示
+configure: error: Unable to find the PAM library or the PAM header files  在此需要安装libpam0g-dev和libtool
+apt-get -y install libpam0g-dev libtool  设置Google Authenticator 在手机端搜索安装Google Authenticator
+google-authenticator Do you want authentication tokens to be time-based (y/n) y  然后出现二维码，使用手机端Google Authenticator扫码,接下来服务器端继续设置
+如果没有出现二维码，可以将提示的以**https://www.google.com/chart?**开头的连接复制到浏览器中，就可以看到二维码了
+Do you want me to update your &quot;/root/.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-01-28</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/google">#Google</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vps">#VPS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%B0%B7%E6%AD%8C">#谷歌</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ga">#ga</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/2step">#2step</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/libpam">#libpam</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/pam">#pam</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E4%B8%A4%E6%AD%A5%E9%AA%8C%E8%AF%81">#两步验证</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/otp">#otp</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/ssl-security-optimization/">SSL安全优化</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        先贴出本站的SSL安全评级,测试地址为https://www.ssllabs.com/ssltest/analyze.html?d=alair.cn
+以下是本站Nginx配置中关于SSL部分
+listen 443 ssl http2; ssl_certificate /etc/letsencrypt/live/alair.cn/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/alair.cn/privkey.pem; ssl_session_timeout 60m; ssl_protocols TLSv1 TLSv1.1 TLSv1.2; ssl_ciphers ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-RC4-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:RC4-SHA:!aNULL:!eNULL:!EXPORT:!DES:!3DES:!MD5:!DSS:!PKS; ssl_prefer_server_ciphers on; ssl_session_cache builtin:1000 shared:SSL:10m; ssl_dhparam /etc/ssl/certs/dhparam.pem; ssl_stapling on; ssl_stapling_verify on; add_header Strict-Transport-Security &quot;max-age=63072000; includeSubdomains; preload&quot;; add_header X-Frame-Options &quot;DENY&quot;;  说明：
+dhparam.pem可以使用openssl dhparam -out dhparam.pem 4096命令生成，这个命令会执行很长时间，也可以将字节数改为2048
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-12-21</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/https">#https</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssl">#ssl</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/http2">#http2</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dhparam">#dhparam</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/transfer-files-using-scp/">使用SCP传输文件</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        示例：用户名root 地址 2.33.153.67
+下载文件 scp root@2.33.153.67:/root/test.mp4 /home/pi/  将服务器上的/root/test.mp4下载到本地/home/pi文件夹
+上传文件 scp /home/pi/ok.txt root@2.33.153.67:/root  将本地/home/pi/ok.txt上传至服务器/root文件夹
+下载文件夹 scp -r root@2.33.153.67:/root/ebooks /home/pi  将服务器上的/root/ebooks文件夹下载至本地/home/pi下
+上传文件夹 scp -r /home/pi/music root@2.33.153.67:/media  将本地/home/pi/music文件夹上传至服务器/media下
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-12-08</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/scp">#scp</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/gandi-free-ssl-certificate-usage/">Gandi免费SSL证书使用方法</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        首先澄清此文中的免费不是真的免费，而是新注册或转移域名到Gandi，都可以获得标准版SSL证书一年的免费使用。
+符合以上条件的话，可以进行下面操作了！
+在Gandi上购买SSL证书，选择标准版，在结算的时候系统会自动判断是否免单，正常情况下会0元结单，完成后接着配置SSL证书。
+首先提交CSR，这里需要自己生产CSR。
+在此以3c.lc域名为例，在Ubuntu中操作。
+openssl req -nodes -newkey rsa:2048 -sha1 -keyout 3clc.key -out 3clc.csr  然后根据提示填写以下内容：
+ Country Name (2 letter code) [AU]: #国家代码，中国为CN
+State or Province Name (full name) [Some-State]: #省份
+Locality Name (eg, city) []: #城市
+Organization Name (eg, company) [Internet Widgits Pty Ltd]: #组织名
+Organizational Unit Name (eg, section) []: #部门名
+Common Name (e.g. server FQDN or YOUR name) []:3c.lc #注意，这里需要填写你的域名。
+Email Address []:2b@3c.lc #邮箱
+Please enter the following &lsquo;extra&rsquo; attributes
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-09-24</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%9F%9F%E5%90%8D">#域名</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/lnmp">#lnmp</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssl">#ssl</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gandi">#gandi</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-allow-root-login/">树莓派开启root登录</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        想要通过ssh登录树莓派进行管理，使用默认的pi用户有时真的不便，对于linux老手来说，可以直接开启root用户ssh登录，这就方便多了，方法如下：
+sudo passwd root sudo passwd --unlock root  设置SSH
+sudo vi /etc/ssh/sshd_config  将其中的PermitRootLogin without-password改为PermitRootLogin yes，然后重启ssh服务sudo service ssh restart
+Over!
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-09-18</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/root">#Root</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/udo">#udo</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/sudo">#sudo</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+    
+        
+    <div class="pagination">
+        <div class="left pagination-item ">
+            
+                <a href="/tags/ssh/">To new posts</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/tags/ssh/page/3/">To old posts</a>
+            
+        </div>
+    </div>
+
+
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
+    </div>
+</body>
+</html>

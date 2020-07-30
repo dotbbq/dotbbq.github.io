@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Berrybox on UNIXETC</title>
+    <link>https://unixetc.com/tags/berrybox/</link>
+    <description>UNIXETC (Berrybox)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 02 Jan 2017 01:02:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/berrybox/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>黑莓9630使用中国电信4G卡</title>
+      <link>https://unixetc.com/post/blackberry-9630-use-ctcc-4g-card/</link>
+      <pubDate>Mon, 02 Jan 2017 01:02:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/blackberry-9630-use-ctcc-4g-card/</guid>
+      <description>&lt;h3 id=&#34;准备工作&#34;&gt;准备工作&lt;/h3&gt;
+&lt;p&gt;Alt + Shift + H进入帮帮我界面&lt;/p&gt;
+&lt;p&gt;进入后，不要退出，注意以下三个信息&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;应用程序版本  7.1.0.649 （1886）&lt;/li&gt;
+&lt;li&gt;PIN     3045e17c&lt;/li&gt;
+&lt;li&gt;正常运行时间  173秒&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;注意!注意!注意&lt;/strong&gt;  一定不要退出以上界面，因为运行时间会变动，如果退出了，重新进入查看运行时间&lt;/p&gt;
+&lt;h3 id=&#34;计算解锁码&#34;&gt;计算解锁码&lt;/h3&gt;
+&lt;p&gt;使用软件工具或者网页版工具计算，网址在这里 &lt;a href=&#34;http://www.kealin.net/Escreen/Index.html&#34;&gt;http://www.kealin.net/Escreen/Index.html&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;按照提示，输入PIN、OS Version、Uptime&lt;/p&gt;
+&lt;p&gt;底下会出现响应时长的解锁码，有1day到30days&lt;/p&gt;
+&lt;p&gt;一般我们就用一下下，选择一天解锁码，如果你需要长时间使用，可以选择较长时间的解锁码&lt;/p&gt;
+&lt;p&gt;解锁码也可以使用软件来获取，可以使用BBctrl、BerryBox，请自行搜索。&lt;/p&gt;
+&lt;h3 id=&#34;进入工程模式engineering-screen-contents&#34;&gt;进入工程模式(Engineering Screen Contents)&lt;/h3&gt;
+&lt;p&gt;注意，前面的帮帮我没有退出，在该界面下输入你所获得的解锁码&lt;/p&gt;
+&lt;p&gt;如果退出了，重新进入查看运行时间，按照新的时间重新获取解锁码&lt;/p&gt;
+&lt;p&gt;输入正确后，即可进入工程模式(engineering screen contents)&lt;/p&gt;
+&lt;h3 id=&#34;设置&#34;&gt;设置&lt;/h3&gt;
+&lt;p&gt;在工程模式下按以下顺序来操作&lt;/p&gt;
+&lt;p&gt;Radio Engineering Screens(MULTI)  -&amp;gt; 3GPP Radio Engineering Screens -&amp;gt; GCF -&amp;gt; SIM Electrical Test Mode On&lt;/p&gt;
+&lt;p&gt;点击最后一个菜单后手机自动重启，然后启动完即可使用4G手机卡。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

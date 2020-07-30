@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BandwagonHost on UNIXETC</title>
+    <link>https://unixetc.com/tags/bandwagonhost/</link>
+    <description>UNIXETC (BandwagonHost)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 21 Jul 2015 17:31:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/bandwagonhost/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>将Nginx更换为H2O</title>
+      <link>https://unixetc.com/post/install-h2o-on-bandwagon-vps/</link>
+      <pubDate>Tue, 21 Jul 2015 17:31:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/install-h2o-on-bandwagon-vps/</guid>
+      <description>&lt;h3 id=&#34;安装必须的软件&#34;&gt;安装必须的软件&lt;/h3&gt;
+&lt;p&gt;预备工具软件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#apt-get install autoconf automake m4 build-essential
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;libssl-dev &lt;strong&gt;必选&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#apt-get install openssl libssl-dev
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以下为可选包，可自行搜索安装&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;libuv&lt;/li&gt;
+&lt;li&gt;libyaml&lt;/li&gt;
+&lt;li&gt;wslay&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;安装h2o&#34;&gt;安装H2O&lt;/h3&gt;
+&lt;p&gt;下载安装最新版h2o  &lt;a href=&#34;https://github.com/h2o/h2o/releases&#34;&gt;https://github.com/h2o/h2o/releases&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#wget https://github.com/h2o/h2o/archive/v1.4.1.tar.gz
+#tar zxf v1.4.1.tar.gz
+#cd h2o-1.4.1
+#cmake -DWITH_BUNDLED_SSL=on .
+#make
+#sudo make install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;编辑h2o站点配置文件&#34;&gt;编辑H2O站点配置文件&lt;/h3&gt;
+&lt;p&gt;以下是一个简单的http与https配置文件，可自行参考修改&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;hosts:
+&amp;quot;www.example.com&amp;quot;:
+    listen:
+    port: 80
+    listen:
+    port: 443
+    ssl:
+        certificate-file: /path/to/server-certificate.crt
+        key-file:         /path/to/private-key.crt
+    paths:
+    &amp;quot;/&amp;quot;:
+        file.dir: /path/to/doc-root
+
+access-log: /path/to/the/access-log
+error-log: /path/to/the/error-log
+pid-file: /path/to/the/pid-file
+http2-reprioritize-blocking-assets: ON   # performance tuning option
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;启动H2O&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#h2o h2o.conf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以daemon模式启动&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#h2o -m daemon -c h2o.conf&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

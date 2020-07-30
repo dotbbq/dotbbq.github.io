@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>域名 on UNIXETC</title>
+    <link>https://unixetc.com/tags/%E5%9F%9F%E5%90%8D/</link>
+    <description>UNIXETC (域名)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 01 Jul 2016 17:21:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/%E5%9F%9F%E5%90%8D/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HSTS域名更换实例</title>
+      <link>https://unixetc.com/post/hsts-domain-name-replacement-examples/</link>
+      <pubDate>Fri, 01 Jul 2016 17:21:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/hsts-domain-name-replacement-examples/</guid>
+      <description>&lt;p&gt;新入手了its0k.com，原来的alair.cn还继续使用&lt;/p&gt;
+&lt;p&gt;在这里需要将alair.cn重定向到its0k.com&lt;/p&gt;
+&lt;p&gt;第一次只是将&lt;code&gt;nginx&lt;/code&gt;配置文件中的&lt;code&gt;alair.cn&lt;/code&gt;全部替换为&lt;code&gt;its0k.com&lt;/code&gt;，通过its0k.com浏览新站完全没问题&lt;/p&gt;
+&lt;p&gt;但是试着从alair.cn跳转浏览新站，浏览器出现了证书安全告警，告警具体原因为证书未包含&lt;code&gt;alair.cn&lt;/code&gt;域名，我才想起来旧域名&lt;code&gt;alair.cn&lt;/code&gt;已经添加进了&lt;code&gt;HSTS&lt;/code&gt;列表，因此不能简单的只为新域名签名，而是需要证书签名时包含新旧两个域名。&lt;/p&gt;
+&lt;p&gt;重新签名了证书，包含以下四个域名&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;its0k.com www.its0k.com alair.cn www.alair.cn
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以下为更改完成后的&lt;code&gt;nginx&lt;/code&gt;配置文件，请注意名相关的部分&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;server {
+listen 443 ssl http2;
+
+ssl_certificate     /root/ssls/its0k.crt;
+ssl_certificate_key /root/ssls/its0k.key;
+
+ssl_session_timeout 60m;
+ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+ssl_ciphers ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-RC4-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:RC4-SHA:!aNULL:!eNULL:!EXPORT:!DES:!3DES:!MD5:!DSS:!PKS;
+ssl_prefer_server_ciphers on;
+ssl_session_cache builtin:1000 shared:SSL:10m;
+ssl_dhparam /etc/ssl/certs/dhparam.pem;
+
+add_header Strict-Transport-Security &amp;quot;max-age=63072000; includeSubdomains; preload&amp;quot;;
+add_header X-Frame-Options &amp;quot;DENY&amp;quot;;
+
+ssl_stapling on;
+ssl_stapling_verify on;
+
+resolver 8.8.8.8 8.8.4.4 valid=300s;
+resolver_timeout 5s;
+
+server_name its0k.com www.its0k.com alair.cn www.alair.cn;
+access_log off;
+index index.html index.htm;
+include /usr/local/nginx/conf/rewrite/ps.conf;
+root /data/wwwroot/its0k.com/compiled;
+error_page 403 404 500 503 505 = https://its0k.com/404;
+if ($host != its0k.com) {
+        rewrite ^/(.*)$ $scheme://its0k.com/$1 permanent;
+        }
+
+location ~ .*\.(gif|svg|jpg|jpeg|png|bmp|swf|flv|ico)$ {
+    expires 30d;
+    access_log off;
+    }
+location ~ .*\.(js|css)?$ {
+    expires 7d;
+    access_log off;
+    }
+}
+server {
+listen 80;
+server_name www.its0k.com its0k.com alair.cn www.alair.cn;
+add_header Strict-Transport-Security &amp;quot;max-age=63072000; includeSubdomains; preload&amp;quot;;
+rewrite ^/(.*) https://its0k.com/$1 permanent;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;至此域名替换完成！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Gandi免费SSL证书使用方法</title>
+      <link>https://unixetc.com/post/gandi-free-ssl-certificate-usage/</link>
+      <pubDate>Thu, 24 Sep 2015 19:23:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/gandi-free-ssl-certificate-usage/</guid>
+      <description>&lt;p&gt;首先澄清此文中的&lt;strong&gt;免费&lt;/strong&gt;不是真的免费，而是新注册或转移域名到Gandi，都可以获得标准版SSL证书一年的免费使用。&lt;/p&gt;
+&lt;p&gt;符合以上条件的话，可以进行下面操作了！&lt;/p&gt;
+&lt;p&gt;在Gandi上购买SSL证书，选择标准版，在结算的时候系统会自动判断是否免单，正常情况下会0元结单，完成后接着配置SSL证书。&lt;/p&gt;
+&lt;p&gt;首先提交CSR，这里需要自己生产CSR。&lt;/p&gt;
+&lt;p&gt;在此以&lt;strong&gt;3c.lc&lt;/strong&gt;域名为例，在Ubuntu中操作。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;openssl req -nodes -newkey rsa:2048 -sha1 -keyout 3clc.key -out 3clc.csr
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后根据提示填写以下内容：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Country Name (2 letter code) [AU]:                          #国家代码，中国为CN&lt;/p&gt;
+&lt;p&gt;State or Province Name (full name) [Some-State]:            #省份&lt;/p&gt;
+&lt;p&gt;Locality Name (eg, city) []:                                #城市&lt;/p&gt;
+&lt;p&gt;Organization Name (eg, company) [Internet Widgits Pty Ltd]: #组织名&lt;/p&gt;
+&lt;p&gt;Organizational Unit Name (eg, section) []:                  #部门名&lt;/p&gt;
+&lt;p&gt;Common Name (e.g. server FQDN or YOUR name) []:3c.lc        #注意，这里需要填写你的域名。&lt;/p&gt;
+&lt;p&gt;Email Address []:2b@3c.lc                                   #邮箱&lt;/p&gt;
+&lt;p&gt;Please enter the following &amp;lsquo;extra&amp;rsquo; attributes&lt;/p&gt;
+&lt;p&gt;to be sent with your certificate request&lt;/p&gt;
+&lt;p&gt;A challenge password []:                                    #注意，为了后面方便配置nginx，建议密码置空。&lt;/p&gt;
+&lt;p&gt;An optional company name []:                                #扩展组织名&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;完成后，就会生成&lt;strong&gt;3clc.key&lt;/strong&gt;和&lt;strong&gt;3clc.csr&lt;/strong&gt;两个文件。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cat 3clc.csr
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;将显示的文件内容粘贴到Gandi提交。&lt;/p&gt;
+&lt;p&gt;接下来验证域名所有者权限，有三种方法，建议使用email验证，比较方便。&lt;/p&gt;
+&lt;p&gt;下来是凭证验证，这个得等待系统完成,完成后即可获得SSL证书一枚。&lt;/p&gt;
+&lt;p&gt;至于如何在&lt;strong&gt;Nginx&lt;/strong&gt;中使用SSL，可参考&lt;a href=&#34;https://unixetc.com/post/Nginx-configuration-SSL-certificate/&#34;&gt;Nginx配置SSL证书&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>将域名从Godaddy转移到万网</title>
+      <link>https://unixetc.com/post/godaddy-domain-transferred-to-the-hichina/</link>
+      <pubDate>Tue, 07 Jul 2015 18:27:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/godaddy-domain-transferred-to-the-hichina/</guid>
+      <description>&lt;p&gt;准备将&lt;code&gt;ltecn.com&lt;/code&gt;从Godaddy转到万网&lt;/p&gt;
+&lt;p&gt;首先在Godaddy的域名管理中，将域名解锁,将Lock状态设置为Off&lt;/p&gt;
+&lt;p&gt;然后你会收到一封标题为&lt;strong&gt;Domain Status Notification&lt;/strong&gt;的邮件，提醒你域名状态已经修改为&lt;strong&gt;Unlocked&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;然后将&lt;strong&gt;authorization code&lt;/strong&gt;发送到你的邮箱&lt;/p&gt;
+&lt;p&gt;Godaddy会发送一封标题为&lt;strong&gt;LTECN.COM - Information You Requested&lt;/strong&gt;的邮件，里面有你的验证码，邮件内容如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Customer Account: 888888884 
+Domain Name: LTECN.COM 
+Authorization Code: f@jje0932!E 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;接下来在万网中使用以上验证码进行转入操作，订单支付后万网会发送一封标题为&lt;strong&gt;万网域名转入确认通知&lt;/strong&gt;的邮件，点击其中的链接确认转入&lt;/p&gt;
+&lt;p&gt;下来进入到Godaddy，DOMAINS-&amp;gt;TRANSFERS,在PENDING TRANSFERS OUT会显示正在转出的域名，域名状态列显示&lt;strong&gt;Transfer not started. Accept or decline&lt;/strong&gt;，点击&lt;strong&gt;Accept or decline&lt;/strong&gt;在接下来的提示中选择&lt;strong&gt;Accept&lt;/strong&gt;接受转出。&lt;/p&gt;
+&lt;p&gt;Godaddy会发送一封标题为&lt;strong&gt;Transfer of LTECN.COM&lt;/strong&gt;的邮件，提醒你转出操作。&lt;/p&gt;
+&lt;p&gt;稍等片刻Godaddy会发送一封标题为&lt;strong&gt;An important notice regarding your transfer of LTECN.COM&lt;/strong&gt;的邮件，提醒转出成功，并且告知转出的ISP服务商，如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Dear Jkrjj csao, 
+
+This is to confirm that the following domain names have been successfully transferred away from GoDaddy to HICHINA WEB SOLUTIONS LIMITED: 
+
+LTECN.COM 
+
+If you have any questions, visit Online Support or call us at (480) 505-8877. 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;剩下的就是等待万网通知转移成功。&lt;/p&gt;
+&lt;p&gt;以下是本次的转移邮件记录，时间还是蛮快的，不到30分钟&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/emaillist.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

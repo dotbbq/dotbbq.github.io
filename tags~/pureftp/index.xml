@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pureftp on UNIXETC</title>
+    <link>https://unixetc.com/tags/pureftp/</link>
+    <description>UNIXETC (pureftp)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 23 Mar 2012 12:32:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/pureftp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>LNMP使用实例</title>
+      <link>https://unixetc.com/post/lnmp-usages/</link>
+      <pubDate>Fri, 23 Mar 2012 12:32:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/lnmp-usages/</guid>
+      <description>&lt;h3 id=&#34;安装lnmp&#34;&gt;安装LNMP&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;更新系统&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#yum check-update
+#yum update
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;安装Screen&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#yum install screen
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;开始安装Lnmp&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#screen -S lnmp
+#wget -c http://soft.vpser.net/lnmp/lnmp0.8.tar.gz //最新版请查阅lnmp官网
+#tar zxvf lnmp0.8.tar.gz
+#./lnmp0.8/centos.sh | tee lnmp.log //输出log文件，以备出错时查阅
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;接下来按照提示设定域名和MysQL密码，程序会自动下载相关程序，而后编译安装&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;安装PureFTP&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#./lnmp0.8/pureftp.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;按提示输入MySQL和Ftp管理员密码，安装完成后可以通过&lt;code&gt;http://vpsip/ftp/&lt;/code&gt;来登录管理ftp帐号&lt;/p&gt;
+&lt;h3 id=&#34;使用lnmp&#34;&gt;使用Lnmp&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;添加虚拟主机&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#/root/vhost.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;按照提示填入域名、目录、rewrite规则文件，如下所示：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;root@buyvm256:~#/root/vhost.sh
+=========================================================================
+Add Virtual Host for LNMP V0.9  ,  Written by Licess 
+=========================================================================
+LNMP is a tool to auto-compile &amp;amp; install Nginx+MySQL+PHP on Linux 
+This script is a tool to add virtual host for nginx 
+For more information please visit http://www.lnmp.org/
+
+=========================================================================
+Please input domain:  //添加域名
+(Default domain: www.lnmp.org):xxx.com
+===========================
+domain=xxx.com
+===========================
+Do you want to add more domain name? (y/n)  //添加更多域名
+y
+Type domainname,example(bbs.vpser.net forums.vpser.net luntan.vpser.net):
+www.xxx.com
+===========================
+domain list=www.xxx.com
+===========================
+Please input the directory for the domain:xxx.com :  //网站目录
+(Default directory: /home/wwwroot/xxx.com):
+===========================
+Virtual Host Directory=/home/wwwroot/xxx.com
+===========================
+===========================
+Allow Rewrite rule? (y/n)  //重写规则
+===========================
+y
+Please input the rewrite of programme :
+wordpress,discuz,typecho,sablog,dabr rewrite was exist.
+(Default rewrite: other):wordpress  //选择重写规则
+===========================
+You choose rewrite=wordpress
+===========================
+===========================
+Allow access_log? (y/n)  //是否记录log
+===========================
+n
+
+Press any key to start create virtul host...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后，登录&lt;code&gt;http://vpsip/ftp/&lt;/code&gt;添加ftp帐号，&lt;code&gt;http://vpsip/phpmyadmin/&lt;/code&gt;编辑数据库&lt;/p&gt;
+&lt;p&gt;**注意：**开通ftp时，记着添加到www用户组&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;修改虚拟主机配置&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;创建好的虚拟主机，配置文件目录为/wp-content/local/nginx/conf/vhost/，文件名为domain.conf，如下所示：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;aquan@buyvm256:~$ cat /usr/local/nginx/conf/vhost/xxx.com.conf 
+
+server
+        {
+                listen       80;   //端口
+                server_name xxx.com www.xxx.com;   //域名
+                index index.html index.htm index.php default.html default.htm default.php;  //索引文件
+                root  /home/wwwroot/xxx.com;   //目录
+
+                include wordpress.conf;
+                location ~ .*\.(php|php5)?$
+                        {
+                                try_files $uri =404;
+                                fastcgi_pass  unix:/tmp/php-cgi.sock;
+                                fastcgi_index index.php;
+                                include fcgi.conf;
+                        }
+
+                location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$
+                        {
+                                expires      30d;
+                        }
+
+                location ~ .*\.(js|css)?$
+                        {
+                                expires      12h;
+                        }
+
+                access_log off;
+        }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;主机配置文件修改后，使用如下命令重新加载配置使之生效&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#/etc/init.d/nginx reload
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;删除虚拟主机&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;删除/wp-content/local/nginx/conf/vhost/下对应配置文件(.conf)，再删除/home/wwwroot/下的本地目录&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;一些其他问题&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;设置虚拟主机目录权限&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#chown -R www /home/wwwroot/vps.aotee.com
+#chmod -R 777 /home/wwwroot/vps.aotee.com&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

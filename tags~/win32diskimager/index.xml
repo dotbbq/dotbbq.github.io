@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>win32diskimager on UNIXETC</title>
+    <link>https://unixetc.com/tags/win32diskimager/</link>
+    <description>UNIXETC (win32diskimager)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 28 Feb 2014 12:28:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/win32diskimager/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>开始使用树莓派</title>
+      <link>https://unixetc.com/post/starting-use-raspberry-pi/</link>
+      <pubDate>Fri, 28 Feb 2014 12:28:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/starting-use-raspberry-pi/</guid>
+      <description>&lt;h3 id=&#34;安装系统&#34;&gt;安装系统&lt;/h3&gt;
+&lt;p&gt;从官网下载系统镜像，推荐Raspbian&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://downloads.raspberrypi.org/raspbian_latest&#34;&gt;http://downloads.raspberrypi.org/raspbian_latest&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;将下载后的zip文件解压，得到&lt;strong&gt;2014-01-07-wheezy-raspbian.img&lt;/strong&gt;文件。&lt;/p&gt;
+&lt;p&gt;准备一张SD卡，最好容量大于4GB，Class10&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;将镜像写入SD卡&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Linux下推荐使用&lt;code&gt;dd&lt;/code&gt;名来写入镜像&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;使用&lt;code&gt;fdisk -l&lt;/code&gt;检查分区信息，比如sd卡设备为**/dev/sdb**，使用以下命令写入：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#dd if=2014-01-07-wheezy-raspbian.img of=/dev/sdb bs=1M
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Windows下推荐使用&lt;strong&gt;Win32DiskImager&lt;/strong&gt;写入镜像&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Win32DiskImager下载地址：&lt;a href=&#34;http://sourceforge.net/projects/win32diskimager/&#34;&gt;http://sourceforge.net/projects/win32diskimager/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;下载后打开软件，选择好镜像文件与USB设备，然后点击&lt;strong&gt;Write&lt;/strong&gt;写入。&lt;/p&gt;
+&lt;h3 id=&#34;开机进入系统&#34;&gt;开机进入系统&lt;/h3&gt;
+&lt;p&gt;将已写入系统的SD卡插入Raspberry Pi，通过固网链接路由器，然后使用USB供电启动。&lt;/p&gt;
+&lt;p&gt;正常启动后，板载的&lt;strong&gt;ACT&lt;/strong&gt;，&lt;strong&gt;PWR&lt;/strong&gt;、&lt;strong&gt;FDX&lt;/strong&gt;、&lt;strong&gt;LNK&lt;/strong&gt;、&lt;strong&gt;100&lt;/strong&gt;五个指示灯均点亮。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;通过SSH连接Raspberry Pi&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;查看Raspberry Pi IP地址&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#nmap -sP 192.168.1/24
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;检查出MAC后标注(Raspberry Pi Foundation)的即为Raspberry Pi主机。&lt;/p&gt;
+&lt;p&gt;然后通过SSH来链接主机&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#ssh 192.168.1.127
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;用户名为&lt;strong&gt;pi&lt;/strong&gt;，默认密码为&lt;strong&gt;raspberry&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Widnows下推荐使用&lt;a href=&#34;http://www.chiark.greenend.org.uk/~sgtatham/putty/&#34; title=&#34;PuTTY: a free telnet/ssh client&#34;&gt;Putty&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;设置raspberry&#34;&gt;设置Raspberry&lt;/h3&gt;
+&lt;p&gt;运行设置工具&lt;code&gt;sudo raspi-config&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;选择&lt;code&gt;Expand Filesystem&lt;/code&gt;扩展文件系统&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Change User Passwd&lt;/code&gt; 修改默认用户&lt;code&gt;pi&lt;/code&gt;的密码，当然也可以在系统中使用&lt;code&gt;passwd&lt;/code&gt;命令来更改。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Advanced Options&lt;/code&gt;-&amp;gt;&lt;code&gt;Hostname&lt;/code&gt; 修改主机名&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Overclock&lt;/code&gt; 超频，建议900Mhz&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Linux Live USB制作工具</title>
+      <link>https://unixetc.com/post/linux-liveusb-tools/</link>
+      <pubDate>Mon, 13 Aug 2012 18:12:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/linux-liveusb-tools/</guid>
+      <description>&lt;p&gt;现在大多数的Linux发行版都支持Live方式，即可直接运行体验无需安装。&lt;/p&gt;
+&lt;p&gt;Linux Live又分为LiveCD和LiveUSB，前者是通过光盘(CD/DVD)方式直接运行，后者则是通过USB设备(U盘/移动硬盘)来运行。&lt;/p&gt;
+&lt;p&gt;以下介绍几款Linux Live USB制作工具，个人推荐Linux Live USB Creator!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注:需要主板BIOS开启USB Boot功能。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Universal USB Installer&lt;/strong&gt; &lt;a href=&#34;http://www.pendrivelinux.com&#34;&gt;http://www.pendrivelinux.com&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;1，选择Linux版本，勾选后面的Download the iso(Optional).则从互联网下载所选镜像。
+2，选择本地镜像文件(iso)。
+3，选择将要写入的USB设备，勾选Show all Drives可以看到所有本地磁盘，需要写入移动硬盘就需要勾选此项。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;UNetbootin&lt;/strong&gt; &lt;a href=&#34;http://unetbootin.sourceforge.net&#34;&gt;http://unetbootin.sourceforge.net&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;1，选择镜像源，从网络下载或者本地iso文件
+2，在类型中选择usb设备或者硬盘，然后在驱动器栏选择具体的盘符。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;LinuxLive USB Creator&lt;/strong&gt; &lt;a href=&#34;http://www.linuxliveusb.com/&#34;&gt;http://www.linuxliveusb.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;1，选择需要写入的USB设备
+2，选择安装源（ISO文件、光驱、网路下载）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Image Writer for Microsoft Windows (Win32DiskImager)&lt;/strong&gt; &lt;a href=&#34;https://launchpad.net/win32-image-writer&#34;&gt;https://launchpad.net/win32-image-writer&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这个操作相对很简单，并且只单一的适用于img镜像文件，如Meego就是采用这种发行方式&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;万能的dd&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;最喜欢这个方法了！ 使用lsblk查看u盘设备名，如/dev/sdb，例如镜像文件名为linux.iso，使用以下命令将镜像文件写入U盘&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#dd if=linux.iso of=/dev/sdb&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

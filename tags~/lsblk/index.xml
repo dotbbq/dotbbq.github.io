@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lsblk on UNIXETC</title>
+    <link>https://unixetc.com/tags/lsblk/</link>
+    <description>UNIXETC (lsblk)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 12 Dec 2013 12:13:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/lsblk/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>修复grub引导</title>
+      <link>https://unixetc.com/post/repair-grub-boot/</link>
+      <pubDate>Thu, 12 Dec 2013 12:13:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/repair-grub-boot/</guid>
+      <description>&lt;p&gt;笔记本原来安装的Linux/Windows XP双系统，今天重新安装了Windows7，但是开机的grub引导被搞掉了，找了下grub的man看了半天，摸索出来如何修复原来的grub引导。&lt;/p&gt;
+&lt;p&gt;首先，使用Linux live cd引导系统，然后按照以下操作：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;检查分区信息&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ubuntu@ubuntu:~$ sudo -s
+root@ubuntu:~# lsblk 
+NAME    MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sda       8:0    0 465.8G  0 disk 
+├─sda1    8:1    0    40G  0 part 
+├─sda2    8:2    0     1K  0 part 
+├─sda5    8:5    0     4G  0 part [SWAP]
+├─sda6    8:6    0    20G  0 part 
+├─sda7    8:7    0    20G  0 part 
+├─sda8    8:8    0   100G  0 part 
+├─sda9    8:9    0   200G  0 part 
+└─sda10   8:10   0  81.8G  0 part 
+sr0      11:0    1   1.6G  0 rom  /cdrom
+loop0     7:0    0   1.5G  1 loop /rofs
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以上的sda6是我的/home目录，根目录为sda7&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;挂载相应分区，重新安装grub&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;root@ubuntu:~# mount /dev/sda7 /mnt/
+root@ubuntu:~# mount /dev/sda6 /mnt/home/
+root@ubuntu:~# grub-install --root-directory=/mnt/ /dev/sda
+Installation finished. No error reported.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;至此所有操作完成，重启后即可看到原来的引导菜单。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

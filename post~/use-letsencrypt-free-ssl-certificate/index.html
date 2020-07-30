@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-cn" data-theme="">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>使用免费Let&#39;s Encrypt证书 - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103041" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103041" />
+
+
+
+
+
+<meta property="og:title" content="使用免费Let&#39;s Encrypt证书" />
+<meta property="og:description" content="在此介绍如何使用Let&rsquo;s Encrypt的免费SSL证书，需要在有管理权限的VPS上操作，然后参考以下方法自签域名证书。
+git clone https://github.com/letsencrypt/letsencrypt.git cd letsencrypt mkdir -p /home/webroot/.well-known/acme-challenge #/home/webroot为网站目录 ./letsencrypt-auto certonly --email me@alair.cn -d alair.cn,www.alair.cn --webroot -w /home/webroot --agree-tos #注意email、域名、和网站目录  签发成功后，会提示如/etc/letsencrypt/live/www.alair.cn/fullchain.pem;的证书路径信息。
+IMPORTANT NOTES: - Congratulations! Your certificate and chain have been saved at /etc/letsencrypt/live/www.alair.cn/fullchain.pem. Your cert will expire on 2016-03-14. To obtain a new version of the certificate in the future, simply run Let&#39;s Encrypt again. - If like Let&#39;s Encrypt, please consider supporting our work by: Donating to ISRG / Let&#39;s Encrypt: https://letsencrypt." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unixetc.com/post/use-letsencrypt-free-ssl-certificate/" />
+<meta property="article:published_time" content="2015-12-15T22:38:00+00:00" />
+<meta property="article:modified_time" content="2015-12-15T22:38:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="使用免费Let&#39;s Encrypt证书"/>
+<meta name="twitter:description" content="在此介绍如何使用Let&rsquo;s Encrypt的免费SSL证书，需要在有管理权限的VPS上操作，然后参考以下方法自签域名证书。
+git clone https://github.com/letsencrypt/letsencrypt.git cd letsencrypt mkdir -p /home/webroot/.well-known/acme-challenge #/home/webroot为网站目录 ./letsencrypt-auto certonly --email me@alair.cn -d alair.cn,www.alair.cn --webroot -w /home/webroot --agree-tos #注意email、域名、和网站目录  签发成功后，会提示如/etc/letsencrypt/live/www.alair.cn/fullchain.pem;的证书路径信息。
+IMPORTANT NOTES: - Congratulations! Your certificate and chain have been saved at /etc/letsencrypt/live/www.alair.cn/fullchain.pem. Your cert will expire on 2016-03-14. To obtain a new version of the certificate in the future, simply run Let&#39;s Encrypt again. - If like Let&#39;s Encrypt, please consider supporting our work by: Donating to ISRG / Let&#39;s Encrypt: https://letsencrypt."/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <h1 class="site-title">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    
+    
+    <article class="post">
+        <header class="post-header">
+            <h1 class="post-title">使用免费Let&#39;s Encrypt证书</h1>
+        </header>
+        <div class="content">
+            <p>在此介绍如何使用Let&rsquo;s Encrypt的免费SSL证书，需要在有管理权限的VPS上操作，然后参考以下方法自签域名证书。</p>
+<pre><code>git clone https://github.com/letsencrypt/letsencrypt.git
+cd letsencrypt
+mkdir -p /home/webroot/.well-known/acme-challenge  #/home/webroot为网站目录
+./letsencrypt-auto certonly --email me@alair.cn -d alair.cn,www.alair.cn --webroot -w /home/webroot --agree-tos #注意email、域名、和网站目录
+</code></pre>
+<p>签发成功后，会提示如<code>/etc/letsencrypt/live/www.alair.cn/fullchain.pem;</code>的证书路径信息。</p>
+<pre><code>IMPORTANT NOTES:
+- Congratulations! Your certificate and chain have been saved at
+/etc/letsencrypt/live/www.alair.cn/fullchain.pem. Your cert will
+expire on 2016-03-14. To obtain a new version of the certificate in
+the future, simply run Let's Encrypt again.
+- If like Let's Encrypt, please consider supporting our work by:
+
+Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
+Donating to EFF:                    https://eff.org/donate-le
+</code></pre>
+<p>接下来在<strong>Nginx</strong>中配置使用，如下代码</p>
+<pre><code>... ...
+listen 443 ssl http2; 
+server_name www.alair.cn;   
+index index.html index.htm default.html default.htm;
+root /home/webroot;           
+ssl_certificate /etc/letsencrypt/live/www.alair.cn/fullchain.pem;  
+ssl_certificate_key /etc/letsencrypt/live/www.alair.cn/privkey.pem; 
+ssl_ciphers &quot;EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH&quot;;
+ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+ssl_prefer_server_ciphers on;
+ssl_session_cache shared:SSL:10m;
+... ...
+</code></pre>
+<p><strong>注意:<strong>我在第一次签发时候提示无法连接DV服务器，经过排查是由于DNS原因，当时用的DNS服务器是</strong>Dnspod</strong>，更换为<strong>dns.he.net</strong>后正常了。</p>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-12-15</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/https">#https</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssl">#ssl</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/letsencrypt">#letsencrypt</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%85%8D%E8%B4%B9%E8%AF%81%E4%B9%A6">#免费证书</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
+    </div>
+</body>
+</html>

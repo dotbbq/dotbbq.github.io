@@ -100,7 +100,21 @@
 service v2ray restart
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;v2ray客户端配置&#34;&gt;v2ray客户端配置&lt;/h3&gt;
 &lt;p&gt;以&lt;strong&gt;v2rayN&lt;/strong&gt;为例&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://unixetc.com/usr/uploads/nginx-v2ray-websocket.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;地址:v.fuckgfw.cn&lt;/li&gt;
+&lt;li&gt;端口:443&lt;/li&gt;
+&lt;li&gt;用户ID:5c1eed18-fse4-41fs-9as9-e85s45bds9ef&lt;/li&gt;
+&lt;li&gt;额外ID:64&lt;/li&gt;
+&lt;li&gt;加密方式:auto&lt;/li&gt;
+&lt;li&gt;传输协议:ws&lt;/li&gt;
+&lt;li&gt;别名:v.fuckgfw.cn&lt;/li&gt;
+&lt;li&gt;伪装类型:none&lt;/li&gt;
+&lt;li&gt;伪装域名:v.fuckgfw.cn&lt;/li&gt;
+&lt;li&gt;路径:/fcgfw&lt;/li&gt;
+&lt;li&gt;底层传输安全:tls&lt;/li&gt;
+&lt;li&gt;跳过证书验证:false&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://unixetc.com/usr/uploads/nginx-v2ray-websocket.png&#34;&gt;https://unixetc.com/usr/uploads/nginx-v2ray-websocket.png&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

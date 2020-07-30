@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>yum on UNIXETC</title>
+    <link>https://unixetc.com/tags/yum/</link>
+    <description>UNIXETC (yum)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 09 Aug 2014 08:09:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/yum/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CentOS7安装指南</title>
+      <link>https://unixetc.com/post/centos7-installation-guide/</link>
+      <pubDate>Sat, 09 Aug 2014 08:09:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/centos7-installation-guide/</guid>
+      <description>&lt;p&gt;下载Centos7安装镜像: &lt;a href=&#34;http://mirrors.aliyun.com/centos/7.0.1406/isos/x86_64/CentOS-7.0-1406-x86_64-GnomeLive.iso&#34;&gt;http://mirrors.aliyun.com/centos/7.0.1406/isos/x86_64/CentOS-7.0-1406-x86_64-GnomeLive.iso&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;将下载后的镜像写入U盘:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#dd if=CentOS-7.0-1406-x86_64-GnomeLive.iso of=/dev/sdb bs=4M &amp;amp;&amp;amp; sync
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;关闭电脑，从U盘启动。&lt;/p&gt;
+&lt;p&gt;进入桌面后，点击&lt;strong&gt;Install to Hard Drive&lt;/strong&gt;开始安装。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/co7i15.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;选择语言&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这里选择&lt;strong&gt;简体中文(中国)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/co7i01.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;安装信息摘要&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这里需要设置四部分内容：&lt;strong&gt;日期和时间&lt;/strong&gt;、&lt;strong&gt;键盘&lt;/strong&gt;、&lt;strong&gt;安装位置&lt;/strong&gt;、&lt;strong&gt;网络和主机名&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/co7i02.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;设置&lt;strong&gt;安装目标和位置&lt;/strong&gt;,选择本地磁盘，然后勾选&lt;strong&gt;我要配置分区&lt;/strong&gt;以自定义分区信息。&lt;/p&gt;
+&lt;p&gt;点击&lt;strong&gt;完成&lt;/strong&gt;进入&lt;strong&gt;手动分区&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/co7i03.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;在左侧选择具体磁盘分区，右边编辑挂载信息，然后点击&lt;strong&gt;更新设置&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/co7i04.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;以下为编辑/home挂载点信息：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/co7i05.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;下图为编辑后的分区信息，点击左上角&lt;strong&gt;完成&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/co7i06.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;查看&lt;strong&gt;更改摘要&lt;/strong&gt;，确认没问题了就点击&lt;strong&gt;接受更改&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/co7i07.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;设置&lt;strong&gt;网络和主机名&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/co7i08.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;完成设置后，点击右下角&lt;strong&gt;开始安装&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/co7i09.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;用户设置&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/co7i10.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;设置&lt;strong&gt;ROOT密码&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/co7i11.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;创建用户&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/co7i12.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;所有配置完成后，等待安装结束。。。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/co7i13.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;提示安装完成，点击右下角&lt;strong&gt;Quit&lt;/strong&gt;退出。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/co7i14.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

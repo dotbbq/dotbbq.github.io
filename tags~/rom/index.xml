@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rom on UNIXETC</title>
+    <link>https://unixetc.com/tags/rom/</link>
+    <description>UNIXETC (rom)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 13 Oct 2018 10:23:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/rom/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>一加3T售后刷机包</title>
+      <link>https://unixetc.com/post/oneplus-3t-after-sale-rom/</link>
+      <pubDate>Sat, 13 Oct 2018 10:23:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/oneplus-3t-after-sale-rom/</guid>
+      <description>&lt;p&gt;首先下载以下两个文件包：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一加3T9008驱动  &lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-314319015&#34;&gt;Download&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;一加3T售后恢复包 &lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-314277876&#34;&gt;Download&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;然后，将手机完全关机，按住&lt;strong&gt;音量+&lt;/strong&gt;不放，将手机和电脑连接，此时手机还是黑屏状态，电脑会有设备连接提示音。&lt;/p&gt;
+&lt;p&gt;我的电脑-&amp;gt;右键管理-&amp;gt;设备管理器，打开查看，第一次使用会在&lt;strong&gt;其他设备&lt;/strong&gt;下出现&lt;strong&gt;QHSUSB_BULK&lt;/strong&gt;带黄色感叹号的未知设备，右键点击更新驱动，手动选择&lt;strong&gt;刷机驱动包&lt;/strong&gt;里面的驱动目录进行安装，如果不行的话可以使用&lt;strong&gt;360驱动大师&lt;/strong&gt;进行识别安装，安装完成后会出现类似以下的设备驱动:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/3798536887.png&#34; alt=&#34;hsusb99008_201539387431.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;其中&lt;strong&gt;Qualcomm HS-USB QDLoader 9008(COM4)&lt;strong&gt;的新设备，就是正常驱动后的手机，俗称&lt;/strong&gt;高通9008&lt;/strong&gt;模式。&lt;/p&gt;
+&lt;p&gt;将下载的&lt;strong&gt;一加3T售后恢复包&lt;/strong&gt;解压后，打开其中的&lt;strong&gt;MsmDownloadTool V3.0.exe&lt;/strong&gt;开始刷机&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/489731911.png&#34; alt=&#34;9008sjImag211539387935.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;正常识别COM设备后，点击&lt;strong&gt;Start&lt;/strong&gt;开始刷机，完成后自动重启。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

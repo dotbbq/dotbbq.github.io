@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-cn" data-theme="">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>STUFF - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/categories/stuff/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103042" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103042" />
+
+
+
+
+
+<meta property="og:title" content="STUFF" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/categories/stuff/" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="STUFF"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <h1 class="site-title">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <h1>Category: STUFF</h1>
+    <div class="post-info">
+        <a href="https://unixetc.com/categories">To all categories</a>
+    </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/deploy-the-static-site-to-the-coding-net/">将静态站点部署到Coding.net</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        本站是基于https://github.com/wendal/gor生成的静态站点。
+下面介绍如何将静态站点部署到coding.net上。
+注册coding并新建项目 首先注册coding.net，注册完后新建项目。
+项目名称为*.coding.me，以此格式新建的项目可以使用Coding Pages服务。
+Pages服务设置 建立完成后，在项目设置中找到Pages服务服务进行设置。
+ 部署来源  选择master分支
+ 自定义域名  添加自定义域名，建议同时添加domain.com和www.domain.com，并且设置一个为首选项，另一个跳转到首选项。然后将自己的域名CNAME指向pages.coding.me
+ 强制HTTPS访问  打开该选项，则为你的域名自动申请设置** Let&rsquo;s Encrypt**证书，并开启**https**访问。
+ Hosted by Coding Pages  新站点都会有coding pages跳转页，按照Hosted by Coding Pages说明，在首页添加规定连接后，可以提交申请不显示跳转页。
+使用Git部署站点 首先推荐配置SSH公钥以便于操作。
+$ ssh-keygen -t rsa -C &quot;name@domain.com&quot; //在此设置为coding.net帐号邮箱 Generating public/private rsa key pair. Enter file in which to save the key (/c/Users/dotbbq/.ssh/id_rsa): Created directory '/c/Users/dotbbq/.ssh'. Enter passphrase (empty for no passphrase): Enter same passphrase again: Your identification has been saved in /c/Users/dotbbq/.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-11-25</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/coding">#Coding</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/git">#Git</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gor">#gor</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/mikrotik-rb750gr3-quickset/">RB750gr3快速设置</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        开箱照 以下为开箱照
+RB750快速设置 首先下载Winbox，下载地址，将1口连接光猫，2口连接电脑。
+下载打开后，软件会自动搜索到路由器MAC，登录名为admin，密码为空，点击connect登录。
+登录后点击Quick Set进行快速设置，完成后应用即可。如下图：
+注意以上我把路由器地址设置为192.168.1.11是为了和光猫192.168.1.1区分开。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-11-22</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/router">#router</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ros">#ros</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/mikrotik">#mikrotik</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/rb750">#rb750</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/rb750gr3">#rb750gr3</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/merlin-install-shadowsocks/">梅林固件安装Shadowsocks</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        登录路由器后台，系统管理&gt;系统设置，将Enable SSH设置为LAN only。
+通过SSH登录路由器，参考以下执行，在此推荐Putty。
+#cd /tmp #wget https://github.com/hq450/fancyss_history_package/raw/master/fancyss_arm/shadowsocks_4.1.1.tar.gz #tar -zxvf shadowsocks_4.1.1.tar.gz #cd shadowsocks #chmod +x install.sh #./install.sh 2017年11月19日 14:40:36: 固件平台【koolshare merlinarmv7l】符合安装要求，开始安装插件！ 2017年11月19日 14:40:36: 清理旧文件 2017年11月19日 14:40:36: 开始复制文件！ 2017年11月19日 14:40:36: 复制相关二进制文件！ 2017年11月19日 14:40:42: 创建一些二进制文件的软链接！ 2017年11月19日 14:40:42: 复制ss的脚本文件！ 2017年11月19日 14:40:44: 复制网页文件！ 2017年11月19日 14:40:44: 移除安装包！ 2017年11月19日 14:40:44: 为新安装文件赋予执行权限... 2017年11月19日 14:40:44: 设置一些默认值 2017年11月19日 14:40:47: 一点点清理工作... 2017年11月19日 14:40:47: 插件安装成功，你为什么这么屌？！ 2017年11月19日 14:40:47: 更新完毕，请等待网页自动刷新！  完成后重启路由器，在软件中心中即可看到影梭已经安装成功！
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-11-19</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/shadowsocks">#Shadowsocks</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/merlin">#merlin</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/router">#router</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A2%85%E6%9E%97">#梅林</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gfw">#GFW</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/asus">#asus</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/install-office2016-components-on-demand/">按需安装Office2016组件</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        所需软件  Office 2016 下载地址 ed2k://|file|cn_office_professional_plus_2016_x86_x64_dvd_6969182.iso|2588266496|27EEA4FE4BB13CD0ECCDFC24167F9E01|/ office2016install.zip 下载地址 https://pan.baidu.com/s/1jIMOFfK DAEMON Tools Lite 下载地址 https://www.daemon-tools.cc/chn/downloads  步骤 1、下载Office2016和DAEMON Tools Lite，安装DAEMON Tools Lite，将office2016镜像(iso)文件挂载到虚拟光驱。
+2、下载office2016install.zip后解压，得到setup.exe和configuration.xml两个文件
+打开configuration.xml，文件内容如下
+&lt;Configuration&gt; &lt;Add SourcePath=&quot;G:\&quot; OfficeClientEdition=&quot;64&quot; &gt; &lt;Product ID=&quot;ProPlusRetail&quot;&gt; &lt;Language ID=&quot;zh-CN&quot; /&gt; &lt;ExcludeApp ID=&quot;Groove&quot; /&gt; &lt;ExcludeApp ID=&quot;InfoPath&quot; /&gt; &lt;ExcludeApp ID=&quot;Lync&quot; /&gt; &lt;ExcludeApp ID=&quot;OneNote&quot; /&gt; &lt;ExcludeApp ID=&quot;Outlook&quot; /&gt; &lt;ExcludeApp ID=&quot;Publisher&quot; /&gt; &lt;ExcludeApp ID=&quot;SharePointDesigner&quot; /&gt; &lt;/Product&gt; &lt;/Add&gt; &lt;/Configuration&gt;   SourcePath 是安装源目录，此处为虚拟光驱G盘 OfficeClientEdition 为构架版本，此处为64位，也可以设置为32位 Language 为安装语言，此处为中文简体 ExcludeApp 表示不需要安装的组件，此处去掉了Groove、InfoPath、Lync、OneNote、Outlook、Publisher、SharePointDesigner，剩下的为Word、Excel、powerpoint和access进行安装。  在当前目录下以管理员身份CMD，运行下面命令开始安装：
+setup.exe /configure configuration.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-10-20</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/microsoft">#Microsoft</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%BE%AE%E8%BD%AF">#微软</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/office">#Office</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/office2016">#Office2016</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%BB%84%E4%BB%B6">#组件</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/word">#Word</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/excel">#Excel</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/powerpoint">#PowerPoint</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/access">#Access</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/daemon">#DAEMON</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%99%9A%E6%8B%9F%E5%85%89%E9%A9%B1">#虚拟光驱</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/typecho-login-access-denied/">Typecho登录时提示AccessDenied</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        Typecho安装完成后，登录后提示Access Denied，解决方法如下：
+找到php.ini文件，我的在/usr/local/php/etc/php.ini
+将cgi.fix_pathinfo的值改为1即可
+重启php
+service php-fpm restart  完了！
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-10-03</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/typecho">#typecho</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/php">#php</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/pathinfo">#pathinfo</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/php.ini">#php.ini</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/access-denied">#Access Denied</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+    
+        
+    <div class="pagination">
+        <div class="left pagination-item ">
+            
+                <a href="/categories/stuff/page/9/">To new posts</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/categories/stuff/page/11/">To old posts</a>
+            
+        </div>
+    </div>
+
+
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
+    </div>
+</body>
+</html>

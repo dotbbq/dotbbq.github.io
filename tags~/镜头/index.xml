@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>镜头 on UNIXETC</title>
+    <link>https://unixetc.com/tags/%E9%95%9C%E5%A4%B4/</link>
+    <description>UNIXETC (镜头)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 04 May 2019 17:05:01 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/%E9%95%9C%E5%A4%B4/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mplayer和N900镜头</title>
+      <link>https://unixetc.com/post/mplayer-and-the-n900-cameras/</link>
+      <pubDate>Sat, 04 May 2019 17:05:01 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/mplayer-and-the-n900-cameras/</guid>
+      <description>&lt;p&gt;诺基亚N900有前后两个镜头，前置640x480(0.3M)后置848*480(0.4M)，这两个镜头都是&lt;strong&gt;V4L2&lt;/strong&gt;设备，分别对应**/dev/video0&lt;strong&gt;和&lt;/strong&gt;/dev/video1**，因此可以方便的通过&lt;strong&gt;mplayer&lt;/strong&gt;或&lt;strong&gt;gstreamer&lt;/strong&gt;；来访问它们。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Video4Linux或V4L是一个视频截取及设备输出API，以及Linux的驱动程序框架，支持很多USB摄像头、电视调谐卡以及其他设备。
+V4L2是V4L的第二个版本。Video4Linux2修复了一些设计上的程序错误，最先在2.5.X版的核心中出现。Video4Linux2的驱动程序包含了一个对Video4Linux1应用程序的兼容模式，虽然支持并不完整，并且建议在V4L2模式下使用Video4Linux1设备。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;mplayer访问镜头：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ mplayer tv:// -tv device=/dev/video0   # 后置镜头
+$ mplayer tv:// -tv device=/dev/video1   # 前置镜头
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果使用前置镜头，建议使用镜像模式&lt;code&gt;-vf mirror&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ mplayer tv:// -tv device=/dev/video1 -vf mirror&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>YandexDisk on UNIXETC</title>
+    <link>https://unixetc.com/tags/yandexdisk/</link>
+    <description>UNIXETC (YandexDisk)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 29 Feb 2020 00:00:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/yandexdisk/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>YandexDisk命令行客户端</title>
+      <link>https://unixetc.com/post/yandex-disk-console-client-for-linux/</link>
+      <pubDate>Sat, 29 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/yandex-disk-console-client-for-linux/</guid>
+      <description>&lt;p&gt;Linux的Yandex.Disk控制台客户端使您可以在Yandex.Disk上管理文件，而无需使用&lt;a href=&#34;https://yandex.com/support/disk/cli-clients.html#cli-gui&#34;&gt;窗口界面&lt;/a&gt;或支持&lt;a href=&#34;https://yandex.com/support/disk/webdav.html#concept3&#34;&gt;WebDAV的程序&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;与WebDAV连接相比，使用控制台客户端的优势：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Low system resource requirements.&lt;/li&gt;
+&lt;li&gt;Faster file reading and writing speeds.&lt;/li&gt;
+&lt;li&gt;Faster syncing with the Yandex.Disk server.&lt;/li&gt;
+&lt;li&gt;Manage files offline.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;控制台客户端可以安装在以下操作系统上：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ubuntu Linux 8.04 及以上版本&lt;/li&gt;
+&lt;li&gt;Debian 5 及以上版本&lt;/li&gt;
+&lt;li&gt;Fedora 9 及以上版本&lt;/li&gt;
+&lt;li&gt;Red Hat Enterprise Linux 6 及以上版本&lt;/li&gt;
+&lt;li&gt;CentOS 6 及以上版本&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;安装客户端&#34;&gt;安装客户端&lt;/h3&gt;
+&lt;p&gt;要自动安装客户端，请使用命令进行快速软件包安装。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;.deb软件包&lt;/em&gt; 安装示例&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;echo &amp;quot;deb http://repo.yandex.ru/yandex-disk/deb/ stable main&amp;quot; | sudo tee -a /etc/apt/sources.list.d/yandex-disk.list &amp;gt; /dev/null
+wget http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG -O- | sudo apt-key add - 
+sudo apt-get update
+sudo apt-get install -y yandex-disk
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;要手动安装客户端，请从下面的相应链接下载相应版本的软件包。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;包格式&lt;/th&gt;
+&lt;th&gt;32位&lt;/th&gt;
+&lt;th&gt;64位&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;.deb (Ubuntu, Debian)&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://repo.yandex.ru/yandex-disk/yandex-disk_latest_i386.deb&#34;&gt;yandex-disk_latest_i386&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://repo.yandex.ru/yandex-disk/yandex-disk_latest_amd64.deb&#34;&gt;yandex-disk_latest_amd64&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;.rpm (Fedora, Red Hat Enterprise Linux, CentOS)&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://repo.yandex.ru/yandex-disk/yandex-disk-latest.i386.rpm&#34;&gt;yandex-disk-latest.i386&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://repo.yandex.ru/yandex-disk/yandex-disk-latest.x86_64.rpm&#34;&gt;yandex-disk-latest.x86_64&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;使用dpkg软件包管理器的安装示例&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# dpkg -i yandex-disk_0.1.0.103_i386.deb
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;注意:该存储库自动安装在&lt;code&gt;/etc/apt/sources.list.d/yandex.list&lt;/code&gt;中&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;使用rpm软件包管理器进行安装的示例&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# rpm -ivh yandex-disk-0.1.0.103-1.fedora.i386.rpm
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;注意：该存储库将自动安装到&lt;code&gt;/etc/yum.repos.d/yandex.repo&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;您还可以将包含yandex-disk软件包的存储库添加到可用的软件包管理器存储库列表中，并使用apt-get或yum实用程序安装该软件包。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;使用apt-get安装&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# echo &amp;quot;deb http://repo.yandex.ru/yandex-disk/deb/ stable main&amp;quot; &amp;gt;&amp;gt; /etc/apt/sources.list.d/yandex-disk.list
+# apt-get update
+# apt-get install yandex-disk
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;使用yum安装&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# nano /etc/yum.repos.d/yandex.repo
+# rpm --import http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG
+# yum install yandex-disk
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;yandex.repo&lt;/code&gt;内容：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[yandex]
+name=Yandex
+failovermethod=priority
+baseurl=http://repo.yandex.ru/yandex-disk/rpm/stable/$basearch/
+enabled=1
+metadata_expire=1d
+gpgcheck=1
+gpgkey=http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;您可能需要将一个打开的GPG密钥导入系统以检查软件包的数字签名。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;为.deb包导入GPG密钥&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget -O YANDEX-DISK-KEY.GPG http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG
+sudo apt-key add YANDEX-DISK-KEY.GPG
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;*&lt;strong&gt;为.rpm包导入GPG密钥&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo rpm --import http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;设置向导&#34;&gt;设置向导&lt;/h3&gt;
+&lt;p&gt;您可以使用&lt;code&gt;setup&lt;/code&gt;命令运行客户端安装程序。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ yandex-disk setup
+&lt;/code&gt;&lt;/pre&gt;&lt;ol&gt;
+&lt;li&gt;输入存储Yandex.Disk本地副本的目录的名称。如果将名称保留为空白，则会在主目录中创建一个Yandex.Disk文件夹。&lt;/li&gt;
+&lt;li&gt;指示是否使用代理服务器（是/否）。&lt;/li&gt;
+&lt;li&gt;指示是否在启动时启动客户端（是/否）。&lt;/li&gt;
+&lt;li&gt;输入您的Yandex用户名。&lt;/li&gt;
+&lt;li&gt;输入您的Yandex密码。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;注意：如果您使用或以前使用过两次身份验证，则需要由“Yandex.Key”移动应用程序生成的一次性密码登录到Yandex.Disk程序。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;设置向导完成后，将在&lt;code&gt;~/.config/yandex-disk&lt;/code&gt;中创建&lt;code&gt;config.cfg&lt;/code&gt;配置文件。&lt;/p&gt;
+&lt;h3 id=&#34;使用客户端&#34;&gt;使用客户端&lt;/h3&gt;
+&lt;h4 id=&#34;命令&#34;&gt;命令&lt;/h4&gt;
+&lt;p&gt;使用以下命令与客户端一起使用：&lt;/p&gt;
+&lt;p&gt;. &lt;code&gt;Token&lt;/code&gt; 为您的Yandex用户名（USERNAME）获取授权密钥（OAuth令牌）。输入命令时，您可以输入您的Yandex密码（PASSWORD）以及令牌文件及其目录（FILE）。如果未指定其他选项，将在&lt;code&gt;~/.config/yandex-disk&lt;/code&gt;中创建&lt;code&gt;passwd&lt;/code&gt;文件来存储令牌。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$ yandex-disk token [-p, --password=PASSWORD] [OPTION] USERNAME [FILE]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;. &lt;code&gt;Start&lt;/code&gt; 启动守护程序并同步除exclude-dirs排除列表中的所有文件夹之外的所有文件夹。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$ yandex-disk start [OPTION]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;. &lt;code&gt;Status&lt;/code&gt; 显示守护程序的状态（同步状态，同步错误，已同步文件列表以及Yandex.Disk上的总空间和可用空间）。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$ yandex-disk status [OPTION]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;. &lt;code&gt;Stop&lt;/code&gt; 停止守护程序。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$ yandex-disk stop [OPTION]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;. &lt;code&gt;Sync&lt;/code&gt; 同步除exclude-dirs排除列表中的文件夹以外的所有文件夹。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$ yandex-disk sync [OPTION]&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;. &lt;code&gt;Publish&lt;/code&gt; 获取指向指定文件或文件夹（FILE）的公共链接。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$ yandex-disk publish [OPTION] FILE&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;. &lt;code&gt;Unpublish&lt;/code&gt; 取消发布指定的文件或文件夹（FILE）。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;$ yandex-disk unpublish FILE&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;其他选项option&#34;&gt;其他选项[OPTION]&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ndash;config=FILE, -c FILE&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;显示配置文件。默认为&lt;code&gt;~/.config/yandex-disk&lt;/code&gt;下的&lt;code&gt;config.cfg&lt;/code&gt;文件&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ndash;dir=DIR, -d DIR&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;输入要存储Yandex.Disk本地副本的目录。如果在初始设置过程中未输入名称，则默认情况下将使用&lt;code&gt;~/Yandex.Disk&lt;/code&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ndash;auth=FILE, -a FILE&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;输入包含授权数据的文件。默认文件是&lt;code&gt;passwd&lt;/code&gt;，它是使用&lt;code&gt;token&lt;/code&gt;命令或设置向导创建的，并存储在&lt;code&gt;~/.config/yandex-disk&lt;/code&gt;中。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ndash;exclude-dirs=DIR1,DIR2,&amp;hellip;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;不要同步指定的目录。 为了使这些设置始终适用，必须将这些目录添加到&lt;code&gt;config.cfg&lt;/code&gt;文件中的&lt;code&gt;exclude-dirs&lt;/code&gt;排除列表中。 为了使设置正常工作，排除目录的名称应用逗号而不是空格分隔。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ndash;read-only&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;禁止更改Yandex.Disk服务器上的文件，并且仅同步本地副本。如果发生同步冲突，则将重命名本地文件。如果还启用了&lt;code&gt;--overwrite&lt;/code&gt;设置，则将覆盖本地文件。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ndash;overwrite&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;与服务器同步时，要覆盖对Yandex.Disk本地副本所做的更改。与&lt;code&gt;--read-only&lt;/code&gt;选项一起使用。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ndash;no-daemon, -D&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;启动守护程序而不将管理返回到控制台。要返回管理，必须通过在另一个控制台中启动命令&lt;code&gt;yandex-disk stop&lt;/code&gt;或关闭当前控制台来停止守护程序。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ndash;help, -h&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;显示帮助。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ndash;proxy=PARAM&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;配置代理服务器。有效参数：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Auto — 使用系统代理设置（默认使用）。&lt;/li&gt;
+&lt;li&gt;no — 不要使用代理服务器。&lt;/li&gt;
+&lt;li&gt;protocol,address,port,login,password — 手动设置服务器。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;使用命令的例子&#34;&gt;使用命令的例子&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;$ yandex-disk start -c ~/ydconfig/newconfig.cfg # launch the daemon and sync with specified configuration file 
+$ yandex-disk start --exclude-dirs=Foto # do not sync folder &#39;Photo&#39;
+$ yandex-disk sync --read-only # sync folders in &#39;read-only&#39; mode
+$ yandex-disk publish Photo # get a public link to the folder &#39;Photo&#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;configcfg文件的示例&#34;&gt;&amp;lsquo;config.cfg&amp;rsquo;文件的示例&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;# Path to file with authorization dataauth=&amp;quot;/home/user/ydconfig/my_passwd&amp;quot; 
+# Folder for storing the local copy of Yandex.Disk.dir=&amp;quot;/home/user/myDisk&amp;quot;
+# Do not sync specified folders.
+# exclude-dirs=&amp;quot;exclude/dir1,exclude/dir2,path/to/another/exclude/dir&amp;quot;
+# Specify proxy server. Examples:
+#proxy=https,127.0.0.1,80
+#proxy=https,127.0.0.1,80,login,password
+#proxy=https,127.0.0.1,443
+#proxy=socks4,my.proxy.local,1080,login,password
+#proxy=socks5,my.another.proxy.local,1081
+#proxy=auto
+#proxy=no
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;faq&#34;&gt;FAQ&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;控制台客户端中有哪些Yandex.Disk功能？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;使用控制台客户端时，Yandex.Disk的所有主要功能都可用：同步和共享文件和文件夹，以及自定义文件夹同步。&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;自定义文件夹同步在控制台客户端中是否起作用？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Yes. You can choose not to sync certain folders by entering the command (setting &amp;ndash;exclude-dirs=DIR1,DIR2,&amp;hellip;) or by adding them to the exclude-dirs exclusion list in config.cfg.
+是。您可以通过输入命令（设置&amp;ndash;exclude-dirs = DIR1，DIR2，&amp;hellip;）或将其添加到config.cfg中的exclude-dirs排除列表中，选择不同步某些文件夹。&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;控制台客户端是否支持符号链接？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;是的，它确实。&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;控制台客户端可以用于数据复制吗？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;是。可以使用&amp;ndash;read-only参数复制数据。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;via &lt;a href=&#34;https://yandex.com/support/disk/cli-clients.html&#34;&gt;https://yandex.com/support/disk/cli-clients.html&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

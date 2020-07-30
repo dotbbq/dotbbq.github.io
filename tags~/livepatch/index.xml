@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Livepatch on UNIXETC</title>
+    <link>https://unixetc.com/tags/livepatch/</link>
+    <description>UNIXETC (Livepatch)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 25 May 2018 05:25:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/livepatch/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ubuntu配置Livepatch服务</title>
+      <link>https://unixetc.com/post/canonical-livepatch-service/</link>
+      <pubDate>Fri, 25 May 2018 05:25:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/canonical-livepatch-service/</guid>
+      <description>&lt;p&gt;CLS(Canonical Livepatch Service)是Ubuntu母公司Canonical提供的一项服务，该服务可以为处于LTS的Ubuntu版本提供内核关键补丁修复，而不需要重新启动系统，特别适用于用作Server的系统。&lt;/p&gt;
+&lt;p&gt;使用CLS的前提是必须注册一个Ubuntu帐号，地址为&lt;a href=&#34;https://login.ubuntu.com/+login&#34;&gt;https://login.ubuntu.com/+login&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;注册完成后，即可访问CLS主页&lt;a href=&#34;https://www.ubuntu.com/server/livepatch&#34;&gt;https://www.ubuntu.com/server/livepatch&lt;/a&gt;进行登录配置。&lt;/p&gt;
+&lt;p&gt;登陆后选择用户类型，一般个人用户选择&lt;strong&gt;Ubuntu User&lt;/strong&gt;，然后点击&lt;strong&gt;Get your Livepatch token&lt;/strong&gt;获取密匙&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/get_cls_token.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;按照下一步提示进行操作，启用CLS服务。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/cls_token_setup.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;运行完成后即成功启用CLS服务。&lt;/p&gt;
+&lt;p&gt;检查CLS服务配置状态可以使用以下命令:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;alair@e6440:~$ sudo canonical-livepatch status --verbose
+client-version: 8.0.2
+machine-id: 08e0*****************750db
+machine-token: 4753a054c*****************a2eb84c7
+architecture: x86_64
+cpu-model: Intel(R) Core(TM) i5-4310M CPU @ 2.70GHz
+last-check: 2018-05-25T19:55:15.537634075+08:00
+boot-time: 2018-05-25T19:47:51+08:00
+uptime: 14m43s
+status:
+- kernel: 4.15.0-22.24-generic
+  running: true
+  livepatch:
+    checkState: checked
+    patchState: nothing-to-apply
+    version: &amp;quot;&amp;quot;
+    fixes: &amp;quot;&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

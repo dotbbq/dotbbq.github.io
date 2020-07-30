@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JavaScript on UNIXETC</title>
+    <link>https://unixetc.com/tags/javascript/</link>
+    <description>UNIXETC (JavaScript)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 08 Sep 2015 19:28:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>使用ScrollUp添加返回顶部功能</title>
+      <link>https://unixetc.com/post/use-scrollup-to-add-scroll-to-top-feature/</link>
+      <pubDate>Tue, 08 Sep 2015 19:28:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/use-scrollup-to-add-scroll-to-top-feature/</guid>
+      <description>&lt;p&gt;下载ScrollUp &lt;a href=&#34;https://github.com/markgoodyear/scrollup&#34;&gt;https://github.com/markgoodyear/scrollup&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;在网页中引用&lt;code&gt;jquery.scrollUp.js&lt;/code&gt;、&lt;code&gt;jquery.easing.js&lt;/code&gt;、&lt;code&gt;jquery.min.js&lt;/code&gt;三个JavaScript脚本，注意顺序&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;script src=&amp;quot;jquery.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script src=&amp;quot;jquery.easing.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script src=&amp;quot;jquery.scrollUp.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后加入控制代码&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;script&amp;gt;
+$(function () {
+    $.scrollUp();
+});
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以上是最简单的使用方法，还有一种带参数的方法&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$(function () {
+    $.scrollUp({
+        scrollName: &#39;scrollUp&#39;,      // Element ID
+        scrollDistance: 300,         // Distance from top/bottom before showing element (px)
+        scrollFrom: &#39;top&#39;,           // &#39;top&#39; or &#39;bottom&#39;
+        scrollSpeed: 300,            // Speed back to top (ms)
+        easingType: &#39;linear&#39;,        // Scroll to top easing (see http://easings.net/)
+        animation: &#39;fade&#39;,           // Fade, slide, none
+        animationSpeed: 200,         // Animation speed (ms)
+        scrollTrigger: false,        // Set a custom triggering element. Can be an HTML string or jQuery object
+        scrollTarget: false,         // Set a custom target element for scrolling to. Can be element or number
+        scrollText: &#39;Scroll to top&#39;, // Text for element, can contain HTML
+        scroll
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;title: false,          // Set a custom &lt;!-- raw HTML omitted --&gt; title if required.
+scrollImg: false,            // Set true to use image
+activeOverlay: false,        // Set CSS color to display scrollUp active point, e.g &amp;lsquo;#00FFFF&amp;rsquo;
+zIndex: 2147483647           // Z-Index for the overlay
+});
+});&lt;/p&gt;
+&lt;p&gt;其中&lt;code&gt;easingType&lt;/code&gt;为&lt;strong&gt;运动类型&lt;/strong&gt;，可参考&lt;a href=&#34;http://easings.net/&#34;&gt;http://easings.net/&lt;/a&gt;说明选用。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>JavaScript数组使用实例</title>
+      <link>https://unixetc.com/post/examples-javascript-array/</link>
+      <pubDate>Tue, 24 Sep 2013 12:59:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/examples-javascript-array/</guid>
+      <description>&lt;p&gt;GF办公用需要一个小系统，原要求是VBA实现，不过我没弄过那玩意儿。C语言倒是熟悉，但CLI的东西她使用不方便。&lt;/p&gt;
+&lt;p&gt;于是做一个web系统，php比较熟悉，不过她的工作不能使用外网，额滴神！最后还是选择了用javascript实现，现学现卖吧。&lt;/p&gt;
+&lt;p&gt;由于不能使用数据库，所以需要构建一个三维数组来存储数据，以下是javascript中数组使用的一些实例。&lt;/p&gt;
+&lt;p&gt;定义数组并赋值&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var jz = newArry();
+jz[0] = 10;
+jz[1] = &amp;quot;hello&amp;quot;;
+jz[2] = 23.4;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以上是一个简单的一维数组，其中三个值分别为:&lt;code&gt;10&lt;/code&gt;整数，&lt;code&gt;hello&lt;/code&gt;字符串,&lt;code&gt;23.4&lt;/code&gt;浮点数，可以通过以下方法使用&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;alert(&amp;quot;jz[0] is &amp;quot;+jz[0]+&amp;quot;\n jz[1] is &amp;quot;+jz[1]+&amp;quot;\n jz[2] is &amp;quot;+jz[2]);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;二维数组的定义方法:为一维数组的单个值赋予数组值，那么就可以构成二维数组&lt;/p&gt;
+&lt;p&gt;实例&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var jz = newArry();
+jz[0] = newArry(1,2);
+jz[1] = newArry(3,4);
+jz[2] = newArry(5,6);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;可以通过&lt;code&gt;jz[0][0]&lt;/code&gt;、&lt;code&gt;jz[0][1]&lt;/code&gt;、&lt;code&gt;jz[0][2]&lt;/code&gt;来访问。&lt;/p&gt;
+&lt;p&gt;以下是一个简单的三维数组实例&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;var jz newArry();
+jz[0] = newArry([100,200],[300,400],[500,600])
+jz[1] = newArry([&#39;str1&#39;,&#39;str2&#39;],[&#39;str3&#39;,&#39;str4&#39;],[&#39;str5&#39;,&#39;str6&#39;]);
+jz[2] = newArry([2.24,3.2],[12.9,89.01],[38.04,7.6]);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;方位方法如&lt;code&gt;jz[0][1][0]&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Xively on UNIXETC</title>
+    <link>https://unixetc.com/tags/xively/</link>
+    <description>UNIXETC (Xively)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 14 Jul 2015 14:14:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/xively/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Xively与树莓派监控温度与湿度</title>
+      <link>https://unixetc.com/post/use-xively-monitor-raspberry-pi/</link>
+      <pubDate>Tue, 14 Jul 2015 14:14:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/use-xively-monitor-raspberry-pi/</guid>
+      <description>&lt;p&gt;进入&lt;a href=&#34;https://www.xively.com/&#34;&gt;https://www.xively.com/&lt;/a&gt;注册登录&lt;/p&gt;
+&lt;h3 id=&#34;添加设备add-device&#34;&gt;添加设备(Add Device)&lt;/h3&gt;
+&lt;p&gt;在&lt;strong&gt;Development Devices&lt;/strong&gt;页面点击&lt;strong&gt;Add Device&lt;/strong&gt;添加设备&lt;/p&gt;
+&lt;p&gt;填写&lt;strong&gt;Device Name&lt;/strong&gt;和&lt;strong&gt;Device Description&lt;/strong&gt;，将&lt;strong&gt;Privacy&lt;/strong&gt;设定为&lt;strong&gt;Public Device&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;设置api-key&#34;&gt;设置API Key&lt;/h4&gt;
+&lt;p&gt;进入Device详情页，在&lt;strong&gt;API Keys&lt;/strong&gt;中点击&lt;strong&gt;Add Key&lt;/strong&gt;添加一个Key,将&lt;strong&gt;Permissions&lt;/strong&gt;中的&lt;strong&gt;Read,Create,Update,Delete&lt;/strong&gt;全部勾选，&lt;strong&gt;Label&lt;/strong&gt;随便填。&lt;/p&gt;
+&lt;h3 id=&#34;向xively提交数据&#34;&gt;向Xively提交数据&lt;/h3&gt;
+&lt;p&gt;在这里通过&lt;strong&gt;CURL&lt;/strong&gt;向xively提交&lt;strong&gt;JSON&lt;/strong&gt;格式的数据&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;JSON数据格式&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+  &amp;quot;datastreams&amp;quot;: [
+    {
+       &amp;quot;id&amp;quot;: &amp;quot;load&amp;quot;,
+       &amp;quot;current_value&amp;quot;: &amp;quot;9.00&amp;quot;
+    },
+    {
+      &amp;quot;id&amp;quot;: &amp;quot;temp&amp;quot;,
+      &amp;quot;current_value&amp;quot;: &amp;quot;89.15&amp;quot;
+    }
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中每个id为数据定义的idcurrent_value为提交的值&lt;/p&gt;
+&lt;p&gt;脚本文件&lt;strong&gt;send_xively.sh&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+LOCATION=&#39;/home/pi/xively_data&#39;   #Path of Xively JSON DATA file
+API_KEY=&#39;orxUhgjqSYPDbv5243534tG65464345eArxSVY9pE8ITnE&#39; #API Key
+FEED_ID=&#39;1354438558&#39; #FEED_ID
+####################################################
+
+COSM_URL=https://api.xively.com/v2/feeds/${FEED_ID}?timezone=+8
+cpu_load=`cat /proc/loadavg | awk &#39;{print $2}&#39;`
+sen_t=`sudo /home/pi/st`
+sen_h=`sudo /home/pi/sh`
+
+for i in 1 2 3 4 5; do
+        cpu_t=`cat /sys/class/thermal/thermal_zone0/temp | awk &#39;{print $1/1000}&#39;`
+        if [[ &amp;quot;${cpu_t}&amp;quot; =~ ^- ]]
+        then
+                cpu_t=&#39;0.0&#39;
+        else
+                echo ${cpu_t}
+                break
+        fi
+done
+
+STR=`awk &#39;BEGIN{printf &amp;quot;{\&amp;quot;datastreams\&amp;quot;:[ {\&amp;quot;id\&amp;quot;:\&amp;quot;cpu_load\&amp;quot;,\&amp;quot;current_value\&amp;quot;:\&amp;quot;%.2f\&amp;quot;}, {\&amp;quot;id\&amp;quot;:\&amp;quot;cpu_temp\&amp;quot;,\&amp;quot;current_value\&amp;quot;:\&amp;quot;%.2f\&amp;quot;},{\&amp;quot;id\&amp;quot;:\&amp;quot;sensor_t\&amp;quot;,\&amp;quot;current_value\&amp;quot;:\&amp;quot;%.2f\&amp;quot;}, {\&amp;quot;id\&amp;quot;:\&amp;quot;sensor_h\&amp;quot;,\&amp;quot;current_value\&amp;quot;:\&amp;quot;%.2f\&amp;quot;}] } &amp;quot;,&#39;$cpu_load&#39;,&#39;$cpu_t&#39;,&#39;$sen_t&#39;,&#39;$sen_h&#39;}&#39;`
+
+echo ${cpu_t}
+echo ${cpu_load}
+echo ${sen_t}
+echo ${sen_h}
+echo ${STR}
+echo ${STR} &amp;gt; ${LOCATION}/cosm.json
+curl -s -v --request PUT --header &amp;quot;X-ApiKey: ${API_KEY}&amp;quot; --data-binary @${LOCATION}/cosm.json ${COSM_URL}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中&lt;strong&gt;LOCATION&lt;/strong&gt;为JSON文件存放目录，没有的话请新建。API_KEY和FEED_ID按照自己的配置填写。&lt;/p&gt;
+&lt;p&gt;其中**/home/pi/**下的**st,sh**为通过DHT11采集温度与湿度程序，参考&lt;a href=&#34;https://unixetc.com/post/Raspberry-Pi-by-DHT11-collecting-temperature-and-humidity.html&#34;&gt;树莓派通过DHT11采集温度与湿度&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;接下来添加cronta任务，每隔1分钟运行一次该脚本&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# m h  dom mon dow   command
+*/1 * * * * /home/pi/send_xively.sh&amp;gt;/dev/null 2&amp;gt;&amp;amp;1 &amp;amp;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后可以通过&lt;a href=&#34;https://personal.xively.com/feeds/1255758558&#34;&gt;https://personal.xively.com/feeds/1255758558&lt;/a&gt;来查看具体的数据以及图表&lt;/p&gt;
+&lt;p&gt;监控页面&lt;a href=&#34;http://zjq.in/raspi_sensor&#34;&gt;http://zjq.in/raspi_sensor&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;参考:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.dqy.me/2013/use-cosm.html&#34;&gt;http://www.dqy.me/2013/use-cosm.html&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://personal.xively.com/dev/tutorials/pi/&#34;&gt;https://personal.xively.com/dev/tutorials/pi/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-cn" data-theme="">
+<head>
+	<meta name="generator" content="Hugo 0.73.0" />
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>UNIXETC - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103041" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103041" />
+
+
+
+
+
+<meta property="og:title" content="UNIXETC" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="UNIXETC"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <h1 class="site-title">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <div class="homepage-content">
+        
+    </div>
+
+    
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-use-dietpi/">树莓派使用DietPi</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        下载安装DietPi DietPi项目主页 http://dietpi.com/
+DietPi下载地址 http://fuzon.co.uk/downloads/DietPi.7z
+这个压缩包91MB，解压后的img文件522MB,比官方的小多了。
+然后将镜像写入到SD卡中，linux下使用dd
+dd if=DietPi_v74.img of=/dev/sdc bs=2M  Windows下使用Win32 Disk Imager，戳这里
+写入完成后将SD卡插入树莓派，加电启动。
+预设置Wifi链接 首次使用时，可以通过编辑dietpi.txt来进行wifi预设置。
+将TF卡插入电脑读卡器，打开对应的磁盘，找到dietpi.txt文件，打开。
+找到Wifi_Enabled=0，将其设置为1
+然后找到Wifi_SSID和Wifi_KEY分别设置wifi节点名和密码，保存即可。
+配置DietPi DietPi默认用户名密码为root dietpi，第一次启动DietPi提示检测升级，按提示操作。
+不过由于天朝网路问题，可能升级比较缓慢，建议Ctrl+c终止升级，修改sources.list为朝内镜像。
+DietPi默认没有vi,使用nano进行编辑，添加Aliyun源。
+deb http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib deb-src http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib  更新软件
+apt-get update&amp;&amp;apt-get upgrade -y  然后运行dietpi-config进行配置。
+DietPi - Config
+ ┌────┤ ---------- DietPi-Config ---------- ├─────┐ │ Hardware : Raspberry Pi 1 (512MB) │ │ │ │ 1 Display Options │ │ 2 Audio Options │ │ 3 Performance Options │ │ 4 Advanced Options │ │ 5 Language/Regional Options │ │ 6 Security Options │ │ 7 Networking Options │ │ 8 AutoBoot Options │ │ 9 Tools │ │ │ │ │ │ &lt;Ok&gt; &lt;Exit&gt; │ │ │ └────────────────────────────────────────────────┘  推荐配置：
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-08-04</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/debian">#Debian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dietpi">#dietpi</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/sumbit-raspberry-pi-data-to-lewei50/">将树莓派数据上传至乐为物联</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        进入http://www.lewei50.com/注册登录
+添加设备(Add Device) 我的物联 -&gt; 我的设备，添加新设备，类型选择其他，不使用模板。
+请自定义设备标识，后面要用到。
+添加传感器 我的物联 -&gt; 感器与控制器，新建传感器。
+其中标识为提交数据依据，建议英文。
+向乐为物联提交数据 lewei.sh代码如下 http://cdn.lyq.wiki/res/lewei.sh
+#!/bin/bash LURL=http://www.lewei50.com/api/V1/Gateway/UpdateSensors/01 KEY=&quot;2fasdfsdfsdf9ffadsf62dfbfsdfa1&quot; sys_load=`cat /proc/loadavg | awk '{print $2}'` st=`/usr/bin/sen_t` sh=`/usr/bin/sen_h` for i in 1 2 3 4 5; do sys_temp=`cat /sys/class/thermal/thermal_zone0/temp | awk '{print $1/1000}'` if [[ &quot;${sys_temp}&quot; =~ ^- ]] then sys_temp='0.0' else echo ${sys_temp} break fi done echo &quot;Printf Values&quot; echo &quot;sys_temp:&quot;${sys_temp} echo &quot;sys_load:&quot;${sys_load} echo &quot;sensor_t:&quot;${st} echo &quot;sensor_h:&quot;${sh} echo &quot;Done!&quot; echo &quot;Sumbit Data to Lewei&quot; curl --request POST ${LURL} --header &quot;userkey:${KEY}&quot; --data &quot;[{'Name':'load','Value':'${sys_load}'},{'Name':'temp','Value':'${sys_temp}'},{'Name':'sd','Value':'${sh}'},{'Name':'wd','Value':'${st}'}]&quot;  其中LURL后面的01为设备标识,KEY为用户Userkey,JSON数据中的Name对应相应的传感器标识。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-07-30</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/humidity">#Humidity</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E4%BC%A0%E6%84%9F%E5%99%A8">#传感器</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%B9%BF%E5%BA%A6">#湿度</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%B8%A9%E5%BA%A6">#温度</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/json">#JSON</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/seneor">#Seneor</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%89%A9%E8%81%94%E7%BD%91">#物联网</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/temperature">#Temperature</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E4%B9%90%E4%B8%BA%E7%89%A9%E8%81%94">#乐为物联</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/lewei50">#lewei50</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dht11">#dht11</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/install-nginx-and-ngx_pagespeed-on-vps/">安装Nginx和ngx_pagespeed</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        VPS配置:
+Ubuntu 14.04 x86 RAM 512M SWAP 64M DISK 5G  准备工作 sudo apt-get update&amp;&amp;apt-get upgrade -y sudo apt-get install build-essential zlib1g-dev libpcre3 libpcre3-dev unzip libssl-dev -y  下载ngx_pagespeed cd NPS_VERSION=1.9.32.4 wget https://github.com/pagespeed/ngx_pagespeed/archive/release-${NPS_VERSION}-beta.zip unzip release-${NPS_VERSION}-beta.zip cd ngx_pagespeed-release-${NPS_VERSION}-beta/ wget https://dl.google.com/dl/page-speed/psol/${NPS_VERSION}.tar.gz tar -xzvf ${NPS_VERSION}.tar.gz  安装Nginx cd groupadd www useradd -s /sbin/nologin -g www www NGINX_VERSION=1.8.0 wget http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz tar -xvzf nginx-${NGINX_VERSION}.tar.gz cd nginx-${NGINX_VERSION}/ ./configure \ --user=www \ --group=www \ --prefix=/usr/local/nginx \ --with-http_stub_status_module \ --with-http_ssl_module \ --with-http_spdy_module \ --with-http_gzip_static_module \ --with-http_sub_module \ --add-module=$HOME/ngx_pagespeed-release-${NPS_VERSION}-beta \ sudo make sudo make install sudo ln -sf /usr/local/nginx/sbin/nginx /usr/bin/nginx  配置/etc/init.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-07-24</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/google">#Google</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vps">#VPS</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/baidu-input-dictionary-converted-to-rime/">将百度输入法词库导入倒小狼毫词典</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        首先，在百度输入法设置中，将词库导出，选择txt格式
+然后下载深蓝词库转换
+打开深蓝词库转换，选择百度词库，在转换为类型中选择中州韵，转换文成后保存为另外一个txt文件
+然后打开**【小狼毫】用户词典管理**，选择已存在的词典，点击右侧的**导入文本码表**
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-07-23</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/rime">#rime</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E4%B8%AD%E5%B7%9E%E9%9F%B5">#中州韵</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%B0%8F%E7%8B%BC%E6%AF%AB">#小狼毫</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%AF%8D%E5%BA%93">#词库</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%B7%B1%E8%93%9D%E8%AF%8D%E5%BA%93%E8%BD%AC%E6%8D%A2">#深蓝词库转换</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/install-h2o-on-bandwagon-vps/">将Nginx更换为H2O</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装必须的软件 预备工具软件
+#apt-get install autoconf automake m4 build-essential  libssl-dev 必选
+#apt-get install openssl libssl-dev  以下为可选包，可自行搜索安装
+ libuv libyaml wslay  安装H2O 下载安装最新版h2o https://github.com/h2o/h2o/releases
+#wget https://github.com/h2o/h2o/archive/v1.4.1.tar.gz #tar zxf v1.4.1.tar.gz #cd h2o-1.4.1 #cmake -DWITH_BUNDLED_SSL=on . #make #sudo make install  编辑H2O站点配置文件 以下是一个简单的http与https配置文件，可自行参考修改
+hosts: &quot;www.example.com&quot;: listen: port: 80 listen: port: 443 ssl: certificate-file: /path/to/server-certificate.crt key-file: /path/to/private-key.crt paths: &quot;/&quot;: file.dir: /path/to/doc-root access-log: /path/to/the/access-log error-log: /path/to/the/error-log pid-file: /path/to/the/pid-file http2-reprioritize-blocking-assets: ON # performance tuning option  启动H2O
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-07-21</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vps">#VPS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/openssl">#OpenSSL</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/h2o">#H2O</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/wslay">#wslay</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/web-server">#Web Server</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/bandwagonhost">#BandwagonHost</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/libssl">#libssl</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/libuv">#libuv</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/libyaml">#libyaml</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+    
+        
+    <div class="pagination">
+        <div class="left pagination-item ">
+            
+                <a href="/page/23/">To new posts</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/page/25/">To old posts</a>
+            
+        </div>
+    </div>
+
+
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
+    </div>
+</body>
+</html>

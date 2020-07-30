@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pip on UNIXETC</title>
+    <link>https://unixetc.com/tags/pip/</link>
+    <description>UNIXETC (pip)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 20 Apr 2017 14:28:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/pip/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>python-pip安装实例</title>
+      <link>https://unixetc.com/post/python-pip-installation/</link>
+      <pubDate>Thu, 20 Apr 2017 14:28:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/python-pip-installation/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Python-pip&lt;/strong&gt; 是一个现代的，通用的 &lt;strong&gt;Python&lt;/strong&gt;包管理工具。提供了对 Python 包的查找、下载、安装、卸载的功能。&lt;/p&gt;
+&lt;p&gt;以下为多个操作系统平台下&lt;strong&gt;Python-pip&lt;/strong&gt;安装方法&lt;/p&gt;
+&lt;h3 id=&#34;通用方法&#34;&gt;通用方法&lt;/h3&gt;
+&lt;p&gt;通过&lt;strong&gt;get-pip.py&lt;/strong&gt;文件来安装，建议&lt;strong&gt;Windows&lt;/strong&gt;用户使用，前提是你必须首先安装&lt;strong&gt;Python&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;版本要求Python 2 &amp;gt;=2.7.9 或Python 3 &amp;gt;=3.4，可从官网下载&lt;a href=&#34;http://www.python.org/&#34;&gt;http://www.python.org/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;然后下载&lt;strong&gt;get-pip.py&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;下载地址 &lt;a href=&#34;https://bootstrap.pypa.io/get-pip.py&#34;&gt;https://bootstrap.pypa.io/get-pip.py&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;通过&lt;code&gt;python get-pip.py&lt;/code&gt;命令来进行安装。&lt;/p&gt;
+&lt;h3 id=&#34;linux下通过软件管理工具来安装python-pip&#34;&gt;Linux下通过软件管理工具来安装Python-pip&lt;/h3&gt;
+&lt;h4 id=&#34;fedora21&#34;&gt;Fedora21&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Python2&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo yum upgrade python-setuptools
+sudo yum install python-pip python-wheel
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Python3&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo yum install python3 python3-wheel
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;fedora22&#34;&gt;Fedora22&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Python2&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo dnf upgrade python-setuptools
+sudo dnf install python-pip python-wheel
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Python3&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo dnf install python3 python3-wheel
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;centosrhel&#34;&gt;CentOS/RHEL&lt;/h4&gt;
+&lt;p&gt;首先得启用&lt;strong&gt;EPEL repository&lt;/strong&gt;,&lt;a href=&#34;https://fedoraproject.org/wiki/EPEL#How_can_I_use_these_extra_packages.3F&#34;&gt;可参考此文&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;EPEL 6/EPEL 7&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo yum install python-pip
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;EPEL 7&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bsh&#34; data-lang=&#34;bsh&#34;&gt;sudo yum install python-wheel
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;opensuse&#34;&gt;OpenSUSE&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Python 2:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo zypper install python-pip python-setuptools python-wheel
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Python 3:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo zypper install python3-pip python3-setuptools python3-wheel
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;debianubuntu&#34;&gt;Debian/Ubuntu&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install python-pip
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;当系统安装的是&lt;strong&gt;Python3&lt;/strong&gt;是，则安装&lt;code&gt;python3-pip&lt;/code&gt;&lt;/p&gt;
+&lt;h4 id=&#34;archlinux&#34;&gt;Archlinux&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Python 2:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo pacman -S python2-pip
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Python 3:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo pacman -S python-pip
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>使用speedtest-cli测试带宽</title>
+      <link>https://unixetc.com/post/use-speedtest-cli-tests-network-bandwidth/</link>
+      <pubDate>Thu, 26 Mar 2015 13:26:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/use-speedtest-cli-tests-network-bandwidth/</guid>
+      <description>&lt;h3 id=&#34;安装speedtest-cli&#34;&gt;安装speedtest-cli&lt;/h3&gt;
+&lt;p&gt;安装speedtest-cli方法如下:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo apt-get install python-pip
+sudo pip install speedtest-cli
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;或&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip install git+https://github.com/sivel/speedtest-cli.git
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;或&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/sivel/speedtest-cli.git
+python speedtest-cli/setup.py install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;或&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest_cli.py
+chmod +x speedtest-cli
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;或&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -Lo speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest_cli.py
+chmod +x speedtest-cli
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;使用speedtest-cli&#34;&gt;使用speedtest-cli&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;root@MyUbuntuCloud:~# speedtest-cli -h
+usage: speedtest-cli [-h] [--bytes] [--share] [--simple] [--list]
+                 [--server SERVER] [--mini MINI] [--source SOURCE]
+                 [--timeout TIMEOUT] [--version]
+
+Command line interface for testing internet bandwidth using speedtest.net.
+--------------------------------------------------------------------------
+https://github.com/sivel/speedtest-cli
+
+optional arguments:
+  -h, --help         show this help message and exit
+  --bytes            Display values in bytes instead of bits. Does not affect
+                     the image generated by --share
+  --share            Generate and provide a URL to the speedtest.net share
+                     results image
+  --simple           Suppress verbose output, only show basic information
+  --list             Display a list of speedtest.net servers sorted by
+                     distance
+  --server SERVER    Specify a server ID to test against
+  --mini MINI        URL of the Speedtest Mini server
+  --source SOURCE    Source IP address to bind to
+  --timeout TIMEOUT  HTTP timeout in seconds. Default 10
+  --version          Show the version number and exit
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以下为两则实例：&lt;/p&gt;
+&lt;p&gt;HKVPS:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;root@MyUbuntuCloud:~# speedtest-cli --share
+Retrieving speedtest.net configuration...
+Retrieving speedtest.net server list...
+Testing from Shanghai Anchnet Network Technology (118.193.151.193)...
+Selecting best server based on latency...
+Hosted by ChinaTelecom (Guangzhou) [2.51 km]: 6.646 ms
+Testing download speed........................................
+Download: 19.66 Mbit/s
+Testing upload speed..................................................
+Upload: 0.81 Mbit/s
+Share results: https://www.speedtest.net/result/4242720179.png
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/str4242720179.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Raspberry Pi:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pi@araspi ~ $ ./speedtest-cli --share
+Retrieving speedtest.net configuration...
+Retrieving speedtest.net server list...
+Testing from China Unicom Shannxi (123.138.35.2)...
+Selecting best server based on latency...
+Hosted by Xi&#39;an branch,Chinaunicom (Xian) [2.79 km]: 14.556 ms
+Testing download speed........................................
+Download: 38.05 Mbit/s
+Testing upload speed..................................................
+Upload: 7.34 Mbit/s
+Share results: https://www.speedtest.net/result/4242749590.png
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/str4242749590.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>树莓派安装Python开发环境与GPIO库</title>
+      <link>https://unixetc.com/post/raspberry-pi-install-python-development-environment-and-gpio-library/</link>
+      <pubDate>Sun, 02 Mar 2014 12:31:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/raspberry-pi-install-python-development-environment-and-gpio-library/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;安装python&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$sudo apt-get install python-dev
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;更新&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$sudo easy_install -U distribute
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;安装python-pip&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$sudo apt-get install python-pip
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;添加国内pypi镜像&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;在&lt;strong&gt;~/.pip/pip.conf&lt;/strong&gt;中添加&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[global]
+index-url = http://mirrors.aliyun.com/pypi/simple/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;安装python的GPIO库&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$sudo pip install rpi.gpio&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

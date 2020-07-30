@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-cn" data-theme="">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>Linux - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/tags/linux/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103043" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103043" />
+
+
+
+
+
+<meta property="og:title" content="Linux" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/tags/linux/" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <h1 class="site-title">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <h1>Tag: Linux</h1>
+    <div class="post-info">
+        <a href="https://unixetc.com/tags">To all tags</a>
+    </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/install-configure-noip-client-in-raspberry-pi/">树莓派下安装配置Noip</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        注册noip 首先在http://noip.com注册账户
+然后在主机管理(Manage Hosts)中添加主机(Add A Host)，根据提示设置二级域名，IP可以随意填写。
+安装Noip客户端 wget https://www.noip.com/client/linux/noip-duc-linux.tar.gz tar zxf noip-duc-linux.tar.gz cd noip-2.1.9-1 sudo make install  安装过程中，按照提示输入noip帐号信息，时间间隔建议设为5s，默认30s
+设置开机启动 在/etc/init.d/中建立noip2脚本
+sudo vi /etc/init.d/noip2  脚本内容如下
+#! /bin/sh ### BEGIN INIT INFO # Provides: noip2 # Required-Start: $syslog # Required-Stop: $syslog # Default-Start: 2 3 4 5 # Default-Stop: 0 1 6 # Short-Description: noip.com client service ### END INIT INFO # . /lib/lsb/init-functions case &quot;$1&quot; in start) echo &quot;Starting noip2.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-01-11</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ddns">#DDNS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%8A%A8%E6%80%81%E5%9F%9F%E5%90%8D">#动态域名</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/noip">#noip</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-using-ddclient-and-ddns/">树莓派使用ddclient和DDNS</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        域名解析 首先得有个域名，在域名管理中将域名DNS设为he.net的DNS地址，如下：
+ns1.he.net ns2.he.net ns3.he.net ns4.he.net ns5.he.net  然后在http://dns.he.net注册账号，添加域名(Add a new domain)
+接下来添加A记录(New A)，勾选允许动态域名解析(Enable entry for dynamic dns)
+点击域名后DDNS列中的刷新按钮，新建一个DDNS密匙(Generate a DDNS key.)
+安装设置ddclient 在树莓派上安装ddclient
+sudo apt-get install ddclient  编辑ddclient配置文件，路径为/etc/ddclient.conf
+protocol=dyndns2 use=web,web=myip.dnsomatic.com server=dyn.dns.he.net login=raspi.in password='ddnskey' www.raspi.in,raspi.in  其中password为设置DDNS时的key
+重启ddclient服务
+service ddclient restart  验证IP查询结果
+sudo ddclient -query use=if, if=eth0 address is 192.168.1.111 use=if, if=lo address is 127.0.0.1 use=web, web=dnspark address is 36.40.143.235 use=web, web=dyndns address is NOT FOUND use=web, web=loopia address is 36.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-01-07</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ddns">#DDNS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dns">#DNS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/domain">#Domain</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/he.net">#he.net</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ddclient">#ddclient</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/ssl-security-optimization/">SSL安全优化</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        先贴出本站的SSL安全评级,测试地址为https://www.ssllabs.com/ssltest/analyze.html?d=alair.cn
+以下是本站Nginx配置中关于SSL部分
+listen 443 ssl http2; ssl_certificate /etc/letsencrypt/live/alair.cn/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/alair.cn/privkey.pem; ssl_session_timeout 60m; ssl_protocols TLSv1 TLSv1.1 TLSv1.2; ssl_ciphers ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-RC4-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:RC4-SHA:!aNULL:!eNULL:!EXPORT:!DES:!3DES:!MD5:!DSS:!PKS; ssl_prefer_server_ciphers on; ssl_session_cache builtin:1000 shared:SSL:10m; ssl_dhparam /etc/ssl/certs/dhparam.pem; ssl_stapling on; ssl_stapling_verify on; add_header Strict-Transport-Security &quot;max-age=63072000; includeSubdomains; preload&quot;; add_header X-Frame-Options &quot;DENY&quot;;  说明：
+dhparam.pem可以使用openssl dhparam -out dhparam.pem 4096命令生成，这个命令会执行很长时间，也可以将字节数改为2048
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-12-21</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/https">#https</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssl">#ssl</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/http2">#http2</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dhparam">#dhparam</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/md5sum-usage/">使用MD5校验文件</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        md5sum命令用于生成和校验文件的md5值。它会逐位对文件的内容进行校验。是文件的内容，与文件名无关，也就是文件内容相同，其md5值相同。md5值是一个128位的二进制数据，转换成16进制则是32（128/4）位的进制值。
+md5校验，有很小的概率不同的文件生成的md5可能相同。比md5更安全的校验算法还有SHA*系列的。
+在网络传输时，我们校验源文件获得其md5sum，传输完毕后，校验其目标文件，并对比如果源文件和目标文件md5 一致的话，则表示文件传输无异常。否则说明文件在传输过程中未正确传输。
+md5sum示例 生成文件md5 pi@raspi:~ $ md5sum bs.conf fcd3e1243d1cd5903d4e38c46671b84f bs.conf  md5sum校验是根据文件内容为准，与名称无关，意思是即便文件名修改了，但md5校验值应该不会改变，如下：
+pi@raspi:~ $ cp bs.conf bs.conf.bak pi@raspi:~ $ md5sum bs* fcd3e1243d1cd5903d4e38c46671b84f bs.conf fcd3e1243d1cd5903d4e38c46671b84f bs.conf.bak  根据md5校验文件是否更改 一般网上分享的大文件都会附带一个.md5文件，这就是所分享文件的md5值，可以使用-c参数来直接使用.md5文件来检验文件是否完整
+pi@raspi:~ $ md5sum bs.conf&gt;bs.conf.md5 pi@raspi:~ $ md5sum -c bs.conf.md5 bs.conf: OK  如上例，将bs.conf的md5值定向到一个bs.conf.md5文件，然后使用md5sum -c bs.conf.md5直接检验相应文件是否完整一致，校验通过的话会输出提示OK，如果文件经过修改，内容已经不一致，则不会通过校验，则会显示FAILED
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-12-13</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/md5">#md5</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/md4">#md4</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/sha">#sha</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/md5sum">#md5sum</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/transfer-files-using-scp/">使用SCP传输文件</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        示例：用户名root 地址 2.33.153.67
+下载文件 scp root@2.33.153.67:/root/test.mp4 /home/pi/  将服务器上的/root/test.mp4下载到本地/home/pi文件夹
+上传文件 scp /home/pi/ok.txt root@2.33.153.67:/root  将本地/home/pi/ok.txt上传至服务器/root文件夹
+下载文件夹 scp -r root@2.33.153.67:/root/ebooks /home/pi  将服务器上的/root/ebooks文件夹下载至本地/home/pi下
+上传文件夹 scp -r /home/pi/music root@2.33.153.67:/media  将本地/home/pi/music文件夹上传至服务器/media下
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-12-08</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/scp">#scp</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+    
+        
+    <div class="pagination">
+        <div class="left pagination-item ">
+            
+                <a href="/tags/linux/page/9/">To new posts</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/tags/linux/page/11/">To old posts</a>
+            
+        </div>
+    </div>
+
+
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
+    </div>
+</body>
+</html>

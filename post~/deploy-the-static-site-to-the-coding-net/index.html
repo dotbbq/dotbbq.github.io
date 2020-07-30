@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-cn" data-theme="">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>将静态站点部署到Coding.net - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103041" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103041" />
+
+
+
+
+
+<meta property="og:title" content="将静态站点部署到Coding.net" />
+<meta property="og:description" content="本站是基于https://github.com/wendal/gor生成的静态站点。
+下面介绍如何将静态站点部署到coding.net上。
+注册coding并新建项目 首先注册coding.net，注册完后新建项目。
+项目名称为*.coding.me，以此格式新建的项目可以使用Coding Pages服务。
+Pages服务设置 建立完成后，在项目设置中找到Pages服务服务进行设置。
+ 部署来源  选择master分支
+ 自定义域名  添加自定义域名，建议同时添加domain.com和www.domain.com，并且设置一个为首选项，另一个跳转到首选项。然后将自己的域名CNAME指向pages.coding.me
+ 强制HTTPS访问  打开该选项，则为你的域名自动申请设置** Let&rsquo;s Encrypt**证书，并开启**https**访问。
+ Hosted by Coding Pages  新站点都会有coding pages跳转页，按照Hosted by Coding Pages说明，在首页添加规定连接后，可以提交申请不显示跳转页。
+使用Git部署站点 首先推荐配置SSH公钥以便于操作。
+$ ssh-keygen -t rsa -C &quot;name@domain.com&quot; //在此设置为coding.net帐号邮箱 Generating public/private rsa key pair. Enter file in which to save the key (/c/Users/dotbbq/.ssh/id_rsa): Created directory &#39;/c/Users/dotbbq/.ssh&#39;. Enter passphrase (empty for no passphrase): Enter same passphrase again: Your identification has been saved in /c/Users/dotbbq/." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unixetc.com/post/deploy-the-static-site-to-the-coding-net/" />
+<meta property="article:published_time" content="2017-11-25T11:25:00+00:00" />
+<meta property="article:modified_time" content="2017-11-25T11:25:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="将静态站点部署到Coding.net"/>
+<meta name="twitter:description" content="本站是基于https://github.com/wendal/gor生成的静态站点。
+下面介绍如何将静态站点部署到coding.net上。
+注册coding并新建项目 首先注册coding.net，注册完后新建项目。
+项目名称为*.coding.me，以此格式新建的项目可以使用Coding Pages服务。
+Pages服务设置 建立完成后，在项目设置中找到Pages服务服务进行设置。
+ 部署来源  选择master分支
+ 自定义域名  添加自定义域名，建议同时添加domain.com和www.domain.com，并且设置一个为首选项，另一个跳转到首选项。然后将自己的域名CNAME指向pages.coding.me
+ 强制HTTPS访问  打开该选项，则为你的域名自动申请设置** Let&rsquo;s Encrypt**证书，并开启**https**访问。
+ Hosted by Coding Pages  新站点都会有coding pages跳转页，按照Hosted by Coding Pages说明，在首页添加规定连接后，可以提交申请不显示跳转页。
+使用Git部署站点 首先推荐配置SSH公钥以便于操作。
+$ ssh-keygen -t rsa -C &quot;name@domain.com&quot; //在此设置为coding.net帐号邮箱 Generating public/private rsa key pair. Enter file in which to save the key (/c/Users/dotbbq/.ssh/id_rsa): Created directory &#39;/c/Users/dotbbq/.ssh&#39;. Enter passphrase (empty for no passphrase): Enter same passphrase again: Your identification has been saved in /c/Users/dotbbq/."/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <h1 class="site-title">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    
+    
+    <article class="post">
+        <header class="post-header">
+            <h1 class="post-title">将静态站点部署到Coding.net</h1>
+        </header>
+        <div class="content">
+            <p>本站是基于<a href="https://github.com/wendal/gor">https://github.com/wendal/gor</a>生成的静态站点。</p>
+<p>下面介绍如何将静态站点部署到coding.net上。</p>
+<h3 id="注册coding并新建项目">注册coding并新建项目</h3>
+<p>首先注册coding.net，注册完后新建项目。</p>
+<p>项目名称为<code>*.coding.me</code>，以此格式新建的项目可以使用<strong>Coding Pages</strong>服务。</p>
+<h3 id="pages服务设置">Pages服务设置</h3>
+<p>建立完成后，在项目设置中找到<strong>Pages服务</strong>服务进行设置。</p>
+<ul>
+<li>部署来源</li>
+</ul>
+<p>选择<strong>master分支</strong></p>
+<ul>
+<li>自定义域名</li>
+</ul>
+<p>添加自定义域名，建议同时添加domain.com和www.domain.com，并且设置一个为首选项，另一个跳转到首选项。然后将自己的域名<strong>CNAME</strong>指向<strong>pages.coding.me</strong></p>
+<ul>
+<li>强制HTTPS访问</li>
+</ul>
+<p>打开该选项，则为你的域名自动申请设置** Let&rsquo;s Encrypt**证书，并开启**https**访问。</p>
+<ul>
+<li>Hosted by Coding Pages</li>
+</ul>
+<p>新站点都会有coding pages跳转页，按照<strong>Hosted by Coding Pages</strong>说明，在首页添加规定连接后，可以提交申请不显示跳转页。</p>
+<h3 id="使用git部署站点">使用Git部署站点</h3>
+<p>首先推荐配置<strong>SSH公钥</strong>以便于操作。</p>
+<pre><code>$ ssh-keygen -t rsa -C &quot;name@domain.com&quot;  //在此设置为coding.net帐号邮箱
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/dotbbq/.ssh/id_rsa):
+Created directory '/c/Users/dotbbq/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/dotbbq/.ssh/id_rsa.
+Your public key has been saved in /c/Users/dotbbq/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:Tt/3424234sdfasdfadfs1234234sdfafdsi0 name@domain.com
+The key's randomart image is:
++---[RSA 2048]----+
+|     ... ...o  . |
+|      + o o   +..|
+|*... + * . o . o+|
+|    o = + o . ..o|
+| . . o =S+ o .. .|
+|. o   Bo+. .o.   |
+| +.+   ......    |
+|o.=.o o  .+ .    |
+|.. ..+ .oo.o     |
++----[SHA256]-----+
+</code></pre>
+<p>生成完后，将<code>/c/Users/dotbbq/.ssh/id_rsa.pub</code>的内容粘贴到coding.net的<strong>个人设置</strong>-&gt;<strong>SSH公钥</strong>中进行添加。</p>
+<p>下来进行验证</p>
+<pre><code>$ ssh -T git@git.coding.net
+The authenticity of host 'git.coding.net (123.59.85.184)' can't be established.
+RSA key fingerprint is SHA256:3424234sdfasdfadfs1234234sdfafdsi0+Vg/Ik.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'git.coding.net,123.59.85.184' (RSA) to the list of known hosts.
+Coding 提示: Hello alairs, You've connected to Coding.net via SSH. This is a personal key.
+alairs，你好，你已经通过 SSH 协议认证 Coding.net 服务，这是一个个人公钥
+</code></pre>
+<p>设置git用户名和email</p>
+<pre><code>$ git config --global user.name &quot;name&quot;                //coding.net用户名
+$ git config --global user.email &quot;name@domain&quot;        //coding.net邮箱
+</code></pre>
+<p>将远程的项目clone下来</p>
+<pre><code>$ git clone git@git.coding.net:name/name.coding.me.git
+</code></pre>
+<p>将静态站点文件拷贝至<code>name.coding.me</code>目录</p>
+<p>部署文件到coding.net</p>
+<pre><code>$ git add .
+$ git commit -m &quot;update&quot;
+$ git push</code></pre>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-11-25</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/coding">#Coding</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/git">#Git</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gor">#gor</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
+    </div>
+</body>
+</html>

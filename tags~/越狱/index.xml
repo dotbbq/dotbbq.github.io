@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>越狱 on UNIXETC</title>
+    <link>https://unixetc.com/tags/%E8%B6%8A%E7%8B%B1/</link>
+    <description>UNIXETC (越狱)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 10 Jul 2015 10:27:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/%E8%B6%8A%E7%8B%B1/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>V版本iPhone5C开启中国电信4G</title>
+      <link>https://unixetc.com/post/verzion-iphone5c-open-chinatelecom-4g/</link>
+      <pubDate>Fri, 10 Jul 2015 10:27:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/verzion-iphone5c-open-chinatelecom-4g/</guid>
+      <description>&lt;p&gt;首先，使用太极越狱将手机越狱 &lt;code&gt;http://www.taig.com/&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;在Cydia中添加&lt;code&gt;http://apt.chinasnow.net&lt;/code&gt;源，搜索安装&lt;strong&gt;CommCenter patch for ios8&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;设置iTunes可以刷入运营商文件(.ipcc)&lt;/p&gt;
+&lt;p&gt;Win+R打开运行窗口，输入&lt;code&gt;&amp;quot;%ProgramFiles%\iTunes\iTunes.exe&amp;quot; /setPrefInt carrier-testing 1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;下载运营商文件&lt;a href=&#34;http://cdn.lyq.wiki/res/ipccs.zip&#34;&gt;http://cdn.lyq.wiki/res/ipccs.zip&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;打开iTunes，链接手机到电脑，Shift+更新，选择相对应系统版本的运营商文件&lt;/p&gt;
+&lt;p&gt;完成后重启手机OK！&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Kindle Paperwhite越狱</title>
+      <link>https://unixetc.com/post/kindle-paperwhite-jailbreak/</link>
+      <pubDate>Thu, 27 Feb 2014 12:17:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/kindle-paperwhite-jailbreak/</guid>
+      <description>&lt;h3 id=&#34;越狱&#34;&gt;越狱&lt;/h3&gt;
+&lt;p&gt;下载kindle-jailbreak-1.8.N.zip解压，将得到的kindle-5.4-jailbreak.zip再解压，然后把解压出的三个文件放到KPW根目录&lt;/p&gt;
+&lt;p&gt;然后更新系统，主页-菜单-设置-菜单-更新您的kindle&lt;/p&gt;
+&lt;p&gt;底部显示**** JAILBREAK ****即表示越狱成功！&lt;/p&gt;
+&lt;h3 id=&#34;安装mkk&#34;&gt;安装MKK&lt;/h3&gt;
+&lt;p&gt;下载kindle-mkk-20140214.zip解压，将Update_mkk-20140214-k5-ALL_install.bin复制到KPW根目录更新系统&lt;/p&gt;
+&lt;h3 id=&#34;安装kual&#34;&gt;安装KUAL&lt;/h3&gt;
+&lt;p&gt;下载KUAL-v2.3.zip 解压，将KUAL-KDK-2.0.azw2放到documents文件夹，点击图标即可运行KUAL&lt;/p&gt;
+&lt;h3 id=&#34;安装终端&#34;&gt;安装终端&lt;/h3&gt;
+&lt;p&gt;下载kterm-0.7.zip解压，然后将kterm文件夹复制到KPW根目录下的extensions，即可通过KUAL来打开kterm。&lt;/p&gt;
+&lt;p&gt;**提示：**双指点击唤醒菜单。&lt;/p&gt;
+&lt;h3 id=&#34;安装usbnetwork&#34;&gt;安装USBNetwork&lt;/h3&gt;
+&lt;p&gt;解压kindle-usbnet-0.15.N.zip，将update_usbnet_0.15.N_install_touch_pw.bin放到根目录，然后更新系统安装，完成后可通过KUAL来打开USBNetwork。&lt;/p&gt;
+&lt;p&gt;通过USBNetwork来链接PC，有时需要安装驱动，在这里提供&lt;code&gt;undrivers.inf&lt;/code&gt;文件，安装时选择该文件即可。&lt;/p&gt;
+&lt;p&gt;以上所有文件下载地址： &lt;a href=&#34;http://pan.baidu.com/s/1eQdzU6Y&#34;&gt;http://pan.baidu.com/s/1eQdzU6Y&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>修改iPhone的Cydia源</title>
+      <link>https://unixetc.com/post/edit-the-cydia-software-source/</link>
+      <pubDate>Mon, 18 Jun 2012 06:18:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/edit-the-cydia-software-source/</guid>
+      <description>&lt;p&gt;越狱后的ios设备cydia为必装平台，但是在软件源管理中，大家可能会发现一些源通过cydia无法编辑,比如Cydia/Telesphoreo。&lt;/p&gt;
+&lt;p&gt;我现在入手一部iPhone 4 CDMA版，通过OTA写号使用。在安装sbsettings的时候，一直提示size mismatch而未能安装成功。网上看了看大家的经历，这样的问题最终定位都是某个软件源不匹配造成，试着删除或者更新就可以解决。&lt;/p&gt;
+&lt;p&gt;但是我发现机子买回来，里面有两个源是无法编辑的，一个是上面提到的Cydia/Telesphoreo，另一个就是维维网的源。经过我在cydia下编辑删除，试遍了其他的源的删除，但都是不可以成功安装sbsettings。于是我觉得应该是剩下的那两个不可编辑源的问题，由于Cydia/Telesphoreo是Cydia初始安装的源，应该不会有问题，那就需要编辑删除维维网的源了，但是在cydia的源管理下它是不可编辑的。&lt;/p&gt;
+&lt;p&gt;最后让我找到了办法，既然在cydia下不可以编辑，那么在ssh下呢，只要找到该源的文件，那就可以编辑了，经过判断查找，最终定位到&lt;code&gt;/private/etc/apt/sources.list.d/&lt;/code&gt;目录，在该目录下存放着一些软件源文件(.list)。因为ios采用和debian相同的软件管理软件apt-get，那么他的软件源管理方式应该类似。基于以上经验，最终定位到了&lt;code&gt;/private/etc/apt/sources.list.d/&lt;/code&gt;目录。&lt;/p&gt;
+&lt;p&gt;具体解决步骤如下：&lt;/p&gt;
+&lt;p&gt;进入到&lt;code&gt;/private/etc/apt/sources.list.d/&lt;/code&gt;目录，将里面除了cydia.list文件，其他的全部删除。然后编辑cydia.list文件，只留下一行&lt;code&gt;deb http://apt.saurik.com/&lt;/code&gt; 即可，保存之。&lt;/p&gt;
+&lt;p&gt;手机上打开cydia，重新刷新软件源。然后按需添加需要的第三方源。&lt;/p&gt;
+&lt;p&gt;至于如何编辑cydia目录，一般可以使用itools等软件，但是这样比较繁琐。简单直接的方法是通过ssh连接手机进行操作，可参考&lt;a href=&#34;https://unixetc.com/post/iphone-and-ssh/&#34;&gt;通过SSH连接IOS设备&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;aPhone:~ root# cd /private/etc/apt/sources.list.d/
+aPhone:/private/etc/apt/sources.list.d root# ls -l
+total 24
+-rwxr-xr-x 1 root wheel 259 May 25 23:01 appvv.list*
+-rw-r--r-- 1 root wheel 357 Jun 16 13:59 cydia.list
+-rw-r--r-- 1 root wheel 227 May 25 23:01 saurik.list
+aPhone:/private/etc/apt/sources.list.d root# cat cydia.list
+deb http://apt.saurik.com/ ios/690.10 main
+deb http://apt.178.com/ ./
+deb http://download.voicecloud.cn/cydia/ ./
+deb http://cydia.zodttd.com/repo/cydia/ stable main
+deb http://repo666.ultrasn0w.com/ ./
+deb http://mi.baidu.com/ ./
+deb http://apt.thebigboss.org/repofiles/cydia/ stable main
+deb http://apt.modmyi.com/ stable main
+deb http://apt.25pp.com/ ./&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

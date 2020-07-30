@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pcd8544 on UNIXETC</title>
+    <link>https://unixetc.com/tags/pcd8544/</link>
+    <description>UNIXETC (pcd8544)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 20 Jan 2017 11:20:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/pcd8544/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>树莓派可用的PCD8544库</title>
+      <link>https://unixetc.com/post/pcd8544-library-for-raspberry-pi/</link>
+      <pubDate>Fri, 20 Jan 2017 11:20:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/pcd8544-library-for-raspberry-pi/</guid>
+      <description>&lt;p&gt;Nokia 3310/5110显示器基于PCD8544，在此分享一个树莓派可用的PCD8544库&lt;/p&gt;
+&lt;p&gt;使用该库之前，需要安装wiringPi,安装方法可参考&lt;a href=&#34;https://unixetc.com/post/Raspberry-Pi-by-DHT11-collecting-temperature-and-humidity/&#34;&gt;树莓派连接DHT11采集温度与湿度&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;项目地址：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;https://github.com/binerry/RaspberryPi/tree/master/libraries/c/PCD8544
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;可通过&lt;a href=&#34;https://github.com/downloads/binerry/RaspberryPi/Raspberry.Pi_PCD8544.Library.zip&#34;&gt;github download&lt;/a&gt;直接下载,不能访问github的，用以下连接下载&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;http://cdn.lyq.wiki/res/Raspberry.Pi_PCD8544.Library.zip
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;解压后，可得到一个c源码和一个h头文件&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;PCD8544.c
+PCD8544.h
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以及samples文件夹下的三个示例&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pcd8544_rpi.c
+pcd8544_test.c
+pcd8544_test2.c
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;按照下图所示连接好树莓派和显示器&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/raspi_pcd8544.webp&#34; alt=&#34;raspi_pcd8544&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;RST —— 复位 接GPIO 0&lt;/li&gt;
+&lt;li&gt;CE —— 片选 接GPIO 1 或 不接&lt;/li&gt;
+&lt;li&gt;DC —— 数据/指令选择 接GPIO 2&lt;/li&gt;
+&lt;li&gt;DIN —— 串行数据线 接GPIO 3&lt;/li&gt;
+&lt;li&gt;CLK —— 串行时钟线 接GPIO 5 （因为我的GPIO 4已经接了一个DHT11传感器）&lt;/li&gt;
+&lt;li&gt;VCC —— 电源输入 接3.3v&lt;/li&gt;
+&lt;li&gt;BL —— 背光控制端 接3.3v&lt;/li&gt;
+&lt;li&gt;GND —— 地线 接地&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;编译三个示例程序&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cc -o pcd8544_test pcd8544_test.c ../PCD8544.c  -L/usr/local/lib -lwiringPi
+cc -o pcd8544_test2 pcd8544_test2.c ../PCD8544.c  -L/usr/local/lib -lwiringPi
+cc -o pcd8544_rpi pcd8544_rpi.c ../PCD8544.c  -L/usr/local/lib -lwiringPi
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后运行之&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo ./pcd8544_test
+sudo ./pcd8544_test2
+sudo ./pcd8544_rpi
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;一下是三个示例运行情况&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/nokia-5110-example.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;参考: &lt;em&gt;&lt;a href=&#34;http://binerry.de/post/25787954149/pcd8544-library-for-raspberry-pi&#34;&gt;http://binerry.de/post/25787954149/pcd8544-library-for-raspberry-pi&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

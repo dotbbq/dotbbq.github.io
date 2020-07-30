@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-cn" data-theme="">
+<head>
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>卸载linux旧内核 - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103041" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103041" />
+
+
+
+
+
+<meta property="og:title" content="卸载linux旧内核" />
+<meta property="og:description" content="当linux内核更新后，开机的GRUB引导菜单中会存在新旧内核多个引导菜单，当新内核使用稳定后，我们可以将旧的内核删除以减少开机引导项，以下是在fedora与ubuntu中删除旧内核的方法，其他的YUM系或APT系系统可以参考参考
+fedora中删除旧内核:
+[aquan@localhost ~]$ uname -r 2.6.32-220.13.1.el6.i686 [aquan@localhost ~]$ rpm -qa|grep kernel kernel-2.6.32-220.13.1.el6.i686 kernel-2.6.32-220.el6.i686 kernel-firmware-2.6.32-220.13.1.el6.noarch dracut-kernel-004-256.el6_2.1.noarch [aquan@localhost ~]$ sudo yum remove kernel-2.6.32-220.el6.i686  ubunu中删除旧内核:
+sudo apt-get purge ~ilinux-image-.*\(\!`uname -r`\) " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://unixetc.com/post/uninstall-the-old-linux-kernel/" />
+<meta property="article:published_time" content="2013-08-13T23:13:00+00:00" />
+<meta property="article:modified_time" content="2013-08-13T23:13:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="卸载linux旧内核"/>
+<meta name="twitter:description" content="当linux内核更新后，开机的GRUB引导菜单中会存在新旧内核多个引导菜单，当新内核使用稳定后，我们可以将旧的内核删除以减少开机引导项，以下是在fedora与ubuntu中删除旧内核的方法，其他的YUM系或APT系系统可以参考参考
+fedora中删除旧内核:
+[aquan@localhost ~]$ uname -r 2.6.32-220.13.1.el6.i686 [aquan@localhost ~]$ rpm -qa|grep kernel kernel-2.6.32-220.13.1.el6.i686 kernel-2.6.32-220.el6.i686 kernel-firmware-2.6.32-220.13.1.el6.noarch dracut-kernel-004-256.el6_2.1.noarch [aquan@localhost ~]$ sudo yum remove kernel-2.6.32-220.el6.i686  ubunu中删除旧内核:
+sudo apt-get purge ~ilinux-image-.*\(\!`uname -r`\) "/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <h1 class="site-title">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    
+    
+    <article class="post">
+        <header class="post-header">
+            <h1 class="post-title">卸载linux旧内核</h1>
+        </header>
+        <div class="content">
+            <p>当linux内核更新后，开机的GRUB引导菜单中会存在新旧内核多个引导菜单，当新内核使用稳定后，我们可以将旧的内核删除以减少开机引导项，以下是在fedora与ubuntu中删除旧内核的方法，其他的YUM系或APT系系统可以参考参考</p>
+<p>fedora中删除旧内核:</p>
+<pre><code>[aquan@localhost ~]$ uname -r
+2.6.32-220.13.1.el6.i686
+[aquan@localhost ~]$ rpm -qa|grep kernel
+kernel-2.6.32-220.13.1.el6.i686
+kernel-2.6.32-220.el6.i686
+kernel-firmware-2.6.32-220.13.1.el6.noarch
+dracut-kernel-004-256.el6_2.1.noarch
+[aquan@localhost ~]$ sudo yum remove kernel-2.6.32-220.el6.i686
+</code></pre>
+<p>ubunu中删除旧内核:</p>
+<pre><code>sudo apt-get purge ~ilinux-image-.*\(\!`uname -r`\)</code></pre>
+
+        </div>
+        
+
+
+<div class="post-info">
+    
+        <div class="post-date">2013-08-13</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/kernel">#Kernel</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%86%85%E6%A0%B8">#内核</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+    </article>
+
+    
+
+    
+
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
+    </div>
+</body>
+</html>

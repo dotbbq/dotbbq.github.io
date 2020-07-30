@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-cn" data-theme="">
+<head>
+	<meta name="generator" content="Hugo 0.73.0" />
+    
+        
+<meta charset="utf-8">
+<meta name="HandheldFriendly" content="True">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer-when-downgrade">
+
+<title>UNIXETC - UNIXETC</title>
+<meta name="description" content="A Personal Site">
+
+<link rel="alternate" type="application/rss+xml" href="https://unixetc.com/index.xml" title="UNIXETC" />
+<link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
+<link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
+
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103041" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103041" />
+
+
+
+
+
+<meta property="og:title" content="UNIXETC" />
+<meta property="og:description" content="A Personal Site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://unixetc.com/" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="UNIXETC"/>
+<meta name="twitter:description" content="A Personal Site"/>
+
+
+
+
+
+
+
+
+    
+</head>
+<body>
+    <a class="skip-main" href="#main">Skip to main content</a>
+    <div class="container">
+        <header class="common-header"> 
+            
+                <h1 class="site-title">
+    <a href="/">UNIXETC</a>
+</h1>
+<nav>
+    
+    
+    <a class="" href="https://unixetc.com/tags/" title="">Tags</a>
+    
+    <a class="" href="https://unixetc.com/readme/" title="ReadMe">Readme</a>
+    
+</nav>
+
+            
+        </header>
+        <main id="main" tabindex="-1"> 
+            
+    <div class="homepage-content">
+        
+    </div>
+
+    
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/modify-the-raspberry-pi-swap-size/">修改树莓派Swap</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        树莓派的swap大小在/etc/dphys-swapfile中定义，默认为100M
+pi@raspi:~$ cat /etc/dphys-swapfile CONF_SWAPSIZE=1000 pi@raspi:/mnt$ free -h total used free shared buffers cached Mem: 437M 36M 401M 0B 2.1M 12M -/+ buffers/cache: 22M 415M Swap: 99M 0B 99M pi@raspi:/mnt$  可以自己修改CONF_SWAPSIZE的值，单位为兆(MB)
+修改后重启树莓派生效，如下：
+pi@raspi:~$ cat /etc/dphys-swapfile CONF_SWAPSIZE=1000 pi@raspi:~$ free -h total used free shared buffers cached Mem: 437M 53M 383M 0B 7.9M 23M -/+ buffers/cache: 22M 415M Swap: 999M 0B 999M 
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-10-30</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/swap">#swap</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/free">#free</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dphys-swapfile">#dphys-swapfile</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/unit-of-power-mw-and-dbm-conversion/">功率单位mW与dBm换算</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        功率/电平（dBm):放大器的输出能力，一般单位为W、mW、dBm。dBm是取1mw作基准值，以分贝表示的绝对功率电平。
+换算公式：
+电平（dBm）=10lgW  示例：
+ 5W → 10lg5000 = 37dBm 10W → 10lg10000 = 40dBm 20W → 10lg20000 = 43dBm  从上不难看出，功率每增加一倍，电平值增加3dBm
+功率单位mW和dBm的换算表
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-10-27</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/db">#dB</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dbm">#dbm</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/w">#W</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/mw">#mW</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%AF%AB%E7%93%A6">#毫瓦</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%93%A6">#瓦</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%8A%9F%E7%8E%87">#功率</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%94%B5%E5%B9%B3">#电平</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/picture-converted-to-tab-map-file/">mapinfo用图片制作地图文件</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        获取图片
+以百度地图为例，制作户县县城范围
+用截图软件，将需要的范围截图保存，如下：
+制作TAB
+用Mapinfo打开图片(hx.png)，会提示是否注册，选择注册(Register)
+然后出现图片注册界面
+简单说一下原理问题。
+在图片上找最少3个坐标，然后对应3个实际经纬度信息，为什么最少3个？因为三点确定一个平面嘛！
+下来录入经纬度信息，点击Add，在图片上点一个点，按照提示输入对应的经纬度，如下：
+经纬度信息可以使用GoogleEarth获得。
+以下是制作完成的情况
+点击完成后，就会生成一个同名的tab文件(hx.tab)。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-10-16</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/mapinfo">#mapinfo</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/tab">#tab</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%BB%8F%E7%BA%AC%E5%BA%A6">#经纬度</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gis">#gis</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/install-crontab-on-centos-and-usage/">CentOS中Crontab安装和使用</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装crontab: [root@CentOS ~]# yum install vixie-cron [root@CentOS ~]# yum install crontabs  说明：
+ vixie-cron软件包是cron的主程序； crontabs软件包是用来安装、卸装、或列举用来驱动 cron 守护进程的表格的程序。  cron 是linux的内置服务，但它不自动起来，可以用以下的方法启动、关闭这个服务：
+/sbin/service crond start //启动服务 /sbin/service crond stop //关闭服务 /sbin/service crond restart //重启服务 /sbin/service crond reload //重新载入配置  查看crontab服务状态：service crond status
+手动启动crontab服务：service crond start
+查看crontab服务是否已设置为开机启动，执行命令：ntsysv
+加入开机自动启动:chkconfig --level 35 crond on
+rontab命令 功能说明： 设置计时器。
+语法： crontab [-u &lt;用户名称&gt;][配置文件] 或 crontab [-u &lt;用户名称&gt;][-elr]
+补充说明： cron是一个常驻服务，它提供计时器的功能，让用户在特定的时间得以执行预设的指令或程序。只要用户会编辑计时器的配置文件，就可以使用计时器的功能。其配置文件格式如下： Minute Hour Day Month DayOFWeek Command
+参数:
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-09-22</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/centos">#CentOS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/crontab">#crontab</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/download-the-chrome-offline-installation-package/">下载Chrome离线安装包</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        Chrome离线安装包下载地址：
+正式版 http://www.google.com/chrome/eula.html?hl=zh-CN&amp;standalone=1
+测试版 http://www.google.com/chrome/eula.html?hl=zh-CN&amp;standalone=1&amp;extra=betachannel
+开发版 http://www.google.com/chrome/eula.html?hl=zh-CN&amp;standalone=1&amp;extra=devchannel
+下载文件名为ChromeStandaloneSetup.exe
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-08-30</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/SHARE">SHARE</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/chrome">#Chrome</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/google">#Google</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
+    
+        
+    <div class="pagination">
+        <div class="left pagination-item ">
+            
+                <a href="/page/30/">To new posts</a>
+            
+        </div>
+        <div class="right pagination-item ">
+            
+                <a href="/page/32/">To old posts</a>
+            
+        </div>
+    </div>
+
+
+
+        </main>
+        
+            <footer class="common-footer">
+    
+    
+
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
+    </div>
+</body>
+</html>

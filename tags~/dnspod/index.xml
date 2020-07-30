@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dnspod on UNIXETC</title>
+    <link>https://unixetc.com/tags/dnspod/</link>
+    <description>UNIXETC (dnspod)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 03 Mar 2014 03:03:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/dnspod/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>树莓派与DNSPod动态域名解析</title>
+      <link>https://unixetc.com/post/raspberry-pi-and-dnspod-dynamic-dns/</link>
+      <pubDate>Mon, 03 Mar 2014 03:03:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/raspberry-pi-and-dnspod-dynamic-dns/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;所需条件&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Raspberry Pi&lt;/li&gt;
+&lt;li&gt;TP-Link路由器&lt;/li&gt;
+&lt;li&gt;DNSPod帐户&lt;/li&gt;
+&lt;li&gt;域名&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;配置路由器&#34;&gt;配置路由器&lt;/h3&gt;
+&lt;p&gt;进入路由器的&lt;strong&gt;DHCP服务器&lt;/strong&gt;-&amp;gt;&lt;strong&gt;静态地址分配&lt;/strong&gt;菜单，为Raspberry Pi分配静态IP地址，例如：&lt;code&gt;192.168.1.200&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;进入路由器的&lt;strong&gt;安全功能&lt;/strong&gt;-&amp;gt;&lt;strong&gt;远端WEB管理&lt;/strong&gt;菜单，设置&lt;code&gt;WEB管理端口&lt;/code&gt;为一个&lt;strong&gt;非80&lt;/strong&gt;值，例如82&lt;/p&gt;
+&lt;p&gt;进入路由器的&lt;strong&gt;转发规则&lt;/strong&gt;-&amp;gt;&lt;strong&gt;DMZ主机&lt;/strong&gt;菜单，将&lt;code&gt;DMZ主机IP地址&lt;/code&gt;设置为Raspberry Pi的ip地址，然后启用保存。&lt;/p&gt;
+&lt;h3 id=&#34;设置dnspod动态域名解析&#34;&gt;设置DNSPod动态域名解析&lt;/h3&gt;
+&lt;p&gt;首先登录DNSPod网页管理域名，将二级域名&lt;code&gt;www&lt;/code&gt; 的&lt;code&gt;A记录&lt;/code&gt;解析到路由器外网IP(可通过路由器管理首页查询，或者通过浏览ip138.com来获得)&lt;/p&gt;
+&lt;p&gt;注：一级域名请解析**@**的A记录。&lt;/p&gt;
+&lt;p&gt;下载&lt;strong&gt;DNSPod官方客户端Lite&lt;/strong&gt; &lt;a href=&#34;https://support.dnspod.cn/Support/api&#34;&gt;https://support.dnspod.cn/Support/api&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;解压后双击打开登录，从右侧信息列表中也可以看到本机最新IP，点击相应域名后的&lt;strong&gt;动态解析&lt;/strong&gt;按钮，在动态解析设置中右键点击相应的动态记录启用即可，关闭&lt;strong&gt;DNSPod官方客户端Lite&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;设置raspberry-pi&#34;&gt;设置Raspberry Pi&lt;/h3&gt;
+&lt;p&gt;安装Web服务器软件(Nginx)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#apt-get install nginx
+#/etc/init.d/nginx start
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;内网可以通过浏览`http://192.168.1.129&amp;quot;来检查Nginx是否正常运行。&lt;/p&gt;
+&lt;p&gt;浏览&lt;a href=&#34;https://gist.githubusercontent.com/chuangbo/833369&#34;&gt;https://gist.githubusercontent.com/chuangbo/833369&lt;/a&gt;，下载动态域名解析脚本(pypod.py)&lt;/p&gt;
+&lt;p&gt;编辑&lt;code&gt;pypod.py&lt;/code&gt;修改以下内容：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;login_email=&amp;quot;email&amp;quot;, # DSNPod帐户邮箱
+login_password=&amp;quot;password&amp;quot;, # DSNPod帐户密码
+domain_id=100, # 域名id
+record_id=100, # 记录id
+sub_domain=&amp;quot;www&amp;quot;, # 子域名
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其中&lt;strong&gt;域名id&lt;/strong&gt;与&lt;strong&gt;记录id&lt;/strong&gt;可以通过以下命令获取：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;curl -k https://dnsapi.cn/Domain.List -d &amp;quot;login_email=xxx&amp;amp;login_password=xxx&amp;quot;
+curl -k https://dnsapi.cn/Record.List -d &amp;quot;login_email=xxx&amp;amp;login_password=xxx&amp;amp;domain_id=xxx&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;提示：如果你使用了&lt;strong&gt;www&lt;/strong&gt;子域名，则需要获取&lt;strong&gt;www&lt;/strong&gt;的记录id，如果使用一级域名(@)，则需要获取**@**的记录id。&lt;/p&gt;
+&lt;p&gt;编辑完&lt;code&gt;pypod.py&lt;/code&gt;保存退出，使用以下命令运行：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#python pypod.py
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;现在可以通过域名来浏览Raspberry Pi上的Web内容了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;pypod.py开机运行&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;添加&lt;code&gt;/usr/bin/python /home/pi/pypod.py&lt;/code&gt;到**/etc/rc.local**。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

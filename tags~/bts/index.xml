@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BTS on UNIXETC</title>
+    <link>https://unixetc.com/tags/bts/</link>
+    <description>UNIXETC (BTS)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 01 Sep 2013 09:01:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/bts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>阿朗BTS开启40个邻区</title>
+      <link>https://unixetc.com/post/alcatel-lucent-bts-open-40-neighbor-lists/</link>
+      <pubDate>Sun, 01 Sep 2013 09:01:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/alcatel-lucent-bts-open-40-neighbor-lists/</guid>
+      <description>&lt;p&gt;阿朗基站默认未开启40个邻区功能，如果fci表的15、16页已经加满，再需要添加多的邻区关系就得设置打开40个邻区。&lt;/p&gt;
+&lt;h3 id=&#34;编辑cell2-series-2-cell表单&#34;&gt;编辑cell2 (SERIES 2 CELL)表单&lt;/h3&gt;
+&lt;p&gt;登录阿朗OMP平台，进入OMP Shell，输入&lt;strong&gt;apxrcv&lt;/strong&gt;，然后按照提示输入表单名cell2&lt;/p&gt;
+&lt;p&gt;cell2只需提供基站号，设置为整个基站的功能&lt;/p&gt;
+&lt;p&gt;查看cell2表单的 &lt;strong&gt;12页&lt;/strong&gt;，找到 &lt;strong&gt;FORTY NGBR&lt;/strong&gt; 项，经该项值设置为 &lt;strong&gt;y&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;编辑ceqface-cell-equipage-face表单&#34;&gt;编辑ceqface (CELL EQUIPAGE FACE)表单&lt;/h3&gt;
+&lt;p&gt;进入&lt;strong&gt;ceqafce&lt;/strong&gt;表单，这里得提供具体的扇区号，然后查看第 &lt;strong&gt;9&lt;/strong&gt;页，找到 &lt;strong&gt;Maximum Neighbor List Number Sent to Mobile&lt;/strong&gt;，将其设置为 &lt;strong&gt;40&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;编辑fci-face-code-information表单&#34;&gt;编辑fci (FACE CODE INFORMATION)表单&lt;/h3&gt;
+&lt;p&gt;进入&lt;strong&gt;fci&lt;/strong&gt;表，这里需要设置具体的扇区号，然后查看第 &lt;strong&gt;21&lt;/strong&gt;页，找到如下行：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Expanded (40) Neighbor Lists Enable .................. 569) n
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;编辑改行，将后面的值设为 &lt;strong&gt;y&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;经过以上设置，所对应的扇区40个邻区列表功能正常开启，现在就可以在19页继续添加邻区了。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ime on UNIXETC</title>
+    <link>https://unixetc.com/tags/ime/</link>
+    <description>UNIXETC (ime)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 16 May 2017 15:16:00 +0000</lastBuildDate>
+    
+    <atom:link href="https://unixetc.com/tags/ime/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>在Citrix中使用本机输入法</title>
+      <link>https://unixetc.com/post/native-input-method-is-used-in-citrix/</link>
+      <pubDate>Tue, 16 May 2017 15:16:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/native-input-method-is-used-in-citrix/</guid>
+      <description>&lt;p&gt;进入到Citrix安装目录&lt;code&gt;C:\Program Files (x86)\Citrix\ICA Client&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;启用本地输入法&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wfica32.exe /localime:on
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;禁用本地输入法&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;wfica32.exe /localime:off
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以上输入完后会有弹窗提示是否成功。&lt;/p&gt;
+&lt;p&gt;除了通过运行命令行程序来更改，也可以通过修改注册表来实现&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;HKLM配置位置
+HKEY_LOCAL_MACHINE\SOFTWARE\Citrix\ICA Client\Engine\Lockdown Profiles\All Regions\Lockdown\Virtual Channels\Keyboard
+HKCU配置位置
+HKEY_CURRENT_USER\Software\Citrix\ICA Client\Engine\Lockdown Profiles\All Regions\Lockdown\Virtual Channels\Keyboard
+#设置LocalIME = 1 or 0
+#disable=0, enable=1,留空使用其他位置的设置
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;注意HKLM和HKCU必须同时修改，64位操作系统注册表键值在WOW64节点下&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
