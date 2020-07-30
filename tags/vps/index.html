@@ -17,7 +17,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101236" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103043" />
 <style>
 
     [data-theme="dark"] {   
@@ -49,7 +49,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101236" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103043" />
 
 
 
@@ -59,7 +59,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/tags/vps/" />
-<meta property="og:updated_time" content="2016-02-07T12:32:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="VPS"/>
@@ -99,6 +99,56 @@
     <div class="post-info">
         <a href="https://unixetc.com/tags">To all tags</a>
     </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/nginx-v2ray-websocket/">Nginx V2ray and WebSocket</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装v2ray/nginx v2ray安装可以参考Ubuntu中v2ray客户端配置实例.
+Nginx安装推荐使用OneinStack一键安装脚本
+准备好使用的域名，这里以v.fuckgfw.cn为例。
+v2ray/nginx服务端配置 v2ray安装好后，服务端配置/etc/v2ray/config.json如下:
+{ &quot;inbounds&quot;: [{ &quot;port&quot;: 99999, //代理端口号 &quot;listen&quot;: &quot;127.0.0.1&quot;, &quot;protocol&quot;: &quot;vmess&quot;, &quot;settings&quot;: { &quot;clients&quot;: [{ &quot;id&quot;: &quot;5c1eed18-fse4-41fs-9as9-e85s45bds9ef&quot;, &quot;level&quot;: 1, &quot;alterId&quot;: 64 }] }, &quot;streamSettings&quot;: { &quot;network&quot;: &quot;ws&quot;, &quot;wsSettings&quot;: { &quot;path&quot;: &quot;/fcgfw&quot; //代理目录 } } }], &quot;outbounds&quot;: [{ &quot;protocol&quot;: &quot;freedom&quot;, &quot;settings&quot;: {} }, { &quot;protocol&quot;: &quot;blackhole&quot;, &quot;settings&quot;: {}, &quot;tag&quot;: &quot;blocked&quot; }], &quot;routing&quot;: { &quot;rules&quot;: [{ &quot;type&quot;: &quot;field&quot;, &quot;ip&quot;: [&quot;geoip:private&quot;], &quot;outboundTag&quot;: &quot;blocked&quot; }] } } 使用OneinStack一键脚本新建一个站点，域名为v.fuckgfw.cn，采用SSL加密模式，完成后编辑/usr/local/nginx/conf/vhost/v.fuckgfw.cn.conf文件
+参考以下修改：
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2020-07-30</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/vps">#VPS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/v2ray">#V2ray</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/websocket">#WebSocket</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -321,82 +371,6 @@ hosts: &quot;www.example.com&quot;: listen: port: 80 listen: port: 443 ssl: cert
                         <li><a href="https://unixetc.com/tags/libuv">#libuv</a></li>
                     
                         <li><a href="https://unixetc.com/tags/libyaml">#libyaml</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/typecho-converted-to-gor/">将博客从Typcho转移至Gor</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        缘由 VPS快到期了，不想继续维护，太累，并且香港VPS价格也不菲。
-于是打算选择一个静态博客平台，原来用过的不少:jekyll,hexo,gor,pelican，最后决定Gor
-选择Gor的理由有两点
- 安装方便 执行效率高  安装Gor 参考Gor主页https://github.com/wendal/gor安装Gor
-将Typecho文章导出为Markdown文件(.md) Github上有现成的工具typecho-exporter，主页为https://github.com/aneasystone/typecho-exporter
-这个工具可以将所有的文章导出为Markdown文件，但是以文章标题为文件名，不利于后期处理，建议使用slug为文件名。
-编辑下载的main.py，将75行的p.title = r[1]替换为`p.title = r[2]'，如下:
-results = cur.fetchall() for r in results: p = Post() p.id = r[0] p.title = r[2] p.content = r[5] posts.append(p)  原来的r[1]对应typecho_contentsSQL表中的title列，我的r[2]对应slug列，可以根据实际情况更改。
-编辑typecho-exporter的config.ini文件，设置数据库访问方式。
-运行main.py，完成后会在typecho-exporter目录下生成files文件夹，里面就是导出的Markdown文件。
-后期整理 导出后的Markdown没有Gor需要的文件头格式，需要手动整理
-这里推荐使用Notepad++批量替换
-  查找目标:
-  替换为&mdash;\n title: title\ndate: 2015-07-20\ndescription: \npermalink: \ncategories: \ntags: \n&mdash;\n
-  记得将查找模式重的扩展打开。
-经过以上替换，就大概有了个Gor的Markdown头格式，后面的手动工作就少了多了。
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2015-07-20</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/google">#Google</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/git">#Git</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/gor">#gor</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/github">#Github</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/vps">#VPS</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/mysql">#MySQL</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/markdown">#Markdown</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/golang">#golang</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/blog">#Blog</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/typecho">#typecho</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/php">#php</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/sql">#sql</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/notepad&#43;&#43;">#notepad&#43;&#43;</a></li>
                     
                 </ul>
         

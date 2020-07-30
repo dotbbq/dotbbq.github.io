@@ -17,7 +17,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103042" />
 <style>
 
     [data-theme="dark"] {   
@@ -49,7 +49,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103042" />
 
 
 
@@ -59,7 +59,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/categories/stuff/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="STUFF"/>
@@ -99,6 +99,56 @@
     <div class="post-info">
         <a href="https://unixetc.com/categories">To all categories</a>
     </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/md5sum-usage/">使用MD5校验文件</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        md5sum命令用于生成和校验文件的md5值。它会逐位对文件的内容进行校验。是文件的内容，与文件名无关，也就是文件内容相同，其md5值相同。md5值是一个128位的二进制数据，转换成16进制则是32（128/4）位的进制值。
+md5校验，有很小的概率不同的文件生成的md5可能相同。比md5更安全的校验算法还有SHA*系列的。
+在网络传输时，我们校验源文件获得其md5sum，传输完毕后，校验其目标文件，并对比如果源文件和目标文件md5 一致的话，则表示文件传输无异常。否则说明文件在传输过程中未正确传输。
+md5sum示例 生成文件md5 pi@raspi:~ $ md5sum bs.conf fcd3e1243d1cd5903d4e38c46671b84f bs.conf  md5sum校验是根据文件内容为准，与名称无关，意思是即便文件名修改了，但md5校验值应该不会改变，如下：
+pi@raspi:~ $ cp bs.conf bs.conf.bak pi@raspi:~ $ md5sum bs* fcd3e1243d1cd5903d4e38c46671b84f bs.conf fcd3e1243d1cd5903d4e38c46671b84f bs.conf.bak  根据md5校验文件是否更改 一般网上分享的大文件都会附带一个.md5文件，这就是所分享文件的md5值，可以使用-c参数来直接使用.md5文件来检验文件是否完整
+pi@raspi:~ $ md5sum bs.conf&gt;bs.conf.md5 pi@raspi:~ $ md5sum -c bs.conf.md5 bs.conf: OK  如上例，将bs.conf的md5值定向到一个bs.conf.md5文件，然后使用md5sum -c bs.conf.md5直接检验相应文件是否完整一致，校验通过的话会输出提示OK，如果文件经过修改，内容已经不一致，则不会通过校验，则会显示FAILED
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-12-13</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/md5">#md5</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/md4">#md4</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/sha">#sha</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/md5sum">#md5sum</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -290,52 +340,6 @@ cd /usr/src git clone git://source.ffmpeg.org/ffmpeg.git cd ffmpeg sudo ./config
                         <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
                     
                         <li><a href="https://unixetc.com/tags/ffmpeg">#ffmpeg</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/linux-mp3-converted-to-ogg/">linux下将mp3转换为ogg</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        安装软件
-apt-get install mpg321 vorbis-tools  使用如下命令转换
-mpg321 tweet.mp3 -w raw &amp;&amp; oggenc raw -o tweet.ogg &amp;&amp; rm -rf raw  示例:
-root@hkvps:/home/res# mpg321 tweet.mp3 -w raw &amp;&amp; oggenc raw -o tweet.ogg &amp;&amp; rm -rf raw High Performance MPEG 1.0/2.0/2.5 Audio Player for Layer 1, 2, and 3. Version 0.3.2-1 (2012/03/25). Written and copyrights by Joe Drew, now maintained by Nanakos Chrysostomos and others. Uses code from various people. See 'README' for more!
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2015-10-21</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/mp3">#mp3</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ogg">#ogg</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/mpg321">#mpg321</a></li>
                     
                 </ul>
         

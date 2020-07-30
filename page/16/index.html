@@ -18,7 +18,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101234" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103041" />
 <style>
 
     [data-theme="dark"] {   
@@ -50,7 +50,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101234" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103041" />
 
 
 
@@ -60,7 +60,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="UNIXETC"/>
@@ -101,6 +101,65 @@
     </div>
 
     
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/pcd8544-library-for-raspberry-pi/">树莓派可用的PCD8544库</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        Nokia 3310/5110显示器基于PCD8544，在此分享一个树莓派可用的PCD8544库
+使用该库之前，需要安装wiringPi,安装方法可参考树莓派连接DHT11采集温度与湿度
+项目地址：
+https://github.com/binerry/RaspberryPi/tree/master/libraries/c/PCD8544  可通过github download直接下载,不能访问github的，用以下连接下载
+http://cdn.lyq.wiki/res/Raspberry.Pi_PCD8544.Library.zip  解压后，可得到一个c源码和一个h头文件
+PCD8544.c PCD8544.h  以及samples文件夹下的三个示例
+pcd8544_rpi.c pcd8544_test.c pcd8544_test2.c  按照下图所示连接好树莓派和显示器
+ RST —— 复位 接GPIO 0 CE —— 片选 接GPIO 1 或 不接 DC —— 数据/指令选择 接GPIO 2 DIN —— 串行数据线 接GPIO 3 CLK —— 串行时钟线 接GPIO 5 （因为我的GPIO 4已经接了一个DHT11传感器） VCC —— 电源输入 接3.3v BL —— 背光控制端 接3.3v GND —— 地线 接地  编译三个示例程序
+cc -o pcd8544_test pcd8544_test.c ../PCD8544.c -L/usr/local/lib -lwiringPi cc -o pcd8544_test2 pcd8544_test2.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-01-20</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nokia">#nokia</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%AF%BA%E5%9F%BA%E4%BA%9A">#诺基亚</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/pcd8544">#pcd8544</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/3310">#3310</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/5110">#5110</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/wiringpi">#wiringpi</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -299,57 +358,6 @@ root@alairpc:~# cat /etc/default/grub # If you change this file, run 'update-gru
                         <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
                     
                         <li><a href="https://unixetc.com/tags/grub">#GRUB</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/letsencrypt-certificate-quickly-generate-script/">Let&#39;s encrypt 证书快速生成脚本</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        网站的Let&rsquo;s encrypt证书快到期了，看了官方的续期方法比较繁琐，于是在网上找了找简单方便做法，结果找到了墓地小企鹅写的一个脚本(shell script)，使用这个脚本可以方便的生成以及更新Let&rsquo;s encrypt 证书。
-脚本地址 https://github.com/xdtianyu/scripts/tree/master/lets-encrypt
-下载脚本
-wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.conf wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh  配置
-root@rnse:~/lesh# cat letsencrypt.conf # only modify the values, key files will be generated automaticly. ACCOUNT_KEY=&quot;letsencrypt-account.key&quot; DOMAIN_KEY=&quot;alair.key&quot; DOMAIN_DIR=&quot;/data/wwwroot/alair.cn/compiled&quot; DOMAINS=&quot;DNS:alair.cn,DNS:www.alair.cn&quot; #ECC=TRUE #LIGHTTPD=TRUE  按照需要自定义DOMAIN_KEY、DOMAIN_DIR、DOMAINS三部分。
-生成证书
-root@rnse:~/lesh#chmod +x letsencrypt.sh root@rnse:~/lesh# ./letsencrypt.sh letsencrypt.conf Generate account key... Generating RSA private key, 4096 bit long modulus ..............................++ ....++ e is 65537 (0x10001) Generate domain key... Generating RSA private key, 2048 bit long modulus .
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2016-05-09</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/js">#JS</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/https">#https</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ssl">#ssl</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/letsencrypt">#letsencrypt</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/shell">#shell</a></li>
                     
                 </ul>
         

@@ -17,7 +17,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101236" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103043" />
 <style>
 
     [data-theme="dark"] {   
@@ -49,7 +49,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101236" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103043" />
 
 
 
@@ -59,7 +59,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/tags/linux/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux"/>
@@ -99,6 +99,64 @@
     <div class="post-info">
         <a href="https://unixetc.com/tags">To all tags</a>
     </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/understand-linux-shell-initialization-files-and-user-profiles-files/">理解Linux中Shell初始化文件和用户Profiles文件</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        Linux是一个多用户、实时共享的操作系统，意味着不止一个用户可以登录同一个系统。系统管理员通过任务管理来分配不同用户的权限，比如安装、升级、卸载应用程序，运行编译程序，文件查看、编辑等等。
+Linux允许通过两种主要方式来创建用户环境：系统级(全局)和用户级(个人)。一般情况下，Linux系统都会运行基本shell程序，当用户登录成功后shell会在初始化时根据某些文件开创建环境。
+Linux中的Shell初始化 当Shell被调用时，会有一些初始化/启动文件被启用，它们的主要作用是为shell本身或用户设定运行环境，包含一些函数、	变量、别名等等。
+Shell可以读取以下两种初始化文件:
+ 系统级启动文件 – 包含一些应用于户所有用户的全局配置，一般存在于**/etc**目录中，如 **/etc/profiles** 、**/etc/bashrc** 或者 **/etc/bash.bashrc**。 用户级启动文件 – 包含一些应用于单用户的配置文件，一般存放在各个用户目录，这些配置可以覆盖系统级全局配置，如**.profiles**、 **.bash_profile**、 **.bashrc** 和 **.bash_login**.  Shell存在三种调用模式：
+1. 交互式登录Shell 当用户成功登录系统后调用该Shell,使用**/bin/login**登录，随后读取**/etc/passwd**文件。
+当启动交互式shell后，将读取**/etc/profile**文件以及特定的用户文件**~/.bash_profile**
+login as: pi pi@pi.raspi.in&#39;s password: The programs included with the Debian GNU/Linux system are free software; the exact distribution terms for each program are described in the individual files in /usr/share/doc/*/copyright. Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent permitted by applicable law.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-04-25</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/path">#PATH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/shell">#shell</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/profile">#profile</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">#环境变量</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -322,60 +380,6 @@ pi@raspi:~ $ sudo java -jar marsiot.jar Current version &lt;101&gt; More help: s
                         <li><a href="https://unixetc.com/tags/marisot">#Marisot</a></li>
                     
                         <li><a href="https://unixetc.com/tags/%E7%81%AB%E6%98%9F%E4%BA%92%E8%81%94">#火星互联</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/linux-set-ip-netmask-gateway-mac-dns/">Linux下设置IP、网关、掩码、MAC和DNS</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        先用ifconfig来查看所有活动网络接口
-eth0 Link encap:Ethernet HWaddr b8:27:eb:1b:63:a8 inet addr:192.168.1.6 Bcast:192.168.1.255 Mask:255.255.255.0 inet6 addr: fe80::6502:67ff:89b:b2fd/64 Scope:Link UP BROADCAST RUNNING MULTICAST MTU:1500 Metric:1 RX packets:43239 errors:0 dropped:24 overruns:0 frame:0 TX packets:30644 errors:0 dropped:0 overruns:0 carrier:0 collisions:0 txqueuelen:1000 RX bytes:25068614 (23.9 MiB) TX bytes:5993030 (5.7 MiB) lo Link encap:Local Loopback inet addr:127.0.0.1 Mask:255.0.0.0 inet6 addr: ::1/128 Scope:Host UP LOOPBACK RUNNING MTU:65536 Metric:1 RX packets:1961 errors:0 dropped:0 overruns:0 frame:0 TX packets:1961 errors:0 dropped:0 overruns:0 carrier:0 collisions:0 txqueuelen:1 RX bytes:160232 (156.
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2017-03-20</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/dns">#DNS</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ifconfig">#ifconfig</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ip">#ip</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/netmask">#netmask</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/gateway">#gateway</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/mac">#mac</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/route">#route</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/resolvconf">#resolvconf</a></li>
                     
                 </ul>
         

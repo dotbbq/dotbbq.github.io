@@ -17,7 +17,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103042" />
 <style>
 
     [data-theme="dark"] {   
@@ -49,7 +49,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103042" />
 
 
 
@@ -59,7 +59,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/categories/stuff/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="STUFF"/>
@@ -99,6 +99,52 @@
     <div class="post-info">
         <a href="https://unixetc.com/categories">To all categories</a>
     </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/cli-model-of-linux-using-dropbox/">Linux下CLI模式使用Dropbox</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        下载Dropbox 32-bit:
+cd ~ &amp;&amp; wget -O - &quot;https://www.dropbox.com/download?plat=lnx.x86&quot; | tar xzf -  64-bit:
+cd ~ &amp;&amp; wget -O - &quot;https://www.dropbox.com/download?plat=lnx.x86_64&quot; | tar xzf -  连接到Dropbox ~/.dropbox-dist/dropboxd  按照提示，在浏览器中打开链接，确认授权。
+CLI模式使用Dropbox 下载执行脚本:
+wget https://www.dropbox.com/download?dl=packages/dropbox.py chmod +x dropbox.py  dropbox.py使用
+root@hkvps:~# ./dropbox.py help Dropbox command-line interface commands: Note: use dropbox help &lt;command&gt; to view usage for a specific command. status get current status of the dropboxd help provide help puburl get public url of a file in your dropbox stop stop dropboxd running return whether dropbox is running start start dropboxd filestatus get current sync status of one or more files ls list directory contents with current sync status autostart automatically start dropbox at login exclude ignores/excludes a directory from syncing lansync enables or disables LAN sync 
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-08-19</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dropbox">#Dropbox</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/cli">#CLI</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -310,57 +356,6 @@ cd /usr/local/tonido sudo apt-get install ffmpeg sudo ln -s /usr/bin/ffmpeg ffmp
                         <li><a href="https://unixetc.com/tags/centos7">#CentOS7</a></li>
                     
                         <li><a href="https://unixetc.com/tags/yum">#yum</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/centos7-configuration-grub-to-add-the-windows-boot-menu/">Centos7配置grub添加windows引导菜单</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        进入/etc/grub.d/目录
-#cd /etc/grub.d/  新建15_Windows文件，写入以下内容：
-#! /bin/sh -e echo &quot;#Adding Windows&quot; &gt;&amp;2 cat &lt;&lt; EOF menuentry &quot;Windows&quot; { set root=(hd0,1) chainloader +1 } EOF  其中(hd0,1)是本地磁盘windows主扇区号，可以通过fdisk -l来查看确定。
-设定文件权限
-#chmod 755 15_Windows  编辑/etc/default/grub来设定菜单等待时间
-GRUB_TIMEOUT=2 GRUB_DISTRIBUTOR=&quot;$(sed 's, release .*$,,g' /etc/system-release)&quot; GRUB_DEFAULT=saved GRUB_DISABLE_SUBMENU=true GRUB_TERMINAL_OUTPUT=&quot;console&quot; GRUB_CMDLINE_LINUX=&quot;vconsole.keymap=us crashkernel=auto vconsole.font=latarcyrheb-sun16 rhgb quiet&quot; GRUB_DISABLE_RECOVERY=&quot;true&quot;  修改GRUB_TIMEOUT值即可。
-设置Windows为默认启动项
-#grub2-set-default &quot;windows&quot;  然后运行以下命令，使以上修改生效：
-# grub2-mkconfig -o /boot/grub2/grub.cfg 
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2014-08-09</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/centos">#CentOS</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/centos7">#CentOS7</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/grub">#GRUB</a></li>
                     
                 </ul>
         

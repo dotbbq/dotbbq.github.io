@@ -18,7 +18,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101234" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103041" />
 <style>
 
     [data-theme="dark"] {   
@@ -50,7 +50,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101234" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103041" />
 
 
 
@@ -60,7 +60,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="UNIXETC"/>
@@ -101,6 +101,54 @@
     </div>
 
     
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/centos7-install-ntfs-3g/">Centos7下安装NTFS-3G</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        Centos7安装指南
+安装NTFS-3G 下载ntfs-3g_ntfsprogs-2014.2.15.tgz http://cdn.lyq.wiki/res/ntfs-3g_ntfsprogs-2014.2.15.tgz
+#tar zxf ntfs-3g_ntfsprogs-2014.2.15.tgz #cd ntfs-3g_ntfsprogs-2014.2.15 #make #make install  如果make无法成功的话，请重新安装gcc yum install gcc
+使用NTFS-3G 临时挂载window分区：
+#mkdir /mnt/windowsc/ #mount -t ntfs-3g /dev/sda1 /mnt/windosc/  编辑fstab开机挂载分区，可以参考通过fstab自动挂载分区
+/dev/sda1 /mnt/windowsc ntfs-3g defaults 0 0  NTFS-3G主页
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-08-10</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/centos">#CentOS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/centos7">#CentOS7</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ntfs">#NTFS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ntfs-3g">#ntfs-3g</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -315,55 +363,6 @@ git add --all git commit -m &quot;Update&quot; git remote add origin git@github.
                         <li><a href="https://unixetc.com/tags/github">#Github</a></li>
                     
                         <li><a href="https://unixetc.com/tags/%E5%8D%9A%E5%AE%A2">#博客</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/create-a-fixed-size-file/">创建固定大小的文件</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        有时我们需要新建指定大小的文件，很多人可能使用压缩软件的分割功能，分割出指定大小的文件。
-其实操作系统本身自带的命令就可以胜任以上任务。
-Windows
-新建名为1G-File，大小1G的文件
-fsutil file createnew 1G-File 1073741824  Linux
-新建名为2G-File，大小为2G的文件
-dd if=/dev/zero of=./2G-File bs=1M count=2048 
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2014-07-10</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/fsutil">#fsutil</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/dd">#dd</a></li>
                     
                 </ul>
         

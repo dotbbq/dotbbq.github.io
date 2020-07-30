@@ -17,7 +17,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101236" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103043" />
 <style>
 
     [data-theme="dark"] {   
@@ -49,7 +49,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101236" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103043" />
 
 
 
@@ -59,7 +59,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/tags/linux/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux"/>
@@ -99,6 +99,64 @@
     <div class="post-info">
         <a href="https://unixetc.com/tags">To all tags</a>
     </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/use-speedtest-cli-tests-network-bandwidth/">使用speedtest-cli测试带宽</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装speedtest-cli 安装speedtest-cli方法如下:
+sudo apt-get install python-pip sudo pip install speedtest-cli  或
+pip install git+https://github.com/sivel/speedtest-cli.git  或
+git clone https://github.com/sivel/speedtest-cli.git python speedtest-cli/setup.py install  或
+wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest_cli.py chmod +x speedtest-cli  或
+curl -Lo speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest_cli.py chmod +x speedtest-cli  使用speedtest-cli root@MyUbuntuCloud:~# speedtest-cli -h usage: speedtest-cli [-h] [--bytes] [--share] [--simple] [--list] [--server SERVER] [--mini MINI] [--source SOURCE] [--timeout TIMEOUT] [--version] Command line interface for testing internet bandwidth using speedtest.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-03-26</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/git">#Git</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/python">#Python</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/bandwidth">#Bandwidth</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%B8%A6%E5%AE%BD">#带宽</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%BD%91%E9%80%9F">#网速</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/speedtest">#speedtest</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/speedtest-cli">#speedtest-cli</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/pip">#pip</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -288,52 +346,6 @@ rontab命令 功能说明： 设置计时器。
                         <li><a href="https://unixetc.com/tags/centos">#CentOS</a></li>
                     
                         <li><a href="https://unixetc.com/tags/crontab">#crontab</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/cli-model-of-linux-using-dropbox/">Linux下CLI模式使用Dropbox</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        下载Dropbox 32-bit:
-cd ~ &amp;&amp; wget -O - &quot;https://www.dropbox.com/download?plat=lnx.x86&quot; | tar xzf -  64-bit:
-cd ~ &amp;&amp; wget -O - &quot;https://www.dropbox.com/download?plat=lnx.x86_64&quot; | tar xzf -  连接到Dropbox ~/.dropbox-dist/dropboxd  按照提示，在浏览器中打开链接，确认授权。
-CLI模式使用Dropbox 下载执行脚本:
-wget https://www.dropbox.com/download?dl=packages/dropbox.py chmod +x dropbox.py  dropbox.py使用
-root@hkvps:~# ./dropbox.py help Dropbox command-line interface commands: Note: use dropbox help &lt;command&gt; to view usage for a specific command. status get current status of the dropboxd help provide help puburl get public url of a file in your dropbox stop stop dropboxd running return whether dropbox is running start start dropboxd filestatus get current sync status of one or more files ls list directory contents with current sync status autostart automatically start dropbox at login exclude ignores/excludes a directory from syncing lansync enables or disables LAN sync 
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2014-08-19</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/dropbox">#Dropbox</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/cli">#CLI</a></li>
                     
                 </ul>
         

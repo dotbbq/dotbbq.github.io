@@ -17,7 +17,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101236" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103043" />
 <style>
 
     [data-theme="dark"] {   
@@ -49,7 +49,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101236" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103043" />
 
 
 
@@ -59,7 +59,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/tags/linux/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux"/>
@@ -99,6 +99,60 @@
     <div class="post-info">
         <a href="https://unixetc.com/tags">To all tags</a>
     </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/linux-set-ip-netmask-gateway-mac-dns/">Linux下设置IP、网关、掩码、MAC和DNS</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        先用ifconfig来查看所有活动网络接口
+eth0 Link encap:Ethernet HWaddr b8:27:eb:1b:63:a8 inet addr:192.168.1.6 Bcast:192.168.1.255 Mask:255.255.255.0 inet6 addr: fe80::6502:67ff:89b:b2fd/64 Scope:Link UP BROADCAST RUNNING MULTICAST MTU:1500 Metric:1 RX packets:43239 errors:0 dropped:24 overruns:0 frame:0 TX packets:30644 errors:0 dropped:0 overruns:0 carrier:0 collisions:0 txqueuelen:1000 RX bytes:25068614 (23.9 MiB) TX bytes:5993030 (5.7 MiB) lo Link encap:Local Loopback inet addr:127.0.0.1 Mask:255.0.0.0 inet6 addr: ::1/128 Scope:Host UP LOOPBACK RUNNING MTU:65536 Metric:1 RX packets:1961 errors:0 dropped:0 overruns:0 frame:0 TX packets:1961 errors:0 dropped:0 overruns:0 carrier:0 collisions:0 txqueuelen:1 RX bytes:160232 (156.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-03-20</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dns">#DNS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ifconfig">#ifconfig</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ip">#ip</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/netmask">#netmask</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gateway">#gateway</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/mac">#mac</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/route">#route</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/resolvconf">#resolvconf</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -304,50 +358,6 @@ alair@zb14:~$ lspci|grep less 02:00.0 Network controller: Intel Corporation Wire
                         <li><a href="https://unixetc.com/tags/inter">#inter</a></li>
                     
                         <li><a href="https://unixetc.com/tags/inter7260">#inter7260</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/ubuntu-modify-the-grub-boot-menu/">ubuntu修改grub引导菜单</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        先运行update-grub命令生成一次grub配置，顺便查看一下识别出来的引导菜单内容
-root@alairpc:~# update-grub Generating grub configuration file ... Found linux image: /boot/vmlinuz-4.4.0-21-generic Found initrd image: /boot/initrd.img-4.4.0-21-generic Found memtest86+ image: /boot/memtest86+.elf Found memtest86+ image: /boot/memtest86+.bin Found Windows 7 (loader) on /dev/sda1 done root@alairpc:~#  注意看，以上共有5个菜单项，最后一个是windows7
-接下来我们来看看gurb配置文件/etc/default/grub
-root@alairpc:~# cat /etc/default/grub # If you change this file, run 'update-grub' afterwards to update # /boot/grub/grub.cfg. # For full documentation of the options in this file, see: # info -f grub -n 'Simple configuration' GRUB_DEFAULT=4 #GRUB_HIDDEN_TIMEOUT=0 GRUB_HIDDEN_TIMEOUT_QUIET=true GRUB_TIMEOUT=3 GRUB_DISTRIBUTOR=`lsb_release -i -s 2&gt; /dev/null || echo Debian` GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot; GRUB_CMDLINE_LINUX=&quot;locale=zh_CN&quot; # Uncomment to enable BadRAM filtering, modify to suit your needs # This works with Linux (no patch required) and with any kernel that obtains # the memory map information from GRUB (GNU Mach, kernel of FreeBSD .
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2016-06-27</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/grub">#GRUB</a></li>
                     
                 </ul>
         

@@ -17,7 +17,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103042" />
 <style>
 
     [data-theme="dark"] {   
@@ -49,7 +49,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103042" />
 
 
 
@@ -59,7 +59,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/categories/stuff/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="STUFF"/>
@@ -99,6 +99,53 @@
     <div class="post-info">
         <a href="https://unixetc.com/categories">To all categories</a>
     </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/retrieve-windows10-photo-viewer/">找回windows10照片查看器</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        Windows10中可以通过修改注册表的方法找回照片查看器。
+新建ton.reg注册表文件，内容如下：
+Windows Registry Editor Version 5.00 ; Change Extension's File Type [HKEY_CURRENT_USER\Software\Classes\.jpg] @=&quot;PhotoViewer.FileAssoc.Tiff&quot; ; Change Extension's File Type [HKEY_CURRENT_USER\Software\Classes\.jpeg] @=&quot;PhotoViewer.FileAssoc.Tiff&quot; ; Change Extension's File Type [HKEY_CURRENT_USER\Software\Classes\.gif] @=&quot;PhotoViewer.FileAssoc.Tiff&quot; ; Change Extension's File Type [HKEY_CURRENT_USER\Software\Classes\.png] @=&quot;PhotoViewer.FileAssoc.Tiff&quot; ; Change Extension's File Type [HKEY_CURRENT_USER\Software\Classes\.bmp] @=&quot;PhotoViewer.FileAssoc.Tiff&quot; ; Change Extension's File Type [HKEY_CURRENT_USER\Software\Classes\.tiff] @=&quot;PhotoViewer.FileAssoc.Tiff&quot; ; Change Extension's File Type [HKEY_CURRENT_USER\Software\Classes\.ico] @=&quot;PhotoViewer.FileAssoc.Tiff&quot;  保存后，双击运行即可，然后右键打开方式中即可看到照片查看器。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2019-07-28</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/windows10">#Windows10</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%85%A7%E7%89%87%E6%9F%A5%E7%9C%8B%E5%99%A8">#照片查看器</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8%E6%96%87%E4%BB%B6">#注册表文件</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/regedit">#Regedit</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -304,49 +351,6 @@ $tar zxf libwebp-1.0.2-linux-x86-64.tar.gz $cd libwebp-1.0.2-linux-x86-64 $cd bi
                         <li><a href="https://unixetc.com/tags/google">#google</a></li>
                     
                         <li><a href="https://unixetc.com/tags/libwebp">#libwebp</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/termux-extra-keys-row/">Termux开启扩展快捷键</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        打开Termux，从屏幕左边缘向右滑动，打开抽屉菜单，然后长按KEYBOARD，即可打开扩展快捷键。
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2019-06-11</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/termux">#termux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/esc">#Esc</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/tab">#Tab</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/alt">#Alt</a></li>
                     
                 </ul>
         

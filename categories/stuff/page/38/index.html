@@ -17,7 +17,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103042" />
 <style>
 
     [data-theme="dark"] {   
@@ -49,7 +49,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103042" />
 
 
 
@@ -59,7 +59,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/categories/stuff/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="STUFF"/>
@@ -99,6 +99,57 @@
     <div class="post-info">
         <a href="https://unixetc.com/categories">To all categories</a>
     </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/archlinux-modify-the-network-adapter-name/">Archlinux下修改网卡名称</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        刚刚安装了Archlinux，用的archlinux-2013.03.01-dual.iso镜像，最新的systemd将网卡名更改了，不在是原来默认的eth0/wlan0
+我的ifconfig -a输出如下:
+enp9s0: flags=4098 mtu 1500 ether 04:7d:7b:f8:25:9d txqueuelen 1000 (Ethernet) RX packets 0 bytes 0 (0.0 B) RX errors 0 dropped 0 overruns 0 frame 0 TX packets 0 bytes 0 (0.0 B) TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0 lo: flags=73mtu 65536 inet 127.0.0.1 netmask 255.0.0.0 inet6 ::1 prefixlen 128 scopeid 0x10 loop txqueuelen 0 (Local Loopback) RX packets 0 bytes 0 (0.0 B) RX errors 0 dropped 0 overruns 0 frame 0 TX packets 0 bytes 0 (0.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2013-03-06</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/archlinux">#Archlinux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ifconfig">#ifconfig</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/systemd">#systemd</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/eth0">#eth0</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/wlan0">#wlan0</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/udev">#udev</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -322,66 +373,6 @@ aPhone:~ root# cd /private/etc/apt/sources.list.d/ aPhone:/private/etc/apt/sourc
                         <li><a href="https://unixetc.com/tags/ios">#IOS</a></li>
                     
                         <li><a href="https://unixetc.com/tags/%E8%B6%8A%E7%8B%B1">#越狱</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/twelve-percent-problem-on-hp-veer/">HP Veer刷机中遇到的12%卡死问题</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        对于webos系统，我是由衷的赞美，但是相应的硬件确实有待商榷。
-去年就入手了一部HP Veer 4G，体验了一个星期就转手了，因为我手中已经有了HP Touchpad。
-前几天朋友再次邮寄Veer给我，自己玩不转，也不想玩了，所以让给我倒腾去吧。拿到手第一感觉就是，这货儿也太不爱惜了，机子用的就没法看，好在屏幕还贴膜着，要不更不知道会咋样。
-拿到手的机子是商家当时发货时的系统，被搞的乌七八糟，于是重新找rom下载之。
-以前自己用的那个感觉刷原厂rom就很好，但是现在想试着找找看有没有不错的第三方rom，煮机网看了下，发现现在有个stay版的，看起来做的确实不错，于是下载安装之。
-刷机时由于懒惰，用了一个一键清除工具，没有使用系统自带的擦除功能，导致存储上出了问题，u盘功能不能使用了。想着不用管重新刷过就是，没想到碰到了从来没有过的12%卡死问题，刷了N多次还是不能过12%。
-网上看了看一些经验，像重新安装驱动，换一台电脑试试等等，都没有用。
-最后在webos-internals.org上找到了方法，地址在这里http://www.webos-internals.org/wiki/How_To_Recover，里面列出了几个不能正常recovery的实例，参考里面的Doctor disconnects at 8%条目，就可以解决刷机12%的问题。 从里面说明来看，造成这些问题的主要原因就是存储问题，所以可能是由于我使用了一键清除工具的原因。
-主要步骤如下：
-1，重启手机，进入到recovery模式下(Power+音量上） 2，使用novacom刷入uImage
-#novacom boot mem://&lt; nova-installer-image-broadway.uImage  其中的uImage文件，可以从官网的rom中提取，下载.tar格式的rom文件，用7zip打开
-3，使用novaterm连接系统，进入cli，重新修复存储系统
-#lvm.static vgscan --ignorelockingfailure #lvm.static vgchange -ay --ignorelockingfailure #mkdosfs -f 1 -s 64 /dev/store/media  Windows下novaterm的目录为C:\Program Files\Palm Incterminal\novaterm.bat
-完成以上步骤，就可以重启进入recovery重新刷机了。
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2012-05-28</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/hp">#HP</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/webos">#WebOS</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E6%83%A0%E6%99%AE">#惠普</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/veer">#veer</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/recovery">#recovery</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/novacom">#novacom</a></li>
                     
                 </ul>
         

@@ -17,7 +17,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103042" />
 <style>
 
     [data-theme="dark"] {   
@@ -49,7 +49,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103042" />
 
 
 
@@ -59,7 +59,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/categories/stuff/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="STUFF"/>
@@ -99,6 +99,57 @@
     <div class="post-info">
         <a href="https://unixetc.com/categories">To all categories</a>
     </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/deploy-the-static-site-to-the-coding-net/">将静态站点部署到Coding.net</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        本站是基于https://github.com/wendal/gor生成的静态站点。
+下面介绍如何将静态站点部署到coding.net上。
+注册coding并新建项目 首先注册coding.net，注册完后新建项目。
+项目名称为*.coding.me，以此格式新建的项目可以使用Coding Pages服务。
+Pages服务设置 建立完成后，在项目设置中找到Pages服务服务进行设置。
+ 部署来源  选择master分支
+ 自定义域名  添加自定义域名，建议同时添加domain.com和www.domain.com，并且设置一个为首选项，另一个跳转到首选项。然后将自己的域名CNAME指向pages.coding.me
+ 强制HTTPS访问  打开该选项，则为你的域名自动申请设置** Let&rsquo;s Encrypt**证书，并开启**https**访问。
+ Hosted by Coding Pages  新站点都会有coding pages跳转页，按照Hosted by Coding Pages说明，在首页添加规定连接后，可以提交申请不显示跳转页。
+使用Git部署站点 首先推荐配置SSH公钥以便于操作。
+$ ssh-keygen -t rsa -C &quot;name@domain.com&quot; //在此设置为coding.net帐号邮箱 Generating public/private rsa key pair. Enter file in which to save the key (/c/Users/dotbbq/.ssh/id_rsa): Created directory '/c/Users/dotbbq/.ssh'. Enter passphrase (empty for no passphrase): Enter same passphrase again: Your identification has been saved in /c/Users/dotbbq/.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-11-25</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/coding">#Coding</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/git">#Git</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gor">#gor</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -304,59 +355,6 @@ service php-fpm restart  完了！
                         <li><a href="https://unixetc.com/tags/php.ini">#php.ini</a></li>
                     
                         <li><a href="https://unixetc.com/tags/access-denied">#Access Denied</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/linux-fix-resolution-display-exception/">Linux下修复分辨率显示异常</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        家里放了台老旧的台式机，显卡是GTX 660Ti，windows下必须安装特定的驱动版本才能显示最佳分辨率(1680x1050)，如果更新到最新的Nvidia驱动，反而显示器无法正常显示(1024x768)。
-没想到，这种情况在Linux下依然存在，不论是安装Debian还是Linux Mint或者Ubuntu，默认都是1024x768。
-网上找到了修复分辨率异常的方法，整理如下。
-检查当前显卡硬件情况 $ lspci |grep VGA 01:00.0 VGA compatible controller: NVIDIA Corporation GK104 [GeForce GTX 660 Ti] (rev a2)  可以看到，显卡硬件识别正常。
-检查显卡分辨率情况 $ xrandr Screen 0: minimum 320 x 200, current 1024 x 768, maximum 8192 x 8192 VGA-1 disconnected (normal left inverted right x axis y axis) DVI-I-1 connected primary 1024x768+0+0 (normal left inverted right x axis y axis) 0mm x 0mm 1024x768 60.00* 800x600 60.
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2017-08-26</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E5%88%86%E8%BE%A8%E7%8E%87">#分辨率</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/nvidia">#nvidia</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/xrandr">#xrandr</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/lspci">#lspci</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/cvt">#cvt</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/660ti">#660ti</a></li>
                     
                 </ul>
         

@@ -18,7 +18,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101234" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103041" />
 <style>
 
     [data-theme="dark"] {   
@@ -50,7 +50,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101234" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103041" />
 
 
 
@@ -60,7 +60,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="UNIXETC"/>
@@ -101,6 +101,68 @@
     </div>
 
     
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-using-ddclient-and-ddns/">树莓派使用ddclient和DDNS</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        域名解析 首先得有个域名，在域名管理中将域名DNS设为he.net的DNS地址，如下：
+ns1.he.net ns2.he.net ns3.he.net ns4.he.net ns5.he.net  然后在http://dns.he.net注册账号，添加域名(Add a new domain)
+接下来添加A记录(New A)，勾选允许动态域名解析(Enable entry for dynamic dns)
+点击域名后DDNS列中的刷新按钮，新建一个DDNS密匙(Generate a DDNS key.)
+安装设置ddclient 在树莓派上安装ddclient
+sudo apt-get install ddclient  编辑ddclient配置文件，路径为/etc/ddclient.conf
+protocol=dyndns2 use=web,web=myip.dnsomatic.com server=dyn.dns.he.net login=raspi.in password='ddnskey' www.raspi.in,raspi.in  其中password为设置DDNS时的key
+重启ddclient服务
+service ddclient restart  验证IP查询结果
+sudo ddclient -query use=if, if=eth0 address is 192.168.1.111 use=if, if=lo address is 127.0.0.1 use=web, web=dnspark address is 36.40.143.235 use=web, web=dyndns address is NOT FOUND use=web, web=loopia address is 36.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-01-07</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ddns">#DDNS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dns">#DNS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/domain">#Domain</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/he.net">#he.net</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ddclient">#ddclient</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -288,66 +350,6 @@ pi@raspi:~ $ md5sum bs.conf&gt;bs.conf.md5 pi@raspi:~ $ md5sum -c bs.conf.md5 bs
                         <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
                     
                         <li><a href="https://unixetc.com/tags/scp">#scp</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/raspberry-pi-install-nodejs/">树莓派安装Node.js</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        首先查看树莓派cpu信息
-pi@raspi:~ $ cat /proc/cpuinfo processor : 0 model name : ARMv6-compatible processor rev 7 (v6l) BogoMIPS : 2.00 Features : half thumb fastmult vfp edsp java tls CPU implementer : 0x41 CPU architecture: 7 CPU variant : 0x0 CPU part : 0xb76 CPU revision : 7 Hardware : BCM2708 Revision : 000e Serial : 000000004a8acb6d  看清楚cpu构架，是ARMv6
-然后在node.js官网下载对应版本的包，下载地址https://nodejs.org/dist/
-# wget https://nodejs.org/dist/v4.2.2/node-v4.2.2-linux-arm64.tar.gz # tar zxf node-v4.2.2-linux-arm64.tar.gz # mv node-v4.2.2-linux-arm64 /usr/nodejs422  方便使用期间，做个链接
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2015-12-03</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/js">#JS</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/npm">#npm</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/node.js">#node.js</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ode">#ode</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/node">#node</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/arm6">#arm6</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/cpuinfo">#cpuinfo</a></li>
                     
                 </ul>
         

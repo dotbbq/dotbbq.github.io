@@ -4,7 +4,57 @@
   
   <url>
     <loc>https://unixetc.com/categories/</loc>
-    <lastmod>2020-03-02T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://unixetc.com/tags/linux/</loc>
+    <lastmod>2020-07-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://unixetc.com/tags/nginx/</loc>
+    <lastmod>2020-07-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://unixetc.com/post/nginx-v2ray-websocket/</loc>
+    <lastmod>2020-07-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://unixetc.com/post/</loc>
+    <lastmod>2020-07-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://unixetc.com/categories/stuff/</loc>
+    <lastmod>2020-07-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://unixetc.com/tags/</loc>
+    <lastmod>2020-07-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://unixetc.com/</loc>
+    <lastmod>2020-07-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://unixetc.com/tags/v2ray/</loc>
+    <lastmod>2020-07-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://unixetc.com/tags/vps/</loc>
+    <lastmod>2020-07-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://unixetc.com/tags/websocket/</loc>
+    <lastmod>2020-07-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -18,37 +68,12 @@
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/linux/</loc>
-    <lastmod>2020-03-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://unixetc.com/post/</loc>
-    <lastmod>2020-03-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://unixetc.com/categories/stuff/</loc>
-    <lastmod>2020-03-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://unixetc.com/tags/</loc>
-    <lastmod>2020-03-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://unixetc.com/tags/ubuntu/</loc>
     <lastmod>2020-03-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://unixetc.com/tags/unixbench/</loc>
-    <lastmod>2020-03-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://unixetc.com/</loc>
     <lastmod>2020-03-02T00:00:00+00:00</lastmod>
   </url>
   
@@ -589,11 +614,6 @@
   
   <url>
     <loc>https://unixetc.com/post/v2ray-client-configuration-example-in-ubuntu/</loc>
-    <lastmod>2019-05-18T09:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://unixetc.com/tags/v2ray/</loc>
     <lastmod>2019-05-18T09:00:00+00:00</lastmod>
   </url>
   
@@ -1153,11 +1173,6 @@
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/websocket/</loc>
-    <lastmod>2018-08-20T18:18:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://unixetc.com/tags/%E4%BB%A3%E7%90%86/</loc>
     <lastmod>2018-08-20T18:18:00+00:00</lastmod>
   </url>
@@ -1279,11 +1294,6 @@
   
   <url>
     <loc>https://unixetc.com/tags/bbs/</loc>
-    <lastmod>2018-02-06T12:16:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://unixetc.com/tags/nginx/</loc>
     <lastmod>2018-02-06T12:16:00+00:00</lastmod>
   </url>
   
@@ -2379,11 +2389,6 @@
   
   <url>
     <loc>https://unixetc.com/tags/net_speeder/</loc>
-    <lastmod>2016-02-07T12:32:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://unixetc.com/tags/vps/</loc>
     <lastmod>2016-02-07T12:32:00+00:00</lastmod>
   </url>
   

@@ -18,7 +18,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101234" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103041" />
 <style>
 
     [data-theme="dark"] {   
@@ -50,7 +50,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101234" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103041" />
 
 
 
@@ -60,7 +60,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="UNIXETC"/>
@@ -101,6 +101,55 @@
     </div>
 
     
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/use-the-ssh-key-to-login-github/">使用SSH密匙登录Github</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        生成ssh密匙文件 ssh-keygen -t rsa -C &quot;user@domain.com&quot;  接下来会提示输入密码，推荐自定义密码，当然也可以置空
+Enter passphrase(empty for no passphrase): Enter same passphrase again:  完成后会在用户目录下的.ssh文件夹中新建id_rsa与is_rsa.pub两个文件。
+添加ssh密匙到github用户 登录至github.com,点击右上角的Account Settings
+在左侧选择SSH Keys菜单，然后在右侧点击Add SSH Key按钮
+将上一步生成的id_rsa.pub文件内容复制进去保存。
+本地连接至github.com ssh -T git@github.com  如果前面设置了passphrase，那么就按照提示输入passphrase。如果置空的话，就直接点击回车。成功后会有如下提示：
+Hi wrchiu! You`ve successfully authenticated, but GitHub does note provide shell access.  参考以上设置完成后，以后git push时就不需要每次输入密码了！
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2013-09-03</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/git">#Git</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/github">#Github</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/rsa">#RSA</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -301,53 +350,6 @@ aquan@edge ~/google_appengine $ python appcfg.py update goagent-goagent-d4488f2/
                         <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
                     
                         <li><a href="https://unixetc.com/tags/vnc">#VNC</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/debian-use-apt-spy-to-select-the-best-source/">Debian使用apt-spy选择最佳源</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        安装apt-spy
-#apt-get install apt-spy  使用apt-spy选择最佳源
-#apt-spy update #apt-spy -d stable -a asia -t 3  结果保存在/etc/apt/sources.list.d/apt-spy.list，可手动替换到/etc/apt/sources.list
-apt-spy选项:
- -d 系统版本，可选stable,testing,unstable -a 区域,如asia,europe等，可用项可cat /etc/apt-spy.conf -t 超时阀值(s)，可筛掉长时间不响应的地址  
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2013-05-09</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/debian">#Debian</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/apt-get">#apt-get</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/apt-spy">#apt-spy</a></li>
                     
                 </ul>
         

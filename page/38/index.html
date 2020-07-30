@@ -18,7 +18,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101234" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103041" />
 <style>
 
     [data-theme="dark"] {   
@@ -50,7 +50,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101234" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103041" />
 
 
 
@@ -60,7 +60,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="UNIXETC"/>
@@ -101,6 +101,48 @@
     </div>
 
     
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/add-rssxml-to-the-jekyll-site/">为Jekyll站点添加rss.xml</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        在网站根目录中新建rss.xml文件，写入以下内容：
+参考以上代码，其中的域名等信息自定义。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2013-09-18</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/jekyll">#Jekyll</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/rss">#RSS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/rss.xml">#rss.xml</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -298,55 +340,6 @@ $gem sources -a http://ruby.taobao.org/ $gem sources -r http://rubygems.org/ $ge
                         <li><a href="https://unixetc.com/tags/gem">#gem</a></li>
                     
                         <li><a href="https://unixetc.com/tags/rvm">#Rvm</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/use-the-ssh-key-to-login-github/">使用SSH密匙登录Github</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        生成ssh密匙文件 ssh-keygen -t rsa -C &quot;user@domain.com&quot;  接下来会提示输入密码，推荐自定义密码，当然也可以置空
-Enter passphrase(empty for no passphrase): Enter same passphrase again:  完成后会在用户目录下的.ssh文件夹中新建id_rsa与is_rsa.pub两个文件。
-添加ssh密匙到github用户 登录至github.com,点击右上角的Account Settings
-在左侧选择SSH Keys菜单，然后在右侧点击Add SSH Key按钮
-将上一步生成的id_rsa.pub文件内容复制进去保存。
-本地连接至github.com ssh -T git@github.com  如果前面设置了passphrase，那么就按照提示输入passphrase。如果置空的话，就直接点击回车。成功后会有如下提示：
-Hi wrchiu! You`ve successfully authenticated, but GitHub does note provide shell access.  参考以上设置完成后，以后git push时就不需要每次输入密码了！
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2013-09-03</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/git">#Git</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/github">#Github</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/rsa">#RSA</a></li>
                     
                 </ul>
         

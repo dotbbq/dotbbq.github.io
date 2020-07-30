@@ -18,7 +18,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101234" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103041" />
 <style>
 
     [data-theme="dark"] {   
@@ -50,7 +50,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101234" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103041" />
 
 
 
@@ -60,7 +60,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="UNIXETC"/>
@@ -101,6 +101,57 @@
     </div>
 
     
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/letsencrypt-certificate-quickly-generate-script/">Let&#39;s encrypt 证书快速生成脚本</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        网站的Let&rsquo;s encrypt证书快到期了，看了官方的续期方法比较繁琐，于是在网上找了找简单方便做法，结果找到了墓地小企鹅写的一个脚本(shell script)，使用这个脚本可以方便的生成以及更新Let&rsquo;s encrypt 证书。
+脚本地址 https://github.com/xdtianyu/scripts/tree/master/lets-encrypt
+下载脚本
+wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.conf wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh  配置
+root@rnse:~/lesh# cat letsencrypt.conf # only modify the values, key files will be generated automaticly. ACCOUNT_KEY=&quot;letsencrypt-account.key&quot; DOMAIN_KEY=&quot;alair.key&quot; DOMAIN_DIR=&quot;/data/wwwroot/alair.cn/compiled&quot; DOMAINS=&quot;DNS:alair.cn,DNS:www.alair.cn&quot; #ECC=TRUE #LIGHTTPD=TRUE  按照需要自定义DOMAIN_KEY、DOMAIN_DIR、DOMAINS三部分。
+生成证书
+root@rnse:~/lesh#chmod +x letsencrypt.sh root@rnse:~/lesh# ./letsencrypt.sh letsencrypt.conf Generate account key... Generating RSA private key, 4096 bit long modulus ..............................++ ....++ e is 65537 (0x10001) Generate domain key... Generating RSA private key, 2048 bit long modulus .
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-05-09</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/js">#JS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/https">#https</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssl">#ssl</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/letsencrypt">#letsencrypt</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/shell">#shell</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -310,52 +361,6 @@ pi@raspi:~$ echo $PATH /mydoc:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/
                         <li><a href="https://unixetc.com/tags/path">#PATH</a></li>
                     
                         <li><a href="https://unixetc.com/tags/echo">#echo</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/install-h2o-on-ubuntu/">Ubunt下安装H2O</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        更新系统 apt-get update &amp;&amp; apt-get upgrade -y &amp;&amp; apt-get dist-upgrade -y &amp;&amp; apt-get autoremove --purge -y &amp;&amp; apt-get autoclean -y  安装必备软件 apt-get install locate git cmake build-essential checkinstall autoconf pkg-config libtool python-sphinx wget libcunit1-dev nettle-dev libyaml-dev libuv-dev -y  安装wslay git clone https://github.com/tatsuhiro-t/wslay.git cd wslay/ autoreconf -i automake autoconf ./configure make make install  安装完成后检查lib文件，如下所示：
-ls /usr/local/lib/ libuv.a libuv.so.1 libwslay.la libwslay.so.0.0.1 python3.4 libuv.la libuv.so.1.0.0 libwslay.so pkgconfig libuv.so libwslay.a libwslay.so.0 python2.
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2016-03-26</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/openssl">#OpenSSL</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/h2o">#H2O</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/wslay">#wslay</a></li>
                     
                 </ul>
         

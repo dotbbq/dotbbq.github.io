@@ -18,7 +18,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101234" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103041" />
 <style>
 
     [data-theme="dark"] {   
@@ -50,7 +50,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101234" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103041" />
 
 
 
@@ -60,7 +60,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="UNIXETC"/>
@@ -101,6 +101,52 @@
     </div>
 
     
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/examples-of-fdisk-partition/">fdisk分区实例</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        查看磁盘分区详情 直接使用fdisk -l 或者使用fdisk /dev/sda，再使用p命令来查看
+Command (m for help): p Disk /dev/sda: 32.2 GB, 32212254720 bytes 255 heads, 63 sectors/track, 3916 cylinders, total 62914560 sectors Units = sectors of 1 * 512 = 512 bytes Sector size (logical/physical): 512 bytes / 512 bytes I/O size (minimum/optimal): 512 bytes / 512 bytes Disk identifier: 0x000657c3 Device Boot Start End Blocks Id System /dev/sda1 * 2048 61868031 30932992 83 Linux /dev/sda2 61870078 62912511 521217 5 Extended /dev/sda5 61870080 62912511 521216 82 Linux swap / Solaris  fdisk命令 fdisk有以下命令可用，其中常用的已简单说明
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-03-19</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/fdisk">#fdisk</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/partition">#Partition</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%88%86%E5%8C%BA">#分区</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/disk">#Disk</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -316,51 +362,6 @@ pi@raspi ~ $ iwconfig wlan0 IEEE 802.11bg ESSID:off/any Mode:Managed Access Poin
                         <li><a href="https://unixetc.com/tags/zydas">#zydas</a></li>
                     
                         <li><a href="https://unixetc.com/tags/lsusb">#lsusb</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/use-youtube-dl-to-download-youtube-video/">使用youtube-dl下载YouTube视频</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        什么是youtube-dl youtube-dl是一个简单的下载youtube视频脚本工具，基于Python。
-安装youtube-dl 官方安装方法
-sudo curl https://yt-dl.org/latest/youtube-dl -o /usr/local/bin/youtube-dl sudo chmod a+x /usr/local/bin/youtube-dl  或者
-sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl sudo chmod a+x /usr/local/bin/youtube-dl  还有两种方法:
-sudo pip install youtube-dl brew install youtube-dl  使用youtube-dl youtube-dl [OPTIONS] URL [URL...]  youtube-dl官网 https://github.com/rg3/youtube-dl/
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2015-01-08</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/youtube-dl">#youtube-dl</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/youtube">#YouTube</a></li>
                     
                 </ul>
         

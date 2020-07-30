@@ -17,7 +17,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103042" />
 <style>
 
     [data-theme="dark"] {   
@@ -49,7 +49,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103042" />
 
 
 
@@ -59,7 +59,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/categories/stuff/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="STUFF"/>
@@ -99,6 +99,55 @@
     <div class="post-info">
         <a href="https://unixetc.com/categories">To all categories</a>
     </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/linux-deployment-goagent/">Linux下部署goAgent</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        准备工作 下载Google Appengine SDK For Pyahont与goAgent
+1.Google App Engine SDK for Python https://developers.google.com/appengine/downloads?hl=zh-CN#Google_App_Engine_SDK_for_Python 2.goagent https://code.google.com/p/goagent/  下载后解压，将goagent文件夹放到google_appengine目录下，目录结构如下:
+~/google_appengine/goagent-goagent-d488f2  准备好Google Application_ID与两步验证密码,如何申请问Google
+配置goagent 编辑~/google_appengine/goagent-goagent-d488f2/local/proxy.ini
+填写正确的appid，在此建议将profile由默认的google_cn改为google_hk
+参考以下步骤执行：
+aquan@edge ~/google_appengine $ python appcfg.py update goagent-goagent-d4488f2/server/python/ 07:03 PM Host: appengine.google.com 07:03 PM Application: wrchiublog; version: 1 07:03 PM Starting update of app: wrchiublog, version: 1 07:03 PM Getting current resource limits. Email: wrchiu@126.com //在此填写googleid Password for wrchiu@126.com: //此处填写两步验证密码，而不是帐号密码 07:04 PM Scanning files on local disk.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2013-05-30</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/google">#Google</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/python">#Python</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/goagent">#goagent</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -274,57 +323,6 @@ $wget -r -p -np -k -e robots=off -U &quot;Mozilla/5.0 (Windows; U; Windows NT 5.
                         <li><a href="https://unixetc.com/tags/mozilla">#Mozilla</a></li>
                     
                         <li><a href="https://unixetc.com/tags/agent">#AGENT</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/archlinux-modify-the-network-adapter-name/">Archlinux下修改网卡名称</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        刚刚安装了Archlinux，用的archlinux-2013.03.01-dual.iso镜像，最新的systemd将网卡名更改了，不在是原来默认的eth0/wlan0
-我的ifconfig -a输出如下:
-enp9s0: flags=4098 mtu 1500 ether 04:7d:7b:f8:25:9d txqueuelen 1000 (Ethernet) RX packets 0 bytes 0 (0.0 B) RX errors 0 dropped 0 overruns 0 frame 0 TX packets 0 bytes 0 (0.0 B) TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0 lo: flags=73mtu 65536 inet 127.0.0.1 netmask 255.0.0.0 inet6 ::1 prefixlen 128 scopeid 0x10 loop txqueuelen 0 (Local Loopback) RX packets 0 bytes 0 (0.0 B) RX errors 0 dropped 0 overruns 0 frame 0 TX packets 0 bytes 0 (0.
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2013-03-06</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/archlinux">#Archlinux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ifconfig">#ifconfig</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/systemd">#systemd</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/eth0">#eth0</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/wlan0">#wlan0</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/udev">#udev</a></li>
                     
                 </ul>
         

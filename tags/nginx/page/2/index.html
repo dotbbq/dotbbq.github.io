@@ -17,7 +17,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101236" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103043" />
 <style>
 
     [data-theme="dark"] {   
@@ -49,7 +49,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101236" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103043" />
 
 
 
@@ -59,7 +59,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/tags/nginx/" />
-<meta property="og:updated_time" content="2018-02-06T12:16:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Nginx"/>
@@ -99,6 +99,72 @@
     <div class="post-info">
         <a href="https://unixetc.com/tags">To all tags</a>
     </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/startssl-and-nginx/">StartSSL免费证书与Nginx配置</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        注册StartSSL 打开https://www.startssl.com/，点击Sign-up开始注册
+参考上图填写注册信息，然后Continue，会有如下提示，系统会发送验证码到你的注册邮箱
+检查注册邮箱，将收到的验证码填写提交，然后会出现如下提示，等待审核。
+审核通过后，会收到如下提示邮件，点击其中连接，然后输入邮箱中的验证码完成注册
+安装证书 接下来创建私匙
+安装证书
+安装成功后会有如下提示
+验证域名 接下来验证域名，点击Validations Wizard
+填写域名
+选择验证邮件地址
+按照提示输入邮箱接收到的验证码完成验证。
+创建证书 选择Certificates Wizard，证书目标选择Web Server SSL/TLS Certificate
+接下来新建私匙
+点击Skip跳过系统建立步骤，我们自己在VPS上建立CSR文件，参考下图通过openssl命令建立CSR文件
+注意，为了便于后期安装配置方便，建议密码置空
+完成后，cat出建立好的ciuxsss.csr内容，粘贴提交
+接下来添加域名
+接下来将文本框中的内容保存为一个**.crt**文件
+配置Nginx 贴出我的配置文件，大家参考一下
+server { listen 80; location /{ return 301 https://$host$request_uri; } } server { listen 443; #listen 80; #listen [::]:80; server_name ciux.org; index index.html index.htm index.php default.html default.htm default.php; root /home/ciux/compiled; ssl on; ssl_certificate /home/bk/ssl/ciuxsss.crt; ssl_certificate_key /home/bk/ssl/ciuxsss.key; ssl_session_timeout 5m; ssl_protocols SSLv2 SSLv3 TLSv1; ssl_ciphers ALL:!
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-10-14</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/301">#301</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssl">#ssl</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%85%8D%E8%B4%B9%E8%AF%81%E4%B9%A6">#免费证书</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/rewrite">#rewrite</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/starssl">#starssl</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -319,76 +385,6 @@ wget https://www.wosign.com/Root/Bundle_DV_St.crt cat Bundle_DV_St.crt &gt;&gt; 
                         <li><a href="https://unixetc.com/tags/crt">#crt</a></li>
                     
                         <li><a href="https://unixetc.com/tags/key">#key</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/raspberry-pi-and-dnspod-dynamic-dns/">树莓派与DNSPod动态域名解析</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        所需条件
- Raspberry Pi TP-Link路由器 DNSPod帐户 域名  配置路由器 进入路由器的DHCP服务器-&gt;静态地址分配菜单，为Raspberry Pi分配静态IP地址，例如：192.168.1.200
-进入路由器的安全功能-&gt;远端WEB管理菜单，设置WEB管理端口为一个非80值，例如82
-进入路由器的转发规则-&gt;DMZ主机菜单，将DMZ主机IP地址设置为Raspberry Pi的ip地址，然后启用保存。
-设置DNSPod动态域名解析 首先登录DNSPod网页管理域名，将二级域名www 的A记录解析到路由器外网IP(可通过路由器管理首页查询，或者通过浏览ip138.com来获得)
-注：一级域名请解析**@**的A记录。
-下载DNSPod官方客户端Lite https://support.dnspod.cn/Support/api
-解压后双击打开登录，从右侧信息列表中也可以看到本机最新IP，点击相应域名后的动态解析按钮，在动态解析设置中右键点击相应的动态记录启用即可，关闭DNSPod官方客户端Lite。
-设置Raspberry Pi 安装Web服务器软件(Nginx)
-#apt-get install nginx #/etc/init.d/nginx start  内网可以通过浏览`http://192.168.1.129&quot;来检查Nginx是否正常运行。
-浏览https://gist.githubusercontent.com/chuangbo/833369，下载动态域名解析脚本(pypod.py)
-编辑pypod.py修改以下内容：
-login_email=&quot;email&quot;, # DSNPod帐户邮箱 login_password=&quot;password&quot;, # DSNPod帐户密码 domain_id=100, # 域名id record_id=100, # 记录id sub_domain=&quot;www&quot;, # 子域名  其中域名id与记录id可以通过以下命令获取：
-curl -k https://dnsapi.cn/Domain.List -d &quot;login_email=xxx&amp;login_password=xxx&quot; curl -k https://dnsapi.cn/Record.List -d &quot;login_email=xxx&amp;login_password=xxx&amp;domain_id=xxx&quot;  提示：如果你使用了www子域名，则需要获取www的记录id，如果使用一级域名(@)，则需要获取**@**的记录id。
-编辑完pypod.py保存退出，使用以下命令运行：
-#python pypod.py  现在可以通过域名来浏览Raspberry Pi上的Web内容了。
-pypod.py开机运行
-添加/usr/bin/python /home/pi/pypod.
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2014-03-03</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/dnspod">#dnspod</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ddns">#DDNS</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/dns">#DNS</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E5%8A%A8%E6%80%81%E5%9F%9F%E5%90%8D">#动态域名</a></li>
                     
                 </ul>
         

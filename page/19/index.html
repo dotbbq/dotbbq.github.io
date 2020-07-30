@@ -18,7 +18,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101234" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103041" />
 <style>
 
     [data-theme="dark"] {   
@@ -50,7 +50,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101234" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103041" />
 
 
 
@@ -60,7 +60,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="UNIXETC"/>
@@ -101,6 +101,64 @@
     </div>
 
     
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/use-net-speeder-accelerate-vps/">使用net_speeder加速VPS</a></h1>
+    </header>
+
+    <div class="content post-summary">
+         当使用国外服务器时，经常会发现，下载速度只有十几k。平时可能不太注意，认为服务器带宽不足，或者自己使用的宽带不给力，其实很有可能原因并不在此。
+由于光速的局限性，延迟会比较高（即使光沿直线传播，太平洋一个往返也要一百多毫秒）。并且由于距离较远，途径路由跳数较多，并且网络拥堵的原因。经常会发生丢包的情况。
+对于平时使用最广泛的TCP协议来讲，发送端发出包后，接收端会回复ACK，表示自己收到了。用这种机制来保证可靠性。但对于高延迟链路来讲，如果每发送一个包都等待应答，那么大部分时间都在等待数据包到达，而链路则空置了。为此一般会采用滑动窗口技术。即在窗口满之前，发送端一直发送包，然后收到应答后将确认收到的包从窗口中移除。这样可以提高链路利用率。
+TCP还有一个特性则是拥塞控制。当发送端检测到链路发生丢包时，则会主动缩小窗口大小以减慢发送速度，避免拥塞。不过对于跳数较多的链路来讲，只要有一个路由不够稳定丢包，就会被发送端判断为拥塞，从而影响网络速度。
+为了解决丢包问题，最简单粗暴的方法就是双倍发送，即同一份数据包发送两份。这样的话在服务器带宽充足情况下，丢包率会平方级降低。
+这种方式下，直接优点是降低丢包率，直接缺点是耗费双倍流量。一些延伸影响是更容易触发快速恢复逻辑，避免了丢包时窗口缩减过快。一定程度也能提高网络速度。
+最近比较忙，空闲时间做了一个最简单的程序，试用效果很好，在一台VPS上测试后发现，未开启时单线程下载、ssh管道速度在十几K级别。开启后可以达到平均300KB+的速度。效果非常明显。但对于不加速就可以跑满带宽的类型来讲（多线程下载），开启后反而由于多出来的无效流量，导致速度减半。所以对于多线程/高速链路，这个方案是不适合的。
+目前版本是最简单的逻辑，未来会进行细化（主动触发快速恢复、快速重传等），降低流量浪费，提升加速效果。
+目前程序起名net-speeder，相对于修改协议栈来讲，由于后者需要重新升级编译内核，使用用户态程序部署更方便，稳定性更高，兼容性更好。缺点则是性能开销稍大和自由度有损失。总体比较起来，个人使用还是使用用户态程序更合适一些，特别是在虚拟机中使用（OpenVZ，LXC等虚拟机无法自己定制内核）。
+ 摘自http://www.snooda.com/read/324
+net_speeder项目主页 https://github.com/snooda/net-speeder
+安装net_speeder apt-get install libnet-dev libpcap-dev -y git clone https://github.com/snooda/net-speeder.git cd net-speeder sh build.sh mv net_speeder /usr/local/bin/  使用net_speeder 使用ifconfig查看网卡端口，我的端口为venet0
+nohup net_speeder venet0 &quot;ip&quot; &gt;/dev/null 2&gt;&amp;1 &amp;  添加到开机启动
+echo 'nohup net_speeder venet0 &quot;ip&quot; &gt;/dev/null 2&gt;&amp;1 &amp;' &gt;&gt; /etc/rc.local 
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-02-07</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vps">#VPS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/net_speeder">#net_speeder</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%8A%A0%E9%80%9F">#加速</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/accelerate">#accelerate</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -331,68 +389,6 @@ sudo vi /etc/init.d/noip2  脚本内容如下
                         <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
                     
                         <li><a href="https://unixetc.com/tags/noip">#noip</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/raspberry-pi-using-ddclient-and-ddns/">树莓派使用ddclient和DDNS</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        域名解析 首先得有个域名，在域名管理中将域名DNS设为he.net的DNS地址，如下：
-ns1.he.net ns2.he.net ns3.he.net ns4.he.net ns5.he.net  然后在http://dns.he.net注册账号，添加域名(Add a new domain)
-接下来添加A记录(New A)，勾选允许动态域名解析(Enable entry for dynamic dns)
-点击域名后DDNS列中的刷新按钮，新建一个DDNS密匙(Generate a DDNS key.)
-安装设置ddclient 在树莓派上安装ddclient
-sudo apt-get install ddclient  编辑ddclient配置文件，路径为/etc/ddclient.conf
-protocol=dyndns2 use=web,web=myip.dnsomatic.com server=dyn.dns.he.net login=raspi.in password='ddnskey' www.raspi.in,raspi.in  其中password为设置DDNS时的key
-重启ddclient服务
-service ddclient restart  验证IP查询结果
-sudo ddclient -query use=if, if=eth0 address is 192.168.1.111 use=if, if=lo address is 127.0.0.1 use=web, web=dnspark address is 36.40.143.235 use=web, web=dyndns address is NOT FOUND use=web, web=loopia address is 36.
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2016-01-07</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ddns">#DDNS</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/dns">#DNS</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/domain">#Domain</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/he.net">#he.net</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ddclient">#ddclient</a></li>
                     
                 </ul>
         

@@ -17,7 +17,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101236" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103043" />
 <style>
 
     [data-theme="dark"] {   
@@ -49,7 +49,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101236" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103043" />
 
 
 
@@ -59,7 +59,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/tags/linux/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux"/>
@@ -99,6 +99,56 @@
     <div class="post-info">
         <a href="https://unixetc.com/tags">To all tags</a>
     </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/v2ray-client-configuration-example-in-ubuntu/">Ubuntu中v2ray客户端配置实例</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        首先使用bash &lt;(curl -L -s https://install.direct/go.sh)来快捷安装v2ray，如下：
+root@vm:~# bash &lt;(curl -L -s https://install.direct/go.sh) Installing V2Ray v4.18.0 on x86_64 Downloading V2Ray: https://github.com/v2ray/v2ray-core/releases/download/v4.18.0/v2ray-linux-64.zip % Total % Received % Xferd Average Speed Time Time Time Current Dload Upload Total Spent Left Speed 100 608 0 608 0 0 581 0 --:--:-- 0:00:01 --:--:-- 581 100 10.5M 100 10.5M 0 0 172k 0 0:01:02 0:01:02 --:--:-- 194k Extracting V2Ray package to /tmp/v2ray. Archive: /tmp/v2ray/v2ray.zip inflating: /tmp/v2ray/config.json creating: /tmp/v2ray/doc/ inflating: /tmp/v2ray/doc/readme.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2019-05-18</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/v2ray">#v2ray</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/proxy">#proxy</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/socks">#socks</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vmess">#vmess</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/firefox">#Firefox</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/socksv5">#socksv5</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -314,62 +364,6 @@ u-boot-update-bootmenu  关机，插入TF卡，然后推开键盘开机，选Mer
                         <li><a href="https://unixetc.com/tags/nemo">#Nemo</a></li>
                     
                         <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/find-the-vps-traffic-consumption-culprit/">查出VPS流量消耗元凶</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        上月不知什么原因VPS流量提前消耗完了，然后通知这月10号重新reset，于是只能临时开了一个月的locvps进行过渡。好不容易熬到昨儿，reset后赶紧把数据和站点又搬回来。 今儿偶尔登录vps，突然发现流量消耗咋一直很高，两天不到就消耗了170G，额滴神呐!查看详细使用统计，发现从昨儿reset以来，OUT bps一直维持在19M左右，瞬间脑袋瓜嗡嗡的！
-于是赶紧动手找找，看看消耗流量的元凶到底是谁？
-首先，安装iftop来检查网络使用情况。官网在这里http://www.ex-parrot.com/~pdw/iftop/，CentOS安装方法如下：
-yum install -y flex byacc libpcap ncurses ncurses-devel libpcap-devel #安装需求软件 wget http://www.ex-parrot.com/~pdw/iftop/download/iftop-0.17.tar.gz tar zxf iftop-0.17.tar.gz cd iftop-0.17 ./configure make &amp;&amp; make install  安装完成后，可以通过iftop来运行，建议加上-P参数，显示使用端口信息，如下：
-主界面中左侧为本地端，右侧为远端，中间的&lt;=和=&gt;表示流量方向。 下面的TX：发送流量/RX：接收流量/TOTAL：总流量/Cumm：运行iftop到目前时间的总流量/peak：流量峰值/rates：分别表示过去 2s 10s 40s 的平均流量
-从上图来看，本地IP一直在向一个140.249.34.53发送数据，从peak统计来看，速率在22.3Mb左右，和网站统计相符。 知道端口后，可以通过 netstat -ntlup|grep 端口号来查看具体进程，没有的话可以通过yum install net-tools来安装。
-我试着查了下这个IP，发现是山东青岛的，再通过IP反查域名，真想才出来了，原来是百度云的相关IP。这才想起来，我安装了BaiduPCS-Go百度网盘客户端，用来对vps数据进行备份，原来搞鬼的是这个东西。找到元凶就好办了，首先把这个IP给禁了iptables -A INPUT -p tcp -s 140.249.34.53 -j DROP 禁完后，实时流量一下子就降了下来，如下所示：
-而后将BaiduPCS-Go删除，以绝后患！
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2019-04-11</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/centos">#CentOS</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/iftop">#iftop</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/libpcap">#libpcap</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ncurses">#ncurses</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/netstat">#netstat</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/iptables">#iptables</a></li>
                     
                 </ul>
         

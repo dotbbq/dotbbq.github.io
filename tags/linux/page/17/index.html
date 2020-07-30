@@ -17,7 +17,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101236" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103043" />
 <style>
 
     [data-theme="dark"] {   
@@ -49,7 +49,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101236" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103043" />
 
 
 
@@ -59,7 +59,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/tags/linux/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux"/>
@@ -99,6 +99,54 @@
     <div class="post-info">
         <a href="https://unixetc.com/tags">To all tags</a>
     </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/repair-grub-boot/">修复grub引导</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        笔记本原来安装的Linux/Windows XP双系统，今天重新安装了Windows7，但是开机的grub引导被搞掉了，找了下grub的man看了半天，摸索出来如何修复原来的grub引导。
+首先，使用Linux live cd引导系统，然后按照以下操作：
+检查分区信息
+ubuntu@ubuntu:~$ sudo -s root@ubuntu:~# lsblk NAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINT sda 8:0 0 465.8G 0 disk ├─sda1 8:1 0 40G 0 part ├─sda2 8:2 0 1K 0 part ├─sda5 8:5 0 4G 0 part [SWAP] ├─sda6 8:6 0 20G 0 part ├─sda7 8:7 0 20G 0 part ├─sda8 8:8 0 100G 0 part ├─sda9 8:9 0 200G 0 part └─sda10 8:10 0 81.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2013-12-12</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/grub">#GRUB</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/boot">#boot</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/lsblk">#lsblk</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -289,52 +337,6 @@ aquan@edge ~/google_appengine $ python appcfg.py update goagent-goagent-d4488f2/
                         <li><a href="https://unixetc.com/tags/python">#Python</a></li>
                     
                         <li><a href="https://unixetc.com/tags/goagent">#goagent</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/install-vnc-server-on-ubuntu-server/">Ubuntu Server中安装VNC Server</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        安装所有软件
-#aptitude install openbox firefox ttf-wqy-microhei #aptitude install vnc4server  设置openbox启动
-#update-alternatives --config x-session-manager 然后选择openbox-session  设置vncserver密码:
-#vncpasswd Password: ****** Verify:*****  运行vncserver
-# vncserver //运行 # vncserver -kill :1 //终止  编辑~/.vnc/xstartup文件
-#vi ~/.vnc/xstartup #!/bin/sh # Uncomment the following two lines for normal desktop: # unset SESSION_MANAGER # exec /etc/X11/xinit/xinitrc [ -x /etc/vnc/xstartup ] &amp;&amp; exec /etc/vnc/xstartup [ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresources xsetroot -solid grey vncconfig -iconic &amp; x-terminal-emulator -geometry 80x24+10+10 -ls -title &quot;$VNCDESKTOP Desktop&quot; &amp; x-window-manager &amp; startx&amp; //添加此行  链接VNC
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2013-05-11</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/vnc">#VNC</a></li>
                     
                 </ul>
         

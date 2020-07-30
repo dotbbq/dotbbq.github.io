@@ -18,7 +18,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101234" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103041" />
 <style>
 
     [data-theme="dark"] {   
@@ -50,7 +50,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101234" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103041" />
 
 
 
@@ -60,7 +60,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="UNIXETC"/>
@@ -101,6 +101,66 @@
     </div>
 
     
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/v2ray-use-case/">V2ray使用实例</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        Project V 提供了单一的内核和多种界面操作方式。内核（V2Ray）用于实际的网络交互、路由等针对网络数据的处理，而外围的用户界面程序提供了方便直接的操作流程。 V2Ray 的主要作用是根据用户的配置，对于传入的网络连接进行一定处理，然后发往指定的服务器。它是一个命令行程序，可以接受一个 JSON 格式的配置文件。
+VPS安装服务端 使用下面命令一键安装:
+bash &lt;(curl -L -s https://install.direct/go.sh)  或者从https://github.com/v2ray/v2ray-core/releases下载预编译包进行安装。
+安装完成后，使用service v2ray start启动v2ray服务。
+Windows安装本地端 从https://github.com/v2ray/v2ray-core/releases下载Windows客户端，解压后编辑config.json文件，内容如下：
+{ &quot;inbound&quot;: { &quot;port&quot;: 1080, // 监听端口 &quot;protocol&quot;: &quot;socks&quot;, // 入口协议为 SOCKS 5 &quot;domainOverride&quot;: [&quot;tls&quot;,&quot;http&quot;], &quot;settings&quot;: { &quot;auth&quot;: &quot;noauth&quot; //socks的认证设置，noauth 代表不认证，由于 socks 通常在客户端使用，所以这里不认证 } }, &quot;outbound&quot;: { &quot;protocol&quot;: &quot;vmess&quot;, // 出口协议 &quot;settings&quot;: { &quot;vnext&quot;: [ { &quot;address&quot;: &quot;10.0.0.1&quot;, // 服务器地址，请修改为你自己的服务器 ip 或域名 &quot;port&quot;: 31892, // 服务器端口 &quot;users&quot;: [ { &quot;id&quot;: &quot;3efd584f-8a7d-43af-9c75-35266df4ceb0&quot;, // 用户 ID，必须与服务器端配置相同 &quot;alterId&quot;: 64 // 此处的值也应当与服务器相同 } ] } ] } } }  以上的id和alterId，在vps上使用cat /etc/v2ray/config.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2018-08-20</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/shadowsocks">#Shadowsocks</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/v2ray">#v2ray</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E4%BB%A3%E7%90%86">#代理</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/proxy">#proxy</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/socks">#socks</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vmess">#vmess</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/tls">#tls</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/tcp">#tcp</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/mkcp">#mkcp</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/websocket">#websocket</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -320,49 +380,6 @@ alair@e6440:~$ sudo canonical-livepatch status --verbose client-version: 8.0.2 m
                         <li><a href="https://unixetc.com/tags/livepatch">#Livepatch</a></li>
                     
                         <li><a href="https://unixetc.com/tags/cls">#CLS</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/xiunobbs-nginx-pseudo-static/">XiunoBBS Nginx伪静态规则</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        XiunoBBS是一款非常流行的轻论坛程序
-以下为XiunoBBS Nginx伪静态规则代码，添加到相应的nginx配置文件中即可。
-location ~* \.(htm)$ { rewrite &quot;^(.*)/(.+?).htm(.*?)$&quot; $1/index.php?$2.htm$3 last; } 
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2018-02-06</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/xiunobbs">#XiunoBBS</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/bbs">#BBS</a></li>
                     
                 </ul>
         

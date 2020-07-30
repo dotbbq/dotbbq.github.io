@@ -17,7 +17,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103042" />
 <style>
 
     [data-theme="dark"] {   
@@ -49,7 +49,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103042" />
 
 
 
@@ -59,7 +59,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/categories/stuff/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="STUFF"/>
@@ -99,6 +99,61 @@
     <div class="post-info">
         <a href="https://unixetc.com/categories">To all categories</a>
     </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/fix-raspberry-path-variable/">修复树莓派PATH变量</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        使用lnmp一键工具安装完nmp后，重启进入系统就提示bash command not found
+然后试了试service,who等命令也无法使用
+只有最基本的系统命令ls,cat等可以用
+看来安装lnmp后，我的PATH变量被动了
+先临时修改下PATH，便于后面操作
+export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:$PATH  然后检查~/.profile,/etc/profile是否存在，存在
+检查其中的PATH赋值是否异常
+经过排查，发现/etc/profile中的PATH赋值异常，修改之重启OK！
+在此分享正确的原始~/.profile和/etc/profile文件
+~/.profile 内容
+# ~/.profile: executed by the command interpreter for login shells. # This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login # exists. # see /usr/share/doc/bash/examples/startup-files for examples. # the files are located in the bash-doc package. # the default umask is set in /etc/profile; for setting the umask # for ssh logins, install and configure the libpam-umask package.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-03-03</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/path">#PATH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -316,57 +371,6 @@ alair@zb14:~$ lspci|grep less 02:00.0 Network controller: Intel Corporation Wire
                         <li><a href="https://unixetc.com/tags/inter">#inter</a></li>
                     
                         <li><a href="https://unixetc.com/tags/inter7260">#inter7260</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/hsts-domain-name-replacement-examples/">HSTS域名更换实例</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        新入手了its0k.com，原来的alair.cn还继续使用
-在这里需要将alair.cn重定向到its0k.com
-第一次只是将nginx配置文件中的alair.cn全部替换为its0k.com，通过its0k.com浏览新站完全没问题
-但是试着从alair.cn跳转浏览新站，浏览器出现了证书安全告警，告警具体原因为证书未包含alair.cn域名，我才想起来旧域名alair.cn已经添加进了HSTS列表，因此不能简单的只为新域名签名，而是需要证书签名时包含新旧两个域名。
-重新签名了证书，包含以下四个域名
-its0k.com www.its0k.com alair.cn www.alair.cn  以下为更改完成后的nginx配置文件，请注意名相关的部分
-server { listen 443 ssl http2; ssl_certificate /root/ssls/its0k.crt; ssl_certificate_key /root/ssls/its0k.key; ssl_session_timeout 60m; ssl_protocols TLSv1 TLSv1.1 TLSv1.2; ssl_ciphers ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-RC4-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:RC4-SHA:!aNULL:!eNULL:!EXPORT:!DES:!3DES:!MD5:!DSS:!PKS; ssl_prefer_server_ciphers on; ssl_session_cache builtin:1000 shared:SSL:10m; ssl_dhparam /etc/ssl/certs/dhparam.pem; add_header Strict-Transport-Security &quot;max-age=63072000; includeSubdomains; preload&quot;; add_header X-Frame-Options &quot;DENY&quot;; ssl_stapling on; ssl_stapling_verify on; resolver 8.8.8.8 8.8.4.4 valid=300s; resolver_timeout 5s; server_name its0k.com www.its0k.com alair.cn www.alair.cn; access_log off; index index.html index.htm; include /usr/local/nginx/conf/rewrite/ps.conf; root /data/wwwroot/its0k.com/compiled; error_page 403 404 500 503 505 = https://its0k.
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2016-07-01</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/%E5%9F%9F%E5%90%8D">#域名</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/domainname">#DomainName</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/hsts">#HSTS</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/https">#https</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/301">#301</a></li>
                     
                 </ul>
         

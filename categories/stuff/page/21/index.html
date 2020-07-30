@@ -17,7 +17,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103042" />
 <style>
 
     [data-theme="dark"] {   
@@ -49,7 +49,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103042" />
 
 
 
@@ -59,7 +59,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/categories/stuff/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="STUFF"/>
@@ -99,6 +99,52 @@
     <div class="post-info">
         <a href="https://unixetc.com/categories">To all categories</a>
     </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/linux-mp3-converted-to-ogg/">linux下将mp3转换为ogg</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装软件
+apt-get install mpg321 vorbis-tools  使用如下命令转换
+mpg321 tweet.mp3 -w raw &amp;&amp; oggenc raw -o tweet.ogg &amp;&amp; rm -rf raw  示例:
+root@hkvps:/home/res# mpg321 tweet.mp3 -w raw &amp;&amp; oggenc raw -o tweet.ogg &amp;&amp; rm -rf raw High Performance MPEG 1.0/2.0/2.5 Audio Player for Layer 1, 2, and 3. Version 0.3.2-1 (2012/03/25). Written and copyrights by Joe Drew, now maintained by Nanakos Chrysostomos and others. Uses code from various people. See 'README' for more!
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-10-21</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/mp3">#mp3</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ogg">#ogg</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/mpg321">#mpg321</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -317,55 +363,6 @@ Over!
                         <li><a href="https://unixetc.com/tags/photoshop">#photoshop</a></li>
                     
                         <li><a href="https://unixetc.com/tags/adobe">#adobe</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/use-scrollup-to-add-scroll-to-top-feature/">使用ScrollUp添加返回顶部功能</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        下载ScrollUp https://github.com/markgoodyear/scrollup
-在网页中引用jquery.scrollUp.js、jquery.easing.js、jquery.min.js三个JavaScript脚本，注意顺序
-&lt;script src=&quot;jquery.min.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;jquery.easing.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;jquery.scrollUp.js&quot;&gt;&lt;/script&gt;  然后加入控制代码
-&lt;script&gt; $(function () { $.scrollUp(); }); &lt;/script&gt;  以上是最简单的使用方法，还有一种带参数的方法
-$(function () { $.scrollUp({ scrollName: 'scrollUp', // Element ID scrollDistance: 300, // Distance from top/bottom before showing element (px) scrollFrom: 'top', // 'top' or 'bottom' scrollSpeed: 300, // Speed back to top (ms) easingType: 'linear', // Scroll to top easing (see http://easings.net/) animation: 'fade', // Fade, slide, none animationSpeed: 200, // Animation speed (ms) scrollTrigger: false, // Set a custom triggering element.
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2015-09-08</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/javascript">#JavaScript</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/js">#JS</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/jquery">#jQuery</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/scrollup">#ScrollUp</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E8%BF%94%E5%9B%9E%E9%A1%B6%E9%83%A8">#返回顶部</a></li>
                     
                 </ul>
         

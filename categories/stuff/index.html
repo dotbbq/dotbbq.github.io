@@ -17,7 +17,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103042" />
 <style>
 
     [data-theme="dark"] {   
@@ -49,7 +49,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103042" />
 
 
 
@@ -59,7 +59,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/categories/stuff/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="STUFF"/>
@@ -99,6 +99,56 @@
     <div class="post-info">
         <a href="https://unixetc.com/categories">To all categories</a>
     </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/nginx-v2ray-websocket/">Nginx V2ray and WebSocket</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装v2ray/nginx v2ray安装可以参考Ubuntu中v2ray客户端配置实例.
+Nginx安装推荐使用OneinStack一键安装脚本
+准备好使用的域名，这里以v.fuckgfw.cn为例。
+v2ray/nginx服务端配置 v2ray安装好后，服务端配置/etc/v2ray/config.json如下:
+{ &quot;inbounds&quot;: [{ &quot;port&quot;: 99999, //代理端口号 &quot;listen&quot;: &quot;127.0.0.1&quot;, &quot;protocol&quot;: &quot;vmess&quot;, &quot;settings&quot;: { &quot;clients&quot;: [{ &quot;id&quot;: &quot;5c1eed18-fse4-41fs-9as9-e85s45bds9ef&quot;, &quot;level&quot;: 1, &quot;alterId&quot;: 64 }] }, &quot;streamSettings&quot;: { &quot;network&quot;: &quot;ws&quot;, &quot;wsSettings&quot;: { &quot;path&quot;: &quot;/fcgfw&quot; //代理目录 } } }], &quot;outbounds&quot;: [{ &quot;protocol&quot;: &quot;freedom&quot;, &quot;settings&quot;: {} }, { &quot;protocol&quot;: &quot;blackhole&quot;, &quot;settings&quot;: {}, &quot;tag&quot;: &quot;blocked&quot; }], &quot;routing&quot;: { &quot;rules&quot;: [{ &quot;type&quot;: &quot;field&quot;, &quot;ip&quot;: [&quot;geoip:private&quot;], &quot;outboundTag&quot;: &quot;blocked&quot; }] } } 使用OneinStack一键脚本新建一个站点，域名为v.fuckgfw.cn，采用SSL加密模式，完成后编辑/usr/local/nginx/conf/vhost/v.fuckgfw.cn.conf文件
+参考以下修改：
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2020-07-30</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/vps">#VPS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/v2ray">#V2ray</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/websocket">#WebSocket</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -297,51 +347,6 @@ sudo yum update sudo yum install hugo -y
                         <li><a href="https://unixetc.com/tags/%E5%9B%BE%E6%A0%87">#图标</a></li>
                     
                         <li><a href="https://unixetc.com/tags/%E5%A3%81%E7%BA%B8">#壁纸</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/linux-install-windows-fonts/">在Linux中安装Windows字体</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        使用的系统为Ubuntu 19.10，Windows系统分区lable为sys
-参考如下操作：
-alair@e6440:~$ sudo mkdir /usr/share/fonts/winfonts [sudo] alair 的密码： alair@e6440:~$ sudo cp /media/alair/sys/Windows/Fonts/* /usr/share/fonts/winfonts/ alair@e6440:~$ sudo rm -rf /usr/share/fonts/winfonts/*.fon alair@e6440:~$ sudo mkfontscale alair@e6440:~$ sudo mkfontdir alair@e6440:~$ sudo fc-cache 打完收工！
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2019-11-21</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E5%AD%97%E4%BD%93">#字体</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
                     
                 </ul>
         

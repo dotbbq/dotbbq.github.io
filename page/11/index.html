@@ -18,7 +18,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101234" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103041" />
 <style>
 
     [data-theme="dark"] {   
@@ -50,7 +50,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101234" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103041" />
 
 
 
@@ -60,7 +60,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="UNIXETC"/>
@@ -101,6 +101,57 @@
     </div>
 
     
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/merlin-install-shadowsocks/">梅林固件安装Shadowsocks</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        登录路由器后台，系统管理&gt;系统设置，将Enable SSH设置为LAN only。
+通过SSH登录路由器，参考以下执行，在此推荐Putty。
+#cd /tmp #wget https://github.com/hq450/fancyss_history_package/raw/master/fancyss_arm/shadowsocks_4.1.1.tar.gz #tar -zxvf shadowsocks_4.1.1.tar.gz #cd shadowsocks #chmod +x install.sh #./install.sh 2017年11月19日 14:40:36: 固件平台【koolshare merlinarmv7l】符合安装要求，开始安装插件！ 2017年11月19日 14:40:36: 清理旧文件 2017年11月19日 14:40:36: 开始复制文件！ 2017年11月19日 14:40:36: 复制相关二进制文件！ 2017年11月19日 14:40:42: 创建一些二进制文件的软链接！ 2017年11月19日 14:40:42: 复制ss的脚本文件！ 2017年11月19日 14:40:44: 复制网页文件！ 2017年11月19日 14:40:44: 移除安装包！ 2017年11月19日 14:40:44: 为新安装文件赋予执行权限... 2017年11月19日 14:40:44: 设置一些默认值 2017年11月19日 14:40:47: 一点点清理工作... 2017年11月19日 14:40:47: 插件安装成功，你为什么这么屌？！ 2017年11月19日 14:40:47: 更新完毕，请等待网页自动刷新！  完成后重启路由器，在软件中心中即可看到影梭已经安装成功！
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-11-19</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/shadowsocks">#Shadowsocks</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/merlin">#merlin</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/router">#router</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A2%85%E6%9E%97">#梅林</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gfw">#GFW</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/asus">#asus</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -304,56 +355,6 @@ service php-fpm restart  完了！
                         <li><a href="https://unixetc.com/tags/%E4%B8%80%E5%8A%A0">#一加</a></li>
                     
                         <li><a href="https://unixetc.com/tags/%E4%B8%80%E5%8A%A03t">#一加3T</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/sitemap-generators-usage/">sitemap-generators使用实例</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        sitemap-generators是一款Sitemap生成工具，使用它可以生成符合sitemap.org规范的Sitemap文件，以便于提交给各个网站工具平台。
-项目地址 &amp;&amp; 下载地址
-下载sitemap_gen_1.5.tar.gz解压，得到以下内容：
-root@bwgzl:~/sitemap_gen# ls -lh total 140K -r--r----- 1 502 502 22 Jun 17 2005 AUTHORS -r--r--r-- 1 502 502 2.6K Jul 19 2007 ChangeLog -r--r----- 1 502 502 1.8K Jun 17 2005 COPYING -rw-r--r-- 1 502 502 6.4K Jul 19 2007 example_config.xml -rw-r----- 1 502 502 1.6K Jun 26 2007 example_urllist.txt drwxr-xr-x 23 root root 4.0K Aug 3 14:25 getos.org -rw-r--r-- 1 502 502 244 Jul 19 2007 PKG-INFO -r--r--r-- 1 502 502 1.
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2017-08-13</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/wget">#wget</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/google">#Google</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/sitemap">#sitemap</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/seo">#seo</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/url">#url</a></li>
                     
                 </ul>
         

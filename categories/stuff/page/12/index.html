@@ -17,7 +17,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103042" />
 <style>
 
     [data-theme="dark"] {   
@@ -49,7 +49,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103042" />
 
 
 
@@ -59,7 +59,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/categories/stuff/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="STUFF"/>
@@ -99,6 +99,62 @@
     <div class="post-info">
         <a href="https://unixetc.com/categories">To all categories</a>
     </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/p7zip-usage/">p7zip使用实例</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        以下是CentOS7中7za的使用实例,CentOS下安装p7zip可以参考此文
+[root@localhost ~]# 7za 7-Zip (a) [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21 p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,1 CPU x64) Usage: 7za &lt;command&gt; [&lt;switches&gt;...] &lt;archive_name&gt; [&lt;file_names&gt;...] [&lt;@listfiles...&gt;] &lt;Commands&gt; a : Add files to archive b : Benchmark d : Delete files from archive e : Extract files from archive (without using directory names) h : Calculate hash values for files i : Show information about supported formats l : List contents of archive rn : Rename files in archive t : Test integrity of archive u : Update files to archive x : eXtract files with full paths &lt;Switches&gt; -- : Stop switches parsing -ai[r[-|0]]{@listfile|!
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-06-16</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/p7zip">#p7zip</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/7z">#7z</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/7za">#7za</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/lzma">#lzma</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/tar">#tar</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/zip">#zip</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/cab">#cab</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gzip">#gzip</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/bzip2">#bzip2</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -303,87 +359,6 @@ wget https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_al
                         <li><a href="https://unixetc.com/tags/7z">#7z</a></li>
                     
                         <li><a href="https://unixetc.com/tags/7za">#7za</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/weather-according-to-raspberry-pi/">树莓派显示天气信息</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        在此介绍一个国外网友的树莓派项目RARP，Weather According to Raspberry Pi
-顾名思义，Weather According to Raspberry Pi是一个有关天气信息的项目，该项目通过采集Raspberry Pi和Sense HAT的数据，来显示相关的天气信息，比如温度、湿度、压力等
-项目地址http://coded2.herokuapp.com/weather/
-代码国内下载地址http://cdn.lyq.wiki/res/warp_final.zip
-下载后解压，得到main.py和gauge2.html两个文件，其中main.py需要Python3运行，gauge2.html是最终的显示文件
-安装相关软件
-sudo apt-get install python3 sudo apt-get install python3-pip pip3 install flask  打开Sense HAT仿真器，在程序菜单中，打开后如下图示:
-下来，运行下载的python脚本
-python3 main.py  正常情况下，会提示一个端口为5000的web服务正在运行
-在浏览器中浏览localhost:5000或者127.0.0.1:5000，最终的浏览如下图
-三个图表分别显示温度、压力和湿度，这三者的信息均来自Sense HAT 模拟器而不是真正的Sense HAT硬件。
-如果需要采集Sense HAT扩展板的数据，需要将Sense HAT附加板和Raspberry Pi相连，具体信息参考官网 https://www.raspberrypi.org/products/sense-hat/
-然后修改代码，打开main.py文件，找到如下行
-from sense_emu import SenseHat  修改为
-from sense_hat import SenseHat  保存后，重新运行python3 main.py，此时采集的数据就来自真实的SenseHAT硬件。
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2017-05-25</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/laptop-dock">#Laptop Dock</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/sense-hat">#Sense HAT</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/hat">#HAT</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/sense">#Sense</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/rarp">#RARP</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/python">#Python</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/python3">#Python3</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/humidity">#Humidity</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E5%A4%A9%E6%B0%94">#天气</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E4%BC%A0%E6%84%9F%E5%99%A8">#传感器</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E5%8E%8B%E5%8A%9B">#压力</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E6%B9%BF%E5%BA%A6">#湿度</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E6%B8%A9%E5%BA%A6">#温度</a></li>
                     
                 </ul>
         

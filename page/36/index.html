@@ -18,7 +18,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101234" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103041" />
 <style>
 
     [data-theme="dark"] {   
@@ -50,7 +50,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101234" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103041" />
 
 
 
@@ -60,7 +60,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="UNIXETC"/>
@@ -101,6 +101,58 @@
     </div>
 
     
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/install-vpn-on-ubuntu/">Ubuntu下安装VPN</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装pptpd
+#apt-get install pptpd  IP设置
+#vi /etc/pptpd.conf  添加以下内容:
+localip 192.18.0.1 remoteip 192.168.0.200-230  设置DNS
+#vi/etc/ppp/pptpd-options  添加以下内容：
+ms-dns 192.168.1.1 ms-dns 8.8.8.8  添加用户
+#vi /etc/ppp/chap-secrets  添加以下内容:
+name * passwd *  重启vpn
+#/etc/init.d/pptpd restart  允许ip4访问外网
+#vi /etc/sysctl.conf net.ipv4.ip_forward=1 //取消本行前注释符(*) #sysctl -p 
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-02-23</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vpn">#VPN</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/pptpd">#pptpd</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -311,60 +363,6 @@ btsync --config bs.conf   Windows版与Linux版的软件界面大致相同，以
                         <li><a href="https://unixetc.com/tags/crontab">#crontab</a></li>
                     
                         <li><a href="https://unixetc.com/tags/dropbox">#Dropbox</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/typecho-theme-logs/">Typecho主题Logs</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        弄了个Typecho主题，名为Logs
-预览:
-基本完善，有个别可能需要小修改，先贴出来分享给看得上的人
-本站就是使用的这个主题，所以就不贴预览图了
-Update 2014/01/02
- 边栏添加搜索框 优化一些代码  Update 2013/12/25
- 修改导航栏UI 启用友链插件，更改友链以及广告链接输出方式，友链插件地址http://www.imhan.com/archives/typecho-links/  Update 2013/12/22
- 评论ui完善 添加favicon.ico  下载 Logs1.1.zip
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2013-12-23</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/typecho">#typecho</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/php">#php</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/theme">#theme</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E4%B8%BB%E9%A2%98">#主题</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/css">#css</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/logs">#logs</a></li>
                     
                 </ul>
         

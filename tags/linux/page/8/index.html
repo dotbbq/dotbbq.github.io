@@ -17,7 +17,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101236" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103043" />
 <style>
 
     [data-theme="dark"] {   
@@ -49,7 +49,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101236" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103043" />
 
 
 
@@ -59,7 +59,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/tags/linux/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux"/>
@@ -99,6 +99,50 @@
     <div class="post-info">
         <a href="https://unixetc.com/tags">To all tags</a>
     </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/ubuntu-modify-the-grub-boot-menu/">ubuntu修改grub引导菜单</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        先运行update-grub命令生成一次grub配置，顺便查看一下识别出来的引导菜单内容
+root@alairpc:~# update-grub Generating grub configuration file ... Found linux image: /boot/vmlinuz-4.4.0-21-generic Found initrd image: /boot/initrd.img-4.4.0-21-generic Found memtest86+ image: /boot/memtest86+.elf Found memtest86+ image: /boot/memtest86+.bin Found Windows 7 (loader) on /dev/sda1 done root@alairpc:~#  注意看，以上共有5个菜单项，最后一个是windows7
+接下来我们来看看gurb配置文件/etc/default/grub
+root@alairpc:~# cat /etc/default/grub # If you change this file, run 'update-grub' afterwards to update # /boot/grub/grub.cfg. # For full documentation of the options in this file, see: # info -f grub -n 'Simple configuration' GRUB_DEFAULT=4 #GRUB_HIDDEN_TIMEOUT=0 GRUB_HIDDEN_TIMEOUT_QUIET=true GRUB_TIMEOUT=3 GRUB_DISTRIBUTOR=`lsb_release -i -s 2&gt; /dev/null || echo Debian` GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot; GRUB_CMDLINE_LINUX=&quot;locale=zh_CN&quot; # Uncomment to enable BadRAM filtering, modify to suit your needs # This works with Linux (no patch required) and with any kernel that obtains # the memory map information from GRUB (GNU Mach, kernel of FreeBSD .
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-06-27</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/grub">#GRUB</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -308,52 +352,6 @@ pi@raspi:~$ echo $PATH /mydoc:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/
                         <li><a href="https://unixetc.com/tags/path">#PATH</a></li>
                     
                         <li><a href="https://unixetc.com/tags/echo">#echo</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/install-h2o-on-ubuntu/">Ubunt下安装H2O</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        更新系统 apt-get update &amp;&amp; apt-get upgrade -y &amp;&amp; apt-get dist-upgrade -y &amp;&amp; apt-get autoremove --purge -y &amp;&amp; apt-get autoclean -y  安装必备软件 apt-get install locate git cmake build-essential checkinstall autoconf pkg-config libtool python-sphinx wget libcunit1-dev nettle-dev libyaml-dev libuv-dev -y  安装wslay git clone https://github.com/tatsuhiro-t/wslay.git cd wslay/ autoreconf -i automake autoconf ./configure make make install  安装完成后检查lib文件，如下所示：
-ls /usr/local/lib/ libuv.a libuv.so.1 libwslay.la libwslay.so.0.0.1 python3.4 libuv.la libuv.so.1.0.0 libwslay.so pkgconfig libuv.so libwslay.a libwslay.so.0 python2.
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2016-03-26</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/openssl">#OpenSSL</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/h2o">#H2O</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/wslay">#wslay</a></li>
                     
                 </ul>
         

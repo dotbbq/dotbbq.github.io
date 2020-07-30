@@ -17,7 +17,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101236" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103043" />
 <style>
 
     [data-theme="dark"] {   
@@ -49,7 +49,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101236" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103043" />
 
 
 
@@ -59,7 +59,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/tags/linux/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux"/>
@@ -99,6 +99,52 @@
     <div class="post-info">
         <a href="https://unixetc.com/tags">To all tags</a>
     </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/change-timezone-in-centos/">Linux下更改时区</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        Linux中时区代码都在/usr/share/zoneinfo/目录中
+首先删除默认时区
+#rm /etc/localtime  设定新的时区
+#ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime  完成！
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-11-30</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/timezone">#timezone</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/localtime">#localtime</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%97%B6%E5%8C%BA">#时区</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -299,61 +345,6 @@ Over!
                         <li><a href="https://unixetc.com/tags/udo">#udo</a></li>
                     
                         <li><a href="https://unixetc.com/tags/sudo">#sudo</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/linux-use-grive-management-google-drive/">Linux下使用grive管理Google Drive</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        找到一个linux下可用的google drive客户端，纯cli操作，值得推荐
-grive项目主页 https://github.com/Grive/grive
-Ubuntu中下通过PPA安装grive
-sudo add-apt-repository ppa:nilarimogard/webupd8 sudo apt-get update sudo apt-get install grive  使用grive同步Google Drive
-mkdir googledrive cd googledrive grive -a  第一次运行，会有验证提示，将提示的url代码粘贴到浏览器中验证帐户，完了后将生成的验证代码粘贴到grive进行验证。
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2015-08-26</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/google">#Google</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ppa">#PPA</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/google-drive">#google drive</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/grive">#grive</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/grive2">#grive2</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/webupd8">#webupd8</a></li>
                     
                 </ul>
         

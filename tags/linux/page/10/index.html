@@ -17,7 +17,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101236" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103043" />
 <style>
 
     [data-theme="dark"] {   
@@ -49,7 +49,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101236" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103043" />
 
 
 
@@ -59,7 +59,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/tags/linux/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux"/>
@@ -99,6 +99,62 @@
     <div class="post-info">
         <a href="https://unixetc.com/tags">To all tags</a>
     </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/install-configure-noip-client-in-raspberry-pi/">树莓派下安装配置Noip</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        注册noip 首先在http://noip.com注册账户
+然后在主机管理(Manage Hosts)中添加主机(Add A Host)，根据提示设置二级域名，IP可以随意填写。
+安装Noip客户端 wget https://www.noip.com/client/linux/noip-duc-linux.tar.gz tar zxf noip-duc-linux.tar.gz cd noip-2.1.9-1 sudo make install  安装过程中，按照提示输入noip帐号信息，时间间隔建议设为5s，默认30s
+设置开机启动 在/etc/init.d/中建立noip2脚本
+sudo vi /etc/init.d/noip2  脚本内容如下
+#! /bin/sh ### BEGIN INIT INFO # Provides: noip2 # Required-Start: $syslog # Required-Stop: $syslog # Default-Start: 2 3 4 5 # Default-Stop: 0 1 6 # Short-Description: noip.com client service ### END INIT INFO # . /lib/lsb/init-functions case &quot;$1&quot; in start) echo &quot;Starting noip2.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-01-11</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ddns">#DDNS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%8A%A8%E6%80%81%E5%9F%9F%E5%90%8D">#动态域名</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/noip">#noip</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -301,52 +357,6 @@ pi@raspi:~ $ md5sum bs.conf&gt;bs.conf.md5 pi@raspi:~ $ md5sum -c bs.conf.md5 bs
                         <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
                     
                         <li><a href="https://unixetc.com/tags/scp">#scp</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/change-timezone-in-centos/">Linux下更改时区</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        Linux中时区代码都在/usr/share/zoneinfo/目录中
-首先删除默认时区
-#rm /etc/localtime  设定新的时区
-#ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime  完成！
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2015-11-30</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/timezone">#timezone</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/localtime">#localtime</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E6%97%B6%E5%8C%BA">#时区</a></li>
                     
                 </ul>
         

@@ -17,7 +17,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103042" />
 <style>
 
     [data-theme="dark"] {   
@@ -49,7 +49,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103042" />
 
 
 
@@ -59,7 +59,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/categories/stuff/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="STUFF"/>
@@ -99,6 +99,65 @@
     <div class="post-info">
         <a href="https://unixetc.com/categories">To all categories</a>
     </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/linux_enable_tcp_bbr/">Linux开启TCP BBR算法</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        Linux Kernel 4.9+已经支持tcp_bbr拥塞控制算法，因此建议将内核升级为最新版。
+将内核升级到最新版 Debian/Ubuntu升级最新内核 最新内核下载地址 http://kernel.ubuntu.com/~kernel-ppa/mainline
+下载安装新内核
+wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.10.10/linux-image-4.10.10-041010-generic_4.10.10-041010.201704120813_amd64.deb` dpkg -i linux-image-4.10.10-041010-generic_4.10.10-041010.201704120813_amd64.deb 更新GRUB并且重启
+update-grub reboot Centos 7 升级最新内核 内核下载地址 http://elrepo.org/linux/kernel/el7/x86_64/RPMS/
+安装最新内核
+rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm yum --enablerepo=elrepo-kernel install kernel-ml -y 检查内核是否安装完成
+rpm -qa | grep kernel
+更新GRUB并重启主机
+egrep ^menuentry /etc/grub2.cfg | cut -f 2 -d \&#39; grub2-set-default 0 #default 0表示第一个内核设置为默认运行, 选择最新内核就对了 reboot http://elrepo.org/linux/kernel/下e15、e16分别对应Centos5、Centos6，可参考以上安装
+开启BBR 重启后uname -r 检查内核版本是不是4.9+
+然后执行以下操作
+echo &#34;net.core.default_qdisc=fq&#34; &gt;&gt; /etc/sysctl.conf echo &#34;net.ipv4.tcp_congestion_control=bbr&#34; &gt;&gt; /etc/sysctl.conf sysctl -p sysctl net.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-04-17</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/google">#Google</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/debian">#Debian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/bbr">#bbr</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/tcp_bbr">#tcp_bbr</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -308,61 +367,6 @@ dpkg --verify  验证已安装软件的完整性
                         <li><a href="https://unixetc.com/tags/apt">#apt</a></li>
                     
                         <li><a href="https://unixetc.com/tags/dpkg">#dpkg</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/fix-raspberry-path-variable/">修复树莓派PATH变量</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        使用lnmp一键工具安装完nmp后，重启进入系统就提示bash command not found
-然后试了试service,who等命令也无法使用
-只有最基本的系统命令ls,cat等可以用
-看来安装lnmp后，我的PATH变量被动了
-先临时修改下PATH，便于后面操作
-export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:$PATH  然后检查~/.profile,/etc/profile是否存在，存在
-检查其中的PATH赋值是否异常
-经过排查，发现/etc/profile中的PATH赋值异常，修改之重启OK！
-在此分享正确的原始~/.profile和/etc/profile文件
-~/.profile 内容
-# ~/.profile: executed by the command interpreter for login shells. # This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login # exists. # see /usr/share/doc/bash/examples/startup-files for examples. # the files are located in the bash-doc package. # the default umask is set in /etc/profile; for setting the umask # for ssh logins, install and configure the libpam-umask package.
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2017-03-03</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/path">#PATH</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
                     
                 </ul>
         

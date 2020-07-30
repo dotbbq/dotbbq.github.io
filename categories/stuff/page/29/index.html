@@ -17,7 +17,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103042" />
 <style>
 
     [data-theme="dark"] {   
@@ -49,7 +49,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103042" />
 
 
 
@@ -59,7 +59,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/categories/stuff/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="STUFF"/>
@@ -99,6 +99,58 @@
     <div class="post-info">
         <a href="https://unixetc.com/categories">To all categories</a>
     </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/modify-the-raspberry-pi-swap-size/">修改树莓派Swap</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        树莓派的swap大小在/etc/dphys-swapfile中定义，默认为100M
+pi@raspi:~$ cat /etc/dphys-swapfile CONF_SWAPSIZE=1000 pi@raspi:/mnt$ free -h total used free shared buffers cached Mem: 437M 36M 401M 0B 2.1M 12M -/+ buffers/cache: 22M 415M Swap: 99M 0B 99M pi@raspi:/mnt$  可以自己修改CONF_SWAPSIZE的值，单位为兆(MB)
+修改后重启树莓派生效，如下：
+pi@raspi:~$ cat /etc/dphys-swapfile CONF_SWAPSIZE=1000 pi@raspi:~$ free -h total used free shared buffers cached Mem: 437M 53M 383M 0B 7.9M 23M -/+ buffers/cache: 22M 415M Swap: 999M 0B 999M 
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-10-30</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/swap">#swap</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/free">#free</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dphys-swapfile">#dphys-swapfile</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -292,52 +344,6 @@ rontab命令 功能说明： 设置计时器。
                         <li><a href="https://unixetc.com/tags/excel">#Excel</a></li>
                     
                         <li><a href="https://unixetc.com/tags/%E6%8D%A2%E8%A1%8C%E7%AC%A6">#换行符</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/cli-model-of-linux-using-dropbox/">Linux下CLI模式使用Dropbox</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        下载Dropbox 32-bit:
-cd ~ &amp;&amp; wget -O - &quot;https://www.dropbox.com/download?plat=lnx.x86&quot; | tar xzf -  64-bit:
-cd ~ &amp;&amp; wget -O - &quot;https://www.dropbox.com/download?plat=lnx.x86_64&quot; | tar xzf -  连接到Dropbox ~/.dropbox-dist/dropboxd  按照提示，在浏览器中打开链接，确认授权。
-CLI模式使用Dropbox 下载执行脚本:
-wget https://www.dropbox.com/download?dl=packages/dropbox.py chmod +x dropbox.py  dropbox.py使用
-root@hkvps:~# ./dropbox.py help Dropbox command-line interface commands: Note: use dropbox help &lt;command&gt; to view usage for a specific command. status get current status of the dropboxd help provide help puburl get public url of a file in your dropbox stop stop dropboxd running return whether dropbox is running start start dropboxd filestatus get current sync status of one or more files ls list directory contents with current sync status autostart automatically start dropbox at login exclude ignores/excludes a directory from syncing lansync enables or disables LAN sync 
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2014-08-19</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/dropbox">#Dropbox</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/cli">#CLI</a></li>
                     
                 </ul>
         

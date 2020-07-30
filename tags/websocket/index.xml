@@ -6,10 +6,103 @@
     <description>UNIXETC (websocket)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 20 Aug 2018 18:18:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jul 2020 00:00:00 +0000</lastBuildDate>
     
     <atom:link href="https://unixetc.com/tags/websocket/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Nginx V2ray and WebSocket</title>
+      <link>https://unixetc.com/post/nginx-v2ray-websocket/</link>
+      <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://unixetc.com/post/nginx-v2ray-websocket/</guid>
+      <description>&lt;h3 id=&#34;安装v2raynginx&#34;&gt;安装v2ray/nginx&lt;/h3&gt;
+&lt;p&gt;v2ray安装可以参考&lt;a href=&#34;https://unixetc.com/post/v2ray-client-configuration-example-in-ubuntu/&#34;&gt;Ubuntu中v2ray客户端配置实例&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Nginx安装推荐使用&lt;a href=&#34;https://oneinstack.com/&#34;&gt;OneinStack一键安装脚本&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;准备好使用的域名，这里以&lt;strong&gt;&lt;code&gt;v.fuckgfw.cn&lt;/code&gt;&lt;/strong&gt;为例。&lt;/p&gt;
+&lt;h3 id=&#34;v2raynginx服务端配置&#34;&gt;v2ray/nginx服务端配置&lt;/h3&gt;
+&lt;p&gt;v2ray安装好后，服务端配置&lt;strong&gt;&lt;code&gt;/etc/v2ray/config.json&lt;/code&gt;&lt;/strong&gt;如下:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{
+	&amp;quot;inbounds&amp;quot;: [{
+		&amp;quot;port&amp;quot;: 99999,  //代理端口号
+		&amp;quot;listen&amp;quot;: &amp;quot;127.0.0.1&amp;quot;,
+		&amp;quot;protocol&amp;quot;: &amp;quot;vmess&amp;quot;,
+		&amp;quot;settings&amp;quot;: {
+			&amp;quot;clients&amp;quot;: [{
+				&amp;quot;id&amp;quot;: &amp;quot;5c1eed18-fse4-41fs-9as9-e85s45bds9ef&amp;quot;,
+				&amp;quot;level&amp;quot;: 1,
+				&amp;quot;alterId&amp;quot;: 64
+			}]
+		},
+		&amp;quot;streamSettings&amp;quot;: {
+			&amp;quot;network&amp;quot;: &amp;quot;ws&amp;quot;,
+			&amp;quot;wsSettings&amp;quot;: {
+				&amp;quot;path&amp;quot;: &amp;quot;/fcgfw&amp;quot; //代理目录
+			}
+		}
+	}],
+	&amp;quot;outbounds&amp;quot;: [{
+		&amp;quot;protocol&amp;quot;: &amp;quot;freedom&amp;quot;,
+		&amp;quot;settings&amp;quot;: {}
+	}, {
+		&amp;quot;protocol&amp;quot;: &amp;quot;blackhole&amp;quot;,
+		&amp;quot;settings&amp;quot;: {},
+		&amp;quot;tag&amp;quot;: &amp;quot;blocked&amp;quot;
+	}],
+	&amp;quot;routing&amp;quot;: {
+		&amp;quot;rules&amp;quot;: [{
+			&amp;quot;type&amp;quot;: &amp;quot;field&amp;quot;,
+			&amp;quot;ip&amp;quot;: [&amp;quot;geoip:private&amp;quot;],
+			&amp;quot;outboundTag&amp;quot;: &amp;quot;blocked&amp;quot;
+		}]
+	}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;使用OneinStack一键脚本新建一个站点，域名为&lt;code&gt;v.fuckgfw.cn&lt;/code&gt;，采用SSL加密模式，完成后编辑&lt;strong&gt;&lt;code&gt;/usr/local/nginx/conf/vhost/v.fuckgfw.cn.conf&lt;/code&gt;&lt;/strong&gt;文件&lt;/p&gt;
+&lt;p&gt;参考以下修改：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;server {
+  listen 80;
+  listen [::]:80;
+  listen 443 ssl http2;
+  listen [::]:443 ssl http2;
+  ssl_certificate /usr/local/nginx/conf/ssl/v.fuckgfw.cn.crt;
+  ssl_certificate_key /usr/local/nginx/conf/ssl/v.fuckgfw.cn.key;
+  ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
+  ssl_ciphers TLS13-AES-256-GCM-SHA384:TLS13-CHACHA20-POLY1305-SHA256:TLS13-AES-128-GCM-SHA256:TLS13-AES-128-CCM-8-SHA256:TLS13-AES-128-CCM-SHA256:EECDH+CHACHA20:EECDH+AES128:RSA+AES128:EECDH+AES256:RSA+AES256:EECDH+3DES:RSA+3DES:!MD5;
+  ssl_prefer_server_ciphers on;
+  ssl_session_timeout 10m;
+  ssl_session_cache builtin:1000 shared:SSL:10m;
+  ssl_buffer_size 1400;
+  add_header Strict-Transport-Security max-age=15768000;
+  ssl_stapling on;
+  ssl_stapling_verify on;
+  server_name v.fuckgfw.cn;
+  access_log off;
+  if ($ssl_protocol = &amp;quot;&amp;quot;) { return 301 https://$host$request_uri; }
+
+    location /fcgfw {       //与上面v2ray配置的代理目录一致                  
+        proxy_redirect off;
+        proxy_pass http://127.0.0.1:99999;       //与上面v2ray配置端口号一致 
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection &amp;quot;upgrade&amp;quot;;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_connect_timeout 60s;
+        proxy_read_timeout 86400s;
+        proxy_send_timeout 60s;
+    }
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;按照上面修改好&lt;strong&gt;nginx&lt;/strong&gt;与&lt;strong&gt;v2ray&lt;/strong&gt;配置后，重启服务。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;service nginx reload
+service v2ray restart
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;v2ray客户端配置&#34;&gt;v2ray客户端配置&lt;/h3&gt;
+&lt;p&gt;以&lt;strong&gt;v2rayN&lt;/strong&gt;为例&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://unixetc.com/usr/uploads/nginx-v2ray-websocket.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>V2ray使用实例</title>

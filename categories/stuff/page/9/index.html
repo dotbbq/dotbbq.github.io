@@ -17,7 +17,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103042" />
 <style>
 
     [data-theme="dark"] {   
@@ -49,7 +49,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103042" />
 
 
 
@@ -59,7 +59,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/categories/stuff/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="STUFF"/>
@@ -99,6 +99,66 @@
     <div class="post-info">
         <a href="https://unixetc.com/categories">To all categories</a>
     </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/grub-boot-iso-image-file/">GRUB引导ISO镜像</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        家里电脑安装了双系统(Xubuntu+Windows7)，平时一直不关机，开着TeamViewer便于在办公室远程操作。
+这次不知怎么回事儿，远程掉了，回家一看Windows意外关机，再开机直接蓝屏。
+由于为了省资源，关闭了系统保护，没法进行还原，多次试着拯救都没能解决，无限蓝屏……
+手头刚好没有WinPE的U盘，没法ghost恢复或重装Windows，只有xubuntu可用，一筹莫展。
+突然想到grub是否可以引导iso？ 网上找了下，还真可以，于是下载了个WinPE镜像文件，打算通过grub来引导以修复Windows。
+具体操作如下：
+安装grub-imageboot
+alair@e6440:~$ apt search memdisk 正在排序... 完成 全文搜索... 完成 grub-imageboot/bionic,bionic 0.6 all boot iso, harddisk and floppy images with grub2 and syslinux memdisk alair@e6440:~$ sudo apt install grub-imageboot [sudo] alair 的密码： 正在读取软件包列表... 完成 正在分析软件包的依赖关系树 正在读取状态信息... 完成 将会同时安装下列软件： syslinux-common 下列【新】软件包将被安装： grub-imageboot syslinux-common 升级了 0 个软件包，新安装了 2 个软件包，要卸载 0 个软件包，有 4 个软件包未被升级。 需要下载 1,176 kB 的归档。 解压缩后会消耗 3,684 kB 的额外空间。 您希望继续执行吗？ [Y/n] y 获取:1 http://mirrors.cqu.edu.cn/ubuntu bionic/main amd64 syslinux-common all 3:6.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2018-07-08</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/grub">#GRUB</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/grub-imageboot">#grub-imageboot</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/grub2">#grub2</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/memdisk">#memdisk</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/iso">#ISO</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/winpe">#WinPE</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/update-grub">#update-grub</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -294,57 +354,6 @@ location ~* \.(htm)$ { rewrite &quot;^(.*)/(.+?).htm(.*?)$&quot; $1/index.php?$2
                         <li><a href="https://unixetc.com/tags/merdian">#merdian</a></li>
                     
                         <li><a href="https://unixetc.com/tags/ios10">#ios10</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/deploy-the-static-site-to-the-coding-net/">将静态站点部署到Coding.net</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        本站是基于https://github.com/wendal/gor生成的静态站点。
-下面介绍如何将静态站点部署到coding.net上。
-注册coding并新建项目 首先注册coding.net，注册完后新建项目。
-项目名称为*.coding.me，以此格式新建的项目可以使用Coding Pages服务。
-Pages服务设置 建立完成后，在项目设置中找到Pages服务服务进行设置。
- 部署来源  选择master分支
- 自定义域名  添加自定义域名，建议同时添加domain.com和www.domain.com，并且设置一个为首选项，另一个跳转到首选项。然后将自己的域名CNAME指向pages.coding.me
- 强制HTTPS访问  打开该选项，则为你的域名自动申请设置** Let&rsquo;s Encrypt**证书，并开启**https**访问。
- Hosted by Coding Pages  新站点都会有coding pages跳转页，按照Hosted by Coding Pages说明，在首页添加规定连接后，可以提交申请不显示跳转页。
-使用Git部署站点 首先推荐配置SSH公钥以便于操作。
-$ ssh-keygen -t rsa -C &quot;name@domain.com&quot; //在此设置为coding.net帐号邮箱 Generating public/private rsa key pair. Enter file in which to save the key (/c/Users/dotbbq/.ssh/id_rsa): Created directory '/c/Users/dotbbq/.ssh'. Enter passphrase (empty for no passphrase): Enter same passphrase again: Your identification has been saved in /c/Users/dotbbq/.
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2017-11-25</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/coding">#Coding</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/git">#Git</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/gor">#gor</a></li>
                     
                 </ul>
         

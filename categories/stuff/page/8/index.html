@@ -17,7 +17,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103042" />
 <style>
 
     [data-theme="dark"] {   
@@ -49,7 +49,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103042" />
 
 
 
@@ -59,7 +59,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/categories/stuff/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="STUFF"/>
@@ -99,6 +99,56 @@
     <div class="post-info">
         <a href="https://unixetc.com/categories">To all categories</a>
     </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/oneplus-3t-after-sale-rom/">一加3T售后刷机包</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        首先下载以下两个文件包：
+ 一加3T9008驱动 Download 一加3T售后恢复包 Download  然后，将手机完全关机，按住音量+不放，将手机和电脑连接，此时手机还是黑屏状态，电脑会有设备连接提示音。
+我的电脑-&gt;右键管理-&gt;设备管理器，打开查看，第一次使用会在其他设备下出现QHSUSB_BULK带黄色感叹号的未知设备，右键点击更新驱动，手动选择刷机驱动包里面的驱动目录进行安装，如果不行的话可以使用360驱动大师进行识别安装，安装完成后会出现类似以下的设备驱动:
+其中Qualcomm HS-USB QDLoader 9008(COM4)的新设备，就是正常驱动后的手机，俗称高通9008模式。
+将下载的一加3T售后恢复包解压后，打开其中的MsmDownloadTool V3.0.exe开始刷机
+正常识别COM设备后，点击Start开始刷机，完成后自动重启。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2018-10-13</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/android">#Android</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/oneplus">#oneplus</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/oneplus3t">#oneplus3t</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/rom">#rom</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/9008">#9008</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -328,66 +378,6 @@ Windows安装本地端 从https://github.com/v2ray/v2ray-core/releases下载Wind
                         <li><a href="https://unixetc.com/tags/miui">#miui</a></li>
                     
                         <li><a href="https://unixetc.com/tags/miui10">#miui10</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/grub-boot-iso-image-file/">GRUB引导ISO镜像</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        家里电脑安装了双系统(Xubuntu+Windows7)，平时一直不关机，开着TeamViewer便于在办公室远程操作。
-这次不知怎么回事儿，远程掉了，回家一看Windows意外关机，再开机直接蓝屏。
-由于为了省资源，关闭了系统保护，没法进行还原，多次试着拯救都没能解决，无限蓝屏……
-手头刚好没有WinPE的U盘，没法ghost恢复或重装Windows，只有xubuntu可用，一筹莫展。
-突然想到grub是否可以引导iso？ 网上找了下，还真可以，于是下载了个WinPE镜像文件，打算通过grub来引导以修复Windows。
-具体操作如下：
-安装grub-imageboot
-alair@e6440:~$ apt search memdisk 正在排序... 完成 全文搜索... 完成 grub-imageboot/bionic,bionic 0.6 all boot iso, harddisk and floppy images with grub2 and syslinux memdisk alair@e6440:~$ sudo apt install grub-imageboot [sudo] alair 的密码： 正在读取软件包列表... 完成 正在分析软件包的依赖关系树 正在读取状态信息... 完成 将会同时安装下列软件： syslinux-common 下列【新】软件包将被安装： grub-imageboot syslinux-common 升级了 0 个软件包，新安装了 2 个软件包，要卸载 0 个软件包，有 4 个软件包未被升级。 需要下载 1,176 kB 的归档。 解压缩后会消耗 3,684 kB 的额外空间。 您希望继续执行吗？ [Y/n] y 获取:1 http://mirrors.cqu.edu.cn/ubuntu bionic/main amd64 syslinux-common all 3:6.
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2018-07-08</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/grub">#GRUB</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/grub-imageboot">#grub-imageboot</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/grub2">#grub2</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/memdisk">#memdisk</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/iso">#ISO</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/winpe">#WinPE</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/update-grub">#update-grub</a></li>
                     
                 </ul>
         

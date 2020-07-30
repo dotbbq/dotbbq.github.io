@@ -17,7 +17,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101236" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103043" />
 <style>
 
     [data-theme="dark"] {   
@@ -49,7 +49,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101236" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103043" />
 
 
 
@@ -59,7 +59,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/tags/linux/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux"/>
@@ -99,6 +99,68 @@
     <div class="post-info">
         <a href="https://unixetc.com/tags">To all tags</a>
     </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/install-h2o-on-bandwagon-vps/">将Nginx更换为H2O</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装必须的软件 预备工具软件
+#apt-get install autoconf automake m4 build-essential  libssl-dev 必选
+#apt-get install openssl libssl-dev  以下为可选包，可自行搜索安装
+ libuv libyaml wslay  安装H2O 下载安装最新版h2o https://github.com/h2o/h2o/releases
+#wget https://github.com/h2o/h2o/archive/v1.4.1.tar.gz #tar zxf v1.4.1.tar.gz #cd h2o-1.4.1 #cmake -DWITH_BUNDLED_SSL=on . #make #sudo make install  编辑H2O站点配置文件 以下是一个简单的http与https配置文件，可自行参考修改
+hosts: &quot;www.example.com&quot;: listen: port: 80 listen: port: 443 ssl: certificate-file: /path/to/server-certificate.crt key-file: /path/to/private-key.crt paths: &quot;/&quot;: file.dir: /path/to/doc-root access-log: /path/to/the/access-log error-log: /path/to/the/error-log pid-file: /path/to/the/pid-file http2-reprioritize-blocking-assets: ON # performance tuning option  启动H2O
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-07-21</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vps">#VPS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/openssl">#OpenSSL</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/h2o">#H2O</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/wslay">#wslay</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/web-server">#Web Server</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/bandwagonhost">#BandwagonHost</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/libssl">#libssl</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/libuv">#libuv</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/libyaml">#libyaml</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -328,64 +390,6 @@ export PATH=&quot;/root/go/bin:$PATH&quot;  检查版本 go version go version g
                         <li><a href="https://unixetc.com/tags/go">#go</a></li>
                     
                         <li><a href="https://unixetc.com/tags/%E8%B0%B7%E6%AD%8C">#谷歌</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/use-speedtest-cli-tests-network-bandwidth/">使用speedtest-cli测试带宽</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        安装speedtest-cli 安装speedtest-cli方法如下:
-sudo apt-get install python-pip sudo pip install speedtest-cli  或
-pip install git+https://github.com/sivel/speedtest-cli.git  或
-git clone https://github.com/sivel/speedtest-cli.git python speedtest-cli/setup.py install  或
-wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest_cli.py chmod +x speedtest-cli  或
-curl -Lo speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest_cli.py chmod +x speedtest-cli  使用speedtest-cli root@MyUbuntuCloud:~# speedtest-cli -h usage: speedtest-cli [-h] [--bytes] [--share] [--simple] [--list] [--server SERVER] [--mini MINI] [--source SOURCE] [--timeout TIMEOUT] [--version] Command line interface for testing internet bandwidth using speedtest.
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2015-03-26</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/git">#Git</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/python">#Python</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/bandwidth">#Bandwidth</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E5%B8%A6%E5%AE%BD">#带宽</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E7%BD%91%E9%80%9F">#网速</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/speedtest">#speedtest</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/speedtest-cli">#speedtest-cli</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/pip">#pip</a></li>
                     
                 </ul>
         

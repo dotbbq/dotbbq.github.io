@@ -17,7 +17,7 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101236" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596103043" />
 <style>
 
     [data-theme="dark"] {   
@@ -49,7 +49,7 @@
 
 </style>
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101236" />
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596103043" />
 
 
 
@@ -59,7 +59,7 @@
 <meta property="og:description" content="A Personal Site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://unixetc.com/tags/linux/" />
-<meta property="og:updated_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux"/>
@@ -99,6 +99,52 @@
     <div class="post-info">
         <a href="https://unixetc.com/tags">To all tags</a>
     </div>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/cli-model-of-linux-using-dropbox/">Linux下CLI模式使用Dropbox</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        下载Dropbox 32-bit:
+cd ~ &amp;&amp; wget -O - &quot;https://www.dropbox.com/download?plat=lnx.x86&quot; | tar xzf -  64-bit:
+cd ~ &amp;&amp; wget -O - &quot;https://www.dropbox.com/download?plat=lnx.x86_64&quot; | tar xzf -  连接到Dropbox ~/.dropbox-dist/dropboxd  按照提示，在浏览器中打开链接，确认授权。
+CLI模式使用Dropbox 下载执行脚本:
+wget https://www.dropbox.com/download?dl=packages/dropbox.py chmod +x dropbox.py  dropbox.py使用
+root@hkvps:~# ./dropbox.py help Dropbox command-line interface commands: Note: use dropbox help &lt;command&gt; to view usage for a specific command. status get current status of the dropboxd help provide help puburl get public url of a file in your dropbox stop stop dropboxd running return whether dropbox is running start start dropboxd filestatus get current sync status of one or more files ls list directory contents with current sync status autostart automatically start dropbox at login exclude ignores/excludes a directory from syncing lansync enables or disables LAN sync 
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-08-19</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dropbox">#Dropbox</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/cli">#CLI</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
     
         <article class="post-list">
     <header class="post-header">
@@ -313,76 +359,6 @@ $vncserver -geometry 1024x768 //分辨率，推荐960x640，或者640x480 $vncse
                         <li><a href="https://unixetc.com/tags/vnc">#VNC</a></li>
                     
                         <li><a href="https://unixetc.com/tags/tightvncserver">#tightvncserver</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header class="post-header">
-        <h1 class="post-title"><a href="/post/raspberry-pi-and-dnspod-dynamic-dns/">树莓派与DNSPod动态域名解析</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        所需条件
- Raspberry Pi TP-Link路由器 DNSPod帐户 域名  配置路由器 进入路由器的DHCP服务器-&gt;静态地址分配菜单，为Raspberry Pi分配静态IP地址，例如：192.168.1.200
-进入路由器的安全功能-&gt;远端WEB管理菜单，设置WEB管理端口为一个非80值，例如82
-进入路由器的转发规则-&gt;DMZ主机菜单，将DMZ主机IP地址设置为Raspberry Pi的ip地址，然后启用保存。
-设置DNSPod动态域名解析 首先登录DNSPod网页管理域名，将二级域名www 的A记录解析到路由器外网IP(可通过路由器管理首页查询，或者通过浏览ip138.com来获得)
-注：一级域名请解析**@**的A记录。
-下载DNSPod官方客户端Lite https://support.dnspod.cn/Support/api
-解压后双击打开登录，从右侧信息列表中也可以看到本机最新IP，点击相应域名后的动态解析按钮，在动态解析设置中右键点击相应的动态记录启用即可，关闭DNSPod官方客户端Lite。
-设置Raspberry Pi 安装Web服务器软件(Nginx)
-#apt-get install nginx #/etc/init.d/nginx start  内网可以通过浏览`http://192.168.1.129&quot;来检查Nginx是否正常运行。
-浏览https://gist.githubusercontent.com/chuangbo/833369，下载动态域名解析脚本(pypod.py)
-编辑pypod.py修改以下内容：
-login_email=&quot;email&quot;, # DSNPod帐户邮箱 login_password=&quot;password&quot;, # DSNPod帐户密码 domain_id=100, # 域名id record_id=100, # 记录id sub_domain=&quot;www&quot;, # 子域名  其中域名id与记录id可以通过以下命令获取：
-curl -k https://dnsapi.cn/Domain.List -d &quot;login_email=xxx&amp;login_password=xxx&quot; curl -k https://dnsapi.cn/Record.List -d &quot;login_email=xxx&amp;login_password=xxx&amp;domain_id=xxx&quot;  提示：如果你使用了www子域名，则需要获取www的记录id，如果使用一级域名(@)，则需要获取**@**的记录id。
-编辑完pypod.py保存退出，使用以下命令运行：
-#python pypod.py  现在可以通过域名来浏览Raspberry Pi上的Web内容了。
-pypod.py开机运行
-添加/usr/bin/python /home/pi/pypod.
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2014-03-03</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/dnspod">#dnspod</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ddns">#DDNS</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/dns">#DNS</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E5%8A%A8%E6%80%81%E5%9F%9F%E5%90%8D">#动态域名</a></li>
                     
                 </ul>
         
