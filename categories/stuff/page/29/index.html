@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,22 +101,16 @@
     </div>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/firefox-and-foxyproxy/">Firefox和FoxyProxy</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/unit-of-power-mw-and-dbm-conversion/">功率单位mW与dBm换算</a></h1>
     </header>
 
     <div class="content post-summary">
-        三年不用Firefox了，最近由于需要进行手机端和电脑端资源同步，chrome在国内不安装谷歌套件无法使用，所以又切换回了firefox。
-在安装完成autoproxy后发现，订阅gfwlist.txt一直无法成功，网上找了找消息，说是autoproxy已经跟不上firefox开发脚步，无法继续使用。于是在firefox的addon站点重新找代理插件，最终选定foxyproxy。
-以下是foxyproxy设置socks代理，和订阅gfwlist.txt的一些设置方法。
-安装foxyproxy 去主页http://getfoxyproxy.org/，安装完成后重启firefox
-添加代理服务器 双击地址栏和搜索栏中间的foxyproxy图标，进入到设置
-代理服务器选项卡中点击新建代理服务器
-常规选项卡中设置代理名称，如ss
-代理服务器细节中设置具体参数，以下是我的设置截图，可以参考
-设置订阅gfwlist.txt 在模式订阅选项卡中，空白处点击右键，添加新的模式订阅
-参考下图设置，注意勾划出来的地方
-将foxyproxy的工作模式选择为使用基于其预定义模版的代理服务器。
+        功率/电平（dBm):放大器的输出能力，一般单位为W、mW、dBm。dBm是取1mw作基准值，以分贝表示的绝对功率电平。
+换算公式：
+电平（dBm）=10lgW  示例：
+ 5W → 10lg5000 = 37dBm 10W → 10lg10000 = 40dBm 20W → 10lg20000 = 43dBm  从上不难看出，功率每增加一倍，电平值增加3dBm
+功率单位mW和dBm的换算表
     </div>
 
     
@@ -89,7 +119,7 @@
 
 <div class="post-info">
     
-        <div class="post-date">2016-02-13</div>
+        <div class="post-date">2014-10-27</div>
     
     <div class="post-taxonomies">
         
@@ -102,19 +132,21 @@
             
                 <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/gfw">#GFW</a></li>
+                        <li><a href="https://unixetc.com/tags/db">#dB</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/proxy">#proxy</a></li>
+                        <li><a href="https://unixetc.com/tags/dbm">#dbm</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/socks">#socks</a></li>
+                        <li><a href="https://unixetc.com/tags/w">#W</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/firefox">#Firefox</a></li>
+                        <li><a href="https://unixetc.com/tags/mw">#mW</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/foxyproxy">#FoxyProxy</a></li>
+                        <li><a href="https://unixetc.com/tags/%E6%AF%AB%E7%93%A6">#毫瓦</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/autoproxy">#AutoProxy</a></li>
+                        <li><a href="https://unixetc.com/tags/%E7%93%A6">#瓦</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/gfwlist">#gfwlist</a></li>
+                        <li><a href="https://unixetc.com/tags/%E5%8A%9F%E7%8E%87">#功率</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%94%B5%E5%B9%B3">#电平</a></li>
                     
                 </ul>
         
@@ -124,16 +156,23 @@
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/windows7-enable-telnet-client/">windows7开启telnet客户端</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/picture-converted-to-tab-map-file/">mapinfo用图片制作地图文件</a></h1>
     </header>
 
     <div class="content post-summary">
-        安装完成windows7后，默认可能没有开启telnet功能，这样在cmd下输入telnet时会提示无命令，可以参考下文开启telnet功能。
-开始 -&gt; 控制面板 -&gt; 程序和功能
-在左侧边栏找到打开或关闭windows功能
-在打开的窗口中找到Telnet客户端，勾选，确认。
-Over!
+        获取图片
+以百度地图为例，制作户县县城范围
+用截图软件，将需要的范围截图保存，如下：
+制作TAB
+用Mapinfo打开图片(hx.png)，会提示是否注册，选择注册(Register)
+然后出现图片注册界面
+简单说一下原理问题。
+在图片上找最少3个坐标，然后对应3个实际经纬度信息，为什么最少3个？因为三点确定一个平面嘛！
+下来录入经纬度信息，点击Add，在图片上点一个点，按照提示输入对应的经纬度，如下：
+经纬度信息可以使用GoogleEarth获得。
+以下是制作完成的情况
+点击完成后，就会生成一个同名的tab文件(hx.tab)。
     </div>
 
     
@@ -142,7 +181,7 @@ Over!
 
 <div class="post-info">
     
-        <div class="post-date">2016-02-10</div>
+        <div class="post-date">2014-10-16</div>
     
     <div class="post-taxonomies">
         
@@ -155,9 +194,13 @@ Over!
             
                 <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
+                        <li><a href="https://unixetc.com/tags/mapinfo">#mapinfo</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/telnet">#telnet</a></li>
+                        <li><a href="https://unixetc.com/tags/tab">#tab</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%BB%8F%E7%BA%AC%E5%BA%A6">#经纬度</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gis">#gis</a></li>
                     
                 </ul>
         
@@ -167,25 +210,21 @@ Over!
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/use-net-speeder-accelerate-vps/">使用net_speeder加速VPS</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/install-crontab-on-centos-and-usage/">CentOS中Crontab安装和使用</a></h1>
     </header>
 
     <div class="content post-summary">
-         当使用国外服务器时，经常会发现，下载速度只有十几k。平时可能不太注意，认为服务器带宽不足，或者自己使用的宽带不给力，其实很有可能原因并不在此。
-由于光速的局限性，延迟会比较高（即使光沿直线传播，太平洋一个往返也要一百多毫秒）。并且由于距离较远，途径路由跳数较多，并且网络拥堵的原因。经常会发生丢包的情况。
-对于平时使用最广泛的TCP协议来讲，发送端发出包后，接收端会回复ACK，表示自己收到了。用这种机制来保证可靠性。但对于高延迟链路来讲，如果每发送一个包都等待应答，那么大部分时间都在等待数据包到达，而链路则空置了。为此一般会采用滑动窗口技术。即在窗口满之前，发送端一直发送包，然后收到应答后将确认收到的包从窗口中移除。这样可以提高链路利用率。
-TCP还有一个特性则是拥塞控制。当发送端检测到链路发生丢包时，则会主动缩小窗口大小以减慢发送速度，避免拥塞。不过对于跳数较多的链路来讲，只要有一个路由不够稳定丢包，就会被发送端判断为拥塞，从而影响网络速度。
-为了解决丢包问题，最简单粗暴的方法就是双倍发送，即同一份数据包发送两份。这样的话在服务器带宽充足情况下，丢包率会平方级降低。
-这种方式下，直接优点是降低丢包率，直接缺点是耗费双倍流量。一些延伸影响是更容易触发快速恢复逻辑，避免了丢包时窗口缩减过快。一定程度也能提高网络速度。
-最近比较忙，空闲时间做了一个最简单的程序，试用效果很好，在一台VPS上测试后发现，未开启时单线程下载、ssh管道速度在十几K级别。开启后可以达到平均300KB+的速度。效果非常明显。但对于不加速就可以跑满带宽的类型来讲（多线程下载），开启后反而由于多出来的无效流量，导致速度减半。所以对于多线程/高速链路，这个方案是不适合的。
-目前版本是最简单的逻辑，未来会进行细化（主动触发快速恢复、快速重传等），降低流量浪费，提升加速效果。
-目前程序起名net-speeder，相对于修改协议栈来讲，由于后者需要重新升级编译内核，使用用户态程序部署更方便，稳定性更高，兼容性更好。缺点则是性能开销稍大和自由度有损失。总体比较起来，个人使用还是使用用户态程序更合适一些，特别是在虚拟机中使用（OpenVZ，LXC等虚拟机无法自己定制内核）。
- 摘自http://www.snooda.com/read/324
-net_speeder项目主页 https://github.com/snooda/net-speeder
-安装net_speeder apt-get install libnet-dev libpcap-dev -y git clone https://github.com/snooda/net-speeder.git cd net-speeder sh build.sh mv net_speeder /usr/local/bin/  使用net_speeder 使用ifconfig查看网卡端口，我的端口为venet0
-nohup net_speeder venet0 &quot;ip&quot; &gt;/dev/null 2&gt;&amp;1 &amp;  添加到开机启动
-echo 'nohup net_speeder venet0 &quot;ip&quot; &gt;/dev/null 2&gt;&amp;1 &amp;' &gt;&gt; /etc/rc.local 
+        安装crontab: [root@CentOS ~]# yum install vixie-cron [root@CentOS ~]# yum install crontabs  说明：
+ vixie-cron软件包是cron的主程序； crontabs软件包是用来安装、卸装、或列举用来驱动 cron 守护进程的表格的程序。  cron 是linux的内置服务，但它不自动起来，可以用以下的方法启动、关闭这个服务：
+/sbin/service crond start //启动服务 /sbin/service crond stop //关闭服务 /sbin/service crond restart //重启服务 /sbin/service crond reload //重新载入配置  查看crontab服务状态：service crond status
+手动启动crontab服务：service crond start
+查看crontab服务是否已设置为开机启动，执行命令：ntsysv
+加入开机自动启动:chkconfig --level 35 crond on
+rontab命令 功能说明： 设置计时器。
+语法： crontab [-u &lt;用户名称&gt;][配置文件] 或 crontab [-u &lt;用户名称&gt;][-elr]
+补充说明： cron是一个常驻服务，它提供计时器的功能，让用户在特定的时间得以执行预设的指令或程序。只要用户会编辑计时器的配置文件，就可以使用计时器的功能。其配置文件格式如下： Minute Hour Day Month DayOFWeek Command
+参数:
     </div>
 
     
@@ -194,7 +233,7 @@ echo 'nohup net_speeder venet0 &quot;ip&quot; &gt;/dev/null 2&gt;&amp;1 &amp;' &
 
 <div class="post-info">
     
-        <div class="post-date">2016-02-07</div>
+        <div class="post-date">2014-09-22</div>
     
     <div class="post-taxonomies">
         
@@ -209,13 +248,96 @@ echo 'nohup net_speeder venet0 &quot;ip&quot; &gt;/dev/null 2&gt;&amp;1 &amp;' &
                     
                         <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/vps">#VPS</a></li>
+                        <li><a href="https://unixetc.com/tags/centos">#CentOS</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/net_speeder">#net_speeder</a></li>
+                        <li><a href="https://unixetc.com/tags/crontab">#crontab</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/%E5%8A%A0%E9%80%9F">#加速</a></li>
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/excel-cell-insert-a-newline/">Excel单元格插入换行符</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        一般情况下，单元格插入换行符可以使用Alt+Enter来实现
+但如果需要批量操作的话，那么可以使用 **CHAR(10)**来表示换行符
+实例如下，一看就懂！
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-08-20</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/accelerate">#accelerate</a></li>
+                        <li><a href="https://unixetc.com/tags/excel">#Excel</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%8D%A2%E8%A1%8C%E7%AC%A6">#换行符</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/cli-model-of-linux-using-dropbox/">Linux下CLI模式使用Dropbox</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        下载Dropbox 32-bit:
+cd ~ &amp;&amp; wget -O - &quot;https://www.dropbox.com/download?plat=lnx.x86&quot; | tar xzf -  64-bit:
+cd ~ &amp;&amp; wget -O - &quot;https://www.dropbox.com/download?plat=lnx.x86_64&quot; | tar xzf -  连接到Dropbox ~/.dropbox-dist/dropboxd  按照提示，在浏览器中打开链接，确认授权。
+CLI模式使用Dropbox 下载执行脚本:
+wget https://www.dropbox.com/download?dl=packages/dropbox.py chmod +x dropbox.py  dropbox.py使用
+root@hkvps:~# ./dropbox.py help Dropbox command-line interface commands: Note: use dropbox help &lt;command&gt; to view usage for a specific command. status get current status of the dropboxd help provide help puburl get public url of a file in your dropbox stop stop dropboxd running return whether dropbox is running start start dropboxd filestatus get current sync status of one or more files ls list directory contents with current sync status autostart automatically start dropbox at login exclude ignores/excludes a directory from syncing lansync enables or disables LAN sync 
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-08-19</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dropbox">#Dropbox</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/cli">#CLI</a></li>
                     
                 </ul>
         
@@ -243,17 +365,24 @@ echo 'nohup net_speeder venet0 &quot;ip&quot; &gt;/dev/null 2&gt;&amp;1 &amp;' &
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,18 +101,15 @@
     </div>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/verzion-iphone5c-open-chinatelecom-4g/">V版本iPhone5C开启中国电信4G</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/nokia-n900-and-ssh/">Nokia N900 and SSH</a></h1>
     </header>
 
     <div class="content post-summary">
-        首先，使用太极越狱将手机越狱 http://www.taig.com/
-在Cydia中添加http://apt.chinasnow.net源，搜索安装CommCenter patch for ios8
-设置iTunes可以刷入运营商文件(.ipcc)
-Win+R打开运行窗口，输入&quot;%ProgramFiles%\iTunes\iTunes.exe&quot; /setPrefInt carrier-testing 1
-下载运营商文件http://cdn.lyq.wiki/res/ipccs.zip
-打开iTunes，链接手机到电脑，Shift+更新，选择相对应系统版本的运营商文件
-完成后重启手机OK！
+        N900采用的maemo是基于debian的linux系统，通过自带的application manager管理软件时，操作体验还有待改进，所以这里推荐通过ssh连接，使用cli来进行相应操作。 需要在手机端安装OpenSSH来开启SSH服务，在application manager的system目录下，找到openssh Client and Server安装，当然如果你不需要在手机端进行SSH登陆的话，那可以只安装server即可。 安装时会提示输入密码，这个就是以后连接手机SSH的服务密码。 安装完成后SSH server会默认启动，现在你可以通过wifi连接局域网，然后需要知道自己当前的IP（可以通过Tp-link后台查看，或者手机端安装Personal IP Address开显示)，再推荐安装SSH Status and Swither，可以在手机的status显示SSH状态，并管理SSH server启动/停止。 然后推荐使用Putty进行链接，在CLI模式下管理软件，可以在http://maemo.org/上查看软件目录以及简介，通过apt-get install命令来安装，以下为一些apt-get使用简介
+使用方法: apt-get [选项] 命令 apt-get [选项] install|remove pkg1 [pkg2 &hellip;] apt-get [选项] source pkg1 [pkg2 &hellip;]
+命令:
+update - 更新软件列表 upgrade - 升级软件 install - 安装软件(pkg 是软件名) remove - 删除软件 autoremove - 自动删除一些无效的软件 purge - 删除软件并清理配置 source - 下载软件源码 build-dep - 配置软件源码的build-dependencies dist-upgrade - 升级系统 clean - 清除建立的软件包列表 autoclean - 同上 check - 校验软件包是否有异常  选项:
     </div>
 
     
@@ -85,7 +118,65 @@ Win+R打开运行窗口，输入&quot;%ProgramFiles%\iTunes\iTunes.exe&quot; /se
 
 <div class="post-info">
     
-        <div class="post-date">2015-07-10</div>
+        <div class="post-date">2012-04-02</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/apt-get">#apt-get</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/openssh">#OpenSSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nokia">#nokia</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/n900">#n900</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nokia-n900">#nokia n900</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/putty">#putty</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/remove-unnecessary-iphone-language-file/">删除不需要的iPhone语言文件</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        首先，需要iPhone已经越狱，并且安装了OpenSSH
+脚本文件下载：http://cdn.lyq.wiki/res/langpack2.2.zip，解压出脚本文件langpack2.2.sh
+通过itools或者其他管理软件，将脚本文件复制到/var/mobile目录
+通过ssh连接手机，进入/var/mobile目录开始操作 注意：此时请关闭手机的定时锁屏功能，以防意外终止操作而失败！！
+#chmod 777 langpack2.2.sh //为脚本添加执行权限 #./langpack2.2.sh //运行脚本  开始搜索语言包文件，等待。。。。。
+搜索到所有语言包后，开始提示是否删除。
+根据提示，输入y或者n来确定所要删除的语言包，根据需要筛选。
+所有选择完成后，会提示所有将要删除的语言包，再次确认删除与否（y或n），开始删除过程。。。
+删除完成后，会提示所删除的语言包数量，并且提示是否删除该脚本文件
+注意：进行完以上操作后，建议马上修改SSH密码，以防止感染蠕虫病毒！！
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2012-04-02</div>
     
     <div class="post-taxonomies">
         
@@ -106,21 +197,13 @@ Win+R打开运行窗口，输入&quot;%ProgramFiles%\iTunes\iTunes.exe&quot; /se
                     
                         <li><a href="https://unixetc.com/tags/apple">#Apple</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/%E8%B6%8A%E7%8B%B1">#越狱</a></li>
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/4g">#4G</a></li>
+                        <li><a href="https://unixetc.com/tags/openssh">#OpenSSH</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/verzion">#Verzion</a></li>
+                        <li><a href="https://unixetc.com/tags/itools">#itools</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/iphone5c">#iPhone5C</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/lte">#LTE</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E4%B8%AD%E5%9B%BD%E7%94%B5%E4%BF%A1">#中国电信</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/itunes">#iTunes</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/chinasnow">#chinasnow</a></li>
+                        <li><a href="https://unixetc.com/tags/langpack2.2.sh">#langpack2.2.sh</a></li>
                     
                 </ul>
         
@@ -130,21 +213,15 @@ Win+R打开运行窗口，输入&quot;%ProgramFiles%\iTunes\iTunes.exe&quot; /se
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/godaddy-domain-transferred-to-the-hichina/">将域名从Godaddy转移到万网</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/nokia-n900-software-manager/">N900软件管理</a></h1>
     </header>
 
     <div class="content post-summary">
-        准备将ltecn.com从Godaddy转到万网
-首先在Godaddy的域名管理中，将域名解锁,将Lock状态设置为Off
-然后你会收到一封标题为Domain Status Notification的邮件，提醒你域名状态已经修改为Unlocked
-然后将authorization code发送到你的邮箱
-Godaddy会发送一封标题为LTECN.COM - Information You Requested的邮件，里面有你的验证码，邮件内容如下：
-Customer Account: 888888884 Domain Name: LTECN.COM Authorization Code: f@jje0932!E  接下来在万网中使用以上验证码进行转入操作，订单支付后万网会发送一封标题为万网域名转入确认通知的邮件，点击其中的链接确认转入
-下来进入到Godaddy，DOMAINS-&gt;TRANSFERS,在PENDING TRANSFERS OUT会显示正在转出的域名，域名状态列显示Transfer not started. Accept or decline，点击Accept or decline在接下来的提示中选择Accept接受转出。
-Godaddy会发送一封标题为Transfer of LTECN.COM的邮件，提醒你转出操作。
-稍等片刻Godaddy会发送一封标题为An important notice regarding your transfer of LTECN.COM的邮件，提醒转出成功，并且告知转出的ISP服务商，如下：
-Dear Jkrjj csao, This is to confirm that the following domain names have been successfully transferred away from GoDaddy to HICHINA WEB SOLUTIONS LIMITED: LTECN.COM If you have any questions, visit Online Support or call us at (480) 505-8877.
+        ###通过自带的application manager（软件管理）安装 打开application manager，首次会自动更新软件列表，然后可以在download目录中按分类安装软件。 ###通过apt-get在线安装 使用apt-get前提为已经安装了rootsh（可通过第一种方法安装），打开 x terminal
+$sudo gainroot /*切换到root帐户*/ #apt-get install pkg /*安装pkg*/ #apt-get install pkg1,pkg2 /*安装多个软件*/ #apt-get remove pkg /*卸载软件*/ #apt-get remove –purge pkg /*卸载并清除配置文件*/ #apt-get update /*更新软件源*/ #apt-get upgrade /*更新软件*/ #apt-get dist-upgrade /*更新系统*/ #apt-get clean /*清除软件列表以节省空间*/  ###通过dpkg安装本地软件包(.deb)
+可以通过数据线，先将下载的软件包拷贝到机子内，然后使用dpkg来安装
+#dpkg -i pkg.deb  可以在这里http://repository.maemo.org/下载官方的.deb包进行安装
     </div>
 
     
@@ -153,7 +230,7 @@ Dear Jkrjj csao, This is to confirm that the following domain names have been su
 
 <div class="post-info">
     
-        <div class="post-date">2015-07-07</div>
+        <div class="post-date">2012-03-31</div>
     
     <div class="post-taxonomies">
         
@@ -166,13 +243,19 @@ Dear Jkrjj csao, This is to confirm that the following domain names have been su
             
                 <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/%E5%9F%9F%E5%90%8D">#域名</a></li>
+                        <li><a href="https://unixetc.com/tags/apt-get">#apt-get</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/domain">#Domain</a></li>
+                        <li><a href="https://unixetc.com/tags/nokia">#nokia</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/hichina">#hichina</a></li>
+                        <li><a href="https://unixetc.com/tags/n900">#n900</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/godaddy">#Godaddy</a></li>
+                        <li><a href="https://unixetc.com/tags/dpkg">#dpkg</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nokia-n900">#nokia n900</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/rootsh">#rootsh</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gainroot">#gainroot</a></li>
                     
                 </ul>
         
@@ -182,15 +265,19 @@ Dear Jkrjj csao, This is to confirm that the following domain names have been su
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/typecho-limits-theme/">Typecho主题Limits</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/system-optimization-script-for-nokia-n900/">Nokia N900系统优化脚本</a></h1>
     </header>
 
     <div class="content post-summary">
-        又造了个简单成马咧的主题，分享给大家!
-说明
- 评论采用多说，请自行替换comments.php内容 没有页面导航，因此请在设置-阅读中，将每页文章数目设大一些(例如:999)  预览图:
-下载: Limits.7z
+        Nokia N900系统优化脚本，更加省电，操作更加流畅！
+脚本下载地址http://cdn.lyq.wiki/res/speedpatch-ALTERNATIVE.tar.gz.rar
+使用方法： 通过USB连接手机，将脚本传到磁盘根目录(/home/user/MyDocs)，以下操作可以使用XT或者SSH连接电脑进行(Root权限下)
+#cd /home/user/MyDocs #tar xzvf speedpatch-ALTERNATIVE.tar.gz #mkdir /wp-content/local/sbin #cp /root/.profile /root/.profile.bak #cp ./.profile_root /root/.profile #cp ./.profile /home/user/ #cp ./speedpatch /etc/event.d/ #cp ./cgroup_clean /wp-content/local/sbin #chmod +rwx /wp-content/local/sbin/cgroup_clean #rm ./.profile_root #rm ./.profile #rm ./speedpatch #rm ./cgroup_clean  应用transition.ini文件:
+1.使用theme-customizer
+#cp /home/user/MyDocs/transitions.ini /opt/theme-customizer  2.使用系统默认主题
+#cp /home/user/MyDocs/transitions.ini /wp-content/share/hildon-desktop/  3.删除优化脚本
+#cp /root/.profile.bak /root/.profile #rm /etc/event.d/speedpatch #rm /home/user/.profile #rm /wp-content/local/sbin/cgroup_clean 
     </div>
 
     
@@ -199,7 +286,7 @@ Dear Jkrjj csao, This is to confirm that the following domain names have been su
 
 <div class="post-info">
     
-        <div class="post-date">2015-07-02</div>
+        <div class="post-date">2012-03-28</div>
     
     <div class="post-taxonomies">
         
@@ -212,17 +299,74 @@ Dear Jkrjj csao, This is to confirm that the following domain names have been su
             
                 <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/typecho">#typecho</a></li>
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nokia">#nokia</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/n900">#n900</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/maemo">#maemo</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%AF%BA%E5%9F%BA%E4%BA%9A">#诺基亚</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/lnmp-usages/">LNMP使用实例</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装LNMP 更新系统
+#yum check-update #yum update  安装Screen
+#yum install screen  开始安装Lnmp
+#screen -S lnmp #wget -c http://soft.vpser.net/lnmp/lnmp0.8.tar.gz //最新版请查阅lnmp官网 #tar zxvf lnmp0.8.tar.gz #./lnmp0.8/centos.sh | tee lnmp.log //输出log文件，以备出错时查阅  接下来按照提示设定域名和MysQL密码，程序会自动下载相关程序，而后编译安装
+安装PureFTP
+#./lnmp0.8/pureftp.sh  按提示输入MySQL和Ftp管理员密码，安装完成后可以通过http://vpsip/ftp/来登录管理ftp帐号
+使用Lnmp 添加虚拟主机
+#/root/vhost.sh  按照提示填入域名、目录、rewrite规则文件，如下所示：
+root@buyvm256:~#/root/vhost.sh ========================================================================= Add Virtual Host for LNMP V0.9 , Written by Licess ========================================================================= LNMP is a tool to auto-compile &amp; install Nginx+MySQL+PHP on Linux This script is a tool to add virtual host for nginx For more information please visit http://www.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2012-03-23</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/mysql">#MySQL</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/lnmp">#lnmp</a></li>
                     
                         <li><a href="https://unixetc.com/tags/php">#php</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/theme">#theme</a></li>
+                        <li><a href="https://unixetc.com/tags/ftp">#ftp</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/%E4%B8%BB%E9%A2%98">#主题</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/css">#css</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/html">#html</a></li>
+                        <li><a href="https://unixetc.com/tags/pureftp">#pureftp</a></li>
                     
                 </ul>
         
@@ -250,17 +394,24 @@ Dear Jkrjj csao, This is to confirm that the following domain names have been su
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

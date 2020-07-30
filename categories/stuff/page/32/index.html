@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,14 +101,15 @@
     </div>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/use-letsencrypt-free-ssl-certificate/">使用免费Let&#39;s Encrypt证书</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-modify-software-source/">树莓派修改软件源</a></h1>
     </header>
 
     <div class="content post-summary">
-        在此介绍如何使用Let&rsquo;s Encrypt的免费SSL证书，需要在有管理权限的VPS上操作，然后参考以下方法自签域名证书。
-git clone https://github.com/letsencrypt/letsencrypt.git cd letsencrypt mkdir -p /home/webroot/.well-known/acme-challenge #/home/webroot为网站目录 ./letsencrypt-auto certonly --email me@alair.cn -d alair.cn,www.alair.cn --webroot -w /home/webroot --agree-tos #注意email、域名、和网站目录  签发成功后，会提示如/etc/letsencrypt/live/www.alair.cn/fullchain.pem;的证书路径信息。
-IMPORTANT NOTES: - Congratulations! Your certificate and chain have been saved at /etc/letsencrypt/live/www.alair.cn/fullchain.pem. Your cert will expire on 2016-03-14. To obtain a new version of the certificate in the future, simply run Let's Encrypt again. - If like Let's Encrypt, please consider supporting our work by: Donating to ISRG / Let's Encrypt: https://letsencrypt.
+        中国国内推荐阿里云的开源镜像服务，地址为http://mirrors.aliyun.com/
+vi /etc/apt/sources.list  将默认的raspbian.org源注释(#)掉，加入阿里云的raspbian源
+deb http://mirrors.aliyun.com/raspbian/raspbian/ jessie main non-free contrib deb-src http://mirrors.aliyun.com/raspbian/raspbian/ jessie main non-free contrib  更新系统
+apt-get update&amp;&amp;apt-get upgrade -y 
     </div>
 
     
@@ -81,7 +118,7 @@ IMPORTANT NOTES: - Congratulations! Your certificate and chain have been saved a
 
 <div class="post-info">
     
-        <div class="post-date">2015-12-15</div>
+        <div class="post-date">2014-03-10</div>
     
     <div class="post-taxonomies">
         
@@ -93,16 +130,90 @@ IMPORTANT NOTES: - Congratulations! Your certificate and chain have been saved a
             
             
                 <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/apt-get">#apt-get</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/apt">#apt</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/sources.list">#sources.list</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-and-dnspod-dynamic-dns/">树莓派与DNSPod动态域名解析</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        所需条件
+ Raspberry Pi TP-Link路由器 DNSPod帐户 域名  配置路由器 进入路由器的DHCP服务器-&gt;静态地址分配菜单，为Raspberry Pi分配静态IP地址，例如：192.168.1.200
+进入路由器的安全功能-&gt;远端WEB管理菜单，设置WEB管理端口为一个非80值，例如82
+进入路由器的转发规则-&gt;DMZ主机菜单，将DMZ主机IP地址设置为Raspberry Pi的ip地址，然后启用保存。
+设置DNSPod动态域名解析 首先登录DNSPod网页管理域名，将二级域名www 的A记录解析到路由器外网IP(可通过路由器管理首页查询，或者通过浏览ip138.com来获得)
+注：一级域名请解析**@**的A记录。
+下载DNSPod官方客户端Lite https://support.dnspod.cn/Support/api
+解压后双击打开登录，从右侧信息列表中也可以看到本机最新IP，点击相应域名后的动态解析按钮，在动态解析设置中右键点击相应的动态记录启用即可，关闭DNSPod官方客户端Lite。
+设置Raspberry Pi 安装Web服务器软件(Nginx)
+#apt-get install nginx #/etc/init.d/nginx start  内网可以通过浏览`http://192.168.1.129&quot;来检查Nginx是否正常运行。
+浏览https://gist.githubusercontent.com/chuangbo/833369，下载动态域名解析脚本(pypod.py)
+编辑pypod.py修改以下内容：
+login_email=&quot;email&quot;, # DSNPod帐户邮箱 login_password=&quot;password&quot;, # DSNPod帐户密码 domain_id=100, # 域名id record_id=100, # 记录id sub_domain=&quot;www&quot;, # 子域名  其中域名id与记录id可以通过以下命令获取：
+curl -k https://dnsapi.cn/Domain.List -d &quot;login_email=xxx&amp;login_password=xxx&quot; curl -k https://dnsapi.cn/Record.List -d &quot;login_email=xxx&amp;login_password=xxx&amp;domain_id=xxx&quot;  提示：如果你使用了www子域名，则需要获取www的记录id，如果使用一级域名(@)，则需要获取**@**的记录id。
+编辑完pypod.py保存退出，使用以下命令运行：
+#python pypod.py  现在可以通过域名来浏览Raspberry Pi上的Web内容了。
+pypod.py开机运行
+添加/usr/bin/python /home/pi/pypod.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-03-03</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dnspod">#dnspod</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ddns">#DDNS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dns">#DNS</a></li>
                     
                         <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/https">#https</a></li>
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ssl">#ssl</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/letsencrypt">#letsencrypt</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E5%85%8D%E8%B4%B9%E8%AF%81%E4%B9%A6">#免费证书</a></li>
+                        <li><a href="https://unixetc.com/tags/%E5%8A%A8%E6%80%81%E5%9F%9F%E5%90%8D">#动态域名</a></li>
                     
                 </ul>
         
@@ -112,17 +223,18 @@ IMPORTANT NOTES: - Congratulations! Your certificate and chain have been saved a
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/md5sum-usage/">使用MD5校验文件</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-install-python-development-environment-and-gpio-library/">树莓派安装Python开发环境与GPIO库</a></h1>
     </header>
 
     <div class="content post-summary">
-        md5sum命令用于生成和校验文件的md5值。它会逐位对文件的内容进行校验。是文件的内容，与文件名无关，也就是文件内容相同，其md5值相同。md5值是一个128位的二进制数据，转换成16进制则是32（128/4）位的进制值。
-md5校验，有很小的概率不同的文件生成的md5可能相同。比md5更安全的校验算法还有SHA*系列的。
-在网络传输时，我们校验源文件获得其md5sum，传输完毕后，校验其目标文件，并对比如果源文件和目标文件md5 一致的话，则表示文件传输无异常。否则说明文件在传输过程中未正确传输。
-md5sum示例 生成文件md5 pi@raspi:~ $ md5sum bs.conf fcd3e1243d1cd5903d4e38c46671b84f bs.conf  md5sum校验是根据文件内容为准，与名称无关，意思是即便文件名修改了，但md5校验值应该不会改变，如下：
-pi@raspi:~ $ cp bs.conf bs.conf.bak pi@raspi:~ $ md5sum bs* fcd3e1243d1cd5903d4e38c46671b84f bs.conf fcd3e1243d1cd5903d4e38c46671b84f bs.conf.bak  根据md5校验文件是否更改 一般网上分享的大文件都会附带一个.md5文件，这就是所分享文件的md5值，可以使用-c参数来直接使用.md5文件来检验文件是否完整
-pi@raspi:~ $ md5sum bs.conf&gt;bs.conf.md5 pi@raspi:~ $ md5sum -c bs.conf.md5 bs.conf: OK  如上例，将bs.conf的md5值定向到一个bs.conf.md5文件，然后使用md5sum -c bs.conf.md5直接检验相应文件是否完整一致，校验通过的话会输出提示OK，如果文件经过修改，内容已经不一致，则不会通过校验，则会显示FAILED
+        安装python
+$sudo apt-get install python-dev  更新
+$sudo easy_install -U distribute  安装python-pip
+$sudo apt-get install python-pip  添加国内pypi镜像
+在~/.pip/pip.conf中添加
+[global] index-url = http://mirrors.aliyun.com/pypi/simple/  安装python的GPIO库
+$sudo pip install rpi.gpio 
     </div>
 
     
@@ -131,7 +243,73 @@ pi@raspi:~ $ md5sum bs.conf&gt;bs.conf.md5 pi@raspi:~ $ md5sum -c bs.conf.md5 bs
 
 <div class="post-info">
     
-        <div class="post-date">2015-12-13</div>
+        <div class="post-date">2014-03-02</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/python">#Python</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/pip">#pip</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gpio">#gpio</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/starting-use-raspberry-pi/">开始使用树莓派</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装系统 从官网下载系统镜像，推荐Raspbian
+http://downloads.raspberrypi.org/raspbian_latest
+将下载后的zip文件解压，得到2014-01-07-wheezy-raspbian.img文件。
+准备一张SD卡，最好容量大于4GB，Class10
+将镜像写入SD卡
+ Linux下推荐使用dd名来写入镜像  使用fdisk -l检查分区信息，比如sd卡设备为**/dev/sdb**，使用以下命令写入：
+#dd if=2014-01-07-wheezy-raspbian.img of=/dev/sdb bs=1M   Windows下推荐使用Win32DiskImager写入镜像  Win32DiskImager下载地址：http://sourceforge.net/projects/win32diskimager/
+下载后打开软件，选择好镜像文件与USB设备，然后点击Write写入。
+开机进入系统 将已写入系统的SD卡插入Raspberry Pi，通过固网链接路由器，然后使用USB供电启动。
+正常启动后，板载的ACT，PWR、FDX、LNK、100五个指示灯均点亮。
+通过SSH连接Raspberry Pi
+查看Raspberry Pi IP地址
+#nmap -sP 192.168.1/24  检查出MAC后标注(Raspberry Pi Foundation)的即为Raspberry Pi主机。
+然后通过SSH来链接主机
+#ssh 192.168.1.127  用户名为pi，默认密码为raspberry
+Widnows下推荐使用Putty
+设置Raspberry 运行设置工具sudo raspi-config
+ 选择Expand Filesystem扩展文件系统 Change User Passwd 修改默认用户pi的密码，当然也可以在系统中使用passwd命令来更改。 Advanced Options-&gt;Hostname 修改主机名 Overclock 超频，建议900Mhz  
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-02-28</div>
     
     <div class="post-taxonomies">
         
@@ -146,13 +324,21 @@ pi@raspi:~ $ md5sum bs.conf&gt;bs.conf.md5 pi@raspi:~ $ md5sum -c bs.conf.md5 bs
                     
                         <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/md5">#md5</a></li>
+                        <li><a href="https://unixetc.com/tags/debian">#Debian</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/md4">#md4</a></li>
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/sha">#sha</a></li>
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/md5sum">#md5sum</a></li>
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/overlock">#overlock</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%B6%85%E9%A2%91">#超频</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/win32diskimager">#win32diskimager</a></li>
                     
                 </ul>
         
@@ -162,16 +348,21 @@ pi@raspi:~ $ md5sum bs.conf&gt;bs.conf.md5 pi@raspi:~ $ md5sum -c bs.conf.md5 bs
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/transfer-files-using-scp/">使用SCP传输文件</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/kindle-paperwhite-jailbreak/">Kindle Paperwhite越狱</a></h1>
     </header>
 
     <div class="content post-summary">
-        示例：用户名root 地址 2.33.153.67
-下载文件 scp root@2.33.153.67:/root/test.mp4 /home/pi/  将服务器上的/root/test.mp4下载到本地/home/pi文件夹
-上传文件 scp /home/pi/ok.txt root@2.33.153.67:/root  将本地/home/pi/ok.txt上传至服务器/root文件夹
-下载文件夹 scp -r root@2.33.153.67:/root/ebooks /home/pi  将服务器上的/root/ebooks文件夹下载至本地/home/pi下
-上传文件夹 scp -r /home/pi/music root@2.33.153.67:/media  将本地/home/pi/music文件夹上传至服务器/media下
+        越狱 下载kindle-jailbreak-1.8.N.zip解压，将得到的kindle-5.4-jailbreak.zip再解压，然后把解压出的三个文件放到KPW根目录
+然后更新系统，主页-菜单-设置-菜单-更新您的kindle
+底部显示**** JAILBREAK ****即表示越狱成功！
+安装MKK 下载kindle-mkk-20140214.zip解压，将Update_mkk-20140214-k5-ALL_install.bin复制到KPW根目录更新系统
+安装KUAL 下载KUAL-v2.3.zip 解压，将KUAL-KDK-2.0.azw2放到documents文件夹，点击图标即可运行KUAL
+安装终端 下载kterm-0.7.zip解压，然后将kterm文件夹复制到KPW根目录下的extensions，即可通过KUAL来打开kterm。
+**提示：**双指点击唤醒菜单。
+安装USBNetwork 解压kindle-usbnet-0.15.N.zip，将update_usbnet_0.15.N_install_touch_pw.bin放到根目录，然后更新系统安装，完成后可通过KUAL来打开USBNetwork。
+通过USBNetwork来链接PC，有时需要安装驱动，在这里提供undrivers.inf文件，安装时选择该文件即可。
+以上所有文件下载地址： http://pan.baidu.com/s/1eQdzU6Y
     </div>
 
     
@@ -180,7 +371,7 @@ pi@raspi:~ $ md5sum bs.conf&gt;bs.conf.md5 pi@raspi:~ $ md5sum -c bs.conf.md5 bs
 
 <div class="post-info">
     
-        <div class="post-date">2015-12-08</div>
+        <div class="post-date">2014-02-27</div>
     
     <div class="post-taxonomies">
         
@@ -193,11 +384,21 @@ pi@raspi:~ $ md5sum bs.conf&gt;bs.conf.md5 pi@raspi:~ $ md5sum -c bs.conf.md5 bs
             
                 <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                        <li><a href="https://unixetc.com/tags/jailbreak">#Jailbreak</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                        <li><a href="https://unixetc.com/tags/%E8%B6%8A%E7%8B%B1">#越狱</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/scp">#scp</a></li>
+                        <li><a href="https://unixetc.com/tags/kpw">#KPW</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/kindle">#Kindle</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/amazon">#Amazon</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/mkk">#MKK</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/kterm">#kterm</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/usbnetwork">#USBNetwork</a></li>
                     
                 </ul>
         
@@ -225,17 +426,24 @@ pi@raspi:~ $ md5sum bs.conf&gt;bs.conf.md5 pi@raspi:~ $ md5sum -c bs.conf.md5 bs
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

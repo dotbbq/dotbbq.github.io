@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101236" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101236" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,7 +101,7 @@
     </div>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/multiple-routers-and-lan-networking-instances/">多路由器同局域网组网实例</a></h1>
     </header>
 
@@ -117,7 +153,7 @@
 </article>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/rb750gr3-system-upgrade/">MikroTik RB750Gr3系统升级</a></h1>
     </header>
 
@@ -178,7 +214,7 @@ RB750gr3为MMIPS构架，从下载页面找到相应的构架。
 </article>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/r6300v2-merlin-firmware-x7-9-1/">网件R6300v2梅林7.9.1</a></h1>
     </header>
 
@@ -243,6 +279,107 @@ RB750gr3为MMIPS构架，从下载页面找到相应的构架。
 
 </article>
     
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/add-virtual-memory-to-the-router/">为路由器增加虚拟内存</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        本文介绍，如何在安装了梅林固件的路由器上，增加虚拟内存，以运行需求资源较大的软件。
+下载swap.tar.gz 下载地址 https://github.com/koolshare/koolshare.github.io/tree/acelan_softcenter_ui/swap ，下载swap.tar.gz文件。
+安装插件 进入路由器后台，软件中心-&gt;离线安装,选择刚才下载的swap.tar.gz，上传并安装。
+准备U盘 准备一个新的U盘，使用diskgen格式化为ext2/3/4格式，插入路由器USB接口。
+设置虚拟内存 进入路由器管理后台，软件中心-&gt;虚拟内存，设置大小后点击创建swap
+创建完成后自动启用，再次进入swap插件即可看到使用信息
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2018-09-10</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/swap">#swap</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/merlin">#merlin</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/router">#router</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%B7%AF%E7%94%B1%E5%99%A8">#路由器</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A2%85%E6%9E%97">#梅林</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E4%BA%A4%E6%8D%A2%E7%A9%BA%E9%97%B4">#交换空间</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/mikrotik-rb750gr3-quickset/">RB750gr3快速设置</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        开箱照 以下为开箱照
+RB750快速设置 首先下载Winbox，下载地址，将1口连接光猫，2口连接电脑。
+下载打开后，软件会自动搜索到路由器MAC，登录名为admin，密码为空，点击connect登录。
+登录后点击Quick Set进行快速设置，完成后应用即可。如下图：
+注意以上我把路由器地址设置为192.168.1.11是为了和光猫192.168.1.1区分开。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-11-22</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/router">#router</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ros">#ros</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/mikrotik">#mikrotik</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/rb750">#rb750</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/rb750gr3">#rb750gr3</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
     
     
         
@@ -260,17 +397,24 @@ RB750gr3为MMIPS构架，从下载页面找到相应的构架。
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

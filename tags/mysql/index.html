@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101236" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101236" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,7 +101,7 @@
     </div>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/typecho-converted-to-gor/">将博客从Typcho转移至Gor</a></h1>
     </header>
 
@@ -141,7 +177,7 @@ results = cur.fetchall() for r in results: p = Post() p.id = r[0] p.title = r[2]
 </article>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/automatic-backup-files-and-database-on-vps/">VPS下自动备份文件和数据库</a></h1>
     </header>
 
@@ -189,7 +225,7 @@ results = cur.fetchall() for r in results: p = Post() p.id = r[0] p.title = r[2]
 </article>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/mysql-usages/">MySQL使用实例</a></h1>
     </header>
 
@@ -237,34 +273,87 @@ mysql&gt;set password for 'username'@'localhost' = password('userpassword');  �
 
 </article>
     
-    
-    
-        
-    <div class="pagination">
-        <div class="left pagination-item disabled">
-            
-        </div>
-        <div class="right pagination-item ">
-            
-                <a href="/tags/mysql/page/2/">To old posts</a>
-            
-        </div>
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/lnmp-usages/">LNMP使用实例</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装LNMP 更新系统
+#yum check-update #yum update  安装Screen
+#yum install screen  开始安装Lnmp
+#screen -S lnmp #wget -c http://soft.vpser.net/lnmp/lnmp0.8.tar.gz //最新版请查阅lnmp官网 #tar zxvf lnmp0.8.tar.gz #./lnmp0.8/centos.sh | tee lnmp.log //输出log文件，以备出错时查阅  接下来按照提示设定域名和MysQL密码，程序会自动下载相关程序，而后编译安装
+安装PureFTP
+#./lnmp0.8/pureftp.sh  按提示输入MySQL和Ftp管理员密码，安装完成后可以通过http://vpsip/ftp/来登录管理ftp帐号
+使用Lnmp 添加虚拟主机
+#/root/vhost.sh  按照提示填入域名、目录、rewrite规则文件，如下所示：
+root@buyvm256:~#/root/vhost.sh ========================================================================= Add Virtual Host for LNMP V0.9 , Written by Licess ========================================================================= LNMP is a tool to auto-compile &amp; install Nginx+MySQL+PHP on Linux This script is a tool to add virtual host for nginx For more information please visit http://www.
     </div>
 
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2012-03-23</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/mysql">#MySQL</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/lnmp">#lnmp</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/php">#php</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ftp">#ftp</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/pureftp">#pureftp</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

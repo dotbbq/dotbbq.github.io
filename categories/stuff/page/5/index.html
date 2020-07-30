@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,15 +101,16 @@
     </div>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/ubuntu-touch-change-mirror/">UbuntuTouch更换国内源</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/termux-edit-sources.list/">Termux编辑软件源</a></h1>
     </header>
 
     <div class="content post-summary">
-        在一加3T上安装完UbuntuTouch后，参考此文开启SSH登录。
-接下来就是更换软件源了，国内推荐USTC和清华大学开源镜像。
-通过vi /etc/apt/sources.list 编辑软件源,然后在vi中通过以下命令进行替换操作：
-:%s/ports.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g  保存后即可。
+        vi /data/data/com.termux/files/usr/etc/apt/sources.list
+将 https://termux.net 替换成 https://mirrors.ustc.edu.cn/termux，保存退出即可。
+你也可以使用 sed 命令进行文本替换：
+sed -i 's,https://termux.net,https://mirrors.ustc.edu.cn/termux,' $PREFIX/etc/apt/sources.list  更新
+pkg update pkg upgrade 
     </div>
 
     
@@ -82,7 +119,7 @@
 
 <div class="post-info">
     
-        <div class="post-date">2019-08-04</div>
+        <div class="post-date">2019-06-10</div>
     
     <div class="post-taxonomies">
         
@@ -95,15 +132,13 @@
             
                 <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/ut">#UT</a></li>
+                        <li><a href="https://unixetc.com/tags/termux">#termux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                        <li><a href="https://unixetc.com/tags/sources.list">#sources.list</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ubuntutouch">#UbuntuTouch</a></li>
+                        <li><a href="https://unixetc.com/tags/pkg">#pkg</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ubuntu-ports">#ubuntu ports</a></li>
+                        <li><a href="https://unixetc.com/tags/ustc">#ustc</a></li>
                     
                 </ul>
         
@@ -113,14 +148,13 @@
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/shell-access-ubuntu-touch-via-ssh/">通过SSH访问UbuntuTouch</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/v2ray-client-configuration-example-in-ubuntu/">Ubuntu中v2ray客户端配置实例</a></h1>
     </header>
 
     <div class="content post-summary">
-        在一加3T上安装完UbuntuTouch后，可以通过以下方法开启SSH登录。
-打开终端(Terminal)，输入以下命令开启ssh服务。
-sudo android-gadget-service enable ssh  然后就可以通过ssh phablet@ip来登录设备。
+        首先使用bash &lt;(curl -L -s https://install.direct/go.sh)来快捷安装v2ray，如下：
+root@vm:~# bash &lt;(curl -L -s https://install.direct/go.sh) Installing V2Ray v4.18.0 on x86_64 Downloading V2Ray: https://github.com/v2ray/v2ray-core/releases/download/v4.18.0/v2ray-linux-64.zip % Total % Received % Xferd Average Speed Time Time Time Current Dload Upload Total Spent Left Speed 100 608 0 608 0 0 581 0 --:--:-- 0:00:01 --:--:-- 581 100 10.5M 100 10.5M 0 0 172k 0 0:01:02 0:01:02 --:--:-- 194k Extracting V2Ray package to /tmp/v2ray. Archive: /tmp/v2ray/v2ray.zip inflating: /tmp/v2ray/config.json creating: /tmp/v2ray/doc/ inflating: /tmp/v2ray/doc/readme.
     </div>
 
     
@@ -129,7 +163,7 @@ sudo android-gadget-service enable ssh  然后就可以通过ssh phablet@ip来�
 
 <div class="post-info">
     
-        <div class="post-date">2019-08-01</div>
+        <div class="post-date">2019-05-18</div>
     
     <div class="post-taxonomies">
         
@@ -142,15 +176,19 @@ sudo android-gadget-service enable ssh  然后就可以通过ssh phablet@ip来�
             
                 <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/ut">#UT</a></li>
+                        <li><a href="https://unixetc.com/tags/v2ray">#v2ray</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                        <li><a href="https://unixetc.com/tags/proxy">#proxy</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ubuntutouch">#UbuntuTouch</a></li>
+                        <li><a href="https://unixetc.com/tags/socks">#socks</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                        <li><a href="https://unixetc.com/tags/vmess">#vmess</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/rsa">#RSA</a></li>
+                        <li><a href="https://unixetc.com/tags/firefox">#Firefox</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/socksv5">#socksv5</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
                 </ul>
         
@@ -160,14 +198,25 @@ sudo android-gadget-service enable ssh  然后就可以通过ssh phablet@ip来�
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/retrieve-windows10-photo-viewer/">找回windows10照片查看器</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/vmware-installs-alpine-linux-instance/">VMware安装Alpine Linux实例</a></h1>
     </header>
 
     <div class="content post-summary">
-        Windows10中可以通过修改注册表的方法找回照片查看器。
-新建ton.reg注册表文件，内容如下：
-Windows Registry Editor Version 5.00 ; Change Extension's File Type [HKEY_CURRENT_USER\Software\Classes\.jpg] @=&quot;PhotoViewer.FileAssoc.Tiff&quot; ; Change Extension's File Type [HKEY_CURRENT_USER\Software\Classes\.jpeg] @=&quot;PhotoViewer.FileAssoc.Tiff&quot; ; Change Extension's File Type [HKEY_CURRENT_USER\Software\Classes\.gif] @=&quot;PhotoViewer.FileAssoc.Tiff&quot; ; Change Extension's File Type [HKEY_CURRENT_USER\Software\Classes\.png] @=&quot;PhotoViewer.FileAssoc.Tiff&quot; ; Change Extension's File Type [HKEY_CURRENT_USER\Software\Classes\.bmp] @=&quot;PhotoViewer.FileAssoc.Tiff&quot; ; Change Extension's File Type [HKEY_CURRENT_USER\Software\Classes\.tiff] @=&quot;PhotoViewer.FileAssoc.Tiff&quot; ; Change Extension's File Type [HKEY_CURRENT_USER\Software\Classes\.ico] @=&quot;PhotoViewer.FileAssoc.Tiff&quot;  保存后，双击运行即可，然后右键打开方式中即可看到照片查看器。
+        AlpineLinux介绍 Alpine 的意思是“高山的”，比如 Alpine plants高山植物，Alpine skiing高山滑雪、the alpine resort阿尔卑斯山胜地。
+Alpine Linux 网站首页注明“Small！Simple！Secure！Alpine Linux is a security-oriented, lightweight Linux distribution based on musl libc and busybox.”概括了以下特点：
+ 小巧：基于Musl libc和busybox，和busybox一样小巧，最小的Docker镜像只有5MB； 安全：面向安全的轻量发行版； 简单：提供APK包管理工具，软件的搜索、安装、删除、升级都非常方便。 适合容器使用：由于小巧、功能完备，非常适合作为容器的基础镜像。  准备工作 安装VMware虚拟机软件，新建虚拟机，配置如下：
+下载AlpineLinux镜像文件alpine-standard-3.9.4-x86_64.iso，下载地址: https://www.alpinelinux.org/downloads/ 设置虚拟机光驱挂载镜像文件alpine-standard-3.9.4-x86_64.iso。
+开始安装Alpine Linux 启动虚拟机，开始从光驱引导系统，进入系统后，输入root登录，然后输入setup-alpine开始启动安装程序。
+下来设置键盘布局(us)、主机名(vm)以及网络配置：
+接着设置时区(timezone)
+然后是网络代理和网络时间同步(NTP)设置
+接下里选择软件源镜像(mirrors)，我选择了兰州大学的镜像：
+然后选择SSH服务程序，设置安装磁盘以及使用方式，完成安装后会提示**Installation is complete. Please reboot.**至此安装完成。
+安装Awesome桌面 添加普通用户 #adduser alair  启用Community Repository vi /etc/apk/repositories编辑软件源配置，去掉其中Community Repository前面的注释符(#)
+apk update&amp;&amp;apk upgrade更新软件。
+安装awesome 使用以下命令安装awesome、lua、feh和lxterminal
+#apk add awesome lua feh lxterminal  其他桌面应用可以按需添加，比如firefox, gnumeric, xchat, gimp, pidgin, geany, vim等。
     </div>
 
     
@@ -176,7 +225,7 @@ Windows Registry Editor Version 5.00 ; Change Extension's File Type [HKEY_CURREN
 
 <div class="post-info">
     
-        <div class="post-date">2019-07-28</div>
+        <div class="post-date">2019-05-14</div>
     
     <div class="post-taxonomies">
         
@@ -189,15 +238,142 @@ Windows Registry Editor Version 5.00 ; Change Extension's File Type [HKEY_CURREN
             
                 <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/windows10">#Windows10</a></li>
+                        <li><a href="https://unixetc.com/tags/alpine">#Alpine</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/%E7%85%A7%E7%89%87%E6%9F%A5%E7%9C%8B%E5%99%A8">#照片查看器</a></li>
+                        <li><a href="https://unixetc.com/tags/alpine-linux">#Alpine Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8%E6%96%87%E4%BB%B6">#注册表文件</a></li>
+                        <li><a href="https://unixetc.com/tags/vmware">#VMware</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/regedit">#Regedit</a></li>
+                        <li><a href="https://unixetc.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA">#虚拟机</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/mplayer-and-the-n900-cameras/">Mplayer和N900镜头</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        诺基亚N900有前后两个镜头，前置640x480(0.3M)后置848*480(0.4M)，这两个镜头都是V4L2设备，分别对应**/dev/video0和/dev/video1**，因此可以方便的通过mplayer或gstreamer；来访问它们。
+ Video4Linux或V4L是一个视频截取及设备输出API，以及Linux的驱动程序框架，支持很多USB摄像头、电视调谐卡以及其他设备。 V4L2是V4L的第二个版本。Video4Linux2修复了一些设计上的程序错误，最先在2.5.X版的核心中出现。Video4Linux2的驱动程序包含了一个对Video4Linux1应用程序的兼容模式，虽然支持并不完整，并且建议在V4L2模式下使用Video4Linux1设备。
+ mplayer访问镜头：
+$ mplayer tv:// -tv device=/dev/video0 # 后置镜头 $ mplayer tv:// -tv device=/dev/video1 # 前置镜头  如果使用前置镜头，建议使用镜像模式-vf mirror
+$ mplayer tv:// -tv device=/dev/video1 -vf mirror 
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2019-05-04</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/nokia">#nokia</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/n900">#n900</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nokia-n900">#nokia n900</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E9%95%9C%E5%A4%B4">#镜头</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%89%8D%E7%BD%AE%E9%95%9C%E5%A4%B4">#前置镜头</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%90%8E%E7%BD%AE%E9%95%9C%E5%A4%B4">#后置镜头</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E9%95%9C%E5%83%8F%E6%A8%A1%E5%BC%8F">#镜像模式</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/mplayer">#mplayer</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/v4l2">#V4L2</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/v4l">#V4L</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gstreamer">#gstreamer</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/nokia-n900-installation-firmware/">NokiaN900刷机方法</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        刷机工具以及固件文件下再地址见文章末尾。
+首先安装刷机工具maemo flasher，然后下载固件，固件分以下两个文件，下载地址https://blbl.dev/NokiaN900/index.html
+ emmc(vanilla) firmware(combined)  切记，先刷emmc再刷firmware，并且两次刷机中间不可以开机。
+将手机关机，然后按住键盘上的u键，再用数据线将手机链接电脑，这是手机会显示NOKIA字样界面，并且右上角显示有USB图标，即进入刷机模式。
+首先写入EMMC文件，命令如下flasher-3.5 -F emmc.bin -f，以下为linux下操作实例，以供参考
+alair@zb14:~/下载$ sudo flasher-3.5 -F RX-51_2009SE_10.2010.13-2.VANILLA_PR_EMMC_MR0_ARM.bin -f [sudo] alair 的密码： flasher v2.5.2 (Oct 21 2009) Image 'mmc', size 255947 kB Version RX-51_2009SE_10.2010.13-2.VANILLA USB device found found at bus 002, device address 012. Found device RX-51, hardware revision 2204 NOLO version 1.4.14 Version of 'sw-release': RX-51_2009SE_21.2011.38-1_PR_MR0 Booting device into flash mode. Suitable USB device not found, waiting. USB device found found at bus 002, device address 013.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2019-05-01</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/nokia">#nokia</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/n900">#n900</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/maemo">#maemo</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nokia-n900">#nokia n900</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/rx-51">#rx-51</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/firmware">#firmware</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/emmc">#emmc</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/combined">#COMBINED</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vanilla">#VANILLA</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/21.2011.38-1">#21.2011.38-1</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/maemo_flasher">#maemo_flasher</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/flasher">#flasher</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
                 </ul>
         
@@ -225,17 +401,24 @@ Windows Registry Editor Version 5.00 ; Change Extension's File Type [HKEY_CURREN
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

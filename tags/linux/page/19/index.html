@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101236" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101236" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,16 +101,26 @@
     </div>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/linux-use-grive-management-google-drive/">Linux下使用grive管理Google Drive</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/linux-liveusb-tools/">Linux Live USB制作工具</a></h1>
     </header>
 
     <div class="content post-summary">
-        找到一个linux下可用的google drive客户端，纯cli操作，值得推荐
-grive项目主页 https://github.com/Grive/grive
-Ubuntu中下通过PPA安装grive
-sudo add-apt-repository ppa:nilarimogard/webupd8 sudo apt-get update sudo apt-get install grive  使用grive同步Google Drive
-mkdir googledrive cd googledrive grive -a  第一次运行，会有验证提示，将提示的url代码粘贴到浏览器中验证帐户，完了后将生成的验证代码粘贴到grive进行验证。
+        现在大多数的Linux发行版都支持Live方式，即可直接运行体验无需安装。
+Linux Live又分为LiveCD和LiveUSB，前者是通过光盘(CD/DVD)方式直接运行，后者则是通过USB设备(U盘/移动硬盘)来运行。
+以下介绍几款Linux Live USB制作工具，个人推荐Linux Live USB Creator!
+注:需要主板BIOS开启USB Boot功能。
+Universal USB Installer http://www.pendrivelinux.com
+1，选择Linux版本，勾选后面的Download the iso(Optional).则从互联网下载所选镜像。 2，选择本地镜像文件(iso)。 3，选择将要写入的USB设备，勾选Show all Drives可以看到所有本地磁盘，需要写入移动硬盘就需要勾选此项。
+UNetbootin http://unetbootin.sourceforge.net
+1，选择镜像源，从网络下载或者本地iso文件 2，在类型中选择usb设备或者硬盘，然后在驱动器栏选择具体的盘符。
+LinuxLive USB Creator http://www.linuxliveusb.com/
+1，选择需要写入的USB设备 2，选择安装源（ISO文件、光驱、网路下载）
+Image Writer for Microsoft Windows (Win32DiskImager) https://launchpad.net/win32-image-writer
+这个操作相对很简单，并且只单一的适用于img镜像文件，如Meego就是采用这种发行方式
+万能的dd
+最喜欢这个方法了！ 使用lsblk查看u盘设备名，如/dev/sdb，例如镜像文件名为linux.iso，使用以下命令将镜像文件写入U盘
+#dd if=linux.iso of=/dev/sdb 
     </div>
 
     
@@ -83,7 +129,7 @@ mkdir googledrive cd googledrive grive -a  第一次运行，会有验证提示�
 
 <div class="post-info">
     
-        <div class="post-date">2015-08-26</div>
+        <div class="post-date">2012-08-13</div>
     
     <div class="post-taxonomies">
         
@@ -98,19 +144,13 @@ mkdir googledrive cd googledrive grive -a  第一次运行，会有验证提示�
                     
                         <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/google">#Google</a></li>
+                        <li><a href="https://unixetc.com/tags/dd">#dd</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                        <li><a href="https://unixetc.com/tags/win32diskimager">#win32diskimager</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ppa">#PPA</a></li>
+                        <li><a href="https://unixetc.com/tags/liveusb">#liveusb</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/google-drive">#google drive</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/grive">#grive</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/grive2">#grive2</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/webupd8">#webupd8</a></li>
+                        <li><a href="https://unixetc.com/tags/unetbootin">#unetbootin</a></li>
                     
                 </ul>
         
@@ -120,13 +160,19 @@ mkdir googledrive cd googledrive grive -a  第一次运行，会有验证提示�
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/can-not-use-add-apt-repository/">无法使用add-apt-repository命令</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/system-optimization-script-for-nokia-n900/">Nokia N900系统优化脚本</a></h1>
     </header>
 
     <div class="content post-summary">
-        在Ubuntu中使用PPA安装软件时，需要用到add-apt-repository命令，但有的VPS系统因为体量原因，可能没有该命令，因此需要通过以下方法来安装：
-apt-get install python-software-properties apt-get install software-properties-common 
+        Nokia N900系统优化脚本，更加省电，操作更加流畅！
+脚本下载地址http://cdn.lyq.wiki/res/speedpatch-ALTERNATIVE.tar.gz.rar
+使用方法： 通过USB连接手机，将脚本传到磁盘根目录(/home/user/MyDocs)，以下操作可以使用XT或者SSH连接电脑进行(Root权限下)
+#cd /home/user/MyDocs #tar xzvf speedpatch-ALTERNATIVE.tar.gz #mkdir /wp-content/local/sbin #cp /root/.profile /root/.profile.bak #cp ./.profile_root /root/.profile #cp ./.profile /home/user/ #cp ./speedpatch /etc/event.d/ #cp ./cgroup_clean /wp-content/local/sbin #chmod +rwx /wp-content/local/sbin/cgroup_clean #rm ./.profile_root #rm ./.profile #rm ./speedpatch #rm ./cgroup_clean  应用transition.ini文件:
+1.使用theme-customizer
+#cp /home/user/MyDocs/transitions.ini /opt/theme-customizer  2.使用系统默认主题
+#cp /home/user/MyDocs/transitions.ini /wp-content/share/hildon-desktop/  3.删除优化脚本
+#cp /root/.profile.bak /root/.profile #rm /etc/event.d/speedpatch #rm /home/user/.profile #rm /wp-content/local/sbin/cgroup_clean 
     </div>
 
     
@@ -135,7 +181,7 @@ apt-get install python-software-properties apt-get install software-properties-c
 
 <div class="post-info">
     
-        <div class="post-date">2015-08-23</div>
+        <div class="post-date">2012-03-28</div>
     
     <div class="post-taxonomies">
         
@@ -150,13 +196,13 @@ apt-get install python-software-properties apt-get install software-properties-c
                     
                         <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/apt-get">#apt-get</a></li>
+                        <li><a href="https://unixetc.com/tags/nokia">#nokia</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                        <li><a href="https://unixetc.com/tags/n900">#n900</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/add-apt-repository">#add-apt-repository</a></li>
+                        <li><a href="https://unixetc.com/tags/maemo">#maemo</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ppa">#PPA</a></li>
+                        <li><a href="https://unixetc.com/tags/%E8%AF%BA%E5%9F%BA%E4%BA%9A">#诺基亚</a></li>
                     
                 </ul>
         
@@ -166,23 +212,20 @@ apt-get install python-software-properties apt-get install software-properties-c
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/raspberry-pi-install-minidlna-to-create-digital-media-server/">树莓派安装配置minidlna</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/lnmp-usages/">LNMP使用实例</a></h1>
     </header>
 
     <div class="content post-summary">
-        树莓派挂载移动存储 可以挂载移动硬盘或者大容量的U盘，参考以下文章：
- 树莓派挂载U盘作为存储分区 fdisk分区实例  安装配置minidlna #sudo apt-get install -y minidlna  编辑minidlna配置文件/etc/minidlna.conf，内容如下：
-media_dir=/home/pi/dlnadoc #媒体文件目录 db_dir=/var/lib/minidlna #minidlna通过SQLite来建立媒体库索引，因此需要定义数据库目录 listening_ip=192.168.1.111 #树莓派IP port=8200	#web端口，可以通过ip:port查看索引状态 friendly_name=Raspi_DLNA #服务器命名  重启minidlna服务
-sudo service minidlna restart  强制刷新
-sudo service minidlna force-reload  查看索引状态,浏览http://192.168.1.111:8200
-MiniDLNA status Audio files: 0 Video files: 2 Image files: 0  DLNA客户端 PC
-Windows7下将网络设置为家庭网络，完成后刷新，在网络中媒体设备下就可以自动发现Rasp_DLNA。
-点击进去就可以使用MediaPlayer来浏览。
-Android
-VPlayer+ VPlayer uPnP DLNA Plugin
-IOS
-RushPlayer
+        安装LNMP 更新系统
+#yum check-update #yum update  安装Screen
+#yum install screen  开始安装Lnmp
+#screen -S lnmp #wget -c http://soft.vpser.net/lnmp/lnmp0.8.tar.gz //最新版请查阅lnmp官网 #tar zxvf lnmp0.8.tar.gz #./lnmp0.8/centos.sh | tee lnmp.log //输出log文件，以备出错时查阅  接下来按照提示设定域名和MysQL密码，程序会自动下载相关程序，而后编译安装
+安装PureFTP
+#./lnmp0.8/pureftp.sh  按提示输入MySQL和Ftp管理员密码，安装完成后可以通过http://vpsip/ftp/来登录管理ftp帐号
+使用Lnmp 添加虚拟主机
+#/root/vhost.sh  按照提示填入域名、目录、rewrite规则文件，如下所示：
+root@buyvm256:~#/root/vhost.sh ========================================================================= Add Virtual Host for LNMP V0.9 , Written by Licess ========================================================================= LNMP is a tool to auto-compile &amp; install Nginx+MySQL+PHP on Linux This script is a tool to add virtual host for nginx For more information please visit http://www.
     </div>
 
     
@@ -191,7 +234,7 @@ RushPlayer
 
 <div class="post-info">
     
-        <div class="post-date">2015-08-06</div>
+        <div class="post-date">2012-03-23</div>
     
     <div class="post-taxonomies">
         
@@ -206,23 +249,19 @@ RushPlayer
                     
                         <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                        <li><a href="https://unixetc.com/tags/mysql">#MySQL</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                        <li><a href="https://unixetc.com/tags/lnmp">#lnmp</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/dlna">#dlna</a></li>
+                        <li><a href="https://unixetc.com/tags/php">#php</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/upnp">#upnp</a></li>
+                        <li><a href="https://unixetc.com/tags/ftp">#ftp</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ms">#ms</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/dms">#dms</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/vplayer">#vplayer</a></li>
+                        <li><a href="https://unixetc.com/tags/pureftp">#pureftp</a></li>
                     
                 </ul>
         
@@ -240,9 +279,7 @@ RushPlayer
                 <a href="/tags/linux/page/18/">To new posts</a>
             
         </div>
-        <div class="right pagination-item ">
-            
-                <a href="/tags/linux/page/20/">To old posts</a>
+        <div class="right pagination-item disabled">
             
         </div>
     </div>
@@ -250,17 +287,24 @@ RushPlayer
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

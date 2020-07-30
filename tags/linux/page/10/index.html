@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101236" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101236" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,24 +101,21 @@
     </div>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/linux_enable_tcp_bbr/">Linux开启TCP BBR算法</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-using-ddclient-and-ddns/">树莓派使用ddclient和DDNS</a></h1>
     </header>
 
     <div class="content post-summary">
-        Linux Kernel 4.9+已经支持tcp_bbr拥塞控制算法，因此建议将内核升级为最新版。
-将内核升级到最新版 Debian/Ubuntu升级最新内核 最新内核下载地址 http://kernel.ubuntu.com/~kernel-ppa/mainline
-下载安装新内核
-wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.10.10/linux-image-4.10.10-041010-generic_4.10.10-041010.201704120813_amd64.deb` dpkg -i linux-image-4.10.10-041010-generic_4.10.10-041010.201704120813_amd64.deb 更新GRUB并且重启
-update-grub reboot Centos 7 升级最新内核 内核下载地址 http://elrepo.org/linux/kernel/el7/x86_64/RPMS/
-安装最新内核
-rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm yum --enablerepo=elrepo-kernel install kernel-ml -y 检查内核是否安装完成
-rpm -qa | grep kernel
-更新GRUB并重启主机
-egrep ^menuentry /etc/grub2.cfg | cut -f 2 -d \&#39; grub2-set-default 0 #default 0表示第一个内核设置为默认运行, 选择最新内核就对了 reboot http://elrepo.org/linux/kernel/下e15、e16分别对应Centos5、Centos6，可参考以上安装
-开启BBR 重启后uname -r 检查内核版本是不是4.9+
-然后执行以下操作
-echo &#34;net.core.default_qdisc=fq&#34; &gt;&gt; /etc/sysctl.conf echo &#34;net.ipv4.tcp_congestion_control=bbr&#34; &gt;&gt; /etc/sysctl.conf sysctl -p sysctl net.
+        域名解析 首先得有个域名，在域名管理中将域名DNS设为he.net的DNS地址，如下：
+ns1.he.net ns2.he.net ns3.he.net ns4.he.net ns5.he.net  然后在http://dns.he.net注册账号，添加域名(Add a new domain)
+接下来添加A记录(New A)，勾选允许动态域名解析(Enable entry for dynamic dns)
+点击域名后DDNS列中的刷新按钮，新建一个DDNS密匙(Generate a DDNS key.)
+安装设置ddclient 在树莓派上安装ddclient
+sudo apt-get install ddclient  编辑ddclient配置文件，路径为/etc/ddclient.conf
+protocol=dyndns2 use=web,web=myip.dnsomatic.com server=dyn.dns.he.net login=raspi.in password='ddnskey' www.raspi.in,raspi.in  其中password为设置DDNS时的key
+重启ddclient服务
+service ddclient restart  验证IP查询结果
+sudo ddclient -query use=if, if=eth0 address is 192.168.1.111 use=if, if=lo address is 127.0.0.1 use=web, web=dnspark address is 36.40.143.235 use=web, web=dyndns address is NOT FOUND use=web, web=loopia address is 36.
     </div>
 
     
@@ -91,62 +124,7 @@ echo &#34;net.core.default_qdisc=fq&#34; &gt;&gt; /etc/sysctl.conf echo &#34;net
 
 <div class="post-info">
     
-        <div class="post-date">2017-04-17</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/google">#Google</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/debian">#Debian</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/bbr">#bbr</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/tcp_bbr">#tcp_bbr</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/use-your-phone-to-remotely-control-raspberrypi/">使用手机远程控制树莓派GPIO</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        必备条件：
- 树莓派已联网 安装官方镜像 只支持Raspberry Pi 2/3 Model B 只支持Android手机 安装Java8  安装官方镜像Raspbian 下载地址 https://www.raspberrypi.org/downloads/
-安装Java8 sudo apt install oracle-java8-jdk  下载Marsiot到树莓派
-wget http://www.marsiot.com/download/marsiot.jar  下载Marsiot到手机，安装
-http://www.marsiot.com/download/marsiot.apk
-在树莓派上运行Marsiot
-pi@raspi:~ $ sudo java -jar marsiot.jar Current version &lt;101&gt; More help: sudo java -jar marsiot.jar help Connect to www.marsiot.com... Connected ok! GPIO init... GPIO init ok! ID-CODE:c1fa PASS-CODE：11c6  记住以上ID-CODE、PASS-CODE
-在手机上打开火星互联,事件中心时间轴上会显示所有新加入设备，以ID-CODE区分，找到你对应的设备点击，按照提示输入PASS-CODE即可连接。
-连接后可以在我的设备中看到已连接的设备，点击通用视图即可实时监控GPIO端口状态。
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2017-04-13</div>
+        <div class="post-date">2016-01-07</div>
     
     <div class="post-taxonomies">
         
@@ -165,11 +143,17 @@ pi@raspi:~ $ sudo java -jar marsiot.jar Current version &lt;101&gt; More help: s
                     
                         <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                        <li><a href="https://unixetc.com/tags/ddns">#DDNS</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/marisot">#Marisot</a></li>
+                        <li><a href="https://unixetc.com/tags/dns">#DNS</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/%E7%81%AB%E6%98%9F%E4%BA%92%E8%81%94">#火星互联</a></li>
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/domain">#Domain</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/he.net">#he.net</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ddclient">#ddclient</a></li>
                     
                 </ul>
         
@@ -179,13 +163,15 @@ pi@raspi:~ $ sudo java -jar marsiot.jar Current version &lt;101&gt; More help: s
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/linux-set-ip-netmask-gateway-mac-dns/">Linux下设置IP、网关、掩码、MAC和DNS</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/ssl-security-optimization/">SSL安全优化</a></h1>
     </header>
 
     <div class="content post-summary">
-        先用ifconfig来查看所有活动网络接口
-eth0 Link encap:Ethernet HWaddr b8:27:eb:1b:63:a8 inet addr:192.168.1.6 Bcast:192.168.1.255 Mask:255.255.255.0 inet6 addr: fe80::6502:67ff:89b:b2fd/64 Scope:Link UP BROADCAST RUNNING MULTICAST MTU:1500 Metric:1 RX packets:43239 errors:0 dropped:24 overruns:0 frame:0 TX packets:30644 errors:0 dropped:0 overruns:0 carrier:0 collisions:0 txqueuelen:1000 RX bytes:25068614 (23.9 MiB) TX bytes:5993030 (5.7 MiB) lo Link encap:Local Loopback inet addr:127.0.0.1 Mask:255.0.0.0 inet6 addr: ::1/128 Scope:Host UP LOOPBACK RUNNING MTU:65536 Metric:1 RX packets:1961 errors:0 dropped:0 overruns:0 frame:0 TX packets:1961 errors:0 dropped:0 overruns:0 carrier:0 collisions:0 txqueuelen:1 RX bytes:160232 (156.
+        先贴出本站的SSL安全评级,测试地址为https://www.ssllabs.com/ssltest/analyze.html?d=alair.cn
+以下是本站Nginx配置中关于SSL部分
+listen 443 ssl http2; ssl_certificate /etc/letsencrypt/live/alair.cn/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/alair.cn/privkey.pem; ssl_session_timeout 60m; ssl_protocols TLSv1 TLSv1.1 TLSv1.2; ssl_ciphers ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-RC4-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:RC4-SHA:!aNULL:!eNULL:!EXPORT:!DES:!3DES:!MD5:!DSS:!PKS; ssl_prefer_server_ciphers on; ssl_session_cache builtin:1000 shared:SSL:10m; ssl_dhparam /etc/ssl/certs/dhparam.pem; ssl_stapling on; ssl_stapling_verify on; add_header Strict-Transport-Security &quot;max-age=63072000; includeSubdomains; preload&quot;; add_header X-Frame-Options &quot;DENY&quot;;  说明：
+dhparam.pem可以使用openssl dhparam -out dhparam.pem 4096命令生成，这个命令会执行很长时间，也可以将字节数改为2048
     </div>
 
     
@@ -194,7 +180,7 @@ eth0 Link encap:Ethernet HWaddr b8:27:eb:1b:63:a8 inet addr:192.168.1.6 Bcast:19
 
 <div class="post-info">
     
-        <div class="post-date">2017-03-20</div>
+        <div class="post-date">2015-12-21</div>
     
     <div class="post-taxonomies">
         
@@ -209,21 +195,158 @@ eth0 Link encap:Ethernet HWaddr b8:27:eb:1b:63:a8 inet addr:192.168.1.6 Bcast:19
                     
                         <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/dns">#DNS</a></li>
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ifconfig">#ifconfig</a></li>
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ip">#ip</a></li>
+                        <li><a href="https://unixetc.com/tags/https">#https</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/netmask">#netmask</a></li>
+                        <li><a href="https://unixetc.com/tags/ssl">#ssl</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/gateway">#gateway</a></li>
+                        <li><a href="https://unixetc.com/tags/http2">#http2</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/mac">#mac</a></li>
+                        <li><a href="https://unixetc.com/tags/dhparam">#dhparam</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/route">#route</a></li>
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/md5sum-usage/">使用MD5校验文件</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        md5sum命令用于生成和校验文件的md5值。它会逐位对文件的内容进行校验。是文件的内容，与文件名无关，也就是文件内容相同，其md5值相同。md5值是一个128位的二进制数据，转换成16进制则是32（128/4）位的进制值。
+md5校验，有很小的概率不同的文件生成的md5可能相同。比md5更安全的校验算法还有SHA*系列的。
+在网络传输时，我们校验源文件获得其md5sum，传输完毕后，校验其目标文件，并对比如果源文件和目标文件md5 一致的话，则表示文件传输无异常。否则说明文件在传输过程中未正确传输。
+md5sum示例 生成文件md5 pi@raspi:~ $ md5sum bs.conf fcd3e1243d1cd5903d4e38c46671b84f bs.conf  md5sum校验是根据文件内容为准，与名称无关，意思是即便文件名修改了，但md5校验值应该不会改变，如下：
+pi@raspi:~ $ cp bs.conf bs.conf.bak pi@raspi:~ $ md5sum bs* fcd3e1243d1cd5903d4e38c46671b84f bs.conf fcd3e1243d1cd5903d4e38c46671b84f bs.conf.bak  根据md5校验文件是否更改 一般网上分享的大文件都会附带一个.md5文件，这就是所分享文件的md5值，可以使用-c参数来直接使用.md5文件来检验文件是否完整
+pi@raspi:~ $ md5sum bs.conf&gt;bs.conf.md5 pi@raspi:~ $ md5sum -c bs.conf.md5 bs.conf: OK  如上例，将bs.conf的md5值定向到一个bs.conf.md5文件，然后使用md5sum -c bs.conf.md5直接检验相应文件是否完整一致，校验通过的话会输出提示OK，如果文件经过修改，内容已经不一致，则不会通过校验，则会显示FAILED
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-12-13</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/resolvconf">#resolvconf</a></li>
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/md5">#md5</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/md4">#md4</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/sha">#sha</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/md5sum">#md5sum</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/transfer-files-using-scp/">使用SCP传输文件</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        示例：用户名root 地址 2.33.153.67
+下载文件 scp root@2.33.153.67:/root/test.mp4 /home/pi/  将服务器上的/root/test.mp4下载到本地/home/pi文件夹
+上传文件 scp /home/pi/ok.txt root@2.33.153.67:/root  将本地/home/pi/ok.txt上传至服务器/root文件夹
+下载文件夹 scp -r root@2.33.153.67:/root/ebooks /home/pi  将服务器上的/root/ebooks文件夹下载至本地/home/pi下
+上传文件夹 scp -r /home/pi/music root@2.33.153.67:/media  将本地/home/pi/music文件夹上传至服务器/media下
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-12-08</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/scp">#scp</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/change-timezone-in-centos/">Linux下更改时区</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        Linux中时区代码都在/usr/share/zoneinfo/目录中
+首先删除默认时区
+#rm /etc/localtime  设定新的时区
+#ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime  完成！
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-11-30</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/timezone">#timezone</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/localtime">#localtime</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%97%B6%E5%8C%BA">#时区</a></li>
                     
                 </ul>
         
@@ -251,17 +374,24 @@ eth0 Link encap:Ethernet HWaddr b8:27:eb:1b:63:a8 inet addr:192.168.1.6 Bcast:19
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

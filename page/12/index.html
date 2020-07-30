@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
 	<meta name="generator" content="Hugo 0.73.0" />
     
@@ -16,7 +18,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070679" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101234" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101234" />
+
+
 
 
 
@@ -42,9 +78,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -67,17 +103,24 @@
     
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/centos7-install-l2tp-vpn/">CentOS7安装L2TP VPN</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/powerful-dropbox-scripting-tool-dropbox-uploader/">Dropbox脚本工具DropboxUploader</a></h1>
     </header>
 
     <div class="content post-summary">
-        Centos7安装VPN 下载安装脚本:
-wget http://cdn.lyq.wiki/vpnscripts/vpninstall  执行安装脚本
-chmod+x vpninstall ./vpninstall  安装完成后提示如下:
-IPsec VPN server is now ready for use! Connect to your new VPN with these details: Server IP: 181.53.149.126 IPsec PSK: EMc6SpQHaBgZCnvNtLX Username: vpnuser Password: FzfpNGofpRdkBj2B Write these down. You'll need them to connect!  以上为安装完成后提示的帐号信息，其中用户名(username)、密码(passowrd)和IPsec PSK密匙(IPsec PSK)为随即生成。
-如果为了方便，以上帐号信息可以参考以下方法自定义：
-[root@hwcsh ~]# vi /etc/ipsec.secrets #编辑PSK %any %any : PSK &quot;EMc6SpQHaBgZCnvNtLX&quot; [root@hwcsh ~]# vi /etc/ppp/chap-secrets #编辑帐户信息 &quot;vpnuser&quot; l2tpd &quot;FzfpNGofpRdkBj2B&quot; * [root@hwcsh ~]#systemctl restart ipsec xl2tpd #重启服务  iPhone6配置L2TP VPN 设置-&gt;VPN-&gt;添加VPN配置，类型选择L2TP，然后参考下图设置。
+        Dropbox Uploader是一款专为Dropbox开发的BASH脚本，可以实现上传、下载、删除、列出文件清单、在线分享、同步和备份等功能。
+它使用BASH脚本语言写成，只需要cURL即可使用。
+项目主页 GiHub project page.
+为什么使用此脚本?
+ 绿色轻便:使用BASH脚本语言写成，仅仅需要cURL一个软件(curl是一个数据传输工具，大部分linux发行版均会内置该软件)。 安全: 不需要提供帐号密码，该脚本使用官方API进行验证。  更多的扩展信息和使用技巧请参考官方wiki，该wiki同时提供Dropbox Uploader相关的使用实例和脚本。
+特性  跨平台 支持官方Dropbox API v2 无需密码 简单的配置提示 分块文件上传 递归文档下载 递归文档上传 Shell通配符扩展 (仅上传) 删除/移动/重命名/拷贝/列出/分享文件 创建分享连接 监视变化  安装配置DropboxUploader 使用git拷贝官方仓库：
+git clone https://github.com/andreafabrizi/Dropbox-Uploader.git 或者直接下载脚本：
+curl &#34;https://raw.githubusercontent.com/andreafabrizi/Dropbox-Uploader/master/dropbox_uploader.sh&#34; -o dropbox_uploader.sh 给脚本添加执行权限并运行：
+$chmod +x dropbox_uploader.sh $./dropbox_uploader.sh 第一次运行dropbox_uploader时，会有鉴权提示，按照提示在https://www.dropbox.com/developers/apps新建api app，然后在app管理页找到Generated access token创建access token，将access token粘贴到DropboxUploader提示行按回车键，随后会提示成功接入Dropbox。配置文件保存在~/.dropbox_uploader。
+使用DropboxUploader DropboxUploader语法非常简单:
+./dropbox_uploader.sh [PARAMETERS] COMMAND... [%%]: 可选参数 &lt;%%&gt;: 必须参数 可使用命令:
+  upload &lt;LOCAL_FILE/DIR &hellip;&gt; &lt;REMOTE_FILE/DIR&gt;
+上传本地文件或目录到Dropbox。
     </div>
 
     
@@ -86,7 +129,7 @@ IPsec VPN server is now ready for use! Connect to your new VPN with these detail
 
 <div class="post-info">
     
-        <div class="post-date">2018-12-10</div>
+        <div class="post-date">2017-07-28</div>
     
     <div class="post-taxonomies">
         
@@ -99,13 +142,17 @@ IPsec VPN server is now ready for use! Connect to your new VPN with these detail
             
                 <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/centos">#CentOS</a></li>
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/centos7">#CentOS7</a></li>
+                        <li><a href="https://unixetc.com/tags/dropbox">#Dropbox</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/l2tp">#L2TP</a></li>
+                        <li><a href="https://unixetc.com/tags/bash">#bash</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/vpn">#VPN</a></li>
+                        <li><a href="https://unixetc.com/tags/dropboxuploader">#dropboxuploader</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/curl">#curl</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/api">#api</a></li>
                     
                 </ul>
         
@@ -115,18 +162,17 @@ IPsec VPN server is now ready for use! Connect to your new VPN with these detail
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/bwg-replace-main-ip-after-blocked/">搬瓦工被墙后免费更换IP</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/batch-conversion-png-and-jpg-under-linux/">Linux下批量转换PNG和JPG</a></h1>
     </header>
 
     <div class="content post-summary">
-        忙了一天没注意看邮件，下午才发现站点宕机，登录BWG后台检查系统运行正常，使用Ping.pePing了下才发现，可能IP被墙了。
-查看Ping的结果，发现国外线路都可以浏览，国内线路丢包全是100%，看来凉凉咯！
-于是网上找了下解决方案，发现BWG免费提供更换IP服务，每五周使用一次。
-登录BWG后台，然后浏览https://kiwivm.64clouds.com/main-exec.php?mode=blacklistcheck，点击TestMainIP进行检查。
-此页面会显示当前服务器IP以及是否被墙。
-如上提示，IP BLOCKED表示已经被封，点击下面的Replace Main IP更换IP，更换IP后再次浏览上面网站，即可显示IP NOT BLOCKED表示未被封锁。
-注意：该功能每五周可以使用一次，且行且珍惜！
+        我们用到的软件名为imagemagick，一款强大的图片处理软件。
+Debian系使用apt-get install imagemagick来安装，Fedora系通过yum install imagemagick来安装。
+其他系统可以到官方下载页进行下载安装 https://www.imagemagick.org/script/download.php
+安装完成后，可以通过convert tst.jpg tsg.png将JPG文件转换为PNG，反之亦可。
+下来进行批量替换：
+root@bwgzl:/data/wwwroot/getos.org/images# ll total 188 drwxr-xr-x 2 www www 4096 Aug 4 15:48 ./ drwxr-xr-x 27 www www 4096 Aug 4 15:32 ../ -rw-r--r-- 1 www www 18778 Aug 4 15:43 clip_image002.jpg -rw-r--r-- 1 www www 17637 Aug 4 15:43 clip_image004.jpg -rw-r--r-- 1 www www 28075 Aug 4 15:43 clip_image006.jpg -rw-r--r-- 1 www www 30916 Aug 4 15:43 clip_image008.jpg -rw-r--r-- 1 www www 13538 Aug 4 15:43 clip_image010.
     </div>
 
     
@@ -135,7 +181,7 @@ IPsec VPN server is now ready for use! Connect to your new VPN with these detail
 
 <div class="post-info">
     
-        <div class="post-date">2018-10-15</div>
+        <div class="post-date">2017-07-17</div>
     
     <div class="post-taxonomies">
         
@@ -148,11 +194,13 @@ IPsec VPN server is now ready for use! Connect to your new VPN with these detail
             
                 <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/gfw">#GFW</a></li>
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/%E6%9B%B4%E6%8D%A2ip">#更换IP</a></li>
+                        <li><a href="https://unixetc.com/tags/imagemagick">#imagemagick</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/%E6%90%AC%E7%93%A6%E5%B7%A5">#搬瓦工</a></li>
+                        <li><a href="https://unixetc.com/tags/png">#png</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/jpg">#jpg</a></li>
                     
                 </ul>
         
@@ -162,17 +210,13 @@ IPsec VPN server is now ready for use! Connect to your new VPN with these detail
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/oneplus-3t-after-sale-rom/">一加3T售后刷机包</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/p7zip-usage/">p7zip使用实例</a></h1>
     </header>
 
     <div class="content post-summary">
-        首先下载以下两个文件包：
- 一加3T9008驱动 Download 一加3T售后恢复包 Download  然后，将手机完全关机，按住音量+不放，将手机和电脑连接，此时手机还是黑屏状态，电脑会有设备连接提示音。
-我的电脑-&gt;右键管理-&gt;设备管理器，打开查看，第一次使用会在其他设备下出现QHSUSB_BULK带黄色感叹号的未知设备，右键点击更新驱动，手动选择刷机驱动包里面的驱动目录进行安装，如果不行的话可以使用360驱动大师进行识别安装，安装完成后会出现类似以下的设备驱动:
-其中Qualcomm HS-USB QDLoader 9008(COM4)的新设备，就是正常驱动后的手机，俗称高通9008模式。
-将下载的一加3T售后恢复包解压后，打开其中的MsmDownloadTool V3.0.exe开始刷机
-正常识别COM设备后，点击Start开始刷机，完成后自动重启。
+        以下是CentOS7中7za的使用实例,CentOS下安装p7zip可以参考此文
+[root@localhost ~]# 7za 7-Zip (a) [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21 p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,1 CPU x64) Usage: 7za &lt;command&gt; [&lt;switches&gt;...] &lt;archive_name&gt; [&lt;file_names&gt;...] [&lt;@listfiles...&gt;] &lt;Commands&gt; a : Add files to archive b : Benchmark d : Delete files from archive e : Extract files from archive (without using directory names) h : Calculate hash values for files i : Show information about supported formats l : List contents of archive rn : Rename files in archive t : Test integrity of archive u : Update files to archive x : eXtract files with full paths &lt;Switches&gt; -- : Stop switches parsing -ai[r[-|0]]{@listfile|!
     </div>
 
     
@@ -181,7 +225,63 @@ IPsec VPN server is now ready for use! Connect to your new VPN with these detail
 
 <div class="post-info">
     
-        <div class="post-date">2018-10-13</div>
+        <div class="post-date">2017-06-16</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/p7zip">#p7zip</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/7z">#7z</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/7za">#7za</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/lzma">#lzma</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/tar">#tar</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/zip">#zip</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/cab">#cab</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gzip">#gzip</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/bzip2">#bzip2</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/oneplus3-3t-unified-toolkit/">一加3/3T工具包</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        工具菜单如下：
+ Title OnePlus 3/3T Unified ToolKit v5.0U by @ahmed_radaideh ====================== = Menu = ====================== Enter a Number to select a Task. 1) Install USB Drivers On PC 2) Unlock - ReLock Bootloader 3) Check Device Status 4) Check Bootloader Status 5) Flash - Boot TWRP Recovery 6) Flash - Boot Stock Recovery 7) Push Systemless Root 8) Push Debloater Script 9) Wipe Cache Your Device 10) Force Decryption Device [WIPE] 11) Get Logs your Device 12) Restart Menu 13) Check for new Version 14) XDA Thread 15) Donate!
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-06-15</div>
     
     <div class="post-taxonomies">
         
@@ -196,13 +296,76 @@ IPsec VPN server is now ready for use! Connect to your new VPN with these detail
                     
                         <li><a href="https://unixetc.com/tags/android">#Android</a></li>
                     
+                        <li><a href="https://unixetc.com/tags/adb">#adb</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/unlock">#Unlock</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/root">#Root</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/recovery">#recovery</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/twrp">#twrp</a></li>
+                    
                         <li><a href="https://unixetc.com/tags/oneplus">#oneplus</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/oneplus3">#oneplus3</a></li>
                     
                         <li><a href="https://unixetc.com/tags/oneplus3t">#oneplus3t</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/rom">#rom</a></li>
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/fix-toshiba-u-disk-write-protection/">修复东芝U盘写保护</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        一直以来都是使用U盘安装Linux，光盘镜像通过dd写入U盘。最近需要安装elementary，下载镜像后发现系统推荐使用Rufus来写入U盘，这个工具以前没试过所以试了下，确实挺快的。
+不过在安装完elementary后，想将U盘重新恢复格式化出问题了，使用DiskGenius无法进行操作，使用系统自带的磁盘管理也没法操作，包括Linux下的GParted也不行，都提示U盘被写保护了，-__-!
+万般无奈只能想到量产工具，下面分享使用到的两款软件：
+ ChipGenius Restore  ChipGenius是一款U盘信息检测软件，通过它可以来查看U盘主控信息，我的这款U盘芯片信息如下：
+设备描述: [G:]USB 大容量存储设备(TOSHIBA TransMemory-Mx)设备类型: 大容量存储设备协议版本: USB 3.00当前速度: 极速(SuperSpeed)电力消耗: 504mAUSB设备ID: VID = 0930 PID = 6545设备序列号: FFFFFFFFFFFFEE20F000BC99设备供应商: TOSHIBA　设备名称: TransMemory-Mx设备修订版: 0110产品制造商: TOSHIBA　产品型号: TransMemory-Mx产品修订版: PMAP　主控厂商: Phison(群联)　主控型号: PS2251-03(PS2303) - F/W 02.08.53 [2014-01-02]闪存识别码: 983AA892 - Toshiba(东芝) TC58NVG7T2JTA00 [TLC-8K]Restore是群联官方提供的一款恢复工具，可以进行低级格式化和修复。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-06-10</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/9008">#9008</a></li>
+                        <li><a href="https://unixetc.com/tags/ps2251-03">#PS2251-03</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/diskgenius">#DiskGenius</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/elementary">#elementary</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/rufus">#Rufus</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E4%B8%9C%E8%8A%9D">#东芝</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%BE%A4%E8%81%94">#群联</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E4%B8%BB%E6%8E%A7">#主控</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/toshiba">#TOSHIBA</a></li>
                     
                 </ul>
         
@@ -230,17 +393,24 @@ IPsec VPN server is now ready for use! Connect to your new VPN with these detail
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

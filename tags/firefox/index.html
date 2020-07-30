@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,7 +101,7 @@
     </div>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/centos7-install-ffsend-to-share-files/">CentOS7安装ffsend快速分享文件</a></h1>
     </header>
 
@@ -125,7 +161,7 @@ ffsend download https://send.firefox.com/download/4cecb9c1ab628f8e/#m5is-YRSfnBI
 </article>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/v2ray-client-configuration-example-in-ubuntu/">Ubuntu中v2ray客户端配置实例</a></h1>
     </header>
 
@@ -175,7 +211,7 @@ root@vm:~# bash &lt;(curl -L -s https://install.direct/go.sh) Installing V2Ray v
 </article>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/firefox-and-foxyproxy/">Firefox和FoxyProxy</a></h1>
     </header>
 
@@ -233,34 +269,85 @@ root@vm:~# bash &lt;(curl -L -s https://install.direct/go.sh) Installing V2Ray v
 
 </article>
     
-    
-    
-        
-    <div class="pagination">
-        <div class="left pagination-item disabled">
-            
-        </div>
-        <div class="right pagination-item ">
-            
-                <a href="/tags/firefox/page/2/">To old posts</a>
-            
-        </div>
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/shadowsocks-usage/">Shadowsock使用实例</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        Windows下使用shadowsocks 安装设置Shadowsocks for Windows
+推荐Shadowsocks for Windows，项目地址 https://github.com/clowwindy/shadowsocks-csharp
+下载后打开即可，参考以下设置：
+Server IP 服务器IP Server Port 服务器端口 Password 密码 Encryption 加密类型，推荐aes-256-cfb Proxy Port 代理端口 Remarks 备注  完成设置即可。
+使用
+推荐以下组合：
+ Firefox+AutoProxy Chrome+SwitchSharp  代理服务器信息：
+代理地址:127.0.0.1 端口:1080 代理方式:socks5  配置切换规则:
+勾选:在线规则列表 勾选:AutoProxy兼容列表 URL中输入:http://autoproxy-gfwlist.googlecode.com/svn/trunk/gfwlist.txt 情景模式选择上一步创建的模式.  Android使用shadowsocks(影梭) 影梭下载地址： https://play.google.com/store/apps/details?id=com.github.shadowsocks
     </div>
 
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-11-13</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/chrome">#Chrome</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/shadowsocks">#Shadowsocks</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/firefox">#Firefox</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/autoproxy">#AutoProxy</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gfwlist">#gfwlist</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/switchsharp">#switchsharp</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/switchyomega">#switchyomega</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

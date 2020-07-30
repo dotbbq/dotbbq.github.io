@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,19 +101,20 @@
     </div>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/grub-boot-iso-image-file/">GRUB引导ISO镜像</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/use-your-phone-to-remotely-control-raspberrypi/">使用手机远程控制树莓派GPIO</a></h1>
     </header>
 
     <div class="content post-summary">
-        家里电脑安装了双系统(Xubuntu+Windows7)，平时一直不关机，开着TeamViewer便于在办公室远程操作。
-这次不知怎么回事儿，远程掉了，回家一看Windows意外关机，再开机直接蓝屏。
-由于为了省资源，关闭了系统保护，没法进行还原，多次试着拯救都没能解决，无限蓝屏……
-手头刚好没有WinPE的U盘，没法ghost恢复或重装Windows，只有xubuntu可用，一筹莫展。
-突然想到grub是否可以引导iso？ 网上找了下，还真可以，于是下载了个WinPE镜像文件，打算通过grub来引导以修复Windows。
-具体操作如下：
-安装grub-imageboot
-alair@e6440:~$ apt search memdisk 正在排序... 完成 全文搜索... 完成 grub-imageboot/bionic,bionic 0.6 all boot iso, harddisk and floppy images with grub2 and syslinux memdisk alair@e6440:~$ sudo apt install grub-imageboot [sudo] alair 的密码： 正在读取软件包列表... 完成 正在分析软件包的依赖关系树 正在读取状态信息... 完成 将会同时安装下列软件： syslinux-common 下列【新】软件包将被安装： grub-imageboot syslinux-common 升级了 0 个软件包，新安装了 2 个软件包，要卸载 0 个软件包，有 4 个软件包未被升级。 需要下载 1,176 kB 的归档。 解压缩后会消耗 3,684 kB 的额外空间。 您希望继续执行吗？ [Y/n] y 获取:1 http://mirrors.cqu.edu.cn/ubuntu bionic/main amd64 syslinux-common all 3:6.
+        必备条件：
+ 树莓派已联网 安装官方镜像 只支持Raspberry Pi 2/3 Model B 只支持Android手机 安装Java8  安装官方镜像Raspbian 下载地址 https://www.raspberrypi.org/downloads/
+安装Java8 sudo apt install oracle-java8-jdk  下载Marsiot到树莓派
+wget http://www.marsiot.com/download/marsiot.jar  下载Marsiot到手机，安装
+http://www.marsiot.com/download/marsiot.apk
+在树莓派上运行Marsiot
+pi@raspi:~ $ sudo java -jar marsiot.jar Current version &lt;101&gt; More help: sudo java -jar marsiot.jar help Connect to www.marsiot.com... Connected ok! GPIO init... GPIO init ok! ID-CODE:c1fa PASS-CODE：11c6  记住以上ID-CODE、PASS-CODE
+在手机上打开火星互联,事件中心时间轴上会显示所有新加入设备，以ID-CODE区分，找到你对应的设备点击，按照提示输入PASS-CODE即可连接。
+连接后可以在我的设备中看到已连接的设备，点击通用视图即可实时监控GPIO端口状态。
     </div>
 
     
@@ -86,7 +123,114 @@ alair@e6440:~$ apt search memdisk 正在排序... 完成 全文搜索... 完成 
 
 <div class="post-info">
     
-        <div class="post-date">2018-07-08</div>
+        <div class="post-date">2017-04-13</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/marisot">#Marisot</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%81%AB%E6%98%9F%E4%BA%92%E8%81%94">#火星互联</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/linux-set-ip-netmask-gateway-mac-dns/">Linux下设置IP、网关、掩码、MAC和DNS</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        先用ifconfig来查看所有活动网络接口
+eth0 Link encap:Ethernet HWaddr b8:27:eb:1b:63:a8 inet addr:192.168.1.6 Bcast:192.168.1.255 Mask:255.255.255.0 inet6 addr: fe80::6502:67ff:89b:b2fd/64 Scope:Link UP BROADCAST RUNNING MULTICAST MTU:1500 Metric:1 RX packets:43239 errors:0 dropped:24 overruns:0 frame:0 TX packets:30644 errors:0 dropped:0 overruns:0 carrier:0 collisions:0 txqueuelen:1000 RX bytes:25068614 (23.9 MiB) TX bytes:5993030 (5.7 MiB) lo Link encap:Local Loopback inet addr:127.0.0.1 Mask:255.0.0.0 inet6 addr: ::1/128 Scope:Host UP LOOPBACK RUNNING MTU:65536 Metric:1 RX packets:1961 errors:0 dropped:0 overruns:0 frame:0 TX packets:1961 errors:0 dropped:0 overruns:0 carrier:0 collisions:0 txqueuelen:1 RX bytes:160232 (156.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-03-20</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dns">#DNS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ifconfig">#ifconfig</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ip">#ip</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/netmask">#netmask</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gateway">#gateway</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/mac">#mac</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/route">#route</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/resolvconf">#resolvconf</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/windows10-enabled-linux-subsystem/">Windows10开启Linux子系统</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        打开功能 设置-系统-应用和功能，右侧下拉到底，点击“相关设置”下的“程序和功能”
+在打开的“程序和功能”左侧菜单中，找到“启用或关闭windows功能”，点击打开。
+在接下来的“windows功能”菜单中，下拉勾选“适用于linux的windows子系统（beta）”，确认后重启系统。
+开启开发人员模式 设置-更新和安全-针对开发人员，在右侧打开“开发人员模式”
+安装linux子系统 Win+R输入cmd回车，打开cmd
+输入“bash”按照提示安装设置用户名密码即可使用。
+然后就可以使用ubuntu提供的linux子系统了。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-03-10</div>
     
     <div class="post-taxonomies">
         
@@ -103,19 +247,9 @@ alair@e6440:~$ apt search memdisk 正在排序... 完成 全文搜索... 完成 
                     
                         <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/grub">#GRUB</a></li>
+                        <li><a href="https://unixetc.com/tags/windows10">#Windows10</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/grub-imageboot">#grub-imageboot</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/grub2">#grub2</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/memdisk">#memdisk</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/iso">#ISO</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/winpe">#WinPE</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/update-grub">#update-grub</a></li>
+                        <li><a href="https://unixetc.com/tags/bash">#bash</a></li>
                     
                 </ul>
         
@@ -125,16 +259,25 @@ alair@e6440:~$ apt search memdisk 正在排序... 完成 全文搜索... 完成 
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/excel-file-size-abnormal-check/">Excel文件大小异常核查</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/termux-package-management/">Termux软件包管理</a></h1>
     </header>
 
     <div class="content post-summary">
-        有时候明明excel文件中没多少内容，但是文件体积却很大，在此分享一个检查解决的方法。
-将excel文件后缀名改为zip，用压缩软件将其打开，定位到xl\worksheets\目录，可以看到各个sheet的体积大小，如下:
-找到其中体积最大的，定位到该sheet
-首先将所有内容全选并粘贴为文字。
-然后将内容排序后，全选下面的空白行邮件删除，将条件格式全部删除，这样应该就OK了！
+        首次安装Termux后，内含一个基础系统，包括apt软件包管理功能，并且集成了一些busybox系统工具。
+其余的软件包可使用apt进行安装管理，命令如下：
+apt update  更新可用软件包清单。
+apt search &lt;query&gt;  按名称搜索可用软件。
+apt install &lt;package&gt;  安装软件
+apt upgrade  更新所有可更新软件。
+apt show &lt;package&gt;  显示软件信息
+apt list  列出可用软件清单
+apt list --installed  列出所有已安装软件清单
+apt remove &lt;package&gt;  卸载已安装软件
+Apt是基于dpkg格式的软件管理工具，一般没必要直接使用dpkg来进行操作，不过以下两个例子可以参考：
+dpkg -L &lt;package&gt;  列出已安装软件
+dpkg --verify  验证已安装软件的完整性
+更多信息请检阅apt manual page (通过apt install man来安装)
     </div>
 
     
@@ -143,59 +286,7 @@ alair@e6440:~$ apt search memdisk 正在排序... 完成 全文搜索... 完成 
 
 <div class="post-info">
     
-        <div class="post-date">2018-06-10</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/office">#Office</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/excel">#Excel</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/xls">#xls</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/worksheets">#worksheets</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/sheet">#sheet</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/canonical-livepatch-service/">Ubuntu配置Livepatch服务</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        CLS(Canonical Livepatch Service)是Ubuntu母公司Canonical提供的一项服务，该服务可以为处于LTS的Ubuntu版本提供内核关键补丁修复，而不需要重新启动系统，特别适用于用作Server的系统。
-使用CLS的前提是必须注册一个Ubuntu帐号，地址为https://login.ubuntu.com/+login
-注册完成后，即可访问CLS主页https://www.ubuntu.com/server/livepatch进行登录配置。
-登陆后选择用户类型，一般个人用户选择Ubuntu User，然后点击Get your Livepatch token获取密匙
-按照下一步提示进行操作，启用CLS服务。
-运行完成后即成功启用CLS服务。
-检查CLS服务配置状态可以使用以下命令:
-alair@e6440:~$ sudo canonical-livepatch status --verbose client-version: 8.0.2 machine-id: 08e0*****************750db machine-token: 4753a054c*****************a2eb84c7 architecture: x86_64 cpu-model: Intel(R) Core(TM) i5-4310M CPU @ 2.70GHz last-check: 2018-05-25T19:55:15.537634075+08:00 boot-time: 2018-05-25T19:47:51+08:00 uptime: 14m43s status: - kernel: 4.15.0-22.24-generic running: true livepatch: checkState: checked patchState: nothing-to-apply version: &quot;&quot; fixes: &quot;&quot; 
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2018-05-25</div>
+        <div class="post-date">2017-03-09</div>
     
     <div class="post-taxonomies">
         
@@ -210,15 +301,68 @@ alair@e6440:~$ sudo canonical-livepatch status --verbose client-version: 8.0.2 m
                     
                         <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                        <li><a href="https://unixetc.com/tags/termux">#termux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/kernel">#Kernel</a></li>
+                        <li><a href="https://unixetc.com/tags/terminal">#terminal</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/canonical">#Canonical</a></li>
+                        <li><a href="https://unixetc.com/tags/apt">#apt</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/livepatch">#Livepatch</a></li>
+                        <li><a href="https://unixetc.com/tags/dpkg">#dpkg</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/cls">#CLS</a></li>
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/fix-raspberry-path-variable/">修复树莓派PATH变量</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        使用lnmp一键工具安装完nmp后，重启进入系统就提示bash command not found
+然后试了试service,who等命令也无法使用
+只有最基本的系统命令ls,cat等可以用
+看来安装lnmp后，我的PATH变量被动了
+先临时修改下PATH，便于后面操作
+export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:$PATH  然后检查~/.profile,/etc/profile是否存在，存在
+检查其中的PATH赋值是否异常
+经过排查，发现/etc/profile中的PATH赋值异常，修改之重启OK！
+在此分享正确的原始~/.profile和/etc/profile文件
+~/.profile 内容
+# ~/.profile: executed by the command interpreter for login shells. # This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login # exists. # see /usr/share/doc/bash/examples/startup-files for examples. # the files are located in the bash-doc package. # the default umask is set in /etc/profile; for setting the umask # for ssh logins, install and configure the libpam-umask package.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-03-03</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/path">#PATH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
                     
                 </ul>
         
@@ -246,17 +390,24 @@ alair@e6440:~$ sudo canonical-livepatch status --verbose client-version: 8.0.2 m
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

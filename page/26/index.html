@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
 	<meta name="generator" content="Hugo 0.73.0" />
     
@@ -16,7 +18,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070679" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101234" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101234" />
+
+
 
 
 
@@ -42,9 +78,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -67,25 +103,15 @@
     
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/blackberry-9630-use-ctcc-4g-card/">黑莓9630使用中国电信4G卡</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/typecho-limits-theme/">Typecho主题Limits</a></h1>
     </header>
 
     <div class="content post-summary">
-        准备工作 Alt + Shift + H进入帮帮我界面
-进入后，不要退出，注意以下三个信息
- 应用程序版本 7.1.0.649 （1886） PIN 3045e17c 正常运行时间 173秒  注意!注意!注意 一定不要退出以上界面，因为运行时间会变动，如果退出了，重新进入查看运行时间
-计算解锁码 使用软件工具或者网页版工具计算，网址在这里 http://www.kealin.net/Escreen/Index.html
-按照提示，输入PIN、OS Version、Uptime
-底下会出现响应时长的解锁码，有1day到30days
-一般我们就用一下下，选择一天解锁码，如果你需要长时间使用，可以选择较长时间的解锁码
-解锁码也可以使用软件来获取，可以使用BBctrl、BerryBox，请自行搜索。
-进入工程模式(Engineering Screen Contents) 注意，前面的帮帮我没有退出，在该界面下输入你所获得的解锁码
-如果退出了，重新进入查看运行时间，按照新的时间重新获取解锁码
-输入正确后，即可进入工程模式(engineering screen contents)
-设置 在工程模式下按以下顺序来操作
-Radio Engineering Screens(MULTI) -&gt; 3GPP Radio Engineering Screens -&gt; GCF -&gt; SIM Electrical Test Mode On
-点击最后一个菜单后手机自动重启，然后启动完即可使用4G手机卡。
+        又造了个简单成马咧的主题，分享给大家!
+说明
+ 评论采用多说，请自行替换comments.php内容 没有页面导航，因此请在设置-阅读中，将每页文章数目设大一些(例如:999)  预览图:
+下载: Limits.7z
     </div>
 
     
@@ -94,7 +120,7 @@ Radio Engineering Screens(MULTI) -&gt; 3GPP Radio Engineering Screens -&gt; GCF 
 
 <div class="post-info">
     
-        <div class="post-date">2017-01-02</div>
+        <div class="post-date">2015-07-02</div>
     
     <div class="post-taxonomies">
         
@@ -107,17 +133,17 @@ Radio Engineering Screens(MULTI) -&gt; 3GPP Radio Engineering Screens -&gt; GCF 
             
                 <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/blackberry">#BlackBerry</a></li>
+                        <li><a href="https://unixetc.com/tags/typecho">#typecho</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/bb">#BB</a></li>
+                        <li><a href="https://unixetc.com/tags/php">#php</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/9630">#9630</a></li>
+                        <li><a href="https://unixetc.com/tags/theme">#theme</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/4g">#4G</a></li>
+                        <li><a href="https://unixetc.com/tags/%E4%B8%BB%E9%A2%98">#主题</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/bbctrl">#BBctrl</a></li>
+                        <li><a href="https://unixetc.com/tags/css">#css</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/berrybox">#Berrybox</a></li>
+                        <li><a href="https://unixetc.com/tags/html">#html</a></li>
                     
                 </ul>
         
@@ -127,15 +153,22 @@ Radio Engineering Screens(MULTI) -&gt; 3GPP Radio Engineering Screens -&gt; GCF 
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/zbook14-install-wireless-driver-under-debian/">Debian下安装Zbook14无线网卡驱动</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-by-dht11-collecting-temperature-and-humidity/">树莓派连接DHT11采集温度与湿度</a></h1>
     </header>
 
     <div class="content post-summary">
-        首先查看无线网卡型号
-alair@zb14:~$ lspci|grep less 02:00.0 Network controller: Intel Corporation Wireless 7260 (rev 73)  搜索Inter相关固件 ​ alair@zb14:~$ apt-cache search iwlwifi firmware-iwlwifi - Binary firmware for Intel Wireless cards
-安装之 ​ alair@zb14:~$ apt-get install firmware-iwlwifi
-重启完事儿！
+        DHT11介绍 DHT11是一款有已校准数字信号输出的温湿度传感器。 精度湿度+-5%RH， 温度+-2℃，量程湿度20-90%RH， 温度0~50℃。
+DHT11针脚说明
+ VCC	供电 3－5.5VDC DATA	串行数据，单总线 N/A	空脚，请悬空 GND	接地，电源负极  硬件连接 树莓派GPIO针脚说明
+DHT11与树莓派链接
+VCC连接+3V3 DATA连接GPIO4 GND链接GND
+软件部分 安装wiringPi
+sudo apt-get install git-core git clone git://git.drogon.net/wiringPi cd wiringPi ./build  如果由于网络原因无法git clone成功，可以从此下载wiringPi http://cdn.lyq.wiki/res/wiringPi_v2.3.1.zip
+验证是否安装成功
+gpio -v gpio readall  下载编译C语言程序代码
+wget http://cdn.lyq.wiki/res/sensor.c gcc -o sensor sensor.c -lwiringPi  运行程序
+sudo ./sensor 24,39  输出结果，第一个为湿度，第二个为温度
     </div>
 
     
@@ -144,7 +177,68 @@ alair@zb14:~$ lspci|grep less 02:00.0 Network controller: Intel Corporation Wire
 
 <div class="post-info">
     
-        <div class="post-date">2016-08-17</div>
+        <div class="post-date">2015-06-21</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/humidity">#Humidity</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E4%BC%A0%E6%84%9F%E5%99%A8">#传感器</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/seneor">#Seneor</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/temperature">#Temperature</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dht11">#dht11</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/ubuntu-install-ghost-blog-system/">Ubuntu下安装Ghost博客系统</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装Nodejs sudo add-apt-repository ppa:chris-lea/node.js sudo apt-get update sudo apt-get install nodejs  检查是否安装成功
+root@hkvps:~# node -v v0.10.37 root@hkvps:~# npm -v 1.4.28  安装Ghost Ghost下载地址https://ghost.org/download/
+wget https://ghost.org/zip/ghost-0.6.4.zip unzip ghost-0.6.4.zip -d ghost cd ghost npm install --production  运行Ghost
+npm start  可以通过127.0.0.1:2368来访问
+通过nmp start来运行Ghost，退出后就会停止，因此需要一个方法让Ghost一直运行
+让Ghost一直运行 安装forever
+npm install forever -g  进入ghost目录，执行以下命令，让Ghost一直运行
+NODE_ENV=production forever start index.js  停止ghost
+forever stop index.js  查看forever运行列表
+forever list  结合Nginx配置域名 安装Nginx
+sudo apt-get install nginx  编辑配置文件
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-06-06</div>
     
     <div class="post-taxonomies">
         
@@ -159,15 +253,15 @@ alair@zb14:~$ lspci|grep less 02:00.0 Network controller: Intel Corporation Wire
                     
                         <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/debian">#Debian</a></li>
+                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/zbook">#Zbook</a></li>
+                        <li><a href="https://unixetc.com/tags/js">#JS</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/hp">#HP</a></li>
+                        <li><a href="https://unixetc.com/tags/ghost">#ghost</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/inter">#inter</a></li>
+                        <li><a href="https://unixetc.com/tags/nodejs">#nodejs</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/inter7260">#inter7260</a></li>
+                        <li><a href="https://unixetc.com/tags/npm">#npm</a></li>
                     
                 </ul>
         
@@ -177,18 +271,20 @@ alair@zb14:~$ lspci|grep less 02:00.0 Network controller: Intel Corporation Wire
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/hsts-domain-name-replacement-examples/">HSTS域名更换实例</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/nginx-configuration-ssl-certificate/">Nginx配置SSL证书</a></h1>
     </header>
 
     <div class="content post-summary">
-        新入手了its0k.com，原来的alair.cn还继续使用
-在这里需要将alair.cn重定向到its0k.com
-第一次只是将nginx配置文件中的alair.cn全部替换为its0k.com，通过its0k.com浏览新站完全没问题
-但是试着从alair.cn跳转浏览新站，浏览器出现了证书安全告警，告警具体原因为证书未包含alair.cn域名，我才想起来旧域名alair.cn已经添加进了HSTS列表，因此不能简单的只为新域名签名，而是需要证书签名时包含新旧两个域名。
-重新签名了证书，包含以下四个域名
-its0k.com www.its0k.com alair.cn www.alair.cn  以下为更改完成后的nginx配置文件，请注意名相关的部分
-server { listen 443 ssl http2; ssl_certificate /root/ssls/its0k.crt; ssl_certificate_key /root/ssls/its0k.key; ssl_session_timeout 60m; ssl_protocols TLSv1 TLSv1.1 TLSv1.2; ssl_ciphers ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-RC4-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:RC4-SHA:!aNULL:!eNULL:!EXPORT:!DES:!3DES:!MD5:!DSS:!PKS; ssl_prefer_server_ciphers on; ssl_session_cache builtin:1000 shared:SSL:10m; ssl_dhparam /etc/ssl/certs/dhparam.pem; add_header Strict-Transport-Security &quot;max-age=63072000; includeSubdomains; preload&quot;; add_header X-Frame-Options &quot;DENY&quot;; ssl_stapling on; ssl_stapling_verify on; resolver 8.8.8.8 8.8.4.4 valid=300s; resolver_timeout 5s; server_name its0k.com www.its0k.com alair.cn www.alair.cn; access_log off; index index.html index.htm; include /usr/local/nginx/conf/rewrite/ps.conf; root /data/wwwroot/its0k.com/compiled; error_page 403 404 500 503 505 = https://its0k.
+        申请Wosign免费SSL证书 申请地址: https://www.wosign.com/products/free_ssl.htm
+申请成功后，收到类似于aquan.me_sha256_cn.zip的文件,解压后包含如下文件
+for Apache.zip for IIS.zip for Nginx.zip for Other Server.zip for Tomcat.zip  其中for Nginx.zip中包含如下两个文件，将其上传到VPS自定义位置。
+ 1_aquan.me_bundle.crt 2_aquan.me.key  配置Nginx 不多说了，直接贴代码:
+#### Add Wosign SSL Start #### listen 443; ssl on; ssl_certificate /usr/local/nginx/ssl/ssl.crt; ssl_certificate_key /usr/local/nginx/ssl/ssl.key; ssl_session_timeout 5m; ssl_protocols SSLv2 SSLv3 TLSv1; ssl_ciphers ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP; ssl_prefer_server_ciphers on; #### Add Wosign SSL End ####  将以上代码插入listen 80;之后。
+重启Nginx生效
+/etc/init.d/nginx restart  以上设置完成，就可以通过https来浏览网站，同时http也可以浏览。
+合并Wosign根证书 有的浏览器会提示不信任证书，可以通过合并Wosign根证书来解决
+wget https://www.wosign.com/Root/Bundle_DV_St.crt cat Bundle_DV_St.crt &gt;&gt; /usr/local/nginx/ssl/ssl.crt  设置http跳转https 如果想将http跳转至https，可以进行如下设置:
     </div>
 
     
@@ -197,7 +293,7 @@ server { listen 443 ssl http2; ssl_certificate /root/ssls/its0k.crt; ssl_certifi
 
 <div class="post-info">
     
-        <div class="post-date">2016-07-01</div>
+        <div class="post-date">2015-05-25</div>
     
     <div class="post-taxonomies">
         
@@ -210,15 +306,70 @@ server { listen 443 ssl http2; ssl_certificate /root/ssls/its0k.crt; ssl_certifi
             
                 <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/%E5%9F%9F%E5%90%8D">#域名</a></li>
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/domainname">#DomainName</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/hsts">#HSTS</a></li>
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
                     
                         <li><a href="https://unixetc.com/tags/https">#https</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/301">#301</a></li>
+                        <li><a href="https://unixetc.com/tags/ssl">#ssl</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/free">#free</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/wosign">#wosign</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/crt">#crt</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/key">#key</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/typecho-theme-read/">Typecho主题Read</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        闲暇时参考http://www.yinwang.org/修改制作了一个Typecho主题，命名为Read，分享给大家！
+预览图:
+下载地址:read.zip
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-05-21</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/typecho">#typecho</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/php">#php</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/theme">#theme</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E4%B8%BB%E9%A2%98">#主题</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/read">#read</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/css">#css</a></li>
                     
                 </ul>
         
@@ -246,17 +397,24 @@ server { listen 443 ssl http2; ssl_certificate /root/ssls/its0k.crt; ssl_certifi
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,7 +101,7 @@
     </div>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/grub-boot-iso-image-file/">GRUB引导ISO镜像</a></h1>
     </header>
 
@@ -125,7 +161,7 @@ alair@e6440:~$ apt search memdisk 正在排序... 完成 全文搜索... 完成 
 </article>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/ubuntu-modify-the-grub-boot-menu/">ubuntu修改grub引导菜单</a></h1>
     </header>
 
@@ -169,7 +205,7 @@ root@alairpc:~# cat /etc/default/grub # If you change this file, run 'update-gru
 </article>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/centos7-configuration-grub-to-add-the-windows-boot-menu/">Centos7配置grub添加windows引导菜单</a></h1>
     </header>
 
@@ -219,34 +255,76 @@ GRUB_TIMEOUT=2 GRUB_DISTRIBUTOR=&quot;$(sed 's, release .*$,,g' /etc/system-rele
 
 </article>
     
-    
-    
-        
-    <div class="pagination">
-        <div class="left pagination-item disabled">
-            
-        </div>
-        <div class="right pagination-item ">
-            
-                <a href="/tags/grub/page/2/">To old posts</a>
-            
-        </div>
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/repair-grub-boot/">修复grub引导</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        笔记本原来安装的Linux/Windows XP双系统，今天重新安装了Windows7，但是开机的grub引导被搞掉了，找了下grub的man看了半天，摸索出来如何修复原来的grub引导。
+首先，使用Linux live cd引导系统，然后按照以下操作：
+检查分区信息
+ubuntu@ubuntu:~$ sudo -s root@ubuntu:~# lsblk NAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINT sda 8:0 0 465.8G 0 disk ├─sda1 8:1 0 40G 0 part ├─sda2 8:2 0 1K 0 part ├─sda5 8:5 0 4G 0 part [SWAP] ├─sda6 8:6 0 20G 0 part ├─sda7 8:7 0 20G 0 part ├─sda8 8:8 0 100G 0 part ├─sda9 8:9 0 200G 0 part └─sda10 8:10 0 81.
     </div>
 
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2013-12-12</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/grub">#GRUB</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/boot">#boot</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/lsblk">#lsblk</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101236" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101236" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,14 +101,19 @@
     </div>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/raspberry-pi-install-ffmpeg/">树莓派安装ffmpeg</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/assemble-atrix-4g-pc-docking-and-raspberry-pi/">组装ATRIX 4G Laptop Dock和树莓派</a></h1>
     </header>
 
     <div class="content post-summary">
-        先安装h264编码器
-#!/bin/bash cd /usr/src git clone git://git.videolan.org/x264 cd x264 ./configure --host=arm-unknown-linux-gnueabi --enable-static --disable-opencl make sudo make install  下载源码编译安装ffmpeg
-cd /usr/src git clone git://source.ffmpeg.org/ffmpeg.git cd ffmpeg sudo ./configure --arch=armel --target-os=linux --enable-gpl --enable-libx264 --enable-nonfree make sudo make install  由于树莓派原因，这个过程很长……很长…… 建议开screen，然后Ctrl+a+d
+        清单如下：
+ Raspberry Pi B+ Laptop Dock for Motorola ATRIX 4G Micro-HDMI 母对母转接头 HDMI-Micro HDMI 公对公连接线 Micro USB 母对母延长线 USB-Micro USB充电线一根  以下为实物图:
+操作:
+主要是将一个Micro USB母口和一对USB/Micro USb公口相连，然后就可以通过Laptop Dock进行供电，并且链接Laptop Dock键盘。
+下图是一张Laptop Dock接口的照片:
+以下为USB引脚定义:
+ 红 电源+ 白 数据- 绿 数据+ 黑 接地  因此需要将Laptop上的Micro USB引出的电路进行改造，将其中的电源接到Micro USB公口上给树莓派供电，将数据接到USB公口上链接键盘，线路改造图示如下:
+接下来就是考验动手能力了，完成后的实物图如下：
     </div>
 
     
@@ -81,7 +122,7 @@ cd /usr/src git clone git://source.ffmpeg.org/ffmpeg.git cd ffmpeg sudo ./config
 
 <div class="post-info">
     
-        <div class="post-date">2015-11-07</div>
+        <div class="post-date">2015-02-28</div>
     
     <div class="post-taxonomies">
         
@@ -93,8 +134,6 @@ cd /usr/src git clone git://source.ffmpeg.org/ffmpeg.git cd ffmpeg sudo ./config
             
             
                 <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
                         <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
                     
@@ -102,7 +141,15 @@ cd /usr/src git clone git://source.ffmpeg.org/ffmpeg.git cd ffmpeg sudo ./config
                     
                         <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ffmpeg">#ffmpeg</a></li>
+                        <li><a href="https://unixetc.com/tags/laptop-dock">#Laptop Dock</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dock">#Dock</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/motorola">#Motorola</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/atrix-4g">#Atrix 4G</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%91%A9%E6%89%98%E7%BD%97%E6%8B%89">#摩托罗拉</a></li>
                     
                 </ul>
         
@@ -112,15 +159,17 @@ cd /usr/src git clone git://source.ffmpeg.org/ffmpeg.git cd ffmpeg sudo ./config
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/raspberry-pi-allow-root-login/">树莓派开启root登录</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-install-tp-wn322g-drivers/">树莓派安装TP WN322G&#43;驱动</a></h1>
     </header>
 
     <div class="content post-summary">
-        想要通过ssh登录树莓派进行管理，使用默认的pi用户有时真的不便，对于linux老手来说，可以直接开启root用户ssh登录，这就方便多了，方法如下：
-sudo passwd root sudo passwd --unlock root  设置SSH
-sudo vi /etc/ssh/sshd_config  将其中的PermitRootLogin without-password改为PermitRootLogin yes，然后重启ssh服务sudo service ssh restart
-Over!
+        首先查看usb设备
+pi@raspi ~ $ lsusb Bus 001 Device 002: ID 0424:9514 Standard Microsystems Corp. Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub Bus 001 Device 003: ID 0424:ec00 Standard Microsystems Corp. Bus 001 Device 004: ID 0ace:1215 ZyDAS ZD1211B 802.11g  注意，最后一行为无线网卡信息
+打开https://wiki.debian.org/WiFi，查看是否有对照型号的固件
+安装对应的固件
+pi@raspi ~ $ sudo apt-get install zd1211-firmware  完成后使用iwconfig检查是否已经安装成功
+pi@raspi ~ $ iwconfig wlan0 IEEE 802.11bg ESSID:off/any Mode:Managed Access Point: Not-Associated Tx-Power=20 dBm Retry long limit:7 RTS thr:off Fragment thr:off Power Management:off lo no wireless extensions.
     </div>
 
     
@@ -129,7 +178,7 @@ Over!
 
 <div class="post-info">
     
-        <div class="post-date">2015-09-18</div>
+        <div class="post-date">2015-02-07</div>
     
     <div class="post-taxonomies">
         
@@ -141,68 +190,6 @@ Over!
             
             
                 <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/root">#Root</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/udo">#udo</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/sudo">#sudo</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/raspberry-pi-install-minidlna-to-create-digital-media-server/">树莓派安装配置minidlna</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        树莓派挂载移动存储 可以挂载移动硬盘或者大容量的U盘，参考以下文章：
- 树莓派挂载U盘作为存储分区 fdisk分区实例  安装配置minidlna #sudo apt-get install -y minidlna  编辑minidlna配置文件/etc/minidlna.conf，内容如下：
-media_dir=/home/pi/dlnadoc #媒体文件目录 db_dir=/var/lib/minidlna #minidlna通过SQLite来建立媒体库索引，因此需要定义数据库目录 listening_ip=192.168.1.111 #树莓派IP port=8200	#web端口，可以通过ip:port查看索引状态 friendly_name=Raspi_DLNA #服务器命名  重启minidlna服务
-sudo service minidlna restart  强制刷新
-sudo service minidlna force-reload  查看索引状态,浏览http://192.168.1.111:8200
-MiniDLNA status Audio files: 0 Video files: 2 Image files: 0  DLNA客户端 PC
-Windows7下将网络设置为家庭网络，完成后刷新，在网络中媒体设备下就可以自动发现Rasp_DLNA。
-点击进去就可以使用MediaPlayer来浏览。
-Android
-VPlayer+ VPlayer uPnP DLNA Plugin
-IOS
-RushPlayer
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2015-08-06</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
                         <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
                     
@@ -212,15 +199,190 @@ RushPlayer
                     
                         <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/dlna">#dlna</a></li>
+                        <li><a href="https://unixetc.com/tags/tp-link">#TP-Link</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/upnp">#upnp</a></li>
+                        <li><a href="https://unixetc.com/tags/wireless">#wireless</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ms">#ms</a></li>
+                        <li><a href="https://unixetc.com/tags/wn322g&#43;">#wn322g&#43;</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/dms">#dms</a></li>
+                        <li><a href="https://unixetc.com/tags/zd1211">#zd1211</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/vplayer">#vplayer</a></li>
+                        <li><a href="https://unixetc.com/tags/zd1211b">#zd1211b</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/zydas">#zydas</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/lsusb">#lsusb</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-set-timezone-and-ntp/">树莓派设置时区和ntp时间同步</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        设置时区   使用raspi-config设置
+raspi-config
+  Internationalisation Options -&gt; Change Timezone
+ 使用tzselect设置
+tzselect
+  然后根据提示，选择时区
+ 手动设置**/etc/localtime**
+rm /etc/localtime ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+  安装配置NTP sudo apt-get install ntp ntpdate  编辑ntp配置文件**/etc/ntp.conf**，添加以下内容
+server 0.asia.pool.ntp.org server 1.asia.pool.ntp.org server 2.asia.pool.ntp.org server 3.asia.pool.ntp.org  重启ntp服务
+service ntp restart 
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-12-26</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ntp">#ntp</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/tzselect">#tzselect</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ntpdate">#ntpdate</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-mount-udisk-as-the-storage-partition/">树莓派挂载U盘</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        树莓派用的是8g的TF卡，想作为小型NAS有点小，存不了多少东西，于是将一个闲置的32G U盘挂载上，当作存储分区
+以下为操作过程：
+查看磁盘信息
+pi@raspberrypi ~ $ sudo fdisk -l Disk /dev/mmcblk0: 7990 MB, 7990149120 bytes 4 heads, 16 sectors/track, 243840 cylinders, total 15605760 sectors Units = sectors of 1 * 512 = 512 bytes Sector size (logical/physical): 512 bytes / 512 bytes I/O size (minimum/optimal): 512 bytes / 512 bytes Disk identifier: 0x000981cb Device Boot Start End Blocks Id System /dev/mmcblk0p1 8192 122879 57344 c W95 FAT32 (LBA) /dev/mmcblk0p2 122880 15605759 7741440 83 Linux Disk /dev/sda: 32.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-12-11</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ntfs">#NTFS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/fdisk">#fdisk</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/fstab">#fstab</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/udisk">#udisk</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/u%E7%9B%98">#U盘</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nas">#nas</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-install-ngrok/">树莓派使用Ngrok实例</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        首先在ngrok https://ngrok.com/注册登录
+架设已经在树莓派上安装了Nginx，端口为80
+那么下载Linux/ARM版ngrok到树莓派，执行如下命令：
+ngrok -authtoken UfATi0wi98gGMqQ+/GsP 80  其中UfATi0wi98gGMqQ+/GsP为你的auth token
+然后就会出现如下提示:
+Forwarding http://36772918.ngrok.com -&gt; 127.0.0.1:80 Forwarding https://36772918.ngrok.com -&gt; 127.0.0.1:80  按照提示，可以通过那两个二级域名来浏览web服务。
+以上验证只需要输入一次，下次可以直接使用如下命令来运行
+ngrok 80  ngrok其他用法
+ 自定义二级域名  使用自定义的字符串代替系统分配的数字
+ngrok -subdomain mysubd 80    开启密码保护
+ngrok -httpauth &ldquo;user:password&rdquo; 80
+  TCP隧道
+ngrok tcp 22
+  
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-11-26</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ngrok">#ngrok</a></li>
                     
                 </ul>
         
@@ -248,17 +410,24 @@ RushPlayer
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

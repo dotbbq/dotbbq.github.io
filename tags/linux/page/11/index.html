@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101236" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101236" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,18 +101,14 @@
     </div>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/windows10-enabled-linux-subsystem/">Windows10开启Linux子系统</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-install-ffmpeg/">树莓派安装ffmpeg</a></h1>
     </header>
 
     <div class="content post-summary">
-        打开功能 设置-系统-应用和功能，右侧下拉到底，点击“相关设置”下的“程序和功能”
-在打开的“程序和功能”左侧菜单中，找到“启用或关闭windows功能”，点击打开。
-在接下来的“windows功能”菜单中，下拉勾选“适用于linux的windows子系统（beta）”，确认后重启系统。
-开启开发人员模式 设置-更新和安全-针对开发人员，在右侧打开“开发人员模式”
-安装linux子系统 Win+R输入cmd回车，打开cmd
-输入“bash”按照提示安装设置用户名密码即可使用。
-然后就可以使用ubuntu提供的linux子系统了。
+        先安装h264编码器
+#!/bin/bash cd /usr/src git clone git://git.videolan.org/x264 cd x264 ./configure --host=arm-unknown-linux-gnueabi --enable-static --disable-opencl make sudo make install  下载源码编译安装ffmpeg
+cd /usr/src git clone git://source.ffmpeg.org/ffmpeg.git cd ffmpeg sudo ./configure --arch=armel --target-os=linux --enable-gpl --enable-libx264 --enable-nonfree make sudo make install  由于树莓派原因，这个过程很长……很长…… 建议开screen，然后Ctrl+a+d
     </div>
 
     
@@ -85,118 +117,7 @@
 
 <div class="post-info">
     
-        <div class="post-date">2017-03-10</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/windows10">#Windows10</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/bash">#bash</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/termux-package-management/">Termux软件包管理</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        首次安装Termux后，内含一个基础系统，包括apt软件包管理功能，并且集成了一些busybox系统工具。
-其余的软件包可使用apt进行安装管理，命令如下：
-apt update  更新可用软件包清单。
-apt search &lt;query&gt;  按名称搜索可用软件。
-apt install &lt;package&gt;  安装软件
-apt upgrade  更新所有可更新软件。
-apt show &lt;package&gt;  显示软件信息
-apt list  列出可用软件清单
-apt list --installed  列出所有已安装软件清单
-apt remove &lt;package&gt;  卸载已安装软件
-Apt是基于dpkg格式的软件管理工具，一般没必要直接使用dpkg来进行操作，不过以下两个例子可以参考：
-dpkg -L &lt;package&gt;  列出已安装软件
-dpkg --verify  验证已安装软件的完整性
-更多信息请检阅apt manual page (通过apt install man来安装)
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2017-03-09</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/termux">#termux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/terminal">#terminal</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/apt">#apt</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/dpkg">#dpkg</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/fix-raspberry-path-variable/">修复树莓派PATH变量</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        使用lnmp一键工具安装完nmp后，重启进入系统就提示bash command not found
-然后试了试service,who等命令也无法使用
-只有最基本的系统命令ls,cat等可以用
-看来安装lnmp后，我的PATH变量被动了
-先临时修改下PATH，便于后面操作
-export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:$PATH  然后检查~/.profile,/etc/profile是否存在，存在
-检查其中的PATH赋值是否异常
-经过排查，发现/etc/profile中的PATH赋值异常，修改之重启OK！
-在此分享正确的原始~/.profile和/etc/profile文件
-~/.profile 内容
-# ~/.profile: executed by the command interpreter for login shells. # This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login # exists. # see /usr/share/doc/bash/examples/startup-files for examples. # the files are located in the bash-doc package. # the default umask is set in /etc/profile; for setting the umask # for ssh logins, install and configure the libpam-umask package.
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2017-03-03</div>
+        <div class="post-date">2015-11-07</div>
     
     <div class="post-taxonomies">
         
@@ -215,9 +136,224 @@ export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:$PATH  
                     
                         <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/path">#PATH</a></li>
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                        <li><a href="https://unixetc.com/tags/ffmpeg">#ffmpeg</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/linux-mp3-converted-to-ogg/">linux下将mp3转换为ogg</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装软件
+apt-get install mpg321 vorbis-tools  使用如下命令转换
+mpg321 tweet.mp3 -w raw &amp;&amp; oggenc raw -o tweet.ogg &amp;&amp; rm -rf raw  示例:
+root@hkvps:/home/res# mpg321 tweet.mp3 -w raw &amp;&amp; oggenc raw -o tweet.ogg &amp;&amp; rm -rf raw High Performance MPEG 1.0/2.0/2.5 Audio Player for Layer 1, 2, and 3. Version 0.3.2-1 (2012/03/25). Written and copyrights by Joe Drew, now maintained by Nanakos Chrysostomos and others. Uses code from various people. See 'README' for more!
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-10-21</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/mp3">#mp3</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ogg">#ogg</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/mpg321">#mpg321</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/gandi-free-ssl-certificate-usage/">Gandi免费SSL证书使用方法</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        首先澄清此文中的免费不是真的免费，而是新注册或转移域名到Gandi，都可以获得标准版SSL证书一年的免费使用。
+符合以上条件的话，可以进行下面操作了！
+在Gandi上购买SSL证书，选择标准版，在结算的时候系统会自动判断是否免单，正常情况下会0元结单，完成后接着配置SSL证书。
+首先提交CSR，这里需要自己生产CSR。
+在此以3c.lc域名为例，在Ubuntu中操作。
+openssl req -nodes -newkey rsa:2048 -sha1 -keyout 3clc.key -out 3clc.csr  然后根据提示填写以下内容：
+ Country Name (2 letter code) [AU]: #国家代码，中国为CN
+State or Province Name (full name) [Some-State]: #省份
+Locality Name (eg, city) []: #城市
+Organization Name (eg, company) [Internet Widgits Pty Ltd]: #组织名
+Organizational Unit Name (eg, section) []: #部门名
+Common Name (e.g. server FQDN or YOUR name) []:3c.lc #注意，这里需要填写你的域名。
+Email Address []:2b@3c.lc #邮箱
+Please enter the following &lsquo;extra&rsquo; attributes
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-09-24</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%9F%9F%E5%90%8D">#域名</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/lnmp">#lnmp</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssl">#ssl</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gandi">#gandi</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-allow-root-login/">树莓派开启root登录</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        想要通过ssh登录树莓派进行管理，使用默认的pi用户有时真的不便，对于linux老手来说，可以直接开启root用户ssh登录，这就方便多了，方法如下：
+sudo passwd root sudo passwd --unlock root  设置SSH
+sudo vi /etc/ssh/sshd_config  将其中的PermitRootLogin without-password改为PermitRootLogin yes，然后重启ssh服务sudo service ssh restart
+Over!
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-09-18</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/root">#Root</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/udo">#udo</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/sudo">#sudo</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/linux-use-grive-management-google-drive/">Linux下使用grive管理Google Drive</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        找到一个linux下可用的google drive客户端，纯cli操作，值得推荐
+grive项目主页 https://github.com/Grive/grive
+Ubuntu中下通过PPA安装grive
+sudo add-apt-repository ppa:nilarimogard/webupd8 sudo apt-get update sudo apt-get install grive  使用grive同步Google Drive
+mkdir googledrive cd googledrive grive -a  第一次运行，会有验证提示，将提示的url代码粘贴到浏览器中验证帐户，完了后将生成的验证代码粘贴到grive进行验证。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-08-26</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/google">#Google</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ppa">#PPA</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/google-drive">#google drive</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/grive">#grive</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/grive2">#grive2</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/webupd8">#webupd8</a></li>
                     
                 </ul>
         
@@ -245,17 +381,24 @@ export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:$PATH  
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

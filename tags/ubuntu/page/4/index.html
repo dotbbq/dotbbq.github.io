@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070682" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101236" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101236" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,24 +101,16 @@
     </div>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/linux_enable_tcp_bbr/">Linux开启TCP BBR算法</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/install-the-last-version-golang-for-linux/">Linux下安装最新版golang</a></h1>
     </header>
 
     <div class="content post-summary">
-        Linux Kernel 4.9+已经支持tcp_bbr拥塞控制算法，因此建议将内核升级为最新版。
-将内核升级到最新版 Debian/Ubuntu升级最新内核 最新内核下载地址 http://kernel.ubuntu.com/~kernel-ppa/mainline
-下载安装新内核
-wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.10.10/linux-image-4.10.10-041010-generic_4.10.10-041010.201704120813_amd64.deb` dpkg -i linux-image-4.10.10-041010-generic_4.10.10-041010.201704120813_amd64.deb 更新GRUB并且重启
-update-grub reboot Centos 7 升级最新内核 内核下载地址 http://elrepo.org/linux/kernel/el7/x86_64/RPMS/
-安装最新内核
-rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm yum --enablerepo=elrepo-kernel install kernel-ml -y 检查内核是否安装完成
-rpm -qa | grep kernel
-更新GRUB并重启主机
-egrep ^menuentry /etc/grub2.cfg | cut -f 2 -d \&#39; grub2-set-default 0 #default 0表示第一个内核设置为默认运行, 选择最新内核就对了 reboot http://elrepo.org/linux/kernel/下e15、e16分别对应Centos5、Centos6，可参考以上安装
-开启BBR 重启后uname -r 检查内核版本是不是4.9+
-然后执行以下操作
-echo &#34;net.core.default_qdisc=fq&#34; &gt;&gt; /etc/sysctl.conf echo &#34;net.ipv4.tcp_congestion_control=bbr&#34; &gt;&gt; /etc/sysctl.conf sysctl -p sysctl net.
+        ubuntu中可以使用apt-get install golang来安装go，但是版本稍旧
+如果需要安装最新版的golang，那就得自己动手咧
+安装golang 从官网下载最新版，手动安装
+apt-get install build-essential wget https://storage.googleapis.com/golang/go1.4.2.linux-386.tar.gz tar zxf go1.4.2.linux-386.tar.gz cd go/src ./all.bash  设置PATH 安装完成后需要设置PATH才能随地使用go
+export PATH=&quot;/root/go/bin:$PATH&quot;  检查版本 go version go version go1.4.2 linux/386 
     </div>
 
     
@@ -91,7 +119,7 @@ echo &#34;net.core.default_qdisc=fq&#34; &gt;&gt; /etc/sysctl.conf echo &#34;net
 
 <div class="post-info">
     
-        <div class="post-date">2017-04-17</div>
+        <div class="post-date">2015-05-11</div>
     
     <div class="post-taxonomies">
         
@@ -108,13 +136,13 @@ echo &#34;net.core.default_qdisc=fq&#34; &gt;&gt; /etc/sysctl.conf echo &#34;net
                     
                         <li><a href="https://unixetc.com/tags/google">#Google</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/debian">#Debian</a></li>
-                    
                         <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/bbr">#bbr</a></li>
+                        <li><a href="https://unixetc.com/tags/golang">#golang</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/tcp_bbr">#tcp_bbr</a></li>
+                        <li><a href="https://unixetc.com/tags/go">#go</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%B0%B7%E6%AD%8C">#谷歌</a></li>
                     
                 </ul>
         
@@ -124,15 +152,21 @@ echo &#34;net.core.default_qdisc=fq&#34; &gt;&gt; /etc/sysctl.conf echo &#34;net
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/ubuntu-modify-the-grub-boot-menu/">ubuntu修改grub引导菜单</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/install-vpn-on-ubuntu/">Ubuntu下安装VPN</a></h1>
     </header>
 
     <div class="content post-summary">
-        先运行update-grub命令生成一次grub配置，顺便查看一下识别出来的引导菜单内容
-root@alairpc:~# update-grub Generating grub configuration file ... Found linux image: /boot/vmlinuz-4.4.0-21-generic Found initrd image: /boot/initrd.img-4.4.0-21-generic Found memtest86+ image: /boot/memtest86+.elf Found memtest86+ image: /boot/memtest86+.bin Found Windows 7 (loader) on /dev/sda1 done root@alairpc:~#  注意看，以上共有5个菜单项，最后一个是windows7
-接下来我们来看看gurb配置文件/etc/default/grub
-root@alairpc:~# cat /etc/default/grub # If you change this file, run 'update-grub' afterwards to update # /boot/grub/grub.cfg. # For full documentation of the options in this file, see: # info -f grub -n 'Simple configuration' GRUB_DEFAULT=4 #GRUB_HIDDEN_TIMEOUT=0 GRUB_HIDDEN_TIMEOUT_QUIET=true GRUB_TIMEOUT=3 GRUB_DISTRIBUTOR=`lsb_release -i -s 2&gt; /dev/null || echo Debian` GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot; GRUB_CMDLINE_LINUX=&quot;locale=zh_CN&quot; # Uncomment to enable BadRAM filtering, modify to suit your needs # This works with Linux (no patch required) and with any kernel that obtains # the memory map information from GRUB (GNU Mach, kernel of FreeBSD .
+        安装pptpd
+#apt-get install pptpd  IP设置
+#vi /etc/pptpd.conf  添加以下内容:
+localip 192.18.0.1 remoteip 192.168.0.200-230  设置DNS
+#vi/etc/ppp/pptpd-options  添加以下内容：
+ms-dns 192.168.1.1 ms-dns 8.8.8.8  添加用户
+#vi /etc/ppp/chap-secrets  添加以下内容:
+name * passwd *  重启vpn
+#/etc/init.d/pptpd restart  允许ip4访问外网
+#vi /etc/sysctl.conf net.ipv4.ip_forward=1 //取消本行前注释符(*) #sysctl -p 
     </div>
 
     
@@ -141,7 +175,7 @@ root@alairpc:~# cat /etc/default/grub # If you change this file, run 'update-gru
 
 <div class="post-info">
     
-        <div class="post-date">2016-06-27</div>
+        <div class="post-date">2014-02-23</div>
     
     <div class="post-taxonomies">
         
@@ -158,7 +192,9 @@ root@alairpc:~# cat /etc/default/grub # If you change this file, run 'update-gru
                     
                         <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/grub">#GRUB</a></li>
+                        <li><a href="https://unixetc.com/tags/vpn">#VPN</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/pptpd">#pptpd</a></li>
                     
                 </ul>
         
@@ -168,13 +204,17 @@ root@alairpc:~# cat /etc/default/grub # If you change this file, run 'update-gru
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/install-h2o-on-ubuntu/">Ubunt下安装H2O</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/install-vnc-server-on-ubuntu-server/">Ubuntu Server中安装VNC Server</a></h1>
     </header>
 
     <div class="content post-summary">
-        更新系统 apt-get update &amp;&amp; apt-get upgrade -y &amp;&amp; apt-get dist-upgrade -y &amp;&amp; apt-get autoremove --purge -y &amp;&amp; apt-get autoclean -y  安装必备软件 apt-get install locate git cmake build-essential checkinstall autoconf pkg-config libtool python-sphinx wget libcunit1-dev nettle-dev libyaml-dev libuv-dev -y  安装wslay git clone https://github.com/tatsuhiro-t/wslay.git cd wslay/ autoreconf -i automake autoconf ./configure make make install  安装完成后检查lib文件，如下所示：
-ls /usr/local/lib/ libuv.a libuv.so.1 libwslay.la libwslay.so.0.0.1 python3.4 libuv.la libuv.so.1.0.0 libwslay.so pkgconfig libuv.so libwslay.a libwslay.so.0 python2.
+        安装所有软件
+#aptitude install openbox firefox ttf-wqy-microhei #aptitude install vnc4server  设置openbox启动
+#update-alternatives --config x-session-manager 然后选择openbox-session  设置vncserver密码:
+#vncpasswd Password: ****** Verify:*****  运行vncserver
+# vncserver //运行 # vncserver -kill :1 //终止  编辑~/.vnc/xstartup文件
+#vi ~/.vnc/xstartup #!/bin/sh # Uncomment the following two lines for normal desktop: # unset SESSION_MANAGER # exec /etc/X11/xinit/xinitrc [ -x /etc/vnc/xstartup ] &amp;&amp; exec /etc/vnc/xstartup [ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresources xsetroot -solid grey vncconfig -iconic &amp; x-terminal-emulator -geometry 80x24+10+10 -ls -title &quot;$VNCDESKTOP Desktop&quot; &amp; x-window-manager &amp; startx&amp; //添加此行  链接VNC
     </div>
 
     
@@ -183,7 +223,7 @@ ls /usr/local/lib/ libuv.a libuv.so.1 libwslay.la libwslay.so.0.0.1 python3.4 li
 
 <div class="post-info">
     
-        <div class="post-date">2016-03-26</div>
+        <div class="post-date">2013-05-11</div>
     
     <div class="post-taxonomies">
         
@@ -200,11 +240,7 @@ ls /usr/local/lib/ libuv.a libuv.so.1 libwslay.la libwslay.so.0.0.1 python3.4 li
                     
                         <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/openssl">#OpenSSL</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/h2o">#H2O</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/wslay">#wslay</a></li>
+                        <li><a href="https://unixetc.com/tags/vnc">#VNC</a></li>
                     
                 </ul>
         
@@ -222,9 +258,7 @@ ls /usr/local/lib/ libuv.a libuv.so.1 libwslay.la libwslay.so.0.0.1 python3.4 li
                 <a href="/tags/ubuntu/page/3/">To new posts</a>
             
         </div>
-        <div class="right pagination-item ">
-            
-                <a href="/tags/ubuntu/page/5/">To old posts</a>
+        <div class="right pagination-item disabled">
             
         </div>
     </div>
@@ -232,17 +266,24 @@ ls /usr/local/lib/ libuv.a libuv.so.1 libwslay.la libwslay.so.0.0.1 python3.4 li
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

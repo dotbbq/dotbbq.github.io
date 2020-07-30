@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101236" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101236" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,15 +101,17 @@
     </div>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/ssl-security-optimization/">SSL安全优化</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/optimization-vps/">VPS优化</a></h1>
     </header>
 
     <div class="content post-summary">
-        先贴出本站的SSL安全评级,测试地址为https://www.ssllabs.com/ssltest/analyze.html?d=alair.cn
-以下是本站Nginx配置中关于SSL部分
-listen 443 ssl http2; ssl_certificate /etc/letsencrypt/live/alair.cn/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/alair.cn/privkey.pem; ssl_session_timeout 60m; ssl_protocols TLSv1 TLSv1.1 TLSv1.2; ssl_ciphers ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-RC4-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:RC4-SHA:!aNULL:!eNULL:!EXPORT:!DES:!3DES:!MD5:!DSS:!PKS; ssl_prefer_server_ciphers on; ssl_session_cache builtin:1000 shared:SSL:10m; ssl_dhparam /etc/ssl/certs/dhparam.pem; ssl_stapling on; ssl_stapling_verify on; add_header Strict-Transport-Security &quot;max-age=63072000; includeSubdomains; preload&quot;; add_header X-Frame-Options &quot;DENY&quot;;  说明：
-dhparam.pem可以使用openssl dhparam -out dhparam.pem 4096命令生成，这个命令会执行很长时间，也可以将字节数改为2048
+        pdksh替代bash $sudo apt-get install pdksh $sudo vi /etc/shells  添加/bin/pdksh到/etc/shells文件
+$chsh -s /bin/pdksh  重新登录即可。
+修改SSH端口 #vi /etc/ssh/sshd_config  将Port 22中的22改为自定义数字即可
+# /etc/init.d/ssh restart  dropbear替代openssh $sudo apt-get install dropbear $sudo /etc/init.d/ssh stop $sudo vi /etc/default/dropbear  修改NO_START=0,修改DROPBEAR_PORT为自定义端口号
+$sudo /etc/init.d/dropbear start $sudo apt-get remove openssh-server $sudo apt-get autoremove  关闭多余的TTY Ubuntu 12.04 server如下操作
+#cd /etc/init/ #mv tty2.conf tty2.conf.bak #mv tty3.conf tty2.conf.bak #mv tty4.conf tty2.conf.bak #mv tty5.conf tty2.conf.bak #mv tty6.conf tty2.conf.bak #reboot  Debian 7如下操作
     </div>
 
     
@@ -82,7 +120,225 @@ dhparam.pem可以使用openssl dhparam -out dhparam.pem 4096命令生成，这�
 
 <div class="post-info">
     
-        <div class="post-date">2015-12-21</div>
+        <div class="post-date">2014-02-01</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vps">#VPS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/openssh">#OpenSSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/pdksh">#pdksh</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dropbear">#dropbear</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/getty">#getty</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/use-the-ssh-key-to-login-github/">使用SSH密匙登录Github</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        生成ssh密匙文件 ssh-keygen -t rsa -C &quot;user@domain.com&quot;  接下来会提示输入密码，推荐自定义密码，当然也可以置空
+Enter passphrase(empty for no passphrase): Enter same passphrase again:  完成后会在用户目录下的.ssh文件夹中新建id_rsa与is_rsa.pub两个文件。
+添加ssh密匙到github用户 登录至github.com,点击右上角的Account Settings
+在左侧选择SSH Keys菜单，然后在右侧点击Add SSH Key按钮
+将上一步生成的id_rsa.pub文件内容复制进去保存。
+本地连接至github.com ssh -T git@github.com  如果前面设置了passphrase，那么就按照提示输入passphrase。如果置空的话，就直接点击回车。成功后会有如下提示：
+Hi wrchiu! You`ve successfully authenticated, but GitHub does note provide shell access.  参考以上设置完成后，以后git push时就不需要每次输入密码了！
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2013-09-03</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/git">#Git</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/github">#Github</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/rsa">#RSA</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/nokia-n900-and-ssh/">Nokia N900 and SSH</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        N900采用的maemo是基于debian的linux系统，通过自带的application manager管理软件时，操作体验还有待改进，所以这里推荐通过ssh连接，使用cli来进行相应操作。 需要在手机端安装OpenSSH来开启SSH服务，在application manager的system目录下，找到openssh Client and Server安装，当然如果你不需要在手机端进行SSH登陆的话，那可以只安装server即可。 安装时会提示输入密码，这个就是以后连接手机SSH的服务密码。 安装完成后SSH server会默认启动，现在你可以通过wifi连接局域网，然后需要知道自己当前的IP（可以通过Tp-link后台查看，或者手机端安装Personal IP Address开显示)，再推荐安装SSH Status and Swither，可以在手机的status显示SSH状态，并管理SSH server启动/停止。 然后推荐使用Putty进行链接，在CLI模式下管理软件，可以在http://maemo.org/上查看软件目录以及简介，通过apt-get install命令来安装，以下为一些apt-get使用简介
+使用方法: apt-get [选项] 命令 apt-get [选项] install|remove pkg1 [pkg2 &hellip;] apt-get [选项] source pkg1 [pkg2 &hellip;]
+命令:
+update - 更新软件列表 upgrade - 升级软件 install - 安装软件(pkg 是软件名) remove - 删除软件 autoremove - 自动删除一些无效的软件 purge - 删除软件并清理配置 source - 下载软件源码 build-dep - 配置软件源码的build-dependencies dist-upgrade - 升级系统 clean - 清除建立的软件包列表 autoclean - 同上 check - 校验软件包是否有异常  选项:
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2012-04-02</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/apt-get">#apt-get</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/openssh">#OpenSSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nokia">#nokia</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/n900">#n900</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nokia-n900">#nokia n900</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/putty">#putty</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/remove-unnecessary-iphone-language-file/">删除不需要的iPhone语言文件</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        首先，需要iPhone已经越狱，并且安装了OpenSSH
+脚本文件下载：http://cdn.lyq.wiki/res/langpack2.2.zip，解压出脚本文件langpack2.2.sh
+通过itools或者其他管理软件，将脚本文件复制到/var/mobile目录
+通过ssh连接手机，进入/var/mobile目录开始操作 注意：此时请关闭手机的定时锁屏功能，以防意外终止操作而失败！！
+#chmod 777 langpack2.2.sh //为脚本添加执行权限 #./langpack2.2.sh //运行脚本  开始搜索语言包文件，等待。。。。。
+搜索到所有语言包后，开始提示是否删除。
+根据提示，输入y或者n来确定所要删除的语言包，根据需要筛选。
+所有选择完成后，会提示所有将要删除的语言包，再次确认删除与否（y或n），开始删除过程。。。
+删除完成后，会提示所删除的语言包数量，并且提示是否删除该脚本文件
+注意：进行完以上操作后，建议马上修改SSH密码，以防止感染蠕虫病毒！！
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2012-04-02</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/cydia">#Cydia</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/iphone">#iPhone</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/jailbreak">#Jailbreak</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/apple">#Apple</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/openssh">#OpenSSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/itools">#itools</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/langpack2.2.sh">#langpack2.2.sh</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/lnmp-usages/">LNMP使用实例</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装LNMP 更新系统
+#yum check-update #yum update  安装Screen
+#yum install screen  开始安装Lnmp
+#screen -S lnmp #wget -c http://soft.vpser.net/lnmp/lnmp0.8.tar.gz //最新版请查阅lnmp官网 #tar zxvf lnmp0.8.tar.gz #./lnmp0.8/centos.sh | tee lnmp.log //输出log文件，以备出错时查阅  接下来按照提示设定域名和MysQL密码，程序会自动下载相关程序，而后编译安装
+安装PureFTP
+#./lnmp0.8/pureftp.sh  按提示输入MySQL和Ftp管理员密码，安装完成后可以通过http://vpsip/ftp/来登录管理ftp帐号
+使用Lnmp 添加虚拟主机
+#/root/vhost.sh  按照提示填入域名、目录、rewrite规则文件，如下所示：
+root@buyvm256:~#/root/vhost.sh ========================================================================= Add Virtual Host for LNMP V0.9 , Written by Licess ========================================================================= LNMP is a tool to auto-compile &amp; install Nginx+MySQL+PHP on Linux This script is a tool to add virtual host for nginx For more information please visit http://www.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2012-03-23</div>
     
     <div class="post-taxonomies">
         
@@ -99,122 +355,17 @@ dhparam.pem可以使用openssl dhparam -out dhparam.pem 4096命令生成，这�
                     
                         <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/https">#https</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ssl">#ssl</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/http2">#http2</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/dhparam">#dhparam</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/transfer-files-using-scp/">使用SCP传输文件</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        示例：用户名root 地址 2.33.153.67
-下载文件 scp root@2.33.153.67:/root/test.mp4 /home/pi/  将服务器上的/root/test.mp4下载到本地/home/pi文件夹
-上传文件 scp /home/pi/ok.txt root@2.33.153.67:/root  将本地/home/pi/ok.txt上传至服务器/root文件夹
-下载文件夹 scp -r root@2.33.153.67:/root/ebooks /home/pi  将服务器上的/root/ebooks文件夹下载至本地/home/pi下
-上传文件夹 scp -r /home/pi/music root@2.33.153.67:/media  将本地/home/pi/music文件夹上传至服务器/media下
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2015-12-08</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                        <li><a href="https://unixetc.com/tags/mysql">#MySQL</a></li>
                     
                         <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/scp">#scp</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/gandi-free-ssl-certificate-usage/">Gandi免费SSL证书使用方法</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        首先澄清此文中的免费不是真的免费，而是新注册或转移域名到Gandi，都可以获得标准版SSL证书一年的免费使用。
-符合以上条件的话，可以进行下面操作了！
-在Gandi上购买SSL证书，选择标准版，在结算的时候系统会自动判断是否免单，正常情况下会0元结单，完成后接着配置SSL证书。
-首先提交CSR，这里需要自己生产CSR。
-在此以3c.lc域名为例，在Ubuntu中操作。
-openssl req -nodes -newkey rsa:2048 -sha1 -keyout 3clc.key -out 3clc.csr  然后根据提示填写以下内容：
- Country Name (2 letter code) [AU]: #国家代码，中国为CN
-State or Province Name (full name) [Some-State]: #省份
-Locality Name (eg, city) []: #城市
-Organization Name (eg, company) [Internet Widgits Pty Ltd]: #组织名
-Organizational Unit Name (eg, section) []: #部门名
-Common Name (e.g. server FQDN or YOUR name) []:3c.lc #注意，这里需要填写你的域名。
-Email Address []:2b@3c.lc #邮箱
-Please enter the following &lsquo;extra&rsquo; attributes
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2015-09-24</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E5%9F%9F%E5%90%8D">#域名</a></li>
                     
                         <li><a href="https://unixetc.com/tags/lnmp">#lnmp</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ssl">#ssl</a></li>
+                        <li><a href="https://unixetc.com/tags/php">#php</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/gandi">#gandi</a></li>
+                        <li><a href="https://unixetc.com/tags/ftp">#ftp</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/pureftp">#pureftp</a></li>
                     
                 </ul>
         
@@ -242,17 +393,24 @@ Please enter the following &lsquo;extra&rsquo; attributes
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

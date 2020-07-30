@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101236" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101236" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,15 +101,25 @@
     </div>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/raspberry-pi-install-nodejs/">树莓派安装Node.js</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-install-ngrok/">树莓派使用Ngrok实例</a></h1>
     </header>
 
     <div class="content post-summary">
-        首先查看树莓派cpu信息
-pi@raspi:~ $ cat /proc/cpuinfo processor : 0 model name : ARMv6-compatible processor rev 7 (v6l) BogoMIPS : 2.00 Features : half thumb fastmult vfp edsp java tls CPU implementer : 0x41 CPU architecture: 7 CPU variant : 0x0 CPU part : 0xb76 CPU revision : 7 Hardware : BCM2708 Revision : 000e Serial : 000000004a8acb6d  看清楚cpu构架，是ARMv6
-然后在node.js官网下载对应版本的包，下载地址https://nodejs.org/dist/
-# wget https://nodejs.org/dist/v4.2.2/node-v4.2.2-linux-arm64.tar.gz # tar zxf node-v4.2.2-linux-arm64.tar.gz # mv node-v4.2.2-linux-arm64 /usr/nodejs422  方便使用期间，做个链接
+        首先在ngrok https://ngrok.com/注册登录
+架设已经在树莓派上安装了Nginx，端口为80
+那么下载Linux/ARM版ngrok到树莓派，执行如下命令：
+ngrok -authtoken UfATi0wi98gGMqQ+/GsP 80  其中UfATi0wi98gGMqQ+/GsP为你的auth token
+然后就会出现如下提示:
+Forwarding http://36772918.ngrok.com -&gt; 127.0.0.1:80 Forwarding https://36772918.ngrok.com -&gt; 127.0.0.1:80  按照提示，可以通过那两个二级域名来浏览web服务。
+以上验证只需要输入一次，下次可以直接使用如下命令来运行
+ngrok 80  ngrok其他用法
+ 自定义二级域名  使用自定义的字符串代替系统分配的数字
+ngrok -subdomain mysubd 80    开启密码保护
+ngrok -httpauth &ldquo;user:password&rdquo; 80
+  TCP隧道
+ngrok tcp 22
+  
     </div>
 
     
@@ -82,7 +128,7 @@ pi@raspi:~ $ cat /proc/cpuinfo processor : 0 model name : ARMv6-compatible proce
 
 <div class="post-info">
     
-        <div class="post-date">2015-12-03</div>
+        <div class="post-date">2014-11-26</div>
     
     <div class="post-taxonomies">
         
@@ -101,21 +147,9 @@ pi@raspi:~ $ cat /proc/cpuinfo processor : 0 model name : ARMv6-compatible proce
                     
                         <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/js">#JS</a></li>
-                    
                         <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/npm">#npm</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/node.js">#node.js</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ode">#ode</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/node">#node</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/arm6">#arm6</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/cpuinfo">#cpuinfo</a></li>
+                        <li><a href="https://unixetc.com/tags/ngrok">#ngrok</a></li>
                     
                 </ul>
         
@@ -125,23 +159,15 @@ pi@raspi:~ $ cat /proc/cpuinfo processor : 0 model name : ARMv6-compatible proce
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/raspberry-pi-install-minidlna-to-create-digital-media-server/">树莓派安装配置minidlna</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/modify-the-raspberry-pi-swap-size/">修改树莓派Swap</a></h1>
     </header>
 
     <div class="content post-summary">
-        树莓派挂载移动存储 可以挂载移动硬盘或者大容量的U盘，参考以下文章：
- 树莓派挂载U盘作为存储分区 fdisk分区实例  安装配置minidlna #sudo apt-get install -y minidlna  编辑minidlna配置文件/etc/minidlna.conf，内容如下：
-media_dir=/home/pi/dlnadoc #媒体文件目录 db_dir=/var/lib/minidlna #minidlna通过SQLite来建立媒体库索引，因此需要定义数据库目录 listening_ip=192.168.1.111 #树莓派IP port=8200	#web端口，可以通过ip:port查看索引状态 friendly_name=Raspi_DLNA #服务器命名  重启minidlna服务
-sudo service minidlna restart  强制刷新
-sudo service minidlna force-reload  查看索引状态,浏览http://192.168.1.111:8200
-MiniDLNA status Audio files: 0 Video files: 2 Image files: 0  DLNA客户端 PC
-Windows7下将网络设置为家庭网络，完成后刷新，在网络中媒体设备下就可以自动发现Rasp_DLNA。
-点击进去就可以使用MediaPlayer来浏览。
-Android
-VPlayer+ VPlayer uPnP DLNA Plugin
-IOS
-RushPlayer
+        树莓派的swap大小在/etc/dphys-swapfile中定义，默认为100M
+pi@raspi:~$ cat /etc/dphys-swapfile CONF_SWAPSIZE=1000 pi@raspi:/mnt$ free -h total used free shared buffers cached Mem: 437M 36M 401M 0B 2.1M 12M -/+ buffers/cache: 22M 415M Swap: 99M 0B 99M pi@raspi:/mnt$  可以自己修改CONF_SWAPSIZE的值，单位为兆(MB)
+修改后重启树莓派生效，如下：
+pi@raspi:~$ cat /etc/dphys-swapfile CONF_SWAPSIZE=1000 pi@raspi:~$ free -h total used free shared buffers cached Mem: 437M 53M 383M 0B 7.9M 23M -/+ buffers/cache: 22M 415M Swap: 999M 0B 999M 
     </div>
 
     
@@ -150,7 +176,61 @@ RushPlayer
 
 <div class="post-info">
     
-        <div class="post-date">2015-08-06</div>
+        <div class="post-date">2014-10-30</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/swap">#swap</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/free">#free</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dphys-swapfile">#dphys-swapfile</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/use-tl-wn725n-in-raspberry-pi/">树莓派中使用TL-WN725N</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        Raspbian版本 2014-01-07-wheezy-raspbian.img
+下载地址为http://cdn.lyq.wiki/res/8188eu-20140616.tar.gz
+首先固网链接树莓派，通过SSH登录
+wget http://cdn.lyq.wiki/res/8188eu_31024_614.zip unzip 8188eu_31024_614.zip sudo mv 8188eu.ko /lib/modules/`uname -r`/kernel/drivers/net/wireless sudo chown root:root /lib/modules/`uname -r`/kernel/drivers/net/wireless/8188eu.ko sudo mv rtl8188eufw.bin /lib/firmware/rtlwifi/ sudo chown root:root /lib/firmware/rtlwifi/rtl8188eufw.bin sudo depmod -a sudo modprobe 8188eu  然后编辑/etc/netwok/interfaces，添加以下内容
+allow-hotplug wlan0 auto wlan0 iface wlan0 inet manual wpa-roam /etc/mywpa.conf iface default inet dhcp  新建mywpa.conf写入链接配置vi /etc/mywpa.conf
+network={ ssid=&quot;YOUR SSID&quot; proto=RSN key_mgmt=WPA-PSK pairwise=CCMP TKIP group=CCMP TKIP psk=&quot;YOUR PASSWORD&quot; }  重启系统
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-08-12</div>
     
     <div class="post-taxonomies">
         
@@ -173,15 +253,15 @@ RushPlayer
                     
                         <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/dlna">#dlna</a></li>
+                        <li><a href="https://unixetc.com/tags/tp-link">#TP-Link</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/upnp">#upnp</a></li>
+                        <li><a href="https://unixetc.com/tags/tl-wn735n">#TL-WN735N</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ms">#ms</a></li>
+                        <li><a href="https://unixetc.com/tags/wn725n">#wn725n</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/dms">#dms</a></li>
+                        <li><a href="https://unixetc.com/tags/wireless">#wireless</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/vplayer">#vplayer</a></li>
+                        <li><a href="https://unixetc.com/tags/%E6%97%A0%E7%BA%BF%E7%BD%91%E5%8D%A1">#无线网卡</a></li>
                     
                 </ul>
         
@@ -191,17 +271,14 @@ RushPlayer
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/raspberry-pi-install-tp-wn322g-drivers/">树莓派安装TP WN322G&#43;驱动</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-install-tonido-build-personal-cloud/">树莓派安装Tonido打造个人云服务</a></h1>
     </header>
 
     <div class="content post-summary">
-        首先查看usb设备
-pi@raspi ~ $ lsusb Bus 001 Device 002: ID 0424:9514 Standard Microsystems Corp. Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub Bus 001 Device 003: ID 0424:ec00 Standard Microsystems Corp. Bus 001 Device 004: ID 0ace:1215 ZyDAS ZD1211B 802.11g  注意，最后一行为无线网卡信息
-打开https://wiki.debian.org/WiFi，查看是否有对照型号的固件
-安装对应的固件
-pi@raspi ~ $ sudo apt-get install zd1211-firmware  完成后使用iwconfig检查是否已经安装成功
-pi@raspi ~ $ iwconfig wlan0 IEEE 802.11bg ESSID:off/any Mode:Managed Access Point: Not-Associated Tx-Power=20 dBm Retry long limit:7 RTS thr:off Fragment thr:off Power Management:off lo no wireless extensions.
+        安装Tonido sudo mkdir /usr/local/tonido cd /usr/local/tonido sudo wget http://patch.codelathe.com/tonido/live/installer/armv6l-rpi/tonido.tar.gz sudo tar -zxvf tonido.tar.gz ./tonido.sh start  浏览器打开http://ip:10001开始注册设置 ip为树莓派的地址
+安装多媒体解码器 Tonido支持在线播放音频，但需要安装设置解码器
+cd /usr/local/tonido sudo apt-get install ffmpeg sudo ln -s /usr/bin/ffmpeg ffmpeg.exe sudo ln -s /usr/bin/ffmpeg ffmpegv.exe  设置开机启动  下载脚本文件tonido wget http://cdn.lyq.wiki/res/tonido 设置脚本权限 sudo cp tonido /etc/init.d/ sudo chmod +x /etc/init.d/tonido 安装脚本 sudo update-rc.d tonido defaults  客户端下载 Tonido Sync for Windows http://www.tonido.com/download.php?TonidoSync.exe Tonido Sync for Mac http://www.tonido.com/download.php?TonidoSync.dmg Tonido Sync for Linux http://www.
     </div>
 
     
@@ -210,7 +287,7 @@ pi@raspi ~ $ iwconfig wlan0 IEEE 802.11bg ESSID:off/any Mode:Managed Access Poin
 
 <div class="post-info">
     
-        <div class="post-date">2015-02-07</div>
+        <div class="post-date">2014-08-12</div>
     
     <div class="post-taxonomies">
         
@@ -231,19 +308,59 @@ pi@raspi ~ $ iwconfig wlan0 IEEE 802.11bg ESSID:off/any Mode:Managed Access Poin
                     
                         <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/tp-link">#TP-Link</a></li>
+                        <li><a href="https://unixetc.com/tags/tonido">#tonido</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/wireless">#wireless</a></li>
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-modify-software-source/">树莓派修改软件源</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        中国国内推荐阿里云的开源镜像服务，地址为http://mirrors.aliyun.com/
+vi /etc/apt/sources.list  将默认的raspbian.org源注释(#)掉，加入阿里云的raspbian源
+deb http://mirrors.aliyun.com/raspbian/raspbian/ jessie main non-free contrib deb-src http://mirrors.aliyun.com/raspbian/raspbian/ jessie main non-free contrib  更新系统
+apt-get update&amp;&amp;apt-get upgrade -y 
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-03-10</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/wn322g&#43;">#wn322g&#43;</a></li>
+                        <li><a href="https://unixetc.com/tags/apt-get">#apt-get</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/zd1211">#zd1211</a></li>
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/zd1211b">#zd1211b</a></li>
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/zydas">#zydas</a></li>
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/lsusb">#lsusb</a></li>
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/apt">#apt</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/sources.list">#sources.list</a></li>
                     
                 </ul>
         
@@ -271,17 +388,24 @@ pi@raspi ~ $ iwconfig wlan0 IEEE 802.11bg ESSID:off/any Mode:Managed Access Poin
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

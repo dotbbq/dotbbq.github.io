@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,7 +101,7 @@
     </div>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/hsts-domain-name-replacement-examples/">HSTS域名更换实例</a></h1>
     </header>
 
@@ -116,7 +152,7 @@ server { listen 443 ssl http2; ssl_certificate /root/ssls/its0k.crt; ssl_certifi
 </article>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/letsencrypt-certificate-quickly-generate-script/">Let&#39;s encrypt 证书快速生成脚本</a></h1>
     </header>
 
@@ -167,7 +203,7 @@ root@rnse:~/lesh#chmod +x letsencrypt.sh root@rnse:~/lesh# ./letsencrypt.sh lets
 </article>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/ssl-security-optimization/">SSL安全优化</a></h1>
     </header>
 
@@ -218,34 +254,134 @@ dhparam.pem可以使用openssl dhparam -out dhparam.pem 4096命令生成，这�
 
 </article>
     
-    
-    
-        
-    <div class="pagination">
-        <div class="left pagination-item disabled">
-            
-        </div>
-        <div class="right pagination-item ">
-            
-                <a href="/tags/https/page/2/">To old posts</a>
-            
-        </div>
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/use-letsencrypt-free-ssl-certificate/">使用免费Let&#39;s Encrypt证书</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        在此介绍如何使用Let&rsquo;s Encrypt的免费SSL证书，需要在有管理权限的VPS上操作，然后参考以下方法自签域名证书。
+git clone https://github.com/letsencrypt/letsencrypt.git cd letsencrypt mkdir -p /home/webroot/.well-known/acme-challenge #/home/webroot为网站目录 ./letsencrypt-auto certonly --email me@alair.cn -d alair.cn,www.alair.cn --webroot -w /home/webroot --agree-tos #注意email、域名、和网站目录  签发成功后，会提示如/etc/letsencrypt/live/www.alair.cn/fullchain.pem;的证书路径信息。
+IMPORTANT NOTES: - Congratulations! Your certificate and chain have been saved at /etc/letsencrypt/live/www.alair.cn/fullchain.pem. Your cert will expire on 2016-03-14. To obtain a new version of the certificate in the future, simply run Let's Encrypt again. - If like Let's Encrypt, please consider supporting our work by: Donating to ISRG / Let's Encrypt: https://letsencrypt.
     </div>
 
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-12-15</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/https">#https</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssl">#ssl</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/letsencrypt">#letsencrypt</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%85%8D%E8%B4%B9%E8%AF%81%E4%B9%A6">#免费证书</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/nginx-configuration-ssl-certificate/">Nginx配置SSL证书</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        申请Wosign免费SSL证书 申请地址: https://www.wosign.com/products/free_ssl.htm
+申请成功后，收到类似于aquan.me_sha256_cn.zip的文件,解压后包含如下文件
+for Apache.zip for IIS.zip for Nginx.zip for Other Server.zip for Tomcat.zip  其中for Nginx.zip中包含如下两个文件，将其上传到VPS自定义位置。
+ 1_aquan.me_bundle.crt 2_aquan.me.key  配置Nginx 不多说了，直接贴代码:
+#### Add Wosign SSL Start #### listen 443; ssl on; ssl_certificate /usr/local/nginx/ssl/ssl.crt; ssl_certificate_key /usr/local/nginx/ssl/ssl.key; ssl_session_timeout 5m; ssl_protocols SSLv2 SSLv3 TLSv1; ssl_ciphers ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP; ssl_prefer_server_ciphers on; #### Add Wosign SSL End ####  将以上代码插入listen 80;之后。
+重启Nginx生效
+/etc/init.d/nginx restart  以上设置完成，就可以通过https来浏览网站，同时http也可以浏览。
+合并Wosign根证书 有的浏览器会提示不信任证书，可以通过合并Wosign根证书来解决
+wget https://www.wosign.com/Root/Bundle_DV_St.crt cat Bundle_DV_St.crt &gt;&gt; /usr/local/nginx/ssl/ssl.crt  设置http跳转https 如果想将http跳转至https，可以进行如下设置:
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-05-25</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/https">#https</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssl">#ssl</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/free">#free</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/wosign">#wosign</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/crt">#crt</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/key">#key</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

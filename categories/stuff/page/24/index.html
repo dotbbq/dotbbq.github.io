@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,22 +101,20 @@
     </div>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/fix-raspberry-path-variable/">修复树莓派PATH变量</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/use-xively-monitor-raspberry-pi/">Xively与树莓派监控温度与湿度</a></h1>
     </header>
 
     <div class="content post-summary">
-        使用lnmp一键工具安装完nmp后，重启进入系统就提示bash command not found
-然后试了试service,who等命令也无法使用
-只有最基本的系统命令ls,cat等可以用
-看来安装lnmp后，我的PATH变量被动了
-先临时修改下PATH，便于后面操作
-export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:$PATH  然后检查~/.profile,/etc/profile是否存在，存在
-检查其中的PATH赋值是否异常
-经过排查，发现/etc/profile中的PATH赋值异常，修改之重启OK！
-在此分享正确的原始~/.profile和/etc/profile文件
-~/.profile 内容
-# ~/.profile: executed by the command interpreter for login shells. # This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login # exists. # see /usr/share/doc/bash/examples/startup-files for examples. # the files are located in the bash-doc package. # the default umask is set in /etc/profile; for setting the umask # for ssh logins, install and configure the libpam-umask package.
+        进入https://www.xively.com/注册登录
+添加设备(Add Device) 在Development Devices页面点击Add Device添加设备
+填写Device Name和Device Description，将Privacy设定为Public Device
+设置API Key 进入Device详情页，在API Keys中点击Add Key添加一个Key,将Permissions中的Read,Create,Update,Delete全部勾选，Label随便填。
+向Xively提交数据 在这里通过CURL向xively提交JSON格式的数据
+JSON数据格式
+{ &quot;datastreams&quot;: [ { &quot;id&quot;: &quot;load&quot;, &quot;current_value&quot;: &quot;9.00&quot; }, { &quot;id&quot;: &quot;temp&quot;, &quot;current_value&quot;: &quot;89.15&quot; } ] }  其中每个id为数据定义的idcurrent_value为提交的值
+脚本文件send_xively.sh
+#!/bin/bash LOCATION='/home/pi/xively_data' #Path of Xively JSON DATA file API_KEY='orxUhgjqSYPDbv5243534tG65464345eArxSVY9pE8ITnE' #API Key FEED_ID='1354438558' #FEED_ID #################################################### COSM_URL=https://api.xively.com/v2/feeds/${FEED_ID}?timezone=+8 cpu_load=`cat /proc/loadavg | awk '{print $2}'` sen_t=`sudo /home/pi/st` sen_h=`sudo /home/pi/sh` for i in 1 2 3 4 5; do cpu_t=`cat /sys/class/thermal/thermal_zone0/temp | awk '{print $1/1000}'` if [[ &quot;${cpu_t}&quot; =~ ^- ]] then cpu_t='0.
     </div>
 
     
@@ -89,7 +123,7 @@ export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:$PATH  
 
 <div class="post-info">
     
-        <div class="post-date">2017-03-03</div>
+        <div class="post-date">2015-07-14</div>
     
     <div class="post-taxonomies">
         
@@ -108,9 +142,25 @@ export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:$PATH  
                     
                         <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/path">#PATH</a></li>
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                        <li><a href="https://unixetc.com/tags/humidity">#Humidity</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E4%BC%A0%E6%84%9F%E5%99%A8">#传感器</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%B9%BF%E5%BA%A6">#湿度</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%B8%A9%E5%BA%A6">#温度</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/xively">#Xively</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/json">#JSON</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/seneor">#Seneor</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%89%A9%E8%81%94%E7%BD%91">#物联网</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/temperature">#Temperature</a></li>
                     
                 </ul>
         
@@ -120,24 +170,15 @@ export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:$PATH  
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/qiniu-batch-operation/">七牛云qshell工具批量操作</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/use-pioneer-replace-to-segment-the-text-file/">使用Replace Pioneer按行分割文本</a></h1>
     </header>
 
     <div class="content post-summary">
-        为了方便管理七牛云，官方放出了一个工具-qshell
- qshell是利用七牛文档上公开的API实现的一个方便开发者测试和使用七牛API服务的命令行工具。
- 使用qshell可以方便的进行批量操作，包括批量上传、批量下载、批量删除等等……
-首先，从https://u18418398.pipipan.com/fs/18418398-314035000下载官方提供的qshell，里面包含多个平台。
- qshell_linux_386	Linux 32位系统 qshell_linux_amd64	Linux 64位系统 qshell_linux_arm	Linux ARM CPU qshell_windows_386.exe	Windows 32位系统 qshell_windows_amd64.exe	Windows 64位系统 qshell_darwin_386	Mac 32位系统，这种系统很老了 qshell_darwin_amd64	Mac 64位系统，主流的系统  解压后，将对应的版本软件放到自定义目录
-在此以windows版实例操作
-帐号设置 使用qshell前，需要进行帐号验证，可以通过qshell account ak sk格式来进行验证，其中ak和sk对应个人面板-&gt;密匙管理中的AccessKey/SecretKey
-qshell account yW!DRel0y8ERbjw%so^?X8 6pfC4OlL$TZtjpNuR4bLxRsD  设置完成后，可以通过qshell account来查看已设置帐号详情
-qshell account AccessKey:yW!DRel0y8ERbjw%so^?X8 SecretKey:6pfC4OlL$TZtjpNuR4bLxRsD  设置完帐号后，我们就可以使用qshell对帐号对应的空间进行操作
-列出当前帐号下所有空间 qshell buckets cname  cname为空间名
-列出空间中所有文件 qshell listbucket cname cname.list.txt  cname为空间名,cname.list.txt为结果输出文件。
-批量上传 qshell qupload up.cfg  up.cfg上传操作配置文件，如下：
-{ &quot;src_dir&quot; : &quot;D:\\abc&quot;, &quot;bucket&quot; : &quot;cname&quot; }  src_dir为本地文件夹，Wdinwos下必须使用如上格式
+        Replace Pioneer下载地址 http://www.mind-pioneer.com/replace/Download.html
+安装后打开，Ctrl+O加载文本文件
+File -&gt; Save As -&gt; Save to files&ndash;split by lines/chars/bytes
+然后选择分割方式，注意批量命名的 # 的个数
     </div>
 
     
@@ -146,7 +187,7 @@ qshell account AccessKey:yW!DRel0y8ERbjw%so^?X8 SecretKey:6pfC4OlL$TZtjpNuR4bLxR
 
 <div class="post-info">
     
-        <div class="post-date">2017-02-12</div>
+        <div class="post-date">2015-07-10</div>
     
     <div class="post-taxonomies">
         
@@ -159,13 +200,13 @@ qshell account AccessKey:yW!DRel0y8ERbjw%so^?X8 SecretKey:6pfC4OlL$TZtjpNuR4bLxR
             
                 <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/qiniu">#qiniu</a></li>
+                        <li><a href="https://unixetc.com/tags/replace-pioneer">#Replace Pioneer</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/batch">#batch</a></li>
+                        <li><a href="https://unixetc.com/tags/%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86">#批量处理</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/qshell">#qshell</a></li>
+                        <li><a href="https://unixetc.com/tags/segment">#segment</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/%E4%B8%83%E7%89%9B%E4%BA%91">#七牛云</a></li>
+                        <li><a href="https://unixetc.com/tags/%E6%8C%89%E8%A1%8C%E5%88%86%E5%89%B2">#按行分割</a></li>
                     
                 </ul>
         
@@ -175,20 +216,18 @@ qshell account AccessKey:yW!DRel0y8ERbjw%so^?X8 SecretKey:6pfC4OlL$TZtjpNuR4bLxR
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/pcd8544-library-for-raspberry-pi/">树莓派可用的PCD8544库</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/verzion-iphone5c-open-chinatelecom-4g/">V版本iPhone5C开启中国电信4G</a></h1>
     </header>
 
     <div class="content post-summary">
-        Nokia 3310/5110显示器基于PCD8544，在此分享一个树莓派可用的PCD8544库
-使用该库之前，需要安装wiringPi,安装方法可参考树莓派连接DHT11采集温度与湿度
-项目地址：
-https://github.com/binerry/RaspberryPi/tree/master/libraries/c/PCD8544  可通过github download直接下载,不能访问github的，用以下连接下载
-http://cdn.lyq.wiki/res/Raspberry.Pi_PCD8544.Library.zip  解压后，可得到一个c源码和一个h头文件
-PCD8544.c PCD8544.h  以及samples文件夹下的三个示例
-pcd8544_rpi.c pcd8544_test.c pcd8544_test2.c  按照下图所示连接好树莓派和显示器
- RST —— 复位 接GPIO 0 CE —— 片选 接GPIO 1 或 不接 DC —— 数据/指令选择 接GPIO 2 DIN —— 串行数据线 接GPIO 3 CLK —— 串行时钟线 接GPIO 5 （因为我的GPIO 4已经接了一个DHT11传感器） VCC —— 电源输入 接3.3v BL —— 背光控制端 接3.3v GND —— 地线 接地  编译三个示例程序
-cc -o pcd8544_test pcd8544_test.c ../PCD8544.c -L/usr/local/lib -lwiringPi cc -o pcd8544_test2 pcd8544_test2.
+        首先，使用太极越狱将手机越狱 http://www.taig.com/
+在Cydia中添加http://apt.chinasnow.net源，搜索安装CommCenter patch for ios8
+设置iTunes可以刷入运营商文件(.ipcc)
+Win+R打开运行窗口，输入&quot;%ProgramFiles%\iTunes\iTunes.exe&quot; /setPrefInt carrier-testing 1
+下载运营商文件http://cdn.lyq.wiki/res/ipccs.zip
+打开iTunes，链接手机到电脑，Shift+更新，选择相对应系统版本的运营商文件
+完成后重启手机OK！
     </div>
 
     
@@ -197,7 +236,7 @@ cc -o pcd8544_test pcd8544_test.c ../PCD8544.c -L/usr/local/lib -lwiringPi cc -o
 
 <div class="post-info">
     
-        <div class="post-date">2017-01-20</div>
+        <div class="post-date">2015-07-10</div>
     
     <div class="post-taxonomies">
         
@@ -210,21 +249,131 @@ cc -o pcd8544_test pcd8544_test.c ../PCD8544.c -L/usr/local/lib -lwiringPi cc -o
             
                 <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                        <li><a href="https://unixetc.com/tags/cydia">#Cydia</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                        <li><a href="https://unixetc.com/tags/iphone">#iPhone</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/nokia">#nokia</a></li>
+                        <li><a href="https://unixetc.com/tags/jailbreak">#Jailbreak</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/%E8%AF%BA%E5%9F%BA%E4%BA%9A">#诺基亚</a></li>
+                        <li><a href="https://unixetc.com/tags/apple">#Apple</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/pcd8544">#pcd8544</a></li>
+                        <li><a href="https://unixetc.com/tags/%E8%B6%8A%E7%8B%B1">#越狱</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/3310">#3310</a></li>
+                        <li><a href="https://unixetc.com/tags/4g">#4G</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/5110">#5110</a></li>
+                        <li><a href="https://unixetc.com/tags/verzion">#Verzion</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/wiringpi">#wiringpi</a></li>
+                        <li><a href="https://unixetc.com/tags/iphone5c">#iPhone5C</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/lte">#LTE</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E4%B8%AD%E5%9B%BD%E7%94%B5%E4%BF%A1">#中国电信</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/itunes">#iTunes</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/chinasnow">#chinasnow</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/godaddy-domain-transferred-to-the-hichina/">将域名从Godaddy转移到万网</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        准备将ltecn.com从Godaddy转到万网
+首先在Godaddy的域名管理中，将域名解锁,将Lock状态设置为Off
+然后你会收到一封标题为Domain Status Notification的邮件，提醒你域名状态已经修改为Unlocked
+然后将authorization code发送到你的邮箱
+Godaddy会发送一封标题为LTECN.COM - Information You Requested的邮件，里面有你的验证码，邮件内容如下：
+Customer Account: 888888884 Domain Name: LTECN.COM Authorization Code: f@jje0932!E  接下来在万网中使用以上验证码进行转入操作，订单支付后万网会发送一封标题为万网域名转入确认通知的邮件，点击其中的链接确认转入
+下来进入到Godaddy，DOMAINS-&gt;TRANSFERS,在PENDING TRANSFERS OUT会显示正在转出的域名，域名状态列显示Transfer not started. Accept or decline，点击Accept or decline在接下来的提示中选择Accept接受转出。
+Godaddy会发送一封标题为Transfer of LTECN.COM的邮件，提醒你转出操作。
+稍等片刻Godaddy会发送一封标题为An important notice regarding your transfer of LTECN.COM的邮件，提醒转出成功，并且告知转出的ISP服务商，如下：
+Dear Jkrjj csao, This is to confirm that the following domain names have been successfully transferred away from GoDaddy to HICHINA WEB SOLUTIONS LIMITED: LTECN.COM If you have any questions, visit Online Support or call us at (480) 505-8877.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-07-07</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%9F%9F%E5%90%8D">#域名</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/domain">#Domain</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/hichina">#hichina</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/godaddy">#Godaddy</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/typecho-limits-theme/">Typecho主题Limits</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        又造了个简单成马咧的主题，分享给大家!
+说明
+ 评论采用多说，请自行替换comments.php内容 没有页面导航，因此请在设置-阅读中，将每页文章数目设大一些(例如:999)  预览图:
+下载: Limits.7z
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-07-02</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/typecho">#typecho</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/php">#php</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/theme">#theme</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E4%B8%BB%E9%A2%98">#主题</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/css">#css</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/html">#html</a></li>
                     
                 </ul>
         
@@ -252,17 +401,24 @@ cc -o pcd8544_test pcd8544_test.c ../PCD8544.c -L/usr/local/lib -lwiringPi cc -o
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

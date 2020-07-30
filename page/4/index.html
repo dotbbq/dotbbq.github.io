@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
 	<meta name="generator" content="Hugo 0.73.0" />
     
@@ -16,7 +18,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070679" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101234" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101234" />
+
+
 
 
 
@@ -42,9 +78,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -67,26 +103,16 @@
     
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/oneplus-3t-install-ubuntutouch/">一加3T安装UbuntuTouch</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/sudo-configuration-in-debian10/">Debian10中sudo配置</a></h1>
     </header>
 
     <div class="content post-summary">
-        Ubuntu Touch（又称Ubuntu Phone）是Canonical公司与Ubuntu社区所开发的移动设备操作系统，专为触屏行动设备所设计，例如：智能手机和平板电脑。
-现在国外开发者Vince1171放出了Oneplus3/3t的UbuntuTouch适配版，现在我们就安装试试。
-首先下载所需文件：
- TWRP Recovery Recovery OnePlus_3T_Stable_9.0.3_Firmware_Modem.zip OnePlus3T底包 LineageOS LineageOS ROM halium-install.sh 安装脚本 halium-boot.img引导镜像 system.img 系统镜像 ubports-touch.rootfs-xenial-armhf.tar.gz UbuntuTouch系统镜像  下载完成后下来开始安装，本地PC环境为LinuxMint(类Ubuntu)，建议以下操作在root权限下操作。
-安装工具 首先安装adb以及fastboot工具
-sudo apt install adb fastboot  解锁手机 接下来设置手机，设置-&gt;关于手机，连击版本号打开开发者选项，进入开发者选项打开OEM解锁
-然后关闭手机，按住电源+音量上进入fastboot模式，链接手机和电脑。
-在电脑端运行以下命令解锁
-fastboot oem unlock  按照手机提示，选择YES开始解锁，完成后手机重启。
-安装Recovery 重启手机进入fastboot模式
-接下来通过以下命令安装Recovery
-fastboot flash recovery TWRP_recovery.img  安装完成后，关闭手机，按电源+音量减进入Recovery
-安装LineageOS 通过TWRP Recovery来刷入LineageOS ROM，完成后双清重启再次进入Recovery，通过数据线连接手机，进行后面操作。
-安装UbuntuTouch 手机进入Recovery模式，通过数据线连接电脑，然后开始按照以下进行安装。
-root@hpzb14:/media/alair/data# ./halium-install.sh -p ut ubports-touch.rootfs-xenial-armhf.tar.gz system.img Debug: Chosen rootfs is ubports-touch.rootfs-xenial-armhf.tar.gz Debug: Chosen android image is system.
+        Debian10中/etc/sudoers中提示了需要通过visudo来编辑该文件，如下：
+ This file MUST be edited with the &lsquo;visudo&rsquo; command as root.
+ 但奇葩的是系统中没有visudo命令，apt搜索也搜不到，-_-!
+因此只能通过以下方法来编辑：
+#echo &quot;alair ALL=(ALL:ALL) ALL&quot; &gt;&gt; /etc/sudoers  保存后用户alair就可以使用sudo命令来进行root权限操作了。
     </div>
 
     
@@ -95,7 +121,7 @@ root@hpzb14:/media/alair/data# ./halium-install.sh -p ut ubports-touch.rootfs-xe
 
 <div class="post-info">
     
-        <div class="post-date">2019-09-01</div>
+        <div class="post-date">2019-07-10</div>
     
     <div class="post-taxonomies">
         
@@ -108,23 +134,19 @@ root@hpzb14:/media/alair/data# ./halium-install.sh -p ut ubports-touch.rootfs-xe
             
                 <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/android">#Android</a></li>
+                        <li><a href="https://unixetc.com/tags/debian">#Debian</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/oneplus">#OnePlus</a></li>
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/oneplus3">#OnePlus3</a></li>
+                        <li><a href="https://unixetc.com/tags/debian10">#Debian10</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/oneplus3t">#OnePlus3T</a></li>
+                        <li><a href="https://unixetc.com/tags/sudo">#sudo</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/%E4%B8%80%E5%8A%A03t">#一加3T</a></li>
+                        <li><a href="https://unixetc.com/tags/visudo">#visudo</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ubuntutouch">#UbuntuTouch</a></li>
+                        <li><a href="https://unixetc.com/tags/sudoers">#sudoers</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ut">#UT</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/lineageos">#LineageOS</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/lineage">#Lineage</a></li>
+                        <li><a href="https://unixetc.com/tags/%E5%A5%87%E8%91%A9">#奇葩</a></li>
                     
                 </ul>
         
@@ -134,17 +156,16 @@ root@hpzb14:/media/alair/data# ./halium-install.sh -p ut ubports-touch.rootfs-xe
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/wd-mycloud-gen2-enable-apps-installtion/">西数Mycloud破解应用安装</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/ubuntu-windows-dual-system-time-is-inconsistent/">Ubuntu/Widnows双系统时间不一致解决方法</a></h1>
     </header>
 
     <div class="content post-summary">
-        感谢俄罗斯大神Fox_exe提供破解方法以及软件。
-破解方法：
- 登录网页版后台 在URL后输入以下内容： javascript:APP_INSTALL_FUNCTION=1; APPS_EULA=1; check_app_eula(); 备用方法 按[ctrl] + [shift] + [i], 进入 &ldquo;Console&rdquo; , 输入以下内容按回车键： APP_INSTALL_FUNCTION=1; APPS_EULA=1; check_app_eula(); 进入应用页，安装&quot;WD_Crack&rdquo;，下载地址。 刷新页面后就可以安装其他三方app。  一些三方软件
-以下为部分软件清单，详细清单请转至下载目录&raquo;
- WDMyCloud_AcronisTrueImage_2015.bin WDMyCloud_Adminer_4.2.5.bin WDMyCloud_Arcus_2.5325088.bin WDMyCloud_BitTorrentSync_2.3.8.bin WDMyCloud_ChrootedDebian_8.0-1.bin WDMyCloud_CustomAppList_0.5.bin WDMyCloud_DVBLink_5.50.bin WDMyCloud_Dropbox_2.00.bin WDMyCloud_IceCast_1.04.bin WDMyCloud_Joomla_1.03.bin WDMyCloud_MediaWiki_1.23.15.bin WDMyCloud_QuikFynd2_2.0.1.bin WDMyCloud_Sitebar_3-1.bin WDMyCloud_SqueezeCenter_1.03.bin WDMyCloud_Transmission_2.92-2.bin WDMyCloud_UtilsUpdate-extras_1.0.0.bin WDMyCloud_UtilsUpdate_17.bin WDMyCloud_WDFacebook_0.1.bin WDMyCloud_WDSleepFix_1.0.bin WDMyCloud_WDTimeline_0.1.bin WDMyCloud_WordPress_1.03.bin WDMyCloud_WordPress_4.7.2.bin WDMyCloud_WordPress_4.7.bin WDMyCloud_Z-Way-Server_2.22.bin WDMyCloud_aMule_1.05.bin WDMyCloud_abFiles_1.55.bin WDMyCloud_cdc-acm_0.1.bin WDMyCloud_clamAV_1.12.bin WDMyCloud_cops_1.0.1.bin WDMyCloud_git_1.40.bin WDMyCloud_hamachi_2.1.0.174.bin WDMyCloud_nzbget_1.23.bin WDMyCloud_pawfaliki_0.5.2-2.bin WDMyCloud_phormer_3.3.1-1.bin WDMyCloud_phpBB_1.03.bin WDMyCloud_phpMyAdmin_4.0.10.18.bin WDMyCloud_phpSysInfo_3.2.6-2.bin WDMyCloud_plexmediaserver_1.16.0.1226.bin
- 
+        安装Ubuntu和Windows双系统的情况下，Ubuntu的时间总会和Windows的时间相差8小时，原因在于widows认为BIOS时间是本地时间，Ubuntu认为BIOS时间是UTC时间，即协调世界时(Universal Time Coordinated)，是由国际无线电咨询委员会规定和推荐,并由国际时间局(BIH)负责保持的以秒为基础的时间标度。
+UTC相当于本初子午线(即经度0度)上的平均太阳时，过去曾用格林威治平均时(GMT)来表示。北京时间比UTC时间早8小时，以1999年1月1日0000UTC为例，UTC时间是零点，北京时间为1999年1月1日早上8点整。所以我们在时间上面相隔了8个小时。这个时候bios的时间和系统的时间当然是不一致，一个代表UTC时间，一个代表CST(＋8时区)，即上海的时间。
+ 旧版Ubuntu（Ubuntu10左右）：  编辑/etc/default/rcS 将UTC=yes改成UTC=no
+ 新版Ubuntu（Ubuntu16.04）：  新版Ubuntu使用systemd作为管理系统，时间由timedatectl来管理，以下为修改方法：
+$sudo timedatectl set-local-rtc 1  重启完成。
     </div>
 
     
@@ -153,7 +174,7 @@ root@hpzb14:/media/alair/data# ./halium-install.sh -p ut ubports-touch.rootfs-xe
 
 <div class="post-info">
     
-        <div class="post-date">2019-08-19</div>
+        <div class="post-date">2019-07-09</div>
     
     <div class="post-taxonomies">
         
@@ -166,15 +187,19 @@ root@hpzb14:/media/alair/data# ./halium-install.sh -p ut ubports-touch.rootfs-xe
             
                 <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/wd">#WD</a></li>
+                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/mycloud">#Mycloud</a></li>
+                        <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/wd-mycloud">#WD Mycloud</a></li>
+                        <li><a href="https://unixetc.com/tags/%E6%97%B6%E9%97%B4">#时间</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/%E8%A5%BF%E6%95%B0">#西数</a></li>
+                        <li><a href="https://unixetc.com/tags/rtc">#RTC</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/%E7%A0%B4%E8%A7%A3">#破解</a></li>
+                        <li><a href="https://unixetc.com/tags/utc">#UTC</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/cst">#CST</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gmt">#GMT</a></li>
                     
                 </ul>
         
@@ -184,15 +209,25 @@ root@hpzb14:/media/alair/data# ./halium-install.sh -p ut ubports-touch.rootfs-xe
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/western-digital-my-cloud-version-judgment-method/">如何判断西数MyCloud是第几代</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/centos7-install-ffsend-to-share-files/">CentOS7安装ffsend快速分享文件</a></h1>
     </header>
 
     <div class="content post-summary">
-        西数MyCloud共出了两代，那么如何判断呢？
-看系统版本 第一代的是3.x/4.x，第二代的是2.x
-看CPU信息 SSH登录MyCloud后，通过cat /proc/cpuinfo检查CPU信息
- 第一代是Comcerto 2000 EVM 第二代是 Marvell Armada 375 (Device Tree)   
+        Firefox Send是什么？ Firefox Send是一个简单、私密的文件分享服务，使用Firefox Send端到端加密分享文件，链接到期即焚。分享更私密，文件到期真正无痕迹。
+安装ffsend ffsend是一款Firefox Send的客户端，支持多种操作系统(Linux、Windows、MacOS&hellip;)
+以下为CentOS7安装ffsend实例：
+#wget https://glare.now.sh/timvisee/ffsend/linux-x64-static -o /usr/local/bin/ffsend #chmod +x /usr/local/bin/ffsend  其他版本安装可以参考ffsend官网和ffsend官方下载
+ffsend使用方法 上传文件
+ffsend upload fenix.apk Upload complete https://send.firefox.com/download/4cecb9c1ab628f8e/#m5is-YRSfnBIQ-pBaSds0A  高级上传
+ 指定下再限制20
+输入密码加密文件
+在上传之前归档文件
+将共享链接复制到剪贴板
+在浏览器中打开共享链接
+ ffsend upload --downloads 20 --password --archive --copy --open fenix.apk Password: ****** https://send.firefox.com/download/4cecb9c1ab628f8e/#m5is-YRSfnBIQ-pBaSds0A  上传到自定义主机
+ffsend u -h https://example.com/ my-file.txt https://example.com/#sample-share-url  下载文件
+ffsend download https://send.firefox.com/download/4cecb9c1ab628f8e/#m5is-YRSfnBIQ-pBaSds0A  
     </div>
 
     
@@ -201,7 +236,7 @@ root@hpzb14:/media/alair/data# ./halium-install.sh -p ut ubports-touch.rootfs-xe
 
 <div class="post-info">
     
-        <div class="post-date">2019-08-17</div>
+        <div class="post-date">2019-07-04</div>
     
     <div class="post-taxonomies">
         
@@ -214,21 +249,106 @@ root@hpzb14:/media/alair/data# ./halium-install.sh -p ut ubports-touch.rootfs-xe
             
                 <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/wd">#WD</a></li>
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/mycloud">#MyCloud</a></li>
+                        <li><a href="https://unixetc.com/tags/centos7">#CentOS7</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/wd-mycloud">#WD MyCloud</a></li>
+                        <li><a href="https://unixetc.com/tags/centos">#CentOS</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                        <li><a href="https://unixetc.com/tags/firefox">#Firefox</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/%E8%A5%BF%E6%95%B0">#西数</a></li>
+                        <li><a href="https://unixetc.com/tags/ffsend">#ffsend</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/%E8%A5%BF%E9%83%A8%E6%95%B0%E6%8D%AE">#西部数据</a></li>
+                        <li><a href="https://unixetc.com/tags/firefox-send">#Firefox Send</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/comcerto">#Comcerto</a></li>
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/convert-images-to-webp-in-linux/">Linux中转换图片为webp格式</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装WebP Ubuntu中可以使用以下命令安装WebP
+$sudo apt install webp  其他Linux系统，可以从这里下载对应压缩包，如下：
+wget https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.0.2-linux-x86-64.tar.gz  解压后得到以下文件：
+$tar zxf libwebp-1.0.2-linux-x86-64.tar.gz $cd libwebp-1.0.2-linux-x86-64 $cd bin $ll total 12M -rwxr-xr-x 1 100 users 679K Jan 15 12:47 anim_diff -rwxr-xr-x 1 100 users 923K Jan 15 12:47 anim_dump -rwxr-xr-x 1 100 users 2.4M Jan 15 12:47 cwebp -rwxr-xr-x 1 100 users 915K Jan 15 12:47 dwebp -rwxr-xr-x 1 100 users 2.3M Jan 15 12:47 get_disto -rwxr-xr-x 1 100 users 703K Jan 15 12:47 gif2webp -rwxr-xr-x 1 100 users 2.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2019-06-11</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/marvell-armada">#Marvell Armada</a></li>
+                        <li><a href="https://unixetc.com/tags/webp">#webp</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/png">#png</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/google">#google</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/libwebp">#libwebp</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/termux-extra-keys-row/">Termux开启扩展快捷键</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        打开Termux，从屏幕左边缘向右滑动，打开抽屉菜单，然后长按KEYBOARD，即可打开扩展快捷键。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2019-06-11</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/termux">#termux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/esc">#Esc</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/tab">#Tab</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/alt">#Alt</a></li>
                     
                 </ul>
         
@@ -256,17 +376,24 @@ root@hpzb14:/media/alair/data# ./halium-install.sh -p ut ubports-touch.rootfs-xe
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

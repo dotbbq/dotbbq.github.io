@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
 	<meta name="generator" content="Hugo 0.73.0" />
     
@@ -16,7 +18,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070679" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101234" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101234" />
+
+
 
 
 
@@ -42,9 +78,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -67,14 +103,18 @@
     
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/raspberry-pi-install-ffmpeg/">树莓派安装ffmpeg</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-install-python-development-environment-and-gpio-library/">树莓派安装Python开发环境与GPIO库</a></h1>
     </header>
 
     <div class="content post-summary">
-        先安装h264编码器
-#!/bin/bash cd /usr/src git clone git://git.videolan.org/x264 cd x264 ./configure --host=arm-unknown-linux-gnueabi --enable-static --disable-opencl make sudo make install  下载源码编译安装ffmpeg
-cd /usr/src git clone git://source.ffmpeg.org/ffmpeg.git cd ffmpeg sudo ./configure --arch=armel --target-os=linux --enable-gpl --enable-libx264 --enable-nonfree make sudo make install  由于树莓派原因，这个过程很长……很长…… 建议开screen，然后Ctrl+a+d
+        安装python
+$sudo apt-get install python-dev  更新
+$sudo easy_install -U distribute  安装python-pip
+$sudo apt-get install python-pip  添加国内pypi镜像
+在~/.pip/pip.conf中添加
+[global] index-url = http://mirrors.aliyun.com/pypi/simple/  安装python的GPIO库
+$sudo pip install rpi.gpio 
     </div>
 
     
@@ -83,7 +123,7 @@ cd /usr/src git clone git://source.ffmpeg.org/ffmpeg.git cd ffmpeg sudo ./config
 
 <div class="post-info">
     
-        <div class="post-date">2015-11-07</div>
+        <div class="post-date">2014-03-02</div>
     
     <div class="post-taxonomies">
         
@@ -95,8 +135,6 @@ cd /usr/src git clone git://source.ffmpeg.org/ffmpeg.git cd ffmpeg sudo ./config
             
             
                 <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
                         <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
                     
@@ -104,7 +142,13 @@ cd /usr/src git clone git://source.ffmpeg.org/ffmpeg.git cd ffmpeg sudo ./config
                     
                         <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ffmpeg">#ffmpeg</a></li>
+                        <li><a href="https://unixetc.com/tags/python">#Python</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/pip">#pip</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gpio">#gpio</a></li>
                     
                 </ul>
         
@@ -114,15 +158,29 @@ cd /usr/src git clone git://source.ffmpeg.org/ffmpeg.git cd ffmpeg sudo ./config
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/linux-mp3-converted-to-ogg/">linux下将mp3转换为ogg</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/starting-use-raspberry-pi/">开始使用树莓派</a></h1>
     </header>
 
     <div class="content post-summary">
-        安装软件
-apt-get install mpg321 vorbis-tools  使用如下命令转换
-mpg321 tweet.mp3 -w raw &amp;&amp; oggenc raw -o tweet.ogg &amp;&amp; rm -rf raw  示例:
-root@hkvps:/home/res# mpg321 tweet.mp3 -w raw &amp;&amp; oggenc raw -o tweet.ogg &amp;&amp; rm -rf raw High Performance MPEG 1.0/2.0/2.5 Audio Player for Layer 1, 2, and 3. Version 0.3.2-1 (2012/03/25). Written and copyrights by Joe Drew, now maintained by Nanakos Chrysostomos and others. Uses code from various people. See 'README' for more!
+        安装系统 从官网下载系统镜像，推荐Raspbian
+http://downloads.raspberrypi.org/raspbian_latest
+将下载后的zip文件解压，得到2014-01-07-wheezy-raspbian.img文件。
+准备一张SD卡，最好容量大于4GB，Class10
+将镜像写入SD卡
+ Linux下推荐使用dd名来写入镜像  使用fdisk -l检查分区信息，比如sd卡设备为**/dev/sdb**，使用以下命令写入：
+#dd if=2014-01-07-wheezy-raspbian.img of=/dev/sdb bs=1M   Windows下推荐使用Win32DiskImager写入镜像  Win32DiskImager下载地址：http://sourceforge.net/projects/win32diskimager/
+下载后打开软件，选择好镜像文件与USB设备，然后点击Write写入。
+开机进入系统 将已写入系统的SD卡插入Raspberry Pi，通过固网链接路由器，然后使用USB供电启动。
+正常启动后，板载的ACT，PWR、FDX、LNK、100五个指示灯均点亮。
+通过SSH连接Raspberry Pi
+查看Raspberry Pi IP地址
+#nmap -sP 192.168.1/24  检查出MAC后标注(Raspberry Pi Foundation)的即为Raspberry Pi主机。
+然后通过SSH来链接主机
+#ssh 192.168.1.127  用户名为pi，默认密码为raspberry
+Widnows下推荐使用Putty
+设置Raspberry 运行设置工具sudo raspi-config
+ 选择Expand Filesystem扩展文件系统 Change User Passwd 修改默认用户pi的密码，当然也可以在系统中使用passwd命令来更改。 Advanced Options-&gt;Hostname 修改主机名 Overclock 超频，建议900Mhz  
     </div>
 
     
@@ -131,7 +189,7 @@ root@hkvps:/home/res# mpg321 tweet.mp3 -w raw &amp;&amp; oggenc raw -o tweet.ogg
 
 <div class="post-info">
     
-        <div class="post-date">2015-10-21</div>
+        <div class="post-date">2014-02-28</div>
     
     <div class="post-taxonomies">
         
@@ -146,11 +204,21 @@ root@hkvps:/home/res# mpg321 tweet.mp3 -w raw &amp;&amp; oggenc raw -o tweet.ogg
                     
                         <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/mp3">#mp3</a></li>
+                        <li><a href="https://unixetc.com/tags/debian">#Debian</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ogg">#ogg</a></li>
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/mpg321">#mpg321</a></li>
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/overlock">#overlock</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%B6%85%E9%A2%91">#超频</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/win32diskimager">#win32diskimager</a></li>
                     
                 </ul>
         
@@ -160,20 +228,21 @@ root@hkvps:/home/res# mpg321 tweet.mp3 -w raw &amp;&amp; oggenc raw -o tweet.ogg
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/ke-mu-yi-passed/">科目一过咧</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/kindle-paperwhite-jailbreak/">Kindle Paperwhite越狱</a></h1>
     </header>
 
     <div class="content post-summary">
-        驾校交钱已经一年了，一直没时间考试，上次报考的科目一由于临时加班没去成，这次重新交钱补考。
-昨儿晚把驾校发的书翻了一遍，然后就是在手机上用车轮考驾照不停的练习。
-今儿中午11点多到考场，换了准考证就等待安排考试。
-分配了个电脑有点挫，第一次登录显示考试时间不对，重新更新信息。
-第二次指纹录入一直不能验证通过，重新更新指纹验证。
-第三次摄像头无法采集视频信息，重置考试系统。
-第四次，一切正常开始答题……
-13分钟答完，等过了15分钟交卷，得分98。
-考试要点：细心别急、细心别急、细心别急！
+        越狱 下载kindle-jailbreak-1.8.N.zip解压，将得到的kindle-5.4-jailbreak.zip再解压，然后把解压出的三个文件放到KPW根目录
+然后更新系统，主页-菜单-设置-菜单-更新您的kindle
+底部显示**** JAILBREAK ****即表示越狱成功！
+安装MKK 下载kindle-mkk-20140214.zip解压，将Update_mkk-20140214-k5-ALL_install.bin复制到KPW根目录更新系统
+安装KUAL 下载KUAL-v2.3.zip 解压，将KUAL-KDK-2.0.azw2放到documents文件夹，点击图标即可运行KUAL
+安装终端 下载kterm-0.7.zip解压，然后将kterm文件夹复制到KPW根目录下的extensions，即可通过KUAL来打开kterm。
+**提示：**双指点击唤醒菜单。
+安装USBNetwork 解压kindle-usbnet-0.15.N.zip，将update_usbnet_0.15.N_install_touch_pw.bin放到根目录，然后更新系统安装，完成后可通过KUAL来打开USBNetwork。
+通过USBNetwork来链接PC，有时需要安装驱动，在这里提供undrivers.inf文件，安装时选择该文件即可。
+以上所有文件下载地址： http://pan.baidu.com/s/1eQdzU6Y
     </div>
 
     
@@ -182,24 +251,129 @@ root@hkvps:/home/res# mpg321 tweet.mp3 -w raw &amp;&amp; oggenc raw -o tweet.ogg
 
 <div class="post-info">
     
-        <div class="post-date">2015-10-16</div>
+        <div class="post-date">2014-02-27</div>
     
     <div class="post-taxonomies">
         
             <ul class="post-categories">
                 
-                    <li><a href="https://unixetc.com/categories/ESSAY">ESSAY</a></li>
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
                 
             </ul>
             
             
                 <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/%E7%A7%91%E7%9B%AE%E4%B8%80">#科目一</a></li>
+                        <li><a href="https://unixetc.com/tags/jailbreak">#Jailbreak</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/%E9%A9%BE%E6%A0%A1">#驾校</a></li>
+                        <li><a href="https://unixetc.com/tags/%E8%B6%8A%E7%8B%B1">#越狱</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/%E9%A9%BE%E7%85%A7">#驾照</a></li>
+                        <li><a href="https://unixetc.com/tags/kpw">#KPW</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/kindle">#Kindle</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/amazon">#Amazon</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/mkk">#MKK</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/kterm">#kterm</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/usbnetwork">#USBNetwork</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/starting-raspberry-pi-1-model-b/">入手树莓派1 Model B</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        刚刚入手Raspberry Pi 1 Model B
+配置详情
+ Broadcom BCM2835 SoC full HD multimedia applications processor 700MHz low power ARM1176JZ-F applications processor Broadcom VideoCore IV, OpenGL ES 2.0, 1080p30 h.264/MPEG-4 AVC high profile decoder 512MB SDRAM 10/100 Ethernet RJ 45 on board network Storage via SD/ MMC/ SDIO card slot Dual USB connector HDMI (rev 1.3 &amp; 1.4) composite RCA (PAL and NTSC) 3.5mm jack, HDMI Linux operating system  正面图：
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-02-26</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/install-vpn-on-ubuntu/">Ubuntu下安装VPN</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装pptpd
+#apt-get install pptpd  IP设置
+#vi /etc/pptpd.conf  添加以下内容:
+localip 192.18.0.1 remoteip 192.168.0.200-230  设置DNS
+#vi/etc/ppp/pptpd-options  添加以下内容：
+ms-dns 192.168.1.1 ms-dns 8.8.8.8  添加用户
+#vi /etc/ppp/chap-secrets  添加以下内容:
+name * passwd *  重启vpn
+#/etc/init.d/pptpd restart  允许ip4访问外网
+#vi /etc/sysctl.conf net.ipv4.ip_forward=1 //取消本行前注释符(*) #sysctl -p 
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-02-23</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vpn">#VPN</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/pptpd">#pptpd</a></li>
                     
                 </ul>
         
@@ -227,17 +401,24 @@ root@hkvps:/home/res# mpg321 tweet.mp3 -w raw &amp;&amp; oggenc raw -o tweet.ogg
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

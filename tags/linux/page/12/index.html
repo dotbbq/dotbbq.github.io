@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101236" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101236" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,15 +101,13 @@
     </div>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/zbook14-install-wireless-driver-under-debian/">Debian下安装Zbook14无线网卡驱动</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/can-not-use-add-apt-repository/">无法使用add-apt-repository命令</a></h1>
     </header>
 
     <div class="content post-summary">
-        首先查看无线网卡型号
-alair@zb14:~$ lspci|grep less 02:00.0 Network controller: Intel Corporation Wireless 7260 (rev 73)  搜索Inter相关固件 ​ alair@zb14:~$ apt-cache search iwlwifi firmware-iwlwifi - Binary firmware for Intel Wireless cards
-安装之 ​ alair@zb14:~$ apt-get install firmware-iwlwifi
-重启完事儿！
+        在Ubuntu中使用PPA安装软件时，需要用到add-apt-repository命令，但有的VPS系统因为体量原因，可能没有该命令，因此需要通过以下方法来安装：
+apt-get install python-software-properties apt-get install software-properties-common 
     </div>
 
     
@@ -82,7 +116,134 @@ alair@zb14:~$ lspci|grep less 02:00.0 Network controller: Intel Corporation Wire
 
 <div class="post-info">
     
-        <div class="post-date">2016-08-17</div>
+        <div class="post-date">2015-08-23</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/apt-get">#apt-get</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/add-apt-repository">#add-apt-repository</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ppa">#PPA</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-install-minidlna-to-create-digital-media-server/">树莓派安装配置minidlna</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        树莓派挂载移动存储 可以挂载移动硬盘或者大容量的U盘，参考以下文章：
+ 树莓派挂载U盘作为存储分区 fdisk分区实例  安装配置minidlna #sudo apt-get install -y minidlna  编辑minidlna配置文件/etc/minidlna.conf，内容如下：
+media_dir=/home/pi/dlnadoc #媒体文件目录 db_dir=/var/lib/minidlna #minidlna通过SQLite来建立媒体库索引，因此需要定义数据库目录 listening_ip=192.168.1.111 #树莓派IP port=8200	#web端口，可以通过ip:port查看索引状态 friendly_name=Raspi_DLNA #服务器命名  重启minidlna服务
+sudo service minidlna restart  强制刷新
+sudo service minidlna force-reload  查看索引状态,浏览http://192.168.1.111:8200
+MiniDLNA status Audio files: 0 Video files: 2 Image files: 0  DLNA客户端 PC
+Windows7下将网络设置为家庭网络，完成后刷新，在网络中媒体设备下就可以自动发现Rasp_DLNA。
+点击进去就可以使用MediaPlayer来浏览。
+Android
+VPlayer+ VPlayer uPnP DLNA Plugin
+IOS
+RushPlayer
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-08-06</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dlna">#dlna</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/upnp">#upnp</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ms">#ms</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dms">#dms</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vplayer">#vplayer</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-use-dietpi/">树莓派使用DietPi</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        下载安装DietPi DietPi项目主页 http://dietpi.com/
+DietPi下载地址 http://fuzon.co.uk/downloads/DietPi.7z
+这个压缩包91MB，解压后的img文件522MB,比官方的小多了。
+然后将镜像写入到SD卡中，linux下使用dd
+dd if=DietPi_v74.img of=/dev/sdc bs=2M  Windows下使用Win32 Disk Imager，戳这里
+写入完成后将SD卡插入树莓派，加电启动。
+预设置Wifi链接 首次使用时，可以通过编辑dietpi.txt来进行wifi预设置。
+将TF卡插入电脑读卡器，打开对应的磁盘，找到dietpi.txt文件，打开。
+找到Wifi_Enabled=0，将其设置为1
+然后找到Wifi_SSID和Wifi_KEY分别设置wifi节点名和密码，保存即可。
+配置DietPi DietPi默认用户名密码为root dietpi，第一次启动DietPi提示检测升级，按提示操作。
+不过由于天朝网路问题，可能升级比较缓慢，建议Ctrl+c终止升级，修改sources.list为朝内镜像。
+DietPi默认没有vi,使用nano进行编辑，添加Aliyun源。
+deb http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib deb-src http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib  更新软件
+apt-get update&amp;&amp;apt-get upgrade -y  然后运行dietpi-config进行配置。
+DietPi - Config
+ ┌────┤ ---------- DietPi-Config ---------- ├─────┐ │ Hardware : Raspberry Pi 1 (512MB) │ │ │ │ 1 Display Options │ │ 2 Audio Options │ │ 3 Performance Options │ │ 4 Advanced Options │ │ 5 Language/Regional Options │ │ 6 Security Options │ │ 7 Networking Options │ │ 8 AutoBoot Options │ │ 9 Tools │ │ │ │ │ │ &lt;Ok&gt; &lt;Exit&gt; │ │ │ └────────────────────────────────────────────────┘  推荐配置：
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-08-04</div>
     
     <div class="post-taxonomies">
         
@@ -99,13 +260,11 @@ alair@zb14:~$ lspci|grep less 02:00.0 Network controller: Intel Corporation Wire
                     
                         <li><a href="https://unixetc.com/tags/debian">#Debian</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/zbook">#Zbook</a></li>
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/hp">#HP</a></li>
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/inter">#inter</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/inter7260">#inter7260</a></li>
+                        <li><a href="https://unixetc.com/tags/dietpi">#dietpi</a></li>
                     
                 </ul>
         
@@ -115,15 +274,13 @@ alair@zb14:~$ lspci|grep less 02:00.0 Network controller: Intel Corporation Wire
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/ubuntu-modify-the-grub-boot-menu/">ubuntu修改grub引导菜单</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/install-nginx-and-ngx_pagespeed-on-vps/">安装Nginx和ngx_pagespeed</a></h1>
     </header>
 
     <div class="content post-summary">
-        先运行update-grub命令生成一次grub配置，顺便查看一下识别出来的引导菜单内容
-root@alairpc:~# update-grub Generating grub configuration file ... Found linux image: /boot/vmlinuz-4.4.0-21-generic Found initrd image: /boot/initrd.img-4.4.0-21-generic Found memtest86+ image: /boot/memtest86+.elf Found memtest86+ image: /boot/memtest86+.bin Found Windows 7 (loader) on /dev/sda1 done root@alairpc:~#  注意看，以上共有5个菜单项，最后一个是windows7
-接下来我们来看看gurb配置文件/etc/default/grub
-root@alairpc:~# cat /etc/default/grub # If you change this file, run 'update-grub' afterwards to update # /boot/grub/grub.cfg. # For full documentation of the options in this file, see: # info -f grub -n 'Simple configuration' GRUB_DEFAULT=4 #GRUB_HIDDEN_TIMEOUT=0 GRUB_HIDDEN_TIMEOUT_QUIET=true GRUB_TIMEOUT=3 GRUB_DISTRIBUTOR=`lsb_release -i -s 2&gt; /dev/null || echo Debian` GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot; GRUB_CMDLINE_LINUX=&quot;locale=zh_CN&quot; # Uncomment to enable BadRAM filtering, modify to suit your needs # This works with Linux (no patch required) and with any kernel that obtains # the memory map information from GRUB (GNU Mach, kernel of FreeBSD .
+        VPS配置:
+Ubuntu 14.04 x86 RAM 512M SWAP 64M DISK 5G  准备工作 sudo apt-get update&amp;&amp;apt-get upgrade -y sudo apt-get install build-essential zlib1g-dev libpcre3 libpcre3-dev unzip libssl-dev -y  下载ngx_pagespeed cd NPS_VERSION=1.9.32.4 wget https://github.com/pagespeed/ngx_pagespeed/archive/release-${NPS_VERSION}-beta.zip unzip release-${NPS_VERSION}-beta.zip cd ngx_pagespeed-release-${NPS_VERSION}-beta/ wget https://dl.google.com/dl/page-speed/psol/${NPS_VERSION}.tar.gz tar -xzvf ${NPS_VERSION}.tar.gz  安装Nginx cd groupadd www useradd -s /sbin/nologin -g www www NGINX_VERSION=1.8.0 wget http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz tar -xvzf nginx-${NGINX_VERSION}.tar.gz cd nginx-${NGINX_VERSION}/ ./configure \ --user=www \ --group=www \ --prefix=/usr/local/nginx \ --with-http_stub_status_module \ --with-http_ssl_module \ --with-http_spdy_module \ --with-http_gzip_static_module \ --with-http_sub_module \ --add-module=$HOME/ngx_pagespeed-release-${NPS_VERSION}-beta \ sudo make sudo make install sudo ln -sf /usr/local/nginx/sbin/nginx /usr/bin/nginx  配置/etc/init.
     </div>
 
     
@@ -132,7 +289,7 @@ root@alairpc:~# cat /etc/default/grub # If you change this file, run 'update-gru
 
 <div class="post-info">
     
-        <div class="post-date">2016-06-27</div>
+        <div class="post-date">2015-07-24</div>
     
     <div class="post-taxonomies">
         
@@ -147,9 +304,11 @@ root@alairpc:~# cat /etc/default/grub # If you change this file, run 'update-gru
                     
                         <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                        <li><a href="https://unixetc.com/tags/google">#Google</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/grub">#GRUB</a></li>
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vps">#VPS</a></li>
                     
                 </ul>
         
@@ -159,20 +318,17 @@ root@alairpc:~# cat /etc/default/grub # If you change this file, run 'update-gru
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/use-syncthing-synchronize-files-between-multiple-devices/">使用Syncthing在多个设备之间同步文件</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/install-h2o-on-bandwagon-vps/">将Nginx更换为H2O</a></h1>
     </header>
 
     <div class="content post-summary">
-        Syncthing是一款开源的多平台同步软件，使用他可以在多个设备间进行文件同步，并且带有版本控制功能。
-Syncthing官网地址 **https://syncthing.net/**Github地址 https://github.com/syncthing/syncthing
-安装Syncthing Syncthing官网提供多平台安装包，下载地址为 https://github.com/syncthing/syncthing/releases/
-并且针对Debian/Ubuntu平台，官方提供了apt-get安装方法
-# Add the release PGP keys: curl -s https://syncthing.net/release-key.txt | sudo apt-key add - # Add the &quot;release&quot; channel to your APT sources: echo &quot;deb http://apt.syncthing.net/ syncthing release&quot; | sudo tee /etc/apt/sources.list.d/syncthing.list # Update and install syncthing: sudo apt-get update sudo apt-get install syncthing  运行Syncthing Linux下直接使用syncthing命令运行
-syncthing &amp;  Windows下直接打开下载的syncthing.exe文件，而后浏览器自动打开http://127.0.0.1:8384进行设置管理。
-管理Syncthing 如果是在VPS上安装Syncthing ,运行syncthing后，只能通过http://127.0.0.1:8384进行管理，我们可以通过以下方法在本地管理。
-ssl -L 9891:localhost:8384 root@ip  输入root密码登录成功后，即可本地浏览http://127.0.0.1:9891对VPS上的Synchting进行管理。
-添加设备 每个设备均有一个设备标识，可以通过操作-&gt;显示设备标识来查看。
+        安装必须的软件 预备工具软件
+#apt-get install autoconf automake m4 build-essential  libssl-dev 必选
+#apt-get install openssl libssl-dev  以下为可选包，可自行搜索安装
+ libuv libyaml wslay  安装H2O 下载安装最新版h2o https://github.com/h2o/h2o/releases
+#wget https://github.com/h2o/h2o/archive/v1.4.1.tar.gz #tar zxf v1.4.1.tar.gz #cd h2o-1.4.1 #cmake -DWITH_BUNDLED_SSL=on . #make #sudo make install  编辑H2O站点配置文件 以下是一个简单的http与https配置文件，可自行参考修改
+hosts: &quot;www.example.com&quot;: listen: port: 80 listen: port: 443 ssl: certificate-file: /path/to/server-certificate.crt key-file: /path/to/private-key.crt paths: &quot;/&quot;: file.dir: /path/to/doc-root access-log: /path/to/the/access-log error-log: /path/to/the/error-log pid-file: /path/to/the/pid-file http2-reprioritize-blocking-assets: ON # performance tuning option  启动H2O
     </div>
 
     
@@ -181,7 +337,7 @@ ssl -L 9891:localhost:8384 root@ip  输入root密码登录成功后，即可本�
 
 <div class="post-info">
     
-        <div class="post-date">2016-05-06</div>
+        <div class="post-date">2015-07-21</div>
     
     <div class="post-taxonomies">
         
@@ -196,17 +352,25 @@ ssl -L 9891:localhost:8384 root@ip  输入root密码登录成功后，即可本�
                     
                         <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/android">#Android</a></li>
+                        <li><a href="https://unixetc.com/tags/vps">#VPS</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/syncthing">#Syncthing</a></li>
+                        <li><a href="https://unixetc.com/tags/openssl">#OpenSSL</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/sync">#Sync</a></li>
+                        <li><a href="https://unixetc.com/tags/h2o">#H2O</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/%E5%90%8C%E6%AD%A5%E6%96%87%E4%BB%B6">#同步文件</a></li>
+                        <li><a href="https://unixetc.com/tags/wslay">#wslay</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/macos">#MacOS</a></li>
+                        <li><a href="https://unixetc.com/tags/web-server">#Web Server</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/bandwagonhost">#BandwagonHost</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/libssl">#libssl</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/libuv">#libuv</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/libyaml">#libyaml</a></li>
                     
                 </ul>
         
@@ -234,17 +398,24 @@ ssl -L 9891:localhost:8384 root@ip  输入root密码登录成功后，即可本�
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

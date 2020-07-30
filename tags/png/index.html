@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101236" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101236" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,7 +101,7 @@
     </div>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/convert-images-to-webp-in-linux/">Linux中转换图片为webp格式</a></h1>
     </header>
 
@@ -111,7 +147,7 @@ $tar zxf libwebp-1.0.2-linux-x86-64.tar.gz $cd libwebp-1.0.2-linux-x86-64 $cd bi
 </article>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/batch-conversion-png-and-jpg-under-linux/">Linux下批量转换PNG和JPG</a></h1>
     </header>
 
@@ -159,7 +195,7 @@ root@bwgzl:/data/wwwroot/getos.org/images# ll total 188 drwxr-xr-x 2 www www 409
 </article>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/optimize-and-compress-image-by-optipng/">使用OptiPNG优化压缩图片</a></h1>
     </header>
 
@@ -217,34 +253,73 @@ root@raspi:~# ls -lh huxian.tif -rw-r--r-- 1 root root 178M Apr 4 16:54 huxian.t
 
 </article>
     
-    
-    
-        
-    <div class="pagination">
-        <div class="left pagination-item disabled">
-            
-        </div>
-        <div class="right pagination-item ">
-            
-                <a href="/tags/png/page/2/">To old posts</a>
-            
-        </div>
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/photoshop-compressed-png-images/">使用Photoshop压缩PNG图片</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        Ctrl+O打开PNG文件
+图像 -&gt; 调整 -&gt; 色调分离
+调整色阶值，边调整边预览，找到图片质量变化最小时候的值
+文件 -&gt; 导出 -&gt; 存储为Web所用格式
+文件格式选择PNG-8，参考下图全选部分进行调整，完成后保存即可。
     </div>
 
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-09-13</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/png">#png</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/photoshop">#photoshop</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/adobe">#adobe</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

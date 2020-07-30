@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070682" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101237" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101237" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,7 +101,7 @@
     </div>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/oneplus3t-and-raspberry-pi-unixbench-score-comparison/">一加3t和树莓派UNIXBench跑分对比</a></h1>
     </header>
 
@@ -129,7 +165,7 @@
 </article>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/weather-according-to-raspberry-pi/">树莓派显示天气信息</a></h1>
     </header>
 
@@ -210,7 +246,7 @@ from sense_hat import SenseHat  保存后，重新运行python3 main.py，此时
 </article>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/raspberrypi-dynamic-ip-updater/">树莓派动态IP更新器</a></h1>
     </header>
 
@@ -264,6 +300,117 @@ import ipgetter import urllib.request import requests currentIP = ipgetter.myip(
 
 </article>
     
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/use-your-phone-to-remotely-control-raspberrypi/">使用手机远程控制树莓派GPIO</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        必备条件：
+ 树莓派已联网 安装官方镜像 只支持Raspberry Pi 2/3 Model B 只支持Android手机 安装Java8  安装官方镜像Raspbian 下载地址 https://www.raspberrypi.org/downloads/
+安装Java8 sudo apt install oracle-java8-jdk  下载Marsiot到树莓派
+wget http://www.marsiot.com/download/marsiot.jar  下载Marsiot到手机，安装
+http://www.marsiot.com/download/marsiot.apk
+在树莓派上运行Marsiot
+pi@raspi:~ $ sudo java -jar marsiot.jar Current version &lt;101&gt; More help: sudo java -jar marsiot.jar help Connect to www.marsiot.com... Connected ok! GPIO init... GPIO init ok! ID-CODE:c1fa PASS-CODE：11c6  记住以上ID-CODE、PASS-CODE
+在手机上打开火星互联,事件中心时间轴上会显示所有新加入设备，以ID-CODE区分，找到你对应的设备点击，按照提示输入PASS-CODE即可连接。
+连接后可以在我的设备中看到已连接的设备，点击通用视图即可实时监控GPIO端口状态。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-04-13</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/marisot">#Marisot</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%81%AB%E6%98%9F%E4%BA%92%E8%81%94">#火星互联</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-install-dnsmasq-and-dnsmasq-china-list/">树莓派安装Dnsmasq加速DNS解析</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        天朝的dns服务商尿性不是一般的大，动不动就抽风或者劫持，为了避免这种情况，可以在树莓派上安装Dnsmasq来加速dns解析，提高网络浏览体验。
+安装配置dnsmasq apt-get install dnsmasq  配置dnsmasq,vi /etc/dnsmasq.conf
+我的配置文件如下：
+domain=Raspi2 resolv-file=/etc/resolv.dnsmasq conf-dir=/etc/dnsmasq.d min-port=4096 server=114.114.114.114 server=114.114.115.115 server=223.5.5.5 server=223.6.6.6 server=119.29.29.29 server=182.254.116.116 server=112.124.47.27 server=114.215.126.16 server=101.226.4.6 server=218.30.118.6 server=42.120.21.30 server=199.91.73.222 server=178.79.131.110 server=8.8.8.8 server=8.8.4.4 cache-size=10000  配置完重启dnsmasq服务
+service dnsmasq restart  其中的server字段为上游DNS
+配置dnsmasq-china-list git clone https://github.com/felixonmars/dnsmasq-china-list.git cd dnsmasq-china-list/ cp *.conf /etc/dnsmasq.d/ service dnsmasq restart  至此设置完成，可以在路由器中将首选dns设为树莓派ip，这样局域网内的所有设备都可以体验dns解析加速了！
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-01-18</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/git">#Git</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dns">#DNS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dnsmasq">#dnsmasq</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
     
     
         
@@ -281,17 +428,24 @@ import ipgetter import urllib.request import requests currentIP = ipgetter.myip(
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

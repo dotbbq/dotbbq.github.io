@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101236" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101236" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,7 +101,7 @@
     </div>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/weather-according-to-raspberry-pi/">树莓派显示天气信息</a></h1>
     </header>
 
@@ -146,7 +182,7 @@ from sense_hat import SenseHat  保存后，重新运行python3 main.py，此时
 </article>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/python-pip-installation/">python-pip安装实例</a></h1>
     </header>
 
@@ -207,7 +243,7 @@ sudo dnf install python3 python3-wheel   CentOS/RHEL 首先得启用EPEL reposit
 </article>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/raspberrypi-dynamic-ip-updater/">树莓派动态IP更新器</a></h1>
     </header>
 
@@ -261,6 +297,119 @@ import ipgetter import urllib.request import requests currentIP = ipgetter.myip(
 
 </article>
     
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/use-speedtest-cli-tests-network-bandwidth/">使用speedtest-cli测试带宽</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装speedtest-cli 安装speedtest-cli方法如下:
+sudo apt-get install python-pip sudo pip install speedtest-cli  或
+pip install git+https://github.com/sivel/speedtest-cli.git  或
+git clone https://github.com/sivel/speedtest-cli.git python speedtest-cli/setup.py install  或
+wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest_cli.py chmod +x speedtest-cli  或
+curl -Lo speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest_cli.py chmod +x speedtest-cli  使用speedtest-cli root@MyUbuntuCloud:~# speedtest-cli -h usage: speedtest-cli [-h] [--bytes] [--share] [--simple] [--list] [--server SERVER] [--mini MINI] [--source SOURCE] [--timeout TIMEOUT] [--version] Command line interface for testing internet bandwidth using speedtest.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-03-26</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/git">#Git</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/python">#Python</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/bandwidth">#Bandwidth</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%B8%A6%E5%AE%BD">#带宽</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%BD%91%E9%80%9F">#网速</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/speedtest">#speedtest</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/speedtest-cli">#speedtest-cli</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/pip">#pip</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-install-python-development-environment-and-gpio-library/">树莓派安装Python开发环境与GPIO库</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装python
+$sudo apt-get install python-dev  更新
+$sudo easy_install -U distribute  安装python-pip
+$sudo apt-get install python-pip  添加国内pypi镜像
+在~/.pip/pip.conf中添加
+[global] index-url = http://mirrors.aliyun.com/pypi/simple/  安装python的GPIO库
+$sudo pip install rpi.gpio 
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-03-02</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/python">#Python</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/pip">#pip</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gpio">#gpio</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
     
     
         
@@ -278,17 +427,24 @@ import ipgetter import urllib.request import requests currentIP = ipgetter.myip(
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

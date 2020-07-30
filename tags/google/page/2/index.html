@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,131 +101,7 @@
     </div>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/linux_enable_tcp_bbr/">Linux开启TCP BBR算法</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        Linux Kernel 4.9+已经支持tcp_bbr拥塞控制算法，因此建议将内核升级为最新版。
-将内核升级到最新版 Debian/Ubuntu升级最新内核 最新内核下载地址 http://kernel.ubuntu.com/~kernel-ppa/mainline
-下载安装新内核
-wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.10.10/linux-image-4.10.10-041010-generic_4.10.10-041010.201704120813_amd64.deb` dpkg -i linux-image-4.10.10-041010-generic_4.10.10-041010.201704120813_amd64.deb 更新GRUB并且重启
-update-grub reboot Centos 7 升级最新内核 内核下载地址 http://elrepo.org/linux/kernel/el7/x86_64/RPMS/
-安装最新内核
-rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm yum --enablerepo=elrepo-kernel install kernel-ml -y 检查内核是否安装完成
-rpm -qa | grep kernel
-更新GRUB并重启主机
-egrep ^menuentry /etc/grub2.cfg | cut -f 2 -d \&#39; grub2-set-default 0 #default 0表示第一个内核设置为默认运行, 选择最新内核就对了 reboot http://elrepo.org/linux/kernel/下e15、e16分别对应Centos5、Centos6，可参考以上安装
-开启BBR 重启后uname -r 检查内核版本是不是4.9+
-然后执行以下操作
-echo &#34;net.core.default_qdisc=fq&#34; &gt;&gt; /etc/sysctl.conf echo &#34;net.ipv4.tcp_congestion_control=bbr&#34; &gt;&gt; /etc/sysctl.conf sysctl -p sysctl net.
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2017-04-17</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/google">#Google</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/debian">#Debian</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/bbr">#bbr</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/tcp_bbr">#tcp_bbr</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/use-google-authenticator-set-2step-verification-strengthening-ssh-login/">使用Google Authenticator两步验证加强SSH登录</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        Google Authenticator开源版主页 https://github.com/google/google-authenticator
-安装Google Authenticator Ubuntu已经包含libpam-google-authenticator软件(Ubuntu 11.10以上版本),可以直接使用apt-get安装
-apt-get install libpam-google-authenticator  其他系统可以通过源码编译安装
-git clone https://github.com/google/google-authenticator-libpam.git cd google-authenticator-libpam/ ./bootstrap.sh ./configure make make install  注意：在Debian7中执行./configure时可能存在以下错误提示
-configure: error: Unable to find the PAM library or the PAM header files  在此需要安装libpam0g-dev和libtool
-apt-get -y install libpam0g-dev libtool  设置Google Authenticator 在手机端搜索安装Google Authenticator
-google-authenticator Do you want authentication tokens to be time-based (y/n) y  然后出现二维码，使用手机端Google Authenticator扫码,接下来服务器端继续设置
-如果没有出现二维码，可以将提示的以**https://www.google.com/chart?**开头的连接复制到浏览器中，就可以看到二维码了
-Do you want me to update your &quot;/root/.
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2016-01-28</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/google">#Google</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/vps">#VPS</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E8%B0%B7%E6%AD%8C">#谷歌</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ga">#ga</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/2step">#2step</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/libpam">#libpam</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/pam">#pam</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E4%B8%A4%E6%AD%A5%E9%AA%8C%E8%AF%81">#两步验证</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/otp">#otp</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/linux-use-grive-management-google-drive/">Linux下使用grive管理Google Drive</a></h1>
     </header>
 
@@ -243,6 +155,220 @@ mkdir googledrive cd googledrive grive -a  第一次运行，会有验证提示�
 
 </article>
     
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/install-nginx-and-ngx_pagespeed-on-vps/">安装Nginx和ngx_pagespeed</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        VPS配置:
+Ubuntu 14.04 x86 RAM 512M SWAP 64M DISK 5G  准备工作 sudo apt-get update&amp;&amp;apt-get upgrade -y sudo apt-get install build-essential zlib1g-dev libpcre3 libpcre3-dev unzip libssl-dev -y  下载ngx_pagespeed cd NPS_VERSION=1.9.32.4 wget https://github.com/pagespeed/ngx_pagespeed/archive/release-${NPS_VERSION}-beta.zip unzip release-${NPS_VERSION}-beta.zip cd ngx_pagespeed-release-${NPS_VERSION}-beta/ wget https://dl.google.com/dl/page-speed/psol/${NPS_VERSION}.tar.gz tar -xzvf ${NPS_VERSION}.tar.gz  安装Nginx cd groupadd www useradd -s /sbin/nologin -g www www NGINX_VERSION=1.8.0 wget http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz tar -xvzf nginx-${NGINX_VERSION}.tar.gz cd nginx-${NGINX_VERSION}/ ./configure \ --user=www \ --group=www \ --prefix=/usr/local/nginx \ --with-http_stub_status_module \ --with-http_ssl_module \ --with-http_spdy_module \ --with-http_gzip_static_module \ --with-http_sub_module \ --add-module=$HOME/ngx_pagespeed-release-${NPS_VERSION}-beta \ sudo make sudo make install sudo ln -sf /usr/local/nginx/sbin/nginx /usr/bin/nginx  配置/etc/init.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-07-24</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/google">#Google</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vps">#VPS</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/typecho-converted-to-gor/">将博客从Typcho转移至Gor</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        缘由 VPS快到期了，不想继续维护，太累，并且香港VPS价格也不菲。
+于是打算选择一个静态博客平台，原来用过的不少:jekyll,hexo,gor,pelican，最后决定Gor
+选择Gor的理由有两点
+ 安装方便 执行效率高  安装Gor 参考Gor主页https://github.com/wendal/gor安装Gor
+将Typecho文章导出为Markdown文件(.md) Github上有现成的工具typecho-exporter，主页为https://github.com/aneasystone/typecho-exporter
+这个工具可以将所有的文章导出为Markdown文件，但是以文章标题为文件名，不利于后期处理，建议使用slug为文件名。
+编辑下载的main.py，将75行的p.title = r[1]替换为`p.title = r[2]'，如下:
+results = cur.fetchall() for r in results: p = Post() p.id = r[0] p.title = r[2] p.content = r[5] posts.append(p)  原来的r[1]对应typecho_contentsSQL表中的title列，我的r[2]对应slug列，可以根据实际情况更改。
+编辑typecho-exporter的config.ini文件，设置数据库访问方式。
+运行main.py，完成后会在typecho-exporter目录下生成files文件夹，里面就是导出的Markdown文件。
+后期整理 导出后的Markdown没有Gor需要的文件头格式，需要手动整理
+这里推荐使用Notepad++批量替换
+  查找目标:
+  替换为&mdash;\n title: title\ndate: 2015-07-20\ndescription: \npermalink: \ncategories: \ntags: \n&mdash;\n
+  记得将查找模式重的扩展打开。
+经过以上替换，就大概有了个Gor的Markdown头格式，后面的手动工作就少了多了。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-07-20</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/google">#Google</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/git">#Git</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gor">#gor</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/github">#Github</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vps">#VPS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/mysql">#MySQL</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/markdown">#Markdown</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/golang">#golang</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/blog">#Blog</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/typecho">#typecho</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/php">#php</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/sql">#sql</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/notepad&#43;&#43;">#notepad&#43;&#43;</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/install-the-last-version-golang-for-linux/">Linux下安装最新版golang</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        ubuntu中可以使用apt-get install golang来安装go，但是版本稍旧
+如果需要安装最新版的golang，那就得自己动手咧
+安装golang 从官网下载最新版，手动安装
+apt-get install build-essential wget https://storage.googleapis.com/golang/go1.4.2.linux-386.tar.gz tar zxf go1.4.2.linux-386.tar.gz cd go/src ./all.bash  设置PATH 安装完成后需要设置PATH才能随地使用go
+export PATH=&quot;/root/go/bin:$PATH&quot;  检查版本 go version go version go1.4.2 linux/386 
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-05-11</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/google">#Google</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/golang">#golang</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/go">#go</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%B0%B7%E6%AD%8C">#谷歌</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/download-the-chrome-offline-installation-package/">下载Chrome离线安装包</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        Chrome离线安装包下载地址：
+正式版 http://www.google.com/chrome/eula.html?hl=zh-CN&amp;standalone=1
+测试版 http://www.google.com/chrome/eula.html?hl=zh-CN&amp;standalone=1&amp;extra=betachannel
+开发版 http://www.google.com/chrome/eula.html?hl=zh-CN&amp;standalone=1&amp;extra=devchannel
+下载文件名为ChromeStandaloneSetup.exe
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-08-30</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/SHARE">SHARE</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/chrome">#Chrome</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/google">#Google</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
     
     
         
@@ -262,17 +388,24 @@ mkdir googledrive cd googledrive grive -a  第一次运行，会有验证提示�
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,24 +101,15 @@
     </div>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/linux_enable_tcp_bbr/">Linux开启TCP BBR算法</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/install-jekyll-on-debian/">Debian下安装Jekyll</a></h1>
     </header>
 
     <div class="content post-summary">
-        Linux Kernel 4.9+已经支持tcp_bbr拥塞控制算法，因此建议将内核升级为最新版。
-将内核升级到最新版 Debian/Ubuntu升级最新内核 最新内核下载地址 http://kernel.ubuntu.com/~kernel-ppa/mainline
-下载安装新内核
-wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.10.10/linux-image-4.10.10-041010-generic_4.10.10-041010.201704120813_amd64.deb` dpkg -i linux-image-4.10.10-041010-generic_4.10.10-041010.201704120813_amd64.deb 更新GRUB并且重启
-update-grub reboot Centos 7 升级最新内核 内核下载地址 http://elrepo.org/linux/kernel/el7/x86_64/RPMS/
-安装最新内核
-rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm yum --enablerepo=elrepo-kernel install kernel-ml -y 检查内核是否安装完成
-rpm -qa | grep kernel
-更新GRUB并重启主机
-egrep ^menuentry /etc/grub2.cfg | cut -f 2 -d \&#39; grub2-set-default 0 #default 0表示第一个内核设置为默认运行, 选择最新内核就对了 reboot http://elrepo.org/linux/kernel/下e15、e16分别对应Centos5、Centos6，可参考以上安装
-开启BBR 重启后uname -r 检查内核版本是不是4.9+
-然后执行以下操作
-echo &#34;net.core.default_qdisc=fq&#34; &gt;&gt; /etc/sysctl.conf echo &#34;net.ipv4.tcp_congestion_control=bbr&#34; &gt;&gt; /etc/sysctl.conf sysctl -p sysctl net.
+        安装Rvm $sudo aptitude install curl $curl -L get.rvm.io | bash -s stable  加载Rvm
+$source ~/.rvm/scripts/rvm  检查安装必备组件
+$rvm requirements  安装 Ruby 1.9.3 $rvm install 1.9.3 $ruby -v $gem -v  更改Gem软件源
+$gem sources -a http://ruby.taobao.org/ $gem sources -r http://rubygems.org/ $gem sources -l  安装Jekyll $gem install jekyll $jekyll -v  打完收工!
     </div>
 
     
@@ -91,7 +118,7 @@ echo &#34;net.core.default_qdisc=fq&#34; &gt;&gt; /etc/sysctl.conf echo &#34;net
 
 <div class="post-info">
     
-        <div class="post-date">2017-04-17</div>
+        <div class="post-date">2013-09-06</div>
     
     <div class="post-taxonomies">
         
@@ -106,15 +133,17 @@ echo &#34;net.core.default_qdisc=fq&#34; &gt;&gt; /etc/sysctl.conf echo &#34;net
                     
                         <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/google">#Google</a></li>
-                    
                         <li><a href="https://unixetc.com/tags/debian">#Debian</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                        <li><a href="https://unixetc.com/tags/jekyll">#Jekyll</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/bbr">#bbr</a></li>
+                        <li><a href="https://unixetc.com/tags/ruby">#Ruby</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/tcp_bbr">#tcp_bbr</a></li>
+                        <li><a href="https://unixetc.com/tags/blog">#Blog</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gem">#gem</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/rvm">#Rvm</a></li>
                     
                 </ul>
         
@@ -124,15 +153,16 @@ echo &#34;net.core.default_qdisc=fq&#34; &gt;&gt; /etc/sysctl.conf echo &#34;net
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/zbook14-install-wireless-driver-under-debian/">Debian下安装Zbook14无线网卡驱动</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/debian-use-apt-spy-to-select-the-best-source/">Debian使用apt-spy选择最佳源</a></h1>
     </header>
 
     <div class="content post-summary">
-        首先查看无线网卡型号
-alair@zb14:~$ lspci|grep less 02:00.0 Network controller: Intel Corporation Wireless 7260 (rev 73)  搜索Inter相关固件 ​ alair@zb14:~$ apt-cache search iwlwifi firmware-iwlwifi - Binary firmware for Intel Wireless cards
-安装之 ​ alair@zb14:~$ apt-get install firmware-iwlwifi
-重启完事儿！
+        安装apt-spy
+#apt-get install apt-spy  使用apt-spy选择最佳源
+#apt-spy update #apt-spy -d stable -a asia -t 3  结果保存在/etc/apt/sources.list.d/apt-spy.list，可手动替换到/etc/apt/sources.list
+apt-spy选项:
+ -d 系统版本，可选stable,testing,unstable -a 区域,如asia,europe等，可用项可cat /etc/apt-spy.conf -t 超时阀值(s)，可筛掉长时间不响应的地址  
     </div>
 
     
@@ -141,7 +171,7 @@ alair@zb14:~$ lspci|grep less 02:00.0 Network controller: Intel Corporation Wire
 
 <div class="post-info">
     
-        <div class="post-date">2016-08-17</div>
+        <div class="post-date">2013-05-09</div>
     
     <div class="post-taxonomies">
         
@@ -158,74 +188,9 @@ alair@zb14:~$ lspci|grep less 02:00.0 Network controller: Intel Corporation Wire
                     
                         <li><a href="https://unixetc.com/tags/debian">#Debian</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/zbook">#Zbook</a></li>
+                        <li><a href="https://unixetc.com/tags/apt-get">#apt-get</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/hp">#HP</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/inter">#inter</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/inter7260">#inter7260</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/raspberry-pi-use-dietpi/">树莓派使用DietPi</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        下载安装DietPi DietPi项目主页 http://dietpi.com/
-DietPi下载地址 http://fuzon.co.uk/downloads/DietPi.7z
-这个压缩包91MB，解压后的img文件522MB,比官方的小多了。
-然后将镜像写入到SD卡中，linux下使用dd
-dd if=DietPi_v74.img of=/dev/sdc bs=2M  Windows下使用Win32 Disk Imager，戳这里
-写入完成后将SD卡插入树莓派，加电启动。
-预设置Wifi链接 首次使用时，可以通过编辑dietpi.txt来进行wifi预设置。
-将TF卡插入电脑读卡器，打开对应的磁盘，找到dietpi.txt文件，打开。
-找到Wifi_Enabled=0，将其设置为1
-然后找到Wifi_SSID和Wifi_KEY分别设置wifi节点名和密码，保存即可。
-配置DietPi DietPi默认用户名密码为root dietpi，第一次启动DietPi提示检测升级，按提示操作。
-不过由于天朝网路问题，可能升级比较缓慢，建议Ctrl+c终止升级，修改sources.list为朝内镜像。
-DietPi默认没有vi,使用nano进行编辑，添加Aliyun源。
-deb http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib deb-src http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib  更新软件
-apt-get update&amp;&amp;apt-get upgrade -y  然后运行dietpi-config进行配置。
-DietPi - Config
- ┌────┤ ---------- DietPi-Config ---------- ├─────┐ │ Hardware : Raspberry Pi 1 (512MB) │ │ │ │ 1 Display Options │ │ 2 Audio Options │ │ 3 Performance Options │ │ 4 Advanced Options │ │ 5 Language/Regional Options │ │ 6 Security Options │ │ 7 Networking Options │ │ 8 AutoBoot Options │ │ 9 Tools │ │ │ │ │ │ &lt;Ok&gt; &lt;Exit&gt; │ │ │ └────────────────────────────────────────────────┘  推荐配置：
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2015-08-04</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/debian">#Debian</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/dietpi">#dietpi</a></li>
+                        <li><a href="https://unixetc.com/tags/apt-spy">#apt-spy</a></li>
                     
                 </ul>
         
@@ -243,9 +208,7 @@ DietPi - Config
                 <a href="/tags/debian/page/2/">To new posts</a>
             
         </div>
-        <div class="right pagination-item ">
-            
-                <a href="/tags/debian/page/4/">To old posts</a>
+        <div class="right pagination-item disabled">
             
         </div>
     </div>
@@ -253,17 +216,24 @@ DietPi - Config
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

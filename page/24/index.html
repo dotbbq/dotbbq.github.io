@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
 	<meta name="generator" content="Hugo 0.73.0" />
     
@@ -16,7 +18,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070679" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101234" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101234" />
+
+
 
 
 
@@ -42,9 +78,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -67,13 +103,18 @@
     
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/linux-set-ip-netmask-gateway-mac-dns/">Linux下设置IP、网关、掩码、MAC和DNS</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/sumbit-raspberry-pi-data-to-lewei50/">将树莓派数据上传至乐为物联</a></h1>
     </header>
 
     <div class="content post-summary">
-        先用ifconfig来查看所有活动网络接口
-eth0 Link encap:Ethernet HWaddr b8:27:eb:1b:63:a8 inet addr:192.168.1.6 Bcast:192.168.1.255 Mask:255.255.255.0 inet6 addr: fe80::6502:67ff:89b:b2fd/64 Scope:Link UP BROADCAST RUNNING MULTICAST MTU:1500 Metric:1 RX packets:43239 errors:0 dropped:24 overruns:0 frame:0 TX packets:30644 errors:0 dropped:0 overruns:0 carrier:0 collisions:0 txqueuelen:1000 RX bytes:25068614 (23.9 MiB) TX bytes:5993030 (5.7 MiB) lo Link encap:Local Loopback inet addr:127.0.0.1 Mask:255.0.0.0 inet6 addr: ::1/128 Scope:Host UP LOOPBACK RUNNING MTU:65536 Metric:1 RX packets:1961 errors:0 dropped:0 overruns:0 frame:0 TX packets:1961 errors:0 dropped:0 overruns:0 carrier:0 collisions:0 txqueuelen:1 RX bytes:160232 (156.
+        进入http://www.lewei50.com/注册登录
+添加设备(Add Device) 我的物联 -&gt; 我的设备，添加新设备，类型选择其他，不使用模板。
+请自定义设备标识，后面要用到。
+添加传感器 我的物联 -&gt; 感器与控制器，新建传感器。
+其中标识为提交数据依据，建议英文。
+向乐为物联提交数据 lewei.sh代码如下 http://cdn.lyq.wiki/res/lewei.sh
+#!/bin/bash LURL=http://www.lewei50.com/api/V1/Gateway/UpdateSensors/01 KEY=&quot;2fasdfsdfsdf9ffadsf62dfbfsdfa1&quot; sys_load=`cat /proc/loadavg | awk '{print $2}'` st=`/usr/bin/sen_t` sh=`/usr/bin/sen_h` for i in 1 2 3 4 5; do sys_temp=`cat /sys/class/thermal/thermal_zone0/temp | awk '{print $1/1000}'` if [[ &quot;${sys_temp}&quot; =~ ^- ]] then sys_temp='0.0' else echo ${sys_temp} break fi done echo &quot;Printf Values&quot; echo &quot;sys_temp:&quot;${sys_temp} echo &quot;sys_load:&quot;${sys_load} echo &quot;sensor_t:&quot;${st} echo &quot;sensor_h:&quot;${sh} echo &quot;Done!&quot; echo &quot;Sumbit Data to Lewei&quot; curl --request POST ${LURL} --header &quot;userkey:${KEY}&quot; --data &quot;[{'Name':'load','Value':'${sys_load}'},{'Name':'temp','Value':'${sys_temp}'},{'Name':'sd','Value':'${sh}'},{'Name':'wd','Value':'${st}'}]&quot;  其中LURL后面的01为设备标识,KEY为用户Userkey,JSON数据中的Name对应相应的传感器标识。
     </div>
 
     
@@ -82,7 +123,7 @@ eth0 Link encap:Ethernet HWaddr b8:27:eb:1b:63:a8 inet addr:192.168.1.6 Bcast:19
 
 <div class="post-info">
     
-        <div class="post-date">2017-03-20</div>
+        <div class="post-date">2015-07-30</div>
     
     <div class="post-taxonomies">
         
@@ -95,23 +136,33 @@ eth0 Link encap:Ethernet HWaddr b8:27:eb:1b:63:a8 inet addr:192.168.1.6 Bcast:19
             
                 <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/dns">#DNS</a></li>
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ifconfig">#ifconfig</a></li>
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ip">#ip</a></li>
+                        <li><a href="https://unixetc.com/tags/humidity">#Humidity</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/netmask">#netmask</a></li>
+                        <li><a href="https://unixetc.com/tags/%E4%BC%A0%E6%84%9F%E5%99%A8">#传感器</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/gateway">#gateway</a></li>
+                        <li><a href="https://unixetc.com/tags/%E6%B9%BF%E5%BA%A6">#湿度</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/mac">#mac</a></li>
+                        <li><a href="https://unixetc.com/tags/%E6%B8%A9%E5%BA%A6">#温度</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/route">#route</a></li>
+                        <li><a href="https://unixetc.com/tags/json">#JSON</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/resolvconf">#resolvconf</a></li>
+                        <li><a href="https://unixetc.com/tags/seneor">#Seneor</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%89%A9%E8%81%94%E7%BD%91">#物联网</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/temperature">#Temperature</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E4%B9%90%E4%B8%BA%E7%89%A9%E8%81%94">#乐为物联</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/lewei50">#lewei50</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dht11">#dht11</a></li>
                     
                 </ul>
         
@@ -121,18 +172,13 @@ eth0 Link encap:Ethernet HWaddr b8:27:eb:1b:63:a8 inet addr:192.168.1.6 Bcast:19
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/windows10-enabled-linux-subsystem/">Windows10开启Linux子系统</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/install-nginx-and-ngx_pagespeed-on-vps/">安装Nginx和ngx_pagespeed</a></h1>
     </header>
 
     <div class="content post-summary">
-        打开功能 设置-系统-应用和功能，右侧下拉到底，点击“相关设置”下的“程序和功能”
-在打开的“程序和功能”左侧菜单中，找到“启用或关闭windows功能”，点击打开。
-在接下来的“windows功能”菜单中，下拉勾选“适用于linux的windows子系统（beta）”，确认后重启系统。
-开启开发人员模式 设置-更新和安全-针对开发人员，在右侧打开“开发人员模式”
-安装linux子系统 Win+R输入cmd回车，打开cmd
-输入“bash”按照提示安装设置用户名密码即可使用。
-然后就可以使用ubuntu提供的linux子系统了。
+        VPS配置:
+Ubuntu 14.04 x86 RAM 512M SWAP 64M DISK 5G  准备工作 sudo apt-get update&amp;&amp;apt-get upgrade -y sudo apt-get install build-essential zlib1g-dev libpcre3 libpcre3-dev unzip libssl-dev -y  下载ngx_pagespeed cd NPS_VERSION=1.9.32.4 wget https://github.com/pagespeed/ngx_pagespeed/archive/release-${NPS_VERSION}-beta.zip unzip release-${NPS_VERSION}-beta.zip cd ngx_pagespeed-release-${NPS_VERSION}-beta/ wget https://dl.google.com/dl/page-speed/psol/${NPS_VERSION}.tar.gz tar -xzvf ${NPS_VERSION}.tar.gz  安装Nginx cd groupadd www useradd -s /sbin/nologin -g www www NGINX_VERSION=1.8.0 wget http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz tar -xvzf nginx-${NGINX_VERSION}.tar.gz cd nginx-${NGINX_VERSION}/ ./configure \ --user=www \ --group=www \ --prefix=/usr/local/nginx \ --with-http_stub_status_module \ --with-http_ssl_module \ --with-http_spdy_module \ --with-http_gzip_static_module \ --with-http_sub_module \ --add-module=$HOME/ngx_pagespeed-release-${NPS_VERSION}-beta \ sudo make sudo make install sudo ln -sf /usr/local/nginx/sbin/nginx /usr/bin/nginx  配置/etc/init.
     </div>
 
     
@@ -141,7 +187,7 @@ eth0 Link encap:Ethernet HWaddr b8:27:eb:1b:63:a8 inet addr:192.168.1.6 Bcast:19
 
 <div class="post-info">
     
-        <div class="post-date">2017-03-10</div>
+        <div class="post-date">2015-07-24</div>
     
     <div class="post-taxonomies">
         
@@ -156,11 +202,11 @@ eth0 Link encap:Ethernet HWaddr b8:27:eb:1b:63:a8 inet addr:192.168.1.6 Bcast:19
                     
                         <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
+                        <li><a href="https://unixetc.com/tags/google">#Google</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/windows10">#Windows10</a></li>
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/bash">#bash</a></li>
+                        <li><a href="https://unixetc.com/tags/vps">#VPS</a></li>
                     
                 </ul>
         
@@ -170,25 +216,15 @@ eth0 Link encap:Ethernet HWaddr b8:27:eb:1b:63:a8 inet addr:192.168.1.6 Bcast:19
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/termux-package-management/">Termux软件包管理</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/baidu-input-dictionary-converted-to-rime/">将百度输入法词库导入倒小狼毫词典</a></h1>
     </header>
 
     <div class="content post-summary">
-        首次安装Termux后，内含一个基础系统，包括apt软件包管理功能，并且集成了一些busybox系统工具。
-其余的软件包可使用apt进行安装管理，命令如下：
-apt update  更新可用软件包清单。
-apt search &lt;query&gt;  按名称搜索可用软件。
-apt install &lt;package&gt;  安装软件
-apt upgrade  更新所有可更新软件。
-apt show &lt;package&gt;  显示软件信息
-apt list  列出可用软件清单
-apt list --installed  列出所有已安装软件清单
-apt remove &lt;package&gt;  卸载已安装软件
-Apt是基于dpkg格式的软件管理工具，一般没必要直接使用dpkg来进行操作，不过以下两个例子可以参考：
-dpkg -L &lt;package&gt;  列出已安装软件
-dpkg --verify  验证已安装软件的完整性
-更多信息请检阅apt manual page (通过apt install man来安装)
+        首先，在百度输入法设置中，将词库导出，选择txt格式
+然后下载深蓝词库转换
+打开深蓝词库转换，选择百度词库，在转换为类型中选择中州韵，转换文成后保存为另外一个txt文件
+然后打开**【小狼毫】用户词典管理**，选择已存在的词典，点击右侧的**导入文本码表**
     </div>
 
     
@@ -197,7 +233,57 @@ dpkg --verify  验证已安装软件的完整性
 
 <div class="post-info">
     
-        <div class="post-date">2017-03-09</div>
+        <div class="post-date">2015-07-23</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/rime">#rime</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E4%B8%AD%E5%B7%9E%E9%9F%B5">#中州韵</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%B0%8F%E7%8B%BC%E6%AF%AB">#小狼毫</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%AF%8D%E5%BA%93">#词库</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%B7%B1%E8%93%9D%E8%AF%8D%E5%BA%93%E8%BD%AC%E6%8D%A2">#深蓝词库转换</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/install-h2o-on-bandwagon-vps/">将Nginx更换为H2O</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装必须的软件 预备工具软件
+#apt-get install autoconf automake m4 build-essential  libssl-dev 必选
+#apt-get install openssl libssl-dev  以下为可选包，可自行搜索安装
+ libuv libyaml wslay  安装H2O 下载安装最新版h2o https://github.com/h2o/h2o/releases
+#wget https://github.com/h2o/h2o/archive/v1.4.1.tar.gz #tar zxf v1.4.1.tar.gz #cd h2o-1.4.1 #cmake -DWITH_BUNDLED_SSL=on . #make #sudo make install  编辑H2O站点配置文件 以下是一个简单的http与https配置文件，可自行参考修改
+hosts: &quot;www.example.com&quot;: listen: port: 80 listen: port: 443 ssl: certificate-file: /path/to/server-certificate.crt key-file: /path/to/private-key.crt paths: &quot;/&quot;: file.dir: /path/to/doc-root access-log: /path/to/the/access-log error-log: /path/to/the/error-log pid-file: /path/to/the/pid-file http2-reprioritize-blocking-assets: ON # performance tuning option  启动H2O
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-07-21</div>
     
     <div class="post-taxonomies">
         
@@ -212,13 +298,101 @@ dpkg --verify  验证已安装软件的完整性
                     
                         <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/termux">#termux</a></li>
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/terminal">#terminal</a></li>
+                        <li><a href="https://unixetc.com/tags/vps">#VPS</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/apt">#apt</a></li>
+                        <li><a href="https://unixetc.com/tags/openssl">#OpenSSL</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/dpkg">#dpkg</a></li>
+                        <li><a href="https://unixetc.com/tags/h2o">#H2O</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/wslay">#wslay</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/web-server">#Web Server</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/bandwagonhost">#BandwagonHost</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/libssl">#libssl</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/libuv">#libuv</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/libyaml">#libyaml</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/typecho-converted-to-gor/">将博客从Typcho转移至Gor</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        缘由 VPS快到期了，不想继续维护，太累，并且香港VPS价格也不菲。
+于是打算选择一个静态博客平台，原来用过的不少:jekyll,hexo,gor,pelican，最后决定Gor
+选择Gor的理由有两点
+ 安装方便 执行效率高  安装Gor 参考Gor主页https://github.com/wendal/gor安装Gor
+将Typecho文章导出为Markdown文件(.md) Github上有现成的工具typecho-exporter，主页为https://github.com/aneasystone/typecho-exporter
+这个工具可以将所有的文章导出为Markdown文件，但是以文章标题为文件名，不利于后期处理，建议使用slug为文件名。
+编辑下载的main.py，将75行的p.title = r[1]替换为`p.title = r[2]'，如下:
+results = cur.fetchall() for r in results: p = Post() p.id = r[0] p.title = r[2] p.content = r[5] posts.append(p)  原来的r[1]对应typecho_contentsSQL表中的title列，我的r[2]对应slug列，可以根据实际情况更改。
+编辑typecho-exporter的config.ini文件，设置数据库访问方式。
+运行main.py，完成后会在typecho-exporter目录下生成files文件夹，里面就是导出的Markdown文件。
+后期整理 导出后的Markdown没有Gor需要的文件头格式，需要手动整理
+这里推荐使用Notepad++批量替换
+  查找目标:
+  替换为&mdash;\n title: title\ndate: 2015-07-20\ndescription: \npermalink: \ncategories: \ntags: \n&mdash;\n
+  记得将查找模式重的扩展打开。
+经过以上替换，就大概有了个Gor的Markdown头格式，后面的手动工作就少了多了。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-07-20</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/google">#Google</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/git">#Git</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gor">#gor</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/github">#Github</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vps">#VPS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/mysql">#MySQL</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/markdown">#Markdown</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/golang">#golang</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/blog">#Blog</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/typecho">#typecho</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/php">#php</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/sql">#sql</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/notepad&#43;&#43;">#notepad&#43;&#43;</a></li>
                     
                 </ul>
         
@@ -246,17 +420,24 @@ dpkg --verify  验证已安装软件的完整性
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

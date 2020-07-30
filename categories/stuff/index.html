@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,7 +101,7 @@
     </div>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/phicomm-n1-unixbench-score-and-system-information/">斐讯N1系统信息和UNIXBENCH跑分</a></h1>
     </header>
 
@@ -112,7 +148,7 @@
 </article>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/yandex-disk-console-client-for-linux/">YandexDisk命令行客户端</a></h1>
     </header>
 
@@ -166,7 +202,7 @@ echo &quot;deb http://repo.yandex.ru/yandex-disk/deb/ stable main&quot; | sudo t
 </article>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/centos-install-hugo-via-repo/">CentOS安装Hugo</a></h1>
     </header>
 
@@ -213,6 +249,107 @@ sudo yum update sudo yum install hugo -y
 
 </article>
     
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/gnome-landscaping-guide/">Gnome美化简介</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装必要软件 sudo apt install gnome-tweak-tool chrome-gnome-shell 安装Gnome Shell Extensions 使用Firefox浏览https://extensions.gnome.org/，第一次访问根据提示安装Firefox插件，如下图:
+安装完成后，访问https://extensions.gnome.org/搜索安装以下三个GnomeShellExtension
+ User Themes 加载用户主题，加载目录为~/.local/share/themes Dash to Dock 定制 Dash/Dock Gnome Global Application Menu Gnome全局菜单  安装方法如下，进入到扩展详情后，点击标题后的开关，按照提示安装即可
+安装主题 访问https://www.gnome-look.org/，在GTK3 Themes分类下下载主题，下载后解压拷贝至~/.local/share/themes下，然后打开gnome-tweak，在外观中即可选择已安装的主题。
+在~/.local/share/下新建themes、icons和fonts三个目录，分别对应主题、图标、字体，这些资源都可以在https://www.gnome-look.org/找得到。
+以下为本人的桌面截图，仅供参考：
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2019-12-08</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/gnome">#Gnome</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%AD%97%E4%BD%93">#字体</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%BE%8E%E5%8C%96">#美化</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E4%B8%BB%E9%A2%98">#主题</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%9B%BE%E6%A0%87">#图标</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%A3%81%E7%BA%B8">#壁纸</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/linux-install-windows-fonts/">在Linux中安装Windows字体</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        使用的系统为Ubuntu 19.10，Windows系统分区lable为sys
+参考如下操作：
+alair@e6440:~$ sudo mkdir /usr/share/fonts/winfonts [sudo] alair 的密码： alair@e6440:~$ sudo cp /media/alair/sys/Windows/Fonts/* /usr/share/fonts/winfonts/ alair@e6440:~$ sudo rm -rf /usr/share/fonts/winfonts/*.fon alair@e6440:~$ sudo mkfontscale alair@e6440:~$ sudo mkfontdir alair@e6440:~$ sudo fc-cache 打完收工！
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2019-11-21</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%AD%97%E4%BD%93">#字体</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
     
     
         
@@ -230,17 +367,24 @@ sudo yum update sudo yum install hugo -y
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

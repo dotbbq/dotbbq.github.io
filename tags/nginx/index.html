@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101236" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101236" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,7 +101,7 @@
     </div>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/xiunobbs-nginx-pseudo-static/">XiunoBBS Nginx伪静态规则</a></h1>
     </header>
 
@@ -108,7 +144,7 @@ location ~* \.(htm)$ { rewrite &quot;^(.*)/(.+?).htm(.*?)$&quot; $1/index.php?$2
 </article>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/typecho-login-access-denied/">Typecho登录时提示AccessDenied</a></h1>
     </header>
 
@@ -159,7 +195,7 @@ service php-fpm restart  完了！
 </article>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/ssl-security-optimization/">SSL安全优化</a></h1>
     </header>
 
@@ -210,6 +246,119 @@ dhparam.pem可以使用openssl dhparam -out dhparam.pem 4096命令生成，这�
 
 </article>
     
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/use-letsencrypt-free-ssl-certificate/">使用免费Let&#39;s Encrypt证书</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        在此介绍如何使用Let&rsquo;s Encrypt的免费SSL证书，需要在有管理权限的VPS上操作，然后参考以下方法自签域名证书。
+git clone https://github.com/letsencrypt/letsencrypt.git cd letsencrypt mkdir -p /home/webroot/.well-known/acme-challenge #/home/webroot为网站目录 ./letsencrypt-auto certonly --email me@alair.cn -d alair.cn,www.alair.cn --webroot -w /home/webroot --agree-tos #注意email、域名、和网站目录  签发成功后，会提示如/etc/letsencrypt/live/www.alair.cn/fullchain.pem;的证书路径信息。
+IMPORTANT NOTES: - Congratulations! Your certificate and chain have been saved at /etc/letsencrypt/live/www.alair.cn/fullchain.pem. Your cert will expire on 2016-03-14. To obtain a new version of the certificate in the future, simply run Let's Encrypt again. - If like Let's Encrypt, please consider supporting our work by: Donating to ISRG / Let's Encrypt: https://letsencrypt.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-12-15</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/https">#https</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssl">#ssl</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/letsencrypt">#letsencrypt</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%85%8D%E8%B4%B9%E8%AF%81%E4%B9%A6">#免费证书</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/startssl-and-nginx/">StartSSL免费证书与Nginx配置</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        注册StartSSL 打开https://www.startssl.com/，点击Sign-up开始注册
+参考上图填写注册信息，然后Continue，会有如下提示，系统会发送验证码到你的注册邮箱
+检查注册邮箱，将收到的验证码填写提交，然后会出现如下提示，等待审核。
+审核通过后，会收到如下提示邮件，点击其中连接，然后输入邮箱中的验证码完成注册
+安装证书 接下来创建私匙
+安装证书
+安装成功后会有如下提示
+验证域名 接下来验证域名，点击Validations Wizard
+填写域名
+选择验证邮件地址
+按照提示输入邮箱接收到的验证码完成验证。
+创建证书 选择Certificates Wizard，证书目标选择Web Server SSL/TLS Certificate
+接下来新建私匙
+点击Skip跳过系统建立步骤，我们自己在VPS上建立CSR文件，参考下图通过openssl命令建立CSR文件
+注意，为了便于后期安装配置方便，建议密码置空
+完成后，cat出建立好的ciuxsss.csr内容，粘贴提交
+接下来添加域名
+接下来将文本框中的内容保存为一个**.crt**文件
+配置Nginx 贴出我的配置文件，大家参考一下
+server { listen 80; location /{ return 301 https://$host$request_uri; } } server { listen 443; #listen 80; #listen [::]:80; server_name ciux.org; index index.html index.htm index.php default.html default.htm default.php; root /home/ciux/compiled; ssl on; ssl_certificate /home/bk/ssl/ciuxsss.crt; ssl_certificate_key /home/bk/ssl/ciuxsss.key; ssl_session_timeout 5m; ssl_protocols SSLv2 SSLv3 TLSv1; ssl_ciphers ALL:!
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-10-14</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/301">#301</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssl">#ssl</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%85%8D%E8%B4%B9%E8%AF%81%E4%B9%A6">#免费证书</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/rewrite">#rewrite</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/starssl">#starssl</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
     
     
         
@@ -227,17 +376,24 @@ dhparam.pem可以使用openssl dhparam -out dhparam.pem 4096命令生成，这�
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101236" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101236" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,21 +101,29 @@
     </div>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/raspberry-pi-using-ddclient-and-ddns/">树莓派使用ddclient和DDNS</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/starting-use-raspberry-pi/">开始使用树莓派</a></h1>
     </header>
 
     <div class="content post-summary">
-        域名解析 首先得有个域名，在域名管理中将域名DNS设为he.net的DNS地址，如下：
-ns1.he.net ns2.he.net ns3.he.net ns4.he.net ns5.he.net  然后在http://dns.he.net注册账号，添加域名(Add a new domain)
-接下来添加A记录(New A)，勾选允许动态域名解析(Enable entry for dynamic dns)
-点击域名后DDNS列中的刷新按钮，新建一个DDNS密匙(Generate a DDNS key.)
-安装设置ddclient 在树莓派上安装ddclient
-sudo apt-get install ddclient  编辑ddclient配置文件，路径为/etc/ddclient.conf
-protocol=dyndns2 use=web,web=myip.dnsomatic.com server=dyn.dns.he.net login=raspi.in password='ddnskey' www.raspi.in,raspi.in  其中password为设置DDNS时的key
-重启ddclient服务
-service ddclient restart  验证IP查询结果
-sudo ddclient -query use=if, if=eth0 address is 192.168.1.111 use=if, if=lo address is 127.0.0.1 use=web, web=dnspark address is 36.40.143.235 use=web, web=dyndns address is NOT FOUND use=web, web=loopia address is 36.
+        安装系统 从官网下载系统镜像，推荐Raspbian
+http://downloads.raspberrypi.org/raspbian_latest
+将下载后的zip文件解压，得到2014-01-07-wheezy-raspbian.img文件。
+准备一张SD卡，最好容量大于4GB，Class10
+将镜像写入SD卡
+ Linux下推荐使用dd名来写入镜像  使用fdisk -l检查分区信息，比如sd卡设备为**/dev/sdb**，使用以下命令写入：
+#dd if=2014-01-07-wheezy-raspbian.img of=/dev/sdb bs=1M   Windows下推荐使用Win32DiskImager写入镜像  Win32DiskImager下载地址：http://sourceforge.net/projects/win32diskimager/
+下载后打开软件，选择好镜像文件与USB设备，然后点击Write写入。
+开机进入系统 将已写入系统的SD卡插入Raspberry Pi，通过固网链接路由器，然后使用USB供电启动。
+正常启动后，板载的ACT，PWR、FDX、LNK、100五个指示灯均点亮。
+通过SSH连接Raspberry Pi
+查看Raspberry Pi IP地址
+#nmap -sP 192.168.1/24  检查出MAC后标注(Raspberry Pi Foundation)的即为Raspberry Pi主机。
+然后通过SSH来链接主机
+#ssh 192.168.1.127  用户名为pi，默认密码为raspberry
+Widnows下推荐使用Putty
+设置Raspberry 运行设置工具sudo raspi-config
+ 选择Expand Filesystem扩展文件系统 Change User Passwd 修改默认用户pi的密码，当然也可以在系统中使用passwd命令来更改。 Advanced Options-&gt;Hostname 修改主机名 Overclock 超频，建议900Mhz  
     </div>
 
     
@@ -88,7 +132,7 @@ sudo ddclient -query use=if, if=eth0 address is 192.168.1.111 use=if, if=lo addr
 
 <div class="post-info">
     
-        <div class="post-date">2016-01-07</div>
+        <div class="post-date">2014-02-28</div>
     
     <div class="post-taxonomies">
         
@@ -102,22 +146,22 @@ sudo ddclient -query use=if, if=eth0 address is 192.168.1.111 use=if, if=lo addr
                 <ul class="post-tags">
                     
                         <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/debian">#Debian</a></li>
                     
                         <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
                     
                         <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ddns">#DDNS</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/dns">#DNS</a></li>
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
                     
                         <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/domain">#Domain</a></li>
+                        <li><a href="https://unixetc.com/tags/overlock">#overlock</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/he.net">#he.net</a></li>
+                        <li><a href="https://unixetc.com/tags/%E8%B6%85%E9%A2%91">#超频</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ddclient">#ddclient</a></li>
+                        <li><a href="https://unixetc.com/tags/win32diskimager">#win32diskimager</a></li>
                     
                 </ul>
         
@@ -127,15 +171,21 @@ sudo ddclient -query use=if, if=eth0 address is 192.168.1.111 use=if, if=lo addr
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/ssl-security-optimization/">SSL安全优化</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/install-vpn-on-ubuntu/">Ubuntu下安装VPN</a></h1>
     </header>
 
     <div class="content post-summary">
-        先贴出本站的SSL安全评级,测试地址为https://www.ssllabs.com/ssltest/analyze.html?d=alair.cn
-以下是本站Nginx配置中关于SSL部分
-listen 443 ssl http2; ssl_certificate /etc/letsencrypt/live/alair.cn/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/alair.cn/privkey.pem; ssl_session_timeout 60m; ssl_protocols TLSv1 TLSv1.1 TLSv1.2; ssl_ciphers ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-RC4-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:RC4-SHA:!aNULL:!eNULL:!EXPORT:!DES:!3DES:!MD5:!DSS:!PKS; ssl_prefer_server_ciphers on; ssl_session_cache builtin:1000 shared:SSL:10m; ssl_dhparam /etc/ssl/certs/dhparam.pem; ssl_stapling on; ssl_stapling_verify on; add_header Strict-Transport-Security &quot;max-age=63072000; includeSubdomains; preload&quot;; add_header X-Frame-Options &quot;DENY&quot;;  说明：
-dhparam.pem可以使用openssl dhparam -out dhparam.pem 4096命令生成，这个命令会执行很长时间，也可以将字节数改为2048
+        安装pptpd
+#apt-get install pptpd  IP设置
+#vi /etc/pptpd.conf  添加以下内容:
+localip 192.18.0.1 remoteip 192.168.0.200-230  设置DNS
+#vi/etc/ppp/pptpd-options  添加以下内容：
+ms-dns 192.168.1.1 ms-dns 8.8.8.8  添加用户
+#vi /etc/ppp/chap-secrets  添加以下内容:
+name * passwd *  重启vpn
+#/etc/init.d/pptpd restart  允许ip4访问外网
+#vi /etc/sysctl.conf net.ipv4.ip_forward=1 //取消本行前注释符(*) #sysctl -p 
     </div>
 
     
@@ -144,7 +194,7 @@ dhparam.pem可以使用openssl dhparam -out dhparam.pem 4096命令生成，这�
 
 <div class="post-info">
     
-        <div class="post-date">2015-12-21</div>
+        <div class="post-date">2014-02-23</div>
     
     <div class="post-taxonomies">
         
@@ -159,17 +209,65 @@ dhparam.pem可以使用openssl dhparam -out dhparam.pem 4096命令生成，这�
                     
                         <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
+                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vpn">#VPN</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/pptpd">#pptpd</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/optimization-vps/">VPS优化</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        pdksh替代bash $sudo apt-get install pdksh $sudo vi /etc/shells  添加/bin/pdksh到/etc/shells文件
+$chsh -s /bin/pdksh  重新登录即可。
+修改SSH端口 #vi /etc/ssh/sshd_config  将Port 22中的22改为自定义数字即可
+# /etc/init.d/ssh restart  dropbear替代openssh $sudo apt-get install dropbear $sudo /etc/init.d/ssh stop $sudo vi /etc/default/dropbear  修改NO_START=0,修改DROPBEAR_PORT为自定义端口号
+$sudo /etc/init.d/dropbear start $sudo apt-get remove openssh-server $sudo apt-get autoremove  关闭多余的TTY Ubuntu 12.04 server如下操作
+#cd /etc/init/ #mv tty2.conf tty2.conf.bak #mv tty3.conf tty2.conf.bak #mv tty4.conf tty2.conf.bak #mv tty5.conf tty2.conf.bak #mv tty6.conf tty2.conf.bak #reboot  Debian 7如下操作
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-02-01</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vps">#VPS</a></li>
                     
                         <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/https">#https</a></li>
+                        <li><a href="https://unixetc.com/tags/openssh">#OpenSSH</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ssl">#ssl</a></li>
+                        <li><a href="https://unixetc.com/tags/pdksh">#pdksh</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/http2">#http2</a></li>
+                        <li><a href="https://unixetc.com/tags/dropbear">#dropbear</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/dhparam">#dhparam</a></li>
+                        <li><a href="https://unixetc.com/tags/getty">#getty</a></li>
                     
                 </ul>
         
@@ -179,17 +277,15 @@ dhparam.pem可以使用openssl dhparam -out dhparam.pem 4096命令生成，这�
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/md5sum-usage/">使用MD5校验文件</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/automatic-backup-files-and-database-on-vps/">VPS下自动备份文件和数据库</a></h1>
     </header>
 
     <div class="content post-summary">
-        md5sum命令用于生成和校验文件的md5值。它会逐位对文件的内容进行校验。是文件的内容，与文件名无关，也就是文件内容相同，其md5值相同。md5值是一个128位的二进制数据，转换成16进制则是32（128/4）位的进制值。
-md5校验，有很小的概率不同的文件生成的md5可能相同。比md5更安全的校验算法还有SHA*系列的。
-在网络传输时，我们校验源文件获得其md5sum，传输完毕后，校验其目标文件，并对比如果源文件和目标文件md5 一致的话，则表示文件传输无异常。否则说明文件在传输过程中未正确传输。
-md5sum示例 生成文件md5 pi@raspi:~ $ md5sum bs.conf fcd3e1243d1cd5903d4e38c46671b84f bs.conf  md5sum校验是根据文件内容为准，与名称无关，意思是即便文件名修改了，但md5校验值应该不会改变，如下：
-pi@raspi:~ $ cp bs.conf bs.conf.bak pi@raspi:~ $ md5sum bs* fcd3e1243d1cd5903d4e38c46671b84f bs.conf fcd3e1243d1cd5903d4e38c46671b84f bs.conf.bak  根据md5校验文件是否更改 一般网上分享的大文件都会附带一个.md5文件，这就是所分享文件的md5值，可以使用-c参数来直接使用.md5文件来检验文件是否完整
-pi@raspi:~ $ md5sum bs.conf&gt;bs.conf.md5 pi@raspi:~ $ md5sum -c bs.conf.md5 bs.conf: OK  如上例，将bs.conf的md5值定向到一个bs.conf.md5文件，然后使用md5sum -c bs.conf.md5直接检验相应文件是否完整一致，校验通过的话会输出提示OK，如果文件经过修改，内容已经不一致，则不会通过校验，则会显示FAILED
+        新建脚本，名为autoback.sh
+#vi autoback.sh  脚本(autoback.sh)内容如下:
+#!/bin/sh #备份网站目录/home/www/ tar zcvf /home/backup/www$(date + &quot;%Y%m%d&quot;).tar.gz /home/www/* #备份数据库 www /usr/local/mysql/bin/mysqldump -uroot -ppassword dbname &gt; /home/backup/dbname$(date +&quot;%Y%m%d&quot;).sql #删除三天前的备份 cd /home/backup/ rm -f *$(date -d -3day +&quot;%Y%m%d&quot;)*  将脚本(autoback.sh)添加到自动执行任务列表:
+#chmod +x autoback.sh #crontab -e 59 23 * * * /root/autoback.sh  推荐注册Dropbox，参考**Linux下CLI模式使用Dropbox**，将备份文件自动同步到Dropbox。
     </div>
 
     
@@ -198,7 +294,7 @@ pi@raspi:~ $ md5sum bs.conf&gt;bs.conf.md5 pi@raspi:~ $ md5sum -c bs.conf.md5 bs
 
 <div class="post-info">
     
-        <div class="post-date">2015-12-13</div>
+        <div class="post-date">2014-01-13</div>
     
     <div class="post-taxonomies">
         
@@ -213,13 +309,61 @@ pi@raspi:~ $ md5sum bs.conf&gt;bs.conf.md5 pi@raspi:~ $ md5sum -c bs.conf.md5 bs
                     
                         <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/md5">#md5</a></li>
+                        <li><a href="https://unixetc.com/tags/vps">#VPS</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/md4">#md4</a></li>
+                        <li><a href="https://unixetc.com/tags/mysql">#MySQL</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/sha">#sha</a></li>
+                        <li><a href="https://unixetc.com/tags/crontab">#crontab</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/md5sum">#md5sum</a></li>
+                        <li><a href="https://unixetc.com/tags/dropbox">#Dropbox</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/repair-grub-boot/">修复grub引导</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        笔记本原来安装的Linux/Windows XP双系统，今天重新安装了Windows7，但是开机的grub引导被搞掉了，找了下grub的man看了半天，摸索出来如何修复原来的grub引导。
+首先，使用Linux live cd引导系统，然后按照以下操作：
+检查分区信息
+ubuntu@ubuntu:~$ sudo -s root@ubuntu:~# lsblk NAME MAJ:MIN RM SIZE RO TYPE MOUNTPOINT sda 8:0 0 465.8G 0 disk ├─sda1 8:1 0 40G 0 part ├─sda2 8:2 0 1K 0 part ├─sda5 8:5 0 4G 0 part [SWAP] ├─sda6 8:6 0 20G 0 part ├─sda7 8:7 0 20G 0 part ├─sda8 8:8 0 100G 0 part ├─sda9 8:9 0 200G 0 part └─sda10 8:10 0 81.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2013-12-12</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/grub">#GRUB</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/boot">#boot</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/lsblk">#lsblk</a></li>
                     
                 </ul>
         
@@ -247,17 +391,24 @@ pi@raspi:~ $ md5sum bs.conf&gt;bs.conf.md5 pi@raspi:~ $ md5sum -c bs.conf.md5 bs
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

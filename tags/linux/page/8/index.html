@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101236" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101236" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,13 +101,20 @@
     </div>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/p7zip-usage/">p7zip使用实例</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/use-syncthing-synchronize-files-between-multiple-devices/">使用Syncthing在多个设备之间同步文件</a></h1>
     </header>
 
     <div class="content post-summary">
-        以下是CentOS7中7za的使用实例,CentOS下安装p7zip可以参考此文
-[root@localhost ~]# 7za 7-Zip (a) [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21 p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,1 CPU x64) Usage: 7za &lt;command&gt; [&lt;switches&gt;...] &lt;archive_name&gt; [&lt;file_names&gt;...] [&lt;@listfiles...&gt;] &lt;Commands&gt; a : Add files to archive b : Benchmark d : Delete files from archive e : Extract files from archive (without using directory names) h : Calculate hash values for files i : Show information about supported formats l : List contents of archive rn : Rename files in archive t : Test integrity of archive u : Update files to archive x : eXtract files with full paths &lt;Switches&gt; -- : Stop switches parsing -ai[r[-|0]]{@listfile|!
+        Syncthing是一款开源的多平台同步软件，使用他可以在多个设备间进行文件同步，并且带有版本控制功能。
+Syncthing官网地址 **https://syncthing.net/**Github地址 https://github.com/syncthing/syncthing
+安装Syncthing Syncthing官网提供多平台安装包，下载地址为 https://github.com/syncthing/syncthing/releases/
+并且针对Debian/Ubuntu平台，官方提供了apt-get安装方法
+# Add the release PGP keys: curl -s https://syncthing.net/release-key.txt | sudo apt-key add - # Add the &quot;release&quot; channel to your APT sources: echo &quot;deb http://apt.syncthing.net/ syncthing release&quot; | sudo tee /etc/apt/sources.list.d/syncthing.list # Update and install syncthing: sudo apt-get update sudo apt-get install syncthing  运行Syncthing Linux下直接使用syncthing命令运行
+syncthing &amp;  Windows下直接打开下载的syncthing.exe文件，而后浏览器自动打开http://127.0.0.1:8384进行设置管理。
+管理Syncthing 如果是在VPS上安装Syncthing ,运行syncthing后，只能通过http://127.0.0.1:8384进行管理，我们可以通过以下方法在本地管理。
+ssl -L 9891:localhost:8384 root@ip  输入root密码登录成功后，即可本地浏览http://127.0.0.1:9891对VPS上的Synchting进行管理。
+添加设备 每个设备均有一个设备标识，可以通过操作-&gt;显示设备标识来查看。
     </div>
 
     
@@ -80,7 +123,7 @@
 
 <div class="post-info">
     
-        <div class="post-date">2017-06-16</div>
+        <div class="post-date">2016-05-06</div>
     
     <div class="post-taxonomies">
         
@@ -95,77 +138,17 @@
                     
                         <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/p7zip">#p7zip</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/7z">#7z</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/7za">#7za</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/lzma">#lzma</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/tar">#tar</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/zip">#zip</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/cab">#cab</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/gzip">#gzip</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/bzip2">#bzip2</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/anbox-run-android-applications-on-linux/">在Linux中运行Android软件</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        想要在PC上运行Android软件就需要模拟器，Windows版的Android模拟器软件很多，但是Linux平台的就不多了，今天推荐一款Linux下的Android模拟器软件Anbox
-Anbox官方介绍为Android in a Box,Run Android applications on any GNU/Linux operating system.
-Anbox现在还处于测试阶段，很多功能还不完善和稳定，请谨慎使用。
-安装Anbox 首先得安装Snaps,官方地址为https://snapcraft.io/
-LinuxMint中安装Snaps和必须包
-sudo apt install snapd sudo apt install pulseaudio  接下来按照官方指南安装Anbox
-snap install --classic anbox-installer &amp;&amp; anbox-installer  我试着通过snap来安装一直存在权限问题，一般权限不能运行snap install --classic anbox-installer，root运行完snap install --classic anbox-installer后，但运行anbox-installer又提示不能使用root权限，一般权限根本无法运行anbox-installer，搞了半天都没有成功，于是就有了下文。
-通过常规方法安装Anbox
-wget https://raw.githubusercontent.com/anbox/anbox-installer/master/installer.sh -O anbox-installer chmod +x ./anbox-installer ./anbox-installer  安装完成后会有重启系统的提示
- To ensure all changes made to your system you should now reboot your system. If you don&rsquo;t do this no Android applications will show up in the system application launcher.
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2017-06-09</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                        <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
                     
                         <li><a href="https://unixetc.com/tags/android">#Android</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/anbox">#Anbox</a></li>
+                        <li><a href="https://unixetc.com/tags/syncthing">#Syncthing</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/adb">#adb</a></li>
+                        <li><a href="https://unixetc.com/tags/sync">#Sync</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/apk">#apk</a></li>
+                        <li><a href="https://unixetc.com/tags/%E5%90%8C%E6%AD%A5%E6%96%87%E4%BB%B6">#同步文件</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/macos">#MacOS</a></li>
                     
                 </ul>
         
@@ -175,15 +158,18 @@ wget https://raw.githubusercontent.com/anbox/anbox-installer/master/installer.sh
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/centos7-installation-and-use-p7zip/">CentOS7安装使用p7zip</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/optimize-and-compress-image-by-optipng/">使用OptiPNG优化压缩图片</a></h1>
     </header>
 
     <div class="content post-summary">
-        在此只推荐从源码安装p7zip，下载地址 http://www.7-zip.org/download.html
-源码在这里下载 https://sourceforge.net/projects/p7zip/files/p7zip/
-wget https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_all.tar.bz2 tar jxf p7zip_16.02_src_all.tar.bz2 cd p7zip_16.02 make make install 使用p7zip
-[root@localhost ~]# 7za  7-Zip (a) [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21 p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,1 CPU x64) Usage: 7za &lt;command&gt; [&lt;switches&gt;...] &lt;archive_name&gt; [&lt;file_names&gt;...] [&lt;@listfiles...&gt;] &lt;Commands&gt; a : Add files to archive b : Benchmark d : Delete files from archive e : Extract files from archive (without using directory names) h : Calculate hash values for files i : Show information about supported formats l : List contents of archive rn : Rename files in archive t : Test integrity of archive u : Update files to archive x : eXtract files with full paths 压缩文件
+        因工作需要，得处理一张7872x5904体积为178MB的图片，格式为TIFF。
+网上搜了半天，找到一个名为OptiPNG的软件，主要为PNG优化，但也支持TIFF格式。
+下面是OptiPNG的官方介绍
+ OptiPNG is a PNG optimizer that recompresses image files to a smaller size, without losing any information. This program also converts external formats (BMP, GIF, PNM and TIFF) to optimized PNG, and performs PNG integrity checks and corrections.
+ OptiPNG可以将PNG文件重新压缩，压缩后体积变得更小，并且不会丢失任何信息。同时optipng还支持其他格式的图片，如BMP、GIF、PNM和TIFF。
+至于OptiPNG的威力如何，请看本次实例
+root@raspi:~# ls -lh huxian.tif -rw-r--r-- 1 root root 178M Apr 4 16:54 huxian.tif //原始文件178MB root@raspi:~# optipng huxian.tif ** Processing: huxian.tif Importing TIFF 7872x5904 pixels, 4x8 bits/pixel, RGB+alpha //分辨率7872x5904 Reducing image to 3x8 bits/pixel, RGB Input file size = 186000368 bytes Trying: zc = 9 zm = 8 zs = 0 f = 0 IDAT size = 4273133 Selecting parameters: zc = 9 zm = 8 zs = 0 f = 0 IDAT size = 4273133 Output file: huxian.
     </div>
 
     
@@ -192,7 +178,7 @@ wget https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_al
 
 <div class="post-info">
     
-        <div class="post-date">2017-06-06</div>
+        <div class="post-date">2016-04-03</div>
     
     <div class="post-taxonomies">
         
@@ -207,13 +193,167 @@ wget https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_al
                     
                         <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/centos">#CentOS</a></li>
+                        <li><a href="https://unixetc.com/tags/png">#png</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/p7zip">#p7zip</a></li>
+                        <li><a href="https://unixetc.com/tags/optipng">#optipng</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/7z">#7z</a></li>
+                        <li><a href="https://unixetc.com/tags/bmp">#bmp</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/7za">#7za</a></li>
+                        <li><a href="https://unixetc.com/tags/gif">#gif</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/pnm">#pnm</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/tiff">#tiff</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/optimize">#optimize</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/compress">#compress</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/lftp-use-case/">LFTP使用实例</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        LFTP介绍 lftp是一个功能强大的ftp/http客户端，作者是 Alexander Lukyanov。
+lftp支持多种传输协议，如ftp、http、https、sftp、exp等。
+如同BASH一样，lftp支持任务管理。并且具备书签管理、内置镜像和多线程传送功能。
+使用LFTP 登录服务器 lftp ftp://user:password@ip:port  以上是一个完整的lftp登录示例，其中包含协议(ftp)、用户名(user)、密码(password)、主机(ip)以及端口(port)
+默认情况下lftp直接访问ftp服务，默认登录端口为22，因此我们可以使用以下方法来便捷登录主机
+lftp user@ip  然后系统会提示输入password，完成后登录成功！
+lftp命令行参数 lftp :~&gt; help !&lt;shell-command&gt; (commands) alias [&lt;name&gt; [&lt;value&gt;]] attach [PID] bookmark [SUBCMD] cache [SUBCMD] cat [-b] &lt;files&gt; cd &lt;rdir&gt; chmod [OPTS] mode file... close [-a] [re]cls [opts] [path/][pattern] debug [&lt;level&gt;|off] [-o &lt;file&gt;] du [options] &lt;dirs&gt; exit [&lt;code&gt;|bg] get [OPTS] &lt;rfile&gt; [-o &lt;lfile&gt;] glob [OPTS] &lt;cmd&gt; &lt;args&gt; help [&lt;cmd&gt;] history -w file|-r file|-c|-l [cnt] jobs [-v] [&lt;job_no.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-04-01</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ftp">#ftp</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/lftp">#lftp</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/download">#download</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/upload">#upload</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/linux-check-and-set-the-path/">Linux下查看修改PATH</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        什么是PATH? 要搞清什么是PATH，应该先搞清什么是环境变量？
+在计算机中，如果需要运行一个软件，那么我们就要找到它所在的位置，但是每次运行程序时如果都要进入到相应目录，那么显然是很繁琐的。于是就有了环境变量，环境变量就是一个系统参数，里面记录了一些目录，运行软件的时候，相关的程序将会按照该目录寻找相关文件。
+而在Linux中，系统会有一个默认的PATH环境变量，里面记录了系统级的相关命令目录，比如当我们输入ls、cd、pwd等命令时，我们不需要指定它们所在的目录，因为包含这些命令的系统目录已经写入PATH参数，因而方便我们调用。
+查看PATH 在linux中，可以使用export命令来查看所有环境变量，如下：
+pi@raspi:~$ export declare -x HOME=&quot;/home/pi&quot; declare -x LANG=&quot;en_GB.UTF-8&quot; declare -x LOGNAME=&quot;pi&quot; declare -x MAIL=&quot;/var/mail/pi&quot; declare -x OLDPWD declare -x PATH=&quot;/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/home/pi/bin&quot; declare -x PWD=&quot;/home/pi&quot; declare -x SHELL=&quot;/bin/bash&quot; declare -x SHLVL=&quot;1&quot; declare -x SSH_CLIENT=&quot;101.135.216.146 28249 22&quot; declare -x SSH_CONNECTION=&quot;101.135.216.146 28249 192.168.1.111 22&quot; declare -x SSH_TTY=&quot;/dev/pts/1&quot; declare -x TERM=&quot;xterm&quot; declare -x USER=&quot;pi&quot;  使用echo来查看单独的环境变量
+pi@raspi:~$ echo $PATH /bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/home/pi/bin  我们可以看到，以上PATH值包含了一些系统命令的目录，而这些目录都用:隔开。
+修改PATH 我们可以使用export命令来添加目录，如下：
+export PATH=/mydoc:$PATH  以上命令在原有的PATH前添加了/mydoc这个目录，设置完成后的PATH值如下：
+pi@raspi:~$ echo $PATH /mydoc:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/home/pi/bin  以上方法修改PATH值，在终端退出后就会失效，因此建议通过修改/etc/profile来设定PATH
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-03-29</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/path">#PATH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/echo">#echo</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/install-h2o-on-ubuntu/">Ubunt下安装H2O</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        更新系统 apt-get update &amp;&amp; apt-get upgrade -y &amp;&amp; apt-get dist-upgrade -y &amp;&amp; apt-get autoremove --purge -y &amp;&amp; apt-get autoclean -y  安装必备软件 apt-get install locate git cmake build-essential checkinstall autoconf pkg-config libtool python-sphinx wget libcunit1-dev nettle-dev libyaml-dev libuv-dev -y  安装wslay git clone https://github.com/tatsuhiro-t/wslay.git cd wslay/ autoreconf -i automake autoconf ./configure make make install  安装完成后检查lib文件，如下所示：
+ls /usr/local/lib/ libuv.a libuv.so.1 libwslay.la libwslay.so.0.0.1 python3.4 libuv.la libuv.so.1.0.0 libwslay.so pkgconfig libuv.so libwslay.a libwslay.so.0 python2.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-03-26</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/openssl">#OpenSSL</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/h2o">#H2O</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/wslay">#wslay</a></li>
                     
                 </ul>
         
@@ -241,17 +381,24 @@ wget https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_al
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

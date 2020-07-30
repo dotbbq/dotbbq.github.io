@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,7 +101,7 @@
     </div>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/deploy-the-static-site-to-the-coding-net/">将静态站点部署到Coding.net</a></h1>
     </header>
 
@@ -116,7 +152,7 @@ $ ssh-keygen -t rsa -C &quot;name@domain.com&quot; //在此设置为coding.net�
 </article>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/raspberry-pi-install-dnsmasq-and-dnsmasq-china-list/">树莓派安装Dnsmasq加速DNS解析</a></h1>
     </header>
 
@@ -172,7 +208,7 @@ service dnsmasq restart  其中的server字段为上游DNS
 </article>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/typecho-converted-to-gor/">将博客从Typcho转移至Gor</a></h1>
     </header>
 
@@ -247,34 +283,135 @@ results = cur.fetchall() for r in results: p = Post() p.id = r[0] p.title = r[2]
 
 </article>
     
-    
-    
-        
-    <div class="pagination">
-        <div class="left pagination-item disabled">
-            
-        </div>
-        <div class="right pagination-item ">
-            
-                <a href="/tags/git/page/2/">To old posts</a>
-            
-        </div>
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/use-speedtest-cli-tests-network-bandwidth/">使用speedtest-cli测试带宽</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装speedtest-cli 安装speedtest-cli方法如下:
+sudo apt-get install python-pip sudo pip install speedtest-cli  或
+pip install git+https://github.com/sivel/speedtest-cli.git  或
+git clone https://github.com/sivel/speedtest-cli.git python speedtest-cli/setup.py install  或
+wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest_cli.py chmod +x speedtest-cli  或
+curl -Lo speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest_cli.py chmod +x speedtest-cli  使用speedtest-cli root@MyUbuntuCloud:~# speedtest-cli -h usage: speedtest-cli [-h] [--bytes] [--share] [--simple] [--list] [--server SERVER] [--mini MINI] [--source SOURCE] [--timeout TIMEOUT] [--version] Command line interface for testing internet bandwidth using speedtest.
     </div>
 
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-03-26</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/git">#Git</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/python">#Python</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/bandwidth">#Bandwidth</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%B8%A6%E5%AE%BD">#带宽</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%BD%91%E9%80%9F">#网速</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/speedtest">#speedtest</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/speedtest-cli">#speedtest-cli</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/pip">#pip</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/use-the-ssh-key-to-login-github/">使用SSH密匙登录Github</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        生成ssh密匙文件 ssh-keygen -t rsa -C &quot;user@domain.com&quot;  接下来会提示输入密码，推荐自定义密码，当然也可以置空
+Enter passphrase(empty for no passphrase): Enter same passphrase again:  完成后会在用户目录下的.ssh文件夹中新建id_rsa与is_rsa.pub两个文件。
+添加ssh密匙到github用户 登录至github.com,点击右上角的Account Settings
+在左侧选择SSH Keys菜单，然后在右侧点击Add SSH Key按钮
+将上一步生成的id_rsa.pub文件内容复制进去保存。
+本地连接至github.com ssh -T git@github.com  如果前面设置了passphrase，那么就按照提示输入passphrase。如果置空的话，就直接点击回车。成功后会有如下提示：
+Hi wrchiu! You`ve successfully authenticated, but GitHub does note provide shell access.  参考以上设置完成后，以后git push时就不需要每次输入密码了！
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2013-09-03</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/git">#Git</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/github">#Github</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/rsa">#RSA</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

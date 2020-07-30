@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,25 +101,17 @@
     </div>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/check-cp-dd-etc-commands-progress/">查看cp、mv等命令的执行进度</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/use-tl-wn725n-in-raspberry-pi/">树莓派中使用TL-WN725N</a></h1>
     </header>
 
     <div class="content post-summary">
-        Linux中进行文件拷贝和移动时，我们是看不到具体命令的执行情况，不知道还需要多久才可以执行完成。在此推荐一个软件名为progress，用它可以查看一些命令的具体执行情况，包括进度、时间等等。
-该软件的具体解释为Coreutils Progress Viewer，即核心程序进度查看，用它可以监视很多linux程序的执行情况，比如cp、mv、dd、tar,、gzip、cat等等，甚至于firefox的下载进度或者nginx的运行情况。
-安装progress progress主页 https://github.com/Xfennec/progress
-安装progress方法
-git clone https://github.com/Xfennec/progress.git cd progress make make install  使用progress 简单的执行方法
-progress  几个示例：
-  监控所有可监控软件的执行情况
-watch progress -q
-  然后进行文件操作即可看到如下内容:
-  查看下载进度
-watch progress -wc firefox
-  查看网页服务器活动情况
-progress -c nginx
-  
+        Raspbian版本 2014-01-07-wheezy-raspbian.img
+下载地址为http://cdn.lyq.wiki/res/8188eu-20140616.tar.gz
+首先固网链接树莓派，通过SSH登录
+wget http://cdn.lyq.wiki/res/8188eu_31024_614.zip unzip 8188eu_31024_614.zip sudo mv 8188eu.ko /lib/modules/`uname -r`/kernel/drivers/net/wireless sudo chown root:root /lib/modules/`uname -r`/kernel/drivers/net/wireless/8188eu.ko sudo mv rtl8188eufw.bin /lib/firmware/rtlwifi/ sudo chown root:root /lib/firmware/rtlwifi/rtl8188eufw.bin sudo depmod -a sudo modprobe 8188eu  然后编辑/etc/netwok/interfaces，添加以下内容
+allow-hotplug wlan0 auto wlan0 iface wlan0 inet manual wpa-roam /etc/mywpa.conf iface default inet dhcp  新建mywpa.conf写入链接配置vi /etc/mywpa.conf
+network={ ssid=&quot;YOUR SSID&quot; proto=RSN key_mgmt=WPA-PSK pairwise=CCMP TKIP group=CCMP TKIP psk=&quot;YOUR PASSWORD&quot; }  重启系统
     </div>
 
     
@@ -92,7 +120,7 @@ progress -c nginx
 
 <div class="post-info">
     
-        <div class="post-date">2016-02-04</div>
+        <div class="post-date">2014-08-12</div>
     
     <div class="post-taxonomies">
         
@@ -106,137 +134,233 @@ progress -c nginx
                 <ul class="post-tags">
                     
                         <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/dd">#dd</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/unix">#Unix</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/cp">#cp</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/mv">#mv</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/progress">#progress</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/use-google-authenticator-set-2step-verification-strengthening-ssh-login/">使用Google Authenticator两步验证加强SSH登录</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        Google Authenticator开源版主页 https://github.com/google/google-authenticator
-安装Google Authenticator Ubuntu已经包含libpam-google-authenticator软件(Ubuntu 11.10以上版本),可以直接使用apt-get安装
-apt-get install libpam-google-authenticator  其他系统可以通过源码编译安装
-git clone https://github.com/google/google-authenticator-libpam.git cd google-authenticator-libpam/ ./bootstrap.sh ./configure make make install  注意：在Debian7中执行./configure时可能存在以下错误提示
-configure: error: Unable to find the PAM library or the PAM header files  在此需要安装libpam0g-dev和libtool
-apt-get -y install libpam0g-dev libtool  设置Google Authenticator 在手机端搜索安装Google Authenticator
-google-authenticator Do you want authentication tokens to be time-based (y/n) y  然后出现二维码，使用手机端Google Authenticator扫码,接下来服务器端继续设置
-如果没有出现二维码，可以将提示的以**https://www.google.com/chart?**开头的连接复制到浏览器中，就可以看到二维码了
-Do you want me to update your &quot;/root/.
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2016-01-28</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/google">#Google</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/vps">#VPS</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E8%B0%B7%E6%AD%8C">#谷歌</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ga">#ga</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/2step">#2step</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/libpam">#libpam</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/pam">#pam</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E4%B8%A4%E6%AD%A5%E9%AA%8C%E8%AF%81">#两步验证</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/otp">#otp</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/raspberry-pi-install-dnsmasq-and-dnsmasq-china-list/">树莓派安装Dnsmasq加速DNS解析</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        天朝的dns服务商尿性不是一般的大，动不动就抽风或者劫持，为了避免这种情况，可以在树莓派上安装Dnsmasq来加速dns解析，提高网络浏览体验。
-安装配置dnsmasq apt-get install dnsmasq  配置dnsmasq,vi /etc/dnsmasq.conf
-我的配置文件如下：
-domain=Raspi2 resolv-file=/etc/resolv.dnsmasq conf-dir=/etc/dnsmasq.d min-port=4096 server=114.114.114.114 server=114.114.115.115 server=223.5.5.5 server=223.6.6.6 server=119.29.29.29 server=182.254.116.116 server=112.124.47.27 server=114.215.126.16 server=101.226.4.6 server=218.30.118.6 server=42.120.21.30 server=199.91.73.222 server=178.79.131.110 server=8.8.8.8 server=8.8.4.4 cache-size=10000  配置完重启dnsmasq服务
-service dnsmasq restart  其中的server字段为上游DNS
-配置dnsmasq-china-list git clone https://github.com/felixonmars/dnsmasq-china-list.git cd dnsmasq-china-list/ cp *.conf /etc/dnsmasq.d/ service dnsmasq restart  至此设置完成，可以在路由器中将首选dns设为树莓派ip，这样局域网内的所有设备都可以体验dns解析加速了！
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2016-01-18</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/git">#Git</a></li>
                     
                         <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
                     
                         <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/dns">#DNS</a></li>
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/tp-link">#TP-Link</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/tl-wn735n">#TL-WN735N</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/wn725n">#wn725n</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/wireless">#wireless</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%97%A0%E7%BA%BF%E7%BD%91%E5%8D%A1">#无线网卡</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-install-tonido-build-personal-cloud/">树莓派安装Tonido打造个人云服务</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装Tonido sudo mkdir /usr/local/tonido cd /usr/local/tonido sudo wget http://patch.codelathe.com/tonido/live/installer/armv6l-rpi/tonido.tar.gz sudo tar -zxvf tonido.tar.gz ./tonido.sh start  浏览器打开http://ip:10001开始注册设置 ip为树莓派的地址
+安装多媒体解码器 Tonido支持在线播放音频，但需要安装设置解码器
+cd /usr/local/tonido sudo apt-get install ffmpeg sudo ln -s /usr/bin/ffmpeg ffmpeg.exe sudo ln -s /usr/bin/ffmpeg ffmpegv.exe  设置开机启动  下载脚本文件tonido wget http://cdn.lyq.wiki/res/tonido 设置脚本权限 sudo cp tonido /etc/init.d/ sudo chmod +x /etc/init.d/tonido 安装脚本 sudo update-rc.d tonido defaults  客户端下载 Tonido Sync for Windows http://www.tonido.com/download.php?TonidoSync.exe Tonido Sync for Mac http://www.tonido.com/download.php?TonidoSync.dmg Tonido Sync for Linux http://www.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-08-12</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
                     
                         <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
                     
                         <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/dnsmasq">#dnsmasq</a></li>
+                        <li><a href="https://unixetc.com/tags/tonido">#tonido</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/centos7-install-ntfs-3g/">Centos7下安装NTFS-3G</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        Centos7安装指南
+安装NTFS-3G 下载ntfs-3g_ntfsprogs-2014.2.15.tgz http://cdn.lyq.wiki/res/ntfs-3g_ntfsprogs-2014.2.15.tgz
+#tar zxf ntfs-3g_ntfsprogs-2014.2.15.tgz #cd ntfs-3g_ntfsprogs-2014.2.15 #make #make install  如果make无法成功的话，请重新安装gcc yum install gcc
+使用NTFS-3G 临时挂载window分区：
+#mkdir /mnt/windowsc/ #mount -t ntfs-3g /dev/sda1 /mnt/windosc/  编辑fstab开机挂载分区，可以参考通过fstab自动挂载分区
+/dev/sda1 /mnt/windowsc ntfs-3g defaults 0 0  NTFS-3G主页
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-08-10</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/centos">#CentOS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/centos7">#CentOS7</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ntfs">#NTFS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ntfs-3g">#ntfs-3g</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/centos7-installation-guide/">CentOS7安装指南</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        下载Centos7安装镜像: http://mirrors.aliyun.com/centos/7.0.1406/isos/x86_64/CentOS-7.0-1406-x86_64-GnomeLive.iso
+将下载后的镜像写入U盘:
+#dd if=CentOS-7.0-1406-x86_64-GnomeLive.iso of=/dev/sdb bs=4M &amp;&amp; sync  关闭电脑，从U盘启动。
+进入桌面后，点击Install to Hard Drive开始安装。
+选择语言
+这里选择简体中文(中国)
+安装信息摘要
+这里需要设置四部分内容：日期和时间、键盘、安装位置、网络和主机名
+设置安装目标和位置,选择本地磁盘，然后勾选我要配置分区以自定义分区信息。
+点击完成进入手动分区。
+在左侧选择具体磁盘分区，右边编辑挂载信息，然后点击更新设置
+以下为编辑/home挂载点信息：
+下图为编辑后的分区信息，点击左上角完成
+查看更改摘要，确认没问题了就点击接受更改
+设置网络和主机名
+完成设置后，点击右下角开始安装
+用户设置
+设置ROOT密码
+创建用户
+所有配置完成后，等待安装结束。。。
+提示安装完成，点击右下角Quit退出。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-08-09</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/centos">#CentOS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/centos7">#CentOS7</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/yum">#yum</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/centos7-configuration-grub-to-add-the-windows-boot-menu/">Centos7配置grub添加windows引导菜单</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        进入/etc/grub.d/目录
+#cd /etc/grub.d/  新建15_Windows文件，写入以下内容：
+#! /bin/sh -e echo &quot;#Adding Windows&quot; &gt;&amp;2 cat &lt;&lt; EOF menuentry &quot;Windows&quot; { set root=(hd0,1) chainloader +1 } EOF  其中(hd0,1)是本地磁盘windows主扇区号，可以通过fdisk -l来查看确定。
+设定文件权限
+#chmod 755 15_Windows  编辑/etc/default/grub来设定菜单等待时间
+GRUB_TIMEOUT=2 GRUB_DISTRIBUTOR=&quot;$(sed 's, release .*$,,g' /etc/system-release)&quot; GRUB_DEFAULT=saved GRUB_DISABLE_SUBMENU=true GRUB_TERMINAL_OUTPUT=&quot;console&quot; GRUB_CMDLINE_LINUX=&quot;vconsole.keymap=us crashkernel=auto vconsole.font=latarcyrheb-sun16 rhgb quiet&quot; GRUB_DISABLE_RECOVERY=&quot;true&quot;  修改GRUB_TIMEOUT值即可。
+设置Windows为默认启动项
+#grub2-set-default &quot;windows&quot;  然后运行以下命令，使以上修改生效：
+# grub2-mkconfig -o /boot/grub2/grub.cfg 
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-08-09</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/centos">#CentOS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/centos7">#CentOS7</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/grub">#GRUB</a></li>
                     
                 </ul>
         
@@ -264,17 +388,24 @@ service dnsmasq restart  其中的server字段为上游DNS
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

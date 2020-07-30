@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101236" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101236" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,19 +101,25 @@
     </div>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/understand-linux-shell-initialization-files-and-user-profiles-files/">理解Linux中Shell初始化文件和用户Profiles文件</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/use-net-speeder-accelerate-vps/">使用net_speeder加速VPS</a></h1>
     </header>
 
     <div class="content post-summary">
-        Linux是一个多用户、实时共享的操作系统，意味着不止一个用户可以登录同一个系统。系统管理员通过任务管理来分配不同用户的权限，比如安装、升级、卸载应用程序，运行编译程序，文件查看、编辑等等。
-Linux允许通过两种主要方式来创建用户环境：系统级(全局)和用户级(个人)。一般情况下，Linux系统都会运行基本shell程序，当用户登录成功后shell会在初始化时根据某些文件开创建环境。
-Linux中的Shell初始化 当Shell被调用时，会有一些初始化/启动文件被启用，它们的主要作用是为shell本身或用户设定运行环境，包含一些函数、	变量、别名等等。
-Shell可以读取以下两种初始化文件:
- 系统级启动文件 – 包含一些应用于户所有用户的全局配置，一般存在于**/etc**目录中，如 **/etc/profiles** 、**/etc/bashrc** 或者 **/etc/bash.bashrc**。 用户级启动文件 – 包含一些应用于单用户的配置文件，一般存放在各个用户目录，这些配置可以覆盖系统级全局配置，如**.profiles**、 **.bash_profile**、 **.bashrc** 和 **.bash_login**.  Shell存在三种调用模式：
-1. 交互式登录Shell 当用户成功登录系统后调用该Shell,使用**/bin/login**登录，随后读取**/etc/passwd**文件。
-当启动交互式shell后，将读取**/etc/profile**文件以及特定的用户文件**~/.bash_profile**
-login as: pi pi@pi.raspi.in&#39;s password: The programs included with the Debian GNU/Linux system are free software; the exact distribution terms for each program are described in the individual files in /usr/share/doc/*/copyright. Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent permitted by applicable law.
+         当使用国外服务器时，经常会发现，下载速度只有十几k。平时可能不太注意，认为服务器带宽不足，或者自己使用的宽带不给力，其实很有可能原因并不在此。
+由于光速的局限性，延迟会比较高（即使光沿直线传播，太平洋一个往返也要一百多毫秒）。并且由于距离较远，途径路由跳数较多，并且网络拥堵的原因。经常会发生丢包的情况。
+对于平时使用最广泛的TCP协议来讲，发送端发出包后，接收端会回复ACK，表示自己收到了。用这种机制来保证可靠性。但对于高延迟链路来讲，如果每发送一个包都等待应答，那么大部分时间都在等待数据包到达，而链路则空置了。为此一般会采用滑动窗口技术。即在窗口满之前，发送端一直发送包，然后收到应答后将确认收到的包从窗口中移除。这样可以提高链路利用率。
+TCP还有一个特性则是拥塞控制。当发送端检测到链路发生丢包时，则会主动缩小窗口大小以减慢发送速度，避免拥塞。不过对于跳数较多的链路来讲，只要有一个路由不够稳定丢包，就会被发送端判断为拥塞，从而影响网络速度。
+为了解决丢包问题，最简单粗暴的方法就是双倍发送，即同一份数据包发送两份。这样的话在服务器带宽充足情况下，丢包率会平方级降低。
+这种方式下，直接优点是降低丢包率，直接缺点是耗费双倍流量。一些延伸影响是更容易触发快速恢复逻辑，避免了丢包时窗口缩减过快。一定程度也能提高网络速度。
+最近比较忙，空闲时间做了一个最简单的程序，试用效果很好，在一台VPS上测试后发现，未开启时单线程下载、ssh管道速度在十几K级别。开启后可以达到平均300KB+的速度。效果非常明显。但对于不加速就可以跑满带宽的类型来讲（多线程下载），开启后反而由于多出来的无效流量，导致速度减半。所以对于多线程/高速链路，这个方案是不适合的。
+目前版本是最简单的逻辑，未来会进行细化（主动触发快速恢复、快速重传等），降低流量浪费，提升加速效果。
+目前程序起名net-speeder，相对于修改协议栈来讲，由于后者需要重新升级编译内核，使用用户态程序部署更方便，稳定性更高，兼容性更好。缺点则是性能开销稍大和自由度有损失。总体比较起来，个人使用还是使用用户态程序更合适一些，特别是在虚拟机中使用（OpenVZ，LXC等虚拟机无法自己定制内核）。
+ 摘自http://www.snooda.com/read/324
+net_speeder项目主页 https://github.com/snooda/net-speeder
+安装net_speeder apt-get install libnet-dev libpcap-dev -y git clone https://github.com/snooda/net-speeder.git cd net-speeder sh build.sh mv net_speeder /usr/local/bin/  使用net_speeder 使用ifconfig查看网卡端口，我的端口为venet0
+nohup net_speeder venet0 &quot;ip&quot; &gt;/dev/null 2&gt;&amp;1 &amp;  添加到开机启动
+echo 'nohup net_speeder venet0 &quot;ip&quot; &gt;/dev/null 2&gt;&amp;1 &amp;' &gt;&gt; /etc/rc.local 
     </div>
 
     
@@ -86,7 +128,7 @@ login as: pi pi@pi.raspi.in&#39;s password: The programs included with the Debia
 
 <div class="post-info">
     
-        <div class="post-date">2017-04-25</div>
+        <div class="post-date">2016-02-07</div>
     
     <div class="post-taxonomies">
         
@@ -101,19 +143,13 @@ login as: pi pi@pi.raspi.in&#39;s password: The programs included with the Debia
                     
                         <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                        <li><a href="https://unixetc.com/tags/vps">#VPS</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                        <li><a href="https://unixetc.com/tags/net_speeder">#net_speeder</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/path">#PATH</a></li>
+                        <li><a href="https://unixetc.com/tags/%E5%8A%A0%E9%80%9F">#加速</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/shell">#shell</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/profile">#profile</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">#环境变量</a></li>
+                        <li><a href="https://unixetc.com/tags/accelerate">#accelerate</a></li>
                     
                 </ul>
         
@@ -123,24 +159,25 @@ login as: pi pi@pi.raspi.in&#39;s password: The programs included with the Debia
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/python-pip-installation/">python-pip安装实例</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/check-cp-dd-etc-commands-progress/">查看cp、mv等命令的执行进度</a></h1>
     </header>
 
     <div class="content post-summary">
-        Python-pip 是一个现代的，通用的 Python包管理工具。提供了对 Python 包的查找、下载、安装、卸载的功能。
-以下为多个操作系统平台下Python-pip安装方法
-通用方法 通过get-pip.py文件来安装，建议Windows用户使用，前提是你必须首先安装Python。
-版本要求Python 2 &gt;=2.7.9 或Python 3 &gt;=3.4，可从官网下载http://www.python.org/
-然后下载get-pip.py
-下载地址 https://bootstrap.pypa.io/get-pip.py
-通过python get-pip.py命令来进行安装。
-Linux下通过软件管理工具来安装Python-pip Fedora21   Python2
-sudo yum upgrade python-setuptools sudo yum install python-pip python-wheel   Python3
-sudo yum install python3 python3-wheel   Fedora22   Python2
-sudo dnf upgrade python-setuptools sudo dnf install python-pip python-wheel   Python3
-sudo dnf install python3 python3-wheel   CentOS/RHEL 首先得启用EPEL repository,可参考此文
-  EPEL 6/EPEL 7
+        Linux中进行文件拷贝和移动时，我们是看不到具体命令的执行情况，不知道还需要多久才可以执行完成。在此推荐一个软件名为progress，用它可以查看一些命令的具体执行情况，包括进度、时间等等。
+该软件的具体解释为Coreutils Progress Viewer，即核心程序进度查看，用它可以监视很多linux程序的执行情况，比如cp、mv、dd、tar,、gzip、cat等等，甚至于firefox的下载进度或者nginx的运行情况。
+安装progress progress主页 https://github.com/Xfennec/progress
+安装progress方法
+git clone https://github.com/Xfennec/progress.git cd progress make make install  使用progress 简单的执行方法
+progress  几个示例：
+  监控所有可监控软件的执行情况
+watch progress -q
+  然后进行文件操作即可看到如下内容:
+  查看下载进度
+watch progress -wc firefox
+  查看网页服务器活动情况
+progress -c nginx
+  
     </div>
 
     
@@ -149,7 +186,7 @@ sudo dnf install python3 python3-wheel   CentOS/RHEL 首先得启用EPEL reposit
 
 <div class="post-info">
     
-        <div class="post-date">2017-04-20</div>
+        <div class="post-date">2016-02-04</div>
     
     <div class="post-taxonomies">
         
@@ -164,17 +201,15 @@ sudo dnf install python3 python3-wheel   CentOS/RHEL 首先得启用EPEL reposit
                     
                         <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/debian">#Debian</a></li>
+                        <li><a href="https://unixetc.com/tags/dd">#dd</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
+                        <li><a href="https://unixetc.com/tags/unix">#Unix</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/python">#Python</a></li>
+                        <li><a href="https://unixetc.com/tags/cp">#cp</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/pip">#pip</a></li>
+                        <li><a href="https://unixetc.com/tags/mv">#mv</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/python-pip">#python-pip</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/fedora">#fedora</a></li>
+                        <li><a href="https://unixetc.com/tags/progress">#progress</a></li>
                     
                 </ul>
         
@@ -184,18 +219,20 @@ sudo dnf install python3 python3-wheel   CentOS/RHEL 首先得启用EPEL reposit
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/raspberrypi-dynamic-ip-updater/">树莓派动态IP更新器</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/use-google-authenticator-set-2step-verification-strengthening-ssh-login/">使用Google Authenticator两步验证加强SSH登录</a></h1>
     </header>
 
     <div class="content post-summary">
-        这是一个python3的脚本，每隔10分钟监控一次IP地址，如果发生变化则会通过AutoRemote消息通知你。 关于AutoRemote的使用可参考这里
-这里推荐使用ipgetter来获取外网IP，地址为https://github.com/phoemur/ipgetter
-安装ipgetter
-sudo apt-get install python3 pip sudo pip3 install ipgetter 你可以从以下地址获取每个通知设备的AutoRemote所需google key
-​	http://autoremotejoaomgcd.appspot.com/?key=[it&rsquo;s the part that is here]
-以下为python3脚本:
-import ipgetter import urllib.request import requests currentIP = ipgetter.myip() #AutoRemote function to send a notification YOUR_KEY goes here def sendAR(x): AR_key = &#39;YOUR_KEY&#39; AR_url = &#39;http://autoremotejoaomgcd.appspot.com/sendmessage?key=&#39;+ AR_key +&#39;&amp;message=IP%20&#39; message = AR_url + x response = urllib.request.urlopen(message).read() print(x)	#check the internet and check if previous file is present try: requests.
+        Google Authenticator开源版主页 https://github.com/google/google-authenticator
+安装Google Authenticator Ubuntu已经包含libpam-google-authenticator软件(Ubuntu 11.10以上版本),可以直接使用apt-get安装
+apt-get install libpam-google-authenticator  其他系统可以通过源码编译安装
+git clone https://github.com/google/google-authenticator-libpam.git cd google-authenticator-libpam/ ./bootstrap.sh ./configure make make install  注意：在Debian7中执行./configure时可能存在以下错误提示
+configure: error: Unable to find the PAM library or the PAM header files  在此需要安装libpam0g-dev和libtool
+apt-get -y install libpam0g-dev libtool  设置Google Authenticator 在手机端搜索安装Google Authenticator
+google-authenticator Do you want authentication tokens to be time-based (y/n) y  然后出现二维码，使用手机端Google Authenticator扫码,接下来服务器端继续设置
+如果没有出现二维码，可以将提示的以**https://www.google.com/chart?**开头的连接复制到浏览器中，就可以看到二维码了
+Do you want me to update your &quot;/root/.
     </div>
 
     
@@ -204,7 +241,7 @@ import ipgetter import urllib.request import requests currentIP = ipgetter.myip(
 
 <div class="post-info">
     
-        <div class="post-date">2017-04-19</div>
+        <div class="post-date">2016-01-28</div>
     
     <div class="post-taxonomies">
         
@@ -219,17 +256,137 @@ import ipgetter import urllib.request import requests currentIP = ipgetter.myip(
                     
                         <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
+                        <li><a href="https://unixetc.com/tags/google">#Google</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vps">#VPS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%B0%B7%E6%AD%8C">#谷歌</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ga">#ga</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/2step">#2step</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/libpam">#libpam</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/pam">#pam</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E4%B8%A4%E6%AD%A5%E9%AA%8C%E8%AF%81">#两步验证</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/otp">#otp</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-install-dnsmasq-and-dnsmasq-china-list/">树莓派安装Dnsmasq加速DNS解析</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        天朝的dns服务商尿性不是一般的大，动不动就抽风或者劫持，为了避免这种情况，可以在树莓派上安装Dnsmasq来加速dns解析，提高网络浏览体验。
+安装配置dnsmasq apt-get install dnsmasq  配置dnsmasq,vi /etc/dnsmasq.conf
+我的配置文件如下：
+domain=Raspi2 resolv-file=/etc/resolv.dnsmasq conf-dir=/etc/dnsmasq.d min-port=4096 server=114.114.114.114 server=114.114.115.115 server=223.5.5.5 server=223.6.6.6 server=119.29.29.29 server=182.254.116.116 server=112.124.47.27 server=114.215.126.16 server=101.226.4.6 server=218.30.118.6 server=42.120.21.30 server=199.91.73.222 server=178.79.131.110 server=8.8.8.8 server=8.8.4.4 cache-size=10000  配置完重启dnsmasq服务
+service dnsmasq restart  其中的server字段为上游DNS
+配置dnsmasq-china-list git clone https://github.com/felixonmars/dnsmasq-china-list.git cd dnsmasq-china-list/ cp *.conf /etc/dnsmasq.d/ service dnsmasq restart  至此设置完成，可以在路由器中将首选dns设为树莓派ip，这样局域网内的所有设备都可以体验dns解析加速了！
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-01-18</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/git">#Git</a></li>
+                    
                         <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
                     
                         <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dns">#DNS</a></li>
                     
                         <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/python">#Python</a></li>
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ipgetter">#ipgetter</a></li>
+                        <li><a href="https://unixetc.com/tags/dnsmasq">#dnsmasq</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ip">#ip</a></li>
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/install-configure-noip-client-in-raspberry-pi/">树莓派下安装配置Noip</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        注册noip 首先在http://noip.com注册账户
+然后在主机管理(Manage Hosts)中添加主机(Add A Host)，根据提示设置二级域名，IP可以随意填写。
+安装Noip客户端 wget https://www.noip.com/client/linux/noip-duc-linux.tar.gz tar zxf noip-duc-linux.tar.gz cd noip-2.1.9-1 sudo make install  安装过程中，按照提示输入noip帐号信息，时间间隔建议设为5s，默认30s
+设置开机启动 在/etc/init.d/中建立noip2脚本
+sudo vi /etc/init.d/noip2  脚本内容如下
+#! /bin/sh ### BEGIN INIT INFO # Provides: noip2 # Required-Start: $syslog # Required-Stop: $syslog # Default-Start: 2 3 4 5 # Default-Stop: 0 1 6 # Short-Description: noip.com client service ### END INIT INFO # . /lib/lsb/init-functions case &quot;$1&quot; in start) echo &quot;Starting noip2.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-01-11</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ddns">#DDNS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%8A%A8%E6%80%81%E5%9F%9F%E5%90%8D">#动态域名</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/noip">#noip</a></li>
                     
                 </ul>
         
@@ -257,17 +414,24 @@ import ipgetter import urllib.request import requests currentIP = ipgetter.myip(
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

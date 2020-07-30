@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101236" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101236" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,120 +101,7 @@
     </div>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/understand-linux-shell-initialization-files-and-user-profiles-files/">理解Linux中Shell初始化文件和用户Profiles文件</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        Linux是一个多用户、实时共享的操作系统，意味着不止一个用户可以登录同一个系统。系统管理员通过任务管理来分配不同用户的权限，比如安装、升级、卸载应用程序，运行编译程序，文件查看、编辑等等。
-Linux允许通过两种主要方式来创建用户环境：系统级(全局)和用户级(个人)。一般情况下，Linux系统都会运行基本shell程序，当用户登录成功后shell会在初始化时根据某些文件开创建环境。
-Linux中的Shell初始化 当Shell被调用时，会有一些初始化/启动文件被启用，它们的主要作用是为shell本身或用户设定运行环境，包含一些函数、	变量、别名等等。
-Shell可以读取以下两种初始化文件:
- 系统级启动文件 – 包含一些应用于户所有用户的全局配置，一般存在于**/etc**目录中，如 **/etc/profiles** 、**/etc/bashrc** 或者 **/etc/bash.bashrc**。 用户级启动文件 – 包含一些应用于单用户的配置文件，一般存放在各个用户目录，这些配置可以覆盖系统级全局配置，如**.profiles**、 **.bash_profile**、 **.bashrc** 和 **.bash_login**.  Shell存在三种调用模式：
-1. 交互式登录Shell 当用户成功登录系统后调用该Shell,使用**/bin/login**登录，随后读取**/etc/passwd**文件。
-当启动交互式shell后，将读取**/etc/profile**文件以及特定的用户文件**~/.bash_profile**
-login as: pi pi@pi.raspi.in&#39;s password: The programs included with the Debian GNU/Linux system are free software; the exact distribution terms for each program are described in the individual files in /usr/share/doc/*/copyright. Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent permitted by applicable law.
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2017-04-25</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/path">#PATH</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/shell">#shell</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/profile">#profile</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">#环境变量</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/raspberrypi-dynamic-ip-updater/">树莓派动态IP更新器</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        这是一个python3的脚本，每隔10分钟监控一次IP地址，如果发生变化则会通过AutoRemote消息通知你。 关于AutoRemote的使用可参考这里
-这里推荐使用ipgetter来获取外网IP，地址为https://github.com/phoemur/ipgetter
-安装ipgetter
-sudo apt-get install python3 pip sudo pip3 install ipgetter 你可以从以下地址获取每个通知设备的AutoRemote所需google key
-​	http://autoremotejoaomgcd.appspot.com/?key=[it&rsquo;s the part that is here]
-以下为python3脚本:
-import ipgetter import urllib.request import requests currentIP = ipgetter.myip() #AutoRemote function to send a notification YOUR_KEY goes here def sendAR(x): AR_key = &#39;YOUR_KEY&#39; AR_url = &#39;http://autoremotejoaomgcd.appspot.com/sendmessage?key=&#39;+ AR_key +&#39;&amp;message=IP%20&#39; message = AR_url + x response = urllib.request.urlopen(message).read() print(x)	#check the internet and check if previous file is present try: requests.
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2017-04-19</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/python">#Python</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ipgetter">#ipgetter</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ip">#ip</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/use-your-phone-to-remotely-control-raspberrypi/">使用手机远程控制树莓派GPIO</a></h1>
     </header>
 
@@ -232,6 +155,232 @@ pi@raspi:~ $ sudo java -jar marsiot.jar Current version &lt;101&gt; More help: s
 
 </article>
     
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/fix-raspberry-path-variable/">修复树莓派PATH变量</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        使用lnmp一键工具安装完nmp后，重启进入系统就提示bash command not found
+然后试了试service,who等命令也无法使用
+只有最基本的系统命令ls,cat等可以用
+看来安装lnmp后，我的PATH变量被动了
+先临时修改下PATH，便于后面操作
+export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:$PATH  然后检查~/.profile,/etc/profile是否存在，存在
+检查其中的PATH赋值是否异常
+经过排查，发现/etc/profile中的PATH赋值异常，修改之重启OK！
+在此分享正确的原始~/.profile和/etc/profile文件
+~/.profile 内容
+# ~/.profile: executed by the command interpreter for login shells. # This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login # exists. # see /usr/share/doc/bash/examples/startup-files for examples. # the files are located in the bash-doc package. # the default umask is set in /etc/profile; for setting the umask # for ssh logins, install and configure the libpam-umask package.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-03-03</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/path">#PATH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/pcd8544-library-for-raspberry-pi/">树莓派可用的PCD8544库</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        Nokia 3310/5110显示器基于PCD8544，在此分享一个树莓派可用的PCD8544库
+使用该库之前，需要安装wiringPi,安装方法可参考树莓派连接DHT11采集温度与湿度
+项目地址：
+https://github.com/binerry/RaspberryPi/tree/master/libraries/c/PCD8544  可通过github download直接下载,不能访问github的，用以下连接下载
+http://cdn.lyq.wiki/res/Raspberry.Pi_PCD8544.Library.zip  解压后，可得到一个c源码和一个h头文件
+PCD8544.c PCD8544.h  以及samples文件夹下的三个示例
+pcd8544_rpi.c pcd8544_test.c pcd8544_test2.c  按照下图所示连接好树莓派和显示器
+ RST —— 复位 接GPIO 0 CE —— 片选 接GPIO 1 或 不接 DC —— 数据/指令选择 接GPIO 2 DIN —— 串行数据线 接GPIO 3 CLK —— 串行时钟线 接GPIO 5 （因为我的GPIO 4已经接了一个DHT11传感器） VCC —— 电源输入 接3.3v BL —— 背光控制端 接3.3v GND —— 地线 接地  编译三个示例程序
+cc -o pcd8544_test pcd8544_test.c ../PCD8544.c -L/usr/local/lib -lwiringPi cc -o pcd8544_test2 pcd8544_test2.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-01-20</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nokia">#nokia</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%AF%BA%E5%9F%BA%E4%BA%9A">#诺基亚</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/pcd8544">#pcd8544</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/3310">#3310</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/5110">#5110</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/wiringpi">#wiringpi</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-install-dnsmasq-and-dnsmasq-china-list/">树莓派安装Dnsmasq加速DNS解析</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        天朝的dns服务商尿性不是一般的大，动不动就抽风或者劫持，为了避免这种情况，可以在树莓派上安装Dnsmasq来加速dns解析，提高网络浏览体验。
+安装配置dnsmasq apt-get install dnsmasq  配置dnsmasq,vi /etc/dnsmasq.conf
+我的配置文件如下：
+domain=Raspi2 resolv-file=/etc/resolv.dnsmasq conf-dir=/etc/dnsmasq.d min-port=4096 server=114.114.114.114 server=114.114.115.115 server=223.5.5.5 server=223.6.6.6 server=119.29.29.29 server=182.254.116.116 server=112.124.47.27 server=114.215.126.16 server=101.226.4.6 server=218.30.118.6 server=42.120.21.30 server=199.91.73.222 server=178.79.131.110 server=8.8.8.8 server=8.8.4.4 cache-size=10000  配置完重启dnsmasq服务
+service dnsmasq restart  其中的server字段为上游DNS
+配置dnsmasq-china-list git clone https://github.com/felixonmars/dnsmasq-china-list.git cd dnsmasq-china-list/ cp *.conf /etc/dnsmasq.d/ service dnsmasq restart  至此设置完成，可以在路由器中将首选dns设为树莓派ip，这样局域网内的所有设备都可以体验dns解析加速了！
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-01-18</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/git">#Git</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dns">#DNS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dnsmasq">#dnsmasq</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/install-configure-noip-client-in-raspberry-pi/">树莓派下安装配置Noip</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        注册noip 首先在http://noip.com注册账户
+然后在主机管理(Manage Hosts)中添加主机(Add A Host)，根据提示设置二级域名，IP可以随意填写。
+安装Noip客户端 wget https://www.noip.com/client/linux/noip-duc-linux.tar.gz tar zxf noip-duc-linux.tar.gz cd noip-2.1.9-1 sudo make install  安装过程中，按照提示输入noip帐号信息，时间间隔建议设为5s，默认30s
+设置开机启动 在/etc/init.d/中建立noip2脚本
+sudo vi /etc/init.d/noip2  脚本内容如下
+#! /bin/sh ### BEGIN INIT INFO # Provides: noip2 # Required-Start: $syslog # Required-Stop: $syslog # Default-Start: 2 3 4 5 # Default-Stop: 0 1 6 # Short-Description: noip.com client service ### END INIT INFO # . /lib/lsb/init-functions case &quot;$1&quot; in start) echo &quot;Starting noip2.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-01-11</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ddns">#DDNS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%8A%A8%E6%80%81%E5%9F%9F%E5%90%8D">#动态域名</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/noip">#noip</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
     
     
         
@@ -251,17 +400,24 @@ pi@raspi:~ $ sudo java -jar marsiot.jar Current version &lt;101&gt; More help: s
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

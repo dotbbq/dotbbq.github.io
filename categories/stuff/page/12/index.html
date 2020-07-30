@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,18 +101,13 @@
     </div>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/bwg-replace-main-ip-after-blocked/">搬瓦工被墙后免费更换IP</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/oneplus3-3t-unified-toolkit/">一加3/3T工具包</a></h1>
     </header>
 
     <div class="content post-summary">
-        忙了一天没注意看邮件，下午才发现站点宕机，登录BWG后台检查系统运行正常，使用Ping.pePing了下才发现，可能IP被墙了。
-查看Ping的结果，发现国外线路都可以浏览，国内线路丢包全是100%，看来凉凉咯！
-于是网上找了下解决方案，发现BWG免费提供更换IP服务，每五周使用一次。
-登录BWG后台，然后浏览https://kiwivm.64clouds.com/main-exec.php?mode=blacklistcheck，点击TestMainIP进行检查。
-此页面会显示当前服务器IP以及是否被墙。
-如上提示，IP BLOCKED表示已经被封，点击下面的Replace Main IP更换IP，更换IP后再次浏览上面网站，即可显示IP NOT BLOCKED表示未被封锁。
-注意：该功能每五周可以使用一次，且行且珍惜！
+        工具菜单如下：
+ Title OnePlus 3/3T Unified ToolKit v5.0U by @ahmed_radaideh ====================== = Menu = ====================== Enter a Number to select a Task. 1) Install USB Drivers On PC 2) Unlock - ReLock Bootloader 3) Check Device Status 4) Check Bootloader Status 5) Flash - Boot TWRP Recovery 6) Flash - Boot Stock Recovery 7) Push Systemless Root 8) Push Debloater Script 9) Wipe Cache Your Device 10) Force Decryption Device [WIPE] 11) Get Logs your Device 12) Restart Menu 13) Check for new Version 14) XDA Thread 15) Donate!
     </div>
 
     
@@ -85,53 +116,7 @@
 
 <div class="post-info">
     
-        <div class="post-date">2018-10-15</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/gfw">#GFW</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E6%9B%B4%E6%8D%A2ip">#更换IP</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E6%90%AC%E7%93%A6%E5%B7%A5">#搬瓦工</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/oneplus-3t-after-sale-rom/">一加3T售后刷机包</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        首先下载以下两个文件包：
- 一加3T9008驱动 Download 一加3T售后恢复包 Download  然后，将手机完全关机，按住音量+不放，将手机和电脑连接，此时手机还是黑屏状态，电脑会有设备连接提示音。
-我的电脑-&gt;右键管理-&gt;设备管理器，打开查看，第一次使用会在其他设备下出现QHSUSB_BULK带黄色感叹号的未知设备，右键点击更新驱动，手动选择刷机驱动包里面的驱动目录进行安装，如果不行的话可以使用360驱动大师进行识别安装，安装完成后会出现类似以下的设备驱动:
-其中Qualcomm HS-USB QDLoader 9008(COM4)的新设备，就是正常驱动后的手机，俗称高通9008模式。
-将下载的一加3T售后恢复包解压后，打开其中的MsmDownloadTool V3.0.exe开始刷机
-正常识别COM设备后，点击Start开始刷机，完成后自动重启。
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2018-10-13</div>
+        <div class="post-date">2017-06-15</div>
     
     <div class="post-taxonomies">
         
@@ -146,13 +131,21 @@
                     
                         <li><a href="https://unixetc.com/tags/android">#Android</a></li>
                     
+                        <li><a href="https://unixetc.com/tags/adb">#adb</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/unlock">#Unlock</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/root">#Root</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/recovery">#recovery</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/twrp">#twrp</a></li>
+                    
                         <li><a href="https://unixetc.com/tags/oneplus">#oneplus</a></li>
                     
+                        <li><a href="https://unixetc.com/tags/oneplus3">#oneplus3</a></li>
+                    
                         <li><a href="https://unixetc.com/tags/oneplus3t">#oneplus3t</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/rom">#rom</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/9008">#9008</a></li>
                     
                 </ul>
         
@@ -162,22 +155,16 @@
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/rb750gr3-system-upgrade/">MikroTik RB750Gr3系统升级</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/fix-toshiba-u-disk-write-protection/">修复东芝U盘写保护</a></h1>
     </header>
 
     <div class="content post-summary">
-        自动升级 进入路由器管理界面，通过System-&gt;Auto Upgrade功能自动升级。
-或者使用Winbox连接，通过System-&gt;Auto Upgrade功能自动升级
-自动升级不了的，刷不出最新系统的继续看下面手动升级。
-手动升级 官方系统下载页面https://mikrotik.com/download
-本次以RB750gr3为例，官方显示了以下四个系统版本
- 5.26 (Legacy) 6.40.9 (Long-term) 6.43.2 (Stable) 6.44beta9 (Testing)  我的RB750gr3当前版本为6.41，通过自动升级刷新不出来最新版本，因此只能手动升级。
-RB750gr3为MMIPS构架，从下载页面找到相应的构架。
-其中MMIPS后面就备注着hEX (RB750Gr3), RBMxx点击下载**Main package**，格式为**.npk**文件。
-通过Winbox连接路由器，将下载的npk文件拖放到File菜单，上传完成后如下所示。
-然后system-&gt;reboot重启系统完成更新，更新后版本号可以通过Winbox标题栏看到。
-提醒:Router OS 6.45.6 for RB750gr3系统包国内网盘**下载地址**
+        一直以来都是使用U盘安装Linux，光盘镜像通过dd写入U盘。最近需要安装elementary，下载镜像后发现系统推荐使用Rufus来写入U盘，这个工具以前没试过所以试了下，确实挺快的。
+不过在安装完elementary后，想将U盘重新恢复格式化出问题了，使用DiskGenius无法进行操作，使用系统自带的磁盘管理也没法操作，包括Linux下的GParted也不行，都提示U盘被写保护了，-__-!
+万般无奈只能想到量产工具，下面分享使用到的两款软件：
+ ChipGenius Restore  ChipGenius是一款U盘信息检测软件，通过它可以来查看U盘主控信息，我的这款U盘芯片信息如下：
+设备描述: [G:]USB 大容量存储设备(TOSHIBA TransMemory-Mx)设备类型: 大容量存储设备协议版本: USB 3.00当前速度: 极速(SuperSpeed)电力消耗: 504mAUSB设备ID: VID = 0930 PID = 6545设备序列号: FFFFFFFFFFFFEE20F000BC99设备供应商: TOSHIBA　设备名称: TransMemory-Mx设备修订版: 0110产品制造商: TOSHIBA　产品型号: TransMemory-Mx产品修订版: PMAP　主控厂商: Phison(群联)　主控型号: PS2251-03(PS2303) - F/W 02.08.53 [2014-01-02]闪存识别码: 983AA892 - Toshiba(东芝) TC58NVG7T2JTA00 [TLC-8K]Restore是群联官方提供的一款恢复工具，可以进行低级格式化和修复。
     </div>
 
     
@@ -186,7 +173,7 @@ RB750gr3为MMIPS构架，从下载页面找到相应的构架。
 
 <div class="post-info">
     
-        <div class="post-date">2018-10-01</div>
+        <div class="post-date">2017-06-10</div>
     
     <div class="post-taxonomies">
         
@@ -199,21 +186,204 @@ RB750gr3为MMIPS构架，从下载页面找到相应的构架。
             
                 <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/router">#router</a></li>
+                        <li><a href="https://unixetc.com/tags/ps2251-03">#PS2251-03</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/routeros">#routeros</a></li>
+                        <li><a href="https://unixetc.com/tags/diskgenius">#DiskGenius</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ros">#ros</a></li>
+                        <li><a href="https://unixetc.com/tags/elementary">#elementary</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/mikrotik">#mikrotik</a></li>
+                        <li><a href="https://unixetc.com/tags/rufus">#Rufus</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/rb750">#rb750</a></li>
+                        <li><a href="https://unixetc.com/tags/%E4%B8%9C%E8%8A%9D">#东芝</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/rb750gr3">#rb750gr3</a></li>
+                        <li><a href="https://unixetc.com/tags/%E7%BE%A4%E8%81%94">#群联</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/upgrade">#upgrade</a></li>
+                        <li><a href="https://unixetc.com/tags/%E4%B8%BB%E6%8E%A7">#主控</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/winbox">#winbox</a></li>
+                        <li><a href="https://unixetc.com/tags/toshiba">#TOSHIBA</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/anbox-run-android-applications-on-linux/">在Linux中运行Android软件</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        想要在PC上运行Android软件就需要模拟器，Windows版的Android模拟器软件很多，但是Linux平台的就不多了，今天推荐一款Linux下的Android模拟器软件Anbox
+Anbox官方介绍为Android in a Box,Run Android applications on any GNU/Linux operating system.
+Anbox现在还处于测试阶段，很多功能还不完善和稳定，请谨慎使用。
+安装Anbox 首先得安装Snaps,官方地址为https://snapcraft.io/
+LinuxMint中安装Snaps和必须包
+sudo apt install snapd sudo apt install pulseaudio  接下来按照官方指南安装Anbox
+snap install --classic anbox-installer &amp;&amp; anbox-installer  我试着通过snap来安装一直存在权限问题，一般权限不能运行snap install --classic anbox-installer，root运行完snap install --classic anbox-installer后，但运行anbox-installer又提示不能使用root权限，一般权限根本无法运行anbox-installer，搞了半天都没有成功，于是就有了下文。
+通过常规方法安装Anbox
+wget https://raw.githubusercontent.com/anbox/anbox-installer/master/installer.sh -O anbox-installer chmod +x ./anbox-installer ./anbox-installer  安装完成后会有重启系统的提示
+ To ensure all changes made to your system you should now reboot your system. If you don&rsquo;t do this no Android applications will show up in the system application launcher.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-06-09</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/android">#Android</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/anbox">#Anbox</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/adb">#adb</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/apk">#apk</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/centos7-installation-and-use-p7zip/">CentOS7安装使用p7zip</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        在此只推荐从源码安装p7zip，下载地址 http://www.7-zip.org/download.html
+源码在这里下载 https://sourceforge.net/projects/p7zip/files/p7zip/
+wget https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_all.tar.bz2 tar jxf p7zip_16.02_src_all.tar.bz2 cd p7zip_16.02 make make install 使用p7zip
+[root@localhost ~]# 7za  7-Zip (a) [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21 p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,1 CPU x64) Usage: 7za &lt;command&gt; [&lt;switches&gt;...] &lt;archive_name&gt; [&lt;file_names&gt;...] [&lt;@listfiles...&gt;] &lt;Commands&gt; a : Add files to archive b : Benchmark d : Delete files from archive e : Extract files from archive (without using directory names) h : Calculate hash values for files i : Show information about supported formats l : List contents of archive rn : Rename files in archive t : Test integrity of archive u : Update files to archive x : eXtract files with full paths 压缩文件
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-06-06</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/centos">#CentOS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/p7zip">#p7zip</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/7z">#7z</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/7za">#7za</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/weather-according-to-raspberry-pi/">树莓派显示天气信息</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        在此介绍一个国外网友的树莓派项目RARP，Weather According to Raspberry Pi
+顾名思义，Weather According to Raspberry Pi是一个有关天气信息的项目，该项目通过采集Raspberry Pi和Sense HAT的数据，来显示相关的天气信息，比如温度、湿度、压力等
+项目地址http://coded2.herokuapp.com/weather/
+代码国内下载地址http://cdn.lyq.wiki/res/warp_final.zip
+下载后解压，得到main.py和gauge2.html两个文件，其中main.py需要Python3运行，gauge2.html是最终的显示文件
+安装相关软件
+sudo apt-get install python3 sudo apt-get install python3-pip pip3 install flask  打开Sense HAT仿真器，在程序菜单中，打开后如下图示:
+下来，运行下载的python脚本
+python3 main.py  正常情况下，会提示一个端口为5000的web服务正在运行
+在浏览器中浏览localhost:5000或者127.0.0.1:5000，最终的浏览如下图
+三个图表分别显示温度、压力和湿度，这三者的信息均来自Sense HAT 模拟器而不是真正的Sense HAT硬件。
+如果需要采集Sense HAT扩展板的数据，需要将Sense HAT附加板和Raspberry Pi相连，具体信息参考官网 https://www.raspberrypi.org/products/sense-hat/
+然后修改代码，打开main.py文件，找到如下行
+from sense_emu import SenseHat  修改为
+from sense_hat import SenseHat  保存后，重新运行python3 main.py，此时采集的数据就来自真实的SenseHAT硬件。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-05-25</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/laptop-dock">#Laptop Dock</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/sense-hat">#Sense HAT</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/hat">#HAT</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/sense">#Sense</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/rarp">#RARP</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/python">#Python</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/python3">#Python3</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/humidity">#Humidity</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%A4%A9%E6%B0%94">#天气</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E4%BC%A0%E6%84%9F%E5%99%A8">#传感器</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%8E%8B%E5%8A%9B">#压力</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%B9%BF%E5%BA%A6">#湿度</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%B8%A9%E5%BA%A6">#温度</a></li>
                     
                 </ul>
         
@@ -241,17 +411,24 @@ RB750gr3为MMIPS构架，从下载页面找到相应的构架。
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

@@ -5,7 +5,7 @@
     <link>https://unixetc.com/tags/letsencrypt/</link>
     <description>UNIXETC (letsencrypt)</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
+    <language>zh-cn</language>
     <lastBuildDate>Mon, 09 May 2016 15:28:00 +0000</lastBuildDate>
     
     <atom:link href="https://unixetc.com/tags/letsencrypt/index.xml" rel="self" type="application/rss+xml" />

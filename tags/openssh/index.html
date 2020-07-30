@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101236" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101236" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,7 +101,7 @@
     </div>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/optimization-vps/">VPS优化</a></h1>
     </header>
 
@@ -119,7 +155,7 @@ $sudo /etc/init.d/dropbear start $sudo apt-get remove openssh-server $sudo apt-g
 </article>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/nokia-n900-and-ssh/">Nokia N900 and SSH</a></h1>
     </header>
 
@@ -171,7 +207,7 @@ update - 更新软件列表 upgrade - 升级软件 install - 安装软件(pkg �
 </article>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/remove-unnecessary-iphone-language-file/">删除不需要的iPhone语言文件</a></h1>
     </header>
 
@@ -230,34 +266,83 @@ update - 更新软件列表 upgrade - 升级软件 install - 安装软件(pkg �
 
 </article>
     
-    
-    
-        
-    <div class="pagination">
-        <div class="left pagination-item disabled">
-            
-        </div>
-        <div class="right pagination-item ">
-            
-                <a href="/tags/openssh/page/2/">To old posts</a>
-            
-        </div>
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/iphone-and-ssh/">iPhone and SSH</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装OpenSSH 首先iPhone已经越狱并且安装了Cydia，具体教程可以Google
+打开Cydia，管理-软件源，点击右上角编辑，然后点击左上角添加，增加178的软件源http://apt.178.com
+添加后Cydia会自动更新软件包，然后在搜索里使用openssh为关键词进行搜索安装。
+默认有root和mobile两个用户名，密码均为alpine
+手机端SSH管理 在Cydia上搜索安装iSSH安装
+修改SSH密码 建议修改原始密码
+#passwd root #passwd mobile  PC通过SSH连接iPhone   iPhone接入wifi网络，在电脑端使用Putty或者WinSCP来链接iPhone
+  USB连接PC，下载iTools，打开iTools点击手机管理栏的最底下高级功能，打开ssh通道。下来PC端可以通过ip:127.0.0.1来连接iPhone了。
+  
     </div>
 
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2012-03-18</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/iphone">#iPhone</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/apple">#Apple</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/openssh">#OpenSSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/openssl">#OpenSSL</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%8B%B9%E6%9E%9C">#苹果</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

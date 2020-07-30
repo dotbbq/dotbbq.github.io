@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,111 +101,7 @@
     </div>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/find-the-vps-traffic-consumption-culprit/">查出VPS流量消耗元凶</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        上月不知什么原因VPS流量提前消耗完了，然后通知这月10号重新reset，于是只能临时开了一个月的locvps进行过渡。好不容易熬到昨儿，reset后赶紧把数据和站点又搬回来。 今儿偶尔登录vps，突然发现流量消耗咋一直很高，两天不到就消耗了170G，额滴神呐!查看详细使用统计，发现从昨儿reset以来，OUT bps一直维持在19M左右，瞬间脑袋瓜嗡嗡的！
-于是赶紧动手找找，看看消耗流量的元凶到底是谁？
-首先，安装iftop来检查网络使用情况。官网在这里http://www.ex-parrot.com/~pdw/iftop/，CentOS安装方法如下：
-yum install -y flex byacc libpcap ncurses ncurses-devel libpcap-devel #安装需求软件 wget http://www.ex-parrot.com/~pdw/iftop/download/iftop-0.17.tar.gz tar zxf iftop-0.17.tar.gz cd iftop-0.17 ./configure make &amp;&amp; make install  安装完成后，可以通过iftop来运行，建议加上-P参数，显示使用端口信息，如下：
-主界面中左侧为本地端，右侧为远端，中间的&lt;=和=&gt;表示流量方向。 下面的TX：发送流量/RX：接收流量/TOTAL：总流量/Cumm：运行iftop到目前时间的总流量/peak：流量峰值/rates：分别表示过去 2s 10s 40s 的平均流量
-从上图来看，本地IP一直在向一个140.249.34.53发送数据，从peak统计来看，速率在22.3Mb左右，和网站统计相符。 知道端口后，可以通过 netstat -ntlup|grep 端口号来查看具体进程，没有的话可以通过yum install net-tools来安装。
-我试着查了下这个IP，发现是山东青岛的，再通过IP反查域名，真想才出来了，原来是百度云的相关IP。这才想起来，我安装了BaiduPCS-Go百度网盘客户端，用来对vps数据进行备份，原来搞鬼的是这个东西。找到元凶就好办了，首先把这个IP给禁了iptables -A INPUT -p tcp -s 140.249.34.53 -j DROP 禁完后，实时流量一下子就降了下来，如下所示：
-而后将BaiduPCS-Go删除，以绝后患！
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2019-04-11</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/centos">#CentOS</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/iftop">#iftop</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/libpcap">#libpcap</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ncurses">#ncurses</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/netstat">#netstat</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/iptables">#iptables</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/centos7-install-l2tp-vpn/">CentOS7安装L2TP VPN</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        Centos7安装VPN 下载安装脚本:
-wget http://cdn.lyq.wiki/vpnscripts/vpninstall  执行安装脚本
-chmod+x vpninstall ./vpninstall  安装完成后提示如下:
-IPsec VPN server is now ready for use! Connect to your new VPN with these details: Server IP: 181.53.149.126 IPsec PSK: EMc6SpQHaBgZCnvNtLX Username: vpnuser Password: FzfpNGofpRdkBj2B Write these down. You'll need them to connect!  以上为安装完成后提示的帐号信息，其中用户名(username)、密码(passowrd)和IPsec PSK密匙(IPsec PSK)为随即生成。
-如果为了方便，以上帐号信息可以参考以下方法自定义：
-[root@hwcsh ~]# vi /etc/ipsec.secrets #编辑PSK %any %any : PSK &quot;EMc6SpQHaBgZCnvNtLX&quot; [root@hwcsh ~]# vi /etc/ppp/chap-secrets #编辑帐户信息 &quot;vpnuser&quot; l2tpd &quot;FzfpNGofpRdkBj2B&quot; * [root@hwcsh ~]#systemctl restart ipsec xl2tpd #重启服务  iPhone6配置L2TP VPN 设置-&gt;VPN-&gt;添加VPN配置，类型选择L2TP，然后参考下图设置。
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2018-12-10</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/centos">#CentOS</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/centos7">#CentOS7</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/l2tp">#L2TP</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/vpn">#VPN</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/centos7-installation-and-use-p7zip/">CentOS7安装使用p7zip</a></h1>
     </header>
 
@@ -216,6 +148,218 @@ wget https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_al
 
 </article>
     
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/install-crontab-on-centos-and-usage/">CentOS中Crontab安装和使用</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装crontab: [root@CentOS ~]# yum install vixie-cron [root@CentOS ~]# yum install crontabs  说明：
+ vixie-cron软件包是cron的主程序； crontabs软件包是用来安装、卸装、或列举用来驱动 cron 守护进程的表格的程序。  cron 是linux的内置服务，但它不自动起来，可以用以下的方法启动、关闭这个服务：
+/sbin/service crond start //启动服务 /sbin/service crond stop //关闭服务 /sbin/service crond restart //重启服务 /sbin/service crond reload //重新载入配置  查看crontab服务状态：service crond status
+手动启动crontab服务：service crond start
+查看crontab服务是否已设置为开机启动，执行命令：ntsysv
+加入开机自动启动:chkconfig --level 35 crond on
+rontab命令 功能说明： 设置计时器。
+语法： crontab [-u &lt;用户名称&gt;][配置文件] 或 crontab [-u &lt;用户名称&gt;][-elr]
+补充说明： cron是一个常驻服务，它提供计时器的功能，让用户在特定的时间得以执行预设的指令或程序。只要用户会编辑计时器的配置文件，就可以使用计时器的功能。其配置文件格式如下： Minute Hour Day Month DayOFWeek Command
+参数:
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-09-22</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/centos">#CentOS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/crontab">#crontab</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/centos7-install-ntfs-3g/">Centos7下安装NTFS-3G</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        Centos7安装指南
+安装NTFS-3G 下载ntfs-3g_ntfsprogs-2014.2.15.tgz http://cdn.lyq.wiki/res/ntfs-3g_ntfsprogs-2014.2.15.tgz
+#tar zxf ntfs-3g_ntfsprogs-2014.2.15.tgz #cd ntfs-3g_ntfsprogs-2014.2.15 #make #make install  如果make无法成功的话，请重新安装gcc yum install gcc
+使用NTFS-3G 临时挂载window分区：
+#mkdir /mnt/windowsc/ #mount -t ntfs-3g /dev/sda1 /mnt/windosc/  编辑fstab开机挂载分区，可以参考通过fstab自动挂载分区
+/dev/sda1 /mnt/windowsc ntfs-3g defaults 0 0  NTFS-3G主页
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-08-10</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/centos">#CentOS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/centos7">#CentOS7</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ntfs">#NTFS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ntfs-3g">#ntfs-3g</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/centos7-installation-guide/">CentOS7安装指南</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        下载Centos7安装镜像: http://mirrors.aliyun.com/centos/7.0.1406/isos/x86_64/CentOS-7.0-1406-x86_64-GnomeLive.iso
+将下载后的镜像写入U盘:
+#dd if=CentOS-7.0-1406-x86_64-GnomeLive.iso of=/dev/sdb bs=4M &amp;&amp; sync  关闭电脑，从U盘启动。
+进入桌面后，点击Install to Hard Drive开始安装。
+选择语言
+这里选择简体中文(中国)
+安装信息摘要
+这里需要设置四部分内容：日期和时间、键盘、安装位置、网络和主机名
+设置安装目标和位置,选择本地磁盘，然后勾选我要配置分区以自定义分区信息。
+点击完成进入手动分区。
+在左侧选择具体磁盘分区，右边编辑挂载信息，然后点击更新设置
+以下为编辑/home挂载点信息：
+下图为编辑后的分区信息，点击左上角完成
+查看更改摘要，确认没问题了就点击接受更改
+设置网络和主机名
+完成设置后，点击右下角开始安装
+用户设置
+设置ROOT密码
+创建用户
+所有配置完成后，等待安装结束。。。
+提示安装完成，点击右下角Quit退出。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-08-09</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/centos">#CentOS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/centos7">#CentOS7</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/yum">#yum</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/centos7-configuration-grub-to-add-the-windows-boot-menu/">Centos7配置grub添加windows引导菜单</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        进入/etc/grub.d/目录
+#cd /etc/grub.d/  新建15_Windows文件，写入以下内容：
+#! /bin/sh -e echo &quot;#Adding Windows&quot; &gt;&amp;2 cat &lt;&lt; EOF menuentry &quot;Windows&quot; { set root=(hd0,1) chainloader +1 } EOF  其中(hd0,1)是本地磁盘windows主扇区号，可以通过fdisk -l来查看确定。
+设定文件权限
+#chmod 755 15_Windows  编辑/etc/default/grub来设定菜单等待时间
+GRUB_TIMEOUT=2 GRUB_DISTRIBUTOR=&quot;$(sed 's, release .*$,,g' /etc/system-release)&quot; GRUB_DEFAULT=saved GRUB_DISABLE_SUBMENU=true GRUB_TERMINAL_OUTPUT=&quot;console&quot; GRUB_CMDLINE_LINUX=&quot;vconsole.keymap=us crashkernel=auto vconsole.font=latarcyrheb-sun16 rhgb quiet&quot; GRUB_DISABLE_RECOVERY=&quot;true&quot;  修改GRUB_TIMEOUT值即可。
+设置Windows为默认启动项
+#grub2-set-default &quot;windows&quot;  然后运行以下命令，使以上修改生效：
+# grub2-mkconfig -o /boot/grub2/grub.cfg 
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-08-09</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/centos">#CentOS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/centos7">#CentOS7</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/grub">#GRUB</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
     
     
         
@@ -225,9 +369,7 @@ wget https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_al
                 <a href="/tags/centos/">To new posts</a>
             
         </div>
-        <div class="right pagination-item ">
-            
-                <a href="/tags/centos/page/3/">To old posts</a>
+        <div class="right pagination-item disabled">
             
         </div>
     </div>
@@ -235,17 +377,24 @@ wget https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_al
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

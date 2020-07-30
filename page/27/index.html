@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
 	<meta name="generator" content="Hugo 0.73.0" />
     
@@ -16,7 +18,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070679" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101234" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101234" />
+
+
 
 
 
@@ -42,9 +78,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -67,15 +103,17 @@
     
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/ubuntu-modify-the-grub-boot-menu/">ubuntu修改grub引导菜单</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/install-jekyll-on-windows/">Windows下安装Jekyll</a></h1>
     </header>
 
     <div class="content post-summary">
-        先运行update-grub命令生成一次grub配置，顺便查看一下识别出来的引导菜单内容
-root@alairpc:~# update-grub Generating grub configuration file ... Found linux image: /boot/vmlinuz-4.4.0-21-generic Found initrd image: /boot/initrd.img-4.4.0-21-generic Found memtest86+ image: /boot/memtest86+.elf Found memtest86+ image: /boot/memtest86+.bin Found Windows 7 (loader) on /dev/sda1 done root@alairpc:~#  注意看，以上共有5个菜单项，最后一个是windows7
-接下来我们来看看gurb配置文件/etc/default/grub
-root@alairpc:~# cat /etc/default/grub # If you change this file, run 'update-grub' afterwards to update # /boot/grub/grub.cfg. # For full documentation of the options in this file, see: # info -f grub -n 'Simple configuration' GRUB_DEFAULT=4 #GRUB_HIDDEN_TIMEOUT=0 GRUB_HIDDEN_TIMEOUT_QUIET=true GRUB_TIMEOUT=3 GRUB_DISTRIBUTOR=`lsb_release -i -s 2&gt; /dev/null || echo Debian` GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot; GRUB_CMDLINE_LINUX=&quot;locale=zh_CN&quot; # Uncomment to enable BadRAM filtering, modify to suit your needs # This works with Linux (no patch required) and with any kernel that obtains # the memory map information from GRUB (GNU Mach, kernel of FreeBSD .
+        安装Ruby/DevKit 首先从 http://rubyinstaller.org/downloads/ 下载以下两个文件进行安装
+ rubyinstaller-1.9.3-p194.exe DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe  Ruby安装在D:\Ruby200, DevKit安装在D:\rubydevkit
+打开CMD进入到DevKit目录，开始初始化安装
+D:\rubydevkit&gt;ruby dk.rb init [INFO] found RubyInstaller v2.0.0 at d:/Ruby200 Initialization complete! Please review and modify the auto-generated 'config.yml' file to ensure it contains the root directories to all of the installed Rubies you want enhanced by the DevKit. D:\rubydevkit&gt;ruby dk.rb install [INFO] Updating convenience notice gem override for 'd:/Ruby200' [INFO] Installing 'd:/Ruby200/lib/ruby/site_ruby/devkit.rb'  替换Gem源
+天朝网路可能会引起gem安装失败，建议更换为ruby.taobao,org源
+$gem sources -r http://rubygems.org/ $gem sources -a http://ruby.
     </div>
 
     
@@ -84,7 +122,7 @@ root@alairpc:~# cat /etc/default/grub # If you change this file, run 'update-gru
 
 <div class="post-info">
     
-        <div class="post-date">2016-06-27</div>
+        <div class="post-date">2015-05-20</div>
     
     <div class="post-taxonomies">
         
@@ -97,119 +135,216 @@ root@alairpc:~# cat /etc/default/grub # If you change this file, run 'update-gru
             
                 <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/grub">#GRUB</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/letsencrypt-certificate-quickly-generate-script/">Let&#39;s encrypt 证书快速生成脚本</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        网站的Let&rsquo;s encrypt证书快到期了，看了官方的续期方法比较繁琐，于是在网上找了找简单方便做法，结果找到了墓地小企鹅写的一个脚本(shell script)，使用这个脚本可以方便的生成以及更新Let&rsquo;s encrypt 证书。
-脚本地址 https://github.com/xdtianyu/scripts/tree/master/lets-encrypt
-下载脚本
-wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.conf wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh  配置
-root@rnse:~/lesh# cat letsencrypt.conf # only modify the values, key files will be generated automaticly. ACCOUNT_KEY=&quot;letsencrypt-account.key&quot; DOMAIN_KEY=&quot;alair.key&quot; DOMAIN_DIR=&quot;/data/wwwroot/alair.cn/compiled&quot; DOMAINS=&quot;DNS:alair.cn,DNS:www.alair.cn&quot; #ECC=TRUE #LIGHTTPD=TRUE  按照需要自定义DOMAIN_KEY、DOMAIN_DIR、DOMAINS三部分。
-生成证书
-root@rnse:~/lesh#chmod +x letsencrypt.sh root@rnse:~/lesh# ./letsencrypt.sh letsencrypt.conf Generate account key... Generating RSA private key, 4096 bit long modulus ..............................++ ....++ e is 65537 (0x10001) Generate domain key... Generating RSA private key, 2048 bit long modulus .
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2016-05-09</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/js">#JS</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/https">#https</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ssl">#ssl</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/letsencrypt">#letsencrypt</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/shell">#shell</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/use-syncthing-synchronize-files-between-multiple-devices/">使用Syncthing在多个设备之间同步文件</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        Syncthing是一款开源的多平台同步软件，使用他可以在多个设备间进行文件同步，并且带有版本控制功能。
-Syncthing官网地址 **https://syncthing.net/**Github地址 https://github.com/syncthing/syncthing
-安装Syncthing Syncthing官网提供多平台安装包，下载地址为 https://github.com/syncthing/syncthing/releases/
-并且针对Debian/Ubuntu平台，官方提供了apt-get安装方法
-# Add the release PGP keys: curl -s https://syncthing.net/release-key.txt | sudo apt-key add - # Add the &quot;release&quot; channel to your APT sources: echo &quot;deb http://apt.syncthing.net/ syncthing release&quot; | sudo tee /etc/apt/sources.list.d/syncthing.list # Update and install syncthing: sudo apt-get update sudo apt-get install syncthing  运行Syncthing Linux下直接使用syncthing命令运行
-syncthing &amp;  Windows下直接打开下载的syncthing.exe文件，而后浏览器自动打开http://127.0.0.1:8384进行设置管理。
-管理Syncthing 如果是在VPS上安装Syncthing ,运行syncthing后，只能通过http://127.0.0.1:8384进行管理，我们可以通过以下方法在本地管理。
-ssl -L 9891:localhost:8384 root@ip  输入root密码登录成功后，即可本地浏览http://127.0.0.1:9891对VPS上的Synchting进行管理。
-添加设备 每个设备均有一个设备标识，可以通过操作-&gt;显示设备标识来查看。
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2016-05-06</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                        <li><a href="https://unixetc.com/tags/jekyll">#Jekyll</a></li>
                     
                         <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/android">#Android</a></li>
+                        <li><a href="https://unixetc.com/tags/ruby">#Ruby</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/syncthing">#Syncthing</a></li>
+                        <li><a href="https://unixetc.com/tags/blog">#Blog</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/sync">#Sync</a></li>
+                        <li><a href="https://unixetc.com/tags/devkit">#DevKit</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/%E5%90%8C%E6%AD%A5%E6%96%87%E4%BB%B6">#同步文件</a></li>
+                        <li><a href="https://unixetc.com/tags/gem">#gem</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/macos">#MacOS</a></li>
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/install-the-last-version-golang-for-linux/">Linux下安装最新版golang</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        ubuntu中可以使用apt-get install golang来安装go，但是版本稍旧
+如果需要安装最新版的golang，那就得自己动手咧
+安装golang 从官网下载最新版，手动安装
+apt-get install build-essential wget https://storage.googleapis.com/golang/go1.4.2.linux-386.tar.gz tar zxf go1.4.2.linux-386.tar.gz cd go/src ./all.bash  设置PATH 安装完成后需要设置PATH才能随地使用go
+export PATH=&quot;/root/go/bin:$PATH&quot;  检查版本 go version go version go1.4.2 linux/386 
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-05-11</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/google">#Google</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/golang">#golang</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/go">#go</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%B0%B7%E6%AD%8C">#谷歌</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/zhaoyuxuan/">赵雨煖</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        姓名：赵雨煖
+性别：女
+生日：2015-04-06 17:45
+初重：3285g
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-04-07</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/ESSAY">ESSAY</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%B5%B5%E9%9B%A8%E7%85%96">#赵雨煖</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%85%96%E7%84%B6%E4%BC%BC%E6%98%A5">#煖然似春</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%A5%B3%E5%84%BF">#女儿</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/use-speedtest-cli-tests-network-bandwidth/">使用speedtest-cli测试带宽</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装speedtest-cli 安装speedtest-cli方法如下:
+sudo apt-get install python-pip sudo pip install speedtest-cli  或
+pip install git+https://github.com/sivel/speedtest-cli.git  或
+git clone https://github.com/sivel/speedtest-cli.git python speedtest-cli/setup.py install  或
+wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest_cli.py chmod +x speedtest-cli  或
+curl -Lo speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest_cli.py chmod +x speedtest-cli  使用speedtest-cli root@MyUbuntuCloud:~# speedtest-cli -h usage: speedtest-cli [-h] [--bytes] [--share] [--simple] [--list] [--server SERVER] [--mini MINI] [--source SOURCE] [--timeout TIMEOUT] [--version] Command line interface for testing internet bandwidth using speedtest.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-03-26</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/git">#Git</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/python">#Python</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/bandwidth">#Bandwidth</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%B8%A6%E5%AE%BD">#带宽</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%BD%91%E9%80%9F">#网速</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/speedtest">#speedtest</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/speedtest-cli">#speedtest-cli</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/pip">#pip</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/examples-of-fdisk-partition/">fdisk分区实例</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        查看磁盘分区详情 直接使用fdisk -l 或者使用fdisk /dev/sda，再使用p命令来查看
+Command (m for help): p Disk /dev/sda: 32.2 GB, 32212254720 bytes 255 heads, 63 sectors/track, 3916 cylinders, total 62914560 sectors Units = sectors of 1 * 512 = 512 bytes Sector size (logical/physical): 512 bytes / 512 bytes I/O size (minimum/optimal): 512 bytes / 512 bytes Disk identifier: 0x000657c3 Device Boot Start End Blocks Id System /dev/sda1 * 2048 61868031 30932992 83 Linux /dev/sda2 61870078 62912511 521217 5 Extended /dev/sda5 61870080 62912511 521216 82 Linux swap / Solaris  fdisk命令 fdisk有以下命令可用，其中常用的已简单说明
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-03-19</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/fdisk">#fdisk</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/partition">#Partition</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%88%86%E5%8C%BA">#分区</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/disk">#Disk</a></li>
                     
                 </ul>
         
@@ -237,17 +372,24 @@ ssl -L 9891:localhost:8384 root@ip  输入root密码登录成功后，即可本�
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

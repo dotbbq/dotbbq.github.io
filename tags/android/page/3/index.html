@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,13 +101,12 @@
     </div>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/oneplus3-3t-unified-toolkit/">一加3/3T工具包</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/the-xposed-module-is-recommended/">推荐几个Xposed模块</a></h1>
     </header>
 
     <div class="content post-summary">
-        工具菜单如下：
- Title OnePlus 3/3T Unified ToolKit v5.0U by @ahmed_radaideh ====================== = Menu = ====================== Enter a Number to select a Task. 1) Install USB Drivers On PC 2) Unlock - ReLock Bootloader 3) Check Device Status 4) Check Bootloader Status 5) Flash - Boot TWRP Recovery 6) Flash - Boot Stock Recovery 7) Push Systemless Root 8) Push Debloater Script 9) Wipe Cache Your Device 10) Force Decryption Device [WIPE] 11) Get Logs your Device 12) Restart Menu 13) Check for new Version 14) XDA Thread 15) Donate!
+         MinMinGuard Statusbar Scroll to Top WiFiKeyView SwipeBack  
     </div>
 
     
@@ -80,7 +115,7 @@
 
 <div class="post-info">
     
-        <div class="post-date">2017-06-15</div>
+        <div class="post-date">2015-03-14</div>
     
     <div class="post-taxonomies">
         
@@ -95,21 +130,77 @@
                     
                         <li><a href="https://unixetc.com/tags/android">#Android</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/adb">#adb</a></li>
+                        <li><a href="https://unixetc.com/tags/xposed">#xposed</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/minminguard">#minminguard</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/wifikeyview">#wifikeyview</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/swipeback">#swipeback</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ss">#ss</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%BB%91%E5%8A%A8%E8%BF%94%E5%9B%9E">#滑动返回</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/huawei-c8817l-unlock-and-root/">华为C8817L解锁与Root</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        解锁 解锁Bootloader首先需要获得解锁码，以下为官方解锁页：
+获取解锁码 http://www.emui.com/plugin.php?id=unlock&amp;mod=detail
+提交成功后会获得16位的解锁码。
+下载以下两个文件：
+c8817l驱动 http://pan.baidu.com/s/1jG3fBhW
+google adb工具包 http://pan.baidu.com/s/1dDpI77b
+安装好驱动城区，解开adb工具包，cmd进入adb包目录。
+关机，同时按住音量下和电源键开机，进入到fastboot模式。
+usb链接电脑，参考以下解锁：
+其中fastboot oem unlock后为16位解锁码
+解锁成功后手机会自动重启。
+进入开发者模式
+关于-&gt;点击4次版本号
+Root 360一键root,其他不多说了！
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2014-08-07</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/android">#Android</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/huawei">#Huawei</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/c8817l">#C8817L</a></li>
                     
                         <li><a href="https://unixetc.com/tags/unlock">#Unlock</a></li>
                     
                         <li><a href="https://unixetc.com/tags/root">#Root</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/recovery">#recovery</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/twrp">#twrp</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/oneplus">#oneplus</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/oneplus3">#oneplus3</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/oneplus3t">#oneplus3t</a></li>
+                        <li><a href="https://unixetc.com/tags/bootloader">#Bootloader</a></li>
                     
                 </ul>
         
@@ -119,21 +210,20 @@
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/anbox-run-android-applications-on-linux/">在Linux中运行Android软件</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/nokia-n900-and-android/">Nokia N900 and Android</a></h1>
     </header>
 
     <div class="content post-summary">
-        想要在PC上运行Android软件就需要模拟器，Windows版的Android模拟器软件很多，但是Linux平台的就不多了，今天推荐一款Linux下的Android模拟器软件Anbox
-Anbox官方介绍为Android in a Box,Run Android applications on any GNU/Linux operating system.
-Anbox现在还处于测试阶段，很多功能还不完善和稳定，请谨慎使用。
-安装Anbox 首先得安装Snaps,官方地址为https://snapcraft.io/
-LinuxMint中安装Snaps和必须包
-sudo apt install snapd sudo apt install pulseaudio  接下来按照官方指南安装Anbox
-snap install --classic anbox-installer &amp;&amp; anbox-installer  我试着通过snap来安装一直存在权限问题，一般权限不能运行snap install --classic anbox-installer，root运行完snap install --classic anbox-installer后，但运行anbox-installer又提示不能使用root权限，一般权限根本无法运行anbox-installer，搞了半天都没有成功，于是就有了下文。
-通过常规方法安装Anbox
-wget https://raw.githubusercontent.com/anbox/anbox-installer/master/installer.sh -O anbox-installer chmod +x ./anbox-installer ./anbox-installer  安装完成后会有重启系统的提示
- To ensure all changes made to your system you should now reboot your system. If you don&rsquo;t do this no Android applications will show up in the system application launcher.
+        感谢NITDroid Project 的辛苦工作，使N900更加的神机！
+使用Nitdroid刷入Android后，系统运行在/home目录，所以/home必须空间足够，N900默认的为 1.9G是不可以的，需要增大/home的容量，推荐参考N900超频和刷9G-home,将/home增大到9G
+添加软件源 确保已添加以下软件源，一般前四个系统已经添加，没有的自己添加。
+名称：Nokia Applications 网址：https://downloads.maemo.nokia.com/fremantle/ssu/apps/ 发布：./ 组件：空 名称：Nokia System Software Updats 网址：https://downloads.maemo.nokia.com/fremantle/ssu/mr0 发布：./ 组件：空 名称：Ovi 网址：https://downloads.maemo.nokia.com/fremantle1.2/ovi/ 发布：./ 组件：空 名称：maemo.org 网址：http://repository.maemo.ory/extras/ 发布：frmantle−1.3 组件：free non−free 名称：Fremantle Extras−testing 网址：http://repository.maemo.org/extras-testing/ 发布：fremantle 组件：free non−free 名称：Fremantle Extras−devel 网址：http://repository.maemo.org/extras-devel/ 发布：fremantle 组件：free non−free  开刷 下载N12_UMay.tar.bz2与nitdroid-kernel-2.6.28-07_rc3_armel.deb
+115网盘下载地址: http://u.115.com/file/aqpmpqhl http://u.115.com/file/dna7jt6r
+最新的文件在官网的http://downloads.nitdroid.com/e-yes/页，如发现跟新可自行下载最新版本 注意，网盘中提供的N12_UMay.tar.bz2已经解压为N12_UMay.tar，官网的下载后自行解压
+将两个文件拷贝至USB连接模式下的根目录，即**/home/user/MyDocs/**
+建议通过SSH连接N900，在PC上使用Putty操作，要么就在手机上运行x-terminal
+# apt-get install nitdroid-installer # mkdir /and # mount /home /and # cd /and # tar xvf /home/user/MyDocs/N12_UMay.tar #注意这里已经是.tar格式 # dpkg -i /home/user/MyDocs/nitdroid-kernel-2.
     </div>
 
     
@@ -142,7 +232,7 @@ wget https://raw.githubusercontent.com/anbox/anbox-installer/master/installer.sh
 
 <div class="post-info">
     
-        <div class="post-date">2017-06-09</div>
+        <div class="post-date">2012-04-07</div>
     
     <div class="post-taxonomies">
         
@@ -155,72 +245,15 @@ wget https://raw.githubusercontent.com/anbox/anbox-installer/master/installer.sh
             
                 <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
                         <li><a href="https://unixetc.com/tags/android">#Android</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/anbox">#Anbox</a></li>
+                        <li><a href="https://unixetc.com/tags/nokia">#nokia</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/adb">#adb</a></li>
+                        <li><a href="https://unixetc.com/tags/n900">#n900</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/apk">#apk</a></li>
+                        <li><a href="https://unixetc.com/tags/maemo">#maemo</a></li>
                     
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/use-syncthing-synchronize-files-between-multiple-devices/">使用Syncthing在多个设备之间同步文件</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        Syncthing是一款开源的多平台同步软件，使用他可以在多个设备间进行文件同步，并且带有版本控制功能。
-Syncthing官网地址 **https://syncthing.net/**Github地址 https://github.com/syncthing/syncthing
-安装Syncthing Syncthing官网提供多平台安装包，下载地址为 https://github.com/syncthing/syncthing/releases/
-并且针对Debian/Ubuntu平台，官方提供了apt-get安装方法
-# Add the release PGP keys: curl -s https://syncthing.net/release-key.txt | sudo apt-key add - # Add the &quot;release&quot; channel to your APT sources: echo &quot;deb http://apt.syncthing.net/ syncthing release&quot; | sudo tee /etc/apt/sources.list.d/syncthing.list # Update and install syncthing: sudo apt-get update sudo apt-get install syncthing  运行Syncthing Linux下直接使用syncthing命令运行
-syncthing &amp;  Windows下直接打开下载的syncthing.exe文件，而后浏览器自动打开http://127.0.0.1:8384进行设置管理。
-管理Syncthing 如果是在VPS上安装Syncthing ,运行syncthing后，只能通过http://127.0.0.1:8384进行管理，我们可以通过以下方法在本地管理。
-ssl -L 9891:localhost:8384 root@ip  输入root密码登录成功后，即可本地浏览http://127.0.0.1:9891对VPS上的Synchting进行管理。
-添加设备 每个设备均有一个设备标识，可以通过操作-&gt;显示设备标识来查看。
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2016-05-06</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/android">#Android</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/syncthing">#Syncthing</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/sync">#Sync</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E5%90%8C%E6%AD%A5%E6%96%87%E4%BB%B6">#同步文件</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/macos">#MacOS</a></li>
+                        <li><a href="https://unixetc.com/tags/nitdroid">#nitdroid</a></li>
                     
                 </ul>
         
@@ -238,9 +271,7 @@ ssl -L 9891:localhost:8384 root@ip  输入root密码登录成功后，即可本�
                 <a href="/tags/android/page/2/">To new posts</a>
             
         </div>
-        <div class="right pagination-item ">
-            
-                <a href="/tags/android/page/4/">To old posts</a>
+        <div class="right pagination-item disabled">
             
         </div>
     </div>
@@ -248,17 +279,24 @@ ssl -L 9891:localhost:8384 root@ip  输入root密码登录成功后，即可本�
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

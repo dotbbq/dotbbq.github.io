@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
 	<meta name="generator" content="Hugo 0.73.0" />
     
@@ -16,7 +18,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070679" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101234" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101234" />
+
+
 
 
 
@@ -42,9 +78,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -67,13 +103,15 @@
     
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/p7zip-usage/">p7zip使用实例</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/ssl-security-optimization/">SSL安全优化</a></h1>
     </header>
 
     <div class="content post-summary">
-        以下是CentOS7中7za的使用实例,CentOS下安装p7zip可以参考此文
-[root@localhost ~]# 7za 7-Zip (a) [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21 p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,1 CPU x64) Usage: 7za &lt;command&gt; [&lt;switches&gt;...] &lt;archive_name&gt; [&lt;file_names&gt;...] [&lt;@listfiles...&gt;] &lt;Commands&gt; a : Add files to archive b : Benchmark d : Delete files from archive e : Extract files from archive (without using directory names) h : Calculate hash values for files i : Show information about supported formats l : List contents of archive rn : Rename files in archive t : Test integrity of archive u : Update files to archive x : eXtract files with full paths &lt;Switches&gt; -- : Stop switches parsing -ai[r[-|0]]{@listfile|!
+        先贴出本站的SSL安全评级,测试地址为https://www.ssllabs.com/ssltest/analyze.html?d=alair.cn
+以下是本站Nginx配置中关于SSL部分
+listen 443 ssl http2; ssl_certificate /etc/letsencrypt/live/alair.cn/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/alair.cn/privkey.pem; ssl_session_timeout 60m; ssl_protocols TLSv1 TLSv1.1 TLSv1.2; ssl_ciphers ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-RC4-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:RC4-SHA:!aNULL:!eNULL:!EXPORT:!DES:!3DES:!MD5:!DSS:!PKS; ssl_prefer_server_ciphers on; ssl_session_cache builtin:1000 shared:SSL:10m; ssl_dhparam /etc/ssl/certs/dhparam.pem; ssl_stapling on; ssl_stapling_verify on; add_header Strict-Transport-Security &quot;max-age=63072000; includeSubdomains; preload&quot;; add_header X-Frame-Options &quot;DENY&quot;;  说明：
+dhparam.pem可以使用openssl dhparam -out dhparam.pem 4096命令生成，这个命令会执行很长时间，也可以将字节数改为2048
     </div>
 
     
@@ -82,7 +120,7 @@
 
 <div class="post-info">
     
-        <div class="post-date">2017-06-16</div>
+        <div class="post-date">2015-12-21</div>
     
     <div class="post-taxonomies">
         
@@ -97,23 +135,17 @@
                     
                         <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/p7zip">#p7zip</a></li>
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/7z">#7z</a></li>
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/7za">#7za</a></li>
+                        <li><a href="https://unixetc.com/tags/https">#https</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/lzma">#lzma</a></li>
+                        <li><a href="https://unixetc.com/tags/ssl">#ssl</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/tar">#tar</a></li>
+                        <li><a href="https://unixetc.com/tags/http2">#http2</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/zip">#zip</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/cab">#cab</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/gzip">#gzip</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/bzip2">#bzip2</a></li>
+                        <li><a href="https://unixetc.com/tags/dhparam">#dhparam</a></li>
                     
                 </ul>
         
@@ -123,13 +155,14 @@
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/oneplus3-3t-unified-toolkit/">一加3/3T工具包</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/use-letsencrypt-free-ssl-certificate/">使用免费Let&#39;s Encrypt证书</a></h1>
     </header>
 
     <div class="content post-summary">
-        工具菜单如下：
- Title OnePlus 3/3T Unified ToolKit v5.0U by @ahmed_radaideh ====================== = Menu = ====================== Enter a Number to select a Task. 1) Install USB Drivers On PC 2) Unlock - ReLock Bootloader 3) Check Device Status 4) Check Bootloader Status 5) Flash - Boot TWRP Recovery 6) Flash - Boot Stock Recovery 7) Push Systemless Root 8) Push Debloater Script 9) Wipe Cache Your Device 10) Force Decryption Device [WIPE] 11) Get Logs your Device 12) Restart Menu 13) Check for new Version 14) XDA Thread 15) Donate!
+        在此介绍如何使用Let&rsquo;s Encrypt的免费SSL证书，需要在有管理权限的VPS上操作，然后参考以下方法自签域名证书。
+git clone https://github.com/letsencrypt/letsencrypt.git cd letsencrypt mkdir -p /home/webroot/.well-known/acme-challenge #/home/webroot为网站目录 ./letsencrypt-auto certonly --email me@alair.cn -d alair.cn,www.alair.cn --webroot -w /home/webroot --agree-tos #注意email、域名、和网站目录  签发成功后，会提示如/etc/letsencrypt/live/www.alair.cn/fullchain.pem;的证书路径信息。
+IMPORTANT NOTES: - Congratulations! Your certificate and chain have been saved at /etc/letsencrypt/live/www.alair.cn/fullchain.pem. Your cert will expire on 2016-03-14. To obtain a new version of the certificate in the future, simply run Let's Encrypt again. - If like Let's Encrypt, please consider supporting our work by: Donating to ISRG / Let's Encrypt: https://letsencrypt.
     </div>
 
     
@@ -138,7 +171,7 @@
 
 <div class="post-info">
     
-        <div class="post-date">2017-06-15</div>
+        <div class="post-date">2015-12-15</div>
     
     <div class="post-taxonomies">
         
@@ -151,23 +184,15 @@
             
                 <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/android">#Android</a></li>
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/adb">#adb</a></li>
+                        <li><a href="https://unixetc.com/tags/https">#https</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/unlock">#Unlock</a></li>
+                        <li><a href="https://unixetc.com/tags/ssl">#ssl</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/root">#Root</a></li>
+                        <li><a href="https://unixetc.com/tags/letsencrypt">#letsencrypt</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/recovery">#recovery</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/twrp">#twrp</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/oneplus">#oneplus</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/oneplus3">#oneplus3</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/oneplus3t">#oneplus3t</a></li>
+                        <li><a href="https://unixetc.com/tags/%E5%85%8D%E8%B4%B9%E8%AF%81%E4%B9%A6">#免费证书</a></li>
                     
                 </ul>
         
@@ -177,16 +202,17 @@
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/fix-toshiba-u-disk-write-protection/">修复东芝U盘写保护</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/md5sum-usage/">使用MD5校验文件</a></h1>
     </header>
 
     <div class="content post-summary">
-        一直以来都是使用U盘安装Linux，光盘镜像通过dd写入U盘。最近需要安装elementary，下载镜像后发现系统推荐使用Rufus来写入U盘，这个工具以前没试过所以试了下，确实挺快的。
-不过在安装完elementary后，想将U盘重新恢复格式化出问题了，使用DiskGenius无法进行操作，使用系统自带的磁盘管理也没法操作，包括Linux下的GParted也不行，都提示U盘被写保护了，-__-!
-万般无奈只能想到量产工具，下面分享使用到的两款软件：
- ChipGenius Restore  ChipGenius是一款U盘信息检测软件，通过它可以来查看U盘主控信息，我的这款U盘芯片信息如下：
-设备描述: [G:]USB 大容量存储设备(TOSHIBA TransMemory-Mx)设备类型: 大容量存储设备协议版本: USB 3.00当前速度: 极速(SuperSpeed)电力消耗: 504mAUSB设备ID: VID = 0930 PID = 6545设备序列号: FFFFFFFFFFFFEE20F000BC99设备供应商: TOSHIBA　设备名称: TransMemory-Mx设备修订版: 0110产品制造商: TOSHIBA　产品型号: TransMemory-Mx产品修订版: PMAP　主控厂商: Phison(群联)　主控型号: PS2251-03(PS2303) - F/W 02.08.53 [2014-01-02]闪存识别码: 983AA892 - Toshiba(东芝) TC58NVG7T2JTA00 [TLC-8K]Restore是群联官方提供的一款恢复工具，可以进行低级格式化和修复。
+        md5sum命令用于生成和校验文件的md5值。它会逐位对文件的内容进行校验。是文件的内容，与文件名无关，也就是文件内容相同，其md5值相同。md5值是一个128位的二进制数据，转换成16进制则是32（128/4）位的进制值。
+md5校验，有很小的概率不同的文件生成的md5可能相同。比md5更安全的校验算法还有SHA*系列的。
+在网络传输时，我们校验源文件获得其md5sum，传输完毕后，校验其目标文件，并对比如果源文件和目标文件md5 一致的话，则表示文件传输无异常。否则说明文件在传输过程中未正确传输。
+md5sum示例 生成文件md5 pi@raspi:~ $ md5sum bs.conf fcd3e1243d1cd5903d4e38c46671b84f bs.conf  md5sum校验是根据文件内容为准，与名称无关，意思是即便文件名修改了，但md5校验值应该不会改变，如下：
+pi@raspi:~ $ cp bs.conf bs.conf.bak pi@raspi:~ $ md5sum bs* fcd3e1243d1cd5903d4e38c46671b84f bs.conf fcd3e1243d1cd5903d4e38c46671b84f bs.conf.bak  根据md5校验文件是否更改 一般网上分享的大文件都会附带一个.md5文件，这就是所分享文件的md5值，可以使用-c参数来直接使用.md5文件来检验文件是否完整
+pi@raspi:~ $ md5sum bs.conf&gt;bs.conf.md5 pi@raspi:~ $ md5sum -c bs.conf.md5 bs.conf: OK  如上例，将bs.conf的md5值定向到一个bs.conf.md5文件，然后使用md5sum -c bs.conf.md5直接检验相应文件是否完整一致，校验通过的话会输出提示OK，如果文件经过修改，内容已经不一致，则不会通过校验，则会显示FAILED
     </div>
 
     
@@ -195,7 +221,7 @@
 
 <div class="post-info">
     
-        <div class="post-date">2017-06-10</div>
+        <div class="post-date">2015-12-13</div>
     
     <div class="post-taxonomies">
         
@@ -208,21 +234,120 @@
             
                 <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/ps2251-03">#PS2251-03</a></li>
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/diskgenius">#DiskGenius</a></li>
+                        <li><a href="https://unixetc.com/tags/md5">#md5</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/elementary">#elementary</a></li>
+                        <li><a href="https://unixetc.com/tags/md4">#md4</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/rufus">#Rufus</a></li>
+                        <li><a href="https://unixetc.com/tags/sha">#sha</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/%E4%B8%9C%E8%8A%9D">#东芝</a></li>
+                        <li><a href="https://unixetc.com/tags/md5sum">#md5sum</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/%E7%BE%A4%E8%81%94">#群联</a></li>
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/transfer-files-using-scp/">使用SCP传输文件</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        示例：用户名root 地址 2.33.153.67
+下载文件 scp root@2.33.153.67:/root/test.mp4 /home/pi/  将服务器上的/root/test.mp4下载到本地/home/pi文件夹
+上传文件 scp /home/pi/ok.txt root@2.33.153.67:/root  将本地/home/pi/ok.txt上传至服务器/root文件夹
+下载文件夹 scp -r root@2.33.153.67:/root/ebooks /home/pi  将服务器上的/root/ebooks文件夹下载至本地/home/pi下
+上传文件夹 scp -r /home/pi/music root@2.33.153.67:/media  将本地/home/pi/music文件夹上传至服务器/media下
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-12-08</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/%E4%B8%BB%E6%8E%A7">#主控</a></li>
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/toshiba">#TOSHIBA</a></li>
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/scp">#scp</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-install-nodejs/">树莓派安装Node.js</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        首先查看树莓派cpu信息
+pi@raspi:~ $ cat /proc/cpuinfo processor : 0 model name : ARMv6-compatible processor rev 7 (v6l) BogoMIPS : 2.00 Features : half thumb fastmult vfp edsp java tls CPU implementer : 0x41 CPU architecture: 7 CPU variant : 0x0 CPU part : 0xb76 CPU revision : 7 Hardware : BCM2708 Revision : 000e Serial : 000000004a8acb6d  看清楚cpu构架，是ARMv6
+然后在node.js官网下载对应版本的包，下载地址https://nodejs.org/dist/
+# wget https://nodejs.org/dist/v4.2.2/node-v4.2.2-linux-arm64.tar.gz # tar zxf node-v4.2.2-linux-arm64.tar.gz # mv node-v4.2.2-linux-arm64 /usr/nodejs422  方便使用期间，做个链接
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-12-03</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/js">#JS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/npm">#npm</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/node.js">#node.js</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ode">#ode</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/node">#node</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/arm6">#arm6</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/cpuinfo">#cpuinfo</a></li>
                     
                 </ul>
         
@@ -250,17 +375,24 @@
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

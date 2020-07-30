@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
 	<meta name="generator" content="Hugo 0.73.0" />
     
@@ -16,7 +18,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070679" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101234" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101234" />
+
+
 
 
 
@@ -42,9 +78,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -67,21 +103,15 @@
     
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/anbox-run-android-applications-on-linux/">在Linux中运行Android软件</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/change-timezone-in-centos/">Linux下更改时区</a></h1>
     </header>
 
     <div class="content post-summary">
-        想要在PC上运行Android软件就需要模拟器，Windows版的Android模拟器软件很多，但是Linux平台的就不多了，今天推荐一款Linux下的Android模拟器软件Anbox
-Anbox官方介绍为Android in a Box,Run Android applications on any GNU/Linux operating system.
-Anbox现在还处于测试阶段，很多功能还不完善和稳定，请谨慎使用。
-安装Anbox 首先得安装Snaps,官方地址为https://snapcraft.io/
-LinuxMint中安装Snaps和必须包
-sudo apt install snapd sudo apt install pulseaudio  接下来按照官方指南安装Anbox
-snap install --classic anbox-installer &amp;&amp; anbox-installer  我试着通过snap来安装一直存在权限问题，一般权限不能运行snap install --classic anbox-installer，root运行完snap install --classic anbox-installer后，但运行anbox-installer又提示不能使用root权限，一般权限根本无法运行anbox-installer，搞了半天都没有成功，于是就有了下文。
-通过常规方法安装Anbox
-wget https://raw.githubusercontent.com/anbox/anbox-installer/master/installer.sh -O anbox-installer chmod +x ./anbox-installer ./anbox-installer  安装完成后会有重启系统的提示
- To ensure all changes made to your system you should now reboot your system. If you don&rsquo;t do this no Android applications will show up in the system application launcher.
+        Linux中时区代码都在/usr/share/zoneinfo/目录中
+首先删除默认时区
+#rm /etc/localtime  设定新的时区
+#ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime  完成！
     </div>
 
     
@@ -90,7 +120,7 @@ wget https://raw.githubusercontent.com/anbox/anbox-installer/master/installer.sh
 
 <div class="post-info">
     
-        <div class="post-date">2017-06-09</div>
+        <div class="post-date">2015-11-30</div>
     
     <div class="post-taxonomies">
         
@@ -105,13 +135,11 @@ wget https://raw.githubusercontent.com/anbox/anbox-installer/master/installer.sh
                     
                         <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/android">#Android</a></li>
+                        <li><a href="https://unixetc.com/tags/timezone">#timezone</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/anbox">#Anbox</a></li>
+                        <li><a href="https://unixetc.com/tags/localtime">#localtime</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/adb">#adb</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/apk">#apk</a></li>
+                        <li><a href="https://unixetc.com/tags/%E6%97%B6%E5%8C%BA">#时区</a></li>
                     
                 </ul>
         
@@ -121,15 +149,32 @@ wget https://raw.githubusercontent.com/anbox/anbox-installer/master/installer.sh
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/centos7-installation-and-use-p7zip/">CentOS7安装使用p7zip</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/dir-505-openwrt-shadowsocks-chinadns/">打造一台翻墙路由器[转载]</a></h1>
     </header>
 
     <div class="content post-summary">
-        在此只推荐从源码安装p7zip，下载地址 http://www.7-zip.org/download.html
-源码在这里下载 https://sourceforge.net/projects/p7zip/files/p7zip/
-wget https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_all.tar.bz2 tar jxf p7zip_16.02_src_all.tar.bz2 cd p7zip_16.02 make make install 使用p7zip
-[root@localhost ~]# 7za  7-Zip (a) [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21 p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,1 CPU x64) Usage: 7za &lt;command&gt; [&lt;switches&gt;...] &lt;archive_name&gt; [&lt;file_names&gt;...] [&lt;@listfiles...&gt;] &lt;Commands&gt; a : Add files to archive b : Benchmark d : Delete files from archive e : Extract files from archive (without using directory names) h : Calculate hash values for files i : Show information about supported formats l : List contents of archive rn : Rename files in archive t : Test integrity of archive u : Update files to archive x : eXtract files with full paths 压缩文件
+        本文转载自https://github.com/Jerry-hechen/blog
+ 路由器配置方案：Shadowsocks-libev-spec + ChinaDNS
+本教程以Dlink dir-505为例，其他型号路由也类似，Openwrt版本：15.05，其他安装包均为最新版。
+首先路由器型号需要在openwrt列表中：http://wiki.openwrt.org/toh/start(可以ctrl+F搜索匹配型号)，并记录所用路由器cpu的型号。
+一.下载路由器CPU型号对应的的固件：https://downloads.openwrt.org/ 二.刷机及配置 1.访问路由器上传固件，等待一会儿，勿断电。
+2.好了之后打开wifi开关，连上openwrt（有的固件默认不没有开启WI-FI需要用网线连接），访问192.168.1.1
+3.System－》Administertion，设置路由密码，选中Allow remote hosts to connect to local SSH forwarded ports
+4.Network－》Wifi，WI-FI没有启动先启动，设置Transmit Power为15dBm（31mW），设置Country Code为CN-China
+5.设置下WIFI名称（ESSID）、密码、加密方式（Encryption,推荐使用WPA-PSK/WPA2-PSK）
+6.Network－》Interfaces，修改LAN口，勾掉Bridge interfaces选项，更改网关为192.168.5.1，添加WAN口选择DHCP client选项（如果需要拨号选择PPPoE）,勾上Adapter “eth1”。注意：此处修改LAN口、添加WAN口不要“保存&amp;应用”，先“保存”，在Network－》Interfaces列表整体“保存&amp;应用”
+为了和主路由不冲突最好将网关改为其他，比如192.168.5.1
+刷机成功。
+三.下载安装包并安装到路由器 1.下载安装包 Shadowsocks-spec: http://sourceforge.net/projects/openwrt-dist/files/shadowsocks-libev/ chinaDNS: chinaDNS: http://sourceforge.net/projects/openwrt-dist/files/chinadns/ Shadowsocks-spec-LuCI：http://sourceforge.net/projects/openwrt-dist/files/luci-app/shadowsocks-spec/ chinaDNS-LuCI：http://sourceforge.net/projects/openwrt-dist/files/luci-app/chinadns/  注意，一定要下载路由器cpu型号对应的文件！DIR-505选择ar71xx
+2.安装到路由器   保证路由器可以上外网
+  用ssh工具上传shadowsocks-libev-spec、ChinaDNS、及2个luci文件 4个ipk包到路由器/tmp目录
+ssh root@192.168.5.1 opkg update
+  安装中文包，然后在路由管理界面System－》System－》Language and Style切换中文语音，刷新可看到中文
+opkg install luci-i18n-base-zh-cn
+cd /tmp
+opkg install shadowsocks-libev-spec-polarssl_2.4.1-1_ar71xx.ipk
+opkg install ChinaDNS_1.
     </div>
 
     
@@ -138,7 +183,54 @@ wget https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_al
 
 <div class="post-info">
     
-        <div class="post-date">2017-06-06</div>
+        <div class="post-date">2015-11-20</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/SHARE">SHARE</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/dlink">#DLINK</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/dir505">#dir505</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/openwrt">#openWRT</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/shadowsocks">#Shadowsocks</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/chinadns">#ChinaDNS</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-install-ffmpeg/">树莓派安装ffmpeg</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        先安装h264编码器
+#!/bin/bash cd /usr/src git clone git://git.videolan.org/x264 cd x264 ./configure --host=arm-unknown-linux-gnueabi --enable-static --disable-opencl make sudo make install  下载源码编译安装ffmpeg
+cd /usr/src git clone git://source.ffmpeg.org/ffmpeg.git cd ffmpeg sudo ./configure --arch=armel --target-os=linux --enable-gpl --enable-libx264 --enable-nonfree make sudo make install  由于树莓派原因，这个过程很长……很长…… 建议开screen，然后Ctrl+a+d
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-11-07</div>
     
     <div class="post-taxonomies">
         
@@ -152,63 +244,6 @@ wget https://sourceforge.net/projects/p7zip/files/p7zip/16.02/p7zip_16.02_src_al
                 <ul class="post-tags">
                     
                         <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/centos">#CentOS</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/p7zip">#p7zip</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/7z">#7z</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/7za">#7za</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/weather-according-to-raspberry-pi/">树莓派显示天气信息</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        在此介绍一个国外网友的树莓派项目RARP，Weather According to Raspberry Pi
-顾名思义，Weather According to Raspberry Pi是一个有关天气信息的项目，该项目通过采集Raspberry Pi和Sense HAT的数据，来显示相关的天气信息，比如温度、湿度、压力等
-项目地址http://coded2.herokuapp.com/weather/
-代码国内下载地址http://cdn.lyq.wiki/res/warp_final.zip
-下载后解压，得到main.py和gauge2.html两个文件，其中main.py需要Python3运行，gauge2.html是最终的显示文件
-安装相关软件
-sudo apt-get install python3 sudo apt-get install python3-pip pip3 install flask  打开Sense HAT仿真器，在程序菜单中，打开后如下图示:
-下来，运行下载的python脚本
-python3 main.py  正常情况下，会提示一个端口为5000的web服务正在运行
-在浏览器中浏览localhost:5000或者127.0.0.1:5000，最终的浏览如下图
-三个图表分别显示温度、压力和湿度，这三者的信息均来自Sense HAT 模拟器而不是真正的Sense HAT硬件。
-如果需要采集Sense HAT扩展板的数据，需要将Sense HAT附加板和Raspberry Pi相连，具体信息参考官网 https://www.raspberrypi.org/products/sense-hat/
-然后修改代码，打开main.py文件，找到如下行
-from sense_emu import SenseHat  修改为
-from sense_hat import SenseHat  保存后，重新运行python3 main.py，此时采集的数据就来自真实的SenseHAT硬件。
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2017-05-25</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
                     
                         <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
                     
@@ -216,31 +251,102 @@ from sense_hat import SenseHat  保存后，重新运行python3 main.py，此时
                     
                         <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/laptop-dock">#Laptop Dock</a></li>
+                        <li><a href="https://unixetc.com/tags/ffmpeg">#ffmpeg</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/sense-hat">#Sense HAT</a></li>
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/linux-mp3-converted-to-ogg/">linux下将mp3转换为ogg</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装软件
+apt-get install mpg321 vorbis-tools  使用如下命令转换
+mpg321 tweet.mp3 -w raw &amp;&amp; oggenc raw -o tweet.ogg &amp;&amp; rm -rf raw  示例:
+root@hkvps:/home/res# mpg321 tweet.mp3 -w raw &amp;&amp; oggenc raw -o tweet.ogg &amp;&amp; rm -rf raw High Performance MPEG 1.0/2.0/2.5 Audio Player for Layer 1, 2, and 3. Version 0.3.2-1 (2012/03/25). Written and copyrights by Joe Drew, now maintained by Nanakos Chrysostomos and others. Uses code from various people. See 'README' for more!
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-10-21</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/hat">#HAT</a></li>
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/sense">#Sense</a></li>
+                        <li><a href="https://unixetc.com/tags/mp3">#mp3</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/rarp">#RARP</a></li>
+                        <li><a href="https://unixetc.com/tags/ogg">#ogg</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/python">#Python</a></li>
+                        <li><a href="https://unixetc.com/tags/mpg321">#mpg321</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/python3">#Python3</a></li>
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/ke-mu-yi-passed/">科目一过咧</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        驾校交钱已经一年了，一直没时间考试，上次报考的科目一由于临时加班没去成，这次重新交钱补考。
+昨儿晚把驾校发的书翻了一遍，然后就是在手机上用车轮考驾照不停的练习。
+今儿中午11点多到考场，换了准考证就等待安排考试。
+分配了个电脑有点挫，第一次登录显示考试时间不对，重新更新信息。
+第二次指纹录入一直不能验证通过，重新更新指纹验证。
+第三次摄像头无法采集视频信息，重置考试系统。
+第四次，一切正常开始答题……
+13分钟答完，等过了15分钟交卷，得分98。
+考试要点：细心别急、细心别急、细心别急！
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-10-16</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/ESSAY">ESSAY</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/humidity">#Humidity</a></li>
+                        <li><a href="https://unixetc.com/tags/%E7%A7%91%E7%9B%AE%E4%B8%80">#科目一</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/%E5%A4%A9%E6%B0%94">#天气</a></li>
+                        <li><a href="https://unixetc.com/tags/%E9%A9%BE%E6%A0%A1">#驾校</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/%E4%BC%A0%E6%84%9F%E5%99%A8">#传感器</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E5%8E%8B%E5%8A%9B">#压力</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E6%B9%BF%E5%BA%A6">#湿度</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E6%B8%A9%E5%BA%A6">#温度</a></li>
+                        <li><a href="https://unixetc.com/tags/%E9%A9%BE%E7%85%A7">#驾照</a></li>
                     
                 </ul>
         
@@ -268,17 +374,24 @@ from sense_hat import SenseHat  保存后，重新运行python3 main.py，此时
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

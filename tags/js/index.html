@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070681" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,7 +101,7 @@
     </div>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/letsencrypt-certificate-quickly-generate-script/">Let&#39;s encrypt 证书快速生成脚本</a></h1>
     </header>
 
@@ -116,7 +152,7 @@ root@rnse:~/lesh#chmod +x letsencrypt.sh root@rnse:~/lesh# ./letsencrypt.sh lets
 </article>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/raspberry-pi-install-nodejs/">树莓派安装Node.js</a></h1>
     </header>
 
@@ -176,7 +212,7 @@ pi@raspi:~ $ cat /proc/cpuinfo processor : 0 model name : ARMv6-compatible proce
 </article>
     
         <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/use-scrollup-to-add-scroll-to-top-feature/">使用ScrollUp添加返回顶部功能</a></h1>
     </header>
 
@@ -224,34 +260,139 @@ $(function () { $.scrollUp({ scrollName: 'scrollUp', // Element ID scrollDistanc
 
 </article>
     
-    
-    
-        
-    <div class="pagination">
-        <div class="left pagination-item disabled">
-            
-        </div>
-        <div class="right pagination-item ">
-            
-                <a href="/tags/js/page/2/">To old posts</a>
-            
-        </div>
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/ubuntu-install-ghost-blog-system/">Ubuntu下安装Ghost博客系统</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装Nodejs sudo add-apt-repository ppa:chris-lea/node.js sudo apt-get update sudo apt-get install nodejs  检查是否安装成功
+root@hkvps:~# node -v v0.10.37 root@hkvps:~# npm -v 1.4.28  安装Ghost Ghost下载地址https://ghost.org/download/
+wget https://ghost.org/zip/ghost-0.6.4.zip unzip ghost-0.6.4.zip -d ghost cd ghost npm install --production  运行Ghost
+npm start  可以通过127.0.0.1:2368来访问
+通过nmp start来运行Ghost，退出后就会停止，因此需要一个方法让Ghost一直运行
+让Ghost一直运行 安装forever
+npm install forever -g  进入ghost目录，执行以下命令，让Ghost一直运行
+NODE_ENV=production forever start index.js  停止ghost
+forever stop index.js  查看forever运行列表
+forever list  结合Nginx配置域名 安装Nginx
+sudo apt-get install nginx  编辑配置文件
     </div>
 
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-06-06</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/js">#JS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ghost">#ghost</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nodejs">#nodejs</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/npm">#npm</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/examples-javascript-array/">JavaScript数组使用实例</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        GF办公用需要一个小系统，原要求是VBA实现，不过我没弄过那玩意儿。C语言倒是熟悉，但CLI的东西她使用不方便。
+于是做一个web系统，php比较熟悉，不过她的工作不能使用外网，额滴神！最后还是选择了用javascript实现，现学现卖吧。
+由于不能使用数据库，所以需要构建一个三维数组来存储数据，以下是javascript中数组使用的一些实例。
+定义数组并赋值
+var jz = newArry(); jz[0] = 10; jz[1] = &quot;hello&quot;; jz[2] = 23.4;  以上是一个简单的一维数组，其中三个值分别为:10整数，hello字符串,23.4浮点数，可以通过以下方法使用
+alert(&quot;jz[0] is &quot;+jz[0]+&quot;\n jz[1] is &quot;+jz[1]+&quot;\n jz[2] is &quot;+jz[2]);  二维数组的定义方法:为一维数组的单个值赋予数组值，那么就可以构成二维数组
+实例
+var jz = newArry(); jz[0] = newArry(1,2); jz[1] = newArry(3,4); jz[2] = newArry(5,6);  可以通过jz[0][0]、jz[0][1]、jz[0][2]来访问。
+以下是一个简单的三维数组实例
+var jz newArry(); jz[0] = newArry([100,200],[300,400],[500,600]) jz[1] = newArry(['str1','str2'],['str3','str4'],['str5','str6']); jz[2] = newArry([2.24,3.2],[12.9,89.01],[38.04,7.6]);  方位方法如jz[0][1][0]
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2013-09-24</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/javascript">#JavaScript</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/array">#Array</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%95%B0%E7%BB%84">#数组</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/js">#JS</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%BC%96%E7%A8%8B">#编程</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+    
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

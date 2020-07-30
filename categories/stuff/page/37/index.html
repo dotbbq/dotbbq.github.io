@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,28 +101,17 @@
     </div>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/raspberry-pi-use-dietpi/">树莓派使用DietPi</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/install-vnc-server-on-ubuntu-server/">Ubuntu Server中安装VNC Server</a></h1>
     </header>
 
     <div class="content post-summary">
-        下载安装DietPi DietPi项目主页 http://dietpi.com/
-DietPi下载地址 http://fuzon.co.uk/downloads/DietPi.7z
-这个压缩包91MB，解压后的img文件522MB,比官方的小多了。
-然后将镜像写入到SD卡中，linux下使用dd
-dd if=DietPi_v74.img of=/dev/sdc bs=2M  Windows下使用Win32 Disk Imager，戳这里
-写入完成后将SD卡插入树莓派，加电启动。
-预设置Wifi链接 首次使用时，可以通过编辑dietpi.txt来进行wifi预设置。
-将TF卡插入电脑读卡器，打开对应的磁盘，找到dietpi.txt文件，打开。
-找到Wifi_Enabled=0，将其设置为1
-然后找到Wifi_SSID和Wifi_KEY分别设置wifi节点名和密码，保存即可。
-配置DietPi DietPi默认用户名密码为root dietpi，第一次启动DietPi提示检测升级，按提示操作。
-不过由于天朝网路问题，可能升级比较缓慢，建议Ctrl+c终止升级，修改sources.list为朝内镜像。
-DietPi默认没有vi,使用nano进行编辑，添加Aliyun源。
-deb http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib deb-src http://mirrors.aliyun.com/raspbian/raspbian/ wheezy main non-free contrib  更新软件
-apt-get update&amp;&amp;apt-get upgrade -y  然后运行dietpi-config进行配置。
-DietPi - Config
- ┌────┤ ---------- DietPi-Config ---------- ├─────┐ │ Hardware : Raspberry Pi 1 (512MB) │ │ │ │ 1 Display Options │ │ 2 Audio Options │ │ 3 Performance Options │ │ 4 Advanced Options │ │ 5 Language/Regional Options │ │ 6 Security Options │ │ 7 Networking Options │ │ 8 AutoBoot Options │ │ 9 Tools │ │ │ │ │ │ &lt;Ok&gt; &lt;Exit&gt; │ │ │ └────────────────────────────────────────────────┘  推荐配置：
+        安装所有软件
+#aptitude install openbox firefox ttf-wqy-microhei #aptitude install vnc4server  设置openbox启动
+#update-alternatives --config x-session-manager 然后选择openbox-session  设置vncserver密码:
+#vncpasswd Password: ****** Verify:*****  运行vncserver
+# vncserver //运行 # vncserver -kill :1 //终止  编辑~/.vnc/xstartup文件
+#vi ~/.vnc/xstartup #!/bin/sh # Uncomment the following two lines for normal desktop: # unset SESSION_MANAGER # exec /etc/X11/xinit/xinitrc [ -x /etc/vnc/xstartup ] &amp;&amp; exec /etc/vnc/xstartup [ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresources xsetroot -solid grey vncconfig -iconic &amp; x-terminal-emulator -geometry 80x24+10+10 -ls -title &quot;$VNCDESKTOP Desktop&quot; &amp; x-window-manager &amp; startx&amp; //添加此行  链接VNC
     </div>
 
     
@@ -95,7 +120,52 @@ DietPi - Config
 
 <div class="post-info">
     
-        <div class="post-date">2015-08-04</div>
+        <div class="post-date">2013-05-11</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/vnc">#VNC</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/debian-use-apt-spy-to-select-the-best-source/">Debian使用apt-spy选择最佳源</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装apt-spy
+#apt-get install apt-spy  使用apt-spy选择最佳源
+#apt-spy update #apt-spy -d stable -a asia -t 3  结果保存在/etc/apt/sources.list.d/apt-spy.list，可手动替换到/etc/apt/sources.list
+apt-spy选项:
+ -d 系统版本，可选stable,testing,unstable -a 区域,如asia,europe等，可用项可cat /etc/apt-spy.conf -t 超时阀值(s)，可筛掉长时间不响应的地址  
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2013-05-09</div>
     
     <div class="post-taxonomies">
         
@@ -112,11 +182,9 @@ DietPi - Config
                     
                         <li><a href="https://unixetc.com/tags/debian">#Debian</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                        <li><a href="https://unixetc.com/tags/apt-get">#apt-get</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/dietpi">#dietpi</a></li>
+                        <li><a href="https://unixetc.com/tags/apt-spy">#apt-spy</a></li>
                     
                 </ul>
         
@@ -126,18 +194,13 @@ DietPi - Config
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/sumbit-raspberry-pi-data-to-lewei50/">将树莓派数据上传至乐为物联</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/product-codes-of-nokia-n900/">NokiaN900产品码</a></h1>
     </header>
 
     <div class="content post-summary">
-        进入http://www.lewei50.com/注册登录
-添加设备(Add Device) 我的物联 -&gt; 我的设备，添加新设备，类型选择其他，不使用模板。
-请自定义设备标识，后面要用到。
-添加传感器 我的物联 -&gt; 感器与控制器，新建传感器。
-其中标识为提交数据依据，建议英文。
-向乐为物联提交数据 lewei.sh代码如下 http://cdn.lyq.wiki/res/lewei.sh
-#!/bin/bash LURL=http://www.lewei50.com/api/V1/Gateway/UpdateSensors/01 KEY=&quot;2fasdfsdfsdf9ffadsf62dfbfsdfa1&quot; sys_load=`cat /proc/loadavg | awk '{print $2}'` st=`/usr/bin/sen_t` sh=`/usr/bin/sen_h` for i in 1 2 3 4 5; do sys_temp=`cat /sys/class/thermal/thermal_zone0/temp | awk '{print $1/1000}'` if [[ &quot;${sys_temp}&quot; =~ ^- ]] then sys_temp='0.0' else echo ${sys_temp} break fi done echo &quot;Printf Values&quot; echo &quot;sys_temp:&quot;${sys_temp} echo &quot;sys_load:&quot;${sys_load} echo &quot;sensor_t:&quot;${st} echo &quot;sensor_h:&quot;${sh} echo &quot;Done!&quot; echo &quot;Sumbit Data to Lewei&quot; curl --request POST ${LURL} --header &quot;userkey:${KEY}&quot; --data &quot;[{'Name':'load','Value':'${sys_load}'},{'Name':'temp','Value':'${sys_temp}'},{'Name':'sd','Value':'${sh}'},{'Name':'wd','Value':'${st}'}]&quot;  其中LURL后面的01为设备标识,KEY为用户Userkey,JSON数据中的Name对应相应的传感器标识。
+        电池仓贴纸上面的CODE即是
+ 0595085: N900 RX-51 TMN (Telecomunicacoes Moveis Nacionais S.A.*) PT V1 - Black 0582648: RX-51 Belgium 0584571: RX-51 Croatia Makedonia 0584572: RX-51 Czech 0591362: RX-51 Estonia 0574180: RX-51 France 0574383: RX-51 Germany 0591474: RX-51 Hungary 0591474: RX-51 Hungary 0574385: RX-51 Italy 0583516: RX-51 Light Swap 0582647: RX-51 MENA 0585168: RX-51 Montenegro Greece 0582645: RX-51 Netherlands 0582644: RX-51 Poland 0574386: RX-51 Russia 0574179: RX-51 Scandinavia Finland Sweden 0587236: RX-51 Scandinavia Norway Denmark 0584570: RX-51 Slovakia 0584570: RX-51 Slovakia 0574384: RX-51 Spain Portugal 0584598: RX-51 Swap 0584598: RX-51 Swap 0587813: RX-51 Swap France 0587810: RX-51 Swap Russia 0587812: RX-51 Swap USA 0560826: RX-51 UK Ireland 0580952: RX-51 USA 0593611: UK CV 0595421: Vodafone UK GB Contract black 1.
     </div>
 
     
@@ -146,7 +209,7 @@ DietPi - Config
 
 <div class="post-info">
     
-        <div class="post-date">2015-07-30</div>
+        <div class="post-date">2013-04-26</div>
     
     <div class="post-taxonomies">
         
@@ -159,33 +222,13 @@ DietPi - Config
             
                 <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                        <li><a href="https://unixetc.com/tags/nokia">#nokia</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
+                        <li><a href="https://unixetc.com/tags/n900">#n900</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
+                        <li><a href="https://unixetc.com/tags/nokia-n900">#nokia n900</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/humidity">#Humidity</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E4%BC%A0%E6%84%9F%E5%99%A8">#传感器</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E6%B9%BF%E5%BA%A6">#湿度</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E6%B8%A9%E5%BA%A6">#温度</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/json">#JSON</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/seneor">#Seneor</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E7%89%A9%E8%81%94%E7%BD%91">#物联网</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/temperature">#Temperature</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E4%B9%90%E4%B8%BA%E7%89%A9%E8%81%94">#乐为物联</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/lewei50">#lewei50</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/dht11">#dht11</a></li>
+                        <li><a href="https://unixetc.com/tags/rx-51">#rx-51</a></li>
                     
                 </ul>
         
@@ -195,13 +238,14 @@ DietPi - Config
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/install-nginx-and-ngx_pagespeed-on-vps/">安装Nginx和ngx_pagespeed</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/download-the-entire-station-using-wget/">使用wget下载整站</a></h1>
     </header>
 
     <div class="content post-summary">
-        VPS配置:
-Ubuntu 14.04 x86 RAM 512M SWAP 64M DISK 5G  准备工作 sudo apt-get update&amp;&amp;apt-get upgrade -y sudo apt-get install build-essential zlib1g-dev libpcre3 libpcre3-dev unzip libssl-dev -y  下载ngx_pagespeed cd NPS_VERSION=1.9.32.4 wget https://github.com/pagespeed/ngx_pagespeed/archive/release-${NPS_VERSION}-beta.zip unzip release-${NPS_VERSION}-beta.zip cd ngx_pagespeed-release-${NPS_VERSION}-beta/ wget https://dl.google.com/dl/page-speed/psol/${NPS_VERSION}.tar.gz tar -xzvf ${NPS_VERSION}.tar.gz  安装Nginx cd groupadd www useradd -s /sbin/nologin -g www www NGINX_VERSION=1.8.0 wget http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz tar -xvzf nginx-${NGINX_VERSION}.tar.gz cd nginx-${NGINX_VERSION}/ ./configure \ --user=www \ --group=www \ --prefix=/usr/local/nginx \ --with-http_stub_status_module \ --with-http_ssl_module \ --with-http_spdy_module \ --with-http_gzip_static_module \ --with-http_sub_module \ --add-module=$HOME/ngx_pagespeed-release-${NPS_VERSION}-beta \ sudo make sudo make install sudo ln -sf /usr/local/nginx/sbin/nginx /usr/bin/nginx  配置/etc/init.
+        命令实例:
+$wget -r -p -np -k -e robots=off -U &quot;Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6&quot; &quot;http://baidu.com&quot;  参数解释:
+-r,--recursive 递归下载 -p, --page-requisites 下载显示HTML文件的所有图片 -np, --no-parent 不要追溯到父目录 -k, --convert-links 转换非相对链接为相对链接 -e,–execute=COMMAND 执行一个 “.wgetrc”命令 robots=off 无视robots.txt -U, --user-agent=AGENT 设定代理的名称为 AGENT &quot;Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6&quot; 伪装agent 
     </div>
 
     
@@ -210,7 +254,7 @@ Ubuntu 14.04 x86 RAM 512M SWAP 64M DISK 5G  准备工作 sudo apt-get update&amp
 
 <div class="post-info">
     
-        <div class="post-date">2015-07-24</div>
+        <div class="post-date">2013-04-21</div>
     
     <div class="post-taxonomies">
         
@@ -225,11 +269,62 @@ Ubuntu 14.04 x86 RAM 512M SWAP 64M DISK 5G  准备工作 sudo apt-get update&amp
                     
                         <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/google">#Google</a></li>
+                        <li><a href="https://unixetc.com/tags/wget">#wget</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
+                        <li><a href="https://unixetc.com/tags/mozilla">#Mozilla</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/vps">#VPS</a></li>
+                        <li><a href="https://unixetc.com/tags/agent">#AGENT</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/archlinux-modify-the-network-adapter-name/">Archlinux下修改网卡名称</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        刚刚安装了Archlinux，用的archlinux-2013.03.01-dual.iso镜像，最新的systemd将网卡名更改了，不在是原来默认的eth0/wlan0
+我的ifconfig -a输出如下:
+enp9s0: flags=4098 mtu 1500 ether 04:7d:7b:f8:25:9d txqueuelen 1000 (Ethernet) RX packets 0 bytes 0 (0.0 B) RX errors 0 dropped 0 overruns 0 frame 0 TX packets 0 bytes 0 (0.0 B) TX errors 0 dropped 0 overruns 0 carrier 0 collisions 0 lo: flags=73mtu 65536 inet 127.0.0.1 netmask 255.0.0.0 inet6 ::1 prefixlen 128 scopeid 0x10 loop txqueuelen 0 (Local Loopback) RX packets 0 bytes 0 (0.0 B) RX errors 0 dropped 0 overruns 0 frame 0 TX packets 0 bytes 0 (0.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2013-03-06</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/archlinux">#Archlinux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ifconfig">#ifconfig</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/systemd">#systemd</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/eth0">#eth0</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/wlan0">#wlan0</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/udev">#udev</a></li>
                     
                 </ul>
         
@@ -257,17 +352,24 @@ Ubuntu 14.04 x86 RAM 512M SWAP 64M DISK 5G  准备工作 sudo apt-get update&amp
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,16 +101,14 @@
     </div>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/sudo-configuration-in-debian10/">Debian10中sudo配置</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/n900-removes-unnecessary-software-and-games/">NokiaN900删除不必要的软件</a></h1>
     </header>
 
     <div class="content post-summary">
-        Debian10中/etc/sudoers中提示了需要通过visudo来编辑该文件，如下：
- This file MUST be edited with the &lsquo;visudo&rsquo; command as root.
- 但奇葩的是系统中没有visudo命令，apt搜索也搜不到，-_-!
-因此只能通过以下方法来编辑：
-#echo &quot;alair ALL=(ALL:ALL) ALL&quot; &gt;&gt; /etc/sudoers  保存后用户alair就可以使用sudo命令来进行root权限操作了。
+        NokiaN900自带的软件不少，还有一些游戏，以下为这些软件的删除方式。
+首先，建议安装rootsh以获取ROOT权限，然后在xTermianl进行以下操作。
+   名称 说明 删除命令     Mahjong 游戏 apt-get remove -y osso-mahjong   Chess 游戏 apt-get remove -y gnuchess   Blocks 游戏 apt-get remove -y maemoblocks   Marbles 游戏 apt-get remove -y osso-lmarbles   AP News 软件 apt-get remove -y ap-installer   Docs To Go 软件 apt-get remove -y dtg-installer   Sketch 画图 apt-get remove -y osso-sketch   Backup 备份 apt-get remove -y osso-backup   PDF reader PDF阅读 apt-get remove -y osso-pdf-viewer   RSS RSS订阅 apt-get remove -y osso-rss-feed-reader   Notes 记事本 apt-get remove -y osso-notes   Amazon Amazon安装快捷方式 rm /usr/share/maemo-installer-utils/amazon.
     </div>
 
     
@@ -83,7 +117,7 @@
 
 <div class="post-info">
     
-        <div class="post-date">2019-07-10</div>
+        <div class="post-date">2019-04-30</div>
     
     <div class="post-taxonomies">
         
@@ -96,19 +130,15 @@
             
                 <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/debian">#Debian</a></li>
+                        <li><a href="https://unixetc.com/tags/n900">#N900</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nokia-n900">#Nokia N900</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%AF%BA%E5%9F%BA%E4%BA%9A">#诺基亚</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E7%B2%BE%E7%AE%80">#精简</a></li>
                     
                         <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/debian10">#Debian10</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/sudo">#sudo</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/visudo">#visudo</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/sudoers">#sudoers</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E5%A5%87%E8%91%A9">#奇葩</a></li>
                     
                 </ul>
         
@@ -118,16 +148,16 @@
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/ubuntu-windows-dual-system-time-is-inconsistent/">Ubuntu/Widnows双系统时间不一致解决方法</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/nokia-n900-install-nemo/">N900安装最新版Nemo</a></h1>
     </header>
 
     <div class="content post-summary">
-        安装Ubuntu和Windows双系统的情况下，Ubuntu的时间总会和Windows的时间相差8小时，原因在于widows认为BIOS时间是本地时间，Ubuntu认为BIOS时间是UTC时间，即协调世界时(Universal Time Coordinated)，是由国际无线电咨询委员会规定和推荐,并由国际时间局(BIH)负责保持的以秒为基础的时间标度。
-UTC相当于本初子午线(即经度0度)上的平均太阳时，过去曾用格林威治平均时(GMT)来表示。北京时间比UTC时间早8小时，以1999年1月1日0000UTC为例，UTC时间是零点，北京时间为1999年1月1日早上8点整。所以我们在时间上面相隔了8个小时。这个时候bios的时间和系统的时间当然是不一致，一个代表UTC时间，一个代表CST(＋8时区)，即上海的时间。
- 旧版Ubuntu（Ubuntu10左右）：  编辑/etc/default/rcS 将UTC=yes改成UTC=no
- 新版Ubuntu（Ubuntu16.04）：  新版Ubuntu使用systemd作为管理系统，时间由timedatectl来管理，以下为修改方法：
-$sudo timedatectl set-local-rtc 1  重启完成。
+        准备
+ 安装最新uboot 一张至少4g以上的TF卡  下载地址http://releases.nemomobile.org/releases/ 以最新目录为例，下载http://releases.nemomobile.org/releases/latest/images/nemo-armv7hl-n900/里的nemo-armv7hl-n900-mmcblk0p.raw.bz2 解压出raw文件，然后改后缀为img。Windows下用Win32DiskImager将镜像文件写入TF卡。 Linux下可以使用dd命令直接写入，不需要改后缀名：
+alair@e6440:/media/alair/bak/downloads$ sudo dd if=nemo-armv7hl-n900-mmcblk0p.raw of=/dev/sdc bs=1M [sudo] alair 的密码： 记录了3640+1 的读入 记录了3640+1 的写出 3816816641 bytes (3.8 GB, 3.6 GiB) copied, 185.35 s, 20.6 MB/s  Windwos中用winscp在你的N900的/etc/bootmenu.d/新建一个40-nemo.item文件，贴入以下内容：
+ITEM_NAME=&quot;Mer-Nemo Mobile&quot; ITEM_ID=&quot;nemo&quot; ITEM_DEVICE=&quot;${EXT_CARD}p3&quot; ITEM_KERNEL=&quot;uImage&quot; ITEM_FSTYPE=&quot;vfat&quot; ITEM_CMDLINE=&quot;root=/dev/mmcblk0p1 rootwait ro console=ttyO2,115200n8 console=tty0 omapfb.vram=0:2M,1:2M,2:2M mtdoops.mtddev=2 quiet&quot; ITEM_OMAPATAG=1  Linux系统下可以直接SSH连接N900进行操作。 然后root运行
+u-boot-update-bootmenu  关机，插入TF卡，然后推开键盘开机，选Mer-Nemo Mobile进入即可。
     </div>
 
     
@@ -136,7 +166,116 @@ $sudo timedatectl set-local-rtc 1  重启完成。
 
 <div class="post-info">
     
-        <div class="post-date">2019-07-09</div>
+        <div class="post-date">2019-04-28</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/nokia">#Nokia</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/n900">#N900</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nokia-n900">#Nokia N900</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%AF%BA%E5%9F%BA%E4%BA%9A">#诺基亚</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nemo">#Nemo</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/start-with-nokian900-again/">再次入手NokiaN900</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        时隔八年，再次入手Nokia N900
+系统截图 Nokia N900配置    参数 属性     网络 GSM / HSPA   2G bands GSM 850 / 900 / 1800 / 1900   3G bands HSDPA 900 / 1700 / 2100   速率 HSPA 10.2/2 Mbps   GPRS Class 32   EDGE Class 32   发布 2009, August. Released 2009, November   状态 停产   外观尺寸 110.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2019-04-22</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/nokia">#Nokia</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/n900">#N900</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/maemo">#Maemo</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/nokia-n900">#Nokia N900</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%AF%BA%E5%9F%BA%E4%BA%9A">#诺基亚</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/meizu-pro-5-installs-ubuntu-touch-system/">魅族PRO 5安装Ubuntu Touch系统</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        首先，下载以下几个文件:
+ 魅族PRO 5国行出厂刷机包 Download 魅族PRO 5国际版刷机包 Download Fastboot工具 Download SuperSU Download Busybox Download RootBrowser Download  刷出厂版ROM 给魅族PRO 5刷出厂版ROM，请将出厂版ROM的文件名命名为“update.zip”，把它放在手机内置存储根目录，同时按住音量增加和电源，等待数秒，直至手机重启至Recovery模式。手机成功重启至Recovery模式后，手机屏幕将显示以下画面：
+点击“开始”按钮刷机。
+打开Root权限 刷机完成后，我们进入刚刚刷入的系统，登录你的Flyme帐户，然后，在“设置-指纹和安全”里开启系统的Root权限。Root权限开启成功后，手机将重启一次。
+安装SuperSU 安装SuperSU并打开，选择“极客”模式并进入，SuperSU将提示你更新二进制文件，以“常规方式”安装即可。
+在安装二进制文件的过程中，SuperSU将申请Root权限，请同意申请。
+更新过二进制文件后，请重启手机。
+安装Busybox 安装Busybox并打开，点击屏幕右下角的“INSTALL”按钮。 在安装的过程中，Busybox将申请系统的Root权限，请同意申请（此时Root授权将由SuperSU接管）。
+如果Busybox的安装一切顺利，其安装日志如下：
+修改系统标识 安装并打开RootBrowser，导航至以下目录：
+ /dev/block/platform/15570000.ufs/by-name/ 找到文件：proinfo，点击文件，选择“Open as…”，选择“Text file”，再选择“RB Text Editor”。
+ 这期间，RootBrowser将申请系统的Root权限，请同意申请。
+在“proinfo”里找到以下行： machine_type=M576_mobile_public 将其改为： machine_type=M576_intl_official 如下：
+改过之后请保存更改，然后退出RootBrowser，重启手机。 手机重启过之后，请再次在RootBrowser里查看proinfo的状态。如果“machine_type=”后的文本为“M576_intl_official”，则说明我们的操作成功了。
+刷国际版ROM 将国际版Flyme的刷机包命名为“update.zip”，将其放置在手机内置存储的根目录。 同时按住手机的音量增加键和电源键，等待数秒，直至手机重启到Recovery。 刷机的步骤和给魅族PRO 5刷出厂版系统一样，在Recovery里点“开始”按钮即可。 刷机完成后，国际版Flyme的桌面如下：
+解锁bootloader 同时按住手机的音量减小键和电源键，等待数秒，直至其重启到Fastboot模式。 将手机通过数据线连接到计算机（请保证Fastboot驱动已经正确安装），进入Fastboot工具文件夹，在文件资源管理器里按住Shift键的同时单击鼠标右键，选择“在此处打开Powershell窗口”，并在Powershell里执行以下命令： ./fastboot oem unlock 成功解锁后，手机屏幕的右下角将显示“unlocked”字样如下：
+安装Ubuntu Touch 进入https://github.com/ubports/ubports-installer，下载适应版本的UBports Installer安装程序 打开ubports installer，点击“Select device manually”按钮，在机型列表里选择“Meizu PRO 5”。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2019-04-20</div>
     
     <div class="post-taxonomies">
         
@@ -151,17 +290,21 @@ $sudo timedatectl set-local-rtc 1  重启完成。
                     
                         <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
+                        <li><a href="https://unixetc.com/tags/ut">#UT</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/%E6%97%B6%E9%97%B4">#时间</a></li>
+                        <li><a href="https://unixetc.com/tags/meizu">#meizu</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/rtc">#RTC</a></li>
+                        <li><a href="https://unixetc.com/tags/meizp-pro5">#meizp pro5</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/utc">#UTC</a></li>
+                        <li><a href="https://unixetc.com/tags/ubuntu-touch">#ubuntu touch</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/cst">#CST</a></li>
+                        <li><a href="https://unixetc.com/tags/supersu">#supersu</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/gmt">#GMT</a></li>
+                        <li><a href="https://unixetc.com/tags/rootbrowser">#rootbrowser</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/busybox">#busybox</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/proinfo">#proinfo</a></li>
                     
                 </ul>
         
@@ -171,25 +314,24 @@ $sudo timedatectl set-local-rtc 1  重启完成。
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/centos7-install-ffsend-to-share-files/">CentOS7安装ffsend快速分享文件</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-zero-with-ssh-over-usb/">通过SSH Over USB管理树莓派Zero</a></h1>
     </header>
 
     <div class="content post-summary">
-        Firefox Send是什么？ Firefox Send是一个简单、私密的文件分享服务，使用Firefox Send端到端加密分享文件，链接到期即焚。分享更私密，文件到期真正无痕迹。
-安装ffsend ffsend是一款Firefox Send的客户端，支持多种操作系统(Linux、Windows、MacOS&hellip;)
-以下为CentOS7安装ffsend实例：
-#wget https://glare.now.sh/timvisee/ffsend/linux-x64-static -o /usr/local/bin/ffsend #chmod +x /usr/local/bin/ffsend  其他版本安装可以参考ffsend官网和ffsend官方下载
-ffsend使用方法 上传文件
-ffsend upload fenix.apk Upload complete https://send.firefox.com/download/4cecb9c1ab628f8e/#m5is-YRSfnBIQ-pBaSds0A  高级上传
- 指定下再限制20
-输入密码加密文件
-在上传之前归档文件
-将共享链接复制到剪贴板
-在浏览器中打开共享链接
- ffsend upload --downloads 20 --password --archive --copy --open fenix.apk Password: ****** https://send.firefox.com/download/4cecb9c1ab628f8e/#m5is-YRSfnBIQ-pBaSds0A  上传到自定义主机
-ffsend u -h https://example.com/ my-file.txt https://example.com/#sample-share-url  下载文件
-ffsend download https://send.firefox.com/download/4cecb9c1ab628f8e/#m5is-YRSfnBIQ-pBaSds0A  
+        树莓派Zero因为相对来说太小巧，没有提供初始化的网卡，所以我们除了通过串口连接以外，树莓派Zero也提供了USB直接连接的方式。即通过Ethernet Gadget模式来连接pc，并进行ssh连接。
+ Ethernet Gadget模式即USB网卡模式，比较常见的就是我们通过android手机的usb接口对pc进行网络共享的一种手段。一般电脑都会自动识别这种设备，并开启网卡进行共享。
+ 修改配置文件 为了进行USB连接，我们需要修改BOOT文件夹下的config.txt与cmdline.txt配置文件。 首先在config.txt最末行处换行添加如下代码，打开usb网卡模式：
+dtoverlay=dwc2  其次在cmdline.txt文件中找到rootwait字段，并在其后面空格添加如下信息，在打开系统时开启USB网卡模式。
+modules-load=dwc2,g_ether  在boot分区新建ssh文件，以打开ssh访问功能。
+touch ssh  通过usb连接设备 树莓派zero有两个MicroUSB口，一个是电源插口，职司供电的功能，另外一个就是USB接口，它除了供电以外还提供OTG的功能，我们也是通过这个接口来连接PC。 此时我们可以通过以下代码连接树莓派zero：
+ssh pi@raspberrypi.local  但此时ip段为DHCP模式获取，如果我们希望通过ip来连接，则我们需要给树莓派的usb网卡设置ip。
+设置USB网卡的IP 我们可以通过ifconfig -a来查看我们现在的网卡设备，此时我们可以看到，USB0网卡设备，我们就是通过该设备连接的pc，所以我们需要设置该网卡的ip。
+sudo nano /etc/network/interfaces  打开网卡配置界面，在最末行添加如下代码来设置固定IP：
+allow-hotplug usb0 iface usb0 inet static address 192.168.7.2 netmask 255.255.255.0 network 192.168.7.0 broadcast 192.168.7.255 gateway 192.168.7.1  然后重启usb0网卡：
+sudo ifdown usb0 sudo ifup usb0 ifconfig usb0  但树莓派此时实际上是从机，我们需要通过设置pc主机的ip来让树莓派0的usb网卡真正运作起来，那么我们对刚才的usb设备设置如下IP：
+ IP: 192.168.7.1 掩码: 255.255.255.0 路由: 192.168.7.1
+ 此时我们就可以通过ip来进行ssh连接了：
     </div>
 
     
@@ -198,7 +340,7 @@ ffsend download https://send.firefox.com/download/4cecb9c1ab628f8e/#m5is-YRSfnBI
 
 <div class="post-info">
     
-        <div class="post-date">2019-07-04</div>
+        <div class="post-date">2019-04-19</div>
     
     <div class="post-taxonomies">
         
@@ -211,17 +353,17 @@ ffsend download https://send.firefox.com/download/4cecb9c1ab628f8e/#m5is-YRSfnBI
             
                 <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/centos7">#CentOS7</a></li>
+                        <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/centos">#CentOS</a></li>
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/firefox">#Firefox</a></li>
+                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ffsend">#ffsend</a></li>
+                        <li><a href="https://unixetc.com/tags/raspberry-pi-zero">#Raspberry Pi Zero</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/firefox-send">#Firefox Send</a></li>
+                        <li><a href="https://unixetc.com/tags/ssh-over-usb">#ssh over usb</a></li>
                     
                 </ul>
         
@@ -249,17 +391,24 @@ ffsend download https://send.firefox.com/download/4cecb9c1ab628f8e/#m5is-YRSfnBI
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

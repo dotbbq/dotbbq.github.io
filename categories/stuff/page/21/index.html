@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070680" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101235" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101235" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,17 +101,31 @@
     </div>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/native-input-method-is-used-in-citrix/">在Citrix中使用本机输入法</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/startssl-and-nginx/">StartSSL免费证书与Nginx配置</a></h1>
     </header>
 
     <div class="content post-summary">
-        进入到Citrix安装目录C:\Program Files (x86)\Citrix\ICA Client
-启用本地输入法
-wfica32.exe /localime:on  禁用本地输入法
-wfica32.exe /localime:off  以上输入完后会有弹窗提示是否成功。
-除了通过运行命令行程序来更改，也可以通过修改注册表来实现
-HKLM配置位置 HKEY_LOCAL_MACHINE\SOFTWARE\Citrix\ICA Client\Engine\Lockdown Profiles\All Regions\Lockdown\Virtual Channels\Keyboard HKCU配置位置 HKEY_CURRENT_USER\Software\Citrix\ICA Client\Engine\Lockdown Profiles\All Regions\Lockdown\Virtual Channels\Keyboard #设置LocalIME = 1 or 0 #disable=0, enable=1,留空使用其他位置的设置  注意HKLM和HKCU必须同时修改，64位操作系统注册表键值在WOW64节点下
+        注册StartSSL 打开https://www.startssl.com/，点击Sign-up开始注册
+参考上图填写注册信息，然后Continue，会有如下提示，系统会发送验证码到你的注册邮箱
+检查注册邮箱，将收到的验证码填写提交，然后会出现如下提示，等待审核。
+审核通过后，会收到如下提示邮件，点击其中连接，然后输入邮箱中的验证码完成注册
+安装证书 接下来创建私匙
+安装证书
+安装成功后会有如下提示
+验证域名 接下来验证域名，点击Validations Wizard
+填写域名
+选择验证邮件地址
+按照提示输入邮箱接收到的验证码完成验证。
+创建证书 选择Certificates Wizard，证书目标选择Web Server SSL/TLS Certificate
+接下来新建私匙
+点击Skip跳过系统建立步骤，我们自己在VPS上建立CSR文件，参考下图通过openssl命令建立CSR文件
+注意，为了便于后期安装配置方便，建议密码置空
+完成后，cat出建立好的ciuxsss.csr内容，粘贴提交
+接下来添加域名
+接下来将文本框中的内容保存为一个**.crt**文件
+配置Nginx 贴出我的配置文件，大家参考一下
+server { listen 80; location /{ return 301 https://$host$request_uri; } } server { listen 443; #listen 80; #listen [::]:80; server_name ciux.org; index index.html index.htm index.php default.html default.htm default.php; root /home/ciux/compiled; ssl on; ssl_certificate /home/bk/ssl/ciuxsss.crt; ssl_certificate_key /home/bk/ssl/ciuxsss.key; ssl_session_timeout 5m; ssl_protocols SSLv2 SSLv3 TLSv1; ssl_ciphers ALL:!
     </div>
 
     
@@ -84,7 +134,7 @@ HKLM配置位置 HKEY_LOCAL_MACHINE\SOFTWARE\Citrix\ICA Client\Engine\Lockdown P
 
 <div class="post-info">
     
-        <div class="post-date">2017-05-16</div>
+        <div class="post-date">2015-10-14</div>
     
     <div class="post-taxonomies">
         
@@ -97,11 +147,17 @@ HKLM配置位置 HKEY_LOCAL_MACHINE\SOFTWARE\Citrix\ICA Client\Engine\Lockdown P
             
                 <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/citrix">#citrix</a></li>
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ime">#ime</a></li>
+                        <li><a href="https://unixetc.com/tags/301">#301</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/localime">#localime</a></li>
+                        <li><a href="https://unixetc.com/tags/ssl">#ssl</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%85%8D%E8%B4%B9%E8%AF%81%E4%B9%A6">#免费证书</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/rewrite">#rewrite</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/starssl">#starssl</a></li>
                     
                 </ul>
         
@@ -111,19 +167,25 @@ HKLM配置位置 HKEY_LOCAL_MACHINE\SOFTWARE\Citrix\ICA Client\Engine\Lockdown P
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/understand-linux-shell-initialization-files-and-user-profiles-files/">理解Linux中Shell初始化文件和用户Profiles文件</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/gandi-free-ssl-certificate-usage/">Gandi免费SSL证书使用方法</a></h1>
     </header>
 
     <div class="content post-summary">
-        Linux是一个多用户、实时共享的操作系统，意味着不止一个用户可以登录同一个系统。系统管理员通过任务管理来分配不同用户的权限，比如安装、升级、卸载应用程序，运行编译程序，文件查看、编辑等等。
-Linux允许通过两种主要方式来创建用户环境：系统级(全局)和用户级(个人)。一般情况下，Linux系统都会运行基本shell程序，当用户登录成功后shell会在初始化时根据某些文件开创建环境。
-Linux中的Shell初始化 当Shell被调用时，会有一些初始化/启动文件被启用，它们的主要作用是为shell本身或用户设定运行环境，包含一些函数、	变量、别名等等。
-Shell可以读取以下两种初始化文件:
- 系统级启动文件 – 包含一些应用于户所有用户的全局配置，一般存在于**/etc**目录中，如 **/etc/profiles** 、**/etc/bashrc** 或者 **/etc/bash.bashrc**。 用户级启动文件 – 包含一些应用于单用户的配置文件，一般存放在各个用户目录，这些配置可以覆盖系统级全局配置，如**.profiles**、 **.bash_profile**、 **.bashrc** 和 **.bash_login**.  Shell存在三种调用模式：
-1. 交互式登录Shell 当用户成功登录系统后调用该Shell,使用**/bin/login**登录，随后读取**/etc/passwd**文件。
-当启动交互式shell后，将读取**/etc/profile**文件以及特定的用户文件**~/.bash_profile**
-login as: pi pi@pi.raspi.in&#39;s password: The programs included with the Debian GNU/Linux system are free software; the exact distribution terms for each program are described in the individual files in /usr/share/doc/*/copyright. Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent permitted by applicable law.
+        首先澄清此文中的免费不是真的免费，而是新注册或转移域名到Gandi，都可以获得标准版SSL证书一年的免费使用。
+符合以上条件的话，可以进行下面操作了！
+在Gandi上购买SSL证书，选择标准版，在结算的时候系统会自动判断是否免单，正常情况下会0元结单，完成后接着配置SSL证书。
+首先提交CSR，这里需要自己生产CSR。
+在此以3c.lc域名为例，在Ubuntu中操作。
+openssl req -nodes -newkey rsa:2048 -sha1 -keyout 3clc.key -out 3clc.csr  然后根据提示填写以下内容：
+ Country Name (2 letter code) [AU]: #国家代码，中国为CN
+State or Province Name (full name) [Some-State]: #省份
+Locality Name (eg, city) []: #城市
+Organization Name (eg, company) [Internet Widgits Pty Ltd]: #组织名
+Organizational Unit Name (eg, section) []: #部门名
+Common Name (e.g. server FQDN or YOUR name) []:3c.lc #注意，这里需要填写你的域名。
+Email Address []:2b@3c.lc #邮箱
+Please enter the following &lsquo;extra&rsquo; attributes
     </div>
 
     
@@ -132,7 +194,7 @@ login as: pi pi@pi.raspi.in&#39;s password: The programs included with the Debia
 
 <div class="post-info">
     
-        <div class="post-date">2017-04-25</div>
+        <div class="post-date">2015-09-24</div>
     
     <div class="post-taxonomies">
         
@@ -147,19 +209,69 @@ login as: pi pi@pi.raspi.in&#39;s password: The programs included with the Debia
                     
                         <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
+                        <li><a href="https://unixetc.com/tags/nginx">#Nginx</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%9F%9F%E5%90%8D">#域名</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/lnmp">#lnmp</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ssl">#ssl</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gandi">#gandi</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/raspberry-pi-allow-root-login/">树莓派开启root登录</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        想要通过ssh登录树莓派进行管理，使用默认的pi用户有时真的不便，对于linux老手来说，可以直接开启root用户ssh登录，这就方便多了，方法如下：
+sudo passwd root sudo passwd --unlock root  设置SSH
+sudo vi /etc/ssh/sshd_config  将其中的PermitRootLogin without-password改为PermitRootLogin yes，然后重启ssh服务sudo service ssh restart
+Over!
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-09-18</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
                         <li><a href="https://unixetc.com/tags/raspi">#raspi</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/path">#PATH</a></li>
+                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/raspbian">#Raspbian</a></li>
+                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/shell">#shell</a></li>
+                        <li><a href="https://unixetc.com/tags/root">#Root</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/profile">#profile</a></li>
+                        <li><a href="https://unixetc.com/tags/udo">#udo</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">#环境变量</a></li>
+                        <li><a href="https://unixetc.com/tags/sudo">#sudo</a></li>
                     
                 </ul>
         
@@ -169,24 +281,16 @@ login as: pi pi@pi.raspi.in&#39;s password: The programs included with the Debia
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/python-pip-installation/">python-pip安装实例</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/photoshop-compressed-png-images/">使用Photoshop压缩PNG图片</a></h1>
     </header>
 
     <div class="content post-summary">
-        Python-pip 是一个现代的，通用的 Python包管理工具。提供了对 Python 包的查找、下载、安装、卸载的功能。
-以下为多个操作系统平台下Python-pip安装方法
-通用方法 通过get-pip.py文件来安装，建议Windows用户使用，前提是你必须首先安装Python。
-版本要求Python 2 &gt;=2.7.9 或Python 3 &gt;=3.4，可从官网下载http://www.python.org/
-然后下载get-pip.py
-下载地址 https://bootstrap.pypa.io/get-pip.py
-通过python get-pip.py命令来进行安装。
-Linux下通过软件管理工具来安装Python-pip Fedora21   Python2
-sudo yum upgrade python-setuptools sudo yum install python-pip python-wheel   Python3
-sudo yum install python3 python3-wheel   Fedora22   Python2
-sudo dnf upgrade python-setuptools sudo dnf install python-pip python-wheel   Python3
-sudo dnf install python3 python3-wheel   CentOS/RHEL 首先得启用EPEL repository,可参考此文
-  EPEL 6/EPEL 7
+        Ctrl+O打开PNG文件
+图像 -&gt; 调整 -&gt; 色调分离
+调整色阶值，边调整边预览，找到图片质量变化最小时候的值
+文件 -&gt; 导出 -&gt; 存储为Web所用格式
+文件格式选择PNG-8，参考下图全选部分进行调整，完成后保存即可。
     </div>
 
     
@@ -195,7 +299,7 @@ sudo dnf install python3 python3-wheel   CentOS/RHEL 首先得启用EPEL reposit
 
 <div class="post-info">
     
-        <div class="post-date">2017-04-20</div>
+        <div class="post-date">2015-09-13</div>
     
     <div class="post-taxonomies">
         
@@ -208,19 +312,60 @@ sudo dnf install python3 python3-wheel   CentOS/RHEL 首先得启用EPEL reposit
             
                 <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                        <li><a href="https://unixetc.com/tags/png">#png</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/debian">#Debian</a></li>
+                        <li><a href="https://unixetc.com/tags/photoshop">#photoshop</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
+                        <li><a href="https://unixetc.com/tags/adobe">#adobe</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/python">#Python</a></li>
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/use-scrollup-to-add-scroll-to-top-feature/">使用ScrollUp添加返回顶部功能</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        下载ScrollUp https://github.com/markgoodyear/scrollup
+在网页中引用jquery.scrollUp.js、jquery.easing.js、jquery.min.js三个JavaScript脚本，注意顺序
+&lt;script src=&quot;jquery.min.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;jquery.easing.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;jquery.scrollUp.js&quot;&gt;&lt;/script&gt;  然后加入控制代码
+&lt;script&gt; $(function () { $.scrollUp(); }); &lt;/script&gt;  以上是最简单的使用方法，还有一种带参数的方法
+$(function () { $.scrollUp({ scrollName: 'scrollUp', // Element ID scrollDistance: 300, // Distance from top/bottom before showing element (px) scrollFrom: 'top', // 'top' or 'bottom' scrollSpeed: 300, // Speed back to top (ms) easingType: 'linear', // Scroll to top easing (see http://easings.net/) animation: 'fade', // Fade, slide, none animationSpeed: 200, // Animation speed (ms) scrollTrigger: false, // Set a custom triggering element.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2015-09-08</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/pip">#pip</a></li>
+                        <li><a href="https://unixetc.com/tags/javascript">#JavaScript</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/python-pip">#python-pip</a></li>
+                        <li><a href="https://unixetc.com/tags/js">#JS</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/fedora">#fedora</a></li>
+                        <li><a href="https://unixetc.com/tags/jquery">#jQuery</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/scrollup">#ScrollUp</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E8%BF%94%E5%9B%9E%E9%A1%B6%E9%83%A8">#返回顶部</a></li>
                     
                 </ul>
         
@@ -248,17 +393,24 @@ sudo dnf install python3 python3-wheel   CentOS/RHEL 首先得启用EPEL reposit
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

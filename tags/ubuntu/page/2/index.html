@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
     
         
@@ -15,7 +17,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070682" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101236" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101236" />
+
+
 
 
 
@@ -41,9 +77,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -65,119 +101,7 @@
     </div>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/oneplus3t-and-raspberry-pi-unixbench-score-comparison/">一加3t和树莓派UNIXBench跑分对比</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        一加3T 一加3T运行的是UbuntuTouch系统
-一加3T系统信息 phablet@ubuntu-phablet:~$ inxi -F Resuming in non X mode: xrandr not found. For package install advice run: inxi --recommends System: Host: android Kernel: 3.18.31-halium-gca027546546e-01041-g7961eb763e61 aarch64 (32 bit) Desktop: N/A Distro: Ubuntu 16.04 xenial Machine: No /sys/class/dmi; using dmidecode: dmidecode is not installed. CPU: Quad core AArch64 Processor rev 1 (aarch64) (-MCP-) (ARM) clock speeds: max: 2188 MHz 1: 1593 MHz 2: 1593 MHz 3: 1593 MHz 4: 1593 MHz Graphics: Card: Failed to Detect Video Card!
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2019-09-07</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/android">#Android</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/oneplus">#OnePlus</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/oneplus3">#OnePlus3</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/oneplus3t">#OnePlus3T</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E4%B8%80%E5%8A%A03t">#一加3T</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE">#树莓派</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/raspberry-pi">#Raspberry Pi</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/raspi">#Raspi</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/unix">#UNIX</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/unix-bench">#UNIX bench</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ut">#UT</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ubuntutouch">#UbuntuTouch</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/inxi">#inxi</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/ubuntu-touch-change-mirror/">UbuntuTouch更换国内源</a></h1>
-    </header>
-
-    <div class="content post-summary">
-        在一加3T上安装完UbuntuTouch后，参考此文开启SSH登录。
-接下来就是更换软件源了，国内推荐USTC和清华大学开源镜像。
-通过vi /etc/apt/sources.list 编辑软件源,然后在vi中通过以下命令进行替换操作：
-:%s/ports.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g  保存后即可。
-    </div>
-
-    
-    
-
-
-<div class="post-info">
-    
-        <div class="post-date">2019-08-04</div>
-    
-    <div class="post-taxonomies">
-        
-            <ul class="post-categories">
-                
-                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
-                
-            </ul>
-            
-            
-                <ul class="post-tags">
-                    
-                        <li><a href="https://unixetc.com/tags/ut">#UT</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ubuntutouch">#UbuntuTouch</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
-                    
-                        <li><a href="https://unixetc.com/tags/ubuntu-ports">#ubuntu ports</a></li>
-                    
-                </ul>
-        
-    </div>
-</div>
-
-</article>
-    
-        <article class="post-list">
-    <header>
+    <header class="post-header">
         <h1 class="post-title"><a href="/post/shell-access-ubuntu-touch-via-ssh/">通过SSH访问UbuntuTouch</a></h1>
     </header>
 
@@ -223,6 +147,241 @@ sudo android-gadget-service enable ssh  然后就可以通过ssh phablet@ip来�
 
 </article>
     
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/ubuntu-windows-dual-system-time-is-inconsistent/">Ubuntu/Widnows双系统时间不一致解决方法</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        安装Ubuntu和Windows双系统的情况下，Ubuntu的时间总会和Windows的时间相差8小时，原因在于widows认为BIOS时间是本地时间，Ubuntu认为BIOS时间是UTC时间，即协调世界时(Universal Time Coordinated)，是由国际无线电咨询委员会规定和推荐,并由国际时间局(BIH)负责保持的以秒为基础的时间标度。
+UTC相当于本初子午线(即经度0度)上的平均太阳时，过去曾用格林威治平均时(GMT)来表示。北京时间比UTC时间早8小时，以1999年1月1日0000UTC为例，UTC时间是零点，北京时间为1999年1月1日早上8点整。所以我们在时间上面相隔了8个小时。这个时候bios的时间和系统的时间当然是不一致，一个代表UTC时间，一个代表CST(＋8时区)，即上海的时间。
+ 旧版Ubuntu（Ubuntu10左右）：  编辑/etc/default/rcS 将UTC=yes改成UTC=no
+ 新版Ubuntu（Ubuntu16.04）：  新版Ubuntu使用systemd作为管理系统，时间由timedatectl来管理，以下为修改方法：
+$sudo timedatectl set-local-rtc 1  重启完成。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2019-07-09</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E6%97%B6%E9%97%B4">#时间</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/rtc">#RTC</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/utc">#UTC</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/cst">#CST</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/gmt">#GMT</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/meizu-pro-5-installs-ubuntu-touch-system/">魅族PRO 5安装Ubuntu Touch系统</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        首先，下载以下几个文件:
+ 魅族PRO 5国行出厂刷机包 Download 魅族PRO 5国际版刷机包 Download Fastboot工具 Download SuperSU Download Busybox Download RootBrowser Download  刷出厂版ROM 给魅族PRO 5刷出厂版ROM，请将出厂版ROM的文件名命名为“update.zip”，把它放在手机内置存储根目录，同时按住音量增加和电源，等待数秒，直至手机重启至Recovery模式。手机成功重启至Recovery模式后，手机屏幕将显示以下画面：
+点击“开始”按钮刷机。
+打开Root权限 刷机完成后，我们进入刚刚刷入的系统，登录你的Flyme帐户，然后，在“设置-指纹和安全”里开启系统的Root权限。Root权限开启成功后，手机将重启一次。
+安装SuperSU 安装SuperSU并打开，选择“极客”模式并进入，SuperSU将提示你更新二进制文件，以“常规方式”安装即可。
+在安装二进制文件的过程中，SuperSU将申请Root权限，请同意申请。
+更新过二进制文件后，请重启手机。
+安装Busybox 安装Busybox并打开，点击屏幕右下角的“INSTALL”按钮。 在安装的过程中，Busybox将申请系统的Root权限，请同意申请（此时Root授权将由SuperSU接管）。
+如果Busybox的安装一切顺利，其安装日志如下：
+修改系统标识 安装并打开RootBrowser，导航至以下目录：
+ /dev/block/platform/15570000.ufs/by-name/ 找到文件：proinfo，点击文件，选择“Open as…”，选择“Text file”，再选择“RB Text Editor”。
+ 这期间，RootBrowser将申请系统的Root权限，请同意申请。
+在“proinfo”里找到以下行： machine_type=M576_mobile_public 将其改为： machine_type=M576_intl_official 如下：
+改过之后请保存更改，然后退出RootBrowser，重启手机。 手机重启过之后，请再次在RootBrowser里查看proinfo的状态。如果“machine_type=”后的文本为“M576_intl_official”，则说明我们的操作成功了。
+刷国际版ROM 将国际版Flyme的刷机包命名为“update.zip”，将其放置在手机内置存储的根目录。 同时按住手机的音量增加键和电源键，等待数秒，直至手机重启到Recovery。 刷机的步骤和给魅族PRO 5刷出厂版系统一样，在Recovery里点“开始”按钮即可。 刷机完成后，国际版Flyme的桌面如下：
+解锁bootloader 同时按住手机的音量减小键和电源键，等待数秒，直至其重启到Fastboot模式。 将手机通过数据线连接到计算机（请保证Fastboot驱动已经正确安装），进入Fastboot工具文件夹，在文件资源管理器里按住Shift键的同时单击鼠标右键，选择“在此处打开Powershell窗口”，并在Powershell里执行以下命令： ./fastboot oem unlock 成功解锁后，手机屏幕的右下角将显示“unlocked”字样如下：
+安装Ubuntu Touch 进入https://github.com/ubports/ubports-installer，下载适应版本的UBports Installer安装程序 打开ubports installer，点击“Select device manually”按钮，在机型列表里选择“Meizu PRO 5”。
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2019-04-20</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ut">#UT</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/meizu">#meizu</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/meizp-pro5">#meizp pro5</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ubuntu-touch">#ubuntu touch</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/supersu">#supersu</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/rootbrowser">#rootbrowser</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/busybox">#busybox</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/proinfo">#proinfo</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/canonical-livepatch-service/">Ubuntu配置Livepatch服务</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        CLS(Canonical Livepatch Service)是Ubuntu母公司Canonical提供的一项服务，该服务可以为处于LTS的Ubuntu版本提供内核关键补丁修复，而不需要重新启动系统，特别适用于用作Server的系统。
+使用CLS的前提是必须注册一个Ubuntu帐号，地址为https://login.ubuntu.com/+login
+注册完成后，即可访问CLS主页https://www.ubuntu.com/server/livepatch进行登录配置。
+登陆后选择用户类型，一般个人用户选择Ubuntu User，然后点击Get your Livepatch token获取密匙
+按照下一步提示进行操作，启用CLS服务。
+运行完成后即成功启用CLS服务。
+检查CLS服务配置状态可以使用以下命令:
+alair@e6440:~$ sudo canonical-livepatch status --verbose client-version: 8.0.2 machine-id: 08e0*****************750db machine-token: 4753a054c*****************a2eb84c7 architecture: x86_64 cpu-model: Intel(R) Core(TM) i5-4310M CPU @ 2.70GHz last-check: 2018-05-25T19:55:15.537634075+08:00 boot-time: 2018-05-25T19:47:51+08:00 uptime: 14m43s status: - kernel: 4.15.0-22.24-generic running: true livepatch: checkState: checked patchState: nothing-to-apply version: &quot;&quot; fixes: &quot;&quot; 
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2018-05-25</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/kernel">#Kernel</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/canonical">#Canonical</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/livepatch">#Livepatch</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/cls">#CLS</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/linux_enable_tcp_bbr/">Linux开启TCP BBR算法</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        Linux Kernel 4.9+已经支持tcp_bbr拥塞控制算法，因此建议将内核升级为最新版。
+将内核升级到最新版 Debian/Ubuntu升级最新内核 最新内核下载地址 http://kernel.ubuntu.com/~kernel-ppa/mainline
+下载安装新内核
+wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.10.10/linux-image-4.10.10-041010-generic_4.10.10-041010.201704120813_amd64.deb` dpkg -i linux-image-4.10.10-041010-generic_4.10.10-041010.201704120813_amd64.deb 更新GRUB并且重启
+update-grub reboot Centos 7 升级最新内核 内核下载地址 http://elrepo.org/linux/kernel/el7/x86_64/RPMS/
+安装最新内核
+rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm yum --enablerepo=elrepo-kernel install kernel-ml -y 检查内核是否安装完成
+rpm -qa | grep kernel
+更新GRUB并重启主机
+egrep ^menuentry /etc/grub2.cfg | cut -f 2 -d \&#39; grub2-set-default 0 #default 0表示第一个内核设置为默认运行, 选择最新内核就对了 reboot http://elrepo.org/linux/kernel/下e15、e16分别对应Centos5、Centos6，可参考以上安装
+开启BBR 重启后uname -r 检查内核版本是不是4.9+
+然后执行以下操作
+echo &#34;net.core.default_qdisc=fq&#34; &gt;&gt; /etc/sysctl.conf echo &#34;net.ipv4.tcp_congestion_control=bbr&#34; &gt;&gt; /etc/sysctl.conf sysctl -p sysctl net.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2017-04-17</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
+                    
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/google">#Google</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/debian">#Debian</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/bbr">#bbr</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/tcp_bbr">#tcp_bbr</a></li>
+                    
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
     
     
         
@@ -242,17 +401,24 @@ sudo android-gadget-service enable ssh  然后就可以通过ssh phablet@ip来�
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>

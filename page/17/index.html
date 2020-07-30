@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh">
+
+
+<html lang="zh-cn" data-theme="">
 <head>
 	<meta name="generator" content="Hugo 0.73.0" />
     
@@ -16,7 +18,41 @@
 <link rel="icon" type="image/x-icon" href="https://unixetc.com/favicon.ico">
 <link rel="apple-touch-icon-precomposed" href="https://unixetc.com/favicon.png">
 
-<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596070679" />
+<link rel="stylesheet" href="https://unixetc.com/css/light.css?rnd=1596101234" />
+<style>
+
+    [data-theme="dark"] {   
+        --font-color: #eee;
+--bg-color: #212121;
+
+--link-color:#599ada;
+--link-state-color:#ff5858;
+--link-state-border-color: rgba(238, 54, 54, 0.5);
+
+--thead-bg-color: #343a40;
+--table-border-color: lightgrey;
+
+--pre-color: #333;
+--pre-bg-color: #f1f1f1;
+
+--bq-color: #ccc;
+--hr-color: #333;
+
+--pagination-bg-color: #373737;
+--pagination-link-color: #b6b6b6;
+
+--post-info-color: grey;
+
+--switcher-color: #333;
+--switcher-bg-color: #fff;
+
+    }
+
+</style>
+
+<link rel="stylesheet" href="https://unixetc.com/css/style.css?rnd=1596101234" />
+
+
 
 
 
@@ -42,9 +78,9 @@
 <body>
     <a class="skip-main" href="#main">Skip to main content</a>
     <div class="container">
-        <header> 
+        <header class="common-header"> 
             
-                <h1 class="site-header">
+                <h1 class="site-title">
     <a href="/">UNIXETC</a>
 </h1>
 <nav>
@@ -67,16 +103,20 @@
     
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/mikrotik-rb750gr3-quickset/">RB750gr3快速设置</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/use-syncthing-synchronize-files-between-multiple-devices/">使用Syncthing在多个设备之间同步文件</a></h1>
     </header>
 
     <div class="content post-summary">
-        开箱照 以下为开箱照
-RB750快速设置 首先下载Winbox，下载地址，将1口连接光猫，2口连接电脑。
-下载打开后，软件会自动搜索到路由器MAC，登录名为admin，密码为空，点击connect登录。
-登录后点击Quick Set进行快速设置，完成后应用即可。如下图：
-注意以上我把路由器地址设置为192.168.1.11是为了和光猫192.168.1.1区分开。
+        Syncthing是一款开源的多平台同步软件，使用他可以在多个设备间进行文件同步，并且带有版本控制功能。
+Syncthing官网地址 **https://syncthing.net/**Github地址 https://github.com/syncthing/syncthing
+安装Syncthing Syncthing官网提供多平台安装包，下载地址为 https://github.com/syncthing/syncthing/releases/
+并且针对Debian/Ubuntu平台，官方提供了apt-get安装方法
+# Add the release PGP keys: curl -s https://syncthing.net/release-key.txt | sudo apt-key add - # Add the &quot;release&quot; channel to your APT sources: echo &quot;deb http://apt.syncthing.net/ syncthing release&quot; | sudo tee /etc/apt/sources.list.d/syncthing.list # Update and install syncthing: sudo apt-get update sudo apt-get install syncthing  运行Syncthing Linux下直接使用syncthing命令运行
+syncthing &amp;  Windows下直接打开下载的syncthing.exe文件，而后浏览器自动打开http://127.0.0.1:8384进行设置管理。
+管理Syncthing 如果是在VPS上安装Syncthing ,运行syncthing后，只能通过http://127.0.0.1:8384进行管理，我们可以通过以下方法在本地管理。
+ssl -L 9891:localhost:8384 root@ip  输入root密码登录成功后，即可本地浏览http://127.0.0.1:9891对VPS上的Synchting进行管理。
+添加设备 每个设备均有一个设备标识，可以通过操作-&gt;显示设备标识来查看。
     </div>
 
     
@@ -85,7 +125,7 @@ RB750快速设置 首先下载Winbox，下载地址，将1口连接光猫，2口
 
 <div class="post-info">
     
-        <div class="post-date">2017-11-22</div>
+        <div class="post-date">2016-05-06</div>
     
     <div class="post-taxonomies">
         
@@ -98,15 +138,19 @@ RB750快速设置 首先下载Winbox，下载地址，将1口连接光猫，2口
             
                 <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/router">#router</a></li>
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ros">#ros</a></li>
+                        <li><a href="https://unixetc.com/tags/windows">#Windows</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/mikrotik">#mikrotik</a></li>
+                        <li><a href="https://unixetc.com/tags/android">#Android</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/rb750">#rb750</a></li>
+                        <li><a href="https://unixetc.com/tags/syncthing">#Syncthing</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/rb750gr3">#rb750gr3</a></li>
+                        <li><a href="https://unixetc.com/tags/sync">#Sync</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/%E5%90%8C%E6%AD%A5%E6%96%87%E4%BB%B6">#同步文件</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/macos">#MacOS</a></li>
                     
                 </ul>
         
@@ -116,14 +160,18 @@ RB750快速设置 首先下载Winbox，下载地址，将1口连接光猫，2口
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/merlin-install-shadowsocks/">梅林固件安装Shadowsocks</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/optimize-and-compress-image-by-optipng/">使用OptiPNG优化压缩图片</a></h1>
     </header>
 
     <div class="content post-summary">
-        登录路由器后台，系统管理&gt;系统设置，将Enable SSH设置为LAN only。
-通过SSH登录路由器，参考以下执行，在此推荐Putty。
-#cd /tmp #wget https://github.com/hq450/fancyss_history_package/raw/master/fancyss_arm/shadowsocks_4.1.1.tar.gz #tar -zxvf shadowsocks_4.1.1.tar.gz #cd shadowsocks #chmod +x install.sh #./install.sh 2017年11月19日 14:40:36: 固件平台【koolshare merlinarmv7l】符合安装要求，开始安装插件！ 2017年11月19日 14:40:36: 清理旧文件 2017年11月19日 14:40:36: 开始复制文件！ 2017年11月19日 14:40:36: 复制相关二进制文件！ 2017年11月19日 14:40:42: 创建一些二进制文件的软链接！ 2017年11月19日 14:40:42: 复制ss的脚本文件！ 2017年11月19日 14:40:44: 复制网页文件！ 2017年11月19日 14:40:44: 移除安装包！ 2017年11月19日 14:40:44: 为新安装文件赋予执行权限... 2017年11月19日 14:40:44: 设置一些默认值 2017年11月19日 14:40:47: 一点点清理工作... 2017年11月19日 14:40:47: 插件安装成功，你为什么这么屌？！ 2017年11月19日 14:40:47: 更新完毕，请等待网页自动刷新！  完成后重启路由器，在软件中心中即可看到影梭已经安装成功！
+        因工作需要，得处理一张7872x5904体积为178MB的图片，格式为TIFF。
+网上搜了半天，找到一个名为OptiPNG的软件，主要为PNG优化，但也支持TIFF格式。
+下面是OptiPNG的官方介绍
+ OptiPNG is a PNG optimizer that recompresses image files to a smaller size, without losing any information. This program also converts external formats (BMP, GIF, PNM and TIFF) to optimized PNG, and performs PNG integrity checks and corrections.
+ OptiPNG可以将PNG文件重新压缩，压缩后体积变得更小，并且不会丢失任何信息。同时optipng还支持其他格式的图片，如BMP、GIF、PNM和TIFF。
+至于OptiPNG的威力如何，请看本次实例
+root@raspi:~# ls -lh huxian.tif -rw-r--r-- 1 root root 178M Apr 4 16:54 huxian.tif //原始文件178MB root@raspi:~# optipng huxian.tif ** Processing: huxian.tif Importing TIFF 7872x5904 pixels, 4x8 bits/pixel, RGB+alpha //分辨率7872x5904 Reducing image to 3x8 bits/pixel, RGB Input file size = 186000368 bytes Trying: zc = 9 zm = 8 zs = 0 f = 0 IDAT size = 4273133 Selecting parameters: zc = 9 zm = 8 zs = 0 f = 0 IDAT size = 4273133 Output file: huxian.
     </div>
 
     
@@ -132,7 +180,7 @@ RB750快速设置 首先下载Winbox，下载地址，将1口连接光猫，2口
 
 <div class="post-info">
     
-        <div class="post-date">2017-11-19</div>
+        <div class="post-date">2016-04-03</div>
     
     <div class="post-taxonomies">
         
@@ -145,19 +193,23 @@ RB750快速设置 首先下载Winbox，下载地址，将1口连接光猫，2口
             
                 <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/shadowsocks">#Shadowsocks</a></li>
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/merlin">#merlin</a></li>
+                        <li><a href="https://unixetc.com/tags/png">#png</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/router">#router</a></li>
+                        <li><a href="https://unixetc.com/tags/optipng">#optipng</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/%E6%A2%85%E6%9E%97">#梅林</a></li>
+                        <li><a href="https://unixetc.com/tags/bmp">#bmp</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/gfw">#GFW</a></li>
+                        <li><a href="https://unixetc.com/tags/gif">#gif</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/ssh">#SSH</a></li>
+                        <li><a href="https://unixetc.com/tags/pnm">#pnm</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/asus">#asus</a></li>
+                        <li><a href="https://unixetc.com/tags/tiff">#tiff</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/optimize">#optimize</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/compress">#compress</a></li>
                     
                 </ul>
         
@@ -167,16 +219,18 @@ RB750快速设置 首先下载Winbox，下载地址，将1口连接光猫，2口
 </article>
     
         <article class="post-list">
-    <header>
-        <h1 class="post-title"><a href="/post/install-office2016-components-on-demand/">按需安装Office2016组件</a></h1>
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/lftp-use-case/">LFTP使用实例</a></h1>
     </header>
 
     <div class="content post-summary">
-        所需软件  Office 2016 下载地址 ed2k://|file|cn_office_professional_plus_2016_x86_x64_dvd_6969182.iso|2588266496|27EEA4FE4BB13CD0ECCDFC24167F9E01|/ office2016install.zip 下载地址 https://pan.baidu.com/s/1jIMOFfK DAEMON Tools Lite 下载地址 https://www.daemon-tools.cc/chn/downloads  步骤 1、下载Office2016和DAEMON Tools Lite，安装DAEMON Tools Lite，将office2016镜像(iso)文件挂载到虚拟光驱。
-2、下载office2016install.zip后解压，得到setup.exe和configuration.xml两个文件
-打开configuration.xml，文件内容如下
-&lt;Configuration&gt; &lt;Add SourcePath=&quot;G:\&quot; OfficeClientEdition=&quot;64&quot; &gt; &lt;Product ID=&quot;ProPlusRetail&quot;&gt; &lt;Language ID=&quot;zh-CN&quot; /&gt; &lt;ExcludeApp ID=&quot;Groove&quot; /&gt; &lt;ExcludeApp ID=&quot;InfoPath&quot; /&gt; &lt;ExcludeApp ID=&quot;Lync&quot; /&gt; &lt;ExcludeApp ID=&quot;OneNote&quot; /&gt; &lt;ExcludeApp ID=&quot;Outlook&quot; /&gt; &lt;ExcludeApp ID=&quot;Publisher&quot; /&gt; &lt;ExcludeApp ID=&quot;SharePointDesigner&quot; /&gt; &lt;/Product&gt; &lt;/Add&gt; &lt;/Configuration&gt;   SourcePath 是安装源目录，此处为虚拟光驱G盘 OfficeClientEdition 为构架版本，此处为64位，也可以设置为32位 Language 为安装语言，此处为中文简体 ExcludeApp 表示不需要安装的组件，此处去掉了Groove、InfoPath、Lync、OneNote、Outlook、Publisher、SharePointDesigner，剩下的为Word、Excel、powerpoint和access进行安装。  在当前目录下以管理员身份CMD，运行下面命令开始安装：
-setup.exe /configure configuration.
+        LFTP介绍 lftp是一个功能强大的ftp/http客户端，作者是 Alexander Lukyanov。
+lftp支持多种传输协议，如ftp、http、https、sftp、exp等。
+如同BASH一样，lftp支持任务管理。并且具备书签管理、内置镜像和多线程传送功能。
+使用LFTP 登录服务器 lftp ftp://user:password@ip:port  以上是一个完整的lftp登录示例，其中包含协议(ftp)、用户名(user)、密码(password)、主机(ip)以及端口(port)
+默认情况下lftp直接访问ftp服务，默认登录端口为22，因此我们可以使用以下方法来便捷登录主机
+lftp user@ip  然后系统会提示输入password，完成后登录成功！
+lftp命令行参数 lftp :~&gt; help !&lt;shell-command&gt; (commands) alias [&lt;name&gt; [&lt;value&gt;]] attach [PID] bookmark [SUBCMD] cache [SUBCMD] cat [-b] &lt;files&gt; cd &lt;rdir&gt; chmod [OPTS] mode file... close [-a] [re]cls [opts] [path/][pattern] debug [&lt;level&gt;|off] [-o &lt;file&gt;] du [options] &lt;dirs&gt; exit [&lt;code&gt;|bg] get [OPTS] &lt;rfile&gt; [-o &lt;lfile&gt;] glob [OPTS] &lt;cmd&gt; &lt;args&gt; help [&lt;cmd&gt;] history -w file|-r file|-c|-l [cnt] jobs [-v] [&lt;job_no.
     </div>
 
     
@@ -185,7 +239,7 @@ setup.exe /configure configuration.
 
 <div class="post-info">
     
-        <div class="post-date">2017-10-20</div>
+        <div class="post-date">2016-04-01</div>
     
     <div class="post-taxonomies">
         
@@ -198,27 +252,110 @@ setup.exe /configure configuration.
             
                 <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/microsoft">#Microsoft</a></li>
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/%E5%BE%AE%E8%BD%AF">#微软</a></li>
+                        <li><a href="https://unixetc.com/tags/ftp">#ftp</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/office">#Office</a></li>
+                        <li><a href="https://unixetc.com/tags/lftp">#lftp</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/office2016">#Office2016</a></li>
+                        <li><a href="https://unixetc.com/tags/download">#download</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/%E7%BB%84%E4%BB%B6">#组件</a></li>
+                        <li><a href="https://unixetc.com/tags/upload">#upload</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/word">#Word</a></li>
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/linux-check-and-set-the-path/">Linux下查看修改PATH</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        什么是PATH? 要搞清什么是PATH，应该先搞清什么是环境变量？
+在计算机中，如果需要运行一个软件，那么我们就要找到它所在的位置，但是每次运行程序时如果都要进入到相应目录，那么显然是很繁琐的。于是就有了环境变量，环境变量就是一个系统参数，里面记录了一些目录，运行软件的时候，相关的程序将会按照该目录寻找相关文件。
+而在Linux中，系统会有一个默认的PATH环境变量，里面记录了系统级的相关命令目录，比如当我们输入ls、cd、pwd等命令时，我们不需要指定它们所在的目录，因为包含这些命令的系统目录已经写入PATH参数，因而方便我们调用。
+查看PATH 在linux中，可以使用export命令来查看所有环境变量，如下：
+pi@raspi:~$ export declare -x HOME=&quot;/home/pi&quot; declare -x LANG=&quot;en_GB.UTF-8&quot; declare -x LOGNAME=&quot;pi&quot; declare -x MAIL=&quot;/var/mail/pi&quot; declare -x OLDPWD declare -x PATH=&quot;/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/home/pi/bin&quot; declare -x PWD=&quot;/home/pi&quot; declare -x SHELL=&quot;/bin/bash&quot; declare -x SHLVL=&quot;1&quot; declare -x SSH_CLIENT=&quot;101.135.216.146 28249 22&quot; declare -x SSH_CONNECTION=&quot;101.135.216.146 28249 192.168.1.111 22&quot; declare -x SSH_TTY=&quot;/dev/pts/1&quot; declare -x TERM=&quot;xterm&quot; declare -x USER=&quot;pi&quot;  使用echo来查看单独的环境变量
+pi@raspi:~$ echo $PATH /bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/home/pi/bin  我们可以看到，以上PATH值包含了一些系统命令的目录，而这些目录都用:隔开。
+修改PATH 我们可以使用export命令来添加目录，如下：
+export PATH=/mydoc:$PATH  以上命令在原有的PATH前添加了/mydoc这个目录，设置完成后的PATH值如下：
+pi@raspi:~$ echo $PATH /mydoc:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/home/pi/bin  以上方法修改PATH值，在终端退出后就会失效，因此建议通过修改/etc/profile来设定PATH
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-03-29</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/excel">#Excel</a></li>
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/powerpoint">#PowerPoint</a></li>
+                        <li><a href="https://unixetc.com/tags/path">#PATH</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/access">#Access</a></li>
+                        <li><a href="https://unixetc.com/tags/echo">#echo</a></li>
                     
-                        <li><a href="https://unixetc.com/tags/daemon">#DAEMON</a></li>
+                </ul>
+        
+    </div>
+</div>
+
+</article>
+    
+        <article class="post-list">
+    <header class="post-header">
+        <h1 class="post-title"><a href="/post/install-h2o-on-ubuntu/">Ubunt下安装H2O</a></h1>
+    </header>
+
+    <div class="content post-summary">
+        更新系统 apt-get update &amp;&amp; apt-get upgrade -y &amp;&amp; apt-get dist-upgrade -y &amp;&amp; apt-get autoremove --purge -y &amp;&amp; apt-get autoclean -y  安装必备软件 apt-get install locate git cmake build-essential checkinstall autoconf pkg-config libtool python-sphinx wget libcunit1-dev nettle-dev libyaml-dev libuv-dev -y  安装wslay git clone https://github.com/tatsuhiro-t/wslay.git cd wslay/ autoreconf -i automake autoconf ./configure make make install  安装完成后检查lib文件，如下所示：
+ls /usr/local/lib/ libuv.a libuv.so.1 libwslay.la libwslay.so.0.0.1 python3.4 libuv.la libuv.so.1.0.0 libwslay.so pkgconfig libuv.so libwslay.a libwslay.so.0 python2.
+    </div>
+
+    
+    
+
+
+<div class="post-info">
+    
+        <div class="post-date">2016-03-26</div>
+    
+    <div class="post-taxonomies">
+        
+            <ul class="post-categories">
+                
+                    <li><a href="https://unixetc.com/categories/STUFF">STUFF</a></li>
+                
+            </ul>
+            
+            
+                <ul class="post-tags">
                     
-                        <li><a href="https://unixetc.com/tags/%E8%99%9A%E6%8B%9F%E5%85%89%E9%A9%B1">#虚拟光驱</a></li>
+                        <li><a href="https://unixetc.com/tags/linux">#Linux</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/ubuntu">#Ubuntu</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/openssl">#OpenSSL</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/h2o">#H2O</a></li>
+                    
+                        <li><a href="https://unixetc.com/tags/wslay">#wslay</a></li>
                     
                 </ul>
         
@@ -246,17 +383,24 @@ setup.exe /configure configuration.
 
 
         </main>
-        <footer>
-            
-                
-                
+        
+            <footer class="common-footer">
+    
+    
 
-                <p>© Alair, 2020<br>
-Powered by <a target="_blank" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.
-CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
-</p>
-            
-        </footer>
+    <div class="copyright">
+        <p>© Alair, 2020<br>
+        Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>, theme <a target="_blank" rel="noopener noreferrer" href="https://github.com/mitrichius/hugo-theme-anubis">Anubis</a>.CDN by <a href="https://dwz.cn/juw2S2At" target="_blank">Qiniu</a>,Host by <a href="https://dwz.cn/CdAD0bNi" target="_blank">BWG</a>.<script type="text/javascript" src="//js.users.51.la/20892031.js"></script>
+        </p>  
+    </div> 
+
+    
+
+
+    
+</footer>
+
+        
     </div>
 </body>
 </html>
