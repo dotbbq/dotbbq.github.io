@@ -2,29 +2,42 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>LTE on UNIXETC</title>
-    <link>https://unixetc.com/tags/lte/</link>
-    <description>UNIXETC (LTE)</description>
+    
+    
+    
+    <link>/tags/lte/</link>
+    <description>Recent content in LTE on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 10 Jul 2015 10:27:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/lte/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/lte/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>V版本iPhone5C开启中国电信4G</title>
-      <link>https://unixetc.com/post/verzion-iphone5c-open-chinatelecom-4g/</link>
+      <link>/post/verzion-iphone5c-open-chinatelecom-4g/</link>
       <pubDate>Fri, 10 Jul 2015 10:27:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/verzion-iphone5c-open-chinatelecom-4g/</guid>
-      <description>&lt;p&gt;首先，使用太极越狱将手机越狱 &lt;code&gt;http://www.taig.com/&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;在Cydia中添加&lt;code&gt;http://apt.chinasnow.net&lt;/code&gt;源，搜索安装&lt;strong&gt;CommCenter patch for ios8&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;设置iTunes可以刷入运营商文件(.ipcc)&lt;/p&gt;
-&lt;p&gt;Win+R打开运行窗口，输入&lt;code&gt;&amp;quot;%ProgramFiles%\iTunes\iTunes.exe&amp;quot; /setPrefInt carrier-testing 1&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;下载运营商文件&lt;a href=&#34;http://cdn.lyq.wiki/res/ipccs.zip&#34;&gt;http://cdn.lyq.wiki/res/ipccs.zip&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;打开iTunes，链接手机到电脑，Shift+更新，选择相对应系统版本的运营商文件&lt;/p&gt;
-&lt;p&gt;完成后重启手机OK！&lt;/p&gt;
-</description>
+      <guid>/post/verzion-iphone5c-open-chinatelecom-4g/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          首先，使用太极越狱将手机越狱 http://www.taig.com/
+在Cydia中添加http://apt.chinasnow.net源，搜索安装CommCenter patch for ios8
+设置iTunes可以刷入运营商文件(.ipcc)
+Win+R打开运行窗口，输入&amp;quot;%ProgramFiles%\iTunes\iTunes.exe&amp;quot; /setPrefInt carrier-testing 1
+下载运营商文件http://cdn.lyq.wiki/res/ipccs.zip
+打开iTunes，链接手机到电脑，Shift+更新，选择相对应系统版本的运营商文件
+完成后重启手机OK！
+          
+        
+        </description>
     </item>
     
   </channel>

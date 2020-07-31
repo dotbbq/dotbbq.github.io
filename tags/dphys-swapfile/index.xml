@@ -2,41 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>dphys-swapfile on UNIXETC</title>
-    <link>https://unixetc.com/tags/dphys-swapfile/</link>
-    <description>UNIXETC (dphys-swapfile)</description>
+    
+    
+    
+    <link>/tags/dphys-swapfile/</link>
+    <description>Recent content in dphys-swapfile on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 30 Oct 2014 14:30:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/dphys-swapfile/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/dphys-swapfile/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>修改树莓派Swap</title>
-      <link>https://unixetc.com/post/modify-the-raspberry-pi-swap-size/</link>
+      <link>/post/modify-the-raspberry-pi-swap-size/</link>
       <pubDate>Thu, 30 Oct 2014 14:30:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/modify-the-raspberry-pi-swap-size/</guid>
-      <description>&lt;p&gt;树莓派的swap大小在&lt;code&gt;/etc/dphys-swapfile&lt;/code&gt;中定义，默认为100M&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;pi@raspi:~$ cat /etc/dphys-swapfile 
-CONF_SWAPSIZE=1000
-pi@raspi:/mnt$ free -h
-         total       used       free     shared    buffers     cached
-Mem:          437M        36M       401M         0B       2.1M        12M
--/+ buffers/cache:        22M       415M
-Swap:          99M         0B        99M
-pi@raspi:/mnt$ 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;可以自己修改&lt;code&gt;CONF_SWAPSIZE&lt;/code&gt;的值，单位为兆(MB)&lt;/p&gt;
-&lt;p&gt;修改后重启树莓派生效，如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;pi@raspi:~$ cat /etc/dphys-swapfile 
-CONF_SWAPSIZE=1000
-pi@raspi:~$ free -h
-             total       used       free     shared    buffers     cached
-Mem:          437M        53M       383M         0B       7.9M        23M
--/+ buffers/cache:        22M       415M
-Swap:         999M         0B       999M&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <guid>/post/modify-the-raspberry-pi-swap-size/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          树莓派的swap大小在/etc/dphys-swapfile中定义，默认为100M
+pi@raspi:~$ cat /etc/dphys-swapfile CONF_SWAPSIZE=1000 pi@raspi:/mnt$ free -h total used free shared buffers cached Mem: 437M 36M 401M 0B 2.1M 12M -/+ buffers/cache: 22M 415M Swap: 99M 0B 99M pi@raspi:/mnt$  可以自己修改CONF_SWAPSIZE的值，单位为兆(MB)
+修改后重启树莓派生效，如下：
+pi@raspi:~$ cat /etc/dphys-swapfile CONF_SWAPSIZE=1000 pi@raspi:~$ free -h total used free shared buffers cached Mem: 437M 53M 383M 0B 7.9M 23M -/+ buffers/cache: 22M 415M Swap: 999M 0B 999M 
+          
+        
+        </description>
     </item>
     
   </channel>

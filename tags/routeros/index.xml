@@ -2,42 +2,46 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>routeros on UNIXETC</title>
-    <link>https://unixetc.com/tags/routeros/</link>
-    <description>UNIXETC (routeros)</description>
+    
+    
+    
+    <link>/tags/routeros/</link>
+    <description>Recent content in routeros on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 01 Oct 2018 11:21:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/routeros/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/routeros/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>MikroTik RB750Gr3系统升级</title>
-      <link>https://unixetc.com/post/rb750gr3-system-upgrade/</link>
+      <link>/post/rb750gr3-system-upgrade/</link>
       <pubDate>Mon, 01 Oct 2018 11:21:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/rb750gr3-system-upgrade/</guid>
-      <description>&lt;h3 id=&#34;自动升级&#34;&gt;自动升级&lt;/h3&gt;
-&lt;p&gt;进入路由器管理界面，通过&lt;strong&gt;System&lt;/strong&gt;-&amp;gt;&lt;strong&gt;Auto Upgrade&lt;/strong&gt;功能自动升级。&lt;/p&gt;
-&lt;p&gt;或者使用&lt;strong&gt;Winbox&lt;/strong&gt;连接，通过&lt;strong&gt;System&lt;/strong&gt;-&amp;gt;&lt;strong&gt;Auto Upgrade&lt;/strong&gt;功能自动升级&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;自动升级不了的，刷不出最新系统的继续看下面手动升级。&lt;/strong&gt;&lt;/p&gt;
-&lt;h3 id=&#34;手动升级&#34;&gt;手动升级&lt;/h3&gt;
-&lt;p&gt;官方系统下载页面&lt;a href=&#34;https://mikrotik.com/download&#34;&gt;https://mikrotik.com/download&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;本次以&lt;strong&gt;RB750gr3&lt;/strong&gt;为例，官方显示了以下四个系统版本&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;5.26 (Legacy)&lt;/li&gt;
-&lt;li&gt;6.40.9 (Long-term)&lt;/li&gt;
-&lt;li&gt;6.43.2 (Stable)&lt;/li&gt;
-&lt;li&gt;6.44beta9 (Testing)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;我的&lt;strong&gt;RB750gr3&lt;/strong&gt;当前版本为&lt;strong&gt;6.41&lt;/strong&gt;，通过自动升级刷新不出来最新版本，因此只能手动升级。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;RB750gr3&lt;/strong&gt;为&lt;strong&gt;MMIPS&lt;/strong&gt;构架，从下载页面找到相应的构架。&lt;/p&gt;
-&lt;p&gt;其中&lt;strong&gt;MMIPS&lt;/strong&gt;后面就备注着&lt;strong&gt;hEX (RB750Gr3), RBMxx&lt;/strong&gt;点击下载**&lt;a href=&#34;https://download.mikrotik.com/routeros/6.43.2/routeros-mmips-6.43.2.npk&#34;&gt;Main package&lt;/a&gt;**，格式为**.npk**文件。&lt;/p&gt;
-&lt;p&gt;通过&lt;strong&gt;Winbox&lt;/strong&gt;连接路由器，将下载的npk文件拖放到&lt;strong&gt;File&lt;/strong&gt;菜单，上传完成后如下所示。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/2983593228.png&#34; alt=&#34;File&#34;&gt;&lt;/p&gt;
-&lt;p&gt;然后&lt;strong&gt;system&lt;/strong&gt;-&amp;gt;&lt;strong&gt;reboot&lt;/strong&gt;重启系统完成更新，更新后版本号可以通过&lt;strong&gt;Winbox&lt;/strong&gt;标题栏看到。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;提醒&lt;/strong&gt;:Router OS 6.45.6 for RB750gr3系统包国内网盘**&lt;a href=&#34;https://tc5.us/file/18418398-397940220&#34;&gt;下载地址&lt;/a&gt;**&lt;/p&gt;
-</description>
+      <guid>/post/rb750gr3-system-upgrade/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          自动升级 进入路由器管理界面，通过System-&amp;gt;Auto Upgrade功能自动升级。
+或者使用Winbox连接，通过System-&amp;gt;Auto Upgrade功能自动升级
+自动升级不了的，刷不出最新系统的继续看下面手动升级。
+手动升级 官方系统下载页面https://mikrotik.com/download
+本次以RB750gr3为例，官方显示了以下四个系统版本
+ 5.26 (Legacy) 6.40.9 (Long-term) 6.43.2 (Stable) 6.44beta9 (Testing)  我的RB750gr3当前版本为6.41，通过自动升级刷新不出来最新版本，因此只能手动升级。
+RB750gr3为MMIPS构架，从下载页面找到相应的构架。
+其中MMIPS后面就备注着hEX (RB750Gr3), RBMxx点击下载**Main package**，格式为**.npk**文件。
+通过Winbox连接路由器，将下载的npk文件拖放到File菜单，上传完成后如下所示。
+然后system-&amp;gt;reboot重启系统完成更新，更新后版本号可以通过Winbox标题栏看到。
+提醒:Router OS 6.45.6 for RB750gr3系统包国内网盘**下载地址**
+          
+        
+        </description>
     </item>
     
   </channel>

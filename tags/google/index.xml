@@ -2,542 +2,300 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Google on UNIXETC</title>
-    <link>https://unixetc.com/tags/google/</link>
-    <description>UNIXETC (Google)</description>
+    
+    
+    
+    <link>/tags/google/</link>
+    <description>Recent content in Google on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 11 Jun 2019 00:00:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/google/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/google/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Linux中转换图片为webp格式</title>
-      <link>https://unixetc.com/post/convert-images-to-webp-in-linux/</link>
+      <link>/post/convert-images-to-webp-in-linux/</link>
       <pubDate>Tue, 11 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/convert-images-to-webp-in-linux/</guid>
-      <description>&lt;h3 id=&#34;安装webp&#34;&gt;安装WebP&lt;/h3&gt;
-&lt;p&gt;Ubuntu中可以使用以下命令安装WebP&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$sudo apt install webp 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;其他Linux系统，可以从&lt;a href=&#34;https://storage.googleapis.com/downloads.webmproject.org/releases/webp/index.html&#34;&gt;这里&lt;/a&gt;下载对应压缩包，如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;wget https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.0.2-linux-x86-64.tar.gz
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;解压后得到以下文件：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$tar zxf libwebp-1.0.2-linux-x86-64.tar.gz
-$cd libwebp-1.0.2-linux-x86-64
-$cd bin
-$ll
-total 12M
--rwxr-xr-x 1 100 users 679K Jan 15 12:47 anim_diff
--rwxr-xr-x 1 100 users 923K Jan 15 12:47 anim_dump
--rwxr-xr-x 1 100 users 2.4M Jan 15 12:47 cwebp
--rwxr-xr-x 1 100 users 915K Jan 15 12:47 dwebp
--rwxr-xr-x 1 100 users 2.3M Jan 15 12:47 get_disto
--rwxr-xr-x 1 100 users 703K Jan 15 12:47 gif2webp
--rwxr-xr-x 1 100 users 2.4M Jan 15 12:47 img2webp
--rwxr-xr-x 1 100 users 682K Jan 15 12:47 vwebp
--rwxr-xr-x 1 100 users 359K Jan 15 12:47 webpinfo
--rwxr-xr-x 1 100 users 375K Jan 15 12:47 webpmux
--rwxr-xr-x 1 100 users 347K Jan 15 12:47 webp_quality
-&lt;/code&gt;&lt;/pre&gt;
-&lt;ul&gt;
-&lt;li&gt;anim_diff – 动画文件差异对比工具&lt;/li&gt;
-&lt;li&gt;anim_dump – 动画文件差异转存工具&lt;/li&gt;
-&lt;li&gt;cwebp – webp编码工具&lt;/li&gt;
-&lt;li&gt;dwebp – webp解码工具&lt;/li&gt;
-&lt;li&gt;gif2webp – 转换gif为webp&lt;/li&gt;
-&lt;li&gt;img2webp – 将一系列图片转换为webp动画文件&lt;/li&gt;
-&lt;li&gt;vwebp – webp查看软件&lt;/li&gt;
-&lt;li&gt;webpinfo – 查看webp图片文件信息&lt;/li&gt;
-&lt;li&gt;webpmux – webp复用工具&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;webp转换实例&#34;&gt;WebP转换实例&lt;/h3&gt;
-&lt;p&gt;将webp工具目录添加至&lt;strong&gt;PATH&lt;/strong&gt;中，编辑&lt;code&gt;~/.bashrc&lt;/code&gt;添加以下内容：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;export PATH=$PATH:~/libwebp-1.0.2-linux-x86-64/bin
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;cwebp&lt;/strong&gt;语法说明：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;cwebp [options] input_file -o output_file.webp
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;以下为转换实例：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;cwebp -q 50 -lossless picture.png -o picture_lossless.webp
-cwebp -q 70 picture_with_alpha.png -o picture_with_alpha.webp
-cwebp -sns 70 -f 50 -size 60000 picture.png -o picture.webp
-cwebp -o picture.webp -- ---picture.png&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <guid>/post/convert-images-to-webp-in-linux/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          安装WebP Ubuntu中可以使用以下命令安装WebP
+$sudo apt install webp  其他Linux系统，可以从这里下载对应压缩包，如下：
+wget https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.0.2-linux-x86-64.tar.gz  解压后得到以下文件：
+$tar zxf libwebp-1.0.2-linux-x86-64.tar.gz $cd libwebp-1.0.2-linux-x86-64 $cd bin $ll total 12M -rwxr-xr-x 1 100 users 679K Jan 15 12:47 anim_diff -rwxr-xr-x 1 100 users 923K Jan 15 12:47 anim_dump -rwxr-xr-x 1 100 users 2.4M Jan 15 12:47 cwebp -rwxr-xr-x 1 100 users 915K Jan 15 12:47 dwebp -rwxr-xr-x 1 100 users 2.3M Jan 15 12:47 get_disto -rwxr-xr-x 1 100 users 703K Jan 15 12:47 gif2webp -rwxr-xr-x 1 100 users 2.
+          
+        
+        </description>
     </item>
     
     <item>
       <title>Google Camera一加3/3T移植版</title>
-      <link>https://unixetc.com/post/google-camera-port-for-oneplus-3t/</link>
+      <link>/post/google-camera-port-for-oneplus-3t/</link>
       <pubDate>Wed, 13 Dec 2017 12:13:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/google-camera-port-for-oneplus-3t/</guid>
-      <description>&lt;p&gt;Google Camera一加3/3T移植版，支持HDR+, 1080p 60FPS视频, 慢动作和慢动作图片。 By BSG, Ivanich, and Arnova8G2.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;可用特性:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Camera (HDR+, flash, zoom, front camera, etc)&lt;/li&gt;
-&lt;li&gt;视频 (30fps/60fps at 1080p、防抖、自动对焦)&lt;/li&gt;
-&lt;li&gt;慢动作 (120fps)&lt;/li&gt;
-&lt;li&gt;Panorama&lt;/li&gt;
-&lt;li&gt;Photo Sphere&lt;/li&gt;
-&lt;li&gt;Lens Blur&lt;/li&gt;
-&lt;li&gt;RAW&lt;/li&gt;
-&lt;li&gt;Motion Photos (Android 8+ only, check the &amp;ldquo;suggested settings&amp;rdquo;)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;不可用特性:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;ZSL (HDR+打开情况下)&lt;/li&gt;
-&lt;li&gt;(OOS Oreo)慢动作&lt;/li&gt;
-&lt;li&gt;前置相机HDR&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;下载:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-316386226&#34;&gt;GCam_5.3.015-Pixel3Mod-Arnova8G2-1.4.apk&lt;/a&gt; &lt;strong&gt;Update 2018-10-04&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-316386061&#34;&gt;GCam-5.1.018-Pixel2Mod-Arnova8G2-V8.3b1.apk&lt;/a&gt; &lt;strong&gt;Update 2018-08-25&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;em&gt;本文只提供一加3/3T的稳定版apk，BSG、Ivanich和Arnova8G2的完整版清单，请移步&lt;a href=&#34;https://www.celsoazevedo.com/files/android/google-camera/&#34;&gt;这里&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-</description>
+      <guid>/post/google-camera-port-for-oneplus-3t/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Google Camera一加3/3T移植版，支持HDR+, 1080p 60FPS视频, 慢动作和慢动作图片。 By BSG, Ivanich, and Arnova8G2.
+可用特性:
+ Camera (HDR+, flash, zoom, front camera, etc) 视频 (30fps/60fps at 1080p、防抖、自动对焦) 慢动作 (120fps) Panorama Photo Sphere Lens Blur RAW Motion Photos (Android 8+ only, check the &amp;ldquo;suggested settings&amp;rdquo;)  不可用特性:
+ ZSL (HDR+打开情况下) (OOS Oreo)慢动作 前置相机HDR  下载:
+ GCam_5.3.015-Pixel3Mod-Arnova8G2-1.4.apk Update 2018-10-04 GCam-5.1.018-Pixel2Mod-Arnova8G2-V8.3b1.apk Update 2018-08-25  本文只提供一加3/3T的稳定版apk，BSG、Ivanich和Arnova8G2的完整版清单，请移步这里
+          
+        
+        </description>
     </item>
     
     <item>
       <title>sitemap-generators使用实例</title>
-      <link>https://unixetc.com/post/sitemap-generators-usage/</link>
+      <link>/post/sitemap-generators-usage/</link>
       <pubDate>Sun, 13 Aug 2017 23:23:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/sitemap-generators-usage/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;sitemap-generators&lt;/strong&gt;是一款Sitemap生成工具，使用它可以生成符合sitemap.org规范的Sitemap文件，以便于提交给各个网站工具平台。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://code.google.com/archive/p/sitemap-generators/&#34;&gt;项目地址&lt;/a&gt;  &amp;amp;&amp;amp;  &lt;a href=&#34;https://code.google.com/archive/p/sitemap-generators/downloads&#34;&gt;下载地址&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;下载&lt;strong&gt;sitemap_gen_1.5.tar.gz&lt;/strong&gt;解压，得到以下内容：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;root@bwgzl:~/sitemap_gen# ls -lh
-total 140K
--r--r-----  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;502&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;502&lt;/span&gt;   &lt;span style=&#34;color:#ae81ff&#34;&gt;22&lt;/span&gt; Jun &lt;span style=&#34;color:#ae81ff&#34;&gt;17&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;2005&lt;/span&gt; AUTHORS
--r--r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;502&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;502&lt;/span&gt; 2.6K Jul &lt;span style=&#34;color:#ae81ff&#34;&gt;19&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;2007&lt;/span&gt; ChangeLog
--r--r-----  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;502&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;502&lt;/span&gt; 1.8K Jun &lt;span style=&#34;color:#ae81ff&#34;&gt;17&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;2005&lt;/span&gt; COPYING
--rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;502&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;502&lt;/span&gt; 6.4K Jul &lt;span style=&#34;color:#ae81ff&#34;&gt;19&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;2007&lt;/span&gt; example_config.xml
--rw-r-----  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;502&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;502&lt;/span&gt; 1.6K Jun &lt;span style=&#34;color:#ae81ff&#34;&gt;26&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;2007&lt;/span&gt; example_urllist.txt
-drwxr-xr-x &lt;span style=&#34;color:#ae81ff&#34;&gt;23&lt;/span&gt; root root 4.0K Aug  &lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt; 14:25 getos.org
--rw-r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;502&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;502&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;244&lt;/span&gt; Jul &lt;span style=&#34;color:#ae81ff&#34;&gt;19&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;2007&lt;/span&gt; PKG-INFO
--r--r--r--  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;502&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;502&lt;/span&gt; 1.1K Jun &lt;span style=&#34;color:#ae81ff&#34;&gt;25&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;2007&lt;/span&gt; README
--r-xr-xr-x  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;502&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;502&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;301&lt;/span&gt; Jul &lt;span style=&#34;color:#ae81ff&#34;&gt;19&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;2007&lt;/span&gt; setup.py
--rwxr-xr-x  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;502&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;502&lt;/span&gt;  66K Jul &lt;span style=&#34;color:#ae81ff&#34;&gt;19&lt;/span&gt;  &lt;span style=&#34;color:#ae81ff&#34;&gt;2007&lt;/span&gt; sitemap_gen.py
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;将默认的&lt;strong&gt;example_config.xml&lt;/strong&gt;拷贝为&lt;strong&gt;ac.xml&lt;/strong&gt;，参考以下修改：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;site&lt;/span&gt;
-  &lt;span style=&#34;color:#a6e22e&#34;&gt;base_url=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;http://getos.org/&amp;#34;&lt;/span&gt;
-  &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;/**&lt;/span&gt; &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;以下为sitemap.xml文件存放目录**/&lt;/span&gt;
-  &lt;span style=&#34;color:#a6e22e&#34;&gt;store_into=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/root/sitemap_gen/sitemap.xml&amp;#34;&lt;/span&gt;
-  &lt;span style=&#34;color:#a6e22e&#34;&gt;verbose=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;1&amp;#34;&lt;/span&gt;
-  &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;lt;urllist&lt;/span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;path=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;urllist.txt&amp;#34;&lt;/span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;encoding=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;UTF-8&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
-  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;filter&lt;/span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;action=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;drop&amp;#34;&lt;/span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;type=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;wildcard&amp;#34;&lt;/span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;pattern=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;*~&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
-  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;filter&lt;/span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;action=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;drop&amp;#34;&lt;/span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;type=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;regexp&amp;#34;&lt;/span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;pattern=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;/\.[^/]*&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;/&amp;gt;&lt;/span&gt;
-&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;/site&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;接下来，使用&lt;code&gt;wget&lt;/code&gt;来遍历网站所有URL，将结果保存为&lt;strong&gt;urlinfolist.txt&lt;/strong&gt;。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;wget -mk --spider -r  http://getos.org/ -o urlinfolist.txt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
-&lt;li&gt;-r: 递归遍历目录&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;处理wget到的&lt;strong&gt;urlinfolist.txt&lt;/strong&gt;文件，删除不需要的内容。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;cat urlinfolist.txt | tr &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39; &amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;\012&amp;#39;&lt;/span&gt; | grep &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;^http&amp;#34;&lt;/span&gt; | egrep -vi &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;[?]|[.]jpg&lt;/span&gt;$&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt; | sort -u &amp;gt; urllist.txt
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;最后使用如下命令来生成&lt;strong&gt;sitemap.xml&lt;/strong&gt;。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;python sitemap_gen.py --config&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;ac.xml 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;按照配置文件所示，在&lt;strong&gt;sitemap.xml&lt;/strong&gt;文件保存在_/root/sitemap_gen/_目录下。&lt;/p&gt;
-</description>
+      <guid>/post/sitemap-generators-usage/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          sitemap-generators是一款Sitemap生成工具，使用它可以生成符合sitemap.org规范的Sitemap文件，以便于提交给各个网站工具平台。
+项目地址 &amp;amp;&amp;amp; 下载地址
+下载sitemap_gen_1.5.tar.gz解压，得到以下内容：
+root@bwgzl:~/sitemap_gen# ls -lh total 140K -r--r----- 1 502 502 22 Jun 17 2005 AUTHORS -r--r--r-- 1 502 502 2.6K Jul 19 2007 ChangeLog -r--r----- 1 502 502 1.8K Jun 17 2005 COPYING -rw-r--r-- 1 502 502 6.4K Jul 19 2007 example_config.xml -rw-r----- 1 502 502 1.6K Jun 26 2007 example_urllist.txt drwxr-xr-x 23 root root 4.0K Aug 3 14:25 getos.org -rw-r--r-- 1 502 502 244 Jul 19 2007 PKG-INFO -r--r--r-- 1 502 502 1.
+          
+        
+        </description>
     </item>
     
     <item>
       <title>Linux开启TCP BBR算法</title>
-      <link>https://unixetc.com/post/linux_enable_tcp_bbr/</link>
+      <link>/post/linux_enable_tcp_bbr/</link>
       <pubDate>Mon, 17 Apr 2017 14:28:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/linux_enable_tcp_bbr/</guid>
-      <description>&lt;p&gt;Linux Kernel 4.9+已经支持tcp_bbr拥塞控制算法，因此建议将内核升级为最新版。&lt;/p&gt;
-&lt;h3 id=&#34;将内核升级到最新版&#34;&gt;将内核升级到最新版&lt;/h3&gt;
-&lt;h4 id=&#34;debianubuntu升级最新内核&#34;&gt;Debian/Ubuntu升级最新内核&lt;/h4&gt;
-&lt;p&gt;最新内核下载地址 &lt;a href=&#34;http://kernel.ubuntu.com/~kernel-ppa/mainline&#34;&gt;http://kernel.ubuntu.com/~kernel-ppa/mainline&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;下载安装新内核&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.10.10/linux-image-4.10.10-041010-generic_4.10.10-041010.201704120813_amd64.deb&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;
-dpkg -i linux-image-4.10.10-041010-generic_4.10.10-041010.201704120813_amd64.deb
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;更新GRUB并且重启&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;update-grub
-reboot
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;centos-7-升级最新内核&#34;&gt;Centos 7 升级最新内核&lt;/h4&gt;
-&lt;p&gt;内核下载地址 &lt;a href=&#34;http://elrepo.org/linux/kernel/el7/x86_64/RPMS/&#34;&gt;http://elrepo.org/linux/kernel/el7/x86_64/RPMS/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;安装最新内核&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
-rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
-yum --enablerepo&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;elrepo-kernel install kernel-ml -y
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;检查内核是否安装完成&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;rpm -qa | grep kernel&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;更新GRUB并重启主机&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;egrep ^menuentry /etc/grub2.cfg | cut -f &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; -d &lt;span style=&#34;color:#ae81ff&#34;&gt;\&amp;#39;&lt;/span&gt;
-grub2-set-default &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;#default 0表示第一个内核设置为默认运行, 选择最新内核就对了&lt;/span&gt;
-reboot
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://elrepo.org/linux/kernel/&#34;&gt;http://elrepo.org/linux/kernel/&lt;/a&gt;下&lt;code&gt;e15&lt;/code&gt;、&lt;code&gt;e16&lt;/code&gt;分别对应Centos5、Centos6，可参考以上安装&lt;/p&gt;
-&lt;h3 id=&#34;开启bbr&#34;&gt;开启BBR&lt;/h3&gt;
-&lt;p&gt;重启后&lt;code&gt;uname -r&lt;/code&gt; 检查内核版本是不是4.9+&lt;/p&gt;
-&lt;p&gt;然后执行以下操作&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;net.core.default_qdisc=fq&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; /etc/sysctl.conf
-echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;net.ipv4.tcp_congestion_control=bbr&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; /etc/sysctl.conf
-sysctl -p
-sysctl net.ipv4.tcp_available_congestion_control
-sysctl net.ipv4.tcp_congestion_control
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;运行结果中有&lt;strong&gt;bbr&lt;/strong&gt;则成功了&lt;/p&gt;
-&lt;p&gt;通过&lt;code&gt;lsmod | grep bbr&lt;/code&gt;可以检查是否开启&lt;strong&gt;bbr&lt;/strong&gt;模块&lt;/p&gt;
-</description>
+      <guid>/post/linux_enable_tcp_bbr/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Linux Kernel 4.9+已经支持tcp_bbr拥塞控制算法，因此建议将内核升级为最新版。
+将内核升级到最新版 Debian/Ubuntu升级最新内核 最新内核下载地址 http://kernel.ubuntu.com/~kernel-ppa/mainline
+下载安装新内核
+wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.10.10/linux-image-4.10.10-041010-generic_4.10.10-041010.201704120813_amd64.deb` dpkg -i linux-image-4.10.10-041010-generic_4.10.10-041010.201704120813_amd64.deb 更新GRUB并且重启
+update-grub reboot Centos 7 升级最新内核 内核下载地址 http://elrepo.org/linux/kernel/el7/x86_64/RPMS/
+安装最新内核
+rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm yum --enablerepo=elrepo-kernel install kernel-ml -y 检查内核是否安装完成
+rpm -qa | grep kernel
+更新GRUB并重启主机
+egrep ^menuentry /etc/grub2.cfg | cut -f 2 -d \&amp;#39; grub2-set-default 0 #default 0表示第一个内核设置为默认运行, 选择最新内核就对了 reboot http://elrepo.org/linux/kernel/下e15、e16分别对应Centos5、Centos6，可参考以上安装
+开启BBR 重启后uname -r 检查内核版本是不是4.9+
+然后执行以下操作
+echo &amp;#34;net.core.default_qdisc=fq&amp;#34; &amp;gt;&amp;gt; /etc/sysctl.conf echo &amp;#34;net.ipv4.tcp_congestion_control=bbr&amp;#34; &amp;gt;&amp;gt; /etc/sysctl.conf sysctl -p sysctl net.
+          
+        
+        </description>
     </item>
     
     <item>
       <title>使用Google Authenticator两步验证加强SSH登录</title>
-      <link>https://unixetc.com/post/use-google-authenticator-set-2step-verification-strengthening-ssh-login/</link>
+      <link>/post/use-google-authenticator-set-2step-verification-strengthening-ssh-login/</link>
       <pubDate>Thu, 28 Jan 2016 12:33:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/use-google-authenticator-set-2step-verification-strengthening-ssh-login/</guid>
-      <description>&lt;p&gt;Google Authenticator开源版主页 &lt;a href=&#34;https://github.com/google/google-authenticator&#34;&gt;https://github.com/google/google-authenticator&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;安装google-authenticator&#34;&gt;安装Google Authenticator&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Ubuntu&lt;/strong&gt;已经包含libpam-google-authenticator软件(Ubuntu 11.10以上版本),可以直接使用&lt;code&gt;apt-get&lt;/code&gt;安装&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;apt-get install libpam-google-authenticator
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;其他系统可以通过源码编译安装&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;git clone https://github.com/google/google-authenticator-libpam.git
-cd google-authenticator-libpam/
-./bootstrap.sh
-./configure
-make
-make install
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;注意：在Debian7中执行&lt;code&gt;./configure&lt;/code&gt;时可能存在以下错误提示&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;configure: error: Unable to find the PAM library or the PAM header files
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在此需要安装&lt;code&gt;libpam0g-dev&lt;/code&gt;和&lt;code&gt;libtool&lt;/code&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;apt-get -y install libpam0g-dev libtool
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;设置google-authenticator&#34;&gt;设置Google Authenticator&lt;/h3&gt;
-&lt;p&gt;在手机端搜索安装&lt;strong&gt;Google Authenticator&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;google-authenticator
-Do you want authentication tokens to be time-based (y/n) y
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;然后出现二维码，使用手机端&lt;strong&gt;Google Authenticator&lt;/strong&gt;扫码,接下来服务器端继续设置&lt;/p&gt;
-&lt;p&gt;如果没有出现二维码，可以将提示的以**&lt;a href=&#34;https://www.google.com/chart?&#34;&gt;https://www.google.com/chart?&lt;/a&gt;**开头的连接复制到浏览器中，就可以看到二维码了&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Do you want me to update your &amp;quot;/root/.google_authenticator&amp;quot; file (y/n) y
-
-Do you want to disallow multiple uses of the same authentication
-token? This restricts you to one login about every 30s, but it increases
-your chances to notice or even prevent man-in-the-middle attacks (y/n) Do you want to disallow multiple uses of the same authentication
-token? This restricts you to one login about every 30s, but it increases
-your chances to notice or even prevent man-in-the-middle attacks (y/n) y
-
-By default, tokens are good for 30 seconds and in order to compensate for
-possible time-skew between the client and the server, we allow an extra
-token before and after the current time. If you experience problems with poor
-time synchronization, you can increase the window from its default
-size of 1:30min to about 4min. Do you want to do so (y/n) y
-
-If the computer that you are logging into isn&#39;t hardened against brute-force
-login attempts, you can enable rate-limiting for the authentication module.
-By default, this limits attackers to no more than 3 login attempts every 30s.
-Do you want to enable rate-limiting (y/n) y
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;接下来将&lt;strong&gt;Google Authenticator&lt;/strong&gt;验证配置到SSH登录中&lt;/p&gt;
-&lt;p&gt;编辑&lt;code&gt;/etc/pam.d/sshd&lt;/code&gt;文件，添加下行保存&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;auth required pam_google_authenticator.so
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;编辑&lt;code&gt;/etc/ssh/sshd_config&lt;/code&gt;找到下行&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;ChallengeResponseAuthentication no
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;更改为&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;ChallengeResponseAuthentication yes
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;重启SSH服务&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;service ssh restart
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;再次登录的话输入用户名后就跟着提示两部验证码，然后才输入用户密码，如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;login as: root
-Using keyboard-interactive authentication.
-Verification code:
-Using keyboard-interactive authentication.
-Password:
-Welcome to Ubuntu 14.04.2 LTS (GNU/Linux 2.6.32-042stab108.8 i686)
-
-* Documentation:  https://help.ubuntu.com/
-Last login: Thu Jan 28 15:04:20 2016 from 61.185.216.146
-root@hkvps:~#
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;em&gt;参考 &lt;a href=&#34;https://wzyboy.im/post/765.html&#34;&gt;https://wzyboy.im/post/765.html&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-</description>
+      <guid>/post/use-google-authenticator-set-2step-verification-strengthening-ssh-login/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Google Authenticator开源版主页 https://github.com/google/google-authenticator
+安装Google Authenticator Ubuntu已经包含libpam-google-authenticator软件(Ubuntu 11.10以上版本),可以直接使用apt-get安装
+apt-get install libpam-google-authenticator  其他系统可以通过源码编译安装
+git clone https://github.com/google/google-authenticator-libpam.git cd google-authenticator-libpam/ ./bootstrap.sh ./configure make make install  注意：在Debian7中执行./configure时可能存在以下错误提示
+configure: error: Unable to find the PAM library or the PAM header files  在此需要安装libpam0g-dev和libtool
+apt-get -y install libpam0g-dev libtool  设置Google Authenticator 在手机端搜索安装Google Authenticator
+google-authenticator Do you want authentication tokens to be time-based (y/n) y  然后出现二维码，使用手机端Google Authenticator扫码,接下来服务器端继续设置
+如果没有出现二维码，可以将提示的以**https://www.google.com/chart?**开头的连接复制到浏览器中，就可以看到二维码了
+Do you want me to update your &amp;quot;/root/.
+          
+        
+        </description>
     </item>
     
     <item>
       <title>Linux下使用grive管理Google Drive</title>
-      <link>https://unixetc.com/post/linux-use-grive-management-google-drive/</link>
+      <link>/post/linux-use-grive-management-google-drive/</link>
       <pubDate>Wed, 26 Aug 2015 18:23:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/linux-use-grive-management-google-drive/</guid>
-      <description>&lt;p&gt;找到一个linux下可用的google drive客户端，纯cli操作，值得推荐&lt;/p&gt;
-&lt;p&gt;grive项目主页 &lt;a href=&#34;https://github.com/Grive/grive&#34;&gt;https://github.com/Grive/grive&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Ubuntu中下通过PPA安装grive&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo add-apt-repository ppa:nilarimogard/webupd8 
-sudo apt-get update
-sudo apt-get install grive
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;使用grive同步Google Drive&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;mkdir googledrive
-cd googledrive
-grive -a
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;第一次运行，会有验证提示，将提示的url代码粘贴到浏览器中验证帐户，完了后将生成的验证代码粘贴到grive进行验证。&lt;/p&gt;
-</description>
+      <guid>/post/linux-use-grive-management-google-drive/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          找到一个linux下可用的google drive客户端，纯cli操作，值得推荐
+grive项目主页 https://github.com/Grive/grive
+Ubuntu中下通过PPA安装grive
+sudo add-apt-repository ppa:nilarimogard/webupd8 sudo apt-get update sudo apt-get install grive  使用grive同步Google Drive
+mkdir googledrive cd googledrive grive -a  第一次运行，会有验证提示，将提示的url代码粘贴到浏览器中验证帐户，完了后将生成的验证代码粘贴到grive进行验证。
+          
+        
+        </description>
     </item>
     
     <item>
       <title>安装Nginx和ngx_pagespeed</title>
-      <link>https://unixetc.com/post/install-nginx-and-ngx_pagespeed-on-vps/</link>
+      <link>/post/install-nginx-and-ngx_pagespeed-on-vps/</link>
       <pubDate>Fri, 24 Jul 2015 17:24:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/install-nginx-and-ngx_pagespeed-on-vps/</guid>
-      <description>&lt;p&gt;VPS配置:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Ubuntu 14.04 x86
-RAM 512M
-SWAP 64M
-DISK 5G
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;准备工作&#34;&gt;准备工作&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;sudo apt-get update&amp;amp;&amp;amp;apt-get upgrade -y
-sudo apt-get install build-essential zlib1g-dev libpcre3 libpcre3-dev unzip libssl-dev -y
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;下载ngx_pagespeed&#34;&gt;下载ngx_pagespeed&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;cd
-NPS_VERSION=1.9.32.4
-wget https://github.com/pagespeed/ngx_pagespeed/archive/release-${NPS_VERSION}-beta.zip
-unzip release-${NPS_VERSION}-beta.zip
-cd ngx_pagespeed-release-${NPS_VERSION}-beta/
-wget https://dl.google.com/dl/page-speed/psol/${NPS_VERSION}.tar.gz
-tar -xzvf ${NPS_VERSION}.tar.gz 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;安装nginx&#34;&gt;安装Nginx&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;cd
-groupadd www
-useradd -s /sbin/nologin -g www www
-NGINX_VERSION=1.8.0
-wget http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz
-tar -xvzf nginx-${NGINX_VERSION}.tar.gz
-cd nginx-${NGINX_VERSION}/
-./configure \
---user=www \
---group=www  \
---prefix=/usr/local/nginx \
---with-http_stub_status_module \
---with-http_ssl_module \
---with-http_spdy_module \
---with-http_gzip_static_module \
---with-http_sub_module \
---add-module=$HOME/ngx_pagespeed-release-${NPS_VERSION}-beta \
-
-sudo make
-sudo make install
-sudo ln -sf /usr/local/nginx/sbin/nginx /usr/bin/nginx
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;配置&lt;code&gt;/etc/init.d/nginx&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo wget https://raw.github.com/JasonGiedymin/nginx-init-ubuntu/master/nginx -O /etc/init.d/nginx
-sudo chmod +x /etc/init.d/nginx
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;管理Nginx服务&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;service nginx {start|stop|restart|force-reload|reload|status|configtest|quietupgrade|terminate|destroy}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;测试安装结果&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;root@bwgvps:~# nginx -t
-nginx: the configuration file /usr/local/nginx/conf/nginx.conf syntax is ok
-nginx: configuration file /usr/local/nginx/conf/nginx.conf test is successful
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;配置ngx_pagespeed&#34;&gt;配置ngx_pagespeed&lt;/h3&gt;
-&lt;p&gt;编辑Nginx的配置文件(/usr/local/nginx/conf/nginx.conf)&lt;/p&gt;
-&lt;p&gt;在server段内添加&lt;code&gt;include gp.conf&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;在&lt;code&gt;/usr/local/nginx/conf/&lt;/code&gt;内新建&lt;code&gt;gp.conf&lt;/code&gt;,内容如下:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;pagespeed on;
-pagespeed FileCachePath /usr/local/nginx/pagespeed/;
-pagespeed RewriteLevel PassThrough;
-pagespeed EnableFilters collapse_whitespace;
-pagespeed EnableFilters canonicalize_javascript_libraries;
-pagespeed EnableFilters combine_css;
-pagespeed EnableFilters combine_javascript;
-pagespeed EnableFilters elide_attributes;
-pagespeed EnableFilters extend_cache;
-pagespeed EnableFilters flatten_css_imports;
-pagespeed CssFlattenMaxBytes 5120;
-pagespeed EnableFilters lazyload_images;
-pagespeed EnableFilters rewrite_javascript;
-pagespeed EnableFilters rewrite_images;
-pagespeed EnableFilters insert_dns_prefetch;
-pagespeed EnableFilters prioritize_critical_css;	
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Nginx reload后，用&lt;code&gt;curl&lt;/code&gt;验证是否开启&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;root@bwgvps:~# curl -I 127.0.0.1
-HTTP/1.1 200 OK
-Server: nginx/1.8.0
-Content-Type: text/html
-Connection: keep-alive
-Date: Sat, 07 Feb 1970 00:54:49 GMT
-X-Page-Speed: 1.9.32.4-7251
-Cache-Control: max-age=0, no-cache
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;以上X-Page-Speed代表已经OK!&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;参考:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://developers.google.com/speed/pagespeed/module/build_ngx_pagespeed_from_source&#34;&gt;https://developers.google.com/speed/pagespeed/module/build_ngx_pagespeed_from_source&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/JasonGiedymin/nginx-init-ubuntu&#34;&gt;https://github.com/JasonGiedymin/nginx-init-ubuntu&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://lnmp.org&#34;&gt;http://lnmp.org&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <guid>/post/install-nginx-and-ngx_pagespeed-on-vps/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          VPS配置:
+Ubuntu 14.04 x86 RAM 512M SWAP 64M DISK 5G  准备工作 sudo apt-get update&amp;amp;&amp;amp;apt-get upgrade -y sudo apt-get install build-essential zlib1g-dev libpcre3 libpcre3-dev unzip libssl-dev -y  下载ngx_pagespeed cd NPS_VERSION=1.9.32.4 wget https://github.com/pagespeed/ngx_pagespeed/archive/release-${NPS_VERSION}-beta.zip unzip release-${NPS_VERSION}-beta.zip cd ngx_pagespeed-release-${NPS_VERSION}-beta/ wget https://dl.google.com/dl/page-speed/psol/${NPS_VERSION}.tar.gz tar -xzvf ${NPS_VERSION}.tar.gz  安装Nginx cd groupadd www useradd -s /sbin/nologin -g www www NGINX_VERSION=1.8.0 wget http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz tar -xvzf nginx-${NGINX_VERSION}.tar.gz cd nginx-${NGINX_VERSION}/ ./configure \ --user=www \ --group=www \ --prefix=/usr/local/nginx \ --with-http_stub_status_module \ --with-http_ssl_module \ --with-http_spdy_module \ --with-http_gzip_static_module \ --with-http_sub_module \ --add-module=$HOME/ngx_pagespeed-release-${NPS_VERSION}-beta \ sudo make sudo make install sudo ln -sf /usr/local/nginx/sbin/nginx /usr/bin/nginx  配置/etc/init.
+          
+        
+        </description>
     </item>
     
     <item>
       <title>将博客从Typcho转移至Gor</title>
-      <link>https://unixetc.com/post/typecho-converted-to-gor/</link>
+      <link>/post/typecho-converted-to-gor/</link>
       <pubDate>Mon, 20 Jul 2015 17:20:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/typecho-converted-to-gor/</guid>
-      <description>&lt;h3 id=&#34;缘由&#34;&gt;缘由&lt;/h3&gt;
-&lt;p&gt;VPS快到期了，不想继续维护，太累，并且香港VPS价格也不菲。&lt;/p&gt;
-&lt;p&gt;于是打算选择一个静态博客平台，原来用过的不少:jekyll,hexo,gor,pelican，最后决定Gor&lt;/p&gt;
-&lt;p&gt;选择Gor的理由有两点&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;安装方便&lt;/li&gt;
-&lt;li&gt;执行效率高&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;安装gor&#34;&gt;安装Gor&lt;/h3&gt;
-&lt;p&gt;参考Gor主页&lt;a href=&#34;https://github.com/wendal/gor&#34;&gt;https://github.com/wendal/gor&lt;/a&gt;安装Gor&lt;/p&gt;
-&lt;h3 id=&#34;将typecho文章导出为markdown文件md&#34;&gt;将Typecho文章导出为Markdown文件(.md)&lt;/h3&gt;
-&lt;p&gt;Github上有现成的工具&lt;strong&gt;typecho-exporter&lt;/strong&gt;，主页为&lt;a href=&#34;https://github.com/aneasystone/typecho-exporter&#34;&gt;https://github.com/aneasystone/typecho-exporter&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;这个工具可以将所有的文章导出为Markdown文件，但是以文章标题为文件名，不利于后期处理，建议使用slug为文件名。&lt;/p&gt;
-&lt;p&gt;编辑下载的&lt;code&gt;main.py&lt;/code&gt;，将75行的&lt;code&gt;p.title = r[1]&lt;/code&gt;替换为`p.title = r[2]&#39;，如下:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;results = cur.fetchall()
-for r in results:
-    p = Post()
-    p.id = r[0]
-    p.title = r[2]
-    p.content = r[5]
-    posts.append(p)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;原来的&lt;code&gt;r[1]&lt;/code&gt;对应&lt;code&gt;typecho_contents&lt;/code&gt;SQL表中的&lt;code&gt;title&lt;/code&gt;列，我的&lt;code&gt;r[2]&lt;/code&gt;对应&lt;code&gt;slug&lt;/code&gt;列，可以根据实际情况更改。&lt;/p&gt;
-&lt;p&gt;编辑&lt;strong&gt;typecho-exporter&lt;/strong&gt;的&lt;code&gt;config.ini&lt;/code&gt;文件，设置数据库访问方式。&lt;/p&gt;
-&lt;p&gt;运行&lt;code&gt;main.py&lt;/code&gt;，完成后会在&lt;strong&gt;typecho-exporter&lt;/strong&gt;目录下生成&lt;strong&gt;files&lt;/strong&gt;文件夹，里面就是导出的Markdown文件。&lt;/p&gt;
-&lt;h3 id=&#34;后期整理&#34;&gt;后期整理&lt;/h3&gt;
-&lt;p&gt;导出后的Markdown没有Gor需要的文件头格式，需要手动整理&lt;/p&gt;
-&lt;p&gt;这里推荐使用Notepad++批量替换&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/insert_gor_markdown_header.png&#34; alt=&#34;插入Hexo的Markdown头格式&#34;&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;查找目标:&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;替换为&amp;mdash;\n
-title: title\ndate: 2015-07-20\ndescription: \npermalink: \ncategories: \ntags: \n&amp;mdash;\n&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;记得将查找模式重的扩展打开。&lt;/p&gt;
-&lt;p&gt;经过以上替换，就大概有了个Gor的Markdown头格式，后面的手动工作就少了多了。&lt;/p&gt;
-</description>
+      <guid>/post/typecho-converted-to-gor/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          缘由 VPS快到期了，不想继续维护，太累，并且香港VPS价格也不菲。
+于是打算选择一个静态博客平台，原来用过的不少:jekyll,hexo,gor,pelican，最后决定Gor
+选择Gor的理由有两点
+ 安装方便 执行效率高  安装Gor 参考Gor主页https://github.com/wendal/gor安装Gor
+将Typecho文章导出为Markdown文件(.md) Github上有现成的工具typecho-exporter，主页为https://github.com/aneasystone/typecho-exporter
+这个工具可以将所有的文章导出为Markdown文件，但是以文章标题为文件名，不利于后期处理，建议使用slug为文件名。
+编辑下载的main.py，将75行的p.title = r[1]替换为`p.title = r[2]&#39;，如下:
+results = cur.fetchall() for r in results: p = Post() p.id = r[0] p.title = r[2] p.content = r[5] posts.append(p)  原来的r[1]对应typecho_contentsSQL表中的title列，我的r[2]对应slug列，可以根据实际情况更改。
+编辑typecho-exporter的config.ini文件，设置数据库访问方式。
+运行main.py，完成后会在typecho-exporter目录下生成files文件夹，里面就是导出的Markdown文件。
+后期整理 导出后的Markdown没有Gor需要的文件头格式，需要手动整理
+这里推荐使用Notepad++批量替换
+  查找目标:
+  替换为&amp;mdash;\n title: title\ndate: 2015-07-20\ndescription: \npermalink: \ncategories: \ntags: \n&amp;mdash;\n
+  记得将查找模式重的扩展打开。
+经过以上替换，就大概有了个Gor的Markdown头格式，后面的手动工作就少了多了。
+          
+        
+        </description>
     </item>
     
     <item>
       <title>Linux下安装最新版golang</title>
-      <link>https://unixetc.com/post/install-the-last-version-golang-for-linux/</link>
+      <link>/post/install-the-last-version-golang-for-linux/</link>
       <pubDate>Mon, 11 May 2015 15:11:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/install-the-last-version-golang-for-linux/</guid>
-      <description>&lt;p&gt;ubuntu中可以使用&lt;code&gt;apt-get install golang&lt;/code&gt;来安装go，但是版本稍旧&lt;/p&gt;
-&lt;p&gt;如果需要安装最新版的golang，那就得自己动手咧&lt;/p&gt;
-&lt;h3 id=&#34;安装golang&#34;&gt;安装golang&lt;/h3&gt;
-&lt;p&gt;从官网下载最新版，手动安装&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;apt-get install build-essential
-wget https://storage.googleapis.com/golang/go1.4.2.linux-386.tar.gz
-tar zxf go1.4.2.linux-386.tar.gz
-cd go/src
-./all.bash
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;设置path&#34;&gt;设置PATH&lt;/h3&gt;
-&lt;p&gt;安装完成后需要设置PATH才能随地使用&lt;code&gt;go&lt;/code&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;export PATH=&amp;quot;/root/go/bin:$PATH&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;检查版本&#34;&gt;检查版本&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;go version
-go version go1.4.2 linux/386&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <guid>/post/install-the-last-version-golang-for-linux/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          ubuntu中可以使用apt-get install golang来安装go，但是版本稍旧
+如果需要安装最新版的golang，那就得自己动手咧
+安装golang 从官网下载最新版，手动安装
+apt-get install build-essential wget https://storage.googleapis.com/golang/go1.4.2.linux-386.tar.gz tar zxf go1.4.2.linux-386.tar.gz cd go/src ./all.bash  设置PATH 安装完成后需要设置PATH才能随地使用go
+export PATH=&amp;quot;/root/go/bin:$PATH&amp;quot;  检查版本 go version go version go1.4.2 linux/386 
+          
+        
+        </description>
     </item>
     
     <item>
       <title>下载Chrome离线安装包</title>
-      <link>https://unixetc.com/post/download-the-chrome-offline-installation-package/</link>
+      <link>/post/download-the-chrome-offline-installation-package/</link>
       <pubDate>Sat, 30 Aug 2014 08:30:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/download-the-chrome-offline-installation-package/</guid>
-      <description>&lt;p&gt;Chrome离线安装包下载地址：&lt;/p&gt;
-&lt;p&gt;正式版 &lt;a href=&#34;http://www.google.com/chrome/eula.html?hl=zh-CN&amp;amp;standalone=1&#34;&gt;http://www.google.com/chrome/eula.html?hl=zh-CN&amp;amp;standalone=1&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;测试版 &lt;a href=&#34;http://www.google.com/chrome/eula.html?hl=zh-CN&amp;amp;standalone=1&amp;amp;extra=betachannel&#34;&gt;http://www.google.com/chrome/eula.html?hl=zh-CN&amp;amp;standalone=1&amp;amp;extra=betachannel&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;开发版 &lt;a href=&#34;http://www.google.com/chrome/eula.html?hl=zh-CN&amp;amp;standalone=1&amp;amp;extra=devchannel&#34;&gt;http://www.google.com/chrome/eula.html?hl=zh-CN&amp;amp;standalone=1&amp;amp;extra=devchannel&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;下载文件名为&lt;strong&gt;ChromeStandaloneSetup.exe&lt;/strong&gt;&lt;/p&gt;
-</description>
+      <guid>/post/download-the-chrome-offline-installation-package/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Chrome离线安装包下载地址：
+正式版 http://www.google.com/chrome/eula.html?hl=zh-CN&amp;amp;standalone=1
+测试版 http://www.google.com/chrome/eula.html?hl=zh-CN&amp;amp;standalone=1&amp;amp;extra=betachannel
+开发版 http://www.google.com/chrome/eula.html?hl=zh-CN&amp;amp;standalone=1&amp;amp;extra=devchannel
+下载文件名为ChromeStandaloneSetup.exe
+          
+        
+        </description>
     </item>
     
     <item>
       <title>Linux下部署goAgent</title>
-      <link>https://unixetc.com/post/linux-deployment-goagent/</link>
+      <link>/post/linux-deployment-goagent/</link>
       <pubDate>Thu, 30 May 2013 15:30:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/linux-deployment-goagent/</guid>
-      <description>&lt;h3 id=&#34;准备工作&#34;&gt;准备工作&lt;/h3&gt;
-&lt;p&gt;下载Google Appengine SDK For Pyahont与goAgent&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;1.Google App Engine SDK for Python
-https://developers.google.com/appengine/downloads?hl=zh-CN#Google_App_Engine_SDK_for_Python
-
-2.goagent
-https://code.google.com/p/goagent/
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;下载后解压，将goagent文件夹放到google_appengine目录下，目录结构如下:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;~/google_appengine/goagent-goagent-d488f2
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;准备好Google Application_ID与两步验证密码,如何申请问&lt;a href=&#34;http://google.com&#34;&gt;Google&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;配置goagent&#34;&gt;配置goagent&lt;/h3&gt;
-&lt;p&gt;编辑&lt;strong&gt;~/google_appengine/goagent-goagent-d488f2/local/proxy.ini&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;填写正确的appid，在此建议将profile由默认的&lt;code&gt;google_cn&lt;/code&gt;改为&lt;code&gt;google_hk&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;参考以下步骤执行：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;aquan@edge ~/google_appengine $ python appcfg.py update goagent-goagent-d4488f2/server/python/
-07:03 PM Host: appengine.google.com
-07:03 PM Application: wrchiublog; version: 1
-07:03 PM 
-Starting update of app: wrchiublog, version: 1
-07:03 PM Getting current resource limits.
-Email: wrchiu@126.com  //在此填写googleid
-Password for wrchiu@126.com:    //此处填写两步验证密码，而不是帐号密码
-07:04 PM Scanning files on local disk.
-07:04 PM Cloning 1 static file.
-07:04 PM Cloning 6 application files.
-07:04 PM Uploading 1 files and blobs.
-07:04 PM Uploaded 1 files and blobs
-07:04 PM Compilation starting.
-07:04 PM Compilation completed.
-07:04 PM Starting deployment.
-07:04 PM Checking if deployment succeeded.
-07:04 PM Deployment successful.
-07:04 PM Checking if updated app version is serving.
-07:04 PM Completed update of app: wrchiublog, version: 1
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;完成后，在**~/google_appengine/goagent-goagent-d488f2/local/**目录下运行goAgent&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ python proxy.py&amp;amp;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;**注意:**在更新app时出现如下错误&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;aquan@edge ~/google_appengine $ python appcfg.py update goagent-goagent-d4488f2/server/python/
-07:00 PM Host: appengine.google.com
-Error parsing yaml file:
-Unable to assign value &#39;your_appid&#39; to attribute &#39;application&#39;:
-Value &#39;your_appid&#39; for application does not match expression &#39;^(?:(?:[a-z\d\-]{1,100}\~)?(?:(?!\-)[a-z\d\-\.]{1,100}:)?(?!-)[a-z\d\-]{0,99}[a-z\d])$&#39;
-  in &amp;quot;goagent-goagent-d4488f2/server/python/app.yaml&amp;quot;, line 1, column 14
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;按照提示修改&lt;strong&gt;goagent-goagent-d4488f2/server/python/app.yaml&lt;/strong&gt;中的application为正确的appid&lt;/p&gt;
-&lt;p&gt;至此Linux下goAgent部署完成!&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;在此提供包含goagent的压缩包&lt;a href=&#34;http://pan.baidu.com/share/link?shareid=472887&amp;amp;uk=1493434283&#34;&gt;http://pan.baidu.com/share/link?shareid=472887&amp;amp;uk=1493434283&lt;/a&gt;(goagent 3.0.1)&lt;/em&gt;&lt;/p&gt;
-</description>
+      <guid>/post/linux-deployment-goagent/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          准备工作 下载Google Appengine SDK For Pyahont与goAgent
+1.Google App Engine SDK for Python https://developers.google.com/appengine/downloads?hl=zh-CN#Google_App_Engine_SDK_for_Python 2.goagent https://code.google.com/p/goagent/  下载后解压，将goagent文件夹放到google_appengine目录下，目录结构如下:
+~/google_appengine/goagent-goagent-d488f2  准备好Google Application_ID与两步验证密码,如何申请问Google
+配置goagent 编辑~/google_appengine/goagent-goagent-d488f2/local/proxy.ini
+填写正确的appid，在此建议将profile由默认的google_cn改为google_hk
+参考以下步骤执行：
+aquan@edge ~/google_appengine $ python appcfg.py update goagent-goagent-d4488f2/server/python/ 07:03 PM Host: appengine.google.com 07:03 PM Application: wrchiublog; version: 1 07:03 PM Starting update of app: wrchiublog, version: 1 07:03 PM Getting current resource limits. Email: wrchiu@126.com //在此填写googleid Password for wrchiu@126.com: //此处填写两步验证密码，而不是帐号密码 07:04 PM Scanning files on local disk.
+          
+        
+        </description>
     </item>
     
   </channel>

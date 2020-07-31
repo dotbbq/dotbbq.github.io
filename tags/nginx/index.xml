@@ -2,727 +2,338 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nginx on UNIXETC</title>
-    <link>https://unixetc.com/tags/nginx/</link>
-    <description>UNIXETC (Nginx)</description>
+    
+    
+    
+    <link>/tags/nginx/</link>
+    <description>Recent content in Nginx on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 30 Jul 2020 00:00:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/nginx/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Nginx V2ray and WebSocket</title>
-      <link>https://unixetc.com/post/nginx-v2ray-websocket/</link>
+      <link>/post/nginx-v2ray-websocket/</link>
       <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/nginx-v2ray-websocket/</guid>
-      <description>&lt;h3 id=&#34;安装v2raynginx&#34;&gt;安装v2ray/nginx&lt;/h3&gt;
-&lt;p&gt;v2ray安装可以参考&lt;a href=&#34;https://unixetc.com/post/v2ray-client-configuration-example-in-ubuntu/&#34;&gt;Ubuntu中v2ray客户端配置实例&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Nginx安装推荐使用&lt;a href=&#34;https://oneinstack.com/&#34;&gt;OneinStack一键安装脚本&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;准备好使用的域名，这里以&lt;strong&gt;&lt;code&gt;v.fuckgfw.cn&lt;/code&gt;&lt;/strong&gt;为例。&lt;/p&gt;
-&lt;h3 id=&#34;v2raynginx服务端配置&#34;&gt;v2ray/nginx服务端配置&lt;/h3&gt;
-&lt;p&gt;v2ray安装好后，服务端配置&lt;strong&gt;&lt;code&gt;/etc/v2ray/config.json&lt;/code&gt;&lt;/strong&gt;如下:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;{
-	&amp;quot;inbounds&amp;quot;: [{
-		&amp;quot;port&amp;quot;: 99999,  //代理端口号
-		&amp;quot;listen&amp;quot;: &amp;quot;127.0.0.1&amp;quot;,
-		&amp;quot;protocol&amp;quot;: &amp;quot;vmess&amp;quot;,
-		&amp;quot;settings&amp;quot;: {
-			&amp;quot;clients&amp;quot;: [{
-				&amp;quot;id&amp;quot;: &amp;quot;5c1eed18-fse4-41fs-9as9-e85s45bds9ef&amp;quot;,
-				&amp;quot;level&amp;quot;: 1,
-				&amp;quot;alterId&amp;quot;: 64
-			}]
-		},
-		&amp;quot;streamSettings&amp;quot;: {
-			&amp;quot;network&amp;quot;: &amp;quot;ws&amp;quot;,
-			&amp;quot;wsSettings&amp;quot;: {
-				&amp;quot;path&amp;quot;: &amp;quot;/fcgfw&amp;quot; //代理目录
-			}
-		}
-	}],
-	&amp;quot;outbounds&amp;quot;: [{
-		&amp;quot;protocol&amp;quot;: &amp;quot;freedom&amp;quot;,
-		&amp;quot;settings&amp;quot;: {}
-	}, {
-		&amp;quot;protocol&amp;quot;: &amp;quot;blackhole&amp;quot;,
-		&amp;quot;settings&amp;quot;: {},
-		&amp;quot;tag&amp;quot;: &amp;quot;blocked&amp;quot;
-	}],
-	&amp;quot;routing&amp;quot;: {
-		&amp;quot;rules&amp;quot;: [{
-			&amp;quot;type&amp;quot;: &amp;quot;field&amp;quot;,
-			&amp;quot;ip&amp;quot;: [&amp;quot;geoip:private&amp;quot;],
-			&amp;quot;outboundTag&amp;quot;: &amp;quot;blocked&amp;quot;
-		}]
-	}
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;使用OneinStack一键脚本新建一个站点，域名为&lt;code&gt;v.fuckgfw.cn&lt;/code&gt;，采用SSL加密模式，完成后编辑&lt;strong&gt;&lt;code&gt;/usr/local/nginx/conf/vhost/v.fuckgfw.cn.conf&lt;/code&gt;&lt;/strong&gt;文件&lt;/p&gt;
-&lt;p&gt;参考以下修改：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;server {
-  listen 80;
-  listen [::]:80;
-  listen 443 ssl http2;
-  listen [::]:443 ssl http2;
-  ssl_certificate /usr/local/nginx/conf/ssl/v.fuckgfw.cn.crt;
-  ssl_certificate_key /usr/local/nginx/conf/ssl/v.fuckgfw.cn.key;
-  ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
-  ssl_ciphers TLS13-AES-256-GCM-SHA384:TLS13-CHACHA20-POLY1305-SHA256:TLS13-AES-128-GCM-SHA256:TLS13-AES-128-CCM-8-SHA256:TLS13-AES-128-CCM-SHA256:EECDH+CHACHA20:EECDH+AES128:RSA+AES128:EECDH+AES256:RSA+AES256:EECDH+3DES:RSA+3DES:!MD5;
-  ssl_prefer_server_ciphers on;
-  ssl_session_timeout 10m;
-  ssl_session_cache builtin:1000 shared:SSL:10m;
-  ssl_buffer_size 1400;
-  add_header Strict-Transport-Security max-age=15768000;
-  ssl_stapling on;
-  ssl_stapling_verify on;
-  server_name v.fuckgfw.cn;
-  access_log off;
-  if ($ssl_protocol = &amp;quot;&amp;quot;) { return 301 https://$host$request_uri; }
-
-    location /fcgfw {       //与上面v2ray配置的代理目录一致                  
-        proxy_redirect off;
-        proxy_pass http://127.0.0.1:99999;       //与上面v2ray配置端口号一致 
-        proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection &amp;quot;upgrade&amp;quot;;
-        proxy_set_header Host $http_host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_connect_timeout 60s;
-        proxy_read_timeout 86400s;
-        proxy_send_timeout 60s;
-    }
-}
-
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;按照上面修改好&lt;strong&gt;nginx&lt;/strong&gt;与&lt;strong&gt;v2ray&lt;/strong&gt;配置后，重启服务。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;service nginx reload
-service v2ray restart
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;v2ray客户端配置&#34;&gt;v2ray客户端配置&lt;/h3&gt;
-&lt;p&gt;以&lt;strong&gt;v2rayN&lt;/strong&gt;为例&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;地址:v.fuckgfw.cn&lt;/li&gt;
-&lt;li&gt;端口:443&lt;/li&gt;
-&lt;li&gt;用户ID:5c1eed18-fse4-41fs-9as9-e85s45bds9ef&lt;/li&gt;
-&lt;li&gt;额外ID:64&lt;/li&gt;
-&lt;li&gt;加密方式:auto&lt;/li&gt;
-&lt;li&gt;传输协议:ws&lt;/li&gt;
-&lt;li&gt;别名:v.fuckgfw.cn&lt;/li&gt;
-&lt;li&gt;伪装类型:none&lt;/li&gt;
-&lt;li&gt;伪装域名:v.fuckgfw.cn&lt;/li&gt;
-&lt;li&gt;路径:/fcgfw&lt;/li&gt;
-&lt;li&gt;底层传输安全:tls&lt;/li&gt;
-&lt;li&gt;跳过证书验证:false&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a href=&#34;https://unixetc.com/usr/uploads/nginx-v2ray-websocket.png&#34;&gt;https://unixetc.com/usr/uploads/nginx-v2ray-websocket.png&lt;/a&gt;&lt;/p&gt;
-</description>
+      <guid>/post/nginx-v2ray-websocket/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          本文介绍如何安装v2ray和nginx，并配置v2ray代理模式为websocket。
+          
+        
+        </description>
     </item>
     
     <item>
       <title>XiunoBBS Nginx伪静态规则</title>
-      <link>https://unixetc.com/post/xiunobbs-nginx-pseudo-static/</link>
+      <link>/post/xiunobbs-nginx-pseudo-static/</link>
       <pubDate>Tue, 06 Feb 2018 12:16:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/xiunobbs-nginx-pseudo-static/</guid>
-      <description>&lt;p&gt;XiunoBBS是一款非常流行的轻论坛程序&lt;/p&gt;
-&lt;p&gt;以下为XiunoBBS Nginx伪静态规则代码，添加到相应的nginx配置文件中即可。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;location ~* \.(htm)$ {
-    rewrite &amp;quot;^(.*)/(.+?).htm(.*?)$&amp;quot; $1/index.php?$2.htm$3 last;
-}&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <guid>/post/xiunobbs-nginx-pseudo-static/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          XiunoBBS是一款非常流行的轻论坛程序
+以下为XiunoBBS Nginx伪静态规则代码，添加到相应的nginx配置文件中即可。
+location ~* \.(htm)$ { rewrite &amp;quot;^(.*)/(.+?).htm(.*?)$&amp;quot; $1/index.php?$2.htm$3 last; } 
+          
+        
+        </description>
     </item>
     
     <item>
       <title>Typecho登录时提示AccessDenied</title>
-      <link>https://unixetc.com/post/typecho-login-access-denied/</link>
+      <link>/post/typecho-login-access-denied/</link>
       <pubDate>Tue, 03 Oct 2017 10:03:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/typecho-login-access-denied/</guid>
-      <description>&lt;p&gt;Typecho安装完成后，登录后提示Access Denied，解决方法如下：&lt;/p&gt;
-&lt;p&gt;找到&lt;strong&gt;php.ini&lt;/strong&gt;文件，我的在&lt;code&gt;/usr/local/php/etc/php.ini&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;将&lt;code&gt;cgi.fix_pathinfo&lt;/code&gt;的值改为&lt;strong&gt;1&lt;/strong&gt;即可&lt;/p&gt;
-&lt;p&gt;重启php&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;service php-fpm restart
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;完了！&lt;/p&gt;
-</description>
+      <guid>/post/typecho-login-access-denied/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Typecho安装完成后，登录后提示Access Denied，解决方法如下：
+找到php.ini文件，我的在/usr/local/php/etc/php.ini
+将cgi.fix_pathinfo的值改为1即可
+重启php
+service php-fpm restart  完了！
+          
+        
+        </description>
     </item>
     
     <item>
       <title>SSL安全优化</title>
-      <link>https://unixetc.com/post/ssl-security-optimization/</link>
+      <link>/post/ssl-security-optimization/</link>
       <pubDate>Mon, 21 Dec 2015 12:21:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/ssl-security-optimization/</guid>
-      <description>&lt;p&gt;先贴出本站的SSL安全评级,测试地址为&lt;a href=&#34;https://www.ssllabs.com/ssltest/analyze.html?d=alair.cn&#34;&gt;https://www.ssllabs.com/ssltest/analyze.html?d=alair.cn&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/ssl-rank.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;以下是本站&lt;strong&gt;Nginx&lt;/strong&gt;配置中关于SSL部分&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;listen 443 ssl http2;
-
-ssl_certificate /etc/letsencrypt/live/alair.cn/fullchain.pem;  
-ssl_certificate_key /etc/letsencrypt/live/alair.cn/privkey.pem; 
-
-ssl_session_timeout 60m;
-ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-ssl_ciphers ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-RC4-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:RC4-SHA:!aNULL:!eNULL:!EXPORT:!DES:!3DES:!MD5:!DSS:!PKS;
-
-ssl_prefer_server_ciphers on;
-ssl_session_cache builtin:1000 shared:SSL:10m;
-ssl_dhparam /etc/ssl/certs/dhparam.pem;
-ssl_stapling on;
-ssl_stapling_verify on;
-
-add_header Strict-Transport-Security &amp;quot;max-age=63072000; includeSubdomains; preload&amp;quot;;
-add_header X-Frame-Options &amp;quot;DENY&amp;quot;;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;说明：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;dhparam.pem&lt;/strong&gt;可以使用&lt;code&gt;openssl dhparam -out dhparam.pem 4096&lt;/code&gt;命令生成，这个命令会执行很长时间，也可以将字节数改为2048&lt;/p&gt;
-</description>
+      <guid>/post/ssl-security-optimization/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          先贴出本站的SSL安全评级,测试地址为https://www.ssllabs.com/ssltest/analyze.html?d=alair.cn
+以下是本站Nginx配置中关于SSL部分
+listen 443 ssl http2; ssl_certificate /etc/letsencrypt/live/alair.cn/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/alair.cn/privkey.pem; ssl_session_timeout 60m; ssl_protocols TLSv1 TLSv1.1 TLSv1.2; ssl_ciphers ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-RC4-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA:RC4-SHA:!aNULL:!eNULL:!EXPORT:!DES:!3DES:!MD5:!DSS:!PKS; ssl_prefer_server_ciphers on; ssl_session_cache builtin:1000 shared:SSL:10m; ssl_dhparam /etc/ssl/certs/dhparam.pem; ssl_stapling on; ssl_stapling_verify on; add_header Strict-Transport-Security &amp;quot;max-age=63072000; includeSubdomains; preload&amp;quot;; add_header X-Frame-Options &amp;quot;DENY&amp;quot;;  说明：
+dhparam.pem可以使用openssl dhparam -out dhparam.pem 4096命令生成，这个命令会执行很长时间，也可以将字节数改为2048
+          
+        
+        </description>
     </item>
     
     <item>
       <title>使用免费Let&#39;s Encrypt证书</title>
-      <link>https://unixetc.com/post/use-letsencrypt-free-ssl-certificate/</link>
+      <link>/post/use-letsencrypt-free-ssl-certificate/</link>
       <pubDate>Tue, 15 Dec 2015 22:38:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/use-letsencrypt-free-ssl-certificate/</guid>
-      <description>&lt;p&gt;在此介绍如何使用Let&amp;rsquo;s Encrypt的免费SSL证书，需要在有管理权限的VPS上操作，然后参考以下方法自签域名证书。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;git clone https://github.com/letsencrypt/letsencrypt.git
-cd letsencrypt
-mkdir -p /home/webroot/.well-known/acme-challenge  #/home/webroot为网站目录
-./letsencrypt-auto certonly --email me@alair.cn -d alair.cn,www.alair.cn --webroot -w /home/webroot --agree-tos #注意email、域名、和网站目录
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;签发成功后，会提示如&lt;code&gt;/etc/letsencrypt/live/www.alair.cn/fullchain.pem;&lt;/code&gt;的证书路径信息。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;IMPORTANT NOTES:
-- Congratulations! Your certificate and chain have been saved at
-/etc/letsencrypt/live/www.alair.cn/fullchain.pem. Your cert will
-expire on 2016-03-14. To obtain a new version of the certificate in
-the future, simply run Let&#39;s Encrypt again.
-- If like Let&#39;s Encrypt, please consider supporting our work by:
-
-Donating to ISRG / Let&#39;s Encrypt:   https://letsencrypt.org/donate
-Donating to EFF:                    https://eff.org/donate-le
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;接下来在&lt;strong&gt;Nginx&lt;/strong&gt;中配置使用，如下代码&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;... ...
-listen 443 ssl http2; 
-server_name www.alair.cn;   
-index index.html index.htm default.html default.htm;
-root /home/webroot;           
-ssl_certificate /etc/letsencrypt/live/www.alair.cn/fullchain.pem;  
-ssl_certificate_key /etc/letsencrypt/live/www.alair.cn/privkey.pem; 
-ssl_ciphers &amp;quot;EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH&amp;quot;;
-ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-ssl_prefer_server_ciphers on;
-ssl_session_cache shared:SSL:10m;
-... ...
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;注意:&lt;strong&gt;我在第一次签发时候提示无法连接DV服务器，经过排查是由于DNS原因，当时用的DNS服务器是&lt;/strong&gt;Dnspod&lt;/strong&gt;，更换为&lt;strong&gt;dns.he.net&lt;/strong&gt;后正常了。&lt;/p&gt;
-</description>
+      <guid>/post/use-letsencrypt-free-ssl-certificate/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          在此介绍如何使用Let&amp;rsquo;s Encrypt的免费SSL证书，需要在有管理权限的VPS上操作，然后参考以下方法自签域名证书。
+git clone https://github.com/letsencrypt/letsencrypt.git cd letsencrypt mkdir -p /home/webroot/.well-known/acme-challenge #/home/webroot为网站目录 ./letsencrypt-auto certonly --email me@alair.cn -d alair.cn,www.alair.cn --webroot -w /home/webroot --agree-tos #注意email、域名、和网站目录  签发成功后，会提示如/etc/letsencrypt/live/www.alair.cn/fullchain.pem;的证书路径信息。
+IMPORTANT NOTES: - Congratulations! Your certificate and chain have been saved at /etc/letsencrypt/live/www.alair.cn/fullchain.pem. Your cert will expire on 2016-03-14. To obtain a new version of the certificate in the future, simply run Let&#39;s Encrypt again. - If like Let&#39;s Encrypt, please consider supporting our work by: Donating to ISRG / Let&#39;s Encrypt: https://letsencrypt.
+          
+        
+        </description>
     </item>
     
     <item>
       <title>StartSSL免费证书与Nginx配置</title>
-      <link>https://unixetc.com/post/startssl-and-nginx/</link>
+      <link>/post/startssl-and-nginx/</link>
       <pubDate>Wed, 14 Oct 2015 12:13:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/startssl-and-nginx/</guid>
-      <description>&lt;h3 id=&#34;注册startssl&#34;&gt;注册StartSSL&lt;/h3&gt;
-&lt;p&gt;打开&lt;a href=&#34;https://www.startssl.com/&#34;&gt;https://www.startssl.com/&lt;/a&gt;，点击&lt;strong&gt;Sign-up&lt;/strong&gt;开始注册&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/sign-up-startssl.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;参考上图填写注册信息，然后&lt;strong&gt;Continue&lt;/strong&gt;，会有如下提示，系统会发送验证码到你的注册邮箱&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/CR.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;检查注册邮箱，将收到的验证码填写提交，然后会出现如下提示，等待审核。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/Additional_Verification_Required.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;审核通过后，会收到如下提示邮件，点击其中连接，然后输入邮箱中的验证码完成注册&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/StartSSL_Account_Request.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/complete_registration.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;安装证书&#34;&gt;安装证书&lt;/h3&gt;
-&lt;p&gt;接下来创建私匙&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/gpk.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;安装证书&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/install_cert.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;安装成功后会有如下提示&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/cif.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/fic.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;验证域名&#34;&gt;验证域名&lt;/h3&gt;
-&lt;p&gt;接下来验证域名，点击&lt;strong&gt;Validations Wizard&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/select_Validation.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;填写域名&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/enter_domain_name.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;选择验证邮件地址&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/select_Validation_email.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;按照提示输入邮箱接收到的验证码完成验证。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/complete_Validation_domain.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;创建证书&#34;&gt;创建证书&lt;/h3&gt;
-&lt;p&gt;选择&lt;strong&gt;Certificates Wizard&lt;/strong&gt;，证书目标选择&lt;strong&gt;Web Server SSL/TLS Certificate&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/Select_Certificate_Purpose.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;接下来新建私匙&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/Generate_Private_key.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;点击&lt;strong&gt;Skip&lt;/strong&gt;跳过系统建立步骤，我们自己在VPS上建立CSR文件，参考下图通过&lt;code&gt;openssl&lt;/code&gt;命令建立CSR文件&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/create_scr_file.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;注意，为了便于后期安装配置方便，建议密码置空&lt;/p&gt;
-&lt;p&gt;完成后，&lt;code&gt;cat&lt;/code&gt;出建立好的&lt;strong&gt;ciuxsss.csr&lt;/strong&gt;内容，粘贴提交&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/Submit_Certificate_Request.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/Certificate_Request_Received.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;接下来添加域名&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/add_domains.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/add_sub_domain.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/Ready_Processing_Certificate.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;接下来将文本框中的内容保存为一个**.crt**文件&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/Save_Certificate.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;配置nginx&#34;&gt;配置Nginx&lt;/h3&gt;
-&lt;p&gt;贴出我的配置文件，大家参考一下&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;server {
-    listen 80;
-    location /{
-    return 301 https://$host$request_uri;
-    }
-}
-
-server
-    {
-        listen 443;
-        #listen 80;
-        #listen [::]:80;
-        server_name ciux.org;
-        index index.html index.htm index.php default.html default.htm default.php;
-        root  /home/ciux/compiled;
-
-ssl    on;
-ssl_certificate    /home/bk/ssl/ciuxsss.crt;
-ssl_certificate_key     /home/bk/ssl/ciuxsss.key;
-ssl_session_timeout 5m;
-
-ssl_protocols SSLv2 SSLv3 TLSv1;
-ssl_ciphers ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP;
-ssl_prefer_server_ciphers   on;
-
-……
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;其中第一个Server是将所有80端口的http访问301重定向到443端口的https访问。&lt;/p&gt;
-&lt;p&gt;如果发现浏览器提示证书不被信任，那就需要合并Startssl的根证书&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;wget http://cert.startssl.com/certs/sub.class1.server.ca.pem  
-cat sub.class1.server.ca.pem &amp;gt;&amp;gt; ciuxsss.crt&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <guid>/post/startssl-and-nginx/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          注册StartSSL 打开https://www.startssl.com/，点击Sign-up开始注册
+参考上图填写注册信息，然后Continue，会有如下提示，系统会发送验证码到你的注册邮箱
+检查注册邮箱，将收到的验证码填写提交，然后会出现如下提示，等待审核。
+审核通过后，会收到如下提示邮件，点击其中连接，然后输入邮箱中的验证码完成注册
+安装证书 接下来创建私匙
+安装证书
+安装成功后会有如下提示
+验证域名 接下来验证域名，点击Validations Wizard
+填写域名
+选择验证邮件地址
+按照提示输入邮箱接收到的验证码完成验证。
+创建证书 选择Certificates Wizard，证书目标选择Web Server SSL/TLS Certificate
+接下来新建私匙
+点击Skip跳过系统建立步骤，我们自己在VPS上建立CSR文件，参考下图通过openssl命令建立CSR文件
+注意，为了便于后期安装配置方便，建议密码置空
+完成后，cat出建立好的ciuxsss.csr内容，粘贴提交
+接下来添加域名
+接下来将文本框中的内容保存为一个**.crt**文件
+配置Nginx 贴出我的配置文件，大家参考一下
+server { listen 80; location /{ return 301 https://$host$request_uri; } } server { listen 443; #listen 80; #listen [::]:80; server_name ciux.org; index index.html index.htm index.php default.html default.htm default.php; root /home/ciux/compiled; ssl on; ssl_certificate /home/bk/ssl/ciuxsss.crt; ssl_certificate_key /home/bk/ssl/ciuxsss.key; ssl_session_timeout 5m; ssl_protocols SSLv2 SSLv3 TLSv1; ssl_ciphers ALL:!
+          
+        
+        </description>
     </item>
     
     <item>
       <title>Gandi免费SSL证书使用方法</title>
-      <link>https://unixetc.com/post/gandi-free-ssl-certificate-usage/</link>
+      <link>/post/gandi-free-ssl-certificate-usage/</link>
       <pubDate>Thu, 24 Sep 2015 19:23:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/gandi-free-ssl-certificate-usage/</guid>
-      <description>&lt;p&gt;首先澄清此文中的&lt;strong&gt;免费&lt;/strong&gt;不是真的免费，而是新注册或转移域名到Gandi，都可以获得标准版SSL证书一年的免费使用。&lt;/p&gt;
-&lt;p&gt;符合以上条件的话，可以进行下面操作了！&lt;/p&gt;
-&lt;p&gt;在Gandi上购买SSL证书，选择标准版，在结算的时候系统会自动判断是否免单，正常情况下会0元结单，完成后接着配置SSL证书。&lt;/p&gt;
-&lt;p&gt;首先提交CSR，这里需要自己生产CSR。&lt;/p&gt;
-&lt;p&gt;在此以&lt;strong&gt;3c.lc&lt;/strong&gt;域名为例，在Ubuntu中操作。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;openssl req -nodes -newkey rsa:2048 -sha1 -keyout 3clc.key -out 3clc.csr
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;然后根据提示填写以下内容：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Country Name (2 letter code) [AU]:                          #国家代码，中国为CN&lt;/p&gt;
-&lt;p&gt;State or Province Name (full name) [Some-State]:            #省份&lt;/p&gt;
-&lt;p&gt;Locality Name (eg, city) []:                                #城市&lt;/p&gt;
-&lt;p&gt;Organization Name (eg, company) [Internet Widgits Pty Ltd]: #组织名&lt;/p&gt;
-&lt;p&gt;Organizational Unit Name (eg, section) []:                  #部门名&lt;/p&gt;
-&lt;p&gt;Common Name (e.g. server FQDN or YOUR name) []:3c.lc        #注意，这里需要填写你的域名。&lt;/p&gt;
-&lt;p&gt;Email Address []:2b@3c.lc                                   #邮箱&lt;/p&gt;
-&lt;p&gt;Please enter the following &amp;lsquo;extra&amp;rsquo; attributes&lt;/p&gt;
-&lt;p&gt;to be sent with your certificate request&lt;/p&gt;
-&lt;p&gt;A challenge password []:                                    #注意，为了后面方便配置nginx，建议密码置空。&lt;/p&gt;
-&lt;p&gt;An optional company name []:                                #扩展组织名&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;完成后，就会生成&lt;strong&gt;3clc.key&lt;/strong&gt;和&lt;strong&gt;3clc.csr&lt;/strong&gt;两个文件。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;cat 3clc.csr
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;将显示的文件内容粘贴到Gandi提交。&lt;/p&gt;
-&lt;p&gt;接下来验证域名所有者权限，有三种方法，建议使用email验证，比较方便。&lt;/p&gt;
-&lt;p&gt;下来是凭证验证，这个得等待系统完成,完成后即可获得SSL证书一枚。&lt;/p&gt;
-&lt;p&gt;至于如何在&lt;strong&gt;Nginx&lt;/strong&gt;中使用SSL，可参考&lt;a href=&#34;https://unixetc.com/post/Nginx-configuration-SSL-certificate/&#34;&gt;Nginx配置SSL证书&lt;/a&gt;&lt;/p&gt;
-</description>
+      <guid>/post/gandi-free-ssl-certificate-usage/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          首先澄清此文中的免费不是真的免费，而是新注册或转移域名到Gandi，都可以获得标准版SSL证书一年的免费使用。
+符合以上条件的话，可以进行下面操作了！
+在Gandi上购买SSL证书，选择标准版，在结算的时候系统会自动判断是否免单，正常情况下会0元结单，完成后接着配置SSL证书。
+首先提交CSR，这里需要自己生产CSR。
+在此以3c.lc域名为例，在Ubuntu中操作。
+openssl req -nodes -newkey rsa:2048 -sha1 -keyout 3clc.key -out 3clc.csr  然后根据提示填写以下内容：
+ Country Name (2 letter code) [AU]: #国家代码，中国为CN
+State or Province Name (full name) [Some-State]: #省份
+Locality Name (eg, city) []: #城市
+Organization Name (eg, company) [Internet Widgits Pty Ltd]: #组织名
+Organizational Unit Name (eg, section) []: #部门名
+Common Name (e.g. server FQDN or YOUR name) []:3c.lc #注意，这里需要填写你的域名。
+Email Address []:2b@3c.lc #邮箱
+Please enter the following &amp;lsquo;extra&amp;rsquo; attributes
+          
+        
+        </description>
     </item>
     
     <item>
       <title>安装Nginx和ngx_pagespeed</title>
-      <link>https://unixetc.com/post/install-nginx-and-ngx_pagespeed-on-vps/</link>
+      <link>/post/install-nginx-and-ngx_pagespeed-on-vps/</link>
       <pubDate>Fri, 24 Jul 2015 17:24:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/install-nginx-and-ngx_pagespeed-on-vps/</guid>
-      <description>&lt;p&gt;VPS配置:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Ubuntu 14.04 x86
-RAM 512M
-SWAP 64M
-DISK 5G
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h4 id=&#34;准备工作&#34;&gt;准备工作&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;sudo apt-get update&amp;amp;&amp;amp;apt-get upgrade -y
-sudo apt-get install build-essential zlib1g-dev libpcre3 libpcre3-dev unzip libssl-dev -y
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;下载ngx_pagespeed&#34;&gt;下载ngx_pagespeed&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;cd
-NPS_VERSION=1.9.32.4
-wget https://github.com/pagespeed/ngx_pagespeed/archive/release-${NPS_VERSION}-beta.zip
-unzip release-${NPS_VERSION}-beta.zip
-cd ngx_pagespeed-release-${NPS_VERSION}-beta/
-wget https://dl.google.com/dl/page-speed/psol/${NPS_VERSION}.tar.gz
-tar -xzvf ${NPS_VERSION}.tar.gz 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;安装nginx&#34;&gt;安装Nginx&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;cd
-groupadd www
-useradd -s /sbin/nologin -g www www
-NGINX_VERSION=1.8.0
-wget http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz
-tar -xvzf nginx-${NGINX_VERSION}.tar.gz
-cd nginx-${NGINX_VERSION}/
-./configure \
---user=www \
---group=www  \
---prefix=/usr/local/nginx \
---with-http_stub_status_module \
---with-http_ssl_module \
---with-http_spdy_module \
---with-http_gzip_static_module \
---with-http_sub_module \
---add-module=$HOME/ngx_pagespeed-release-${NPS_VERSION}-beta \
-
-sudo make
-sudo make install
-sudo ln -sf /usr/local/nginx/sbin/nginx /usr/bin/nginx
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;配置&lt;code&gt;/etc/init.d/nginx&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo wget https://raw.github.com/JasonGiedymin/nginx-init-ubuntu/master/nginx -O /etc/init.d/nginx
-sudo chmod +x /etc/init.d/nginx
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;管理Nginx服务&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;service nginx {start|stop|restart|force-reload|reload|status|configtest|quietupgrade|terminate|destroy}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;测试安装结果&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;root@bwgvps:~# nginx -t
-nginx: the configuration file /usr/local/nginx/conf/nginx.conf syntax is ok
-nginx: configuration file /usr/local/nginx/conf/nginx.conf test is successful
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;配置ngx_pagespeed&#34;&gt;配置ngx_pagespeed&lt;/h3&gt;
-&lt;p&gt;编辑Nginx的配置文件(/usr/local/nginx/conf/nginx.conf)&lt;/p&gt;
-&lt;p&gt;在server段内添加&lt;code&gt;include gp.conf&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;在&lt;code&gt;/usr/local/nginx/conf/&lt;/code&gt;内新建&lt;code&gt;gp.conf&lt;/code&gt;,内容如下:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;pagespeed on;
-pagespeed FileCachePath /usr/local/nginx/pagespeed/;
-pagespeed RewriteLevel PassThrough;
-pagespeed EnableFilters collapse_whitespace;
-pagespeed EnableFilters canonicalize_javascript_libraries;
-pagespeed EnableFilters combine_css;
-pagespeed EnableFilters combine_javascript;
-pagespeed EnableFilters elide_attributes;
-pagespeed EnableFilters extend_cache;
-pagespeed EnableFilters flatten_css_imports;
-pagespeed CssFlattenMaxBytes 5120;
-pagespeed EnableFilters lazyload_images;
-pagespeed EnableFilters rewrite_javascript;
-pagespeed EnableFilters rewrite_images;
-pagespeed EnableFilters insert_dns_prefetch;
-pagespeed EnableFilters prioritize_critical_css;	
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Nginx reload后，用&lt;code&gt;curl&lt;/code&gt;验证是否开启&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;root@bwgvps:~# curl -I 127.0.0.1
-HTTP/1.1 200 OK
-Server: nginx/1.8.0
-Content-Type: text/html
-Connection: keep-alive
-Date: Sat, 07 Feb 1970 00:54:49 GMT
-X-Page-Speed: 1.9.32.4-7251
-Cache-Control: max-age=0, no-cache
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;以上X-Page-Speed代表已经OK!&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;参考:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://developers.google.com/speed/pagespeed/module/build_ngx_pagespeed_from_source&#34;&gt;https://developers.google.com/speed/pagespeed/module/build_ngx_pagespeed_from_source&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/JasonGiedymin/nginx-init-ubuntu&#34;&gt;https://github.com/JasonGiedymin/nginx-init-ubuntu&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://lnmp.org&#34;&gt;http://lnmp.org&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <guid>/post/install-nginx-and-ngx_pagespeed-on-vps/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          VPS配置:
+Ubuntu 14.04 x86 RAM 512M SWAP 64M DISK 5G  准备工作 sudo apt-get update&amp;amp;&amp;amp;apt-get upgrade -y sudo apt-get install build-essential zlib1g-dev libpcre3 libpcre3-dev unzip libssl-dev -y  下载ngx_pagespeed cd NPS_VERSION=1.9.32.4 wget https://github.com/pagespeed/ngx_pagespeed/archive/release-${NPS_VERSION}-beta.zip unzip release-${NPS_VERSION}-beta.zip cd ngx_pagespeed-release-${NPS_VERSION}-beta/ wget https://dl.google.com/dl/page-speed/psol/${NPS_VERSION}.tar.gz tar -xzvf ${NPS_VERSION}.tar.gz  安装Nginx cd groupadd www useradd -s /sbin/nologin -g www www NGINX_VERSION=1.8.0 wget http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz tar -xvzf nginx-${NGINX_VERSION}.tar.gz cd nginx-${NGINX_VERSION}/ ./configure \ --user=www \ --group=www \ --prefix=/usr/local/nginx \ --with-http_stub_status_module \ --with-http_ssl_module \ --with-http_spdy_module \ --with-http_gzip_static_module \ --with-http_sub_module \ --add-module=$HOME/ngx_pagespeed-release-${NPS_VERSION}-beta \ sudo make sudo make install sudo ln -sf /usr/local/nginx/sbin/nginx /usr/bin/nginx  配置/etc/init.
+          
+        
+        </description>
     </item>
     
     <item>
       <title>将Nginx更换为H2O</title>
-      <link>https://unixetc.com/post/install-h2o-on-bandwagon-vps/</link>
+      <link>/post/install-h2o-on-bandwagon-vps/</link>
       <pubDate>Tue, 21 Jul 2015 17:31:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/install-h2o-on-bandwagon-vps/</guid>
-      <description>&lt;h3 id=&#34;安装必须的软件&#34;&gt;安装必须的软件&lt;/h3&gt;
-&lt;p&gt;预备工具软件&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#apt-get install autoconf automake m4 build-essential
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;libssl-dev &lt;strong&gt;必选&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#apt-get install openssl libssl-dev
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;以下为可选包，可自行搜索安装&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;libuv&lt;/li&gt;
-&lt;li&gt;libyaml&lt;/li&gt;
-&lt;li&gt;wslay&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;安装h2o&#34;&gt;安装H2O&lt;/h3&gt;
-&lt;p&gt;下载安装最新版h2o  &lt;a href=&#34;https://github.com/h2o/h2o/releases&#34;&gt;https://github.com/h2o/h2o/releases&lt;/a&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#wget https://github.com/h2o/h2o/archive/v1.4.1.tar.gz
-#tar zxf v1.4.1.tar.gz
-#cd h2o-1.4.1
-#cmake -DWITH_BUNDLED_SSL=on .
-#make
-#sudo make install
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;编辑h2o站点配置文件&#34;&gt;编辑H2O站点配置文件&lt;/h3&gt;
-&lt;p&gt;以下是一个简单的http与https配置文件，可自行参考修改&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;hosts:
-&amp;quot;www.example.com&amp;quot;:
-    listen:
-    port: 80
-    listen:
-    port: 443
-    ssl:
-        certificate-file: /path/to/server-certificate.crt
-        key-file:         /path/to/private-key.crt
-    paths:
-    &amp;quot;/&amp;quot;:
-        file.dir: /path/to/doc-root
-
-access-log: /path/to/the/access-log
-error-log: /path/to/the/error-log
-pid-file: /path/to/the/pid-file
-http2-reprioritize-blocking-assets: ON   # performance tuning option
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;启动H2O&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#h2o h2o.conf
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;以daemon模式启动&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#h2o -m daemon -c h2o.conf&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <guid>/post/install-h2o-on-bandwagon-vps/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          安装必须的软件 预备工具软件
+#apt-get install autoconf automake m4 build-essential  libssl-dev 必选
+#apt-get install openssl libssl-dev  以下为可选包，可自行搜索安装
+ libuv libyaml wslay  安装H2O 下载安装最新版h2o https://github.com/h2o/h2o/releases
+#wget https://github.com/h2o/h2o/archive/v1.4.1.tar.gz #tar zxf v1.4.1.tar.gz #cd h2o-1.4.1 #cmake -DWITH_BUNDLED_SSL=on . #make #sudo make install  编辑H2O站点配置文件 以下是一个简单的http与https配置文件，可自行参考修改
+hosts: &amp;quot;www.example.com&amp;quot;: listen: port: 80 listen: port: 443 ssl: certificate-file: /path/to/server-certificate.crt key-file: /path/to/private-key.crt paths: &amp;quot;/&amp;quot;: file.dir: /path/to/doc-root access-log: /path/to/the/access-log error-log: /path/to/the/error-log pid-file: /path/to/the/pid-file http2-reprioritize-blocking-assets: ON # performance tuning option  启动H2O
+          
+        
+        </description>
     </item>
     
     <item>
       <title>Nginx配置SSL证书</title>
-      <link>https://unixetc.com/post/nginx-configuration-ssl-certificate/</link>
+      <link>/post/nginx-configuration-ssl-certificate/</link>
       <pubDate>Mon, 25 May 2015 15:25:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/nginx-configuration-ssl-certificate/</guid>
-      <description>&lt;h3 id=&#34;申请wosign免费ssl证书&#34;&gt;申请Wosign免费SSL证书&lt;/h3&gt;
-&lt;p&gt;申请地址: &lt;a href=&#34;https://www.wosign.com/products/free_ssl.htm&#34;&gt;https://www.wosign.com/products/free_ssl.htm&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;申请成功后，收到类似于&lt;strong&gt;aquan.me_sha256_cn.zip&lt;/strong&gt;的文件,解压后包含如下文件&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;for Apache.zip
-for IIS.zip
-for Nginx.zip
-for Other Server.zip
-for Tomcat.zip
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;其中&lt;strong&gt;for Nginx.zip&lt;/strong&gt;中包含如下两个文件，将其上传到VPS自定义位置。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;1_aquan.me_bundle.crt&lt;/li&gt;
-&lt;li&gt;2_aquan.me.key&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;配置nginx&#34;&gt;配置Nginx&lt;/h3&gt;
-&lt;p&gt;不多说了，直接贴代码:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#### Add Wosign SSL Start ####
-listen 443;
-ssl on;
-ssl_certificate /usr/local/nginx/ssl/ssl.crt;
-ssl_certificate_key /usr/local/nginx/ssl/ssl.key;
-ssl_session_timeout 5m;
-ssl_protocols SSLv2 SSLv3 TLSv1;
-ssl_ciphers ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP;
-ssl_prefer_server_ciphers on;
-#### Add Wosign SSL End ####
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;将以上代码插入&lt;code&gt;listen 80;&lt;/code&gt;之后。&lt;/p&gt;
-&lt;p&gt;重启Nginx生效&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;/etc/init.d/nginx restart
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;以上设置完成，就可以通过https来浏览网站，同时http也可以浏览。&lt;/p&gt;
-&lt;h3 id=&#34;合并wosign根证书&#34;&gt;合并Wosign根证书&lt;/h3&gt;
-&lt;p&gt;有的浏览器会提示不信任证书，可以通过合并Wosign根证书来解决&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;wget https://www.wosign.com/Root/Bundle_DV_St.crt  
-cat Bundle_DV_St.crt &amp;gt;&amp;gt; /usr/local/nginx/ssl/ssl.crt
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;设置http跳转https&#34;&gt;设置http跳转https&lt;/h3&gt;
-&lt;p&gt;如果想将http跳转至https，可以进行如下设置:&lt;/p&gt;
-&lt;p&gt;将原&lt;code&gt;server&lt;/code&gt;字段中的&lt;code&gt;listen 80;&lt;/code&gt;注释掉，新添加&lt;code&gt;server&lt;/code&gt;专门监听80端口进行跳转&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;server { 
-listen 80; 
-server_name ciux.org www.ciux.org; 
-rewrite ^/(.*) https://$server_name/$1 permanent; 
-}&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <guid>/post/nginx-configuration-ssl-certificate/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          申请Wosign免费SSL证书 申请地址: https://www.wosign.com/products/free_ssl.htm
+申请成功后，收到类似于aquan.me_sha256_cn.zip的文件,解压后包含如下文件
+for Apache.zip for IIS.zip for Nginx.zip for Other Server.zip for Tomcat.zip  其中for Nginx.zip中包含如下两个文件，将其上传到VPS自定义位置。
+ 1_aquan.me_bundle.crt 2_aquan.me.key  配置Nginx 不多说了，直接贴代码:
+#### Add Wosign SSL Start #### listen 443; ssl on; ssl_certificate /usr/local/nginx/ssl/ssl.crt; ssl_certificate_key /usr/local/nginx/ssl/ssl.key; ssl_session_timeout 5m; ssl_protocols SSLv2 SSLv3 TLSv1; ssl_ciphers ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP; ssl_prefer_server_ciphers on; #### Add Wosign SSL End ####  将以上代码插入listen 80;之后。
+重启Nginx生效
+/etc/init.d/nginx restart  以上设置完成，就可以通过https来浏览网站，同时http也可以浏览。
+合并Wosign根证书 有的浏览器会提示不信任证书，可以通过合并Wosign根证书来解决
+wget https://www.wosign.com/Root/Bundle_DV_St.crt cat Bundle_DV_St.crt &amp;gt;&amp;gt; /usr/local/nginx/ssl/ssl.crt  设置http跳转https 如果想将http跳转至https，可以进行如下设置:
+          
+        
+        </description>
     </item>
     
     <item>
       <title>树莓派与DNSPod动态域名解析</title>
-      <link>https://unixetc.com/post/raspberry-pi-and-dnspod-dynamic-dns/</link>
+      <link>/post/raspberry-pi-and-dnspod-dynamic-dns/</link>
       <pubDate>Mon, 03 Mar 2014 03:03:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/raspberry-pi-and-dnspod-dynamic-dns/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;所需条件&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Raspberry Pi&lt;/li&gt;
-&lt;li&gt;TP-Link路由器&lt;/li&gt;
-&lt;li&gt;DNSPod帐户&lt;/li&gt;
-&lt;li&gt;域名&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;配置路由器&#34;&gt;配置路由器&lt;/h3&gt;
-&lt;p&gt;进入路由器的&lt;strong&gt;DHCP服务器&lt;/strong&gt;-&amp;gt;&lt;strong&gt;静态地址分配&lt;/strong&gt;菜单，为Raspberry Pi分配静态IP地址，例如：&lt;code&gt;192.168.1.200&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;进入路由器的&lt;strong&gt;安全功能&lt;/strong&gt;-&amp;gt;&lt;strong&gt;远端WEB管理&lt;/strong&gt;菜单，设置&lt;code&gt;WEB管理端口&lt;/code&gt;为一个&lt;strong&gt;非80&lt;/strong&gt;值，例如82&lt;/p&gt;
-&lt;p&gt;进入路由器的&lt;strong&gt;转发规则&lt;/strong&gt;-&amp;gt;&lt;strong&gt;DMZ主机&lt;/strong&gt;菜单，将&lt;code&gt;DMZ主机IP地址&lt;/code&gt;设置为Raspberry Pi的ip地址，然后启用保存。&lt;/p&gt;
-&lt;h3 id=&#34;设置dnspod动态域名解析&#34;&gt;设置DNSPod动态域名解析&lt;/h3&gt;
-&lt;p&gt;首先登录DNSPod网页管理域名，将二级域名&lt;code&gt;www&lt;/code&gt; 的&lt;code&gt;A记录&lt;/code&gt;解析到路由器外网IP(可通过路由器管理首页查询，或者通过浏览ip138.com来获得)&lt;/p&gt;
-&lt;p&gt;注：一级域名请解析**@**的A记录。&lt;/p&gt;
-&lt;p&gt;下载&lt;strong&gt;DNSPod官方客户端Lite&lt;/strong&gt; &lt;a href=&#34;https://support.dnspod.cn/Support/api&#34;&gt;https://support.dnspod.cn/Support/api&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;解压后双击打开登录，从右侧信息列表中也可以看到本机最新IP，点击相应域名后的&lt;strong&gt;动态解析&lt;/strong&gt;按钮，在动态解析设置中右键点击相应的动态记录启用即可，关闭&lt;strong&gt;DNSPod官方客户端Lite&lt;/strong&gt;。&lt;/p&gt;
-&lt;h3 id=&#34;设置raspberry-pi&#34;&gt;设置Raspberry Pi&lt;/h3&gt;
-&lt;p&gt;安装Web服务器软件(Nginx)&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#apt-get install nginx
-#/etc/init.d/nginx start
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;内网可以通过浏览`http://192.168.1.129&amp;quot;来检查Nginx是否正常运行。&lt;/p&gt;
-&lt;p&gt;浏览&lt;a href=&#34;https://gist.githubusercontent.com/chuangbo/833369&#34;&gt;https://gist.githubusercontent.com/chuangbo/833369&lt;/a&gt;，下载动态域名解析脚本(pypod.py)&lt;/p&gt;
-&lt;p&gt;编辑&lt;code&gt;pypod.py&lt;/code&gt;修改以下内容：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;login_email=&amp;quot;email&amp;quot;, # DSNPod帐户邮箱
-login_password=&amp;quot;password&amp;quot;, # DSNPod帐户密码
-domain_id=100, # 域名id
-record_id=100, # 记录id
-sub_domain=&amp;quot;www&amp;quot;, # 子域名
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;其中&lt;strong&gt;域名id&lt;/strong&gt;与&lt;strong&gt;记录id&lt;/strong&gt;可以通过以下命令获取：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;curl -k https://dnsapi.cn/Domain.List -d &amp;quot;login_email=xxx&amp;amp;login_password=xxx&amp;quot;
-curl -k https://dnsapi.cn/Record.List -d &amp;quot;login_email=xxx&amp;amp;login_password=xxx&amp;amp;domain_id=xxx&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;提示：如果你使用了&lt;strong&gt;www&lt;/strong&gt;子域名，则需要获取&lt;strong&gt;www&lt;/strong&gt;的记录id，如果使用一级域名(@)，则需要获取**@**的记录id。&lt;/p&gt;
-&lt;p&gt;编辑完&lt;code&gt;pypod.py&lt;/code&gt;保存退出，使用以下命令运行：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#python pypod.py
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;现在可以通过域名来浏览Raspberry Pi上的Web内容了。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;pypod.py开机运行&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;添加&lt;code&gt;/usr/bin/python /home/pi/pypod.py&lt;/code&gt;到**/etc/rc.local**。&lt;/p&gt;
-</description>
+      <guid>/post/raspberry-pi-and-dnspod-dynamic-dns/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          所需条件
+ Raspberry Pi TP-Link路由器 DNSPod帐户 域名  配置路由器 进入路由器的DHCP服务器-&amp;gt;静态地址分配菜单，为Raspberry Pi分配静态IP地址，例如：192.168.1.200
+进入路由器的安全功能-&amp;gt;远端WEB管理菜单，设置WEB管理端口为一个非80值，例如82
+进入路由器的转发规则-&amp;gt;DMZ主机菜单，将DMZ主机IP地址设置为Raspberry Pi的ip地址，然后启用保存。
+设置DNSPod动态域名解析 首先登录DNSPod网页管理域名，将二级域名www 的A记录解析到路由器外网IP(可通过路由器管理首页查询，或者通过浏览ip138.com来获得)
+注：一级域名请解析**@**的A记录。
+下载DNSPod官方客户端Lite https://support.dnspod.cn/Support/api
+解压后双击打开登录，从右侧信息列表中也可以看到本机最新IP，点击相应域名后的动态解析按钮，在动态解析设置中右键点击相应的动态记录启用即可，关闭DNSPod官方客户端Lite。
+设置Raspberry Pi 安装Web服务器软件(Nginx)
+#apt-get install nginx #/etc/init.d/nginx start  内网可以通过浏览`http://192.168.1.129&amp;quot;来检查Nginx是否正常运行。
+浏览https://gist.githubusercontent.com/chuangbo/833369，下载动态域名解析脚本(pypod.py)
+编辑pypod.py修改以下内容：
+login_email=&amp;quot;email&amp;quot;, # DSNPod帐户邮箱 login_password=&amp;quot;password&amp;quot;, # DSNPod帐户密码 domain_id=100, # 域名id record_id=100, # 记录id sub_domain=&amp;quot;www&amp;quot;, # 子域名  其中域名id与记录id可以通过以下命令获取：
+curl -k https://dnsapi.cn/Domain.List -d &amp;quot;login_email=xxx&amp;amp;login_password=xxx&amp;quot; curl -k https://dnsapi.cn/Record.List -d &amp;quot;login_email=xxx&amp;amp;login_password=xxx&amp;amp;domain_id=xxx&amp;quot;  提示：如果你使用了www子域名，则需要获取www的记录id，如果使用一级域名(@)，则需要获取**@**的记录id。
+编辑完pypod.py保存退出，使用以下命令运行：
+#python pypod.py  现在可以通过域名来浏览Raspberry Pi上的Web内容了。
+pypod.py开机运行
+添加/usr/bin/python /home/pi/pypod.
+          
+        
+        </description>
     </item>
     
     <item>
       <title>LNMP使用实例</title>
-      <link>https://unixetc.com/post/lnmp-usages/</link>
+      <link>/post/lnmp-usages/</link>
       <pubDate>Fri, 23 Mar 2012 12:32:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/lnmp-usages/</guid>
-      <description>&lt;h3 id=&#34;安装lnmp&#34;&gt;安装LNMP&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;更新系统&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#yum check-update
-#yum update
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;安装Screen&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#yum install screen
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;开始安装Lnmp&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#screen -S lnmp
-#wget -c http://soft.vpser.net/lnmp/lnmp0.8.tar.gz //最新版请查阅lnmp官网
-#tar zxvf lnmp0.8.tar.gz
-#./lnmp0.8/centos.sh | tee lnmp.log //输出log文件，以备出错时查阅
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;接下来按照提示设定域名和MysQL密码，程序会自动下载相关程序，而后编译安装&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;安装PureFTP&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#./lnmp0.8/pureftp.sh
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;按提示输入MySQL和Ftp管理员密码，安装完成后可以通过&lt;code&gt;http://vpsip/ftp/&lt;/code&gt;来登录管理ftp帐号&lt;/p&gt;
-&lt;h3 id=&#34;使用lnmp&#34;&gt;使用Lnmp&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;添加虚拟主机&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#/root/vhost.sh
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;按照提示填入域名、目录、rewrite规则文件，如下所示：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;root@buyvm256:~#/root/vhost.sh
-=========================================================================
-Add Virtual Host for LNMP V0.9  ,  Written by Licess 
-=========================================================================
-LNMP is a tool to auto-compile &amp;amp; install Nginx+MySQL+PHP on Linux 
-This script is a tool to add virtual host for nginx 
-For more information please visit http://www.lnmp.org/
-
-=========================================================================
-Please input domain:  //添加域名
-(Default domain: www.lnmp.org):xxx.com
-===========================
-domain=xxx.com
-===========================
-Do you want to add more domain name? (y/n)  //添加更多域名
-y
-Type domainname,example(bbs.vpser.net forums.vpser.net luntan.vpser.net):
-www.xxx.com
-===========================
-domain list=www.xxx.com
-===========================
-Please input the directory for the domain:xxx.com :  //网站目录
-(Default directory: /home/wwwroot/xxx.com):
-===========================
-Virtual Host Directory=/home/wwwroot/xxx.com
-===========================
-===========================
-Allow Rewrite rule? (y/n)  //重写规则
-===========================
-y
-Please input the rewrite of programme :
-wordpress,discuz,typecho,sablog,dabr rewrite was exist.
-(Default rewrite: other):wordpress  //选择重写规则
-===========================
-You choose rewrite=wordpress
-===========================
-===========================
-Allow access_log? (y/n)  //是否记录log
-===========================
-n
-
-Press any key to start create virtul host...
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;然后，登录&lt;code&gt;http://vpsip/ftp/&lt;/code&gt;添加ftp帐号，&lt;code&gt;http://vpsip/phpmyadmin/&lt;/code&gt;编辑数据库&lt;/p&gt;
-&lt;p&gt;**注意：**开通ftp时，记着添加到www用户组&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;修改虚拟主机配置&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;创建好的虚拟主机，配置文件目录为/wp-content/local/nginx/conf/vhost/，文件名为domain.conf，如下所示：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;aquan@buyvm256:~$ cat /usr/local/nginx/conf/vhost/xxx.com.conf 
-
-server
-        {
-                listen       80;   //端口
-                server_name xxx.com www.xxx.com;   //域名
-                index index.html index.htm index.php default.html default.htm default.php;  //索引文件
-                root  /home/wwwroot/xxx.com;   //目录
-
-                include wordpress.conf;
-                location ~ .*\.(php|php5)?$
-                        {
-                                try_files $uri =404;
-                                fastcgi_pass  unix:/tmp/php-cgi.sock;
-                                fastcgi_index index.php;
-                                include fcgi.conf;
-                        }
-
-                location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$
-                        {
-                                expires      30d;
-                        }
-
-                location ~ .*\.(js|css)?$
-                        {
-                                expires      12h;
-                        }
-
-                access_log off;
-        }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;主机配置文件修改后，使用如下命令重新加载配置使之生效&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#/etc/init.d/nginx reload
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;删除虚拟主机&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;删除/wp-content/local/nginx/conf/vhost/下对应配置文件(.conf)，再删除/home/wwwroot/下的本地目录&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;一些其他问题&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;设置虚拟主机目录权限&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#chown -R www /home/wwwroot/vps.aotee.com
-#chmod -R 777 /home/wwwroot/vps.aotee.com&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <guid>/post/lnmp-usages/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          安装LNMP 更新系统
+#yum check-update #yum update  安装Screen
+#yum install screen  开始安装Lnmp
+#screen -S lnmp #wget -c http://soft.vpser.net/lnmp/lnmp0.8.tar.gz //最新版请查阅lnmp官网 #tar zxvf lnmp0.8.tar.gz #./lnmp0.8/centos.sh | tee lnmp.log //输出log文件，以备出错时查阅  接下来按照提示设定域名和MysQL密码，程序会自动下载相关程序，而后编译安装
+安装PureFTP
+#./lnmp0.8/pureftp.sh  按提示输入MySQL和Ftp管理员密码，安装完成后可以通过http://vpsip/ftp/来登录管理ftp帐号
+使用Lnmp 添加虚拟主机
+#/root/vhost.sh  按照提示填入域名、目录、rewrite规则文件，如下所示：
+root@buyvm256:~#/root/vhost.sh ========================================================================= Add Virtual Host for LNMP V0.9 , Written by Licess ========================================================================= LNMP is a tool to auto-compile &amp;amp; install Nginx+MySQL+PHP on Linux This script is a tool to add virtual host for nginx For more information please visit http://www.
+          
+        
+        </description>
     </item>
     
   </channel>

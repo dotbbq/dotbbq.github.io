@@ -2,26 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>深蓝词库转换 on UNIXETC</title>
-    <link>https://unixetc.com/tags/%E6%B7%B1%E8%93%9D%E8%AF%8D%E5%BA%93%E8%BD%AC%E6%8D%A2/</link>
-    <description>UNIXETC (深蓝词库转换)</description>
+    
+    
+    
+    <link>/tags/%E6%B7%B1%E8%93%9D%E8%AF%8D%E5%BA%93%E8%BD%AC%E6%8D%A2/</link>
+    <description>Recent content in 深蓝词库转换 on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 23 Jul 2015 07:23:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/%E6%B7%B1%E8%93%9D%E8%AF%8D%E5%BA%93%E8%BD%AC%E6%8D%A2/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/%E6%B7%B1%E8%93%9D%E8%AF%8D%E5%BA%93%E8%BD%AC%E6%8D%A2/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>将百度输入法词库导入倒小狼毫词典</title>
-      <link>https://unixetc.com/post/baidu-input-dictionary-converted-to-rime/</link>
+      <link>/post/baidu-input-dictionary-converted-to-rime/</link>
       <pubDate>Thu, 23 Jul 2015 07:23:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/baidu-input-dictionary-converted-to-rime/</guid>
-      <description>&lt;p&gt;首先，在百度输入法设置中，将词库导出，选择&lt;strong&gt;txt&lt;/strong&gt;格式&lt;/p&gt;
-&lt;p&gt;然后下载&lt;a href=&#34;https://github.com/studyzy/imewlconverter&#34;&gt;深蓝词库转换&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;打开深蓝词库转换，选择百度词库，在转换为类型中选择&lt;strong&gt;中州韵&lt;/strong&gt;，转换文成后保存为另外一个&lt;strong&gt;txt&lt;/strong&gt;文件&lt;/p&gt;
-&lt;p&gt;然后打开**【小狼毫】用户词典管理**，选择已存在的词典，点击右侧的**导入文本码表**&lt;/p&gt;
-</description>
+      <guid>/post/baidu-input-dictionary-converted-to-rime/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          首先，在百度输入法设置中，将词库导出，选择txt格式
+然后下载深蓝词库转换
+打开深蓝词库转换，选择百度词库，在转换为类型中选择中州韵，转换文成后保存为另外一个txt文件
+然后打开**【小狼毫】用户词典管理**，选择已存在的词典，点击右侧的**导入文本码表**
+          
+        
+        </description>
     </item>
     
   </channel>

@@ -2,31 +2,42 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>fsutil on UNIXETC</title>
-    <link>https://unixetc.com/tags/fsutil/</link>
-    <description>UNIXETC (fsutil)</description>
+    
+    
+    
+    <link>/tags/fsutil/</link>
+    <description>Recent content in fsutil on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 10 Jul 2014 07:10:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/fsutil/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/fsutil/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>创建固定大小的文件</title>
-      <link>https://unixetc.com/post/create-a-fixed-size-file/</link>
+      <link>/post/create-a-fixed-size-file/</link>
       <pubDate>Thu, 10 Jul 2014 07:10:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/create-a-fixed-size-file/</guid>
-      <description>&lt;p&gt;有时我们需要新建指定大小的文件，很多人可能使用压缩软件的分割功能，分割出指定大小的文件。&lt;/p&gt;
-&lt;p&gt;其实操作系统本身自带的命令就可以胜任以上任务。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Windows&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;新建名为1G-File，大小1G的文件&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;fsutil file createnew 1G-File 1073741824
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;Linux&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;新建名为2G-File，大小为2G的文件&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;dd if=/dev/zero  of=./2G-File bs=1M count=2048&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <guid>/post/create-a-fixed-size-file/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          有时我们需要新建指定大小的文件，很多人可能使用压缩软件的分割功能，分割出指定大小的文件。
+其实操作系统本身自带的命令就可以胜任以上任务。
+Windows
+新建名为1G-File，大小1G的文件
+fsutil file createnew 1G-File 1073741824  Linux
+新建名为2G-File，大小为2G的文件
+dd if=/dev/zero of=./2G-File bs=1M count=2048 
+          
+        
+        </description>
     </item>
     
   </channel>

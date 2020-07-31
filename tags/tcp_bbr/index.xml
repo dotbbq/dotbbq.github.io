@@ -2,55 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>tcp_bbr on UNIXETC</title>
-    <link>https://unixetc.com/tags/tcp_bbr/</link>
-    <description>UNIXETC (tcp_bbr)</description>
+    
+    
+    
+    <link>/tags/tcp_bbr/</link>
+    <description>Recent content in tcp_bbr on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 17 Apr 2017 14:28:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/tcp_bbr/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/tcp_bbr/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Linux开启TCP BBR算法</title>
-      <link>https://unixetc.com/post/linux_enable_tcp_bbr/</link>
+      <link>/post/linux_enable_tcp_bbr/</link>
       <pubDate>Mon, 17 Apr 2017 14:28:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/linux_enable_tcp_bbr/</guid>
-      <description>&lt;p&gt;Linux Kernel 4.9+已经支持tcp_bbr拥塞控制算法，因此建议将内核升级为最新版。&lt;/p&gt;
-&lt;h3 id=&#34;将内核升级到最新版&#34;&gt;将内核升级到最新版&lt;/h3&gt;
-&lt;h4 id=&#34;debianubuntu升级最新内核&#34;&gt;Debian/Ubuntu升级最新内核&lt;/h4&gt;
-&lt;p&gt;最新内核下载地址 &lt;a href=&#34;http://kernel.ubuntu.com/~kernel-ppa/mainline&#34;&gt;http://kernel.ubuntu.com/~kernel-ppa/mainline&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;下载安装新内核&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.10.10/linux-image-4.10.10-041010-generic_4.10.10-041010.201704120813_amd64.deb&lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;
-dpkg -i linux-image-4.10.10-041010-generic_4.10.10-041010.201704120813_amd64.deb
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;更新GRUB并且重启&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;update-grub
-reboot
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;centos-7-升级最新内核&#34;&gt;Centos 7 升级最新内核&lt;/h4&gt;
-&lt;p&gt;内核下载地址 &lt;a href=&#34;http://elrepo.org/linux/kernel/el7/x86_64/RPMS/&#34;&gt;http://elrepo.org/linux/kernel/el7/x86_64/RPMS/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;安装最新内核&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
-rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
-yum --enablerepo&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;elrepo-kernel install kernel-ml -y
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;检查内核是否安装完成&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;rpm -qa | grep kernel&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;更新GRUB并重启主机&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;egrep ^menuentry /etc/grub2.cfg | cut -f &lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt; -d &lt;span style=&#34;color:#ae81ff&#34;&gt;\&amp;#39;&lt;/span&gt;
-grub2-set-default &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;#default 0表示第一个内核设置为默认运行, 选择最新内核就对了&lt;/span&gt;
-reboot
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;http://elrepo.org/linux/kernel/&#34;&gt;http://elrepo.org/linux/kernel/&lt;/a&gt;下&lt;code&gt;e15&lt;/code&gt;、&lt;code&gt;e16&lt;/code&gt;分别对应Centos5、Centos6，可参考以上安装&lt;/p&gt;
-&lt;h3 id=&#34;开启bbr&#34;&gt;开启BBR&lt;/h3&gt;
-&lt;p&gt;重启后&lt;code&gt;uname -r&lt;/code&gt; 检查内核版本是不是4.9+&lt;/p&gt;
-&lt;p&gt;然后执行以下操作&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;net.core.default_qdisc=fq&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; /etc/sysctl.conf
-echo &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;net.ipv4.tcp_congestion_control=bbr&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; /etc/sysctl.conf
-sysctl -p
-sysctl net.ipv4.tcp_available_congestion_control
-sysctl net.ipv4.tcp_congestion_control
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;运行结果中有&lt;strong&gt;bbr&lt;/strong&gt;则成功了&lt;/p&gt;
-&lt;p&gt;通过&lt;code&gt;lsmod | grep bbr&lt;/code&gt;可以检查是否开启&lt;strong&gt;bbr&lt;/strong&gt;模块&lt;/p&gt;
-</description>
+      <guid>/post/linux_enable_tcp_bbr/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Linux Kernel 4.9+已经支持tcp_bbr拥塞控制算法，因此建议将内核升级为最新版。
+将内核升级到最新版 Debian/Ubuntu升级最新内核 最新内核下载地址 http://kernel.ubuntu.com/~kernel-ppa/mainline
+下载安装新内核
+wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.10.10/linux-image-4.10.10-041010-generic_4.10.10-041010.201704120813_amd64.deb` dpkg -i linux-image-4.10.10-041010-generic_4.10.10-041010.201704120813_amd64.deb 更新GRUB并且重启
+update-grub reboot Centos 7 升级最新内核 内核下载地址 http://elrepo.org/linux/kernel/el7/x86_64/RPMS/
+安装最新内核
+rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm yum --enablerepo=elrepo-kernel install kernel-ml -y 检查内核是否安装完成
+rpm -qa | grep kernel
+更新GRUB并重启主机
+egrep ^menuentry /etc/grub2.cfg | cut -f 2 -d \&amp;#39; grub2-set-default 0 #default 0表示第一个内核设置为默认运行, 选择最新内核就对了 reboot http://elrepo.org/linux/kernel/下e15、e16分别对应Centos5、Centos6，可参考以上安装
+开启BBR 重启后uname -r 检查内核版本是不是4.9+
+然后执行以下操作
+echo &amp;#34;net.core.default_qdisc=fq&amp;#34; &amp;gt;&amp;gt; /etc/sysctl.conf echo &amp;#34;net.ipv4.tcp_congestion_control=bbr&amp;#34; &amp;gt;&amp;gt; /etc/sysctl.conf sysctl -p sysctl net.
+          
+        
+        </description>
     </item>
     
   </channel>

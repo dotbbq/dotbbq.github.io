@@ -2,108 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>socksv5 on UNIXETC</title>
-    <link>https://unixetc.com/tags/socksv5/</link>
-    <description>UNIXETC (socksv5)</description>
+    
+    
+    
+    <link>/tags/socksv5/</link>
+    <description>Recent content in socksv5 on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 18 May 2019 09:00:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/socksv5/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/socksv5/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ubuntu中v2ray客户端配置实例</title>
-      <link>https://unixetc.com/post/v2ray-client-configuration-example-in-ubuntu/</link>
+      <link>/post/v2ray-client-configuration-example-in-ubuntu/</link>
       <pubDate>Sat, 18 May 2019 09:00:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/v2ray-client-configuration-example-in-ubuntu/</guid>
-      <description>&lt;p&gt;首先使用&lt;code&gt;bash &amp;lt;(curl -L -s https://install.direct/go.sh)&lt;/code&gt;来快捷安装v2ray，如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;root@vm:~# bash &amp;lt;(curl -L -s https://install.direct/go.sh)
-Installing V2Ray v4.18.0 on x86_64
-Downloading V2Ray: https://github.com/v2ray/v2ray-core/releases/download/v4.18.0/v2ray-linux-64.zip
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100   608    0   608    0     0    581      0 --:--:--  0:00:01 --:--:--   581
-100 10.5M  100 10.5M    0     0   172k      0  0:01:02  0:01:02 --:--:--  194k
-Extracting V2Ray package to /tmp/v2ray.
-Archive:  /tmp/v2ray/v2ray.zip
-  inflating: /tmp/v2ray/config.json  
-   creating: /tmp/v2ray/doc/
-  inflating: /tmp/v2ray/doc/readme.md  
-  inflating: /tmp/v2ray/geoip.dat    
-  inflating: /tmp/v2ray/geosite.dat  
-   creating: /tmp/v2ray/systemd/
-  inflating: /tmp/v2ray/systemd/v2ray.service  
-   creating: /tmp/v2ray/systemv/
-  inflating: /tmp/v2ray/systemv/v2ray  
-  inflating: /tmp/v2ray/v2ctl        
- extracting: /tmp/v2ray/v2ctl.sig    
-  inflating: /tmp/v2ray/v2ray        
- extracting: /tmp/v2ray/v2ray.sig    
-  inflating: /tmp/v2ray/vpoint_socks_vmess.json  
-  inflating: /tmp/v2ray/vpoint_vmess_freedom.json  
-PORT:51332
-UUID:7378f6a4-790a-11e9-8f9e-2a86e4085a59
-Created symlink /etc/systemd/system/multi-user.target.wants/v2ray.service → /etc/systemd/system/v2ray.service.
-V2Ray v4.18.0 is installed.
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;然后编辑&lt;code&gt;/etc/v2ray/config.json&lt;/code&gt;文件，如下设置：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;{
-  &amp;quot;inbounds&amp;quot;: [{
-    &amp;quot;port&amp;quot;: 1080,  // SOCKS 代理端口，在浏览器中需配置代理并指向这个端口
-    &amp;quot;listen&amp;quot;: &amp;quot;127.0.0.1&amp;quot;,
-    &amp;quot;protocol&amp;quot;: &amp;quot;socks&amp;quot;,
-    &amp;quot;settings&amp;quot;: {
-      &amp;quot;udp&amp;quot;: true
-    }
-  }],
-  &amp;quot;outbounds&amp;quot;: [{
-    &amp;quot;protocol&amp;quot;: &amp;quot;vmess&amp;quot;,
-    &amp;quot;settings&amp;quot;: {
-      &amp;quot;vnext&amp;quot;: [{
-        &amp;quot;address&amp;quot;: &amp;quot;server&amp;quot;, // 服务器地址，请修改为你自己的服务器 ip 或域名
-        &amp;quot;port&amp;quot;: 10086,  // 服务器端口
-        &amp;quot;users&amp;quot;: [{ &amp;quot;id&amp;quot;: &amp;quot;b831381d-6324-4d53-ad4f-8cda48b30811&amp;quot; }]
-      }]
-    }
-  },{
-    &amp;quot;protocol&amp;quot;: &amp;quot;freedom&amp;quot;,
-    &amp;quot;tag&amp;quot;: &amp;quot;direct&amp;quot;,
-    &amp;quot;settings&amp;quot;: {}
-  }],
-  &amp;quot;routing&amp;quot;: {
-    &amp;quot;domainStrategy&amp;quot;: &amp;quot;IPOnDemand&amp;quot;,
-    &amp;quot;rules&amp;quot;: [{
-      &amp;quot;type&amp;quot;: &amp;quot;field&amp;quot;,
-      &amp;quot;ip&amp;quot;: [&amp;quot;geoip:private&amp;quot;],
-      &amp;quot;outboundTag&amp;quot;: &amp;quot;direct&amp;quot;
-    }]
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;编辑完成后保存，重新启动v2ray&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;root@vm:~# service v2ray stop
-root@vm:~# service v2ray start
-root@vm:~# service v2ray status
-● v2ray.service - V2Ray Service
-   Loaded: loaded (/etc/systemd/system/v2ray.service; enabled; vendor preset: en
-   Active: active (running) since Sat 2019-05-18 08:58:43 CST; 5s ago
- Main PID: 8025 (v2ray)
-    Tasks: 7 (limit: 2311)
-   CGroup: /system.slice/v2ray.service
-           └─8025 /usr/bin/v2ray/v2ray -config /etc/v2ray/config.json
-
-5月 18 08:58:43 vm systemd[1]: Started V2Ray Service.
-5月 18 08:58:43 vm v2ray[8025]: V2Ray 4.18.0 (Po) 20190228
-5月 18 08:58:43 vm v2ray[8025]: A unified platform for anti-censorship.
-5月 18 08:58:44 vm v2ray[8025]: 2019/05/18 08:58:44 [Warning] v2ray.com/core: V2
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;然后Firefox设置代理如下：&lt;/p&gt;
-&lt;p&gt;设置-常规-网络设置
-勾选&lt;strong&gt;手动代理配置&lt;/strong&gt;，在&lt;strong&gt;SOCKS主机&lt;/strong&gt;中填入&lt;code&gt;127.0.0.1&lt;/code&gt;本地IP和&lt;strong&gt;端口&lt;/strong&gt;，协议勾选&lt;strong&gt;SOCKS_v5&lt;/strong&gt;
-建议勾选&lt;strong&gt;使用SOCKSv5时代理DNS查询&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/3178501606.webp&#34; alt=&#34;20190518090412.webp&#34;&gt;&lt;/p&gt;
-</description>
+      <guid>/post/v2ray-client-configuration-example-in-ubuntu/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          首先使用bash &amp;lt;(curl -L -s https://install.direct/go.sh)来快捷安装v2ray，如下：
+root@vm:~# bash &amp;lt;(curl -L -s https://install.direct/go.sh) Installing V2Ray v4.18.0 on x86_64 Downloading V2Ray: https://github.com/v2ray/v2ray-core/releases/download/v4.18.0/v2ray-linux-64.zip % Total % Received % Xferd Average Speed Time Time Time Current Dload Upload Total Spent Left Speed 100 608 0 608 0 0 581 0 --:--:-- 0:00:01 --:--:-- 581 100 10.5M 100 10.5M 0 0 172k 0 0:01:02 0:01:02 --:--:-- 194k Extracting V2Ray package to /tmp/v2ray. Archive: /tmp/v2ray/v2ray.zip inflating: /tmp/v2ray/config.json creating: /tmp/v2ray/doc/ inflating: /tmp/v2ray/doc/readme.
+          
+        
+        </description>
     </item>
     
   </channel>

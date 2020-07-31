@@ -2,44 +2,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>novacom on UNIXETC</title>
-    <link>https://unixetc.com/tags/novacom/</link>
-    <description>UNIXETC (novacom)</description>
+    
+    
+    
+    <link>/tags/novacom/</link>
+    <description>Recent content in novacom on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 28 May 2012 15:28:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/novacom/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/novacom/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>HP Veer刷机中遇到的12%卡死问题</title>
-      <link>https://unixetc.com/post/twelve-percent-problem-on-hp-veer/</link>
+      <link>/post/twelve-percent-problem-on-hp-veer/</link>
       <pubDate>Mon, 28 May 2012 15:28:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/twelve-percent-problem-on-hp-veer/</guid>
-      <description>&lt;p&gt;对于webos系统，我是由衷的赞美，但是相应的硬件确实有待商榷。&lt;/p&gt;
-&lt;p&gt;去年就入手了一部HP Veer 4G，体验了一个星期就转手了，因为我手中已经有了HP Touchpad。&lt;/p&gt;
-&lt;p&gt;前几天朋友再次邮寄Veer给我，自己玩不转，也不想玩了，所以让给我倒腾去吧。拿到手第一感觉就是，这货儿也太不爱惜了，机子用的就没法看，好在屏幕还贴膜着，要不更不知道会咋样。&lt;/p&gt;
-&lt;p&gt;拿到手的机子是商家当时发货时的系统，被搞的乌七八糟，于是重新找rom下载之。&lt;/p&gt;
-&lt;p&gt;以前自己用的那个感觉刷原厂rom就很好，但是现在想试着找找看有没有不错的第三方rom，煮机网看了下，发现现在有个stay版的，看起来做的确实不错，于是下载安装之。&lt;/p&gt;
-&lt;p&gt;刷机时由于懒惰，用了一个一键清除工具，没有使用系统自带的擦除功能，导致存储上出了问题，u盘功能不能使用了。想着不用管重新刷过就是，没想到碰到了从来没有过的12%卡死问题，刷了N多次还是不能过12%。&lt;/p&gt;
-&lt;p&gt;网上看了看一些经验，像重新安装驱动，换一台电脑试试等等，都没有用。&lt;/p&gt;
-&lt;p&gt;最后在webos-internals.org上找到了方法，地址在这里&lt;a href=&#34;http://www.webos-internals.org/wiki/How_To_Recover&#34;&gt;http://www.webos-internals.org/wiki/How_To_Recover&lt;/a&gt;，里面列出了几个不能正常recovery的实例，参考里面的Doctor disconnects at 8%条目，就可以解决刷机12%的问题。
-从里面说明来看，造成这些问题的主要原因就是存储问题，所以可能是由于我使用了一键清除工具的原因。&lt;/p&gt;
-&lt;p&gt;主要步骤如下：&lt;/p&gt;
-&lt;p&gt;1，重启手机，进入到recovery模式下(Power+音量上）
-2，使用novacom刷入uImage&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#novacom boot mem://&amp;lt; nova-installer-image-broadway.uImage
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;其中的uImage文件，可以从官网的rom中提取，下载.tar格式的rom文件，用7zip打开&lt;/p&gt;
-&lt;p&gt;3，使用novaterm连接系统，进入cli，重新修复存储系统&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#lvm.static vgscan --ignorelockingfailure
-#lvm.static vgchange -ay --ignorelockingfailure
-#mkdosfs -f 1 -s 64 /dev/store/media
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Windows下novaterm的目录为C:\Program Files\Palm Incterminal\novaterm.bat&lt;/p&gt;
-&lt;p&gt;完成以上步骤，就可以重启进入recovery重新刷机了。&lt;/p&gt;
-</description>
+      <guid>/post/twelve-percent-problem-on-hp-veer/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          对于webos系统，我是由衷的赞美，但是相应的硬件确实有待商榷。
+去年就入手了一部HP Veer 4G，体验了一个星期就转手了，因为我手中已经有了HP Touchpad。
+前几天朋友再次邮寄Veer给我，自己玩不转，也不想玩了，所以让给我倒腾去吧。拿到手第一感觉就是，这货儿也太不爱惜了，机子用的就没法看，好在屏幕还贴膜着，要不更不知道会咋样。
+拿到手的机子是商家当时发货时的系统，被搞的乌七八糟，于是重新找rom下载之。
+以前自己用的那个感觉刷原厂rom就很好，但是现在想试着找找看有没有不错的第三方rom，煮机网看了下，发现现在有个stay版的，看起来做的确实不错，于是下载安装之。
+刷机时由于懒惰，用了一个一键清除工具，没有使用系统自带的擦除功能，导致存储上出了问题，u盘功能不能使用了。想着不用管重新刷过就是，没想到碰到了从来没有过的12%卡死问题，刷了N多次还是不能过12%。
+网上看了看一些经验，像重新安装驱动，换一台电脑试试等等，都没有用。
+最后在webos-internals.org上找到了方法，地址在这里http://www.webos-internals.org/wiki/How_To_Recover，里面列出了几个不能正常recovery的实例，参考里面的Doctor disconnects at 8%条目，就可以解决刷机12%的问题。 从里面说明来看，造成这些问题的主要原因就是存储问题，所以可能是由于我使用了一键清除工具的原因。
+主要步骤如下：
+1，重启手机，进入到recovery模式下(Power+音量上） 2，使用novacom刷入uImage
+#novacom boot mem://&amp;lt; nova-installer-image-broadway.uImage  其中的uImage文件，可以从官网的rom中提取，下载.tar格式的rom文件，用7zip打开
+3，使用novaterm连接系统，进入cli，重新修复存储系统
+#lvm.static vgscan --ignorelockingfailure #lvm.static vgchange -ay --ignorelockingfailure #mkdosfs -f 1 -s 64 /dev/store/media  Windows下novaterm的目录为C:\Program Files\Palm Incterminal\novaterm.bat
+完成以上步骤，就可以重启进入recovery重新刷机了。
+          
+        
+        </description>
     </item>
     
   </channel>

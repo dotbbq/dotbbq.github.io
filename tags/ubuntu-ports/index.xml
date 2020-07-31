@@ -2,28 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ubuntu ports on UNIXETC</title>
-    <link>https://unixetc.com/tags/ubuntu-ports/</link>
-    <description>UNIXETC (ubuntu ports)</description>
+    
+    
+    
+    <link>/tags/ubuntu-ports/</link>
+    <description>Recent content in ubuntu ports on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 04 Aug 2019 00:00:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/ubuntu-ports/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/ubuntu-ports/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>UbuntuTouch更换国内源</title>
-      <link>https://unixetc.com/post/ubuntu-touch-change-mirror/</link>
+      <link>/post/ubuntu-touch-change-mirror/</link>
       <pubDate>Sun, 04 Aug 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/ubuntu-touch-change-mirror/</guid>
-      <description>&lt;p&gt;在&lt;a href=&#34;https://unixetc.com/post/oneplus-3t-install-ubuntutouch/&#34;&gt;一加3T上安装完UbuntuTouch&lt;/a&gt;后，参考&lt;a href=&#34;https://unixetc.com/post/shell-access-ubuntu-touch-via-ssh/&#34;&gt;此文开启SSH&lt;/a&gt;登录。&lt;/p&gt;
-&lt;p&gt;接下来就是更换软件源了，国内推荐USTC和清华大学开源镜像。&lt;/p&gt;
-&lt;p&gt;通过&lt;code&gt;vi /etc/apt/sources.list&lt;/code&gt; 编辑软件源,然后在vi中通过以下命令进行替换操作：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;:%s/ports.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;保存后即可。&lt;/p&gt;
-</description>
+      <guid>/post/ubuntu-touch-change-mirror/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          在一加3T上安装完UbuntuTouch后，参考此文开启SSH登录。
+接下来就是更换软件源了，国内推荐USTC和清华大学开源镜像。
+通过vi /etc/apt/sources.list 编辑软件源,然后在vi中通过以下命令进行替换操作：
+:%s/ports.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g  保存后即可。
+          
+        
+        </description>
     </item>
     
   </channel>

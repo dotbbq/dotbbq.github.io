@@ -2,268 +2,107 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>twrp on UNIXETC</title>
-    <link>https://unixetc.com/tags/twrp/</link>
-    <description>UNIXETC (twrp)</description>
+    
+    
+    
+    <link>/tags/twrp/</link>
+    <description>Recent content in twrp on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 19 Jul 2018 21:22:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/twrp/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/twrp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>一加3T安装MIUI10</title>
-      <link>https://unixetc.com/post/oneplus3t-miui10/</link>
+      <link>/post/oneplus3t-miui10/</link>
       <pubDate>Thu, 19 Jul 2018 21:22:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/oneplus3t-miui10/</guid>
-      <description>&lt;p&gt;首先，十分感谢&lt;strong&gt;&lt;!-- raw HTML omitted --&gt;HitoLiu&lt;!-- raw HTML omitted --&gt;&lt;/strong&gt;辛苦劳动，才有了Oneplus3T的MIUI10&lt;/p&gt;
-&lt;p&gt;刷机前先确认H2OS版本，由于H大的MIUI10是基于Android 7，所以要是基于Android7系的话，则可以直接刷，要是基于Android8的话，就得先降级。&lt;/p&gt;
-&lt;h3 id=&#34;一加3t安卓8降级安卓7&#34;&gt;一加3T安卓8降级安卓7&lt;/h3&gt;
-&lt;p&gt;基于Android8的手机，下载下面降级包，通过系统内自带升级功能，手动选择该包进行降级。&lt;/p&gt;
-&lt;p&gt;一加3T &lt;strong&gt;Android 8降级Android 7刷机包 &lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-315801567&#34;&gt;https://dotbbq.pipipan.com/fs/18418398-315801567&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;或者在这里下载Android7的底包，刷入底包即可 &lt;strong&gt;&lt;a href=&#34;https://ciux.org/oneplus3t-base-firmware.html&#34;&gt;https://ciux.org/oneplus3t-base-firmware.html&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;降级完成后，开始解锁刷入第三方recovery来刷机。&lt;/p&gt;
-&lt;p&gt;推荐使用一加3/3T工具包(OnePlus3/3T Unified ToolKit)，使用方法**&lt;a href=&#34;https://unixetc.com/post/oneplus3-3t-unified-toolkit/&#34;&gt;点击这里&lt;/a&gt;**&lt;/p&gt;
-&lt;h3 id=&#34;一加3t-miui10刷机流程&#34;&gt;一加3T MIUI10刷机流程&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;解锁&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;手机端设置-&amp;gt;开发者选项，打开OEM解锁和USB调试。&lt;/p&gt;
-&lt;p&gt;连接手机和电脑，打开工具包选择2) Unlock - ReLock Bootloader，下一步选择1解锁。&lt;/p&gt;
-&lt;p&gt;手机按照提示选择&lt;strong&gt;YES&lt;/strong&gt;解锁&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;刷入TWRP Recovery&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;重启手机，选择Fastboot模式，连接手机和电脑，选择5) Flash - Boot TWRP Recovery，刷入TWRP&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;刷入MIUI10&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;进入TWRP Recovery，挂载MTP，将MIUI10刷机包拷入手机，然后进行卡刷。&lt;/p&gt;
-&lt;p&gt;双清后重启即可！&lt;/p&gt;
-&lt;h4 id=&#34;官方更新说明&#34;&gt;官方更新说明&lt;/h4&gt;
-&lt;pre&gt;&lt;code&gt;因MIUI官方开始全部适配安卓8，7.1的MIUI在11月2号官方已经正式停更了，目前这版MIUI是MIUI官方发布的最后一个安卓7.1版本，也是目前
-最完善的一版。
-如果不出意外的话，这也是一加3/3T安卓7.1 MIUI的最后一版。后续就是准备给一加3/3T上安卓O或以上的MIUI了，基本完善后我会优先发在群里
-给机油门尝鲜。安卓O的MIUI最快也要半个月以上，且第一版难免bug多，耐心等待别催，只要我手上的3T还没坏就会一直把MIUI维护下去。
-8.10.22及以上的MIUI无需双清可直接刷本版MIUI升级，8.10.22以下的需要双清升级。
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;8.11.3更新日志&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;1.同步MIUI官方最后一版安卓7.1的MIUI的更新
-2.修复新版附加设置-交换返回与多任务键无效的bug
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;8.11.2更新日志：&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;1.同步MIUI的更新
-2.解决WiFi mac地址问题
-3.解决WiFi认证问题
-4.修复了一些其他已知bug
-5.附加设置更新，全新的界面，加入色温调节，省电模式，性能模式等等
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;8.10.28更新日志：&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;1.同步MIUI官方第392周更新
-2.修复了一些已知bug
-这次不是简单的同步更新，而是完全的重制，除了修复以前的一些已知bug外，流畅度也有大幅度的提升，并且还增加了很多新功能，比如
-人脸解锁、AI相机等等，还有很多细节上的变化，应该能让你爽到脱肛的那种。
-注意注意注意！这个包更改幅度较大，必须双清刷，否则可能出现各种程序报错！如果data分区被加密则需要格式化data！！否则可能会
-一直卡在开机动画不能进系统！
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;8.12.5更新：&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;1.加入ROOT权限
-2.修复充电快充满后几率发生断开的BUG
-3.修复人脸识别无法使用的BUG
-4.修复MIUI相机无法录像的BUG
-5.修复几个引起卡顿问题
-6.其它大量的BUG修复，现在已经熬夜到凌晨四点半，不想写了自行体验，做包很累切刷且珍惜
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;1.可能有未知bug
-2.安卓大版本升级需要双清，否则可能各种报错
-3.如果data被加密需要格式化data才能开机，否则可能卡在开机动画无法进系统
-4.暂未添加支付宝指纹支付，后续更新添加
-5.第一次开机需要点时间，耐心等待，开机后手机有点热是正常的，以后就不会了
-6.第一次开机后手机可能会有点卡，是magisk的锅，重启即可
-7.硬件原因不支持小爱同学语音唤醒，这不是bug
-8.刷机前先确认你的twrp recovery支持安卓8
-9.人品不好智商低慎刷
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;MIUI10 for OnePlus3T 下载地址: &lt;strong&gt;提示：刷最新版基于Android8的话不需要降级，刷基于Android7的版本需要降级！！！&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Based Android 8&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;MIUI10_OP3-3T_Hito_8.12.5_79c6_8.1.zip &lt;strong&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-326373687&#34;&gt;https://dotbbq.pipipan.com/fs/18418398-326373687&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;MIUI10_OP3-3T_Hito_8.12.3_e3b7_8.1.zip &lt;strong&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-326373663&#34;&gt;https://dotbbq.pipipan.com/fs/18418398-326373663&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Based Android 7&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;MIUI10_OP3-3T_Hito_8.11.5_a93c_7.1.zip &lt;strong&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-319122537&#34;&gt;https://dotbbq.pipipan.com/fs/18418398-319122537&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;MIUI10_OP3-3T_Hito_8.11.2_ff8a_7.1.zip  &lt;strong&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-317870488&#34;&gt;https://dotbbq.pipipan.com/fs/18418398-317870488&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;MIUI10_OP3-3T_Hito_8.10.28_3cd1_7.1.zip &lt;strong&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-317451619&#34;&gt;https://dotbbq.pipipan.com/fs/18418398-317451619&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;MIUI10_OP3-3T_Hito_8.10.24_4cce_7.1.zip &lt;strong&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-316913781&#34;&gt;https://dotbbq.pipipan.com/fs/18418398-316913781&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;MIUI10_OP3-3T_Hito_8.10.8_8aff_7.1.zip  &lt;strong&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-315803433&#34;&gt;https://dotbbq.pipipan.com/fs/18418398-315803433&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <guid>/post/oneplus3t-miui10/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          首先，十分感谢HitoLiu辛苦劳动，才有了Oneplus3T的MIUI10
+刷机前先确认H2OS版本，由于H大的MIUI10是基于Android 7，所以要是基于Android7系的话，则可以直接刷，要是基于Android8的话，就得先降级。
+一加3T安卓8降级安卓7 基于Android8的手机，下载下面降级包，通过系统内自带升级功能，手动选择该包进行降级。
+一加3T Android 8降级Android 7刷机包 https://dotbbq.pipipan.com/fs/18418398-315801567
+或者在这里下载Android7的底包，刷入底包即可 https://ciux.org/oneplus3t-base-firmware.html
+降级完成后，开始解锁刷入第三方recovery来刷机。
+推荐使用一加3/3T工具包(OnePlus3/3T Unified ToolKit)，使用方法**点击这里**
+一加3T MIUI10刷机流程  解锁  手机端设置-&amp;gt;开发者选项，打开OEM解锁和USB调试。
+连接手机和电脑，打开工具包选择2) Unlock - ReLock Bootloader，下一步选择1解锁。
+手机按照提示选择YES解锁
+ 刷入TWRP Recovery  重启手机，选择Fastboot模式，连接手机和电脑，选择5) Flash - Boot TWRP Recovery，刷入TWRP
+ 刷入MIUI10  进入TWRP Recovery，挂载MTP，将MIUI10刷机包拷入手机，然后进行卡刷。
+双清后重启即可！
+官方更新说明 因MIUI官方开始全部适配安卓8，7.1的MIUI在11月2号官方已经正式停更了，目前这版MIUI是MIUI官方发布的最后一个安卓7.1版本，也是目前 最完善的一版。 如果不出意外的话，这也是一加3/3T安卓7.1 MIUI的最后一版。后续就是准备给一加3/3T上安卓O或以上的MIUI了，基本完善后我会优先发在群里 给机油门尝鲜。安卓O的MIUI最快也要半个月以上，且第一版难免bug多，耐心等待别催，只要我手上的3T还没坏就会一直把MIUI维护下去。 8.10.22及以上的MIUI无需双清可直接刷本版MIUI升级，8.10.22以下的需要双清升级。  8.11.3更新日志
+1.同步MIUI官方最后一版安卓7.1的MIUI的更新 2.修复新版附加设置-交换返回与多任务键无效的bug  8.11.2更新日志：
+1.同步MIUI的更新 2.解决WiFi mac地址问题 3.解决WiFi认证问题 4.修复了一些其他已知bug 5.附加设置更新，全新的界面，加入色温调节，省电模式，性能模式等等  8.10.28更新日志：
+1.同步MIUI官方第392周更新 2.修复了一些已知bug 这次不是简单的同步更新，而是完全的重制，除了修复以前的一些已知bug外，流畅度也有大幅度的提升，并且还增加了很多新功能，比如 人脸解锁、AI相机等等，还有很多细节上的变化，应该能让你爽到脱肛的那种。 注意注意注意！这个包更改幅度较大，必须双清刷，否则可能出现各种程序报错！如果data分区被加密则需要格式化data！！否则可能会 一直卡在开机动画不能进系统！  8.
+          
+        
+        </description>
     </item>
     
     <item>
       <title>一加3/3T工具包</title>
-      <link>https://unixetc.com/post/oneplus3-3t-unified-toolkit/</link>
+      <link>/post/oneplus3-3t-unified-toolkit/</link>
       <pubDate>Thu, 15 Jun 2017 16:15:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/oneplus3-3t-unified-toolkit/</guid>
-      <description>&lt;p&gt;工具菜单如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;    Title OnePlus 3/3T Unified ToolKit v5.0U by @ahmed_radaideh
-	
-	
-	
-            ======================
-            =        Menu        =
-            ======================
-	
-	
-    Enter a Number to select a Task.
-	
-    1)  Install USB Drivers On PC
-    2)  Unlock - ReLock Bootloader
-    3)  Check Device Status
-    4)  Check Bootloader Status
-    5)  Flash - Boot TWRP Recovery
-    6)  Flash - Boot Stock Recovery
-    7)  Push Systemless Root
-    8)  Push Debloater Script
-    9)  Wipe Cache Your Device
-    10) Force Decryption Device [WIPE]
-    11) Get Logs your Device
-    12) Restart Menu
-	
-    13) Check for new Version
-    14) XDA Thread
-    15) Donate!
-    00) Exit
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;em&gt;XDA贴地址在&lt;a href=&#34;https://forum.xda-developers.com/oneplus-3/development/toolkit-oneplus-3-toolkit-unlock-t3398799&#34;&gt;这里&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;h3 id=&#34;一加3t刷机步骤&#34;&gt;一加3T刷机步骤&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;进入Fastboot模式方法，关机后，按住&lt;/strong&gt;音量减&lt;strong&gt;+&lt;/strong&gt;电源键**进入。**界面如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/161221230.webp&#34; alt=&#34;Image31542161760.webp&#34;&gt;&lt;/p&gt;
-&lt;p&gt;注意看最上面两个横线中间的&lt;strong&gt;START&lt;/strong&gt;，这里是启动菜单，可以使用&lt;strong&gt;音量键&lt;/strong&gt;上下选择，使用&lt;strong&gt;电源键确认&lt;/strong&gt;选择。注意看最后一行的设备状态(DEVICE STATE) ，locked表示加锁，unlock表示解锁。&lt;/p&gt;
-&lt;p&gt;有以下四个菜单项：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;START 正常启动开机&lt;/li&gt;
-&lt;li&gt;Recovery mode 进入recovery&lt;/li&gt;
-&lt;li&gt;Restart bootloader 重启bootloader模式&lt;/li&gt;
-&lt;li&gt;Power off 关机&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;一加3t解锁&#34;&gt;一加3T解锁&lt;/h4&gt;
-&lt;p&gt;设置-&amp;gt;开发者选项  打开&lt;strong&gt;OEM解锁&lt;/strong&gt;和&lt;strong&gt;USB调试&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/3468369060.webp&#34; alt=&#34;Image11542159101.webp&#34;&gt;&lt;/p&gt;
-&lt;p&gt;连接手机和电脑，打开工具包选择&lt;strong&gt;Unlock - ReLock Bootloader&lt;/strong&gt;，下一步选择&lt;strong&gt;Unlock Bootloader&lt;/strong&gt;解锁，然后手机重启，接下来会有&lt;strong&gt;Unlock Boot loader?&lt;strong&gt;提示，用音量减选择&lt;/strong&gt;YES&lt;/strong&gt;，电源键确认开始解锁操作。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/2664099143.webp&#34; alt=&#34;Image21542161433.webp&#34;&gt;&lt;/p&gt;
-&lt;h4 id=&#34;刷入第三方recovery&#34;&gt;刷入第三方Recovery&lt;/h4&gt;
-&lt;p&gt;打开&lt;strong&gt;Fastboot&lt;/strong&gt;模式，连接手机和电脑，选择&lt;strong&gt;5)  Flash - Boot TWRP Recovery&lt;/strong&gt;，刷入&lt;strong&gt;TWRP&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;刷机第三方ROM&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;进入&lt;strong&gt;TWRP&lt;/strong&gt;，挂载&lt;strong&gt;MTP&lt;/strong&gt;，将&lt;strong&gt;ROM&lt;/strong&gt;文件拷入手机，然后进行卡刷。&lt;/p&gt;
-&lt;h4 id=&#34;一加3t恢复官方rom&#34;&gt;一加3T恢复官方ROM&lt;/h4&gt;
-&lt;p&gt;步骤：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;恢复官方Recovery&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;进入&lt;strong&gt;Fastboot&lt;/strong&gt;，连接手机和电脑，选择&lt;strong&gt;6)  Flash - Boot Stock Recovery&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;进入&lt;strong&gt;Fastboot&lt;/strong&gt;，连接手机和电脑，选择&lt;strong&gt;10) Force Decryption Device [WIPE]&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;重新加锁Boot&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;进入&lt;strong&gt;Fastboot&lt;/strong&gt;，连接手机和电脑，打开工具包选择&lt;strong&gt;2)  Unlock - ReLock Bootloader&lt;/strong&gt;，下一步选择2重新加锁。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;通过USB刷机&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;进入&lt;strong&gt;Recovery&lt;/strong&gt;，选择&lt;strong&gt;从USB安装升级文件&lt;/strong&gt;,手机连接电脑，通过以下命令刷入官方包：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;adb fastboot OnePlus3T.zip
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;完成后重启。&lt;/p&gt;
-&lt;h4 id=&#34;一些补充说明&#34;&gt;一些补充说明&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;启用开发者选项&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;设置-&amp;gt;关于手机 单击&lt;strong&gt;版本号&lt;/strong&gt;多次(4)，会提示已经打开开发者选项&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;进入&lt;strong&gt;Fastboot&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;关机，按住&lt;strong&gt;音量减&lt;/strong&gt;，再同时按住&lt;strong&gt;电源键&lt;/strong&gt;开机&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;进入&lt;strong&gt;Recovery&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;关机，按住&lt;strong&gt;音量加&lt;/strong&gt;，再同时按住&lt;strong&gt;电源键&lt;/strong&gt;开机&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Adb工具&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;adb在工具包内的files文件夹中&lt;/p&gt;
-&lt;p&gt;下载地址&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-315801102&#34;&gt;https://dotbbq.pipipan.com/fs/18418398-315801102&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-</description>
+      <guid>/post/oneplus3-3t-unified-toolkit/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          工具菜单如下：
+ Title OnePlus 3/3T Unified ToolKit v5.0U by @ahmed_radaideh ====================== = Menu = ====================== Enter a Number to select a Task. 1) Install USB Drivers On PC 2) Unlock - ReLock Bootloader 3) Check Device Status 4) Check Bootloader Status 5) Flash - Boot TWRP Recovery 6) Flash - Boot Stock Recovery 7) Push Systemless Root 8) Push Debloater Script 9) Wipe Cache Your Device 10) Force Decryption Device [WIPE] 11) Get Logs your Device 12) Restart Menu 13) Check for new Version 14) XDA Thread 15) Donate!
+          
+        
+        </description>
     </item>
     
     <item>
       <title>小米4C解锁和刷入TWRP Recovery</title>
-      <link>https://unixetc.com/post/mi4c-unlock-and-twrp-recovery/</link>
+      <link>/post/mi4c-unlock-and-twrp-recovery/</link>
       <pubDate>Sun, 20 Mar 2016 13:20:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/mi4c-unlock-and-twrp-recovery/</guid>
-      <description>&lt;p&gt;时隔三年再次入手小米手机，没想到如今的MIUI已经今非昔比，首先是bootloader锁住了，官方理由是安全，但是作为一个android发烧友，锁bootloader后就无法安装第三方recovery，进而无法体验众多第三方系统了。以下介绍如何解锁小米4C以及刷入第三方TWRP Recovery。
-permalink: &amp;lsquo;logs/Mi4C-Unlock-and-TWRP-Recovery.html&amp;rsquo;
-时隔三年再次入手小米手机，没想到如今的MIUI已经今非昔比，首先是bootloader锁住了，官方理由是安全，但是作为一个android发烧友，锁bootloader后就无法安装第三方recovery，进而无法体验众多第三方系统了。其次是到处广告，整个系统UI很多处都是广告，额滴个神啊！ 小米穷疯了吧! 无力吐槽啊………………&lt;/p&gt;
-&lt;p&gt;以下介绍如何解锁小米4C以及刷入第三方TWRP Recovery。&lt;/p&gt;
-&lt;h3 id=&#34;解锁小米4c&#34;&gt;解锁小米4C&lt;/h3&gt;
-&lt;p&gt;小米解锁需要去官方申请，申请提交地址为 &lt;a href=&#34;http://www.miui.com/unlock/&#34;&gt;http://www.miui.com/unlock/&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;录入小米ID以及手机号等信息后，就等着吧……&lt;/p&gt;
-&lt;p&gt;我等了16天才收到解锁申请通过短信通知。&lt;/p&gt;
-&lt;p&gt;然后下载官方解锁工具，下载地址为&lt;a href=&#34;http://www.miui.com/unlock/download.html&#34;&gt;http://www.miui.com/unlock/download.html&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;打开解锁工具，登录小米帐号，关机长按音量下+电源键进入Fastboot模式。&lt;/p&gt;
-&lt;p&gt;然后按照提示进行操作，两分钟不到解锁成功！！！&lt;/p&gt;
-&lt;p&gt;注：如果解锁失败，提示什么帐号不一致啦、手机信息无法获取啦，请到miui官网论坛进行问题提交。&lt;/p&gt;
-&lt;h3 id=&#34;刷入twrp-recovery&#34;&gt;刷入TWRP Recovery&lt;/h3&gt;
-&lt;p&gt;首先下载adb工具包，里面包含需要的软件fastboot，下载地址 &lt;a href=&#34;http://pan.baidu.com/s/1sjR8ved&#34;&gt;http://pan.baidu.com/s/1sjR8ved&lt;/a&gt;，下载后点击安装。&lt;/p&gt;
-&lt;p&gt;然后下载TWRP Recovery镜像文件，下载地址为&lt;a href=&#34;http://pan.baidu.com/s/1nuugNK9&#34;&gt;http://pan.baidu.com/s/1nuugNK9&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;将下载后的TWRP Recovery镜像文件(.img)拷贝至adb工具包目录，然后CMD模式下进入到adb工具包目录，如下操作：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;刷入TWRP Recovery&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;D:\&amp;gt;fastboot flash recovery libra_ts_twrp_3_0_0_3.img
-target reported max download size of 536870912 bytes
-sending &#39;recovery&#39; (51844 KB)...
-OKAY [  1.485s]
-writing &#39;recovery&#39;...
-OKAY [  0.481s]
-finished. total time: 1.971s
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;重启引导进入TWRP Recovery&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;D:\&amp;gt;fastboot boot libra_ts_twrp_3_0_0_3.img
-downloading &#39;boot.img&#39;...
-OKAY [  1.494s]
-booting...
-OKAY [  0.516s]
-finished. total time: 2.014s
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;说明：首次刷入TWRP Recovery，进入Recovery后触摸屏可能无法操作，这时唯一的方法就是等待，等到1分钟左右手机自动息屏后，重按电源键点亮屏幕即可恢复操作。&lt;/p&gt;
-&lt;h3 id=&#34;推荐小米4c第三方rom&#34;&gt;推荐小米4C第三方ROM&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Xiaomi Mi4c CM13&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a href=&#34;http://www.teamsuperluminal.org/mi4c-cyanogenmod-13/&#34;&gt;http://www.teamsuperluminal.org/mi4c-cyanogenmod-13/&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Xiaomi Mi4c Broken OS v4.3&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a href=&#34;http://www.teamsuperluminal.org/broken-os-v4-2-mi4c/&#34;&gt;http://www.teamsuperluminal.org/broken-os-v4-2-mi4c/&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Xiaomi Mi4c CM12.1&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a href=&#34;http://www.teamsuperluminal.org/mi4c-cyanogenmod-12-1/&#34;&gt;http://www.teamsuperluminal.org/mi4c-cyanogenmod-12-1/&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Xiaomi Mi4c PAC-rom 5.1.1&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a href=&#34;http://www.teamsuperluminal.org/pac-rom-5-1-1-mi4c/&#34;&gt;http://www.teamsuperluminal.org/pac-rom-5-1-1-mi4c/&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Mokee 60.1&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;a href=&#34;http://download.mokeedev.com/?device=libra&#34;&gt;http://download.mokeedev.com/?device=libra&lt;/a&gt;&lt;/p&gt;
-</description>
+      <guid>/post/mi4c-unlock-and-twrp-recovery/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          时隔三年再次入手小米手机，没想到如今的MIUI已经今非昔比，首先是bootloader锁住了，官方理由是安全，但是作为一个android发烧友，锁bootloader后就无法安装第三方recovery，进而无法体验众多第三方系统了。以下介绍如何解锁小米4C以及刷入第三方TWRP Recovery。 permalink: &amp;lsquo;logs/Mi4C-Unlock-and-TWRP-Recovery.html&amp;rsquo; 时隔三年再次入手小米手机，没想到如今的MIUI已经今非昔比，首先是bootloader锁住了，官方理由是安全，但是作为一个android发烧友，锁bootloader后就无法安装第三方recovery，进而无法体验众多第三方系统了。其次是到处广告，整个系统UI很多处都是广告，额滴个神啊！ 小米穷疯了吧! 无力吐槽啊………………
+以下介绍如何解锁小米4C以及刷入第三方TWRP Recovery。
+解锁小米4C 小米解锁需要去官方申请，申请提交地址为 http://www.miui.com/unlock/。
+录入小米ID以及手机号等信息后，就等着吧……
+我等了16天才收到解锁申请通过短信通知。
+然后下载官方解锁工具，下载地址为http://www.miui.com/unlock/download.html
+打开解锁工具，登录小米帐号，关机长按音量下+电源键进入Fastboot模式。
+然后按照提示进行操作，两分钟不到解锁成功！！！
+注：如果解锁失败，提示什么帐号不一致啦、手机信息无法获取啦，请到miui官网论坛进行问题提交。
+刷入TWRP Recovery 首先下载adb工具包，里面包含需要的软件fastboot，下载地址 http://pan.baidu.com/s/1sjR8ved，下载后点击安装。
+然后下载TWRP Recovery镜像文件，下载地址为http://pan.baidu.com/s/1nuugNK9
+将下载后的TWRP Recovery镜像文件(.img)拷贝至adb工具包目录，然后CMD模式下进入到adb工具包目录，如下操作：
+刷入TWRP Recovery
+D:\&amp;gt;fastboot flash recovery libra_ts_twrp_3_0_0_3.img target reported max download size of 536870912 bytes sending &#39;recovery&#39; (51844 KB)... OKAY [ 1.485s] writing &#39;recovery&#39;... OKAY [ 0.481s] finished. total time: 1.971s  重启引导进入TWRP Recovery
+D:\&amp;gt;fastboot boot libra_ts_twrp_3_0_0_3.img downloading &#39;boot.img&#39;... OKAY [ 1.494s] booting... OKAY [ 0.
+          
+        
+        </description>
     </item>
     
   </channel>

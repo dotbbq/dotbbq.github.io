@@ -2,59 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>he.net on UNIXETC</title>
-    <link>https://unixetc.com/tags/he.net/</link>
-    <description>UNIXETC (he.net)</description>
+    
+    
+    
+    <link>/tags/he.net/</link>
+    <description>Recent content in he.net on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 07 Jan 2016 12:31:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/he.net/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/he.net/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>树莓派使用ddclient和DDNS</title>
-      <link>https://unixetc.com/post/raspberry-pi-using-ddclient-and-ddns/</link>
+      <link>/post/raspberry-pi-using-ddclient-and-ddns/</link>
       <pubDate>Thu, 07 Jan 2016 12:31:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/raspberry-pi-using-ddclient-and-ddns/</guid>
-      <description>&lt;h3 id=&#34;域名解析&#34;&gt;域名解析&lt;/h3&gt;
-&lt;p&gt;首先得有个域名，在域名管理中将域名DNS设为he.net的DNS地址，如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;ns1.he.net
-ns2.he.net
-ns3.he.net
-ns4.he.net
-ns5.he.net
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;然后在&lt;a href=&#34;http://dns.he.net&#34;&gt;http://dns.he.net&lt;/a&gt;注册账号，添加域名(Add a new domain)&lt;/p&gt;
-&lt;p&gt;接下来添加A记录(New A)，勾选允许动态域名解析(Enable entry for dynamic dns)&lt;/p&gt;
-&lt;p&gt;点击域名后DDNS列中的刷新按钮，新建一个DDNS密匙(Generate a DDNS key.)&lt;/p&gt;
-&lt;h3 id=&#34;安装设置ddclient&#34;&gt;安装设置ddclient&lt;/h3&gt;
-&lt;p&gt;在树莓派上安装ddclient&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo apt-get install ddclient
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;编辑ddclient配置文件，路径为&lt;code&gt;/etc/ddclient.conf&lt;/code&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;protocol=dyndns2
-use=web,web=myip.dnsomatic.com
-server=dyn.dns.he.net
-login=raspi.in
-password=&#39;ddnskey&#39;
-www.raspi.in,raspi.in
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;其中&lt;strong&gt;password&lt;/strong&gt;为设置DDNS时的key&lt;/p&gt;
-&lt;p&gt;重启ddclient服务&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;service ddclient restart
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;验证IP查询结果&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo ddclient -query
-use=if, if=eth0 address is 192.168.1.111
-use=if, if=lo address is 127.0.0.1
-use=web, web=dnspark address is 36.40.143.235
-use=web, web=dyndns address is NOT FOUND
-use=web, web=loopia address is 36.40.143.235
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;其中if方式查询到的是内网地址和本机地址，web方式查询到的时外网IP&lt;/p&gt;
-&lt;p&gt;至此设置完成，可以ping一下域名试试咯！&lt;/p&gt;
-</description>
+      <guid>/post/raspberry-pi-using-ddclient-and-ddns/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          域名解析 首先得有个域名，在域名管理中将域名DNS设为he.net的DNS地址，如下：
+ns1.he.net ns2.he.net ns3.he.net ns4.he.net ns5.he.net  然后在http://dns.he.net注册账号，添加域名(Add a new domain)
+接下来添加A记录(New A)，勾选允许动态域名解析(Enable entry for dynamic dns)
+点击域名后DDNS列中的刷新按钮，新建一个DDNS密匙(Generate a DDNS key.)
+安装设置ddclient 在树莓派上安装ddclient
+sudo apt-get install ddclient  编辑ddclient配置文件，路径为/etc/ddclient.conf
+protocol=dyndns2 use=web,web=myip.dnsomatic.com server=dyn.dns.he.net login=raspi.in password=&#39;ddnskey&#39; www.raspi.in,raspi.in  其中password为设置DDNS时的key
+重启ddclient服务
+service ddclient restart  验证IP查询结果
+sudo ddclient -query use=if, if=eth0 address is 192.168.1.111 use=if, if=lo address is 127.0.0.1 use=web, web=dnspark address is 36.40.143.235 use=web, web=dyndns address is NOT FOUND use=web, web=loopia address is 36.
+          
+        
+        </description>
     </item>
     
   </channel>

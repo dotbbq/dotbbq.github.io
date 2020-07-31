@@ -2,70 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>webp on UNIXETC</title>
-    <link>https://unixetc.com/tags/webp/</link>
-    <description>UNIXETC (webp)</description>
+    
+    
+    
+    <link>/tags/webp/</link>
+    <description>Recent content in webp on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 11 Jun 2019 00:00:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/webp/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/webp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Linux中转换图片为webp格式</title>
-      <link>https://unixetc.com/post/convert-images-to-webp-in-linux/</link>
+      <link>/post/convert-images-to-webp-in-linux/</link>
       <pubDate>Tue, 11 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/convert-images-to-webp-in-linux/</guid>
-      <description>&lt;h3 id=&#34;安装webp&#34;&gt;安装WebP&lt;/h3&gt;
-&lt;p&gt;Ubuntu中可以使用以下命令安装WebP&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$sudo apt install webp 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;其他Linux系统，可以从&lt;a href=&#34;https://storage.googleapis.com/downloads.webmproject.org/releases/webp/index.html&#34;&gt;这里&lt;/a&gt;下载对应压缩包，如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;wget https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.0.2-linux-x86-64.tar.gz
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;解压后得到以下文件：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$tar zxf libwebp-1.0.2-linux-x86-64.tar.gz
-$cd libwebp-1.0.2-linux-x86-64
-$cd bin
-$ll
-total 12M
--rwxr-xr-x 1 100 users 679K Jan 15 12:47 anim_diff
--rwxr-xr-x 1 100 users 923K Jan 15 12:47 anim_dump
--rwxr-xr-x 1 100 users 2.4M Jan 15 12:47 cwebp
--rwxr-xr-x 1 100 users 915K Jan 15 12:47 dwebp
--rwxr-xr-x 1 100 users 2.3M Jan 15 12:47 get_disto
--rwxr-xr-x 1 100 users 703K Jan 15 12:47 gif2webp
--rwxr-xr-x 1 100 users 2.4M Jan 15 12:47 img2webp
--rwxr-xr-x 1 100 users 682K Jan 15 12:47 vwebp
--rwxr-xr-x 1 100 users 359K Jan 15 12:47 webpinfo
--rwxr-xr-x 1 100 users 375K Jan 15 12:47 webpmux
--rwxr-xr-x 1 100 users 347K Jan 15 12:47 webp_quality
-&lt;/code&gt;&lt;/pre&gt;
-&lt;ul&gt;
-&lt;li&gt;anim_diff – 动画文件差异对比工具&lt;/li&gt;
-&lt;li&gt;anim_dump – 动画文件差异转存工具&lt;/li&gt;
-&lt;li&gt;cwebp – webp编码工具&lt;/li&gt;
-&lt;li&gt;dwebp – webp解码工具&lt;/li&gt;
-&lt;li&gt;gif2webp – 转换gif为webp&lt;/li&gt;
-&lt;li&gt;img2webp – 将一系列图片转换为webp动画文件&lt;/li&gt;
-&lt;li&gt;vwebp – webp查看软件&lt;/li&gt;
-&lt;li&gt;webpinfo – 查看webp图片文件信息&lt;/li&gt;
-&lt;li&gt;webpmux – webp复用工具&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;webp转换实例&#34;&gt;WebP转换实例&lt;/h3&gt;
-&lt;p&gt;将webp工具目录添加至&lt;strong&gt;PATH&lt;/strong&gt;中，编辑&lt;code&gt;~/.bashrc&lt;/code&gt;添加以下内容：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;export PATH=$PATH:~/libwebp-1.0.2-linux-x86-64/bin
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;cwebp&lt;/strong&gt;语法说明：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;cwebp [options] input_file -o output_file.webp
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;以下为转换实例：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;cwebp -q 50 -lossless picture.png -o picture_lossless.webp
-cwebp -q 70 picture_with_alpha.png -o picture_with_alpha.webp
-cwebp -sns 70 -f 50 -size 60000 picture.png -o picture.webp
-cwebp -o picture.webp -- ---picture.png&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <guid>/post/convert-images-to-webp-in-linux/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          安装WebP Ubuntu中可以使用以下命令安装WebP
+$sudo apt install webp  其他Linux系统，可以从这里下载对应压缩包，如下：
+wget https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.0.2-linux-x86-64.tar.gz  解压后得到以下文件：
+$tar zxf libwebp-1.0.2-linux-x86-64.tar.gz $cd libwebp-1.0.2-linux-x86-64 $cd bin $ll total 12M -rwxr-xr-x 1 100 users 679K Jan 15 12:47 anim_diff -rwxr-xr-x 1 100 users 923K Jan 15 12:47 anim_dump -rwxr-xr-x 1 100 users 2.4M Jan 15 12:47 cwebp -rwxr-xr-x 1 100 users 915K Jan 15 12:47 dwebp -rwxr-xr-x 1 100 users 2.3M Jan 15 12:47 get_disto -rwxr-xr-x 1 100 users 703K Jan 15 12:47 gif2webp -rwxr-xr-x 1 100 users 2.
+          
+        
+        </description>
     </item>
     
   </channel>

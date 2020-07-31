@@ -2,55 +2,41 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CLI on UNIXETC</title>
-    <link>https://unixetc.com/tags/cli/</link>
-    <description>UNIXETC (CLI)</description>
+    
+    
+    
+    <link>/tags/cli/</link>
+    <description>Recent content in CLI on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 19 Aug 2014 08:19:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/cli/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/cli/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Linux下CLI模式使用Dropbox</title>
-      <link>https://unixetc.com/post/cli-model-of-linux-using-dropbox/</link>
+      <link>/post/cli-model-of-linux-using-dropbox/</link>
       <pubDate>Tue, 19 Aug 2014 08:19:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/cli-model-of-linux-using-dropbox/</guid>
-      <description>&lt;h3 id=&#34;下载dropbox&#34;&gt;下载Dropbox&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;32-bit:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;cd ~ &amp;amp;&amp;amp; wget -O - &amp;quot;https://www.dropbox.com/download?plat=lnx.x86&amp;quot; | tar xzf -
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;64-bit:&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;cd ~ &amp;amp;&amp;amp; wget -O - &amp;quot;https://www.dropbox.com/download?plat=lnx.x86_64&amp;quot; | tar xzf -
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;连接到dropbox&#34;&gt;连接到Dropbox&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;~/.dropbox-dist/dropboxd
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;按照提示，在浏览器中打开链接，确认授权。&lt;/p&gt;
-&lt;h3 id=&#34;cli模式使用dropbox&#34;&gt;CLI模式使用Dropbox&lt;/h3&gt;
-&lt;p&gt;下载执行脚本:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;wget https://www.dropbox.com/download?dl=packages/dropbox.py
-chmod +x dropbox.py
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;dropbox.py使用&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;root@hkvps:~# ./dropbox.py help
-Dropbox command-line interface
-commands:
-Note: use dropbox help &amp;lt;command&amp;gt; to view usage for a specific command.
-
- status       get current status of the dropboxd
- help         provide help
- puburl       get public url of a file in your dropbox
- stop         stop dropboxd
- running      return whether dropbox is running
- start        start dropboxd
- filestatus   get current sync status of one or more files
- ls           list directory contents with current sync status
- autostart    automatically start dropbox at login
- exclude      ignores/excludes a directory from syncing
- lansync      enables or disables LAN sync&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <guid>/post/cli-model-of-linux-using-dropbox/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          下载Dropbox 32-bit:
+cd ~ &amp;amp;&amp;amp; wget -O - &amp;quot;https://www.dropbox.com/download?plat=lnx.x86&amp;quot; | tar xzf -  64-bit:
+cd ~ &amp;amp;&amp;amp; wget -O - &amp;quot;https://www.dropbox.com/download?plat=lnx.x86_64&amp;quot; | tar xzf -  连接到Dropbox ~/.dropbox-dist/dropboxd  按照提示，在浏览器中打开链接，确认授权。
+CLI模式使用Dropbox 下载执行脚本:
+wget https://www.dropbox.com/download?dl=packages/dropbox.py chmod +x dropbox.py  dropbox.py使用
+root@hkvps:~# ./dropbox.py help Dropbox command-line interface commands: Note: use dropbox help &amp;lt;command&amp;gt; to view usage for a specific command. status get current status of the dropboxd help provide help puburl get public url of a file in your dropbox stop stop dropboxd running return whether dropbox is running start start dropboxd filestatus get current sync status of one or more files ls list directory contents with current sync status autostart automatically start dropbox at login exclude ignores/excludes a directory from syncing lansync enables or disables LAN sync 
+          
+        
+        </description>
     </item>
     
   </channel>

@@ -2,84 +2,93 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>termux on UNIXETC</title>
-    <link>https://unixetc.com/tags/termux/</link>
-    <description>UNIXETC (termux)</description>
+    
+    
+    
+    <link>/tags/termux/</link>
+    <description>Recent content in termux on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 11 Jun 2019 00:00:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/termux/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/termux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Termux开启扩展快捷键</title>
-      <link>https://unixetc.com/post/termux-extra-keys-row/</link>
+      <link>/post/termux-extra-keys-row/</link>
       <pubDate>Tue, 11 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/termux-extra-keys-row/</guid>
-      <description>&lt;p&gt;打开Termux，从屏幕左边缘向右滑动，打开抽屉菜单，然后长按&lt;strong&gt;KEYBOARD&lt;/strong&gt;，即可打开扩展快捷键。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/20190611085423.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-</description>
+      <guid>/post/termux-extra-keys-row/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          打开Termux，从屏幕左边缘向右滑动，打开抽屉菜单，然后长按KEYBOARD，即可打开扩展快捷键。
+          
+        
+        </description>
     </item>
     
     <item>
       <title>Termux编辑软件源</title>
-      <link>https://unixetc.com/post/termux-edit-sources.list/</link>
+      <link>/post/termux-edit-sources.list/</link>
       <pubDate>Mon, 10 Jun 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/termux-edit-sources.list/</guid>
-      <description>&lt;p&gt;&lt;code&gt;vi /data/data/com.termux/files/usr/etc/apt/sources.list&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;将 &lt;strong&gt;&lt;a href=&#34;https://termux.net&#34;&gt;https://termux.net&lt;/a&gt;&lt;/strong&gt; 替换成 &lt;strong&gt;&lt;a href=&#34;https://mirrors.ustc.edu.cn/termux&#34;&gt;https://mirrors.ustc.edu.cn/termux&lt;/a&gt;&lt;/strong&gt;，保存退出即可。&lt;/p&gt;
-&lt;p&gt;你也可以使用 sed 命令进行文本替换：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sed -i &#39;s,https://termux.net,https://mirrors.ustc.edu.cn/termux,&#39; $PREFIX/etc/apt/sources.list
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;更新&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;pkg update
-pkg upgrade&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <guid>/post/termux-edit-sources.list/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          vi /data/data/com.termux/files/usr/etc/apt/sources.list
+将 https://termux.net 替换成 https://mirrors.ustc.edu.cn/termux，保存退出即可。
+你也可以使用 sed 命令进行文本替换：
+sed -i &#39;s,https://termux.net,https://mirrors.ustc.edu.cn/termux,&#39; $PREFIX/etc/apt/sources.list  更新
+pkg update pkg upgrade 
+          
+        
+        </description>
     </item>
     
     <item>
       <title>Termux软件包管理</title>
-      <link>https://unixetc.com/post/termux-package-management/</link>
+      <link>/post/termux-package-management/</link>
       <pubDate>Thu, 09 Mar 2017 13:19:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/termux-package-management/</guid>
-      <description>&lt;p&gt;首次安装Termux后，内含一个基础系统，包括apt软件包管理功能，并且集成了一些busybox系统工具。&lt;/p&gt;
-&lt;p&gt;其余的软件包可使用apt进行安装管理，命令如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;apt update
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;更新可用软件包清单。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;apt search &amp;lt;query&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;按名称搜索可用软件。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;apt install &amp;lt;package&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;安装软件&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;apt upgrade
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;更新所有可更新软件。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;apt show &amp;lt;package&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;显示软件信息&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;apt list
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;列出可用软件清单&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;apt list --installed
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;列出所有已安装软件清单&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;apt remove &amp;lt;package&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;卸载已安装软件&lt;/p&gt;
-&lt;p&gt;Apt是基于dpkg格式的软件管理工具，一般没必要直接使用dpkg来进行操作，不过以下两个例子可以参考：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;dpkg -L &amp;lt;package&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;列出已安装软件&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;dpkg --verify
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;验证已安装软件的完整性&lt;/p&gt;
-&lt;p&gt;更多信息请检阅apt manual page (通过apt install man来安装)&lt;/p&gt;
-</description>
+      <guid>/post/termux-package-management/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          首次安装Termux后，内含一个基础系统，包括apt软件包管理功能，并且集成了一些busybox系统工具。
+其余的软件包可使用apt进行安装管理，命令如下：
+apt update  更新可用软件包清单。
+apt search &amp;lt;query&amp;gt;  按名称搜索可用软件。
+apt install &amp;lt;package&amp;gt;  安装软件
+apt upgrade  更新所有可更新软件。
+apt show &amp;lt;package&amp;gt;  显示软件信息
+apt list  列出可用软件清单
+apt list --installed  列出所有已安装软件清单
+apt remove &amp;lt;package&amp;gt;  卸载已安装软件
+Apt是基于dpkg格式的软件管理工具，一般没必要直接使用dpkg来进行操作，不过以下两个例子可以参考：
+dpkg -L &amp;lt;package&amp;gt;  列出已安装软件
+dpkg --verify  验证已安装软件的完整性
+更多信息请检阅apt manual page (通过apt install man来安装)
+          
+        
+        </description>
     </item>
     
   </channel>

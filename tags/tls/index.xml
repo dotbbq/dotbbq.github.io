@@ -2,63 +2,41 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>tls on UNIXETC</title>
-    <link>https://unixetc.com/tags/tls/</link>
-    <description>UNIXETC (tls)</description>
+    
+    
+    
+    <link>/tags/tls/</link>
+    <description>Recent content in tls on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 20 Aug 2018 18:18:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/tls/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/tls/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>V2ray使用实例</title>
-      <link>https://unixetc.com/post/v2ray-use-case/</link>
+      <link>/post/v2ray-use-case/</link>
       <pubDate>Mon, 20 Aug 2018 18:18:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/v2ray-use-case/</guid>
-      <description>&lt;p&gt;Project V 提供了单一的内核和多种界面操作方式。内核（V2Ray）用于实际的网络交互、路由等针对网络数据的处理，而外围的用户界面程序提供了方便直接的操作流程。
-V2Ray 的主要作用是根据用户的配置，对于传入的网络连接进行一定处理，然后发往指定的服务器。它是一个命令行程序，可以接受一个 JSON 格式的配置文件。&lt;/p&gt;
-&lt;h3 id=&#34;vps安装服务端&#34;&gt;VPS安装服务端&lt;/h3&gt;
-&lt;p&gt;使用下面命令一键安装:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;bash &amp;lt;(curl -L -s https://install.direct/go.sh)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;或者从&lt;a href=&#34;https://github.com/v2ray/v2ray-core/releases&#34;&gt;https://github.com/v2ray/v2ray-core/releases&lt;/a&gt;下载预编译包进行安装。&lt;/p&gt;
-&lt;p&gt;安装完成后，使用&lt;code&gt;service v2ray start&lt;/code&gt;启动v2ray服务。&lt;/p&gt;
-&lt;h3 id=&#34;windows安装本地端&#34;&gt;Windows安装本地端&lt;/h3&gt;
-&lt;p&gt;从&lt;a href=&#34;https://github.com/v2ray/v2ray-core/releases&#34;&gt;https://github.com/v2ray/v2ray-core/releases&lt;/a&gt;下载Windows客户端，解压后编辑&lt;code&gt;config.json&lt;/code&gt;文件，内容如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;{
-&amp;quot;inbound&amp;quot;: {
-    &amp;quot;port&amp;quot;: 1080, // 监听端口
-    &amp;quot;protocol&amp;quot;: &amp;quot;socks&amp;quot;, // 入口协议为 SOCKS 5
-    &amp;quot;domainOverride&amp;quot;: [&amp;quot;tls&amp;quot;,&amp;quot;http&amp;quot;],
-    &amp;quot;settings&amp;quot;: {
-    &amp;quot;auth&amp;quot;: &amp;quot;noauth&amp;quot;  //socks的认证设置，noauth 代表不认证，由于 socks 通常在客户端使用，所以这里不认证
-    }
-},
-&amp;quot;outbound&amp;quot;: {
-    &amp;quot;protocol&amp;quot;: &amp;quot;vmess&amp;quot;, // 出口协议
-    &amp;quot;settings&amp;quot;: {
-    &amp;quot;vnext&amp;quot;: [
-        {
-        &amp;quot;address&amp;quot;: &amp;quot;10.0.0.1&amp;quot;, // 服务器地址，请修改为你自己的服务器 ip 或域名
-        &amp;quot;port&amp;quot;: 31892,  // 服务器端口
-        &amp;quot;users&amp;quot;: [
-            {
-            &amp;quot;id&amp;quot;: &amp;quot;3efd584f-8a7d-43af-9c75-35266df4ceb0&amp;quot;,  // 用户 ID，必须与服务器端配置相同
-            &amp;quot;alterId&amp;quot;: 64 // 此处的值也应当与服务器相同
-            }
-        ]
-        }
-    ]
-    }
-}
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;以上的id和alterId，在vps上使用&lt;code&gt;cat /etc/v2ray/config.json&lt;/code&gt;查看。&lt;/p&gt;
-&lt;p&gt;配置完成后，点击&lt;code&gt;wv2ray.exe&lt;/code&gt;在后台运行v2ray本地端。&lt;/p&gt;
-&lt;p&gt;然后在浏览器配置通过&lt;code&gt;127.0.0.1:1080&lt;/code&gt; socks5方式使用代理。&lt;/p&gt;
-</description>
+      <guid>/post/v2ray-use-case/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Project V 提供了单一的内核和多种界面操作方式。内核（V2Ray）用于实际的网络交互、路由等针对网络数据的处理，而外围的用户界面程序提供了方便直接的操作流程。 V2Ray 的主要作用是根据用户的配置，对于传入的网络连接进行一定处理，然后发往指定的服务器。它是一个命令行程序，可以接受一个 JSON 格式的配置文件。
+VPS安装服务端 使用下面命令一键安装:
+bash &amp;lt;(curl -L -s https://install.direct/go.sh)  或者从https://github.com/v2ray/v2ray-core/releases下载预编译包进行安装。
+安装完成后，使用service v2ray start启动v2ray服务。
+Windows安装本地端 从https://github.com/v2ray/v2ray-core/releases下载Windows客户端，解压后编辑config.json文件，内容如下：
+{ &amp;quot;inbound&amp;quot;: { &amp;quot;port&amp;quot;: 1080, // 监听端口 &amp;quot;protocol&amp;quot;: &amp;quot;socks&amp;quot;, // 入口协议为 SOCKS 5 &amp;quot;domainOverride&amp;quot;: [&amp;quot;tls&amp;quot;,&amp;quot;http&amp;quot;], &amp;quot;settings&amp;quot;: { &amp;quot;auth&amp;quot;: &amp;quot;noauth&amp;quot; //socks的认证设置，noauth 代表不认证，由于 socks 通常在客户端使用，所以这里不认证 } }, &amp;quot;outbound&amp;quot;: { &amp;quot;protocol&amp;quot;: &amp;quot;vmess&amp;quot;, // 出口协议 &amp;quot;settings&amp;quot;: { &amp;quot;vnext&amp;quot;: [ { &amp;quot;address&amp;quot;: &amp;quot;10.0.0.1&amp;quot;, // 服务器地址，请修改为你自己的服务器 ip 或域名 &amp;quot;port&amp;quot;: 31892, // 服务器端口 &amp;quot;users&amp;quot;: [ { &amp;quot;id&amp;quot;: &amp;quot;3efd584f-8a7d-43af-9c75-35266df4ceb0&amp;quot;, // 用户 ID，必须与服务器端配置相同 &amp;quot;alterId&amp;quot;: 64 // 此处的值也应当与服务器相同 } ] } ] } } }  以上的id和alterId，在vps上使用cat /etc/v2ray/config.
+          
+        
+        </description>
     </item>
     
   </channel>

@@ -2,188 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>dropboxuploader on UNIXETC</title>
-    <link>https://unixetc.com/tags/dropboxuploader/</link>
-    <description>UNIXETC (dropboxuploader)</description>
+    
+    
+    
+    <link>/tags/dropboxuploader/</link>
+    <description>Recent content in dropboxuploader on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 28 Jul 2017 17:28:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/dropboxuploader/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/dropboxuploader/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Dropbox脚本工具DropboxUploader</title>
-      <link>https://unixetc.com/post/powerful-dropbox-scripting-tool-dropbox-uploader/</link>
+      <link>/post/powerful-dropbox-scripting-tool-dropbox-uploader/</link>
       <pubDate>Fri, 28 Jul 2017 17:28:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/powerful-dropbox-scripting-tool-dropbox-uploader/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Dropbox Uploader&lt;/strong&gt;是一款专为&lt;strong&gt;Dropbox&lt;/strong&gt;开发的&lt;strong&gt;BASH&lt;/strong&gt;脚本，可以实现上传、下载、删除、列出文件清单、在线分享、同步和备份等功能。&lt;/p&gt;
-&lt;p&gt;它使用&lt;strong&gt;BASH&lt;/strong&gt;脚本语言写成，只需要&lt;strong&gt;cURL&lt;/strong&gt;即可使用。&lt;/p&gt;
-&lt;p&gt;项目主页 &lt;a href=&#34;https://github.com/andreafabrizi/Dropbox-Uploader&#34;&gt;GiHub project page&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;为什么使用此脚本?&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;绿色轻便:&lt;strong&gt;使用&lt;/strong&gt;BASH&lt;/strong&gt;脚本语言写成，仅仅需要&lt;strong&gt;cURL&lt;/strong&gt;一个软件(curl是一个数据传输工具，大部分linux发行版均会内置该软件)。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;安全:&lt;/strong&gt; 不需要提供帐号密码，该脚本使用官方API进行验证。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;更多的扩展信息和使用技巧请参考&lt;a href=&#34;https://github.com/andreafabrizi/Dropbox-Uploader/wiki&#34;&gt;官方wiki&lt;/a&gt;，该wiki同时提供&lt;strong&gt;Dropbox Uploader&lt;/strong&gt;相关的使用实例和脚本。&lt;/p&gt;
-&lt;h3 id=&#34;特性&#34;&gt;特性&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;跨平台&lt;/li&gt;
-&lt;li&gt;支持官方Dropbox API v2&lt;/li&gt;
-&lt;li&gt;无需密码&lt;/li&gt;
-&lt;li&gt;简单的配置提示&lt;/li&gt;
-&lt;li&gt;分块文件上传&lt;/li&gt;
-&lt;li&gt;递归文档下载&lt;/li&gt;
-&lt;li&gt;递归文档上传&lt;/li&gt;
-&lt;li&gt;Shell通配符扩展 (仅上传)&lt;/li&gt;
-&lt;li&gt;删除/移动/重命名/拷贝/列出/分享文件&lt;/li&gt;
-&lt;li&gt;创建分享连接&lt;/li&gt;
-&lt;li&gt;监视变化&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;安装配置dropboxuploader&#34;&gt;安装配置DropboxUploader&lt;/h3&gt;
-&lt;p&gt;使用git拷贝官方仓库：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;git clone https://github.com/andreafabrizi/Dropbox-Uploader.git
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;或者直接下载脚本：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;curl &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;https://raw.githubusercontent.com/andreafabrizi/Dropbox-Uploader/master/dropbox_uploader.sh&amp;#34;&lt;/span&gt; -o dropbox_uploader.sh
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;给脚本添加执行权限并运行：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt; $chmod +x dropbox_uploader.sh
- $./dropbox_uploader.sh
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;第一次运行&lt;code&gt;dropbox_uploader&lt;/code&gt;时，会有鉴权提示，按照提示在&lt;a href=&#34;https://www.dropbox.com/developers/apps&#34;&gt;https://www.dropbox.com/developers/apps&lt;/a&gt;新建api app，然后在app管理页找到&lt;strong&gt;Generated access token&lt;/strong&gt;创建&lt;strong&gt;access token&lt;/strong&gt;，将&lt;strong&gt;access token&lt;/strong&gt;粘贴到DropboxUploader提示行按回车键，随后会提示成功接入&lt;strong&gt;Dropbox&lt;/strong&gt;。配置文件保存在&lt;code&gt;~/.dropbox_uploader&lt;/code&gt;。&lt;/p&gt;
-&lt;h3 id=&#34;使用dropboxuploader&#34;&gt;使用DropboxUploader&lt;/h3&gt;
-&lt;p&gt;DropboxUploader语法非常简单:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;./dropbox_uploader.sh [PARAMETERS] COMMAND...
-
-[%%]: 可选参数
-&amp;lt;%%&amp;gt;: 必须参数
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;可使用命令:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;upload&lt;/strong&gt; &amp;lt;LOCAL_FILE/DIR &amp;hellip;&amp;gt; &amp;lt;REMOTE_FILE/DIR&amp;gt;&lt;/p&gt;
-&lt;p&gt;上传本地文件或目录到Dropbox。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;download&lt;/strong&gt; &amp;lt;REMOTE_FILE/DIR&amp;gt; [LOCAL_FILE/DIR]&lt;br&gt;
-从Dropbox下载文件或目录到本地&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;delete&lt;/strong&gt; &amp;lt;REMOTE_FILE/DIR&amp;gt;&lt;br&gt;
-删除Dropbox上的文件或目录&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;move&lt;/strong&gt; &amp;lt;REMOTE_FILE/DIR&amp;gt; &amp;lt;REMOTE_FILE/DIR&amp;gt;&lt;br&gt;
-移动或重命名远端文件或目录&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;copy&lt;/strong&gt; &amp;lt;REMOTE_FILE/DIR&amp;gt; &amp;lt;REMOTE_FILE/DIR&amp;gt;&lt;br&gt;
-拷贝远端文件或目录&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;mkdir&lt;/strong&gt; &amp;lt;REMOTE_DIR&amp;gt;&lt;br&gt;
-在Dropbox创建目录&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;list&lt;/strong&gt; [REMOTE_DIR]&lt;br&gt;
-列出Dropbox目录内容&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;monitor&lt;/strong&gt; [REMOTE_DIR][TIMEOUT]&lt;/p&gt;
-&lt;p&gt;监控远端目录变化，如果超时退出，则会反馈第一次变化。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;share&lt;/strong&gt; &amp;lt;REMOTE_FILE&amp;gt;&lt;br&gt;
-获取远端文件或目录的公开连接&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;saveurl&lt;/strong&gt; &amp;lt;URL&amp;gt; &amp;lt;REMOTE_DIR&amp;gt;&lt;/p&gt;
-&lt;p&gt;从URL下载文件到Dropbox&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;search&lt;/strong&gt; &amp;lt;QUERY&amp;gt;&lt;/p&gt;
-&lt;p&gt;搜索特定文件&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;info&lt;/strong&gt;&lt;br&gt;
-显示Dropbox帐户相关信息&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;space&lt;/strong&gt;
-示当前帐户容量使用情况&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;unlink&lt;/strong&gt;&lt;br&gt;
-断开Dropbox帐户连接&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;扩展参数:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;-f &amp;lt;FILENAME&amp;gt;&lt;/strong&gt;&lt;br&gt;
-从特定文件加载配置&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;-s&lt;/strong&gt;&lt;br&gt;
-Skip already existing files when download/upload. Default: Overwrite&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;-d&lt;/strong&gt;&lt;br&gt;
-开启DEBUG模式&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;-q&lt;/strong&gt;&lt;br&gt;
-Quiet mode. Don&amp;rsquo;t show progress meter or messages&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;-h&lt;/strong&gt;&lt;br&gt;
-显示可读的文件大小格式&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;-p&lt;/strong&gt;&lt;br&gt;
-显示cURL过程提示&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;-k&lt;/strong&gt;&lt;br&gt;
-不检查SSL证书(不安全)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;DropboxUploader使用实例:&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;    ./dropbox_uploader.sh upload /etc/passwd /myfiles/passwd.old
-    ./dropbox_uploader.sh upload *.zip /
-    ./dropbox_uploader.sh download /backup.zip
-    ./dropbox_uploader.sh delete /backup.zip
-    ./dropbox_uploader.sh mkdir /myDir/
-    ./dropbox_uploader.sh upload &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;My File.txt&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;My File 2.txt&amp;#34;&lt;/span&gt;
-    ./dropbox_uploader.sh share &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;My File.txt&amp;#34;&lt;/span&gt;
-    ./dropbox_uploader.sh list
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;已通过测试环境&#34;&gt;已通过测试环境&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;GNU Linux&lt;/li&gt;
-&lt;li&gt;FreeBSD 8.3/10.0&lt;/li&gt;
-&lt;li&gt;MacOSX&lt;/li&gt;
-&lt;li&gt;Windows/Cygwin&lt;/li&gt;
-&lt;li&gt;Raspberry Pi&lt;/li&gt;
-&lt;li&gt;QNAP&lt;/li&gt;
-&lt;li&gt;iOS&lt;/li&gt;
-&lt;li&gt;OpenWRT&lt;/li&gt;
-&lt;li&gt;Chrome OS&lt;/li&gt;
-&lt;li&gt;OpenBSD&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;设置代理&#34;&gt;设置代理&lt;/h4&gt;
-&lt;p&gt;如果需要使用代理服务器，只需对&lt;strong&gt;https_proxy&lt;/strong&gt;变量进行设置即可：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Linux:&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;    export HTTP_PROXY_USER&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;XXXX
-    export HTTP_PROXY_PASSWORD&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;YYYY
-    export https_proxy&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;http://192.168.0.1:8080
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;BSD:&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;    setenv HTTP_PROXY_USER XXXX
-    setenv HTTP_PROXY_PASSWORD YYYY
-    setenv https_proxy http://192.168.0.1:8080
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;bash和curl安装&#34;&gt;BASH和Curl安装&lt;/h4&gt;
-&lt;p&gt;&lt;strong&gt;Debian &amp;amp; Ubuntu Linux:&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;    sudo apt-get install bash &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;Probably BASH is already installed on your system&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
-    sudo apt-get install curl
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;BSD:&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;    cd /usr/ports/shells/bash &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; make install clean
-    cd /usr/ports/ftp/curl &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; make install clean
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Cygwin:&lt;/strong&gt;&lt;br&gt;
-需要安装以下文件:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;curl&lt;/li&gt;
-&lt;li&gt;ca-certificates&lt;/li&gt;
-&lt;li&gt;dos2unix&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;运行脚本前，你需要使用&lt;code&gt;dos2unix&lt;/code&gt;对脚本进行转换。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;从源码安装cURL:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;从这里下载源码 &lt;a href=&#34;http://curl.haxx.se/download.html&#34;&gt;http://curl.haxx.se/download.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;参考安装指南进行安装&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <guid>/post/powerful-dropbox-scripting-tool-dropbox-uploader/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Dropbox Uploader是一款专为Dropbox开发的BASH脚本，可以实现上传、下载、删除、列出文件清单、在线分享、同步和备份等功能。
+它使用BASH脚本语言写成，只需要cURL即可使用。
+项目主页 GiHub project page.
+为什么使用此脚本?
+ 绿色轻便:使用BASH脚本语言写成，仅仅需要cURL一个软件(curl是一个数据传输工具，大部分linux发行版均会内置该软件)。 安全: 不需要提供帐号密码，该脚本使用官方API进行验证。  更多的扩展信息和使用技巧请参考官方wiki，该wiki同时提供Dropbox Uploader相关的使用实例和脚本。
+特性  跨平台 支持官方Dropbox API v2 无需密码 简单的配置提示 分块文件上传 递归文档下载 递归文档上传 Shell通配符扩展 (仅上传) 删除/移动/重命名/拷贝/列出/分享文件 创建分享连接 监视变化  安装配置DropboxUploader 使用git拷贝官方仓库：
+git clone https://github.com/andreafabrizi/Dropbox-Uploader.git 或者直接下载脚本：
+curl &amp;#34;https://raw.githubusercontent.com/andreafabrizi/Dropbox-Uploader/master/dropbox_uploader.sh&amp;#34; -o dropbox_uploader.sh 给脚本添加执行权限并运行：
+$chmod +x dropbox_uploader.sh $./dropbox_uploader.sh 第一次运行dropbox_uploader时，会有鉴权提示，按照提示在https://www.dropbox.com/developers/apps新建api app，然后在app管理页找到Generated access token创建access token，将access token粘贴到DropboxUploader提示行按回车键，随后会提示成功接入Dropbox。配置文件保存在~/.dropbox_uploader。
+使用DropboxUploader DropboxUploader语法非常简单:
+./dropbox_uploader.sh [PARAMETERS] COMMAND... [%%]: 可选参数 &amp;lt;%%&amp;gt;: 必须参数 可使用命令:
+  upload &amp;lt;LOCAL_FILE/DIR &amp;hellip;&amp;gt; &amp;lt;REMOTE_FILE/DIR&amp;gt;
+上传本地文件或目录到Dropbox。
+          
+        
+        </description>
     </item>
     
   </channel>

@@ -2,59 +2,51 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>btsync on UNIXETC</title>
-    <link>https://unixetc.com/tags/btsync/</link>
-    <description>UNIXETC (btsync)</description>
+    
+    
+    
+    <link>/tags/btsync/</link>
+    <description>Recent content in btsync on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 21 Jan 2014 01:21:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/btsync/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/btsync/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>BitTorrent Sync使用实例</title>
-      <link>https://unixetc.com/post/bittorrent-sync-usages/</link>
+      <link>/post/bittorrent-sync-usages/</link>
       <pubDate>Tue, 21 Jan 2014 01:21:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/bittorrent-sync-usages/</guid>
-      <description>&lt;p&gt;BitTorrent Sync是BitTorrent Inc推出的一款多平台同步工具，支持Windows、Linux、MAC、FreeBSD、IOS、Android、Windows Phone，还有许多NAS设备。&lt;/p&gt;
-&lt;p&gt;具体的功能介绍请转至官网 &lt;a href=&#34;https://www.getsync.com/intl/zh_cn/features&#34;&gt;https://www.getsync.com/intl/zh_cn/features&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;下载地址 &lt;a href=&#34;https://www.getsync.com/intl/zh_cn/platforms/desktop&#34;&gt;https://www.getsync.com/intl/zh_cn/platforms/desktop&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;在此提供镜像下载&lt;a href=&#34;http://www.getos.org/btsync/&#34;&gt;http://www.getos.org/btsync/&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;安装bittorrent-sync&#34;&gt;安装BitTorrent Sync&lt;/h3&gt;
-&lt;p&gt;Windows版本，双击下载后的&lt;strong&gt;EXE&lt;/strong&gt;文件安装。&lt;/p&gt;
-&lt;p&gt;Linux版，解压下载后的&lt;strong&gt;btsync_i386.tar.gz&lt;/strong&gt;，运行即可&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;tar zxvf btsync_i386.tar.gz
-cp btsync /usr/bin
-./btsync
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;然后可以通过&lt;code&gt;127.0.0.1:8888&lt;/code&gt;来进行设置管理&lt;/p&gt;
-&lt;p&gt;为了安全期间，不推荐使用默认配置，建议自定义端口&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;btsync --dump-sample-config&amp;gt;bs.conf
-vi bs.conf
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;找到如下内容，将&lt;code&gt;8888&lt;/code&gt;修改为自定义端口号&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;quot;webui&amp;quot; :
-{
-    &amp;quot;listen&amp;quot; : &amp;quot;0.0.0.0:8888&amp;quot; // remove field to disable WebUI
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;然后通过以下命令加载自定义配置文件&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;btsync --config bs.conf
-&lt;/code&gt;&lt;/pre&gt;
-&lt;hr&gt;
-&lt;p&gt;Windows版与Linux版的软件界面大致相同，以下以linux为例说明。&lt;/p&gt;
-&lt;h3 id=&#34;配置bittorrent-sync&#34;&gt;配置BitTorrent Sync&lt;/h3&gt;
-&lt;p&gt;第一次使用&lt;strong&gt;BitTorrent Sync&lt;/strong&gt;需要进行一系列设置，如下所示：&lt;/p&gt;
-&lt;p&gt;设置管理员账号以及密码 *&lt;strong&gt;Windows不需要&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/btsync_config_1.webp&#34; alt=&#34;设置管理员账号以及密码&#34; title=&#34;设置管理员账号以及密码&#34;&gt;&lt;/p&gt;
-&lt;p&gt;账号设定完成后&lt;strong&gt;BitTorrent Sync&lt;/strong&gt;会提示登录以继续使用，登录后继续下面设置。&lt;/p&gt;
-&lt;p&gt;然后是使用条款和Pro版本试用(30天)提示，直接同意。&lt;/p&gt;
-&lt;p&gt;下来选择连接设备，一般选择&lt;strong&gt;This is my first Sync device&lt;/strong&gt;，如果你已经在其他设备上安装了&lt;strong&gt;BitTorrent Sync&lt;/strong&gt;，并且需要将该设备的内容全部同步到新设备，可以选择&lt;strong&gt;Link a device already running Sync&lt;/strong&gt;，这个在后边再讲。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/btsync_config_2.webp&#34; alt=&#34;连接设备&#34; title=&#34;连接设备&#34;&gt;&lt;/p&gt;
-&lt;p&gt;接下来创建身份信息(Create identity)，设定一个名称。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/btsync_config_3.webp&#34; alt=&#34;Create identity&#34; title=&#34;Create identity&#34;&gt;&lt;/p&gt;
-&lt;p&gt;完成后即可使用。&lt;/p&gt;
-</description>
+      <guid>/post/bittorrent-sync-usages/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          BitTorrent Sync是BitTorrent Inc推出的一款多平台同步工具，支持Windows、Linux、MAC、FreeBSD、IOS、Android、Windows Phone，还有许多NAS设备。
+具体的功能介绍请转至官网 https://www.getsync.com/intl/zh_cn/features
+下载地址 https://www.getsync.com/intl/zh_cn/platforms/desktop
+在此提供镜像下载http://www.getos.org/btsync/
+安装BitTorrent Sync Windows版本，双击下载后的EXE文件安装。
+Linux版，解压下载后的btsync_i386.tar.gz，运行即可
+tar zxvf btsync_i386.tar.gz cp btsync /usr/bin ./btsync  然后可以通过127.0.0.1:8888来进行设置管理
+为了安全期间，不推荐使用默认配置，建议自定义端口
+btsync --dump-sample-config&amp;gt;bs.conf vi bs.conf  找到如下内容，将8888修改为自定义端口号
+&amp;quot;webui&amp;quot; : { &amp;quot;listen&amp;quot; : &amp;quot;0.0.0.0:8888&amp;quot; // remove field to disable WebUI  然后通过以下命令加载自定义配置文件
+btsync --config bs.conf   Windows版与Linux版的软件界面大致相同，以下以linux为例说明。
+配置BitTorrent Sync 第一次使用BitTorrent Sync需要进行一系列设置，如下所示：
+设置管理员账号以及密码 *Windows不需要
+账号设定完成后BitTorrent Sync会提示登录以继续使用，登录后继续下面设置。
+然后是使用条款和Pro版本试用(30天)提示，直接同意。
+下来选择连接设备，一般选择This is my first Sync device，如果你已经在其他设备上安装了BitTorrent Sync，并且需要将该设备的内容全部同步到新设备，可以选择Link a device already running Sync，这个在后边再讲。
+          
+        
+        </description>
     </item>
     
   </channel>

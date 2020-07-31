@@ -2,70 +2,42 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ipgetter on UNIXETC</title>
-    <link>https://unixetc.com/tags/ipgetter/</link>
-    <description>UNIXETC (ipgetter)</description>
+    
+    
+    
+    <link>/tags/ipgetter/</link>
+    <description>Recent content in ipgetter on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 19 Apr 2017 21:28:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/ipgetter/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/ipgetter/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>树莓派动态IP更新器</title>
-      <link>https://unixetc.com/post/raspberrypi-dynamic-ip-updater/</link>
+      <link>/post/raspberrypi-dynamic-ip-updater/</link>
       <pubDate>Wed, 19 Apr 2017 21:28:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/raspberrypi-dynamic-ip-updater/</guid>
-      <description>&lt;p&gt;这是一个python3的脚本，每隔10分钟监控一次IP地址，如果发生变化则会通过AutoRemote消息通知你。 关于AutoRemote的使用可&lt;a href=&#34;http://www.notenoughtech.com/raspberry-pi/tasker-raspberrypi/&#34;&gt;参考这里&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;这里推荐使用&lt;a href=&#34;https://github.com/phoemur/ipgetter&#34;&gt;&lt;strong&gt;ipgetter&lt;/strong&gt;&lt;/a&gt;来获取外网IP，地址为&lt;a href=&#34;https://github.com/phoemur/ipgetter&#34;&gt;https://github.com/phoemur/ipgetter&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;安装ipgetter&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;sudo apt-get install python3 pip
-sudo pip3 install ipgetter
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;你可以从以下地址获取每个通知设备的AutoRemote所需google key&lt;/p&gt;
-&lt;p&gt;​	http://autoremotejoaomgcd.appspot.com/?key=[it&amp;rsquo;s the part that is here]&lt;/p&gt;
-&lt;p&gt;以下为python3脚本:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;import ipgetter
-import urllib.request
-import requests
-
-currentIP &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; ipgetter.myip&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
-&lt;span style=&#34;color:#75715e&#34;&gt;#AutoRemote function to send a notification YOUR_KEY goes here&lt;/span&gt;
-def sendAR&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;x&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;:
-	AR_key &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;YOUR_KEY&amp;#39;&lt;/span&gt;
-	AR_url &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;http://autoremotejoaomgcd.appspot.com/sendmessage?key=&amp;#39;&lt;/span&gt;+ AR_key +&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&amp;amp;message=IP%20&amp;#39;&lt;/span&gt;
-	message &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; AR_url + x
-	response &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; urllib.request.urlopen&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;message&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;.read&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
-	print&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;x&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;	
-&lt;span style=&#34;color:#75715e&#34;&gt;#check the internet  and check if previous file is present&lt;/span&gt;
-try:
-	requests.get&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;http://www.google.com&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
-	print&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;Internet present&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
-	IPfile &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; open&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;ipfile.txt&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;r&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
-	lastIP &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; IPfile.read&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;	
-	&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; lastIP &lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt; currentIP:
-		print&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;No changes last IP: &amp;#39;&lt;/span&gt; + lastIP + &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39; current IP: &amp;#39;&lt;/span&gt; + currentIP&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
-	&lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;:
-		with open&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;ipfile.txt&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;w+&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; as f:
-			f.write&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;currentIP&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
-			f.close&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
-			sendAR&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;currentIP&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
-			print&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;IP updated&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
-&lt;span style=&#34;color:#75715e&#34;&gt;#handle no file&lt;/span&gt;			
-except IOError:
-	&lt;span style=&#34;color:#75715e&#34;&gt;#print(IOError)&lt;/span&gt;
-	with open&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;ipfile.txt&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;w+&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt; as f:
-		IPfile &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; ipgetter.myip&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
-		f.write&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;IPfile&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
-		f.close&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
-		print&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;created file with current IP&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
-		sendAR&lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;currentIP&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
-		quit&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
-&lt;span style=&#34;color:#75715e&#34;&gt;#Handle no internet&lt;/span&gt;		
-except requests.ConnectionError:
-	quit&lt;span style=&#34;color:#f92672&#34;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;运行脚本后，会监视ip变化，如果发生变化则通知最新ip，如果未发生变化则不通知。&lt;/p&gt;
-</description>
+      <guid>/post/raspberrypi-dynamic-ip-updater/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          这是一个python3的脚本，每隔10分钟监控一次IP地址，如果发生变化则会通过AutoRemote消息通知你。 关于AutoRemote的使用可参考这里
+这里推荐使用ipgetter来获取外网IP，地址为https://github.com/phoemur/ipgetter
+安装ipgetter
+sudo apt-get install python3 pip sudo pip3 install ipgetter 你可以从以下地址获取每个通知设备的AutoRemote所需google key
+​	http://autoremotejoaomgcd.appspot.com/?key=[it&amp;rsquo;s the part that is here]
+以下为python3脚本:
+import ipgetter import urllib.request import requests currentIP = ipgetter.myip() #AutoRemote function to send a notification YOUR_KEY goes here def sendAR(x): AR_key = &amp;#39;YOUR_KEY&amp;#39; AR_url = &amp;#39;http://autoremotejoaomgcd.appspot.com/sendmessage?key=&amp;#39;+ AR_key +&amp;#39;&amp;amp;message=IP%20&amp;#39; message = AR_url + x response = urllib.request.urlopen(message).read() print(x)	#check the internet and check if previous file is present try: requests.
+          
+        
+        </description>
     </item>
     
   </channel>

@@ -2,31 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>驾校 on UNIXETC</title>
-    <link>https://unixetc.com/tags/%E9%A9%BE%E6%A0%A1/</link>
-    <description>UNIXETC (驾校)</description>
+    
+    
+    
+    <link>/tags/%E9%A9%BE%E6%A0%A1/</link>
+    <description>Recent content in 驾校 on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 16 Oct 2015 10:16:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/%E9%A9%BE%E6%A0%A1/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/%E9%A9%BE%E6%A0%A1/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>科目一过咧</title>
-      <link>https://unixetc.com/post/ke-mu-yi-passed/</link>
+      <link>/post/ke-mu-yi-passed/</link>
       <pubDate>Fri, 16 Oct 2015 10:16:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/ke-mu-yi-passed/</guid>
-      <description>&lt;p&gt;驾校交钱已经一年了，一直没时间考试，上次报考的科目一由于临时加班没去成，这次重新交钱补考。&lt;/p&gt;
-&lt;p&gt;昨儿晚把驾校发的书翻了一遍，然后就是在手机上用车轮考驾照不停的练习。&lt;/p&gt;
-&lt;p&gt;今儿中午11点多到考场，换了准考证就等待安排考试。&lt;/p&gt;
-&lt;p&gt;分配了个电脑有点挫，第一次登录显示考试时间不对，重新更新信息。&lt;/p&gt;
-&lt;p&gt;第二次指纹录入一直不能验证通过，重新更新指纹验证。&lt;/p&gt;
-&lt;p&gt;第三次摄像头无法采集视频信息，重置考试系统。&lt;/p&gt;
-&lt;p&gt;第四次，一切正常开始答题……&lt;/p&gt;
-&lt;p&gt;13分钟答完，等过了15分钟交卷，得分98。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;考试要点：细心别急、细心别急、细心别急！&lt;/strong&gt;&lt;/p&gt;
-</description>
+      <guid>/post/ke-mu-yi-passed/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          驾校交钱已经一年了，一直没时间考试，上次报考的科目一由于临时加班没去成，这次重新交钱补考。
+昨儿晚把驾校发的书翻了一遍，然后就是在手机上用车轮考驾照不停的练习。
+今儿中午11点多到考场，换了准考证就等待安排考试。
+分配了个电脑有点挫，第一次登录显示考试时间不对，重新更新信息。
+第二次指纹录入一直不能验证通过，重新更新指纹验证。
+第三次摄像头无法采集视频信息，重置考试系统。
+第四次，一切正常开始答题……
+13分钟答完，等过了15分钟交卷，得分98。
+考试要点：细心别急、细心别急、细心别急！
+          
+        
+        </description>
     </item>
     
   </channel>

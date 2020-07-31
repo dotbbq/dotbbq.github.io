@@ -2,14 +2,77 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on UNIXETC</title>
-    <link>https://unixetc.com/categories/</link>
-    <description>UNIXETC (Categories)</description>
+    
+    
+    
+    <link>/categories/</link>
+    <description>Recent content in Categories on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 30 Jul 2020 00:00:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>STUFF</title>
+      <link>/categories/stuff/</link>
+      <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/stuff/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>SHARE</title>
+      <link>/categories/share/</link>
+      <pubDate>Sun, 21 Apr 2019 21:31:00 +0000</pubDate>
+      
+      <guid>/categories/share/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>ESSAY</title>
+      <link>/categories/essay/</link>
+      <pubDate>Fri, 16 Oct 2015 10:16:00 +0000</pubDate>
+      
+      <guid>/categories/essay/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
     
   </channel>
 </rss>

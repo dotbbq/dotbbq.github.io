@@ -3,4622 +3,4622 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://unixetc.com/categories/</loc>
+    <loc>/categories/</loc>
     <lastmod>2020-07-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/linux/</loc>
+    <loc>/tags/linux/</loc>
     <lastmod>2020-07-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/nginx/</loc>
+    <loc>/tags/nginx/</loc>
     <lastmod>2020-07-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/nginx-v2ray-websocket/</loc>
+    <loc>/post/nginx-v2ray-websocket/</loc>
     <lastmod>2020-07-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/</loc>
+    <loc>/post/</loc>
     <lastmod>2020-07-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/categories/stuff/</loc>
+    <loc>/categories/stuff/</loc>
     <lastmod>2020-07-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2020-07-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/</loc>
+    <loc>/</loc>
     <lastmod>2020-07-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/v2ray/</loc>
+    <loc>/tags/v2ray/</loc>
     <lastmod>2020-07-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/vps/</loc>
+    <loc>/tags/vps/</loc>
     <lastmod>2020-07-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/websocket/</loc>
+    <loc>/tags/websocket/</loc>
     <lastmod>2020-07-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/debian/</loc>
+    <loc>/tags/debian/</loc>
     <lastmod>2020-03-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/inxi/</loc>
+    <loc>/tags/inxi/</loc>
     <lastmod>2020-03-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ubuntu/</loc>
+    <loc>/tags/ubuntu/</loc>
     <lastmod>2020-03-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/unixbench/</loc>
+    <loc>/tags/unixbench/</loc>
     <lastmod>2020-03-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/phicomm-n1-unixbench-score-and-system-information/</loc>
+    <loc>/post/phicomm-n1-unixbench-score-and-system-information/</loc>
     <lastmod>2020-03-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E8%B7%91%E5%88%86/</loc>
+    <loc>/tags/%E8%B7%91%E5%88%86/</loc>
     <lastmod>2020-03-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/centos/</loc>
+    <loc>/tags/centos/</loc>
     <lastmod>2020-02-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/yandex/</loc>
+    <loc>/tags/yandex/</loc>
     <lastmod>2020-02-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/yandexdisk/</loc>
+    <loc>/tags/yandexdisk/</loc>
     <lastmod>2020-02-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/yandex-disk-console-client-for-linux/</loc>
+    <loc>/post/yandex-disk-console-client-for-linux/</loc>
     <lastmod>2020-02-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E5%90%8C%E6%AD%A5/</loc>
+    <loc>/tags/%E5%90%8C%E6%AD%A5/</loc>
     <lastmod>2020-02-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E7%BD%91%E7%9B%98/</loc>
+    <loc>/tags/%E7%BD%91%E7%9B%98/</loc>
     <lastmod>2020-02-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/centos-install-hugo-via-repo/</loc>
+    <loc>/post/centos-install-hugo-via-repo/</loc>
     <lastmod>2020-02-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/golang/</loc>
+    <loc>/tags/golang/</loc>
     <lastmod>2020-02-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/hugo/</loc>
+    <loc>/tags/hugo/</loc>
     <lastmod>2020-02-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E9%9D%99%E6%80%81%E7%AB%99%E7%82%B9/</loc>
+    <loc>/tags/%E9%9D%99%E6%80%81%E7%AB%99%E7%82%B9/</loc>
     <lastmod>2020-02-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/gnome/</loc>
+    <loc>/tags/gnome/</loc>
     <lastmod>2019-12-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/gnome-landscaping-guide/</loc>
+    <loc>/post/gnome-landscaping-guide/</loc>
     <lastmod>2019-12-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E4%B8%BB%E9%A2%98/</loc>
+    <loc>/tags/%E4%B8%BB%E9%A2%98/</loc>
     <lastmod>2019-12-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E5%9B%BE%E6%A0%87/</loc>
+    <loc>/tags/%E5%9B%BE%E6%A0%87/</loc>
     <lastmod>2019-12-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E5%A3%81%E7%BA%B8/</loc>
+    <loc>/tags/%E5%A3%81%E7%BA%B8/</loc>
     <lastmod>2019-12-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E5%AD%97%E4%BD%93/</loc>
+    <loc>/tags/%E5%AD%97%E4%BD%93/</loc>
     <lastmod>2019-12-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E7%BE%8E%E5%8C%96/</loc>
+    <loc>/tags/%E7%BE%8E%E5%8C%96/</loc>
     <lastmod>2019-12-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/windows/</loc>
+    <loc>/tags/windows/</loc>
     <lastmod>2019-11-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/linux-install-windows-fonts/</loc>
+    <loc>/post/linux-install-windows-fonts/</loc>
     <lastmod>2019-11-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/apt/</loc>
+    <loc>/tags/apt/</loc>
     <lastmod>2019-11-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/arm/</loc>
+    <loc>/tags/arm/</loc>
     <lastmod>2019-11-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/armbian/</loc>
+    <loc>/tags/armbian/</loc>
     <lastmod>2019-11-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/armbian-change-software-source/</loc>
+    <loc>/post/armbian-change-software-source/</loc>
     <lastmod>2019-11-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/n1/</loc>
+    <loc>/tags/n1/</loc>
     <lastmod>2019-11-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/phicomm/</loc>
+    <loc>/tags/phicomm/</loc>
     <lastmod>2019-11-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E6%96%90%E8%AE%AF/</loc>
+    <loc>/tags/%E6%96%90%E8%AE%AF/</loc>
     <lastmod>2019-11-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E6%96%90%E8%AE%AFn1/</loc>
+    <loc>/tags/%E6%96%90%E8%AE%AFn1/</loc>
     <lastmod>2019-11-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E7%9B%92%E5%AD%90/</loc>
+    <loc>/tags/%E7%9B%92%E5%AD%90/</loc>
     <lastmod>2019-11-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/etcher/</loc>
+    <loc>/tags/etcher/</loc>
     <lastmod>2019-11-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/phicomm-n1-install-armbian/</loc>
+    <loc>/post/phicomm-n1-install-armbian/</loc>
     <lastmod>2019-11-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/android/</loc>
+    <loc>/tags/android/</loc>
     <lastmod>2019-09-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/oneplus/</loc>
+    <loc>/tags/oneplus/</loc>
     <lastmod>2019-09-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/oneplus3/</loc>
+    <loc>/tags/oneplus3/</loc>
     <lastmod>2019-09-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/oneplus3t/</loc>
+    <loc>/tags/oneplus3t/</loc>
     <lastmod>2019-09-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/raspberry-pi/</loc>
+    <loc>/tags/raspberry-pi/</loc>
     <lastmod>2019-09-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/raspi/</loc>
+    <loc>/tags/raspi/</loc>
     <lastmod>2019-09-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ubuntutouch/</loc>
+    <loc>/tags/ubuntutouch/</loc>
     <lastmod>2019-09-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/unix/</loc>
+    <loc>/tags/unix/</loc>
     <lastmod>2019-09-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/unix-bench/</loc>
+    <loc>/tags/unix-bench/</loc>
     <lastmod>2019-09-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ut/</loc>
+    <loc>/tags/ut/</loc>
     <lastmod>2019-09-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E4%B8%80%E5%8A%A03t/</loc>
+    <loc>/tags/%E4%B8%80%E5%8A%A03t/</loc>
     <lastmod>2019-09-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/oneplus3t-and-raspberry-pi-unixbench-score-comparison/</loc>
+    <loc>/post/oneplus3t-and-raspberry-pi-unixbench-score-comparison/</loc>
     <lastmod>2019-09-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/</loc>
+    <loc>/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/</loc>
     <lastmod>2019-09-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/vivo/</loc>
+    <loc>/tags/vivo/</loc>
     <lastmod>2019-09-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/vivo-y913-simplify-version-brush-pack/</loc>
+    <loc>/post/vivo-y913-simplify-version-brush-pack/</loc>
     <lastmod>2019-09-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/y913/</loc>
+    <loc>/tags/y913/</loc>
     <lastmod>2019-09-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E5%88%B7%E6%9C%BA%E5%8C%85/</loc>
+    <loc>/tags/%E5%88%B7%E6%9C%BA%E5%8C%85/</loc>
     <lastmod>2019-09-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E7%B2%BE%E7%AE%80/</loc>
+    <loc>/tags/%E7%B2%BE%E7%AE%80/</loc>
     <lastmod>2019-09-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/lineage/</loc>
+    <loc>/tags/lineage/</loc>
     <lastmod>2019-09-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/lineageos/</loc>
+    <loc>/tags/lineageos/</loc>
     <lastmod>2019-09-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/oneplus-3t-install-ubuntutouch/</loc>
+    <loc>/post/oneplus-3t-install-ubuntutouch/</loc>
     <lastmod>2019-09-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/mycloud/</loc>
+    <loc>/tags/mycloud/</loc>
     <lastmod>2019-08-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/wd/</loc>
+    <loc>/tags/wd/</loc>
     <lastmod>2019-08-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/wd-mycloud/</loc>
+    <loc>/tags/wd-mycloud/</loc>
     <lastmod>2019-08-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E7%A0%B4%E8%A7%A3/</loc>
+    <loc>/tags/%E7%A0%B4%E8%A7%A3/</loc>
     <lastmod>2019-08-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E8%A5%BF%E6%95%B0/</loc>
+    <loc>/tags/%E8%A5%BF%E6%95%B0/</loc>
     <lastmod>2019-08-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/wd-mycloud-gen2-enable-apps-installtion/</loc>
+    <loc>/post/wd-mycloud-gen2-enable-apps-installtion/</loc>
     <lastmod>2019-08-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/comcerto/</loc>
+    <loc>/tags/comcerto/</loc>
     <lastmod>2019-08-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/marvell-armada/</loc>
+    <loc>/tags/marvell-armada/</loc>
     <lastmod>2019-08-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ssh/</loc>
+    <loc>/tags/ssh/</loc>
     <lastmod>2019-08-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/western-digital-my-cloud-version-judgment-method/</loc>
+    <loc>/post/western-digital-my-cloud-version-judgment-method/</loc>
     <lastmod>2019-08-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E8%A5%BF%E9%83%A8%E6%95%B0%E6%8D%AE/</loc>
+    <loc>/tags/%E8%A5%BF%E9%83%A8%E6%95%B0%E6%8D%AE/</loc>
     <lastmod>2019-08-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ubuntu-ports/</loc>
+    <loc>/tags/ubuntu-ports/</loc>
     <lastmod>2019-08-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/ubuntu-touch-change-mirror/</loc>
+    <loc>/post/ubuntu-touch-change-mirror/</loc>
     <lastmod>2019-08-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/rsa/</loc>
+    <loc>/tags/rsa/</loc>
     <lastmod>2019-08-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/shell-access-ubuntu-touch-via-ssh/</loc>
+    <loc>/post/shell-access-ubuntu-touch-via-ssh/</loc>
     <lastmod>2019-08-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/regedit/</loc>
+    <loc>/tags/regedit/</loc>
     <lastmod>2019-07-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/windows10/</loc>
+    <loc>/tags/windows10/</loc>
     <lastmod>2019-07-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/retrieve-windows10-photo-viewer/</loc>
+    <loc>/post/retrieve-windows10-photo-viewer/</loc>
     <lastmod>2019-07-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8%E6%96%87%E4%BB%B6/</loc>
+    <loc>/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8%E6%96%87%E4%BB%B6/</loc>
     <lastmod>2019-07-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E7%85%A7%E7%89%87%E6%9F%A5%E7%9C%8B%E5%99%A8/</loc>
+    <loc>/tags/%E7%85%A7%E7%89%87%E6%9F%A5%E7%9C%8B%E5%99%A8/</loc>
     <lastmod>2019-07-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/debian10/</loc>
+    <loc>/tags/debian10/</loc>
     <lastmod>2019-07-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/sudo-configuration-in-debian10/</loc>
+    <loc>/post/sudo-configuration-in-debian10/</loc>
     <lastmod>2019-07-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/sudo/</loc>
+    <loc>/tags/sudo/</loc>
     <lastmod>2019-07-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/sudoers/</loc>
+    <loc>/tags/sudoers/</loc>
     <lastmod>2019-07-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/visudo/</loc>
+    <loc>/tags/visudo/</loc>
     <lastmod>2019-07-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E5%A5%87%E8%91%A9/</loc>
+    <loc>/tags/%E5%A5%87%E8%91%A9/</loc>
     <lastmod>2019-07-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/cst/</loc>
+    <loc>/tags/cst/</loc>
     <lastmod>2019-07-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/gmt/</loc>
+    <loc>/tags/gmt/</loc>
     <lastmod>2019-07-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/rtc/</loc>
+    <loc>/tags/rtc/</loc>
     <lastmod>2019-07-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/ubuntu-windows-dual-system-time-is-inconsistent/</loc>
+    <loc>/post/ubuntu-windows-dual-system-time-is-inconsistent/</loc>
     <lastmod>2019-07-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/utc/</loc>
+    <loc>/tags/utc/</loc>
     <lastmod>2019-07-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E6%97%B6%E9%97%B4/</loc>
+    <loc>/tags/%E6%97%B6%E9%97%B4/</loc>
     <lastmod>2019-07-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/centos7/</loc>
+    <loc>/tags/centos7/</loc>
     <lastmod>2019-07-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/centos7-install-ffsend-to-share-files/</loc>
+    <loc>/post/centos7-install-ffsend-to-share-files/</loc>
     <lastmod>2019-07-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ffsend/</loc>
+    <loc>/tags/ffsend/</loc>
     <lastmod>2019-07-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/firefox/</loc>
+    <loc>/tags/firefox/</loc>
     <lastmod>2019-07-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/firefox-send/</loc>
+    <loc>/tags/firefox-send/</loc>
     <lastmod>2019-07-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/alt/</loc>
+    <loc>/tags/alt/</loc>
     <lastmod>2019-06-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/esc/</loc>
+    <loc>/tags/esc/</loc>
     <lastmod>2019-06-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/google/</loc>
+    <loc>/tags/google/</loc>
     <lastmod>2019-06-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/libwebp/</loc>
+    <loc>/tags/libwebp/</loc>
     <lastmod>2019-06-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/convert-images-to-webp-in-linux/</loc>
+    <loc>/post/convert-images-to-webp-in-linux/</loc>
     <lastmod>2019-06-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/png/</loc>
+    <loc>/tags/png/</loc>
     <lastmod>2019-06-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/tab/</loc>
+    <loc>/tags/tab/</loc>
     <lastmod>2019-06-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/termux/</loc>
+    <loc>/tags/termux/</loc>
     <lastmod>2019-06-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/termux-extra-keys-row/</loc>
+    <loc>/post/termux-extra-keys-row/</loc>
     <lastmod>2019-06-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/webp/</loc>
+    <loc>/tags/webp/</loc>
     <lastmod>2019-06-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/pkg/</loc>
+    <loc>/tags/pkg/</loc>
     <lastmod>2019-06-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/sources.list/</loc>
+    <loc>/tags/sources.list/</loc>
     <lastmod>2019-06-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/termux-edit-sources.list/</loc>
+    <loc>/post/termux-edit-sources.list/</loc>
     <lastmod>2019-06-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ustc/</loc>
+    <loc>/tags/ustc/</loc>
     <lastmod>2019-06-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/proxy/</loc>
+    <loc>/tags/proxy/</loc>
     <lastmod>2019-05-18T09:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/socks/</loc>
+    <loc>/tags/socks/</loc>
     <lastmod>2019-05-18T09:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/socksv5/</loc>
+    <loc>/tags/socksv5/</loc>
     <lastmod>2019-05-18T09:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/v2ray-client-configuration-example-in-ubuntu/</loc>
+    <loc>/post/v2ray-client-configuration-example-in-ubuntu/</loc>
     <lastmod>2019-05-18T09:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/vmess/</loc>
+    <loc>/tags/vmess/</loc>
     <lastmod>2019-05-18T09:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/alpine/</loc>
+    <loc>/tags/alpine/</loc>
     <lastmod>2019-05-14T12:59:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/alpine-linux/</loc>
+    <loc>/tags/alpine-linux/</loc>
     <lastmod>2019-05-14T12:59:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/vmware/</loc>
+    <loc>/tags/vmware/</loc>
     <lastmod>2019-05-14T12:59:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/vmware-installs-alpine-linux-instance/</loc>
+    <loc>/post/vmware-installs-alpine-linux-instance/</loc>
     <lastmod>2019-05-14T12:59:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/</loc>
+    <loc>/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/</loc>
     <lastmod>2019-05-14T12:59:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/gstreamer/</loc>
+    <loc>/tags/gstreamer/</loc>
     <lastmod>2019-05-04T17:05:01+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/mplayer/</loc>
+    <loc>/tags/mplayer/</loc>
     <lastmod>2019-05-04T17:05:01+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/mplayer-and-the-n900-cameras/</loc>
+    <loc>/post/mplayer-and-the-n900-cameras/</loc>
     <lastmod>2019-05-04T17:05:01+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/n900/</loc>
+    <loc>/tags/n900/</loc>
     <lastmod>2019-05-04T17:05:01+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/nokia/</loc>
+    <loc>/tags/nokia/</loc>
     <lastmod>2019-05-04T17:05:01+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/nokia-n900/</loc>
+    <loc>/tags/nokia-n900/</loc>
     <lastmod>2019-05-04T17:05:01+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/v4l/</loc>
+    <loc>/tags/v4l/</loc>
     <lastmod>2019-05-04T17:05:01+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/v4l2/</loc>
+    <loc>/tags/v4l2/</loc>
     <lastmod>2019-05-04T17:05:01+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E5%89%8D%E7%BD%AE%E9%95%9C%E5%A4%B4/</loc>
+    <loc>/tags/%E5%89%8D%E7%BD%AE%E9%95%9C%E5%A4%B4/</loc>
     <lastmod>2019-05-04T17:05:01+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E5%90%8E%E7%BD%AE%E9%95%9C%E5%A4%B4/</loc>
+    <loc>/tags/%E5%90%8E%E7%BD%AE%E9%95%9C%E5%A4%B4/</loc>
     <lastmod>2019-05-04T17:05:01+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E9%95%9C%E5%83%8F%E6%A8%A1%E5%BC%8F/</loc>
+    <loc>/tags/%E9%95%9C%E5%83%8F%E6%A8%A1%E5%BC%8F/</loc>
     <lastmod>2019-05-04T17:05:01+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E9%95%9C%E5%A4%B4/</loc>
+    <loc>/tags/%E9%95%9C%E5%A4%B4/</loc>
     <lastmod>2019-05-04T17:05:01+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/21.2011.38-1/</loc>
+    <loc>/tags/21.2011.38-1/</loc>
     <lastmod>2019-05-01T12:14:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/combined/</loc>
+    <loc>/tags/combined/</loc>
     <lastmod>2019-05-01T12:14:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/emmc/</loc>
+    <loc>/tags/emmc/</loc>
     <lastmod>2019-05-01T12:14:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/firmware/</loc>
+    <loc>/tags/firmware/</loc>
     <lastmod>2019-05-01T12:14:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/flasher/</loc>
+    <loc>/tags/flasher/</loc>
     <lastmod>2019-05-01T12:14:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/maemo/</loc>
+    <loc>/tags/maemo/</loc>
     <lastmod>2019-05-01T12:14:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/maemo_flasher/</loc>
+    <loc>/tags/maemo_flasher/</loc>
     <lastmod>2019-05-01T12:14:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/nokia-n900-installation-firmware/</loc>
+    <loc>/post/nokia-n900-installation-firmware/</loc>
     <lastmod>2019-05-01T12:14:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/rx-51/</loc>
+    <loc>/tags/rx-51/</loc>
     <lastmod>2019-05-01T12:14:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/vanilla/</loc>
+    <loc>/tags/vanilla/</loc>
     <lastmod>2019-05-01T12:14:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/n900-removes-unnecessary-software-and-games/</loc>
+    <loc>/post/n900-removes-unnecessary-software-and-games/</loc>
     <lastmod>2019-04-30T13:40:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E8%AF%BA%E5%9F%BA%E4%BA%9A/</loc>
+    <loc>/tags/%E8%AF%BA%E5%9F%BA%E4%BA%9A/</loc>
     <lastmod>2019-04-30T13:40:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/nokia-n900-install-nemo/</loc>
+    <loc>/post/nokia-n900-install-nemo/</loc>
     <lastmod>2019-04-28T15:56:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/nemo/</loc>
+    <loc>/tags/nemo/</loc>
     <lastmod>2019-04-28T15:56:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/start-with-nokian900-again/</loc>
+    <loc>/post/start-with-nokian900-again/</loc>
     <lastmod>2019-04-22T11:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/arlington/</loc>
+    <loc>/tags/arlington/</loc>
     <lastmod>2019-04-21T21:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/bora/</loc>
+    <loc>/tags/bora/</loc>
     <lastmod>2019-04-21T21:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/chinook/</loc>
+    <loc>/tags/chinook/</loc>
     <lastmod>2019-04-21T21:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/diablo/</loc>
+    <loc>/tags/diablo/</loc>
     <lastmod>2019-04-21T21:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/fremantle/</loc>
+    <loc>/tags/fremantle/</loc>
     <lastmod>2019-04-21T21:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/gregale/</loc>
+    <loc>/tags/gregale/</loc>
     <lastmod>2019-04-21T21:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/harmattan/</loc>
+    <loc>/tags/harmattan/</loc>
     <lastmod>2019-04-21T21:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/irvine/</loc>
+    <loc>/tags/irvine/</loc>
     <lastmod>2019-04-21T21:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/maemo-release-history/</loc>
+    <loc>/post/maemo-release-history/</loc>
     <lastmod>2019-04-21T21:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/meego/</loc>
+    <loc>/tags/meego/</loc>
     <lastmod>2019-04-21T21:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/mistral/</loc>
+    <loc>/tags/mistral/</loc>
     <lastmod>2019-04-21T21:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/n800/</loc>
+    <loc>/tags/n800/</loc>
     <lastmod>2019-04-21T21:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/n810/</loc>
+    <loc>/tags/n810/</loc>
     <lastmod>2019-04-21T21:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/n950/</loc>
+    <loc>/tags/n950/</loc>
     <lastmod>2019-04-21T21:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/scirocco/</loc>
+    <loc>/tags/scirocco/</loc>
     <lastmod>2019-04-21T21:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/categories/share/</loc>
+    <loc>/categories/share/</loc>
     <lastmod>2019-04-21T21:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/busybox/</loc>
+    <loc>/tags/busybox/</loc>
     <lastmod>2019-04-20T19:37:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/meizp-pro5/</loc>
+    <loc>/tags/meizp-pro5/</loc>
     <lastmod>2019-04-20T19:37:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/meizu/</loc>
+    <loc>/tags/meizu/</loc>
     <lastmod>2019-04-20T19:37:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/proinfo/</loc>
+    <loc>/tags/proinfo/</loc>
     <lastmod>2019-04-20T19:37:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/rootbrowser/</loc>
+    <loc>/tags/rootbrowser/</loc>
     <lastmod>2019-04-20T19:37:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/supersu/</loc>
+    <loc>/tags/supersu/</loc>
     <lastmod>2019-04-20T19:37:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ubuntu-touch/</loc>
+    <loc>/tags/ubuntu-touch/</loc>
     <lastmod>2019-04-20T19:37:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/meizu-pro-5-installs-ubuntu-touch-system/</loc>
+    <loc>/post/meizu-pro-5-installs-ubuntu-touch-system/</loc>
     <lastmod>2019-04-20T19:37:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/raspberry-pi-zero/</loc>
+    <loc>/tags/raspberry-pi-zero/</loc>
     <lastmod>2019-04-19T09:46:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/raspbian/</loc>
+    <loc>/tags/raspbian/</loc>
     <lastmod>2019-04-19T09:46:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ssh-over-usb/</loc>
+    <loc>/tags/ssh-over-usb/</loc>
     <lastmod>2019-04-19T09:46:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/raspberry-pi-zero-with-ssh-over-usb/</loc>
+    <loc>/post/raspberry-pi-zero-with-ssh-over-usb/</loc>
     <lastmod>2019-04-19T09:46:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/iftop/</loc>
+    <loc>/tags/iftop/</loc>
     <lastmod>2019-04-11T22:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/iptables/</loc>
+    <loc>/tags/iptables/</loc>
     <lastmod>2019-04-11T22:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/libpcap/</loc>
+    <loc>/tags/libpcap/</loc>
     <lastmod>2019-04-11T22:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ncurses/</loc>
+    <loc>/tags/ncurses/</loc>
     <lastmod>2019-04-11T22:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/netstat/</loc>
+    <loc>/tags/netstat/</loc>
     <lastmod>2019-04-11T22:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/find-the-vps-traffic-consumption-culprit/</loc>
+    <loc>/post/find-the-vps-traffic-consumption-culprit/</loc>
     <lastmod>2019-04-11T22:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/lan/</loc>
+    <loc>/tags/lan/</loc>
     <lastmod>2019-01-24T11:24:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/r6200/</loc>
+    <loc>/tags/r6200/</loc>
     <lastmod>2019-01-24T11:24:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/r6300/</loc>
+    <loc>/tags/r6300/</loc>
     <lastmod>2019-01-24T11:24:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/rb750/</loc>
+    <loc>/tags/rb750/</loc>
     <lastmod>2019-01-24T11:24:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/rb750gr3/</loc>
+    <loc>/tags/rb750gr3/</loc>
     <lastmod>2019-01-24T11:24:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/router/</loc>
+    <loc>/tags/router/</loc>
     <lastmod>2019-01-24T11:24:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/multiple-routers-and-lan-networking-instances/</loc>
+    <loc>/post/multiple-routers-and-lan-networking-instances/</loc>
     <lastmod>2019-01-24T11:24:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/centos7-install-l2tp-vpn/</loc>
+    <loc>/post/centos7-install-l2tp-vpn/</loc>
     <lastmod>2018-12-10T12:10:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/l2tp/</loc>
+    <loc>/tags/l2tp/</loc>
     <lastmod>2018-12-10T12:10:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/vpn/</loc>
+    <loc>/tags/vpn/</loc>
     <lastmod>2018-12-10T12:10:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/gfw/</loc>
+    <loc>/tags/gfw/</loc>
     <lastmod>2018-10-15T10:15:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/</loc>
+    <loc>/tags/%E6%90%AC%E7%93%A6%E5%B7%A5/</loc>
     <lastmod>2018-10-15T10:15:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/bwg-replace-main-ip-after-blocked/</loc>
+    <loc>/post/bwg-replace-main-ip-after-blocked/</loc>
     <lastmod>2018-10-15T10:15:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E6%9B%B4%E6%8D%A2ip/</loc>
+    <loc>/tags/%E6%9B%B4%E6%8D%A2ip/</loc>
     <lastmod>2018-10-15T10:15:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/9008/</loc>
+    <loc>/tags/9008/</loc>
     <lastmod>2018-10-13T10:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/rom/</loc>
+    <loc>/tags/rom/</loc>
     <lastmod>2018-10-13T10:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/oneplus-3t-after-sale-rom/</loc>
+    <loc>/post/oneplus-3t-after-sale-rom/</loc>
     <lastmod>2018-10-13T10:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/mikrotik/</loc>
+    <loc>/tags/mikrotik/</loc>
     <lastmod>2018-10-01T11:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/rb750gr3-system-upgrade/</loc>
+    <loc>/post/rb750gr3-system-upgrade/</loc>
     <lastmod>2018-10-01T11:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ros/</loc>
+    <loc>/tags/ros/</loc>
     <lastmod>2018-10-01T11:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/routeros/</loc>
+    <loc>/tags/routeros/</loc>
     <lastmod>2018-10-01T11:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/upgrade/</loc>
+    <loc>/tags/upgrade/</loc>
     <lastmod>2018-10-01T11:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/winbox/</loc>
+    <loc>/tags/winbox/</loc>
     <lastmod>2018-10-01T11:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/merlin/</loc>
+    <loc>/tags/merlin/</loc>
     <lastmod>2018-09-30T09:30:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/netgear/</loc>
+    <loc>/tags/netgear/</loc>
     <lastmod>2018-09-30T09:30:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/r6300v2/</loc>
+    <loc>/tags/r6300v2/</loc>
     <lastmod>2018-09-30T09:30:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/r6400/</loc>
+    <loc>/tags/r6400/</loc>
     <lastmod>2018-09-30T09:30:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/r6900/</loc>
+    <loc>/tags/r6900/</loc>
     <lastmod>2018-09-30T09:30:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/r7000/</loc>
+    <loc>/tags/r7000/</loc>
     <lastmod>2018-09-30T09:30:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/r8000/</loc>
+    <loc>/tags/r8000/</loc>
     <lastmod>2018-09-30T09:30:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/r8500/</loc>
+    <loc>/tags/r8500/</loc>
     <lastmod>2018-09-30T09:30:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E5%9B%BA%E4%BB%B6/</loc>
+    <loc>/tags/%E5%9B%BA%E4%BB%B6/</loc>
     <lastmod>2018-09-30T09:30:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E6%A2%85%E6%9E%97/</loc>
+    <loc>/tags/%E6%A2%85%E6%9E%97/</loc>
     <lastmod>2018-09-30T09:30:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E7%BD%91%E4%BB%B6/</loc>
+    <loc>/tags/%E7%BD%91%E4%BB%B6/</loc>
     <lastmod>2018-09-30T09:30:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/r6300v2-merlin-firmware-x7-9-1/</loc>
+    <loc>/post/r6300v2-merlin-firmware-x7-9-1/</loc>
     <lastmod>2018-09-30T09:30:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/swap/</loc>
+    <loc>/tags/swap/</loc>
     <lastmod>2018-09-10T09:10:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/add-virtual-memory-to-the-router/</loc>
+    <loc>/post/add-virtual-memory-to-the-router/</loc>
     <lastmod>2018-09-10T09:10:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E4%BA%A4%E6%8D%A2%E7%A9%BA%E9%97%B4/</loc>
+    <loc>/tags/%E4%BA%A4%E6%8D%A2%E7%A9%BA%E9%97%B4/</loc>
     <lastmod>2018-09-10T09:10:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/</loc>
+    <loc>/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/</loc>
     <lastmod>2018-09-10T09:10:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/mkcp/</loc>
+    <loc>/tags/mkcp/</loc>
     <lastmod>2018-08-20T18:18:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/shadowsocks/</loc>
+    <loc>/tags/shadowsocks/</loc>
     <lastmod>2018-08-20T18:18:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/tcp/</loc>
+    <loc>/tags/tcp/</loc>
     <lastmod>2018-08-20T18:18:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/tls/</loc>
+    <loc>/tags/tls/</loc>
     <lastmod>2018-08-20T18:18:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/v2ray-use-case/</loc>
+    <loc>/post/v2ray-use-case/</loc>
     <lastmod>2018-08-20T18:18:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E4%BB%A3%E7%90%86/</loc>
+    <loc>/tags/%E4%BB%A3%E7%90%86/</loc>
     <lastmod>2018-08-20T18:18:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/miui/</loc>
+    <loc>/tags/miui/</loc>
     <lastmod>2018-07-19T21:22:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/miui10/</loc>
+    <loc>/tags/miui10/</loc>
     <lastmod>2018-07-19T21:22:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/twrp/</loc>
+    <loc>/tags/twrp/</loc>
     <lastmod>2018-07-19T21:22:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/oneplus3t-miui10/</loc>
+    <loc>/post/oneplus3t-miui10/</loc>
     <lastmod>2018-07-19T21:22:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/grub/</loc>
+    <loc>/tags/grub/</loc>
     <lastmod>2018-07-08T17:18:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/grub-imageboot/</loc>
+    <loc>/tags/grub-imageboot/</loc>
     <lastmod>2018-07-08T17:18:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/grub2/</loc>
+    <loc>/tags/grub2/</loc>
     <lastmod>2018-07-08T17:18:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/grub-boot-iso-image-file/</loc>
+    <loc>/post/grub-boot-iso-image-file/</loc>
     <lastmod>2018-07-08T17:18:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/iso/</loc>
+    <loc>/tags/iso/</loc>
     <lastmod>2018-07-08T17:18:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/memdisk/</loc>
+    <loc>/tags/memdisk/</loc>
     <lastmod>2018-07-08T17:18:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/update-grub/</loc>
+    <loc>/tags/update-grub/</loc>
     <lastmod>2018-07-08T17:18:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/winpe/</loc>
+    <loc>/tags/winpe/</loc>
     <lastmod>2018-07-08T17:18:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/excel/</loc>
+    <loc>/tags/excel/</loc>
     <lastmod>2018-06-10T16:10:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/excel-file-size-abnormal-check/</loc>
+    <loc>/post/excel-file-size-abnormal-check/</loc>
     <lastmod>2018-06-10T16:10:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/office/</loc>
+    <loc>/tags/office/</loc>
     <lastmod>2018-06-10T16:10:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/sheet/</loc>
+    <loc>/tags/sheet/</loc>
     <lastmod>2018-06-10T16:10:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/worksheets/</loc>
+    <loc>/tags/worksheets/</loc>
     <lastmod>2018-06-10T16:10:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/xls/</loc>
+    <loc>/tags/xls/</loc>
     <lastmod>2018-06-10T16:10:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/canonical/</loc>
+    <loc>/tags/canonical/</loc>
     <lastmod>2018-05-25T05:25:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/cls/</loc>
+    <loc>/tags/cls/</loc>
     <lastmod>2018-05-25T05:25:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/kernel/</loc>
+    <loc>/tags/kernel/</loc>
     <lastmod>2018-05-25T05:25:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/livepatch/</loc>
+    <loc>/tags/livepatch/</loc>
     <lastmod>2018-05-25T05:25:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/canonical-livepatch-service/</loc>
+    <loc>/post/canonical-livepatch-service/</loc>
     <lastmod>2018-05-25T05:25:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/bbs/</loc>
+    <loc>/tags/bbs/</loc>
     <lastmod>2018-02-06T12:16:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/xiunobbs/</loc>
+    <loc>/tags/xiunobbs/</loc>
     <lastmod>2018-02-06T12:16:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/xiunobbs-nginx-pseudo-static/</loc>
+    <loc>/post/xiunobbs-nginx-pseudo-static/</loc>
     <lastmod>2018-02-06T12:16:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/apple/</loc>
+    <loc>/tags/apple/</loc>
     <lastmod>2018-01-22T10:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ios/</loc>
+    <loc>/tags/ios/</loc>
     <lastmod>2018-01-22T10:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ios10/</loc>
+    <loc>/tags/ios10/</loc>
     <lastmod>2018-01-22T10:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/meridian-jailbreak/</loc>
+    <loc>/post/meridian-jailbreak/</loc>
     <lastmod>2018-01-22T10:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/iphone/</loc>
+    <loc>/tags/iphone/</loc>
     <lastmod>2018-01-22T10:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/jailbreak/</loc>
+    <loc>/tags/jailbreak/</loc>
     <lastmod>2018-01-22T10:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/merdian/</loc>
+    <loc>/tags/merdian/</loc>
     <lastmod>2018-01-22T10:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/arnova8g2/</loc>
+    <loc>/tags/arnova8g2/</loc>
     <lastmod>2017-12-13T12:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/camera/</loc>
+    <loc>/tags/camera/</loc>
     <lastmod>2017-12-13T12:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/gcam/</loc>
+    <loc>/tags/gcam/</loc>
     <lastmod>2017-12-13T12:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/google-camera/</loc>
+    <loc>/tags/google-camera/</loc>
     <lastmod>2017-12-13T12:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/google-camera-port-for-oneplus-3t/</loc>
+    <loc>/post/google-camera-port-for-oneplus-3t/</loc>
     <lastmod>2017-12-13T12:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/hdr/</loc>
+    <loc>/tags/hdr/</loc>
     <lastmod>2017-12-13T12:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/hdr&#43;/</loc>
+    <loc>/tags/hdr&#43;/</loc>
     <lastmod>2017-12-13T12:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/coding/</loc>
+    <loc>/tags/coding/</loc>
     <lastmod>2017-11-25T11:25:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/git/</loc>
+    <loc>/tags/git/</loc>
     <lastmod>2017-11-25T11:25:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/gor/</loc>
+    <loc>/tags/gor/</loc>
     <lastmod>2017-11-25T11:25:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/deploy-the-static-site-to-the-coding-net/</loc>
+    <loc>/post/deploy-the-static-site-to-the-coding-net/</loc>
     <lastmod>2017-11-25T11:25:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/readme/</loc>
+    <loc>/readme/</loc>
     <lastmod>2017-11-23T23:42:05+01:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/mikrotik-rb750gr3-quickset/</loc>
+    <loc>/post/mikrotik-rb750gr3-quickset/</loc>
     <lastmod>2017-11-22T11:22:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/asus/</loc>
+    <loc>/tags/asus/</loc>
     <lastmod>2017-11-19T11:19:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/merlin-install-shadowsocks/</loc>
+    <loc>/post/merlin-install-shadowsocks/</loc>
     <lastmod>2017-11-19T11:19:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/access/</loc>
+    <loc>/tags/access/</loc>
     <lastmod>2017-10-20T11:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/daemon/</loc>
+    <loc>/tags/daemon/</loc>
     <lastmod>2017-10-20T11:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/microsoft/</loc>
+    <loc>/tags/microsoft/</loc>
     <lastmod>2017-10-20T11:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/office2016/</loc>
+    <loc>/tags/office2016/</loc>
     <lastmod>2017-10-20T11:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/powerpoint/</loc>
+    <loc>/tags/powerpoint/</loc>
     <lastmod>2017-10-20T11:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/word/</loc>
+    <loc>/tags/word/</loc>
     <lastmod>2017-10-20T11:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E5%BE%AE%E8%BD%AF/</loc>
+    <loc>/tags/%E5%BE%AE%E8%BD%AF/</loc>
     <lastmod>2017-10-20T11:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/install-office2016-components-on-demand/</loc>
+    <loc>/post/install-office2016-components-on-demand/</loc>
     <lastmod>2017-10-20T11:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E7%BB%84%E4%BB%B6/</loc>
+    <loc>/tags/%E7%BB%84%E4%BB%B6/</loc>
     <lastmod>2017-10-20T11:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E8%99%9A%E6%8B%9F%E5%85%89%E9%A9%B1/</loc>
+    <loc>/tags/%E8%99%9A%E6%8B%9F%E5%85%89%E9%A9%B1/</loc>
     <lastmod>2017-10-20T11:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/access-denied/</loc>
+    <loc>/tags/access-denied/</loc>
     <lastmod>2017-10-03T10:03:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/pathinfo/</loc>
+    <loc>/tags/pathinfo/</loc>
     <lastmod>2017-10-03T10:03:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/php/</loc>
+    <loc>/tags/php/</loc>
     <lastmod>2017-10-03T10:03:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/php.ini/</loc>
+    <loc>/tags/php.ini/</loc>
     <lastmod>2017-10-03T10:03:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/typecho/</loc>
+    <loc>/tags/typecho/</loc>
     <lastmod>2017-10-03T10:03:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/typecho-login-access-denied/</loc>
+    <loc>/post/typecho-login-access-denied/</loc>
     <lastmod>2017-10-03T10:03:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/660ti/</loc>
+    <loc>/tags/660ti/</loc>
     <lastmod>2017-08-26T18:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/cvt/</loc>
+    <loc>/tags/cvt/</loc>
     <lastmod>2017-08-26T18:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/linux-fix-resolution-display-exception/</loc>
+    <loc>/post/linux-fix-resolution-display-exception/</loc>
     <lastmod>2017-08-26T18:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/lspci/</loc>
+    <loc>/tags/lspci/</loc>
     <lastmod>2017-08-26T18:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/nvidia/</loc>
+    <loc>/tags/nvidia/</loc>
     <lastmod>2017-08-26T18:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/xrandr/</loc>
+    <loc>/tags/xrandr/</loc>
     <lastmod>2017-08-26T18:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E5%88%86%E8%BE%A8%E7%8E%87/</loc>
+    <loc>/tags/%E5%88%86%E8%BE%A8%E7%8E%87/</loc>
     <lastmod>2017-08-26T18:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E4%B8%80%E5%8A%A0/</loc>
+    <loc>/tags/%E4%B8%80%E5%8A%A0/</loc>
     <lastmod>2017-08-21T18:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/oneplus3t-switch-on-black-and-white-screen-mode/</loc>
+    <loc>/post/oneplus3t-switch-on-black-and-white-screen-mode/</loc>
     <lastmod>2017-08-21T18:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/seo/</loc>
+    <loc>/tags/seo/</loc>
     <lastmod>2017-08-13T23:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/sitemap/</loc>
+    <loc>/tags/sitemap/</loc>
     <lastmod>2017-08-13T23:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/sitemap-generators-usage/</loc>
+    <loc>/post/sitemap-generators-usage/</loc>
     <lastmod>2017-08-13T23:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/url/</loc>
+    <loc>/tags/url/</loc>
     <lastmod>2017-08-13T23:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/wget/</loc>
+    <loc>/tags/wget/</loc>
     <lastmod>2017-08-13T23:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/api/</loc>
+    <loc>/tags/api/</loc>
     <lastmod>2017-07-28T17:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/bash/</loc>
+    <loc>/tags/bash/</loc>
     <lastmod>2017-07-28T17:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/curl/</loc>
+    <loc>/tags/curl/</loc>
     <lastmod>2017-07-28T17:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/dropbox/</loc>
+    <loc>/tags/dropbox/</loc>
     <lastmod>2017-07-28T17:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/dropboxuploader/</loc>
+    <loc>/tags/dropboxuploader/</loc>
     <lastmod>2017-07-28T17:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/powerful-dropbox-scripting-tool-dropbox-uploader/</loc>
+    <loc>/post/powerful-dropbox-scripting-tool-dropbox-uploader/</loc>
     <lastmod>2017-07-28T17:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/imagemagick/</loc>
+    <loc>/tags/imagemagick/</loc>
     <lastmod>2017-07-17T07:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/jpg/</loc>
+    <loc>/tags/jpg/</loc>
     <lastmod>2017-07-17T07:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/batch-conversion-png-and-jpg-under-linux/</loc>
+    <loc>/post/batch-conversion-png-and-jpg-under-linux/</loc>
     <lastmod>2017-07-17T07:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/7z/</loc>
+    <loc>/tags/7z/</loc>
     <lastmod>2017-06-16T23:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/7za/</loc>
+    <loc>/tags/7za/</loc>
     <lastmod>2017-06-16T23:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/bzip2/</loc>
+    <loc>/tags/bzip2/</loc>
     <lastmod>2017-06-16T23:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/cab/</loc>
+    <loc>/tags/cab/</loc>
     <lastmod>2017-06-16T23:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/gzip/</loc>
+    <loc>/tags/gzip/</loc>
     <lastmod>2017-06-16T23:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/lzma/</loc>
+    <loc>/tags/lzma/</loc>
     <lastmod>2017-06-16T23:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/p7zip/</loc>
+    <loc>/tags/p7zip/</loc>
     <lastmod>2017-06-16T23:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/p7zip-usage/</loc>
+    <loc>/post/p7zip-usage/</loc>
     <lastmod>2017-06-16T23:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/tar/</loc>
+    <loc>/tags/tar/</loc>
     <lastmod>2017-06-16T23:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/zip/</loc>
+    <loc>/tags/zip/</loc>
     <lastmod>2017-06-16T23:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/adb/</loc>
+    <loc>/tags/adb/</loc>
     <lastmod>2017-06-15T16:15:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/recovery/</loc>
+    <loc>/tags/recovery/</loc>
     <lastmod>2017-06-15T16:15:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/root/</loc>
+    <loc>/tags/root/</loc>
     <lastmod>2017-06-15T16:15:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/unlock/</loc>
+    <loc>/tags/unlock/</loc>
     <lastmod>2017-06-15T16:15:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/oneplus3-3t-unified-toolkit/</loc>
+    <loc>/post/oneplus3-3t-unified-toolkit/</loc>
     <lastmod>2017-06-15T16:15:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/diskgenius/</loc>
+    <loc>/tags/diskgenius/</loc>
     <lastmod>2017-06-10T16:10:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/elementary/</loc>
+    <loc>/tags/elementary/</loc>
     <lastmod>2017-06-10T16:10:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ps2251-03/</loc>
+    <loc>/tags/ps2251-03/</loc>
     <lastmod>2017-06-10T16:10:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/rufus/</loc>
+    <loc>/tags/rufus/</loc>
     <lastmod>2017-06-10T16:10:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/toshiba/</loc>
+    <loc>/tags/toshiba/</loc>
     <lastmod>2017-06-10T16:10:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E4%B8%9C%E8%8A%9D/</loc>
+    <loc>/tags/%E4%B8%9C%E8%8A%9D/</loc>
     <lastmod>2017-06-10T16:10:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E4%B8%BB%E6%8E%A7/</loc>
+    <loc>/tags/%E4%B8%BB%E6%8E%A7/</loc>
     <lastmod>2017-06-10T16:10:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/fix-toshiba-u-disk-write-protection/</loc>
+    <loc>/post/fix-toshiba-u-disk-write-protection/</loc>
     <lastmod>2017-06-10T16:10:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E7%BE%A4%E8%81%94/</loc>
+    <loc>/tags/%E7%BE%A4%E8%81%94/</loc>
     <lastmod>2017-06-10T16:10:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/anbox/</loc>
+    <loc>/tags/anbox/</loc>
     <lastmod>2017-06-09T06:09:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/apk/</loc>
+    <loc>/tags/apk/</loc>
     <lastmod>2017-06-09T06:09:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/anbox-run-android-applications-on-linux/</loc>
+    <loc>/post/anbox-run-android-applications-on-linux/</loc>
     <lastmod>2017-06-09T06:09:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/centos7-installation-and-use-p7zip/</loc>
+    <loc>/post/centos7-installation-and-use-p7zip/</loc>
     <lastmod>2017-06-06T06:06:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/hat/</loc>
+    <loc>/tags/hat/</loc>
     <lastmod>2017-05-25T15:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/humidity/</loc>
+    <loc>/tags/humidity/</loc>
     <lastmod>2017-05-25T15:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/laptop-dock/</loc>
+    <loc>/tags/laptop-dock/</loc>
     <lastmod>2017-05-25T15:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/python/</loc>
+    <loc>/tags/python/</loc>
     <lastmod>2017-05-25T15:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/python3/</loc>
+    <loc>/tags/python3/</loc>
     <lastmod>2017-05-25T15:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/rarp/</loc>
+    <loc>/tags/rarp/</loc>
     <lastmod>2017-05-25T15:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/sense/</loc>
+    <loc>/tags/sense/</loc>
     <lastmod>2017-05-25T15:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/sense-hat/</loc>
+    <loc>/tags/sense-hat/</loc>
     <lastmod>2017-05-25T15:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E4%BC%A0%E6%84%9F%E5%99%A8/</loc>
+    <loc>/tags/%E4%BC%A0%E6%84%9F%E5%99%A8/</loc>
     <lastmod>2017-05-25T15:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E5%8E%8B%E5%8A%9B/</loc>
+    <loc>/tags/%E5%8E%8B%E5%8A%9B/</loc>
     <lastmod>2017-05-25T15:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E5%A4%A9%E6%B0%94/</loc>
+    <loc>/tags/%E5%A4%A9%E6%B0%94/</loc>
     <lastmod>2017-05-25T15:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/weather-according-to-raspberry-pi/</loc>
+    <loc>/post/weather-according-to-raspberry-pi/</loc>
     <lastmod>2017-05-25T15:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E6%B8%A9%E5%BA%A6/</loc>
+    <loc>/tags/%E6%B8%A9%E5%BA%A6/</loc>
     <lastmod>2017-05-25T15:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E6%B9%BF%E5%BA%A6/</loc>
+    <loc>/tags/%E6%B9%BF%E5%BA%A6/</loc>
     <lastmod>2017-05-25T15:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/citrix/</loc>
+    <loc>/tags/citrix/</loc>
     <lastmod>2017-05-16T15:16:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ime/</loc>
+    <loc>/tags/ime/</loc>
     <lastmod>2017-05-16T15:16:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/localime/</loc>
+    <loc>/tags/localime/</loc>
     <lastmod>2017-05-16T15:16:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/native-input-method-is-used-in-citrix/</loc>
+    <loc>/post/native-input-method-is-used-in-citrix/</loc>
     <lastmod>2017-05-16T15:16:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/path/</loc>
+    <loc>/tags/path/</loc>
     <lastmod>2017-04-25T14:25:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/profile/</loc>
+    <loc>/tags/profile/</loc>
     <lastmod>2017-04-25T14:25:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/shell/</loc>
+    <loc>/tags/shell/</loc>
     <lastmod>2017-04-25T14:25:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/</loc>
+    <loc>/tags/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/</loc>
     <lastmod>2017-04-25T14:25:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/understand-linux-shell-initialization-files-and-user-profiles-files/</loc>
+    <loc>/post/understand-linux-shell-initialization-files-and-user-profiles-files/</loc>
     <lastmod>2017-04-25T14:25:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/fedora/</loc>
+    <loc>/tags/fedora/</loc>
     <lastmod>2017-04-20T14:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/pip/</loc>
+    <loc>/tags/pip/</loc>
     <lastmod>2017-04-20T14:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/python-pip/</loc>
+    <loc>/tags/python-pip/</loc>
     <lastmod>2017-04-20T14:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/python-pip-installation/</loc>
+    <loc>/post/python-pip-installation/</loc>
     <lastmod>2017-04-20T14:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ip/</loc>
+    <loc>/tags/ip/</loc>
     <lastmod>2017-04-19T21:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ipgetter/</loc>
+    <loc>/tags/ipgetter/</loc>
     <lastmod>2017-04-19T21:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/raspberrypi-dynamic-ip-updater/</loc>
+    <loc>/post/raspberrypi-dynamic-ip-updater/</loc>
     <lastmod>2017-04-19T21:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/bbr/</loc>
+    <loc>/tags/bbr/</loc>
     <lastmod>2017-04-17T14:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/linux_enable_tcp_bbr/</loc>
+    <loc>/post/linux_enable_tcp_bbr/</loc>
     <lastmod>2017-04-17T14:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/tcp_bbr/</loc>
+    <loc>/tags/tcp_bbr/</loc>
     <lastmod>2017-04-17T14:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/marisot/</loc>
+    <loc>/tags/marisot/</loc>
     <lastmod>2017-04-13T14:14:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/use-your-phone-to-remotely-control-raspberrypi/</loc>
+    <loc>/post/use-your-phone-to-remotely-control-raspberrypi/</loc>
     <lastmod>2017-04-13T14:14:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E7%81%AB%E6%98%9F%E4%BA%92%E8%81%94/</loc>
+    <loc>/tags/%E7%81%AB%E6%98%9F%E4%BA%92%E8%81%94/</loc>
     <lastmod>2017-04-13T14:14:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/dns/</loc>
+    <loc>/tags/dns/</loc>
     <lastmod>2017-03-20T13:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/gateway/</loc>
+    <loc>/tags/gateway/</loc>
     <lastmod>2017-03-20T13:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ifconfig/</loc>
+    <loc>/tags/ifconfig/</loc>
     <lastmod>2017-03-20T13:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/linux-set-ip-netmask-gateway-mac-dns/</loc>
+    <loc>/post/linux-set-ip-netmask-gateway-mac-dns/</loc>
     <lastmod>2017-03-20T13:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/mac/</loc>
+    <loc>/tags/mac/</loc>
     <lastmod>2017-03-20T13:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/netmask/</loc>
+    <loc>/tags/netmask/</loc>
     <lastmod>2017-03-20T13:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/resolvconf/</loc>
+    <loc>/tags/resolvconf/</loc>
     <lastmod>2017-03-20T13:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/route/</loc>
+    <loc>/tags/route/</loc>
     <lastmod>2017-03-20T13:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/windows10-enabled-linux-subsystem/</loc>
+    <loc>/post/windows10-enabled-linux-subsystem/</loc>
     <lastmod>2017-03-10T11:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/dpkg/</loc>
+    <loc>/tags/dpkg/</loc>
     <lastmod>2017-03-09T13:19:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/terminal/</loc>
+    <loc>/tags/terminal/</loc>
     <lastmod>2017-03-09T13:19:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/termux-package-management/</loc>
+    <loc>/post/termux-package-management/</loc>
     <lastmod>2017-03-09T13:19:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/fix-raspberry-path-variable/</loc>
+    <loc>/post/fix-raspberry-path-variable/</loc>
     <lastmod>2017-03-03T13:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/batch/</loc>
+    <loc>/tags/batch/</loc>
     <lastmod>2017-02-12T23:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/qiniu/</loc>
+    <loc>/tags/qiniu/</loc>
     <lastmod>2017-02-12T23:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/qshell/</loc>
+    <loc>/tags/qshell/</loc>
     <lastmod>2017-02-12T23:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E4%B8%83%E7%89%9B%E4%BA%91/</loc>
+    <loc>/tags/%E4%B8%83%E7%89%9B%E4%BA%91/</loc>
     <lastmod>2017-02-12T23:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/qiniu-batch-operation/</loc>
+    <loc>/post/qiniu-batch-operation/</loc>
     <lastmod>2017-02-12T23:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/3310/</loc>
+    <loc>/tags/3310/</loc>
     <lastmod>2017-01-20T11:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/5110/</loc>
+    <loc>/tags/5110/</loc>
     <lastmod>2017-01-20T11:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/pcd8544/</loc>
+    <loc>/tags/pcd8544/</loc>
     <lastmod>2017-01-20T11:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/wiringpi/</loc>
+    <loc>/tags/wiringpi/</loc>
     <lastmod>2017-01-20T11:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/pcd8544-library-for-raspberry-pi/</loc>
+    <loc>/post/pcd8544-library-for-raspberry-pi/</loc>
     <lastmod>2017-01-20T11:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/4g/</loc>
+    <loc>/tags/4g/</loc>
     <lastmod>2017-01-02T01:02:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/9630/</loc>
+    <loc>/tags/9630/</loc>
     <lastmod>2017-01-02T01:02:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/bb/</loc>
+    <loc>/tags/bb/</loc>
     <lastmod>2017-01-02T01:02:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/bbctrl/</loc>
+    <loc>/tags/bbctrl/</loc>
     <lastmod>2017-01-02T01:02:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/berrybox/</loc>
+    <loc>/tags/berrybox/</loc>
     <lastmod>2017-01-02T01:02:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/blackberry/</loc>
+    <loc>/tags/blackberry/</loc>
     <lastmod>2017-01-02T01:02:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/blackberry-9630-use-ctcc-4g-card/</loc>
+    <loc>/post/blackberry-9630-use-ctcc-4g-card/</loc>
     <lastmod>2017-01-02T01:02:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/zbook14-install-wireless-driver-under-debian/</loc>
+    <loc>/post/zbook14-install-wireless-driver-under-debian/</loc>
     <lastmod>2016-08-17T08:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/hp/</loc>
+    <loc>/tags/hp/</loc>
     <lastmod>2016-08-17T08:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/inter/</loc>
+    <loc>/tags/inter/</loc>
     <lastmod>2016-08-17T08:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/inter7260/</loc>
+    <loc>/tags/inter7260/</loc>
     <lastmod>2016-08-17T08:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/zbook/</loc>
+    <loc>/tags/zbook/</loc>
     <lastmod>2016-08-17T08:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/301/</loc>
+    <loc>/tags/301/</loc>
     <lastmod>2016-07-01T17:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/domainname/</loc>
+    <loc>/tags/domainname/</loc>
     <lastmod>2016-07-01T17:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/hsts/</loc>
+    <loc>/tags/hsts/</loc>
     <lastmod>2016-07-01T17:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/hsts-domain-name-replacement-examples/</loc>
+    <loc>/post/hsts-domain-name-replacement-examples/</loc>
     <lastmod>2016-07-01T17:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/https/</loc>
+    <loc>/tags/https/</loc>
     <lastmod>2016-07-01T17:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E5%9F%9F%E5%90%8D/</loc>
+    <loc>/tags/%E5%9F%9F%E5%90%8D/</loc>
     <lastmod>2016-07-01T17:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/ubuntu-modify-the-grub-boot-menu/</loc>
+    <loc>/post/ubuntu-modify-the-grub-boot-menu/</loc>
     <lastmod>2016-06-27T17:42:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/js/</loc>
+    <loc>/tags/js/</loc>
     <lastmod>2016-05-09T15:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/letsencrypt-certificate-quickly-generate-script/</loc>
+    <loc>/post/letsencrypt-certificate-quickly-generate-script/</loc>
     <lastmod>2016-05-09T15:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/letsencrypt/</loc>
+    <loc>/tags/letsencrypt/</loc>
     <lastmod>2016-05-09T15:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ssl/</loc>
+    <loc>/tags/ssl/</loc>
     <lastmod>2016-05-09T15:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/macos/</loc>
+    <loc>/tags/macos/</loc>
     <lastmod>2016-05-06T15:16:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/sync/</loc>
+    <loc>/tags/sync/</loc>
     <lastmod>2016-05-06T15:16:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/syncthing/</loc>
+    <loc>/tags/syncthing/</loc>
     <lastmod>2016-05-06T15:16:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/use-syncthing-synchronize-files-between-multiple-devices/</loc>
+    <loc>/post/use-syncthing-synchronize-files-between-multiple-devices/</loc>
     <lastmod>2016-05-06T15:16:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E5%90%8C%E6%AD%A5%E6%96%87%E4%BB%B6/</loc>
+    <loc>/tags/%E5%90%8C%E6%AD%A5%E6%96%87%E4%BB%B6/</loc>
     <lastmod>2016-05-06T15:16:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/bmp/</loc>
+    <loc>/tags/bmp/</loc>
     <lastmod>2016-04-03T12:34:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/compress/</loc>
+    <loc>/tags/compress/</loc>
     <lastmod>2016-04-03T12:34:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/gif/</loc>
+    <loc>/tags/gif/</loc>
     <lastmod>2016-04-03T12:34:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/optimize/</loc>
+    <loc>/tags/optimize/</loc>
     <lastmod>2016-04-03T12:34:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/optipng/</loc>
+    <loc>/tags/optipng/</loc>
     <lastmod>2016-04-03T12:34:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/pnm/</loc>
+    <loc>/tags/pnm/</loc>
     <lastmod>2016-04-03T12:34:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/tiff/</loc>
+    <loc>/tags/tiff/</loc>
     <lastmod>2016-04-03T12:34:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/optimize-and-compress-image-by-optipng/</loc>
+    <loc>/post/optimize-and-compress-image-by-optipng/</loc>
     <lastmod>2016-04-03T12:34:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/download/</loc>
+    <loc>/tags/download/</loc>
     <lastmod>2016-04-01T14:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ftp/</loc>
+    <loc>/tags/ftp/</loc>
     <lastmod>2016-04-01T14:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/lftp/</loc>
+    <loc>/tags/lftp/</loc>
     <lastmod>2016-04-01T14:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/lftp-use-case/</loc>
+    <loc>/post/lftp-use-case/</loc>
     <lastmod>2016-04-01T14:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/upload/</loc>
+    <loc>/tags/upload/</loc>
     <lastmod>2016-04-01T14:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/echo/</loc>
+    <loc>/tags/echo/</loc>
     <lastmod>2016-03-29T13:29:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/linux-check-and-set-the-path/</loc>
+    <loc>/post/linux-check-and-set-the-path/</loc>
     <lastmod>2016-03-29T13:29:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/h2o/</loc>
+    <loc>/tags/h2o/</loc>
     <lastmod>2016-03-26T13:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/openssl/</loc>
+    <loc>/tags/openssl/</loc>
     <lastmod>2016-03-26T13:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/install-h2o-on-ubuntu/</loc>
+    <loc>/post/install-h2o-on-ubuntu/</loc>
     <lastmod>2016-03-26T13:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/wslay/</loc>
+    <loc>/tags/wslay/</loc>
     <lastmod>2016-03-26T13:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/bootloader/</loc>
+    <loc>/tags/bootloader/</loc>
     <lastmod>2016-03-20T13:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/cm12/</loc>
+    <loc>/tags/cm12/</loc>
     <lastmod>2016-03-20T13:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/cm13/</loc>
+    <loc>/tags/cm13/</loc>
     <lastmod>2016-03-20T13:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/fastboot/</loc>
+    <loc>/tags/fastboot/</loc>
     <lastmod>2016-03-20T13:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/mi4c/</loc>
+    <loc>/tags/mi4c/</loc>
     <lastmod>2016-03-20T13:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/mokee/</loc>
+    <loc>/tags/mokee/</loc>
     <lastmod>2016-03-20T13:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/xiaomi/</loc>
+    <loc>/tags/xiaomi/</loc>
     <lastmod>2016-03-20T13:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/mi4c-unlock-and-twrp-recovery/</loc>
+    <loc>/post/mi4c-unlock-and-twrp-recovery/</loc>
     <lastmod>2016-03-20T13:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/breed/</loc>
+    <loc>/tags/breed/</loc>
     <lastmod>2016-02-20T12:32:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/hackpascal/</loc>
+    <loc>/tags/hackpascal/</loc>
     <lastmod>2016-02-20T12:32:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ki/</loc>
+    <loc>/tags/ki/</loc>
     <lastmod>2016-02-20T12:32:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/psg1208/</loc>
+    <loc>/tags/psg1208/</loc>
     <lastmod>2016-02-20T12:32:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/telnet/</loc>
+    <loc>/tags/telnet/</loc>
     <lastmod>2016-02-20T12:32:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/u-boot/</loc>
+    <loc>/tags/u-boot/</loc>
     <lastmod>2016-02-20T12:32:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/phicomm-k1-psg-1208-brush-asus-firmware/</loc>
+    <loc>/post/phicomm-k1-psg-1208-brush-asus-firmware/</loc>
     <lastmod>2016-02-20T12:32:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/autoproxy/</loc>
+    <loc>/tags/autoproxy/</loc>
     <lastmod>2016-02-13T12:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/firefox-and-foxyproxy/</loc>
+    <loc>/post/firefox-and-foxyproxy/</loc>
     <lastmod>2016-02-13T12:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/foxyproxy/</loc>
+    <loc>/tags/foxyproxy/</loc>
     <lastmod>2016-02-13T12:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/gfwlist/</loc>
+    <loc>/tags/gfwlist/</loc>
     <lastmod>2016-02-13T12:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/windows7-enable-telnet-client/</loc>
+    <loc>/post/windows7-enable-telnet-client/</loc>
     <lastmod>2016-02-10T12:11:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/accelerate/</loc>
+    <loc>/tags/accelerate/</loc>
     <lastmod>2016-02-07T12:32:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/net_speeder/</loc>
+    <loc>/tags/net_speeder/</loc>
     <lastmod>2016-02-07T12:32:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/use-net-speeder-accelerate-vps/</loc>
+    <loc>/post/use-net-speeder-accelerate-vps/</loc>
     <lastmod>2016-02-07T12:32:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E5%8A%A0%E9%80%9F/</loc>
+    <loc>/tags/%E5%8A%A0%E9%80%9F/</loc>
     <lastmod>2016-02-07T12:32:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/cp/</loc>
+    <loc>/tags/cp/</loc>
     <lastmod>2016-02-04T02:04:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/dd/</loc>
+    <loc>/tags/dd/</loc>
     <lastmod>2016-02-04T02:04:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/mv/</loc>
+    <loc>/tags/mv/</loc>
     <lastmod>2016-02-04T02:04:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/progress/</loc>
+    <loc>/tags/progress/</loc>
     <lastmod>2016-02-04T02:04:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/check-cp-dd-etc-commands-progress/</loc>
+    <loc>/post/check-cp-dd-etc-commands-progress/</loc>
     <lastmod>2016-02-04T02:04:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/2step/</loc>
+    <loc>/tags/2step/</loc>
     <lastmod>2016-01-28T12:33:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ga/</loc>
+    <loc>/tags/ga/</loc>
     <lastmod>2016-01-28T12:33:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/libpam/</loc>
+    <loc>/tags/libpam/</loc>
     <lastmod>2016-01-28T12:33:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/otp/</loc>
+    <loc>/tags/otp/</loc>
     <lastmod>2016-01-28T12:33:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/pam/</loc>
+    <loc>/tags/pam/</loc>
     <lastmod>2016-01-28T12:33:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E4%B8%A4%E6%AD%A5%E9%AA%8C%E8%AF%81/</loc>
+    <loc>/tags/%E4%B8%A4%E6%AD%A5%E9%AA%8C%E8%AF%81/</loc>
     <lastmod>2016-01-28T12:33:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/use-google-authenticator-set-2step-verification-strengthening-ssh-login/</loc>
+    <loc>/post/use-google-authenticator-set-2step-verification-strengthening-ssh-login/</loc>
     <lastmod>2016-01-28T12:33:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E8%B0%B7%E6%AD%8C/</loc>
+    <loc>/tags/%E8%B0%B7%E6%AD%8C/</loc>
     <lastmod>2016-01-28T12:33:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/dnsmasq/</loc>
+    <loc>/tags/dnsmasq/</loc>
     <lastmod>2016-01-18T21:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/raspberry-pi-install-dnsmasq-and-dnsmasq-china-list/</loc>
+    <loc>/post/raspberry-pi-install-dnsmasq-and-dnsmasq-china-list/</loc>
     <lastmod>2016-01-18T21:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ddns/</loc>
+    <loc>/tags/ddns/</loc>
     <lastmod>2016-01-11T12:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/noip/</loc>
+    <loc>/tags/noip/</loc>
     <lastmod>2016-01-11T12:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E5%8A%A8%E6%80%81%E5%9F%9F%E5%90%8D/</loc>
+    <loc>/tags/%E5%8A%A8%E6%80%81%E5%9F%9F%E5%90%8D/</loc>
     <lastmod>2016-01-11T12:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/install-configure-noip-client-in-raspberry-pi/</loc>
+    <loc>/post/install-configure-noip-client-in-raspberry-pi/</loc>
     <lastmod>2016-01-11T12:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ddclient/</loc>
+    <loc>/tags/ddclient/</loc>
     <lastmod>2016-01-07T12:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/domain/</loc>
+    <loc>/tags/domain/</loc>
     <lastmod>2016-01-07T12:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/he.net/</loc>
+    <loc>/tags/he.net/</loc>
     <lastmod>2016-01-07T12:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/raspberry-pi-using-ddclient-and-ddns/</loc>
+    <loc>/post/raspberry-pi-using-ddclient-and-ddns/</loc>
     <lastmod>2016-01-07T12:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/dhparam/</loc>
+    <loc>/tags/dhparam/</loc>
     <lastmod>2015-12-21T12:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/http2/</loc>
+    <loc>/tags/http2/</loc>
     <lastmod>2015-12-21T12:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/ssl-security-optimization/</loc>
+    <loc>/post/ssl-security-optimization/</loc>
     <lastmod>2015-12-21T12:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/use-letsencrypt-free-ssl-certificate/</loc>
+    <loc>/post/use-letsencrypt-free-ssl-certificate/</loc>
     <lastmod>2015-12-15T22:38:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E5%85%8D%E8%B4%B9%E8%AF%81%E4%B9%A6/</loc>
+    <loc>/tags/%E5%85%8D%E8%B4%B9%E8%AF%81%E4%B9%A6/</loc>
     <lastmod>2015-12-15T22:38:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/md4/</loc>
+    <loc>/tags/md4/</loc>
     <lastmod>2015-12-13T12:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/md5/</loc>
+    <loc>/tags/md5/</loc>
     <lastmod>2015-12-13T12:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/md5sum/</loc>
+    <loc>/tags/md5sum/</loc>
     <lastmod>2015-12-13T12:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/sha/</loc>
+    <loc>/tags/sha/</loc>
     <lastmod>2015-12-13T12:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/md5sum-usage/</loc>
+    <loc>/post/md5sum-usage/</loc>
     <lastmod>2015-12-13T12:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/scp/</loc>
+    <loc>/tags/scp/</loc>
     <lastmod>2015-12-08T21:38:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/transfer-files-using-scp/</loc>
+    <loc>/post/transfer-files-using-scp/</loc>
     <lastmod>2015-12-08T21:38:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/arm6/</loc>
+    <loc>/tags/arm6/</loc>
     <lastmod>2015-12-03T12:32:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/cpuinfo/</loc>
+    <loc>/tags/cpuinfo/</loc>
     <lastmod>2015-12-03T12:32:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/node/</loc>
+    <loc>/tags/node/</loc>
     <lastmod>2015-12-03T12:32:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/node.js/</loc>
+    <loc>/tags/node.js/</loc>
     <lastmod>2015-12-03T12:32:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/npm/</loc>
+    <loc>/tags/npm/</loc>
     <lastmod>2015-12-03T12:32:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ode/</loc>
+    <loc>/tags/ode/</loc>
     <lastmod>2015-12-03T12:32:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/raspberry-pi-install-nodejs/</loc>
+    <loc>/post/raspberry-pi-install-nodejs/</loc>
     <lastmod>2015-12-03T12:32:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/change-timezone-in-centos/</loc>
+    <loc>/post/change-timezone-in-centos/</loc>
     <lastmod>2015-11-30T11:30:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/localtime/</loc>
+    <loc>/tags/localtime/</loc>
     <lastmod>2015-11-30T11:30:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/timezone/</loc>
+    <loc>/tags/timezone/</loc>
     <lastmod>2015-11-30T11:30:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E6%97%B6%E5%8C%BA/</loc>
+    <loc>/tags/%E6%97%B6%E5%8C%BA/</loc>
     <lastmod>2015-11-30T11:30:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/chinadns/</loc>
+    <loc>/tags/chinadns/</loc>
     <lastmod>2015-11-20T11:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/dir505/</loc>
+    <loc>/tags/dir505/</loc>
     <lastmod>2015-11-20T11:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/dlink/</loc>
+    <loc>/tags/dlink/</loc>
     <lastmod>2015-11-20T11:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/openwrt/</loc>
+    <loc>/tags/openwrt/</loc>
     <lastmod>2015-11-20T11:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/dir-505-openwrt-shadowsocks-chinadns/</loc>
+    <loc>/post/dir-505-openwrt-shadowsocks-chinadns/</loc>
     <lastmod>2015-11-20T11:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ffmpeg/</loc>
+    <loc>/tags/ffmpeg/</loc>
     <lastmod>2015-11-07T21:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/raspberry-pi-install-ffmpeg/</loc>
+    <loc>/post/raspberry-pi-install-ffmpeg/</loc>
     <lastmod>2015-11-07T21:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/linux-mp3-converted-to-ogg/</loc>
+    <loc>/post/linux-mp3-converted-to-ogg/</loc>
     <lastmod>2015-10-21T11:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/mp3/</loc>
+    <loc>/tags/mp3/</loc>
     <lastmod>2015-10-21T11:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/mpg321/</loc>
+    <loc>/tags/mpg321/</loc>
     <lastmod>2015-10-21T11:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ogg/</loc>
+    <loc>/tags/ogg/</loc>
     <lastmod>2015-10-21T11:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/categories/essay/</loc>
+    <loc>/categories/essay/</loc>
     <lastmod>2015-10-16T10:16:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E7%A7%91%E7%9B%AE%E4%B8%80/</loc>
+    <loc>/tags/%E7%A7%91%E7%9B%AE%E4%B8%80/</loc>
     <lastmod>2015-10-16T10:16:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/ke-mu-yi-passed/</loc>
+    <loc>/post/ke-mu-yi-passed/</loc>
     <lastmod>2015-10-16T10:16:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E9%A9%BE%E6%A0%A1/</loc>
+    <loc>/tags/%E9%A9%BE%E6%A0%A1/</loc>
     <lastmod>2015-10-16T10:16:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E9%A9%BE%E7%85%A7/</loc>
+    <loc>/tags/%E9%A9%BE%E7%85%A7/</loc>
     <lastmod>2015-10-16T10:16:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/rewrite/</loc>
+    <loc>/tags/rewrite/</loc>
     <lastmod>2015-10-14T12:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/starssl/</loc>
+    <loc>/tags/starssl/</loc>
     <lastmod>2015-10-14T12:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/startssl-and-nginx/</loc>
+    <loc>/post/startssl-and-nginx/</loc>
     <lastmod>2015-10-14T12:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/gandi/</loc>
+    <loc>/tags/gandi/</loc>
     <lastmod>2015-09-24T19:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/gandi-free-ssl-certificate-usage/</loc>
+    <loc>/post/gandi-free-ssl-certificate-usage/</loc>
     <lastmod>2015-09-24T19:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/lnmp/</loc>
+    <loc>/tags/lnmp/</loc>
     <lastmod>2015-09-24T19:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/xcode/</loc>
+    <loc>/tags/xcode/</loc>
     <lastmod>2015-09-21T23:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E4%BF%A1%E4%BB%BB/</loc>
+    <loc>/tags/%E4%BF%A1%E4%BB%BB/</loc>
     <lastmod>2015-09-21T23:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E5%A2%99/</loc>
+    <loc>/tags/%E5%A2%99/</loc>
     <lastmod>2015-09-21T23:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/gfw-infection-trust-and-deception/</loc>
+    <loc>/post/gfw-infection-trust-and-deception/</loc>
     <lastmod>2015-09-21T23:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E6%84%9F%E6%9F%93/</loc>
+    <loc>/tags/%E6%84%9F%E6%9F%93/</loc>
     <lastmod>2015-09-21T23:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E6%AC%BA%E9%AA%97/</loc>
+    <loc>/tags/%E6%AC%BA%E9%AA%97/</loc>
     <lastmod>2015-09-21T23:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/udo/</loc>
+    <loc>/tags/udo/</loc>
     <lastmod>2015-09-18T21:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/raspberry-pi-allow-root-login/</loc>
+    <loc>/post/raspberry-pi-allow-root-login/</loc>
     <lastmod>2015-09-18T21:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/adobe/</loc>
+    <loc>/tags/adobe/</loc>
     <lastmod>2015-09-13T12:38:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/photoshop/</loc>
+    <loc>/tags/photoshop/</loc>
     <lastmod>2015-09-13T12:38:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/photoshop-compressed-png-images/</loc>
+    <loc>/post/photoshop-compressed-png-images/</loc>
     <lastmod>2015-09-13T12:38:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/javascript/</loc>
+    <loc>/tags/javascript/</loc>
     <lastmod>2015-09-08T19:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/jquery/</loc>
+    <loc>/tags/jquery/</loc>
     <lastmod>2015-09-08T19:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/scrollup/</loc>
+    <loc>/tags/scrollup/</loc>
     <lastmod>2015-09-08T19:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/use-scrollup-to-add-scroll-to-top-feature/</loc>
+    <loc>/post/use-scrollup-to-add-scroll-to-top-feature/</loc>
     <lastmod>2015-09-08T19:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E8%BF%94%E5%9B%9E%E9%A1%B6%E9%83%A8/</loc>
+    <loc>/tags/%E8%BF%94%E5%9B%9E%E9%A1%B6%E9%83%A8/</loc>
     <lastmod>2015-09-08T19:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/google-drive/</loc>
+    <loc>/tags/google-drive/</loc>
     <lastmod>2015-08-26T18:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/grive/</loc>
+    <loc>/tags/grive/</loc>
     <lastmod>2015-08-26T18:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/grive2/</loc>
+    <loc>/tags/grive2/</loc>
     <lastmod>2015-08-26T18:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/linux-use-grive-management-google-drive/</loc>
+    <loc>/post/linux-use-grive-management-google-drive/</loc>
     <lastmod>2015-08-26T18:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ppa/</loc>
+    <loc>/tags/ppa/</loc>
     <lastmod>2015-08-26T18:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/webupd8/</loc>
+    <loc>/tags/webupd8/</loc>
     <lastmod>2015-08-26T18:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/add-apt-repository/</loc>
+    <loc>/tags/add-apt-repository/</loc>
     <lastmod>2015-08-23T08:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/apt-get/</loc>
+    <loc>/tags/apt-get/</loc>
     <lastmod>2015-08-23T08:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/can-not-use-add-apt-repository/</loc>
+    <loc>/post/can-not-use-add-apt-repository/</loc>
     <lastmod>2015-08-23T08:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/dlna/</loc>
+    <loc>/tags/dlna/</loc>
     <lastmod>2015-08-06T18:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/dms/</loc>
+    <loc>/tags/dms/</loc>
     <lastmod>2015-08-06T18:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ms/</loc>
+    <loc>/tags/ms/</loc>
     <lastmod>2015-08-06T18:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/upnp/</loc>
+    <loc>/tags/upnp/</loc>
     <lastmod>2015-08-06T18:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/vplayer/</loc>
+    <loc>/tags/vplayer/</loc>
     <lastmod>2015-08-06T18:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/raspberry-pi-install-minidlna-to-create-digital-media-server/</loc>
+    <loc>/post/raspberry-pi-install-minidlna-to-create-digital-media-server/</loc>
     <lastmod>2015-08-06T18:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/dietpi/</loc>
+    <loc>/tags/dietpi/</loc>
     <lastmod>2015-08-04T18:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/raspberry-pi-use-dietpi/</loc>
+    <loc>/post/raspberry-pi-use-dietpi/</loc>
     <lastmod>2015-08-04T18:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/dht11/</loc>
+    <loc>/tags/dht11/</loc>
     <lastmod>2015-07-30T12:59:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/json/</loc>
+    <loc>/tags/json/</loc>
     <lastmod>2015-07-30T12:59:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/lewei50/</loc>
+    <loc>/tags/lewei50/</loc>
     <lastmod>2015-07-30T12:59:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/seneor/</loc>
+    <loc>/tags/seneor/</loc>
     <lastmod>2015-07-30T12:59:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/temperature/</loc>
+    <loc>/tags/temperature/</loc>
     <lastmod>2015-07-30T12:59:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E4%B9%90%E4%B8%BA%E7%89%A9%E8%81%94/</loc>
+    <loc>/tags/%E4%B9%90%E4%B8%BA%E7%89%A9%E8%81%94/</loc>
     <lastmod>2015-07-30T12:59:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/sumbit-raspberry-pi-data-to-lewei50/</loc>
+    <loc>/post/sumbit-raspberry-pi-data-to-lewei50/</loc>
     <lastmod>2015-07-30T12:59:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E7%89%A9%E8%81%94%E7%BD%91/</loc>
+    <loc>/tags/%E7%89%A9%E8%81%94%E7%BD%91/</loc>
     <lastmod>2015-07-30T12:59:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/install-nginx-and-ngx_pagespeed-on-vps/</loc>
+    <loc>/post/install-nginx-and-ngx_pagespeed-on-vps/</loc>
     <lastmod>2015-07-24T17:24:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/rime/</loc>
+    <loc>/tags/rime/</loc>
     <lastmod>2015-07-23T07:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E4%B8%AD%E5%B7%9E%E9%9F%B5/</loc>
+    <loc>/tags/%E4%B8%AD%E5%B7%9E%E9%9F%B5/</loc>
     <lastmod>2015-07-23T07:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/baidu-input-dictionary-converted-to-rime/</loc>
+    <loc>/post/baidu-input-dictionary-converted-to-rime/</loc>
     <lastmod>2015-07-23T07:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E5%B0%8F%E7%8B%BC%E6%AF%AB/</loc>
+    <loc>/tags/%E5%B0%8F%E7%8B%BC%E6%AF%AB/</loc>
     <lastmod>2015-07-23T07:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E6%B7%B1%E8%93%9D%E8%AF%8D%E5%BA%93%E8%BD%AC%E6%8D%A2/</loc>
+    <loc>/tags/%E6%B7%B1%E8%93%9D%E8%AF%8D%E5%BA%93%E8%BD%AC%E6%8D%A2/</loc>
     <lastmod>2015-07-23T07:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E8%AF%8D%E5%BA%93/</loc>
+    <loc>/tags/%E8%AF%8D%E5%BA%93/</loc>
     <lastmod>2015-07-23T07:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/bandwagonhost/</loc>
+    <loc>/tags/bandwagonhost/</loc>
     <lastmod>2015-07-21T17:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/libssl/</loc>
+    <loc>/tags/libssl/</loc>
     <lastmod>2015-07-21T17:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/libuv/</loc>
+    <loc>/tags/libuv/</loc>
     <lastmod>2015-07-21T17:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/libyaml/</loc>
+    <loc>/tags/libyaml/</loc>
     <lastmod>2015-07-21T17:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/web-server/</loc>
+    <loc>/tags/web-server/</loc>
     <lastmod>2015-07-21T17:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/install-h2o-on-bandwagon-vps/</loc>
+    <loc>/post/install-h2o-on-bandwagon-vps/</loc>
     <lastmod>2015-07-21T17:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/blog/</loc>
+    <loc>/tags/blog/</loc>
     <lastmod>2015-07-20T17:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/github/</loc>
+    <loc>/tags/github/</loc>
     <lastmod>2015-07-20T17:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/markdown/</loc>
+    <loc>/tags/markdown/</loc>
     <lastmod>2015-07-20T17:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/mysql/</loc>
+    <loc>/tags/mysql/</loc>
     <lastmod>2015-07-20T17:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/notepad&#43;&#43;/</loc>
+    <loc>/tags/notepad&#43;&#43;/</loc>
     <lastmod>2015-07-20T17:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/sql/</loc>
+    <loc>/tags/sql/</loc>
     <lastmod>2015-07-20T17:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/typecho-converted-to-gor/</loc>
+    <loc>/post/typecho-converted-to-gor/</loc>
     <lastmod>2015-07-20T17:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/amaze/</loc>
+    <loc>/tags/amaze/</loc>
     <lastmod>2015-07-17T21:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/css/</loc>
+    <loc>/tags/css/</loc>
     <lastmod>2015-07-17T21:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/typecho-theme-amaze/</loc>
+    <loc>/post/typecho-theme-amaze/</loc>
     <lastmod>2015-07-17T21:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/xively/</loc>
+    <loc>/tags/xively/</loc>
     <lastmod>2015-07-14T14:14:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/use-xively-monitor-raspberry-pi/</loc>
+    <loc>/post/use-xively-monitor-raspberry-pi/</loc>
     <lastmod>2015-07-14T14:14:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/replace-pioneer/</loc>
+    <loc>/tags/replace-pioneer/</loc>
     <lastmod>2015-07-10T22:38:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/segment/</loc>
+    <loc>/tags/segment/</loc>
     <lastmod>2015-07-10T22:38:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/use-pioneer-replace-to-segment-the-text-file/</loc>
+    <loc>/post/use-pioneer-replace-to-segment-the-text-file/</loc>
     <lastmod>2015-07-10T22:38:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86/</loc>
+    <loc>/tags/%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86/</loc>
     <lastmod>2015-07-10T22:38:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E6%8C%89%E8%A1%8C%E5%88%86%E5%89%B2/</loc>
+    <loc>/tags/%E6%8C%89%E8%A1%8C%E5%88%86%E5%89%B2/</loc>
     <lastmod>2015-07-10T22:38:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/chinasnow/</loc>
+    <loc>/tags/chinasnow/</loc>
     <lastmod>2015-07-10T10:27:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/cydia/</loc>
+    <loc>/tags/cydia/</loc>
     <lastmod>2015-07-10T10:27:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/iphone5c/</loc>
+    <loc>/tags/iphone5c/</loc>
     <lastmod>2015-07-10T10:27:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/itunes/</loc>
+    <loc>/tags/itunes/</loc>
     <lastmod>2015-07-10T10:27:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/lte/</loc>
+    <loc>/tags/lte/</loc>
     <lastmod>2015-07-10T10:27:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/verzion/</loc>
+    <loc>/tags/verzion/</loc>
     <lastmod>2015-07-10T10:27:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/verzion-iphone5c-open-chinatelecom-4g/</loc>
+    <loc>/post/verzion-iphone5c-open-chinatelecom-4g/</loc>
     <lastmod>2015-07-10T10:27:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E4%B8%AD%E5%9B%BD%E7%94%B5%E4%BF%A1/</loc>
+    <loc>/tags/%E4%B8%AD%E5%9B%BD%E7%94%B5%E4%BF%A1/</loc>
     <lastmod>2015-07-10T10:27:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E8%B6%8A%E7%8B%B1/</loc>
+    <loc>/tags/%E8%B6%8A%E7%8B%B1/</loc>
     <lastmod>2015-07-10T10:27:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/godaddy/</loc>
+    <loc>/tags/godaddy/</loc>
     <lastmod>2015-07-07T18:27:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/hichina/</loc>
+    <loc>/tags/hichina/</loc>
     <lastmod>2015-07-07T18:27:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/godaddy-domain-transferred-to-the-hichina/</loc>
+    <loc>/post/godaddy-domain-transferred-to-the-hichina/</loc>
     <lastmod>2015-07-07T18:27:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/html/</loc>
+    <loc>/tags/html/</loc>
     <lastmod>2015-07-02T17:32:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/theme/</loc>
+    <loc>/tags/theme/</loc>
     <lastmod>2015-07-02T17:32:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/typecho-limits-theme/</loc>
+    <loc>/post/typecho-limits-theme/</loc>
     <lastmod>2015-07-02T17:32:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/raspberry-pi-by-dht11-collecting-temperature-and-humidity/</loc>
+    <loc>/post/raspberry-pi-by-dht11-collecting-temperature-and-humidity/</loc>
     <lastmod>2015-06-21T16:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ghost/</loc>
+    <loc>/tags/ghost/</loc>
     <lastmod>2015-06-06T16:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/nodejs/</loc>
+    <loc>/tags/nodejs/</loc>
     <lastmod>2015-06-06T16:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/ubuntu-install-ghost-blog-system/</loc>
+    <loc>/post/ubuntu-install-ghost-blog-system/</loc>
     <lastmod>2015-06-06T16:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/crt/</loc>
+    <loc>/tags/crt/</loc>
     <lastmod>2015-05-25T15:25:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/free/</loc>
+    <loc>/tags/free/</loc>
     <lastmod>2015-05-25T15:25:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/key/</loc>
+    <loc>/tags/key/</loc>
     <lastmod>2015-05-25T15:25:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/nginx-configuration-ssl-certificate/</loc>
+    <loc>/post/nginx-configuration-ssl-certificate/</loc>
     <lastmod>2015-05-25T15:25:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/wosign/</loc>
+    <loc>/tags/wosign/</loc>
     <lastmod>2015-05-25T15:25:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/read/</loc>
+    <loc>/tags/read/</loc>
     <lastmod>2015-05-21T15:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/typecho-theme-read/</loc>
+    <loc>/post/typecho-theme-read/</loc>
     <lastmod>2015-05-21T15:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/devkit/</loc>
+    <loc>/tags/devkit/</loc>
     <lastmod>2015-05-20T15:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/gem/</loc>
+    <loc>/tags/gem/</loc>
     <lastmod>2015-05-20T15:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/jekyll/</loc>
+    <loc>/tags/jekyll/</loc>
     <lastmod>2015-05-20T15:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ruby/</loc>
+    <loc>/tags/ruby/</loc>
     <lastmod>2015-05-20T15:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/install-jekyll-on-windows/</loc>
+    <loc>/post/install-jekyll-on-windows/</loc>
     <lastmod>2015-05-20T15:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/go/</loc>
+    <loc>/tags/go/</loc>
     <lastmod>2015-05-11T15:11:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/install-the-last-version-golang-for-linux/</loc>
+    <loc>/post/install-the-last-version-golang-for-linux/</loc>
     <lastmod>2015-05-11T15:11:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E5%A5%B3%E5%84%BF/</loc>
+    <loc>/tags/%E5%A5%B3%E5%84%BF/</loc>
     <lastmod>2015-04-07T04:07:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E7%85%96%E7%84%B6%E4%BC%BC%E6%98%A5/</loc>
+    <loc>/tags/%E7%85%96%E7%84%B6%E4%BC%BC%E6%98%A5/</loc>
     <lastmod>2015-04-07T04:07:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E8%B5%B5%E9%9B%A8%E7%85%96/</loc>
+    <loc>/tags/%E8%B5%B5%E9%9B%A8%E7%85%96/</loc>
     <lastmod>2015-04-07T04:07:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/zhaoyuxuan/</loc>
+    <loc>/post/zhaoyuxuan/</loc>
     <lastmod>2015-04-07T04:07:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/bandwidth/</loc>
+    <loc>/tags/bandwidth/</loc>
     <lastmod>2015-03-26T13:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/speedtest/</loc>
+    <loc>/tags/speedtest/</loc>
     <lastmod>2015-03-26T13:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/speedtest-cli/</loc>
+    <loc>/tags/speedtest-cli/</loc>
     <lastmod>2015-03-26T13:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/use-speedtest-cli-tests-network-bandwidth/</loc>
+    <loc>/post/use-speedtest-cli-tests-network-bandwidth/</loc>
     <lastmod>2015-03-26T13:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E5%B8%A6%E5%AE%BD/</loc>
+    <loc>/tags/%E5%B8%A6%E5%AE%BD/</loc>
     <lastmod>2015-03-26T13:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E7%BD%91%E9%80%9F/</loc>
+    <loc>/tags/%E7%BD%91%E9%80%9F/</loc>
     <lastmod>2015-03-26T13:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/disk/</loc>
+    <loc>/tags/disk/</loc>
     <lastmod>2015-03-19T12:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/fdisk/</loc>
+    <loc>/tags/fdisk/</loc>
     <lastmod>2015-03-19T12:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/examples-of-fdisk-partition/</loc>
+    <loc>/post/examples-of-fdisk-partition/</loc>
     <lastmod>2015-03-19T12:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/partition/</loc>
+    <loc>/tags/partition/</loc>
     <lastmod>2015-03-19T12:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E5%88%86%E5%8C%BA/</loc>
+    <loc>/tags/%E5%88%86%E5%8C%BA/</loc>
     <lastmod>2015-03-19T12:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/minminguard/</loc>
+    <loc>/tags/minminguard/</loc>
     <lastmod>2015-03-14T13:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ss/</loc>
+    <loc>/tags/ss/</loc>
     <lastmod>2015-03-14T13:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/swipeback/</loc>
+    <loc>/tags/swipeback/</loc>
     <lastmod>2015-03-14T13:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/wifikeyview/</loc>
+    <loc>/tags/wifikeyview/</loc>
     <lastmod>2015-03-14T13:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/xposed/</loc>
+    <loc>/tags/xposed/</loc>
     <lastmod>2015-03-14T13:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/the-xposed-module-is-recommended/</loc>
+    <loc>/post/the-xposed-module-is-recommended/</loc>
     <lastmod>2015-03-14T13:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E6%BB%91%E5%8A%A8%E8%BF%94%E5%9B%9E/</loc>
+    <loc>/tags/%E6%BB%91%E5%8A%A8%E8%BF%94%E5%9B%9E/</loc>
     <lastmod>2015-03-14T13:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/starting-raspberry-pi-2-model-b/</loc>
+    <loc>/post/starting-raspberry-pi-2-model-b/</loc>
     <lastmod>2015-03-12T23:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/atrix-4g/</loc>
+    <loc>/tags/atrix-4g/</loc>
     <lastmod>2015-02-28T02:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/dock/</loc>
+    <loc>/tags/dock/</loc>
     <lastmod>2015-02-28T02:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/motorola/</loc>
+    <loc>/tags/motorola/</loc>
     <lastmod>2015-02-28T02:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E6%91%A9%E6%89%98%E7%BD%97%E6%8B%89/</loc>
+    <loc>/tags/%E6%91%A9%E6%89%98%E7%BD%97%E6%8B%89/</loc>
     <lastmod>2015-02-28T02:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/assemble-atrix-4g-pc-docking-and-raspberry-pi/</loc>
+    <loc>/post/assemble-atrix-4g-pc-docking-and-raspberry-pi/</loc>
     <lastmod>2015-02-28T02:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/lsusb/</loc>
+    <loc>/tags/lsusb/</loc>
     <lastmod>2015-02-07T12:27:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/tp-link/</loc>
+    <loc>/tags/tp-link/</loc>
     <lastmod>2015-02-07T12:27:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/wireless/</loc>
+    <loc>/tags/wireless/</loc>
     <lastmod>2015-02-07T12:27:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/wn322g&#43;/</loc>
+    <loc>/tags/wn322g&#43;/</loc>
     <lastmod>2015-02-07T12:27:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/zd1211/</loc>
+    <loc>/tags/zd1211/</loc>
     <lastmod>2015-02-07T12:27:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/zd1211b/</loc>
+    <loc>/tags/zd1211b/</loc>
     <lastmod>2015-02-07T12:27:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/zydas/</loc>
+    <loc>/tags/zydas/</loc>
     <lastmod>2015-02-07T12:27:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/raspberry-pi-install-tp-wn322g-drivers/</loc>
+    <loc>/post/raspberry-pi-install-tp-wn322g-drivers/</loc>
     <lastmod>2015-02-07T12:27:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/youtube/</loc>
+    <loc>/tags/youtube/</loc>
     <lastmod>2015-01-08T11:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/youtube-dl/</loc>
+    <loc>/tags/youtube-dl/</loc>
     <lastmod>2015-01-08T11:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/use-youtube-dl-to-download-youtube-video/</loc>
+    <loc>/post/use-youtube-dl-to-download-youtube-video/</loc>
     <lastmod>2015-01-08T11:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ntp/</loc>
+    <loc>/tags/ntp/</loc>
     <lastmod>2014-12-26T14:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ntpdate/</loc>
+    <loc>/tags/ntpdate/</loc>
     <lastmod>2014-12-26T14:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/tzselect/</loc>
+    <loc>/tags/tzselect/</loc>
     <lastmod>2014-12-26T14:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/raspberry-pi-set-timezone-and-ntp/</loc>
+    <loc>/post/raspberry-pi-set-timezone-and-ntp/</loc>
     <lastmod>2014-12-26T14:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/gis/</loc>
+    <loc>/tags/gis/</loc>
     <lastmod>2014-12-24T12:24:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/mapinfo/</loc>
+    <loc>/tags/mapinfo/</loc>
     <lastmod>2014-12-24T12:24:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/mapinfo-iris-out-points-with-sql-select/</loc>
+    <loc>/post/mapinfo-iris-out-points-with-sql-select/</loc>
     <lastmod>2014-12-24T12:24:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/select/</loc>
+    <loc>/tags/select/</loc>
     <lastmod>2014-12-24T12:24:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E6%A2%A6/</loc>
+    <loc>/tags/%E6%A2%A6/</loc>
     <lastmod>2014-12-17T12:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/dream-20141216/</loc>
+    <loc>/post/dream-20141216/</loc>
     <lastmod>2014-12-17T12:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E6%A2%A6%E5%A2%83/</loc>
+    <loc>/tags/%E6%A2%A6%E5%A2%83/</loc>
     <lastmod>2014-12-17T12:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E6%B6%9D%E5%BA%97%E5%88%9D%E4%B8%AD/</loc>
+    <loc>/tags/%E6%B6%9D%E5%BA%97%E5%88%9D%E4%B8%AD/</loc>
     <lastmod>2014-12-17T12:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/linux-vps-install-shadowsocks/</loc>
+    <loc>/post/linux-vps-install-shadowsocks/</loc>
     <lastmod>2014-12-13T23:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E5%BD%B1%E6%A2%AD/</loc>
+    <loc>/tags/%E5%BD%B1%E6%A2%AD/</loc>
     <lastmod>2014-12-13T23:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/fstab/</loc>
+    <loc>/tags/fstab/</loc>
     <lastmod>2014-12-11T21:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/nas/</loc>
+    <loc>/tags/nas/</loc>
     <lastmod>2014-12-11T21:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ntfs/</loc>
+    <loc>/tags/ntfs/</loc>
     <lastmod>2014-12-11T21:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/udisk/</loc>
+    <loc>/tags/udisk/</loc>
     <lastmod>2014-12-11T21:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/u%E7%9B%98/</loc>
+    <loc>/tags/u%E7%9B%98/</loc>
     <lastmod>2014-12-11T21:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/raspberry-pi-mount-udisk-as-the-storage-partition/</loc>
+    <loc>/post/raspberry-pi-mount-udisk-as-the-storage-partition/</loc>
     <lastmod>2014-12-11T21:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/999/</loc>
+    <loc>/tags/999/</loc>
     <lastmod>2014-11-26T11:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ngrok/</loc>
+    <loc>/tags/ngrok/</loc>
     <lastmod>2014-11-26T11:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E4%B8%89%E4%B9%9D/</loc>
+    <loc>/tags/%E4%B8%89%E4%B9%9D/</loc>
     <lastmod>2014-11-26T11:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E6%84%9F%E5%86%92/</loc>
+    <loc>/tags/%E6%84%9F%E5%86%92/</loc>
     <lastmod>2014-11-26T11:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E6%84%9F%E5%86%92%E7%81%B5/</loc>
+    <loc>/tags/%E6%84%9F%E5%86%92%E7%81%B5/</loc>
     <lastmod>2014-11-26T11:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/999-ganmaoling-and-chuanxinlian/</loc>
+    <loc>/post/999-ganmaoling-and-chuanxinlian/</loc>
     <lastmod>2014-11-26T11:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/raspberry-pi-install-ngrok/</loc>
+    <loc>/post/raspberry-pi-install-ngrok/</loc>
     <lastmod>2014-11-26T11:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E7%A9%BF%E5%BF%83%E8%8E%B2/</loc>
+    <loc>/tags/%E7%A9%BF%E5%BF%83%E8%8E%B2/</loc>
     <lastmod>2014-11-26T11:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E5%A4%A9%E9%BE%99%E5%85%AB%E9%83%A8/</loc>
+    <loc>/tags/%E5%A4%A9%E9%BE%99%E5%85%AB%E9%83%A8/</loc>
     <lastmod>2014-11-19T11:19:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/dream-20141118/</loc>
+    <loc>/post/dream-20141118/</loc>
     <lastmod>2014-11-19T11:19:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E6%B8%B8%E6%88%8F/</loc>
+    <loc>/tags/%E6%B8%B8%E6%88%8F/</loc>
     <lastmod>2014-11-19T11:19:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/chrome/</loc>
+    <loc>/tags/chrome/</loc>
     <lastmod>2014-11-13T11:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/shadowsocks-usage/</loc>
+    <loc>/post/shadowsocks-usage/</loc>
     <lastmod>2014-11-13T11:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/switchsharp/</loc>
+    <loc>/tags/switchsharp/</loc>
     <lastmod>2014-11-13T11:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/switchyomega/</loc>
+    <loc>/tags/switchyomega/</loc>
     <lastmod>2014-11-13T11:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/dphys-swapfile/</loc>
+    <loc>/tags/dphys-swapfile/</loc>
     <lastmod>2014-10-30T14:30:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/modify-the-raspberry-pi-swap-size/</loc>
+    <loc>/post/modify-the-raspberry-pi-swap-size/</loc>
     <lastmod>2014-10-30T14:30:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/db/</loc>
+    <loc>/tags/db/</loc>
     <lastmod>2014-10-27T10:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/dbm/</loc>
+    <loc>/tags/dbm/</loc>
     <lastmod>2014-10-27T10:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/mw/</loc>
+    <loc>/tags/mw/</loc>
     <lastmod>2014-10-27T10:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/w/</loc>
+    <loc>/tags/w/</loc>
     <lastmod>2014-10-27T10:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E5%8A%9F%E7%8E%87/</loc>
+    <loc>/tags/%E5%8A%9F%E7%8E%87/</loc>
     <lastmod>2014-10-27T10:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/unit-of-power-mw-and-dbm-conversion/</loc>
+    <loc>/post/unit-of-power-mw-and-dbm-conversion/</loc>
     <lastmod>2014-10-27T10:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E6%AF%AB%E7%93%A6/</loc>
+    <loc>/tags/%E6%AF%AB%E7%93%A6/</loc>
     <lastmod>2014-10-27T10:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E7%93%A6/</loc>
+    <loc>/tags/%E7%93%A6/</loc>
     <lastmod>2014-10-27T10:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E7%94%B5%E5%B9%B3/</loc>
+    <loc>/tags/%E7%94%B5%E5%B9%B3/</loc>
     <lastmod>2014-10-27T10:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/picture-converted-to-tab-map-file/</loc>
+    <loc>/post/picture-converted-to-tab-map-file/</loc>
     <lastmod>2014-10-16T23:18:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E7%BB%8F%E7%BA%AC%E5%BA%A6/</loc>
+    <loc>/tags/%E7%BB%8F%E7%BA%AC%E5%BA%A6/</loc>
     <lastmod>2014-10-16T23:18:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/install-crontab-on-centos-and-usage/</loc>
+    <loc>/post/install-crontab-on-centos-and-usage/</loc>
     <lastmod>2014-09-22T19:22:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/crontab/</loc>
+    <loc>/tags/crontab/</loc>
     <lastmod>2014-09-22T19:22:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/download-the-chrome-offline-installation-package/</loc>
+    <loc>/post/download-the-chrome-offline-installation-package/</loc>
     <lastmod>2014-08-30T08:30:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/excel-cell-insert-a-newline/</loc>
+    <loc>/post/excel-cell-insert-a-newline/</loc>
     <lastmod>2014-08-20T18:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E6%8D%A2%E8%A1%8C%E7%AC%A6/</loc>
+    <loc>/tags/%E6%8D%A2%E8%A1%8C%E7%AC%A6/</loc>
     <lastmod>2014-08-20T18:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/cli/</loc>
+    <loc>/tags/cli/</loc>
     <lastmod>2014-08-19T08:19:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/cli-model-of-linux-using-dropbox/</loc>
+    <loc>/post/cli-model-of-linux-using-dropbox/</loc>
     <lastmod>2014-08-19T08:19:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/library/</loc>
+    <loc>/tags/library/</loc>
     <lastmod>2014-08-15T15:15:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/runtime/</loc>
+    <loc>/tags/runtime/</loc>
     <lastmod>2014-08-15T15:15:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/vc/</loc>
+    <loc>/tags/vc/</loc>
     <lastmod>2014-08-15T15:15:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/vc&#43;&#43;/</loc>
+    <loc>/tags/vc&#43;&#43;/</loc>
     <lastmod>2014-08-15T15:15:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/vc-runtime-library-collection/</loc>
+    <loc>/post/vc-runtime-library-collection/</loc>
     <lastmod>2014-08-15T15:15:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/virutalc&#43;&#43;/</loc>
+    <loc>/tags/virutalc&#43;&#43;/</loc>
     <lastmod>2014-08-15T15:15:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/tl-wn735n/</loc>
+    <loc>/tags/tl-wn735n/</loc>
     <lastmod>2014-08-12T18:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/tonido/</loc>
+    <loc>/tags/tonido/</loc>
     <lastmod>2014-08-12T18:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/wn725n/</loc>
+    <loc>/tags/wn725n/</loc>
     <lastmod>2014-08-12T18:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E6%97%A0%E7%BA%BF%E7%BD%91%E5%8D%A1/</loc>
+    <loc>/tags/%E6%97%A0%E7%BA%BF%E7%BD%91%E5%8D%A1/</loc>
     <lastmod>2014-08-12T18:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/use-tl-wn725n-in-raspberry-pi/</loc>
+    <loc>/post/use-tl-wn725n-in-raspberry-pi/</loc>
     <lastmod>2014-08-12T18:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/raspberry-pi-install-tonido-build-personal-cloud/</loc>
+    <loc>/post/raspberry-pi-install-tonido-build-personal-cloud/</loc>
     <lastmod>2014-08-12T18:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/centos7-install-ntfs-3g/</loc>
+    <loc>/post/centos7-install-ntfs-3g/</loc>
     <lastmod>2014-08-10T08:10:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ntfs-3g/</loc>
+    <loc>/tags/ntfs-3g/</loc>
     <lastmod>2014-08-10T08:10:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/centos7-installation-guide/</loc>
+    <loc>/post/centos7-installation-guide/</loc>
     <lastmod>2014-08-09T08:09:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/centos7-configuration-grub-to-add-the-windows-boot-menu/</loc>
+    <loc>/post/centos7-configuration-grub-to-add-the-windows-boot-menu/</loc>
     <lastmod>2014-08-09T08:09:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/yum/</loc>
+    <loc>/tags/yum/</loc>
     <lastmod>2014-08-09T08:09:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/c8817l/</loc>
+    <loc>/tags/c8817l/</loc>
     <lastmod>2014-08-07T18:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/huawei/</loc>
+    <loc>/tags/huawei/</loc>
     <lastmod>2014-08-07T18:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/huawei-c8817l-unlock-and-root/</loc>
+    <loc>/post/huawei-c8817l-unlock-and-root/</loc>
     <lastmod>2014-08-07T18:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E5%8D%9A%E5%AE%A2/</loc>
+    <loc>/tags/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2014-07-16T07:16:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/create-a-free-blog-with-jekyll-and-github-page/</loc>
+    <loc>/post/create-a-free-blog-with-jekyll-and-github-page/</loc>
     <lastmod>2014-07-16T07:16:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/fsutil/</loc>
+    <loc>/tags/fsutil/</loc>
     <lastmod>2014-07-10T07:10:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/create-a-fixed-size-file/</loc>
+    <loc>/post/create-a-fixed-size-file/</loc>
     <lastmod>2014-07-10T07:10:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/aquan/</loc>
+    <loc>/tags/aquan/</loc>
     <lastmod>2014-06-24T12:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/typecho-theme-aquan/</loc>
+    <loc>/post/typecho-theme-aquan/</loc>
     <lastmod>2014-06-24T12:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/tightvncserver/</loc>
+    <loc>/tags/tightvncserver/</loc>
     <lastmod>2014-03-11T00:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/vnc/</loc>
+    <loc>/tags/vnc/</loc>
     <lastmod>2014-03-11T00:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/raspberry-pi-configuration-vnc/</loc>
+    <loc>/post/raspberry-pi-configuration-vnc/</loc>
     <lastmod>2014-03-11T00:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/raspberry-pi-modify-software-source/</loc>
+    <loc>/post/raspberry-pi-modify-software-source/</loc>
     <lastmod>2014-03-10T12:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/hdmi/</loc>
+    <loc>/tags/hdmi/</loc>
     <lastmod>2014-03-04T13:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/hdmi-description/</loc>
+    <loc>/post/hdmi-description/</loc>
     <lastmod>2014-03-04T13:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/dnspod/</loc>
+    <loc>/tags/dnspod/</loc>
     <lastmod>2014-03-03T03:03:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/raspberry-pi-and-dnspod-dynamic-dns/</loc>
+    <loc>/post/raspberry-pi-and-dnspod-dynamic-dns/</loc>
     <lastmod>2014-03-03T03:03:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/gpio/</loc>
+    <loc>/tags/gpio/</loc>
     <lastmod>2014-03-02T12:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/raspberry-pi-install-python-development-environment-and-gpio-library/</loc>
+    <loc>/post/raspberry-pi-install-python-development-environment-and-gpio-library/</loc>
     <lastmod>2014-03-02T12:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/overlock/</loc>
+    <loc>/tags/overlock/</loc>
     <lastmod>2014-02-28T12:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/win32diskimager/</loc>
+    <loc>/tags/win32diskimager/</loc>
     <lastmod>2014-02-28T12:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/starting-use-raspberry-pi/</loc>
+    <loc>/post/starting-use-raspberry-pi/</loc>
     <lastmod>2014-02-28T12:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E8%B6%85%E9%A2%91/</loc>
+    <loc>/tags/%E8%B6%85%E9%A2%91/</loc>
     <lastmod>2014-02-28T12:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/amazon/</loc>
+    <loc>/tags/amazon/</loc>
     <lastmod>2014-02-27T12:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/kindle/</loc>
+    <loc>/tags/kindle/</loc>
     <lastmod>2014-02-27T12:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/kindle-paperwhite-jailbreak/</loc>
+    <loc>/post/kindle-paperwhite-jailbreak/</loc>
     <lastmod>2014-02-27T12:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/kpw/</loc>
+    <loc>/tags/kpw/</loc>
     <lastmod>2014-02-27T12:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/kterm/</loc>
+    <loc>/tags/kterm/</loc>
     <lastmod>2014-02-27T12:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/mkk/</loc>
+    <loc>/tags/mkk/</loc>
     <lastmod>2014-02-27T12:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/usbnetwork/</loc>
+    <loc>/tags/usbnetwork/</loc>
     <lastmod>2014-02-27T12:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/starting-raspberry-pi-1-model-b/</loc>
+    <loc>/post/starting-raspberry-pi-1-model-b/</loc>
     <lastmod>2014-02-26T12:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/pptpd/</loc>
+    <loc>/tags/pptpd/</loc>
     <lastmod>2014-02-23T12:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/install-vpn-on-ubuntu/</loc>
+    <loc>/post/install-vpn-on-ubuntu/</loc>
     <lastmod>2014-02-23T12:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/qemu/</loc>
+    <loc>/tags/qemu/</loc>
     <lastmod>2014-02-11T12:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/qemu-for-windows-usages/</loc>
+    <loc>/post/qemu-for-windows-usages/</loc>
     <lastmod>2014-02-11T12:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/virtual/</loc>
+    <loc>/tags/virtual/</loc>
     <lastmod>2014-02-11T12:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/dropbear/</loc>
+    <loc>/tags/dropbear/</loc>
     <lastmod>2014-02-01T12:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/getty/</loc>
+    <loc>/tags/getty/</loc>
     <lastmod>2014-02-01T12:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/openssh/</loc>
+    <loc>/tags/openssh/</loc>
     <lastmod>2014-02-01T12:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/pdksh/</loc>
+    <loc>/tags/pdksh/</loc>
     <lastmod>2014-02-01T12:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/optimization-vps/</loc>
+    <loc>/post/optimization-vps/</loc>
     <lastmod>2014-02-01T12:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/bittorrent/</loc>
+    <loc>/tags/bittorrent/</loc>
     <lastmod>2014-01-21T01:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/bittorrent-sync/</loc>
+    <loc>/tags/bittorrent-sync/</loc>
     <lastmod>2014-01-21T01:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/bittorrent-sync-usages/</loc>
+    <loc>/post/bittorrent-sync-usages/</loc>
     <lastmod>2014-01-21T01:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/btsync/</loc>
+    <loc>/tags/btsync/</loc>
     <lastmod>2014-01-21T01:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/automatic-backup-files-and-database-on-vps/</loc>
+    <loc>/post/automatic-backup-files-and-database-on-vps/</loc>
     <lastmod>2014-01-13T01:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/logs/</loc>
+    <loc>/tags/logs/</loc>
     <lastmod>2013-12-23T21:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/typecho-theme-logs/</loc>
+    <loc>/post/typecho-theme-logs/</loc>
     <lastmod>2013-12-23T21:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/boot/</loc>
+    <loc>/tags/boot/</loc>
     <lastmod>2013-12-12T12:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/lsblk/</loc>
+    <loc>/tags/lsblk/</loc>
     <lastmod>2013-12-12T12:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/repair-grub-boot/</loc>
+    <loc>/post/repair-grub-boot/</loc>
     <lastmod>2013-12-12T12:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/duokan/</loc>
+    <loc>/tags/duokan/</loc>
     <lastmod>2013-10-12T12:01:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/kindle-paperwhite-with-duokan/</loc>
+    <loc>/post/kindle-paperwhite-with-duokan/</loc>
     <lastmod>2013-10-12T12:01:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/screensaver/</loc>
+    <loc>/tags/screensaver/</loc>
     <lastmod>2013-10-12T12:01:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E5%A4%9A%E7%9C%8B/</loc>
+    <loc>/tags/%E5%A4%9A%E7%9C%8B/</loc>
     <lastmod>2013-10-12T12:01:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/array/</loc>
+    <loc>/tags/array/</loc>
     <lastmod>2013-09-24T12:59:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/examples-javascript-array/</loc>
+    <loc>/post/examples-javascript-array/</loc>
     <lastmod>2013-09-24T12:59:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E6%95%B0%E7%BB%84/</loc>
+    <loc>/tags/%E6%95%B0%E7%BB%84/</loc>
     <lastmod>2013-09-24T12:59:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E7%BC%96%E7%A8%8B/</loc>
+    <loc>/tags/%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2013-09-24T12:59:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/jekyll-chinese-garbled-windows/</loc>
+    <loc>/post/jekyll-chinese-garbled-windows/</loc>
     <lastmod>2013-09-21T19:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</loc>
+    <loc>/tags/%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</loc>
     <lastmod>2013-09-21T19:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E4%B9%B1%E7%A0%81/</loc>
+    <loc>/tags/%E4%B9%B1%E7%A0%81/</loc>
     <lastmod>2013-09-21T19:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/rss/</loc>
+    <loc>/tags/rss/</loc>
     <lastmod>2013-09-18T09:18:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/rss.xml/</loc>
+    <loc>/tags/rss.xml/</loc>
     <lastmod>2013-09-18T09:18:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/add-rssxml-to-the-jekyll-site/</loc>
+    <loc>/post/add-rssxml-to-the-jekyll-site/</loc>
     <lastmod>2013-09-18T09:18:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/syntax/</loc>
+    <loc>/tags/syntax/</loc>
     <lastmod>2013-09-17T17:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/vi/</loc>
+    <loc>/tags/vi/</loc>
     <lastmod>2013-09-17T17:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/vim/</loc>
+    <loc>/tags/vim/</loc>
     <lastmod>2013-09-17T17:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/vim-markdown-syntax-highlighting/</loc>
+    <loc>/post/vim-markdown-syntax-highlighting/</loc>
     <lastmod>2013-09-17T17:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E8%AF%AD%E6%B3%95%E9%AB%98%E4%BA%AE/</loc>
+    <loc>/tags/%E8%AF%AD%E6%B3%95%E9%AB%98%E4%BA%AE/</loc>
     <lastmod>2013-09-17T17:17:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/exitwp/</loc>
+    <loc>/tags/exitwp/</loc>
     <lastmod>2013-09-15T19:15:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/wordpress/</loc>
+    <loc>/tags/wordpress/</loc>
     <lastmod>2013-09-15T19:15:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/wordpress-converted-to-jekyll/</loc>
+    <loc>/post/wordpress-converted-to-jekyll/</loc>
     <lastmod>2013-09-15T19:15:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/fstab-automatically-mount-partitions/</loc>
+    <loc>/post/fstab-automatically-mount-partitions/</loc>
     <lastmod>2013-09-08T19:18:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/mount/</loc>
+    <loc>/tags/mount/</loc>
     <lastmod>2013-09-08T19:18:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/install-jekyll-on-debian/</loc>
+    <loc>/post/install-jekyll-on-debian/</loc>
     <lastmod>2013-09-06T19:16:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/rvm/</loc>
+    <loc>/tags/rvm/</loc>
     <lastmod>2013-09-06T19:16:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/use-the-ssh-key-to-login-github/</loc>
+    <loc>/post/use-the-ssh-key-to-login-github/</loc>
     <lastmod>2013-09-03T19:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/alcatel/</loc>
+    <loc>/tags/alcatel/</loc>
     <lastmod>2013-09-01T09:01:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/alcatel-lucent/</loc>
+    <loc>/tags/alcatel-lucent/</loc>
     <lastmod>2013-09-01T09:01:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/bts/</loc>
+    <loc>/tags/bts/</loc>
     <lastmod>2013-09-01T09:01:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/cdma/</loc>
+    <loc>/tags/cdma/</loc>
     <lastmod>2013-09-01T09:01:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/cell2/</loc>
+    <loc>/tags/cell2/</loc>
     <lastmod>2013-09-01T09:01:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ceqface/</loc>
+    <loc>/tags/ceqface/</loc>
     <lastmod>2013-09-01T09:01:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/fci/</loc>
+    <loc>/tags/fci/</loc>
     <lastmod>2013-09-01T09:01:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/lucent/</loc>
+    <loc>/tags/lucent/</loc>
     <lastmod>2013-09-01T09:01:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/omp/</loc>
+    <loc>/tags/omp/</loc>
     <lastmod>2013-09-01T09:01:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E6%9C%97%E8%AE%AF/</loc>
+    <loc>/tags/%E6%9C%97%E8%AE%AF/</loc>
     <lastmod>2013-09-01T09:01:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E9%82%BB%E5%8C%BA/</loc>
+    <loc>/tags/%E9%82%BB%E5%8C%BA/</loc>
     <lastmod>2013-09-01T09:01:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E9%98%BF%E5%B0%94%E5%8D%A1%E7%89%B9/</loc>
+    <loc>/tags/%E9%98%BF%E5%B0%94%E5%8D%A1%E7%89%B9/</loc>
     <lastmod>2013-09-01T09:01:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E9%98%BF%E5%B0%94%E5%8D%A1%E7%89%B9%E6%9C%97%E8%AE%AF/</loc>
+    <loc>/tags/%E9%98%BF%E5%B0%94%E5%8D%A1%E7%89%B9%E6%9C%97%E8%AE%AF/</loc>
     <lastmod>2013-09-01T09:01:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/alcatel-lucent-bts-open-40-neighbor-lists/</loc>
+    <loc>/post/alcatel-lucent-bts-open-40-neighbor-lists/</loc>
     <lastmod>2013-09-01T09:01:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E5%86%85%E6%A0%B8/</loc>
+    <loc>/tags/%E5%86%85%E6%A0%B8/</loc>
     <lastmod>2013-08-13T23:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/uninstall-the-old-linux-kernel/</loc>
+    <loc>/post/uninstall-the-old-linux-kernel/</loc>
     <lastmod>2013-08-13T23:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/goagent/</loc>
+    <loc>/tags/goagent/</loc>
     <lastmod>2013-05-30T15:30:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/linux-deployment-goagent/</loc>
+    <loc>/post/linux-deployment-goagent/</loc>
     <lastmod>2013-05-30T15:30:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/install-vnc-server-on-ubuntu-server/</loc>
+    <loc>/post/install-vnc-server-on-ubuntu-server/</loc>
     <lastmod>2013-05-11T15:11:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/apt-spy/</loc>
+    <loc>/tags/apt-spy/</loc>
     <lastmod>2013-05-09T05:09:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/debian-use-apt-spy-to-select-the-best-source/</loc>
+    <loc>/post/debian-use-apt-spy-to-select-the-best-source/</loc>
     <lastmod>2013-05-09T05:09:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/product-codes-of-nokia-n900/</loc>
+    <loc>/post/product-codes-of-nokia-n900/</loc>
     <lastmod>2013-04-26T22:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/agent/</loc>
+    <loc>/tags/agent/</loc>
     <lastmod>2013-04-21T04:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/mozilla/</loc>
+    <loc>/tags/mozilla/</loc>
     <lastmod>2013-04-21T04:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/download-the-entire-station-using-wget/</loc>
+    <loc>/post/download-the-entire-station-using-wget/</loc>
     <lastmod>2013-04-21T04:21:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/archlinux/</loc>
+    <loc>/tags/archlinux/</loc>
     <lastmod>2013-03-06T03:06:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/archlinux-modify-the-network-adapter-name/</loc>
+    <loc>/post/archlinux-modify-the-network-adapter-name/</loc>
     <lastmod>2013-03-06T03:06:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/eth0/</loc>
+    <loc>/tags/eth0/</loc>
     <lastmod>2013-03-06T03:06:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/systemd/</loc>
+    <loc>/tags/systemd/</loc>
     <lastmod>2013-03-06T03:06:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/udev/</loc>
+    <loc>/tags/udev/</loc>
     <lastmod>2013-03-06T03:06:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/wlan0/</loc>
+    <loc>/tags/wlan0/</loc>
     <lastmod>2013-03-06T03:06:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/archlinux-installation-notes/</loc>
+    <loc>/post/archlinux-installation-notes/</loc>
     <lastmod>2013-01-03T01:03:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E5%AE%89%E8%A3%85archlinux/</loc>
+    <loc>/tags/%E5%AE%89%E8%A3%85archlinux/</loc>
     <lastmod>2013-01-03T01:03:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/cinnamon/</loc>
+    <loc>/tags/cinnamon/</loc>
     <lastmod>2012-11-23T11:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/cinnarch/</loc>
+    <loc>/tags/cinnarch/</loc>
     <lastmod>2012-11-23T11:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/installation-cinnarch/</loc>
+    <loc>/post/installation-cinnarch/</loc>
     <lastmod>2012-11-23T11:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/hp-veer/</loc>
+    <loc>/tags/hp-veer/</loc>
     <lastmod>2012-08-20T12:59:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/ipk/</loc>
+    <loc>/tags/ipk/</loc>
     <lastmod>2012-08-20T12:59:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/touchpad/</loc>
+    <loc>/tags/touchpad/</loc>
     <lastmod>2012-08-20T12:59:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/webos/</loc>
+    <loc>/tags/webos/</loc>
     <lastmod>2012-08-20T12:59:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/webos-resource-sharing/</loc>
+    <loc>/post/webos-resource-sharing/</loc>
     <lastmod>2012-08-20T12:59:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E6%83%A0%E6%99%AE/</loc>
+    <loc>/tags/%E6%83%A0%E6%99%AE/</loc>
     <lastmod>2012-08-20T12:59:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/linux-liveusb-tools/</loc>
+    <loc>/post/linux-liveusb-tools/</loc>
     <lastmod>2012-08-13T18:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/liveusb/</loc>
+    <loc>/tags/liveusb/</loc>
     <lastmod>2012-08-13T18:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/unetbootin/</loc>
+    <loc>/tags/unetbootin/</loc>
     <lastmod>2012-08-13T18:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/edit-the-cydia-software-source/</loc>
+    <loc>/post/edit-the-cydia-software-source/</loc>
     <lastmod>2012-06-18T06:18:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/twelve-percent-problem-on-hp-veer/</loc>
+    <loc>/post/twelve-percent-problem-on-hp-veer/</loc>
     <lastmod>2012-05-28T15:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/novacom/</loc>
+    <loc>/tags/novacom/</loc>
     <lastmod>2012-05-28T15:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/veer/</loc>
+    <loc>/tags/veer/</loc>
     <lastmod>2012-05-28T15:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E7%8E%B0%E8%B1%A1%E4%B8%83%E5%8D%81%E4%BA%8C%E5%8F%98/</loc>
+    <loc>/tags/%E7%8E%B0%E8%B1%A1%E4%B8%83%E5%8D%81%E4%BA%8C%E5%8F%98/</loc>
     <lastmod>2012-04-26T14:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/leave-friends-alone/</loc>
+    <loc>/post/leave-friends-alone/</loc>
     <lastmod>2012-04-26T14:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E7%A6%BB%E7%BE%A4%E7%B4%A2%E5%B1%85/</loc>
+    <loc>/tags/%E7%A6%BB%E7%BE%A4%E7%B4%A2%E5%B1%85/</loc>
     <lastmod>2012-04-26T14:26:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/do-not-save-your-degree-adverb/</loc>
+    <loc>/post/do-not-save-your-degree-adverb/</loc>
     <lastmod>2012-04-23T04:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E5%BD%93%E5%B9%B4%E6%98%8E%E6%9C%88/</loc>
+    <loc>/tags/%E5%BD%93%E5%B9%B4%E6%98%8E%E6%9C%88/</loc>
     <lastmod>2012-04-23T04:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E6%98%8E%E6%9C%9D/</loc>
+    <loc>/tags/%E6%98%8E%E6%9C%9D/</loc>
     <lastmod>2012-04-23T04:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E6%98%8E%E6%9C%9D%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/</loc>
+    <loc>/tags/%E6%98%8E%E6%9C%9D%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/</loc>
     <lastmod>2012-04-23T04:23:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/edge/</loc>
+    <loc>/tags/edge/</loc>
     <lastmod>2012-04-22T12:40:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/gprs/</loc>
+    <loc>/tags/gprs/</loc>
     <lastmod>2012-04-22T12:40:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/gsm/</loc>
+    <loc>/tags/gsm/</loc>
     <lastmod>2012-04-22T12:40:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/nokia-n900-set-up-wireless/</loc>
+    <loc>/post/nokia-n900-set-up-wireless/</loc>
     <lastmod>2012-04-22T12:40:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/wifi/</loc>
+    <loc>/tags/wifi/</loc>
     <lastmod>2012-04-22T12:40:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/mysql-usages/</loc>
+    <loc>/post/mysql-usages/</loc>
     <lastmod>2012-04-19T14:19:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/n900-overclock-and-brush-9ghome/</loc>
+    <loc>/post/n900-overclock-and-brush-9ghome/</loc>
     <lastmod>2012-04-08T14:18:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/zimage/</loc>
+    <loc>/tags/zimage/</loc>
     <lastmod>2012-04-08T14:18:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/nitdroid/</loc>
+    <loc>/tags/nitdroid/</loc>
     <lastmod>2012-04-07T14:27:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/nokia-n900-and-android/</loc>
+    <loc>/post/nokia-n900-and-android/</loc>
     <lastmod>2012-04-07T14:27:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/nokia-n900-and-ssh/</loc>
+    <loc>/post/nokia-n900-and-ssh/</loc>
     <lastmod>2012-04-02T14:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/putty/</loc>
+    <loc>/tags/putty/</loc>
     <lastmod>2012-04-02T14:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/itools/</loc>
+    <loc>/tags/itools/</loc>
     <lastmod>2012-04-02T12:34:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/langpack2.2.sh/</loc>
+    <loc>/tags/langpack2.2.sh/</loc>
     <lastmod>2012-04-02T12:34:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/remove-unnecessary-iphone-language-file/</loc>
+    <loc>/post/remove-unnecessary-iphone-language-file/</loc>
     <lastmod>2012-04-02T12:34:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/gainroot/</loc>
+    <loc>/tags/gainroot/</loc>
     <lastmod>2012-03-31T13:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/nokia-n900-software-manager/</loc>
+    <loc>/post/nokia-n900-software-manager/</loc>
     <lastmod>2012-03-31T13:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/rootsh/</loc>
+    <loc>/tags/rootsh/</loc>
     <lastmod>2012-03-31T13:31:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/system-optimization-script-for-nokia-n900/</loc>
+    <loc>/post/system-optimization-script-for-nokia-n900/</loc>
     <lastmod>2012-03-28T13:28:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/lnmp-usages/</loc>
+    <loc>/post/lnmp-usages/</loc>
     <lastmod>2012-03-23T12:32:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/pureftp/</loc>
+    <loc>/tags/pureftp/</loc>
     <lastmod>2012-03-23T12:32:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E6%88%AA%E5%9B%BE/</loc>
+    <loc>/tags/%E6%88%AA%E5%9B%BE/</loc>
     <lastmod>2012-03-20T13:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/nokia-n900-shortcuts/</loc>
+    <loc>/post/nokia-n900-shortcuts/</loc>
     <lastmod>2012-03-20T13:20:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/post/iphone-and-ssh/</loc>
+    <loc>/post/iphone-and-ssh/</loc>
     <lastmod>2012-03-18T12:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tags/%E8%8B%B9%E6%9E%9C/</loc>
+    <loc>/tags/%E8%8B%B9%E6%9E%9C/</loc>
     <lastmod>2012-03-18T12:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/tips/</loc>
+    <loc>/tips/</loc>
     <lastmod>1987-07-02T07:48:46+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://unixetc.com/404/</loc>
+    <loc>/404/</loc>
     <lastmod>1019-06-02T21:38:24+08:00</lastmod>
   </url>
   

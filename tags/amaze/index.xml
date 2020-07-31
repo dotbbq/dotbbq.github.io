@@ -2,31 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>amaze on UNIXETC</title>
-    <link>https://unixetc.com/tags/amaze/</link>
-    <description>UNIXETC (amaze)</description>
+    
+    
+    
+    <link>/tags/amaze/</link>
+    <description>Recent content in amaze on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 17 Jul 2015 21:23:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/amaze/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/amaze/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>typecho主题Amaze</title>
-      <link>https://unixetc.com/post/typecho-theme-amaze/</link>
+      <link>/post/typecho-theme-amaze/</link>
       <pubDate>Fri, 17 Jul 2015 21:23:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/typecho-theme-amaze/</guid>
-      <description>&lt;p&gt;typecho主题一枚Amaze,采用Amaze UI框架&lt;/p&gt;
-&lt;p&gt;注意：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;评论采用多说,直接替换comment.php内容&lt;/li&gt;
-&lt;li&gt;无页面导航，请将文章数设为999&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;预览图：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/typecho_amaze.webp&#34; alt=&#34;Typecho主题Amaze预览图&#34;&gt;&lt;/p&gt;
-&lt;p&gt;下载地址:&lt;a href=&#34;http://cdn.lyq.wiki/res/amaze.7z&#34;&gt;http://cdn.lyq.wiki/res/amaze.7z&lt;/a&gt;&lt;/p&gt;
-</description>
+      <guid>/post/typecho-theme-amaze/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          typecho主题一枚Amaze,采用Amaze UI框架
+注意：
+ 评论采用多说,直接替换comment.php内容 无页面导航，请将文章数设为999  预览图：
+下载地址:http://cdn.lyq.wiki/res/amaze.7z
+          
+        
+        </description>
     </item>
     
   </channel>

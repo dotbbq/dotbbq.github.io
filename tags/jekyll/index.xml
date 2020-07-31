@@ -2,255 +2,164 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jekyll on UNIXETC</title>
-    <link>https://unixetc.com/tags/jekyll/</link>
-    <description>UNIXETC (Jekyll)</description>
+    
+    
+    
+    <link>/tags/jekyll/</link>
+    <description>Recent content in Jekyll on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 20 May 2015 15:20:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Windows下安装Jekyll</title>
-      <link>https://unixetc.com/post/install-jekyll-on-windows/</link>
+      <link>/post/install-jekyll-on-windows/</link>
       <pubDate>Wed, 20 May 2015 15:20:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/install-jekyll-on-windows/</guid>
-      <description>&lt;h3 id=&#34;安装rubydevkit&#34;&gt;安装Ruby/DevKit&lt;/h3&gt;
-&lt;p&gt;首先从 &lt;a href=&#34;http://rubyinstaller.org/downloads/&#34;&gt;http://rubyinstaller.org/downloads/&lt;/a&gt;  下载以下两个文件进行安装&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://pan.baidu.com/share/link?shareid=1353205281&amp;amp;uk=1493434283&#34;&gt;rubyinstaller-1.9.3-p194.exe&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://pan.baidu.com/share/link?shareid=1354945070&amp;amp;uk=1493434283&#34;&gt;DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Ruby安装在&lt;strong&gt;D:\Ruby200&lt;/strong&gt;, DevKit安装在&lt;strong&gt;D:\rubydevkit&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;打开CMD进入到DevKit目录，开始初始化安装&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;D:\rubydevkit&amp;gt;ruby dk.rb init
-[INFO] found RubyInstaller v2.0.0 at d:/Ruby200
-
-Initialization complete! Please review and modify the auto-generated
-&#39;config.yml&#39; file to ensure it contains the root directories to all
-of the installed Rubies you want enhanced by the DevKit.
-
-D:\rubydevkit&amp;gt;ruby dk.rb install
-[INFO] Updating convenience notice gem override for &#39;d:/Ruby200&#39;
-[INFO] Installing &#39;d:/Ruby200/lib/ruby/site_ruby/devkit.rb&#39;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;替换Gem源&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;天朝网路可能会引起gem安装失败，建议更换为ruby.taobao,org源&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$gem sources -r http://rubygems.org/
-$gem sources -a http://ruby.taobao.org/
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;安装jekyll&#34;&gt;安装jekyll&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;D:\rubydevkit&amp;gt;gem install jekyll
-Fetching: yajl-ruby-1.1.0-x86-mingw32.gem (100%)
-Successfully installed yajl-ruby-1.1.0-x86-mingw32
-Fetching: posix-spawn-0.3.6.gem (100%)
-Temporarily enhancing PATH to include DevKit...
-Building native extensions.  This could take a while...
-Successfully installed posix-spawn-0.3.6
-Fetching: pygments.rb-0.4.2.gem (100%)
-Successfully installed pygments.rb-0.4.2
-Fetching: highline-1.6.18.gem (100%)
-Successfully installed highline-1.6.18
-Fetching: commander-4.1.3.gem (100%)
-Successfully installed commander-4.1.3
-Fetching: safe_yaml-0.7.1.gem (100%)
-Successfully installed safe_yaml-0.7.1
-Fetching: colorator-0.1.gem (100%)
-Successfully installed colorator-0.1
-Fetching: jekyll-1.0.1.gem (100%)
-Successfully installed jekyll-1.0.1
-Parsing documentation for yajl-ruby-1.1.0-x86-mingw32
-unable to convert &amp;quot;\x90&amp;quot; from ASCII-8BIT to UTF-8 for lib/yajl/1.8/yajl.so, skip
-ping
-unable to convert &amp;quot;\x90&amp;quot; from ASCII-8BIT to UTF-8 for lib/yajl/1.9/yajl.so, skip
-ping
-Installing ri documentation for yajl-ruby-1.1.0-x86-mingw32
-Parsing documentation for posix-spawn-0.3.6
-Installing ri documentation for posix-spawn-0.3.6
-Parsing documentation for pygments.rb-0.4.2
-Installing ri documentation for pygments.rb-0.4.2
-Parsing documentation for highline-1.6.18
-Installing ri documentation for highline-1.6.18
-Parsing documentation for commander-4.1.3
-Installing ri documentation for commander-4.1.3
-Parsing documentation for safe_yaml-0.7.1
-Installing ri documentation for safe_yaml-0.7.1
-Parsing documentation for colorator-0.1
-Installing ri documentation for colorator-0.1
-Parsing documentation for jekyll-1.0.1
-Installing ri documentation for jekyll-1.0.1
-Done installing documentation for yajl-ruby, posix-spawn, pygments.rb, highline,
- commander, safe_yaml, colorator, jekyll (7 sec).
-8 gems installed
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;完成后，可以使用jekyll -v来检查是否安装成功&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;D:\rubydevkit&amp;gt;jekyll -v 
-jekyll 1.0.1
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;有时由于天朝内网路问题，可能造成以上安装中某一个部分中途退出，再次执行安装时出现以下提示:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;D:\rubydevkit&amp;gt;gem install jekyll
-ERROR:  While executing gem ... (NoMethodError)
-    undefined method `size&#39; for nil:NilClass
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在此只需要将gem目录下cache文件夹内清空，重新安装即可。&lt;/p&gt;
-&lt;p&gt;如果不知道gem目录的可以使用gem env来查看GEM PATHS值，如下所示&lt;strong&gt;d:/Ruby200/lib/ruby/gems/2.0.0&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;D:\rubydevkit&amp;gt;gem env
-RubyGems Environment:
-  - RUBYGEMS VERSION: 2.0.0
-  - RUBY VERSION: 2.0.0 (2013-02-24 patchlevel 0) [i386-mingw32]
-  - INSTALLATION DIRECTORY: d:/Ruby200/lib/ruby/gems/2.0.0
-  - RUBY EXECUTABLE: d:/Ruby200/bin/ruby.exe
-  - EXECUTABLE DIRECTORY: d:/Ruby200/bin
-  - RUBYGEMS PLATFORMS:
-    - ruby
-    - x86-mingw32
-  - GEM PATHS:
-     - d:/Ruby200/lib/ruby/gems/2.0.0
-     - C:/Documents and Settings/aquan/.gem/ruby/2.0.0
-  - GEM CONFIGURATION:
-     - :update_sources =&amp;gt; true
-     - :verbose =&amp;gt; true
-     - :backtrace =&amp;gt; false
-     - :bulk_threshold =&amp;gt; 1000
-  - REMOTE SOURCES:
-     - http://ruby.taobao.org/&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <guid>/post/install-jekyll-on-windows/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          安装Ruby/DevKit 首先从 http://rubyinstaller.org/downloads/ 下载以下两个文件进行安装
+ rubyinstaller-1.9.3-p194.exe DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe  Ruby安装在D:\Ruby200, DevKit安装在D:\rubydevkit
+打开CMD进入到DevKit目录，开始初始化安装
+D:\rubydevkit&amp;gt;ruby dk.rb init [INFO] found RubyInstaller v2.0.0 at d:/Ruby200 Initialization complete! Please review and modify the auto-generated &#39;config.yml&#39; file to ensure it contains the root directories to all of the installed Rubies you want enhanced by the DevKit. D:\rubydevkit&amp;gt;ruby dk.rb install [INFO] Updating convenience notice gem override for &#39;d:/Ruby200&#39; [INFO] Installing &#39;d:/Ruby200/lib/ruby/site_ruby/devkit.rb&#39;  替换Gem源
+天朝网路可能会引起gem安装失败，建议更换为ruby.taobao,org源
+$gem sources -r http://rubygems.org/ $gem sources -a http://ruby.
+          
+        
+        </description>
     </item>
     
     <item>
       <title>结合Jekyll与Github Page建立免费博客</title>
-      <link>https://unixetc.com/post/create-a-free-blog-with-jekyll-and-github-page/</link>
+      <link>/post/create-a-free-blog-with-jekyll-and-github-page/</link>
       <pubDate>Wed, 16 Jul 2014 07:16:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/create-a-free-blog-with-jekyll-and-github-page/</guid>
-      <description>&lt;h3 id=&#34;安装jekyll&#34;&gt;安装Jekyll&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://unixetc.com/post/install-jekyll-on-windows/&#34;&gt;Windows下安装Jekyll&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://unixetc.com/post/install-jekyll-on-debian/&#34;&gt;Debian下安装Jekyll&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;jekyll使用&#34;&gt;Jekyll使用&lt;/h3&gt;
-&lt;p&gt;待补充&lt;/p&gt;
-&lt;h3 id=&#34;将jekyll内容发布到github&#34;&gt;将Jekyll内容发布到Github&lt;/h3&gt;
-&lt;p&gt;首先登录Github，新建一个&lt;code&gt;用户名.github.com&lt;/code&gt;的&lt;strong&gt;repositories&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;然后将该 Repositories clone到本地文件夹。&lt;/p&gt;
-&lt;p&gt;在本地文件夹生成Jekyll站点，然后使用&lt;code&gt;jekyll server&lt;/code&gt;生成内容。&lt;/p&gt;
-&lt;p&gt;下来将生成后的内容发布到Github&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;git add --all
-git commit -m &amp;quot;Update&amp;quot;
-git remote add origin git@github.com:用户名/用户名.github.com.git
-git push origin master
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;设置自定义域名&#34;&gt;设置自定义域名&lt;/h3&gt;
-&lt;p&gt;在Jekyll站点目录中新建CNAME文件，写入域名&lt;/p&gt;
-&lt;p&gt;然后将域名&lt;code&gt;A记录&lt;/code&gt;指向github提供的ip地址&lt;code&gt;204.232.175.78或207.97.227.245&lt;/code&gt;&lt;/p&gt;
-</description>
+      <guid>/post/create-a-free-blog-with-jekyll-and-github-page/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          安装Jekyll  Windows下安装Jekyll Debian下安装Jekyll  Jekyll使用 待补充
+将Jekyll内容发布到Github 首先登录Github，新建一个用户名.github.com的repositories
+然后将该 Repositories clone到本地文件夹。
+在本地文件夹生成Jekyll站点，然后使用jekyll server生成内容。
+下来将生成后的内容发布到Github
+git add --all git commit -m &amp;quot;Update&amp;quot; git remote add origin git@github.com:用户名/用户名.github.com.git git push origin master  设置自定义域名 在Jekyll站点目录中新建CNAME文件，写入域名
+然后将域名A记录指向github提供的ip地址204.232.175.78或207.97.227.245
+          
+        
+        </description>
     </item>
     
     <item>
       <title>Windows下Jekyll乱码问题</title>
-      <link>https://unixetc.com/post/jekyll-chinese-garbled-windows/</link>
+      <link>/post/jekyll-chinese-garbled-windows/</link>
       <pubDate>Sat, 21 Sep 2013 19:21:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/jekyll-chinese-garbled-windows/</guid>
-      <description>&lt;p&gt;在Ruby目录中搜索&lt;strong&gt;convertible.rb&lt;/strong&gt;，找到大概27行如下内容:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;self.content = File.read(File.join(base, name))
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;替换为&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;self.content = File.read(File.join(base, name), :encoding =&amp;gt; &#39;utf-8&#39;) 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在windows环境变量中，添加以下两个环境变量&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;LANG=zh_CN.UTF-8
-LC_ALL=zh_CN.UTF-8&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <guid>/post/jekyll-chinese-garbled-windows/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          在Ruby目录中搜索convertible.rb，找到大概27行如下内容:
+self.content = File.read(File.join(base, name))  替换为
+self.content = File.read(File.join(base, name), :encoding =&amp;gt; &#39;utf-8&#39;)  在windows环境变量中，添加以下两个环境变量
+LANG=zh_CN.UTF-8 LC_ALL=zh_CN.UTF-8 
+          
+        
+        </description>
     </item>
     
     <item>
       <title>为Jekyll站点添加rss.xml</title>
-      <link>https://unixetc.com/post/add-rssxml-to-the-jekyll-site/</link>
+      <link>/post/add-rssxml-to-the-jekyll-site/</link>
       <pubDate>Wed, 18 Sep 2013 09:18:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/add-rssxml-to-the-jekyll-site/</guid>
-      <description>&lt;p&gt;在网站根目录中新建&lt;code&gt;rss.xml&lt;/code&gt;文件，写入以下内容：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/jekyll_rss.webp&#34; alt=&#34;rss.xml 代码&#34; title=&#34;rss.xml 代码&#34;&gt;&lt;/p&gt;
-&lt;p&gt;参考以上代码，其中的域名等信息自定义。&lt;/p&gt;
-</description>
+      <guid>/post/add-rssxml-to-the-jekyll-site/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          在网站根目录中新建rss.xml文件，写入以下内容：
+参考以上代码，其中的域名等信息自定义。
+          
+        
+        </description>
     </item>
     
     <item>
       <title>将Wordpress数据转换为Jekyll文件</title>
-      <link>https://unixetc.com/post/wordpress-converted-to-jekyll/</link>
+      <link>/post/wordpress-converted-to-jekyll/</link>
       <pubDate>Sun, 15 Sep 2013 19:15:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/wordpress-converted-to-jekyll/</guid>
-      <description>&lt;p&gt;这里使用的工具名为&lt;strong&gt;Exitwp&lt;/strong&gt;，项目主页为&lt;a href=&#34;https://github.com/thomasf/exitwp&#34; title=&#34;Exitwp home page&#34;&gt;https://github.com/thomasf/exitwp&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;安装exitwp&#34;&gt;安装Exitwp&lt;/h3&gt;
-&lt;p&gt;必备组件&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Python&lt;/li&gt;
-&lt;li&gt;html2text&lt;/li&gt;
-&lt;li&gt;PyYAML&lt;/li&gt;
-&lt;li&gt;Beautiful soup&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;ubuntu下安装软件:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;# aptitude install python git build-essential
-# aptitude install python-pip python-yaml python-bs4 python-html2text
-# aptitude install libyaml-dev python-dev libxml2-utils
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;安装exitwp-1&#34;&gt;安装Exitwp&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;git clone https://github.com/thomasf/exitwp
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;###使用Exitwp转换wordpress数据&lt;/p&gt;
-&lt;p&gt;首先，登录wordpress后台，使用自带的导出工具将wordpress导出为xml文件&lt;/p&gt;
-&lt;p&gt;将导出的xml文件下载，复制到 ./exitwp/wordpress-xml/&lt;/p&gt;
-&lt;p&gt;进入 ./exitwp/wordpress-xml/，使用xmllint格式化xml文件&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;xmllint --format wp.xml
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;最后，执行exitwp.py脚本来处理xml文件&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;python exitwp.py
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;生成的md文件，存放在 ./exitwp/build/&lt;/p&gt;
-&lt;h3 id=&#34;后续的工作&#34;&gt;后续的工作&lt;/h3&gt;
-&lt;p&gt;将处理后的md文件复制出来，拷贝至jekyll站点的_post目录，然后使用&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;jekyll serve
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;生成预览，按照提示处理有问题的md文件，直至OK！&lt;/p&gt;
-</description>
+      <guid>/post/wordpress-converted-to-jekyll/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          这里使用的工具名为Exitwp，项目主页为https://github.com/thomasf/exitwp
+安装Exitwp 必备组件
+ Python html2text PyYAML Beautiful soup  ubuntu下安装软件:
+# aptitude install python git build-essential # aptitude install python-pip python-yaml python-bs4 python-html2text # aptitude install libyaml-dev python-dev libxml2-utils  安装Exitwp git clone https://github.com/thomasf/exitwp  ###使用Exitwp转换wordpress数据
+首先，登录wordpress后台，使用自带的导出工具将wordpress导出为xml文件
+将导出的xml文件下载，复制到 ./exitwp/wordpress-xml/
+进入 ./exitwp/wordpress-xml/，使用xmllint格式化xml文件
+xmllint --format wp.xml  最后，执行exitwp.py脚本来处理xml文件
+python exitwp.py  生成的md文件，存放在 ./exitwp/build/
+后续的工作 将处理后的md文件复制出来，拷贝至jekyll站点的_post目录，然后使用
+jekyll serve  生成预览，按照提示处理有问题的md文件，直至OK！
+          
+        
+        </description>
     </item>
     
     <item>
       <title>Debian下安装Jekyll</title>
-      <link>https://unixetc.com/post/install-jekyll-on-debian/</link>
+      <link>/post/install-jekyll-on-debian/</link>
       <pubDate>Fri, 06 Sep 2013 19:16:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/install-jekyll-on-debian/</guid>
-      <description>&lt;h3 id=&#34;安装rvm&#34;&gt;安装Rvm&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;$sudo aptitude install curl
-$curl -L get.rvm.io | bash -s stable
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;加载Rvm&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$source ~/.rvm/scripts/rvm
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;检查安装必备组件&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$rvm requirements
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;安装-ruby-193&#34;&gt;安装 Ruby 1.9.3&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;$rvm install 1.9.3
-$ruby -v
-$gem -v
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;更改Gem软件源&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$gem sources -a http://ruby.taobao.org/
-$gem sources -r http://rubygems.org/
-$gem sources -l
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;安装jekyll&#34;&gt;安装Jekyll&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;$gem install jekyll
-$jekyll -v
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;打完收工!&lt;/p&gt;
-</description>
+      <guid>/post/install-jekyll-on-debian/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          安装Rvm $sudo aptitude install curl $curl -L get.rvm.io | bash -s stable  加载Rvm
+$source ~/.rvm/scripts/rvm  检查安装必备组件
+$rvm requirements  安装 Ruby 1.9.3 $rvm install 1.9.3 $ruby -v $gem -v  更改Gem软件源
+$gem sources -a http://ruby.taobao.org/ $gem sources -r http://rubygems.org/ $gem sources -l  安装Jekyll $gem install jekyll $jekyll -v  打完收工!
+          
+        
+        </description>
     </item>
     
   </channel>

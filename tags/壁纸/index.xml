@@ -2,40 +2,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>壁纸 on UNIXETC</title>
-    <link>https://unixetc.com/tags/%E5%A3%81%E7%BA%B8/</link>
-    <description>UNIXETC (壁纸)</description>
+    
+    
+    
+    <link>/tags/%E5%A3%81%E7%BA%B8/</link>
+    <description>Recent content in 壁纸 on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 08 Dec 2019 00:00:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/%E5%A3%81%E7%BA%B8/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/%E5%A3%81%E7%BA%B8/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Gnome美化简介</title>
-      <link>https://unixetc.com/post/gnome-landscaping-guide/</link>
+      <link>/post/gnome-landscaping-guide/</link>
       <pubDate>Sun, 08 Dec 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/gnome-landscaping-guide/</guid>
-      <description>&lt;h3 id=&#34;安装必要软件&#34;&gt;安装必要软件&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;sudo apt install gnome-tweak-tool chrome-gnome-shell
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;安装gnome-shell-extensions&#34;&gt;安装Gnome Shell Extensions&lt;/h3&gt;
-&lt;p&gt;使用Firefox浏览&lt;a href=&#34;https://extensions.gnome.org/&#34;&gt;https://extensions.gnome.org/&lt;/a&gt;，第一次访问根据提示安装Firefox插件，如下图:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://i.loli.net/2019/12/08/5CTzZAgmjRhQnoP.png&#34; alt=&#34;Click here to install browser extension&#34;&gt;&lt;/p&gt;
-&lt;p&gt;安装完成后，访问&lt;a href=&#34;https://extensions.gnome.org/&#34;&gt;https://extensions.gnome.org/&lt;/a&gt;搜索安装以下三个GnomeShellExtension&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;User Themes  加载用户主题，加载目录为~/.local/share/themes&lt;/li&gt;
-&lt;li&gt;Dash to Dock 定制 Dash/Dock&lt;/li&gt;
-&lt;li&gt;Gnome Global Application Menu   Gnome全局菜单&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;安装方法如下，进入到扩展详情后，点击标题后的开关，按照提示安装即可&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://i.loli.net/2019/12/08/SMOrIxFGWBuVlbK.png&#34; alt=&#34;install gnome shell extension&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;安装主题&#34;&gt;安装主题&lt;/h3&gt;
-&lt;p&gt;访问&lt;a href=&#34;https://www.gnome-look.org/&#34;&gt;https://www.gnome-look.org/&lt;/a&gt;，在GTK3 Themes分类下下载主题，下载后解压拷贝至&lt;code&gt;~/.local/share/themes&lt;/code&gt;下，然后打开gnome-tweak，在外观中即可选择已安装的主题。&lt;/p&gt;
-&lt;p&gt;在&lt;code&gt;~/.local/share/&lt;/code&gt;下新建&lt;strong&gt;themes&lt;/strong&gt;、&lt;strong&gt;icons&lt;/strong&gt;和&lt;strong&gt;fonts&lt;/strong&gt;三个目录，分别对应主题、图标、字体，这些资源都可以在&lt;a href=&#34;https://www.gnome-look.org/&#34;&gt;https://www.gnome-look.org/&lt;/a&gt;找得到。&lt;/p&gt;
-&lt;p&gt;以下为本人的桌面截图，仅供参考：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://i.loli.net/2019/12/08/2wlakxOTfGcshYu.png&#34; alt=&#34;桌面截图&#34;&gt;&lt;/p&gt;
-</description>
+      <guid>/post/gnome-landscaping-guide/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          本文介绍如何在Linux下gnome美化相关方法，包括主题、图标、壁纸等。
+          
+        
+        </description>
     </item>
     
   </channel>

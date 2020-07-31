@@ -2,34 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AGENT on UNIXETC</title>
-    <link>https://unixetc.com/tags/agent/</link>
-    <description>UNIXETC (AGENT)</description>
+    
+    
+    
+    <link>/tags/agent/</link>
+    <description>Recent content in AGENT on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 21 Apr 2013 04:21:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/agent/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/agent/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>使用wget下载整站</title>
-      <link>https://unixetc.com/post/download-the-entire-station-using-wget/</link>
+      <link>/post/download-the-entire-station-using-wget/</link>
       <pubDate>Sun, 21 Apr 2013 04:21:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/download-the-entire-station-using-wget/</guid>
-      <description>&lt;p&gt;命令实例:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$wget -r -p -np -k -e robots=off -U &amp;quot;Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6&amp;quot; &amp;quot;http://baidu.com&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;参数解释:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;-r,--recursive 递归下载
--p, --page-requisites 下载显示HTML文件的所有图片
--np, --no-parent 不要追溯到父目录
--k, --convert-links 转换非相对链接为相对链接
--e,–execute=COMMAND 执行一个 “.wgetrc”命令
-robots=off 无视robots.txt
--U, --user-agent=AGENT 设定代理的名称为 AGENT
-&amp;quot;Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6&amp;quot; 伪装agent&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <guid>/post/download-the-entire-station-using-wget/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          命令实例:
+$wget -r -p -np -k -e robots=off -U &amp;quot;Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6&amp;quot; &amp;quot;http://baidu.com&amp;quot;  参数解释:
+-r,--recursive 递归下载 -p, --page-requisites 下载显示HTML文件的所有图片 -np, --no-parent 不要追溯到父目录 -k, --convert-links 转换非相对链接为相对链接 -e,–execute=COMMAND 执行一个 “.wgetrc”命令 robots=off 无视robots.txt -U, --user-agent=AGENT 设定代理的名称为 AGENT &amp;quot;Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6&amp;quot; 伪装agent 
+          
+        
+        </description>
     </item>
     
   </channel>

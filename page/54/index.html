@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta name="generator" content="Hugo 0.73.0" />
+    
+      <title>UNIXETC — A personal site</title>
+    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A personal site"/>
+<meta name="keywords" content=""/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="/" />
+
+
+
+
+
+<link rel="stylesheet" href="/assets/style.css">
+
+
+<link rel="stylesheet" href="/style.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="UNIXETC"/>
+<meta name="twitter:description" content=""/>
+
+
+
+<meta property="og:title" content="UNIXETC" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/" />
+<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" /><meta property="og:site_name" content="UNIXETC" />
+
+
+
+<link rel="alternate" type="application/rss+xml" href="/index.xml" title="UNIXETC" />
+
+
+
+  </head>
+  <body class="">
+    <div class="container">
+      <header class="header">
+  <span class="header__inner">
+    <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">UNIXETC</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+    <span class="header__right">
+      
+        <nav class="menu">
+  <ul class="menu__inner menu__inner--desktop">
+    
+      
+        
+          <li><a href="/readme/">Readme</a></li>
+        
+      
+      
+    
+  </ul>
+
+  <ul class="menu__inner menu__inner--mobile">
+    
+      
+        <li><a href="/readme/">Readme</a></li>
+      
+    
+  </ul>
+</nav>
+
+        <span class="menu-trigger">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </span>
+      
+      <span class="theme-toggle">
+        <svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+
+      </span>
+    </span>
+  </span>
+</header>
+
+
+      <div class="content">
+        
+  
+  
+
+  
+  
+    
+  
+  
+
+  <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/post/raspberry-pi-install-tonido-build-personal-cloud/">树莓派安装Tonido打造个人云服务</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2014-08-12
+          </span>
+
+          
+        
+        <span class="post-author">— 作者 alair</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/raspberry-pi/">Raspberry Pi</a>&nbsp;
+          
+            #<a href="/tags/raspi/">raspi</a>&nbsp;
+          
+            #<a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a>&nbsp;
+          
+            #<a href="/tags/raspbian/">Raspbian</a>&nbsp;
+          
+            #<a href="/tags/tonido/">tonido</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            安装Tonido sudo mkdir /usr/local/tonido cd /usr/local/tonido sudo wget <a href="http://patch.codelathe.com/tonido/live/installer/armv6l-rpi/tonido.tar.gz">http://patch.codelathe.com/tonido/live/installer/armv6l-rpi/tonido.tar.gz</a> sudo tar -zxvf tonido.tar.gz ./tonido.sh start  浏览器打开http://ip:10001开始注册设置 ip为树莓派的地址
+安装多媒体解码器 Tonido支持在线播放音频，但需要安装设置解码器
+cd /usr/local/tonido sudo apt-get install ffmpeg sudo ln -s /usr/bin/ffmpeg ffmpeg.exe sudo ln -s /usr/bin/ffmpeg ffmpegv.exe  设置开机启动  下载脚本文件tonido wget <a href="http://cdn.lyq.wiki/res/tonido">http://cdn.lyq.wiki/res/tonido</a> 设置脚本权限 sudo cp tonido /etc/init.d/ sudo chmod +x /etc/init.d/tonido 安装脚本 sudo update-rc.d tonido defaults  客户端下载 Tonido Sync for Windows <a href="http://www.tonido.com/download.php?TonidoSync.exe">http://www.tonido.com/download.php?TonidoSync.exe</a> Tonido Sync for Mac <a href="http://www.tonido.com/download.php?TonidoSync.dmg">http://www.tonido.com/download.php?TonidoSync.dmg</a> Tonido Sync for Linux http://www.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/raspberry-pi-install-tonido-build-personal-cloud/">全文 →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/post/centos7-install-ntfs-3g/">Centos7下安装NTFS-3G</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2014-08-10
+          </span>
+
+          
+        
+        <span class="post-author">— 作者 alair</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/centos/">CentOS</a>&nbsp;
+          
+            #<a href="/tags/centos7/">CentOS7</a>&nbsp;
+          
+            #<a href="/tags/ntfs/">NTFS</a>&nbsp;
+          
+            #<a href="/tags/ntfs-3g/">ntfs-3g</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/centos7-install-ntfs-3g/">全文 →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/post/centos7-installation-guide/">CentOS7安装指南</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2014-08-09
+          </span>
+
+          
+        
+        <span class="post-author">— 作者 alair</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/linux/">Linux</a>&nbsp;
+          
+            #<a href="/tags/centos/">CentOS</a>&nbsp;
+          
+            #<a href="/tags/centos7/">CentOS7</a>&nbsp;
+          
+            #<a href="/tags/yum/">yum</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/centos7-installation-guide/">全文 →</a></div>
+      
+    </div>
+    
+    <div class="pagination">
+  <div class="pagination__buttons">
+    
+      <span class="button previous">
+        <a href="/page/53/">
+          <span class="button__icon">←</span>
+          <span class="button__text">新文</span>
+        </a>
+      </span>
+    
+    
+      <span class="button next">
+        <a href="/page/55/">
+          <span class="button__text">旧文</span>
+          <span class="button__icon">→</span>
+        </a>
+      </span>
+    
+  </div>
+</div>
+
+  </div>
+
+      </div>
+
+      
+        <footer class="footer">
+  <div class="footer__inner">
+    
+      <a href="/" class="logo" style="text-decoration: none;">
+  
+    <span class="logo__mark"><svg xmlns="http://www.w3.org/2000/svg" class="greater-icon" viewBox="0 0 44 44">
+  <path fill="none" d="M15 8l14.729 14.382L15 35.367"/>
+</svg>
+</span>
+    <span class="logo__text">UNIXETC</span>
+    <span class="logo__cursor"></span>
+  
+</a>
+
+      <div class="copyright">
+        <span>© 2020 <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>&nbsp;
+        <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a>&nbsp;
+        <a href="https://dwz.cn/juw2S2At"  target="_blank"  rel="noopener">Qiniu</a>&nbsp;
+        <a href="https://dwz.cn/CdAD0bNi"  target="_blank"  rel="noopener">BWG</a>&nbsp;
+        <script type="text/javascript" src="//js.users.51.la/20892031.js"></script></span>
+      </div>
+    
+  </div>
+</footer>
+
+<script src="/assets/main.js"></script>
+<script src="/assets/prism.js"></script>
+
+
+      
+    </div>
+
+    
+  </body>
+</html>

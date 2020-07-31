@@ -2,58 +2,47 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>dms on UNIXETC</title>
-    <link>https://unixetc.com/tags/dms/</link>
-    <description>UNIXETC (dms)</description>
+    
+    
+    
+    <link>/tags/dms/</link>
+    <description>Recent content in dms on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 06 Aug 2015 18:26:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/dms/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/dms/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>树莓派安装配置minidlna</title>
-      <link>https://unixetc.com/post/raspberry-pi-install-minidlna-to-create-digital-media-server/</link>
+      <link>/post/raspberry-pi-install-minidlna-to-create-digital-media-server/</link>
       <pubDate>Thu, 06 Aug 2015 18:26:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/raspberry-pi-install-minidlna-to-create-digital-media-server/</guid>
-      <description>&lt;h3 id=&#34;树莓派挂载移动存储&#34;&gt;树莓派挂载移动存储&lt;/h3&gt;
-&lt;p&gt;可以挂载移动硬盘或者大容量的U盘，参考以下文章：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://unixetc.com/post/raspberry-pi-mount-udisk-as-the-storage-partition/&#34;&gt;树莓派挂载U盘作为存储分区&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://unixetc.com/post/examples-of-fdisk-partition/&#34;&gt;fdisk分区实例&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;安装配置minidlna&#34;&gt;安装配置minidlna&lt;/h3&gt;
-&lt;pre&gt;&lt;code&gt;#sudo apt-get install -y minidlna
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;编辑minidlna配置文件&lt;code&gt;/etc/minidlna.conf&lt;/code&gt;，内容如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;media_dir=/home/pi/dlnadoc  #媒体文件目录
-db_dir=/var/lib/minidlna    #minidlna通过SQLite来建立媒体库索引，因此需要定义数据库目录
-listening_ip=192.168.1.111  #树莓派IP
-port=8200					#web端口，可以通过ip:port查看索引状态
-friendly_name=Raspi_DLNA    #服务器命名
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;重启&lt;code&gt;minidlna&lt;/code&gt;服务&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo service minidlna restart
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;强制刷新&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo service minidlna force-reload
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;查看索引状态,浏览http://192.168.1.111:8200&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;MiniDLNA status
-Audio files: 0
-Video files: 2
-Image files: 0
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;dlna客户端&#34;&gt;DLNA客户端&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;PC&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Windows7下将网络设置为&lt;strong&gt;家庭网络&lt;/strong&gt;，完成后刷新，在&lt;strong&gt;网络&lt;/strong&gt;中&lt;strong&gt;媒体设备&lt;/strong&gt;下就可以自动发现&lt;strong&gt;Rasp_DLNA&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;点击进去就可以使用MediaPlayer来浏览。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Android&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;VPlayer+ VPlayer uPnP DLNA Plugin&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;IOS&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;RushPlayer&lt;/p&gt;
-</description>
+      <guid>/post/raspberry-pi-install-minidlna-to-create-digital-media-server/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          树莓派挂载移动存储 可以挂载移动硬盘或者大容量的U盘，参考以下文章：
+ 树莓派挂载U盘作为存储分区 fdisk分区实例  安装配置minidlna #sudo apt-get install -y minidlna  编辑minidlna配置文件/etc/minidlna.conf，内容如下：
+media_dir=/home/pi/dlnadoc #媒体文件目录 db_dir=/var/lib/minidlna #minidlna通过SQLite来建立媒体库索引，因此需要定义数据库目录 listening_ip=192.168.1.111 #树莓派IP port=8200	#web端口，可以通过ip:port查看索引状态 friendly_name=Raspi_DLNA #服务器命名  重启minidlna服务
+sudo service minidlna restart  强制刷新
+sudo service minidlna force-reload  查看索引状态,浏览http://192.168.1.111:8200
+MiniDLNA status Audio files: 0 Video files: 2 Image files: 0  DLNA客户端 PC
+Windows7下将网络设置为家庭网络，完成后刷新，在网络中媒体设备下就可以自动发现Rasp_DLNA。
+点击进去就可以使用MediaPlayer来浏览。
+Android
+VPlayer+ VPlayer uPnP DLNA Plugin
+IOS
+RushPlayer
+          
+        
+        </description>
     </item>
     
   </channel>

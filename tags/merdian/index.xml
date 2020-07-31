@@ -2,51 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>merdian on UNIXETC</title>
-    <link>https://unixetc.com/tags/merdian/</link>
-    <description>UNIXETC (merdian)</description>
+    
+    
+    
+    <link>/tags/merdian/</link>
+    <description>Recent content in merdian on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 22 Jan 2018 10:28:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/merdian/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/merdian/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>IOS10越狱工具Meridian</title>
-      <link>https://unixetc.com/post/meridian-jailbreak/</link>
+      <link>/post/meridian-jailbreak/</link>
       <pubDate>Mon, 22 Jan 2018 10:28:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/meridian-jailbreak/</guid>
-      <description>&lt;p&gt;Meridian是一款IOS10.0~10.3.3系列越狱工具支持所有64bit设备。&lt;/p&gt;
-&lt;p&gt;支持设备清单：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;iPhone 7 &amp;amp; 7+&lt;/li&gt;
-&lt;li&gt;iPhone 6S &amp;amp; 6S+&lt;/li&gt;
-&lt;li&gt;iPhone 6 &amp;amp; 6+&lt;/li&gt;
-&lt;li&gt;iPhone SE&lt;/li&gt;
-&lt;li&gt;iPhone 5S&lt;/li&gt;
-&lt;li&gt;iPad Air 1 and 2&lt;/li&gt;
-&lt;li&gt;iPad (2017)&lt;/li&gt;
-&lt;li&gt;iPad Mini 2, 3, and 4&lt;/li&gt;
-&lt;li&gt;iPad Pro 1 and 2 (12.9&amp;rdquo; and 10.5&amp;rdquo;)&lt;/li&gt;
-&lt;li&gt;iPod Touch 6th Gen&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;安装说明：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;点击网站“下载”按钮下载IPA；&lt;/p&gt;
-&lt;p&gt;使用Cydia Impactor将IPA安装到您的设备上；&lt;/p&gt;
-&lt;p&gt;在设置-&amp;gt;常规-&amp;gt;配置文件和设备管理中信任证书；&lt;/p&gt;
-&lt;p&gt;打开应用程序，然后单击开始按钮。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;国内网盘下载&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-316388143&#34;&gt;Meridian public beta5&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-316388139&#34;&gt;Cydia Impactor for Windows&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;相关网站&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Meridian官网 &lt;a href=&#34;https://meridian.sparkes.zone/&#34;&gt;https://meridian.sparkes.zone/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Cydia Impactor官网 &lt;a href=&#34;http://www.cydiaimpactor.com/&#34;&gt;http://www.cydiaimpactor.com/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <guid>/post/meridian-jailbreak/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Meridian是一款IOS10.0~10.3.3系列越狱工具支持所有64bit设备。
+支持设备清单：
+ iPhone 7 &amp;amp; 7+ iPhone 6S &amp;amp; 6S+ iPhone 6 &amp;amp; 6+ iPhone SE iPhone 5S iPad Air 1 and 2 iPad (2017) iPad Mini 2, 3, and 4 iPad Pro 1 and 2 (12.9&amp;rdquo; and 10.5&amp;rdquo;) iPod Touch 6th Gen  安装说明：
+点击网站“下载”按钮下载IPA；
+使用Cydia Impactor将IPA安装到您的设备上；
+在设置-&amp;gt;常规-&amp;gt;配置文件和设备管理中信任证书；
+打开应用程序，然后单击开始按钮。
+国内网盘下载
+ Meridian public beta5 Cydia Impactor for Windows  相关网站
+ Meridian官网 https://meridian.sparkes.zone/ Cydia Impactor官网 http://www.cydiaimpactor.com/  
+          
+        
+        </description>
     </item>
     
   </channel>

@@ -2,118 +2,64 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>letsencrypt on UNIXETC</title>
-    <link>https://unixetc.com/tags/letsencrypt/</link>
-    <description>UNIXETC (letsencrypt)</description>
+    
+    
+    
+    <link>/tags/letsencrypt/</link>
+    <description>Recent content in letsencrypt on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 09 May 2016 15:28:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/letsencrypt/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/letsencrypt/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Let&#39;s encrypt 证书快速生成脚本</title>
-      <link>https://unixetc.com/post/letsencrypt-certificate-quickly-generate-script/</link>
+      <link>/post/letsencrypt-certificate-quickly-generate-script/</link>
       <pubDate>Mon, 09 May 2016 15:28:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/letsencrypt-certificate-quickly-generate-script/</guid>
-      <description>&lt;p&gt;网站的Let&amp;rsquo;s encrypt证书快到期了，看了官方的续期方法比较繁琐，于是在网上找了找简单方便做法，结果找到了&lt;strong&gt;墓地小企鹅&lt;/strong&gt;写的一个脚本(shell script)，使用这个脚本可以方便的生成以及更新Let&amp;rsquo;s encrypt 证书。&lt;/p&gt;
-&lt;p&gt;脚本地址 &lt;a href=&#34;https://github.com/xdtianyu/scripts/tree/master/lets-encrypt&#34;&gt;https://github.com/xdtianyu/scripts/tree/master/lets-encrypt&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;下载脚本&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.conf
-wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;配置&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;root@rnse:~/lesh# cat letsencrypt.conf
-# only modify the values, key files will be generated automaticly.
-ACCOUNT_KEY=&amp;quot;letsencrypt-account.key&amp;quot;
-DOMAIN_KEY=&amp;quot;alair.key&amp;quot;
-DOMAIN_DIR=&amp;quot;/data/wwwroot/alair.cn/compiled&amp;quot;
-DOMAINS=&amp;quot;DNS:alair.cn,DNS:www.alair.cn&amp;quot;
-#ECC=TRUE
-#LIGHTTPD=TRUE
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;按照需要自定义&lt;code&gt;DOMAIN_KEY&lt;/code&gt;、&lt;code&gt;DOMAIN_DIR&lt;/code&gt;、&lt;code&gt;DOMAINS&lt;/code&gt;三部分。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;生成证书&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;root@rnse:~/lesh#chmod +x letsencrypt.sh
-root@rnse:~/lesh# ./letsencrypt.sh letsencrypt.conf
-Generate account key...
-Generating RSA private key, 4096 bit long modulus
-..............................++
-....++
-e is 65537 (0x10001)
-Generate domain key...
-Generating RSA private key, 2048 bit long modulus
-...............................................................+++
-..........................+++
-e is 65537 (0x10001)
-Generate CSR...alair.csr
-Parsing account key...
-Parsing CSR...
-Registering account...
-Registered!
-Verifying www.alair.cn...
-www.alair.cn verified!
-Verifying alair.cn...
-alair.cn verified!
-Signing certificate...
-Certificate signed!
-New cert: alair.chained.crt has been generated
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;生成后的目录文件如下:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;root@rnse:~/lesh# ls
-alair.chained.crt  alair.crt  alair.csr  alair.key  lets-encrypt-x3-cross-signed.pem  letsencrypt-account.key  letsencrypt.conf  letsencrypt.sh
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;配置nginx&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;... ...
-ssl_certificate     /path/to/cert/alair.chained.crt;
-ssl_certificate_key /path/to/cert/alair.key;
-... ...
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;更新证书&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;证书到期前直接再次生成而已&lt;/p&gt;
-</description>
+      <guid>/post/letsencrypt-certificate-quickly-generate-script/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          网站的Let&amp;rsquo;s encrypt证书快到期了，看了官方的续期方法比较繁琐，于是在网上找了找简单方便做法，结果找到了墓地小企鹅写的一个脚本(shell script)，使用这个脚本可以方便的生成以及更新Let&amp;rsquo;s encrypt 证书。
+脚本地址 https://github.com/xdtianyu/scripts/tree/master/lets-encrypt
+下载脚本
+wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.conf wget https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh  配置
+root@rnse:~/lesh# cat letsencrypt.conf # only modify the values, key files will be generated automaticly. ACCOUNT_KEY=&amp;quot;letsencrypt-account.key&amp;quot; DOMAIN_KEY=&amp;quot;alair.key&amp;quot; DOMAIN_DIR=&amp;quot;/data/wwwroot/alair.cn/compiled&amp;quot; DOMAINS=&amp;quot;DNS:alair.cn,DNS:www.alair.cn&amp;quot; #ECC=TRUE #LIGHTTPD=TRUE  按照需要自定义DOMAIN_KEY、DOMAIN_DIR、DOMAINS三部分。
+生成证书
+root@rnse:~/lesh#chmod +x letsencrypt.sh root@rnse:~/lesh# ./letsencrypt.sh letsencrypt.conf Generate account key... Generating RSA private key, 4096 bit long modulus ..............................++ ....++ e is 65537 (0x10001) Generate domain key... Generating RSA private key, 2048 bit long modulus .
+          
+        
+        </description>
     </item>
     
     <item>
       <title>使用免费Let&#39;s Encrypt证书</title>
-      <link>https://unixetc.com/post/use-letsencrypt-free-ssl-certificate/</link>
+      <link>/post/use-letsencrypt-free-ssl-certificate/</link>
       <pubDate>Tue, 15 Dec 2015 22:38:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/use-letsencrypt-free-ssl-certificate/</guid>
-      <description>&lt;p&gt;在此介绍如何使用Let&amp;rsquo;s Encrypt的免费SSL证书，需要在有管理权限的VPS上操作，然后参考以下方法自签域名证书。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;git clone https://github.com/letsencrypt/letsencrypt.git
-cd letsencrypt
-mkdir -p /home/webroot/.well-known/acme-challenge  #/home/webroot为网站目录
-./letsencrypt-auto certonly --email me@alair.cn -d alair.cn,www.alair.cn --webroot -w /home/webroot --agree-tos #注意email、域名、和网站目录
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;签发成功后，会提示如&lt;code&gt;/etc/letsencrypt/live/www.alair.cn/fullchain.pem;&lt;/code&gt;的证书路径信息。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;IMPORTANT NOTES:
-- Congratulations! Your certificate and chain have been saved at
-/etc/letsencrypt/live/www.alair.cn/fullchain.pem. Your cert will
-expire on 2016-03-14. To obtain a new version of the certificate in
-the future, simply run Let&#39;s Encrypt again.
-- If like Let&#39;s Encrypt, please consider supporting our work by:
-
-Donating to ISRG / Let&#39;s Encrypt:   https://letsencrypt.org/donate
-Donating to EFF:                    https://eff.org/donate-le
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;接下来在&lt;strong&gt;Nginx&lt;/strong&gt;中配置使用，如下代码&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;... ...
-listen 443 ssl http2; 
-server_name www.alair.cn;   
-index index.html index.htm default.html default.htm;
-root /home/webroot;           
-ssl_certificate /etc/letsencrypt/live/www.alair.cn/fullchain.pem;  
-ssl_certificate_key /etc/letsencrypt/live/www.alair.cn/privkey.pem; 
-ssl_ciphers &amp;quot;EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH&amp;quot;;
-ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-ssl_prefer_server_ciphers on;
-ssl_session_cache shared:SSL:10m;
-... ...
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;注意:&lt;strong&gt;我在第一次签发时候提示无法连接DV服务器，经过排查是由于DNS原因，当时用的DNS服务器是&lt;/strong&gt;Dnspod&lt;/strong&gt;，更换为&lt;strong&gt;dns.he.net&lt;/strong&gt;后正常了。&lt;/p&gt;
-</description>
+      <guid>/post/use-letsencrypt-free-ssl-certificate/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          在此介绍如何使用Let&amp;rsquo;s Encrypt的免费SSL证书，需要在有管理权限的VPS上操作，然后参考以下方法自签域名证书。
+git clone https://github.com/letsencrypt/letsencrypt.git cd letsencrypt mkdir -p /home/webroot/.well-known/acme-challenge #/home/webroot为网站目录 ./letsencrypt-auto certonly --email me@alair.cn -d alair.cn,www.alair.cn --webroot -w /home/webroot --agree-tos #注意email、域名、和网站目录  签发成功后，会提示如/etc/letsencrypt/live/www.alair.cn/fullchain.pem;的证书路径信息。
+IMPORTANT NOTES: - Congratulations! Your certificate and chain have been saved at /etc/letsencrypt/live/www.alair.cn/fullchain.pem. Your cert will expire on 2016-03-14. To obtain a new version of the certificate in the future, simply run Let&#39;s Encrypt again. - If like Let&#39;s Encrypt, please consider supporting our work by: Donating to ISRG / Let&#39;s Encrypt: https://letsencrypt.
+          
+        
+        </description>
     </item>
     
   </channel>

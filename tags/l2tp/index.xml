@@ -2,50 +2,41 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>L2TP on UNIXETC</title>
-    <link>https://unixetc.com/tags/l2tp/</link>
-    <description>UNIXETC (L2TP)</description>
+    
+    
+    
+    <link>/tags/l2tp/</link>
+    <description>Recent content in L2TP on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 10 Dec 2018 12:10:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/l2tp/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/l2tp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CentOS7安装L2TP VPN</title>
-      <link>https://unixetc.com/post/centos7-install-l2tp-vpn/</link>
+      <link>/post/centos7-install-l2tp-vpn/</link>
       <pubDate>Mon, 10 Dec 2018 12:10:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/centos7-install-l2tp-vpn/</guid>
-      <description>&lt;h3 id=&#34;centos7安装vpn&#34;&gt;Centos7安装VPN&lt;/h3&gt;
-&lt;p&gt;下载安装脚本:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;wget http://cdn.lyq.wiki/vpnscripts/vpninstall
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;执行安装脚本&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;chmod+x vpninstall
-./vpninstall
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;安装完成后提示如下:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;IPsec VPN server is now ready for use!
-Connect to your new VPN with these details:
-Server IP: 181.53.149.126
-IPsec PSK: EMc6SpQHaBgZCnvNtLX
-Username: vpnuser
-Password: FzfpNGofpRdkBj2B
-Write these down. You&#39;ll need them to connect!
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;以上为安装完成后提示的帐号信息，其中用户名(username)、密码(passowrd)和IPsec PSK密匙(IPsec PSK)为随即生成。&lt;/p&gt;
-&lt;p&gt;如果为了方便，以上帐号信息可以参考以下方法自定义：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;[root@hwcsh ~]# vi /etc/ipsec.secrets  #编辑PSK
-    %any  %any  : PSK &amp;quot;EMc6SpQHaBgZCnvNtLX&amp;quot;
-[root@hwcsh ~]# vi /etc/ppp/chap-secrets  #编辑帐户信息
-    &amp;quot;vpnuser&amp;quot; l2tpd &amp;quot;FzfpNGofpRdkBj2B&amp;quot; *
-[root@hwcsh ~]#systemctl restart ipsec xl2tpd #重启服务
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;iphone6配置l2tp-vpn&#34;&gt;iPhone6配置L2TP VPN&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;设置&lt;/strong&gt;-&amp;gt;&lt;strong&gt;VPN&lt;/strong&gt;-&amp;gt;&lt;strong&gt;添加VPN配置&lt;/strong&gt;，类型选择&lt;strong&gt;L2TP&lt;/strong&gt;，然后参考下图设置。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/2631506123.webp&#34; alt=&#34;iphone_vpn_conf.webp&#34;&gt;&lt;/p&gt;
-</description>
+      <guid>/post/centos7-install-l2tp-vpn/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Centos7安装VPN 下载安装脚本:
+wget http://cdn.lyq.wiki/vpnscripts/vpninstall  执行安装脚本
+chmod+x vpninstall ./vpninstall  安装完成后提示如下:
+IPsec VPN server is now ready for use! Connect to your new VPN with these details: Server IP: 181.53.149.126 IPsec PSK: EMc6SpQHaBgZCnvNtLX Username: vpnuser Password: FzfpNGofpRdkBj2B Write these down. You&#39;ll need them to connect!  以上为安装完成后提示的帐号信息，其中用户名(username)、密码(passowrd)和IPsec PSK密匙(IPsec PSK)为随即生成。
+如果为了方便，以上帐号信息可以参考以下方法自定义：
+[root@hwcsh ~]# vi /etc/ipsec.secrets #编辑PSK %any %any : PSK &amp;quot;EMc6SpQHaBgZCnvNtLX&amp;quot; [root@hwcsh ~]# vi /etc/ppp/chap-secrets #编辑帐户信息 &amp;quot;vpnuser&amp;quot; l2tpd &amp;quot;FzfpNGofpRdkBj2B&amp;quot; * [root@hwcsh ~]#systemctl restart ipsec xl2tpd #重启服务  iPhone6配置L2TP VPN 设置-&amp;gt;VPN-&amp;gt;添加VPN配置，类型选择L2TP，然后参考下图设置。
+          
+        
+        </description>
     </item>
     
   </channel>

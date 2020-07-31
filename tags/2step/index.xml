@@ -2,93 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2step on UNIXETC</title>
-    <link>https://unixetc.com/tags/2step/</link>
-    <description>UNIXETC (2step)</description>
+    
+    
+    
+    <link>/tags/2step/</link>
+    <description>Recent content in 2step on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 28 Jan 2016 12:33:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/2step/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/2step/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>使用Google Authenticator两步验证加强SSH登录</title>
-      <link>https://unixetc.com/post/use-google-authenticator-set-2step-verification-strengthening-ssh-login/</link>
+      <link>/post/use-google-authenticator-set-2step-verification-strengthening-ssh-login/</link>
       <pubDate>Thu, 28 Jan 2016 12:33:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/use-google-authenticator-set-2step-verification-strengthening-ssh-login/</guid>
-      <description>&lt;p&gt;Google Authenticator开源版主页 &lt;a href=&#34;https://github.com/google/google-authenticator&#34;&gt;https://github.com/google/google-authenticator&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;安装google-authenticator&#34;&gt;安装Google Authenticator&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Ubuntu&lt;/strong&gt;已经包含libpam-google-authenticator软件(Ubuntu 11.10以上版本),可以直接使用&lt;code&gt;apt-get&lt;/code&gt;安装&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;apt-get install libpam-google-authenticator
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;其他系统可以通过源码编译安装&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;git clone https://github.com/google/google-authenticator-libpam.git
-cd google-authenticator-libpam/
-./bootstrap.sh
-./configure
-make
-make install
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;注意：在Debian7中执行&lt;code&gt;./configure&lt;/code&gt;时可能存在以下错误提示&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;configure: error: Unable to find the PAM library or the PAM header files
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在此需要安装&lt;code&gt;libpam0g-dev&lt;/code&gt;和&lt;code&gt;libtool&lt;/code&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;apt-get -y install libpam0g-dev libtool
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;设置google-authenticator&#34;&gt;设置Google Authenticator&lt;/h3&gt;
-&lt;p&gt;在手机端搜索安装&lt;strong&gt;Google Authenticator&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;google-authenticator
-Do you want authentication tokens to be time-based (y/n) y
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;然后出现二维码，使用手机端&lt;strong&gt;Google Authenticator&lt;/strong&gt;扫码,接下来服务器端继续设置&lt;/p&gt;
-&lt;p&gt;如果没有出现二维码，可以将提示的以**&lt;a href=&#34;https://www.google.com/chart?&#34;&gt;https://www.google.com/chart?&lt;/a&gt;**开头的连接复制到浏览器中，就可以看到二维码了&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;Do you want me to update your &amp;quot;/root/.google_authenticator&amp;quot; file (y/n) y
-
-Do you want to disallow multiple uses of the same authentication
-token? This restricts you to one login about every 30s, but it increases
-your chances to notice or even prevent man-in-the-middle attacks (y/n) Do you want to disallow multiple uses of the same authentication
-token? This restricts you to one login about every 30s, but it increases
-your chances to notice or even prevent man-in-the-middle attacks (y/n) y
-
-By default, tokens are good for 30 seconds and in order to compensate for
-possible time-skew between the client and the server, we allow an extra
-token before and after the current time. If you experience problems with poor
-time synchronization, you can increase the window from its default
-size of 1:30min to about 4min. Do you want to do so (y/n) y
-
-If the computer that you are logging into isn&#39;t hardened against brute-force
-login attempts, you can enable rate-limiting for the authentication module.
-By default, this limits attackers to no more than 3 login attempts every 30s.
-Do you want to enable rate-limiting (y/n) y
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;接下来将&lt;strong&gt;Google Authenticator&lt;/strong&gt;验证配置到SSH登录中&lt;/p&gt;
-&lt;p&gt;编辑&lt;code&gt;/etc/pam.d/sshd&lt;/code&gt;文件，添加下行保存&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;auth required pam_google_authenticator.so
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;编辑&lt;code&gt;/etc/ssh/sshd_config&lt;/code&gt;找到下行&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;ChallengeResponseAuthentication no
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;更改为&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;ChallengeResponseAuthentication yes
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;重启SSH服务&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;service ssh restart
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;再次登录的话输入用户名后就跟着提示两部验证码，然后才输入用户密码，如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;login as: root
-Using keyboard-interactive authentication.
-Verification code:
-Using keyboard-interactive authentication.
-Password:
-Welcome to Ubuntu 14.04.2 LTS (GNU/Linux 2.6.32-042stab108.8 i686)
-
-* Documentation:  https://help.ubuntu.com/
-Last login: Thu Jan 28 15:04:20 2016 from 61.185.216.146
-root@hkvps:~#
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;em&gt;参考 &lt;a href=&#34;https://wzyboy.im/post/765.html&#34;&gt;https://wzyboy.im/post/765.html&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-</description>
+      <guid>/post/use-google-authenticator-set-2step-verification-strengthening-ssh-login/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Google Authenticator开源版主页 https://github.com/google/google-authenticator
+安装Google Authenticator Ubuntu已经包含libpam-google-authenticator软件(Ubuntu 11.10以上版本),可以直接使用apt-get安装
+apt-get install libpam-google-authenticator  其他系统可以通过源码编译安装
+git clone https://github.com/google/google-authenticator-libpam.git cd google-authenticator-libpam/ ./bootstrap.sh ./configure make make install  注意：在Debian7中执行./configure时可能存在以下错误提示
+configure: error: Unable to find the PAM library or the PAM header files  在此需要安装libpam0g-dev和libtool
+apt-get -y install libpam0g-dev libtool  设置Google Authenticator 在手机端搜索安装Google Authenticator
+google-authenticator Do you want authentication tokens to be time-based (y/n) y  然后出现二维码，使用手机端Google Authenticator扫码,接下来服务器端继续设置
+如果没有出现二维码，可以将提示的以**https://www.google.com/chart?**开头的连接复制到浏览器中，就可以看到二维码了
+Do you want me to update your &amp;quot;/root/.
+          
+        
+        </description>
     </item>
     
   </channel>

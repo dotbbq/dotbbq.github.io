@@ -2,37 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>USBNetwork on UNIXETC</title>
-    <link>https://unixetc.com/tags/usbnetwork/</link>
-    <description>UNIXETC (USBNetwork)</description>
+    
+    
+    
+    <link>/tags/usbnetwork/</link>
+    <description>Recent content in USBNetwork on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 27 Feb 2014 12:17:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/usbnetwork/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/usbnetwork/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Kindle Paperwhite越狱</title>
-      <link>https://unixetc.com/post/kindle-paperwhite-jailbreak/</link>
+      <link>/post/kindle-paperwhite-jailbreak/</link>
       <pubDate>Thu, 27 Feb 2014 12:17:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/kindle-paperwhite-jailbreak/</guid>
-      <description>&lt;h3 id=&#34;越狱&#34;&gt;越狱&lt;/h3&gt;
-&lt;p&gt;下载kindle-jailbreak-1.8.N.zip解压，将得到的kindle-5.4-jailbreak.zip再解压，然后把解压出的三个文件放到KPW根目录&lt;/p&gt;
-&lt;p&gt;然后更新系统，主页-菜单-设置-菜单-更新您的kindle&lt;/p&gt;
-&lt;p&gt;底部显示**** JAILBREAK ****即表示越狱成功！&lt;/p&gt;
-&lt;h3 id=&#34;安装mkk&#34;&gt;安装MKK&lt;/h3&gt;
-&lt;p&gt;下载kindle-mkk-20140214.zip解压，将Update_mkk-20140214-k5-ALL_install.bin复制到KPW根目录更新系统&lt;/p&gt;
-&lt;h3 id=&#34;安装kual&#34;&gt;安装KUAL&lt;/h3&gt;
-&lt;p&gt;下载KUAL-v2.3.zip 解压，将KUAL-KDK-2.0.azw2放到documents文件夹，点击图标即可运行KUAL&lt;/p&gt;
-&lt;h3 id=&#34;安装终端&#34;&gt;安装终端&lt;/h3&gt;
-&lt;p&gt;下载kterm-0.7.zip解压，然后将kterm文件夹复制到KPW根目录下的extensions，即可通过KUAL来打开kterm。&lt;/p&gt;
-&lt;p&gt;**提示：**双指点击唤醒菜单。&lt;/p&gt;
-&lt;h3 id=&#34;安装usbnetwork&#34;&gt;安装USBNetwork&lt;/h3&gt;
-&lt;p&gt;解压kindle-usbnet-0.15.N.zip，将update_usbnet_0.15.N_install_touch_pw.bin放到根目录，然后更新系统安装，完成后可通过KUAL来打开USBNetwork。&lt;/p&gt;
-&lt;p&gt;通过USBNetwork来链接PC，有时需要安装驱动，在这里提供&lt;code&gt;undrivers.inf&lt;/code&gt;文件，安装时选择该文件即可。&lt;/p&gt;
-&lt;p&gt;以上所有文件下载地址： &lt;a href=&#34;http://pan.baidu.com/s/1eQdzU6Y&#34;&gt;http://pan.baidu.com/s/1eQdzU6Y&lt;/a&gt;&lt;/p&gt;
-</description>
+      <guid>/post/kindle-paperwhite-jailbreak/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          越狱 下载kindle-jailbreak-1.8.N.zip解压，将得到的kindle-5.4-jailbreak.zip再解压，然后把解压出的三个文件放到KPW根目录
+然后更新系统，主页-菜单-设置-菜单-更新您的kindle
+底部显示**** JAILBREAK ****即表示越狱成功！
+安装MKK 下载kindle-mkk-20140214.zip解压，将Update_mkk-20140214-k5-ALL_install.bin复制到KPW根目录更新系统
+安装KUAL 下载KUAL-v2.3.zip 解压，将KUAL-KDK-2.0.azw2放到documents文件夹，点击图标即可运行KUAL
+安装终端 下载kterm-0.7.zip解压，然后将kterm文件夹复制到KPW根目录下的extensions，即可通过KUAL来打开kterm。
+**提示：**双指点击唤醒菜单。
+安装USBNetwork 解压kindle-usbnet-0.15.N.zip，将update_usbnet_0.15.N_install_touch_pw.bin放到根目录，然后更新系统安装，完成后可通过KUAL来打开USBNetwork。
+通过USBNetwork来链接PC，有时需要安装驱动，在这里提供undrivers.inf文件，安装时选择该文件即可。
+以上所有文件下载地址： http://pan.baidu.com/s/1eQdzU6Y
+          
+        
+        </description>
     </item>
     
   </channel>

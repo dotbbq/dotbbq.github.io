@@ -2,55 +2,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>progress on UNIXETC</title>
-    <link>https://unixetc.com/tags/progress/</link>
-    <description>UNIXETC (progress)</description>
+    
+    
+    
+    <link>/tags/progress/</link>
+    <description>Recent content in progress on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 04 Feb 2016 02:04:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/progress/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/progress/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>查看cp、mv等命令的执行进度</title>
-      <link>https://unixetc.com/post/check-cp-dd-etc-commands-progress/</link>
+      <link>/post/check-cp-dd-etc-commands-progress/</link>
       <pubDate>Thu, 04 Feb 2016 02:04:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/check-cp-dd-etc-commands-progress/</guid>
-      <description>&lt;p&gt;Linux中进行文件拷贝和移动时，我们是看不到具体命令的执行情况，不知道还需要多久才可以执行完成。在此推荐一个软件名为progress，用它可以查看一些命令的具体执行情况，包括进度、时间等等。&lt;/p&gt;
-&lt;p&gt;该软件的具体解释为&lt;strong&gt;Coreutils Progress Viewer&lt;/strong&gt;，即核心程序进度查看，用它可以监视很多linux程序的执行情况，比如cp、mv、dd、tar,、gzip、cat等等，甚至于firefox的下载进度或者nginx的运行情况。&lt;/p&gt;
-&lt;h3 id=&#34;安装progress&#34;&gt;安装progress&lt;/h3&gt;
-&lt;p&gt;progress主页 &lt;a href=&#34;https://github.com/Xfennec/progress&#34;&gt;https://github.com/Xfennec/progress&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;安装progress方法&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;git clone https://github.com/Xfennec/progress.git
-cd progress
-make
-make install
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;使用progress&#34;&gt;使用progress&lt;/h3&gt;
-&lt;p&gt;简单的执行方法&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;progress
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;几个示例：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;监控所有可监控软件的执行情况&lt;/p&gt;
-&lt;p&gt;watch progress -q&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;然后进行文件操作即可看到如下内容:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/progress_1.webp&#34; alt=&#34;progress监控窗口&#34; title=&#34;progress监控窗口&#34;&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;查看下载进度&lt;/p&gt;
-&lt;p&gt;watch progress -wc firefox&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;查看网页服务器活动情况&lt;/p&gt;
-&lt;p&gt;progress -c nginx&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <guid>/post/check-cp-dd-etc-commands-progress/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Linux中进行文件拷贝和移动时，我们是看不到具体命令的执行情况，不知道还需要多久才可以执行完成。在此推荐一个软件名为progress，用它可以查看一些命令的具体执行情况，包括进度、时间等等。
+该软件的具体解释为Coreutils Progress Viewer，即核心程序进度查看，用它可以监视很多linux程序的执行情况，比如cp、mv、dd、tar,、gzip、cat等等，甚至于firefox的下载进度或者nginx的运行情况。
+安装progress progress主页 https://github.com/Xfennec/progress
+安装progress方法
+git clone https://github.com/Xfennec/progress.git cd progress make make install  使用progress 简单的执行方法
+progress  几个示例：
+  监控所有可监控软件的执行情况
+watch progress -q
+  然后进行文件操作即可看到如下内容:
+  查看下载进度
+watch progress -wc firefox
+  查看网页服务器活动情况
+progress -c nginx
+  
+          
+        
+        </description>
     </item>
     
   </channel>

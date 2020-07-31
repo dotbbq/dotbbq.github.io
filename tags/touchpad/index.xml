@@ -2,114 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Touchpad on UNIXETC</title>
-    <link>https://unixetc.com/tags/touchpad/</link>
-    <description>UNIXETC (Touchpad)</description>
+    
+    
+    
+    <link>/tags/touchpad/</link>
+    <description>Recent content in Touchpad on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 20 Aug 2012 12:59:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/touchpad/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/touchpad/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>WebOS资源分享</title>
-      <link>https://unixetc.com/post/webos-resource-sharing/</link>
+      <link>/post/webos-resource-sharing/</link>
       <pubDate>Mon, 20 Aug 2012 12:59:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/webos-resource-sharing/</guid>
-      <description>&lt;p&gt;对于WebOS还是继续看好，但是出于使用习惯和需求，将已经闲置了两个多月的HP TouchPad出手，新入手了台iPad2 Wifi (32nm)。&lt;/p&gt;
-&lt;p&gt;以下分享一些关于HP TouchPad的WebOS资源，以方便需要的朋友 以下为目录说明:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;G:WebOS
-├─8%及12%无法通过一键修砖 *关于刷机不过的处理方法
-├─cm7alpha3.5 *CM7 for HP TouchPad
-├─cm9alpha2 *CM7 for HP TouchPad
-├─patchs *一些补丁备份，便于安装
-├─soft *收集的一些HP TouchPad软件
-├─touchpad免激活 *HP TouchPad免激活工具
-├─WQI *WebOS Quick Install
-└─zoopda-elite-TP *Zoopda eLite发布的DIY ROM for HP TouchPad
-calibre-0.8.22.msi *电子书管理编辑软件
-KSMediaStreamer_v1.0.7.msi *流媒体分享软件
-NovacomInstaller_x86.msi *驱动程序(Windows)
-patch.txt *Preware补丁推荐
-Splashtop_Streamer_Win_v1.6.0.1.exe *远程桌面服务程序
-TBaccess.exe *TBaccess PC端
-UniversalNovacomInstaller.jar *驱动程序(Linux)
-webOS Nation Moboot.zip *MoBoot主题文件
-webosdoctorp305hstnhwifi.jar *HP TouchPad官网3.0.5 ROM
-WifiMediaSync.msi *媒体文件同步工具
-手动删除android.txt *手动删除CM方法
-
-G:WebOScm7alpha3.5
-ACMEInstaller
-ACMEUninstaller
-gapps-gb-20110828-signed.zip
-moboot_0.3.5.zip
-novacom.exe
-update-cm-7.1.0-tenderloin-a3.5-fullofbugs.zip
-update-cwm_tenderloin-1012.zip
-XRONified_vB2.9.1_odex_01032012.zip
-
-G:WebOScm9alpha2
-ACMEInstaller2
-ACMEUninstaller
-gapps-ics-20120429-signed.zip
-moboot_0.3.5.zip
-novacom.exe
-update-cm-9.0.0-RC0-Touchpad-alpha2-fullofbugs.zip
-update-cwm_tenderloin-1012.zip
-
-G:WebOSpatchs
-ca.canucksoftware.filemgr_2.0.7_all.ipk
-ca.canucksoftware.homebrew-js-service-framework_1.0.0_all.ipk
-ca.canucksoftware.systoolsmgr_1.0.5_all.ipk
-cacanucksoftwareinternalz_15.ipk
-
-G:WebOSsoft
-ca.canuckcoding.comicshelfhd_1.3.0_all.ipk
-chomper.sys.lsmime_0.1.0_armv7.ipk
-com.8bitdevelopment.wifimediasync_3.0.5_all.ipk
-com.amwityga.tpnews_1.0.0_all.ipk
-com.aol.engadgetHD_1.0.5_all_Touchpad.ipk
-com.hedami.musicplayerremix_2.5.5_all.ipk
-com.hp.palm.renren_01.00.022_all.ipk
-com.ingloriousapps.glimpse_1.2.3_all.ipk
-com.ingloriousapps.notesplus-untestedalpha_0.3.1_all.ipk
-com.kalemsoft.ksmplayera_0.5.3_tp.ipk
-com.l337tech.internet-radio-hd-pro_0.0.2_all.ipk
-com.menaka.mvnc_2.0.0_all.ipk
-com.mporting.ime.zh-cn.patch_3.0.4_all.ipk
-com.noteday.opencoursehd_1.0.0_all.ipk
-com.omastudios.filemanager_1.7.0_all.ipk
-com.oscillicious.sodasynthhd_1.0.2_all.ipk
-com.picsel.app.smartoffice_1.8.5_all.ipk
-com.qq.palmqzone_1.0.0_all.ipk
-com.sina.touchpadweibo_1.0.1_all.ipk
-com.smilepig.sohutv_0.0.7_all.ipk
-com.splashtop.remote.webos_1.0.3_all.ipk
-com.syllogithm.webosrdpc_0.2.5_all.ipk
-com.tencent.qq_1.0.0_all.ipk
-com.tudou.video_2.0.0_all.ipk
-com.wordpress.mobilecoder.touchplayer_1.0.6a_all.ipk
-com.xuepx.justradio.hd_2.0.3_all.ipk
-com.youku.touchpad_2.0.0_beta3.ipk
-de.thg_.usbflashmount_0.1.0_all.ipk
-org.webosinternals.preware_1.8.5_arm.ipk
-org.webosinternals.preware_1.9.12_arm.ipk
-
-G:WebOStouchpad免激活
-devicetool-tp
-devicetool-tp.jar
-devicetool.bat
-readme.txt
-
-G:WebOSWQI
-WebOSQuickInstall-4.2.0.jar
-WebOSQuickInstall-4.3.1.jar
-WebOSQuickInstall-4.4.0.jar 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;a href=&#34;http://pan.baidu.com/share/link?shareid=308749&amp;amp;uk=1493434283&#34;&gt;下载地址&lt;/a&gt;&lt;/p&gt;
-</description>
+      <guid>/post/webos-resource-sharing/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          对于WebOS还是继续看好，但是出于使用习惯和需求，将已经闲置了两个多月的HP TouchPad出手，新入手了台iPad2 Wifi (32nm)。
+以下分享一些关于HP TouchPad的WebOS资源，以方便需要的朋友 以下为目录说明:
+G:WebOS ├─8%及12%无法通过一键修砖 *关于刷机不过的处理方法 ├─cm7alpha3.5 *CM7 for HP TouchPad ├─cm9alpha2 *CM7 for HP TouchPad ├─patchs *一些补丁备份，便于安装 ├─soft *收集的一些HP TouchPad软件 ├─touchpad免激活 *HP TouchPad免激活工具 ├─WQI *WebOS Quick Install └─zoopda-elite-TP *Zoopda eLite发布的DIY ROM for HP TouchPad calibre-0.8.22.msi *电子书管理编辑软件 KSMediaStreamer_v1.0.7.msi *流媒体分享软件 NovacomInstaller_x86.msi *驱动程序(Windows) patch.txt *Preware补丁推荐 Splashtop_Streamer_Win_v1.6.0.1.exe *远程桌面服务程序 TBaccess.exe *TBaccess PC端 UniversalNovacomInstaller.jar *驱动程序(Linux) webOS Nation Moboot.zip *MoBoot主题文件 webosdoctorp305hstnhwifi.jar *HP TouchPad官网3.0.5 ROM WifiMediaSync.msi *媒体文件同步工具 手动删除android.txt *手动删除CM方法 G:WebOScm7alpha3.5 ACMEInstaller ACMEUninstaller gapps-gb-20110828-signed.zip moboot_0.
+          
+        
+        </description>
     </item>
     
   </channel>

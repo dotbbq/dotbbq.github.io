@@ -2,41 +2,50 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>unetbootin on UNIXETC</title>
-    <link>https://unixetc.com/tags/unetbootin/</link>
-    <description>UNIXETC (unetbootin)</description>
+    
+    
+    
+    <link>/tags/unetbootin/</link>
+    <description>Recent content in unetbootin on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 13 Aug 2012 18:12:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/unetbootin/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/unetbootin/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Linux Live USB制作工具</title>
-      <link>https://unixetc.com/post/linux-liveusb-tools/</link>
+      <link>/post/linux-liveusb-tools/</link>
       <pubDate>Mon, 13 Aug 2012 18:12:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/linux-liveusb-tools/</guid>
-      <description>&lt;p&gt;现在大多数的Linux发行版都支持Live方式，即可直接运行体验无需安装。&lt;/p&gt;
-&lt;p&gt;Linux Live又分为LiveCD和LiveUSB，前者是通过光盘(CD/DVD)方式直接运行，后者则是通过USB设备(U盘/移动硬盘)来运行。&lt;/p&gt;
-&lt;p&gt;以下介绍几款Linux Live USB制作工具，个人推荐Linux Live USB Creator!&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;注:需要主板BIOS开启USB Boot功能。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Universal USB Installer&lt;/strong&gt; &lt;a href=&#34;http://www.pendrivelinux.com&#34;&gt;http://www.pendrivelinux.com&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;1，选择Linux版本，勾选后面的Download the iso(Optional).则从互联网下载所选镜像。
-2，选择本地镜像文件(iso)。
-3，选择将要写入的USB设备，勾选Show all Drives可以看到所有本地磁盘，需要写入移动硬盘就需要勾选此项。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;UNetbootin&lt;/strong&gt; &lt;a href=&#34;http://unetbootin.sourceforge.net&#34;&gt;http://unetbootin.sourceforge.net&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;1，选择镜像源，从网络下载或者本地iso文件
-2，在类型中选择usb设备或者硬盘，然后在驱动器栏选择具体的盘符。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;LinuxLive USB Creator&lt;/strong&gt; &lt;a href=&#34;http://www.linuxliveusb.com/&#34;&gt;http://www.linuxliveusb.com/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;1，选择需要写入的USB设备
-2，选择安装源（ISO文件、光驱、网路下载）&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Image Writer for Microsoft Windows (Win32DiskImager)&lt;/strong&gt; &lt;a href=&#34;https://launchpad.net/win32-image-writer&#34;&gt;https://launchpad.net/win32-image-writer&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;这个操作相对很简单，并且只单一的适用于img镜像文件，如Meego就是采用这种发行方式&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;万能的dd&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;最喜欢这个方法了！ 使用lsblk查看u盘设备名，如/dev/sdb，例如镜像文件名为linux.iso，使用以下命令将镜像文件写入U盘&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#dd if=linux.iso of=/dev/sdb&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <guid>/post/linux-liveusb-tools/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          现在大多数的Linux发行版都支持Live方式，即可直接运行体验无需安装。
+Linux Live又分为LiveCD和LiveUSB，前者是通过光盘(CD/DVD)方式直接运行，后者则是通过USB设备(U盘/移动硬盘)来运行。
+以下介绍几款Linux Live USB制作工具，个人推荐Linux Live USB Creator!
+注:需要主板BIOS开启USB Boot功能。
+Universal USB Installer http://www.pendrivelinux.com
+1，选择Linux版本，勾选后面的Download the iso(Optional).则从互联网下载所选镜像。 2，选择本地镜像文件(iso)。 3，选择将要写入的USB设备，勾选Show all Drives可以看到所有本地磁盘，需要写入移动硬盘就需要勾选此项。
+UNetbootin http://unetbootin.sourceforge.net
+1，选择镜像源，从网络下载或者本地iso文件 2，在类型中选择usb设备或者硬盘，然后在驱动器栏选择具体的盘符。
+LinuxLive USB Creator http://www.linuxliveusb.com/
+1，选择需要写入的USB设备 2，选择安装源（ISO文件、光驱、网路下载）
+Image Writer for Microsoft Windows (Win32DiskImager) https://launchpad.net/win32-image-writer
+这个操作相对很简单，并且只单一的适用于img镜像文件，如Meego就是采用这种发行方式
+万能的dd
+最喜欢这个方法了！ 使用lsblk查看u盘设备名，如/dev/sdb，例如镜像文件名为linux.iso，使用以下命令将镜像文件写入U盘
+#dd if=linux.iso of=/dev/sdb 
+          
+        
+        </description>
     </item>
     
   </channel>

@@ -2,157 +2,93 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Root on UNIXETC</title>
-    <link>https://unixetc.com/tags/root/</link>
-    <description>UNIXETC (Root)</description>
+    
+    
+    
+    <link>/tags/root/</link>
+    <description>Recent content in Root on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 15 Jun 2017 16:15:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/root/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/root/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>一加3/3T工具包</title>
-      <link>https://unixetc.com/post/oneplus3-3t-unified-toolkit/</link>
+      <link>/post/oneplus3-3t-unified-toolkit/</link>
       <pubDate>Thu, 15 Jun 2017 16:15:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/oneplus3-3t-unified-toolkit/</guid>
-      <description>&lt;p&gt;工具菜单如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;    Title OnePlus 3/3T Unified ToolKit v5.0U by @ahmed_radaideh
-	
-	
-	
-            ======================
-            =        Menu        =
-            ======================
-	
-	
-    Enter a Number to select a Task.
-	
-    1)  Install USB Drivers On PC
-    2)  Unlock - ReLock Bootloader
-    3)  Check Device Status
-    4)  Check Bootloader Status
-    5)  Flash - Boot TWRP Recovery
-    6)  Flash - Boot Stock Recovery
-    7)  Push Systemless Root
-    8)  Push Debloater Script
-    9)  Wipe Cache Your Device
-    10) Force Decryption Device [WIPE]
-    11) Get Logs your Device
-    12) Restart Menu
-	
-    13) Check for new Version
-    14) XDA Thread
-    15) Donate!
-    00) Exit
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;em&gt;XDA贴地址在&lt;a href=&#34;https://forum.xda-developers.com/oneplus-3/development/toolkit-oneplus-3-toolkit-unlock-t3398799&#34;&gt;这里&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;h3 id=&#34;一加3t刷机步骤&#34;&gt;一加3T刷机步骤&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;进入Fastboot模式方法，关机后，按住&lt;/strong&gt;音量减&lt;strong&gt;+&lt;/strong&gt;电源键**进入。**界面如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/161221230.webp&#34; alt=&#34;Image31542161760.webp&#34;&gt;&lt;/p&gt;
-&lt;p&gt;注意看最上面两个横线中间的&lt;strong&gt;START&lt;/strong&gt;，这里是启动菜单，可以使用&lt;strong&gt;音量键&lt;/strong&gt;上下选择，使用&lt;strong&gt;电源键确认&lt;/strong&gt;选择。注意看最后一行的设备状态(DEVICE STATE) ，locked表示加锁，unlock表示解锁。&lt;/p&gt;
-&lt;p&gt;有以下四个菜单项：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;START 正常启动开机&lt;/li&gt;
-&lt;li&gt;Recovery mode 进入recovery&lt;/li&gt;
-&lt;li&gt;Restart bootloader 重启bootloader模式&lt;/li&gt;
-&lt;li&gt;Power off 关机&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;一加3t解锁&#34;&gt;一加3T解锁&lt;/h4&gt;
-&lt;p&gt;设置-&amp;gt;开发者选项  打开&lt;strong&gt;OEM解锁&lt;/strong&gt;和&lt;strong&gt;USB调试&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/3468369060.webp&#34; alt=&#34;Image11542159101.webp&#34;&gt;&lt;/p&gt;
-&lt;p&gt;连接手机和电脑，打开工具包选择&lt;strong&gt;Unlock - ReLock Bootloader&lt;/strong&gt;，下一步选择&lt;strong&gt;Unlock Bootloader&lt;/strong&gt;解锁，然后手机重启，接下来会有&lt;strong&gt;Unlock Boot loader?&lt;strong&gt;提示，用音量减选择&lt;/strong&gt;YES&lt;/strong&gt;，电源键确认开始解锁操作。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/2664099143.webp&#34; alt=&#34;Image21542161433.webp&#34;&gt;&lt;/p&gt;
-&lt;h4 id=&#34;刷入第三方recovery&#34;&gt;刷入第三方Recovery&lt;/h4&gt;
-&lt;p&gt;打开&lt;strong&gt;Fastboot&lt;/strong&gt;模式，连接手机和电脑，选择&lt;strong&gt;5)  Flash - Boot TWRP Recovery&lt;/strong&gt;，刷入&lt;strong&gt;TWRP&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;刷机第三方ROM&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;进入&lt;strong&gt;TWRP&lt;/strong&gt;，挂载&lt;strong&gt;MTP&lt;/strong&gt;，将&lt;strong&gt;ROM&lt;/strong&gt;文件拷入手机，然后进行卡刷。&lt;/p&gt;
-&lt;h4 id=&#34;一加3t恢复官方rom&#34;&gt;一加3T恢复官方ROM&lt;/h4&gt;
-&lt;p&gt;步骤：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;恢复官方Recovery&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;进入&lt;strong&gt;Fastboot&lt;/strong&gt;，连接手机和电脑，选择&lt;strong&gt;6)  Flash - Boot Stock Recovery&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;进入&lt;strong&gt;Fastboot&lt;/strong&gt;，连接手机和电脑，选择&lt;strong&gt;10) Force Decryption Device [WIPE]&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;重新加锁Boot&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;进入&lt;strong&gt;Fastboot&lt;/strong&gt;，连接手机和电脑，打开工具包选择&lt;strong&gt;2)  Unlock - ReLock Bootloader&lt;/strong&gt;，下一步选择2重新加锁。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;通过USB刷机&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;进入&lt;strong&gt;Recovery&lt;/strong&gt;，选择&lt;strong&gt;从USB安装升级文件&lt;/strong&gt;,手机连接电脑，通过以下命令刷入官方包：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;adb fastboot OnePlus3T.zip
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;完成后重启。&lt;/p&gt;
-&lt;h4 id=&#34;一些补充说明&#34;&gt;一些补充说明&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;启用开发者选项&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;设置-&amp;gt;关于手机 单击&lt;strong&gt;版本号&lt;/strong&gt;多次(4)，会提示已经打开开发者选项&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;进入&lt;strong&gt;Fastboot&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;关机，按住&lt;strong&gt;音量减&lt;/strong&gt;，再同时按住&lt;strong&gt;电源键&lt;/strong&gt;开机&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;进入&lt;strong&gt;Recovery&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;关机，按住&lt;strong&gt;音量加&lt;/strong&gt;，再同时按住&lt;strong&gt;电源键&lt;/strong&gt;开机&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Adb工具&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;adb在工具包内的files文件夹中&lt;/p&gt;
-&lt;p&gt;下载地址&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://dotbbq.pipipan.com/fs/18418398-315801102&#34;&gt;https://dotbbq.pipipan.com/fs/18418398-315801102&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-</description>
+      <guid>/post/oneplus3-3t-unified-toolkit/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          工具菜单如下：
+ Title OnePlus 3/3T Unified ToolKit v5.0U by @ahmed_radaideh ====================== = Menu = ====================== Enter a Number to select a Task. 1) Install USB Drivers On PC 2) Unlock - ReLock Bootloader 3) Check Device Status 4) Check Bootloader Status 5) Flash - Boot TWRP Recovery 6) Flash - Boot Stock Recovery 7) Push Systemless Root 8) Push Debloater Script 9) Wipe Cache Your Device 10) Force Decryption Device [WIPE] 11) Get Logs your Device 12) Restart Menu 13) Check for new Version 14) XDA Thread 15) Donate!
+          
+        
+        </description>
     </item>
     
     <item>
       <title>树莓派开启root登录</title>
-      <link>https://unixetc.com/post/raspberry-pi-allow-root-login/</link>
+      <link>/post/raspberry-pi-allow-root-login/</link>
       <pubDate>Fri, 18 Sep 2015 21:28:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/raspberry-pi-allow-root-login/</guid>
-      <description>&lt;p&gt;想要通过ssh登录树莓派进行管理，使用默认的&lt;strong&gt;pi&lt;/strong&gt;用户有时真的不便，对于linux老手来说，可以直接开启&lt;strong&gt;root&lt;/strong&gt;用户ssh登录，这就方便多了，方法如下：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo passwd root
-sudo passwd --unlock root
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;设置SSH&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;sudo vi /etc/ssh/sshd_config
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;将其中的&lt;code&gt;PermitRootLogin without-password&lt;/code&gt;改为&lt;code&gt;PermitRootLogin yes&lt;/code&gt;，然后重启ssh服务&lt;code&gt;sudo service ssh restart&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Over!&lt;/p&gt;
-</description>
+      <guid>/post/raspberry-pi-allow-root-login/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          想要通过ssh登录树莓派进行管理，使用默认的pi用户有时真的不便，对于linux老手来说，可以直接开启root用户ssh登录，这就方便多了，方法如下：
+sudo passwd root sudo passwd --unlock root  设置SSH
+sudo vi /etc/ssh/sshd_config  将其中的PermitRootLogin without-password改为PermitRootLogin yes，然后重启ssh服务sudo service ssh restart
+Over!
+          
+        
+        </description>
     </item>
     
     <item>
       <title>华为C8817L解锁与Root</title>
-      <link>https://unixetc.com/post/huawei-c8817l-unlock-and-root/</link>
+      <link>/post/huawei-c8817l-unlock-and-root/</link>
       <pubDate>Thu, 07 Aug 2014 18:17:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/huawei-c8817l-unlock-and-root/</guid>
-      <description>&lt;h3 id=&#34;解锁&#34;&gt;解锁&lt;/h3&gt;
-&lt;p&gt;解锁Bootloader首先需要获得解锁码，以下为官方解锁页：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;获取解锁码&lt;/strong&gt; &lt;a href=&#34;http://www.emui.com/plugin.php?id=unlock&amp;amp;mod=detail&#34;&gt;http://www.emui.com/plugin.php?id=unlock&amp;amp;mod=detail&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/unlock_sumbit.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;提交成功后会获得16位的解锁码。&lt;/p&gt;
-&lt;p&gt;下载以下两个文件：&lt;/p&gt;
-&lt;p&gt;c8817l驱动 &lt;a href=&#34;http://pan.baidu.com/s/1jG3fBhW&#34;&gt;http://pan.baidu.com/s/1jG3fBhW&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;google adb工具包 &lt;a href=&#34;http://pan.baidu.com/s/1dDpI77b&#34;&gt;http://pan.baidu.com/s/1dDpI77b&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;安装好驱动城区，解开adb工具包，cmd进入adb包目录。&lt;/p&gt;
-&lt;p&gt;关机，同时按住&lt;strong&gt;音量下&lt;/strong&gt;和&lt;strong&gt;电源键&lt;/strong&gt;开机，进入到fastboot模式。&lt;/p&gt;
-&lt;p&gt;usb链接电脑，参考以下解锁：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://cdn.lyq.wiki/imgs/unlock_c8817l.webp&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;p&gt;其中&lt;code&gt;fastboot oem unlock&lt;/code&gt;后为16位解锁码&lt;/p&gt;
-&lt;p&gt;解锁成功后手机会自动重启。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;进入开发者模式&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;关于&lt;/strong&gt;-&amp;gt;点击4次&lt;strong&gt;版本号&lt;/strong&gt;&lt;/p&gt;
-&lt;h3 id=&#34;root&#34;&gt;Root&lt;/h3&gt;
-&lt;p&gt;360一键root,其他不多说了！&lt;/p&gt;
-</description>
+      <guid>/post/huawei-c8817l-unlock-and-root/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          解锁 解锁Bootloader首先需要获得解锁码，以下为官方解锁页：
+获取解锁码 http://www.emui.com/plugin.php?id=unlock&amp;amp;mod=detail
+提交成功后会获得16位的解锁码。
+下载以下两个文件：
+c8817l驱动 http://pan.baidu.com/s/1jG3fBhW
+google adb工具包 http://pan.baidu.com/s/1dDpI77b
+安装好驱动城区，解开adb工具包，cmd进入adb包目录。
+关机，同时按住音量下和电源键开机，进入到fastboot模式。
+usb链接电脑，参考以下解锁：
+其中fastboot oem unlock后为16位解锁码
+解锁成功后手机会自动重启。
+进入开发者模式
+关于-&amp;gt;点击4次版本号
+Root 360一键root,其他不多说了！
+          
+        
+        </description>
     </item>
     
   </channel>

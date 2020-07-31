@@ -2,40 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ffmpeg on UNIXETC</title>
-    <link>https://unixetc.com/tags/ffmpeg/</link>
-    <description>UNIXETC (ffmpeg)</description>
+    
+    
+    
+    <link>/tags/ffmpeg/</link>
+    <description>Recent content in ffmpeg on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 07 Nov 2015 21:23:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>树莓派安装ffmpeg</title>
-      <link>https://unixetc.com/post/raspberry-pi-install-ffmpeg/</link>
+      <link>/post/raspberry-pi-install-ffmpeg/</link>
       <pubDate>Sat, 07 Nov 2015 21:23:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/raspberry-pi-install-ffmpeg/</guid>
-      <description>&lt;p&gt;先安装h264编码器&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#!/bin/bash
-cd /usr/src
-git clone git://git.videolan.org/x264
-cd x264
-./configure --host=arm-unknown-linux-gnueabi --enable-static --disable-opencl
-make
-sudo make install
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;下载源码编译安装ffmpeg&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;cd /usr/src
-git clone git://source.ffmpeg.org/ffmpeg.git
-cd ffmpeg
-sudo ./configure --arch=armel --target-os=linux --enable-gpl --enable-libx264 --enable-nonfree
-make
-sudo make install
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;由于树莓派原因，这个过程很长……很长……  建议开&lt;code&gt;screen&lt;/code&gt;，然后Ctrl+a+d&lt;/p&gt;
-</description>
+      <guid>/post/raspberry-pi-install-ffmpeg/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          先安装h264编码器
+#!/bin/bash cd /usr/src git clone git://git.videolan.org/x264 cd x264 ./configure --host=arm-unknown-linux-gnueabi --enable-static --disable-opencl make sudo make install  下载源码编译安装ffmpeg
+cd /usr/src git clone git://source.ffmpeg.org/ffmpeg.git cd ffmpeg sudo ./configure --arch=armel --target-os=linux --enable-gpl --enable-libx264 --enable-nonfree make sudo make install  由于树莓派原因，这个过程很长……很长…… 建议开screen，然后Ctrl+a+d
+          
+        
+        </description>
     </item>
     
   </channel>

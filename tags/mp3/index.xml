@@ -2,54 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mp3 on UNIXETC</title>
-    <link>https://unixetc.com/tags/mp3/</link>
-    <description>UNIXETC (mp3)</description>
+    
+    
+    
+    <link>/tags/mp3/</link>
+    <description>Recent content in mp3 on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 21 Oct 2015 11:21:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/mp3/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/mp3/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>linux下将mp3转换为ogg</title>
-      <link>https://unixetc.com/post/linux-mp3-converted-to-ogg/</link>
+      <link>/post/linux-mp3-converted-to-ogg/</link>
       <pubDate>Wed, 21 Oct 2015 11:21:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/linux-mp3-converted-to-ogg/</guid>
-      <description>&lt;p&gt;安装软件&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;apt-get install mpg321 vorbis-tools 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;使用如下命令转换&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;mpg321 tweet.mp3 -w raw &amp;amp;&amp;amp; oggenc raw -o tweet.ogg &amp;amp;&amp;amp; rm -rf raw
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;示例:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;root@hkvps:/home/res# mpg321 tweet.mp3 -w raw &amp;amp;&amp;amp; oggenc raw -o tweet.ogg &amp;amp;&amp;amp; rm -rf raw
-High Performance MPEG 1.0/2.0/2.5 Audio Player for Layer 1, 2, and 3.
-Version 0.3.2-1 (2012/03/25). Written and copyrights by Joe Drew,
-now maintained by Nanakos Chrysostomos and others.
-Uses code from various people. See &#39;README&#39; for more!
-THIS SOFTWARE COMES WITH ABSOLUTELY NO WARRANTY! USE AT YOUR OWN RISK!
-
-Playing MPEG stream from tweet.mp3 ...
-MPEG 1.0 layer III, 192 kbit/s, 44100 Hz joint-stereo
-
-[4:45] Decoding of tweet.mp3 finished.
-Opening with wav module: WAV file reader
-Encoding &amp;quot;raw&amp;quot; to
-        &amp;quot;tweet.ogg&amp;quot;
-at quality 3.00
-        [ 99.7%] [ 0m00s remaining] |
-
-Done encoding file &amp;quot;tweet.ogg&amp;quot;
-
-        File length:  4m 45.0s
-        Elapsed time: 0m 16.3s
-        Rate:         17.5056
-        Average bitrate: 112.1 kb/s
-
-root@hkvps:/home/res# ll&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <guid>/post/linux-mp3-converted-to-ogg/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          安装软件
+apt-get install mpg321 vorbis-tools  使用如下命令转换
+mpg321 tweet.mp3 -w raw &amp;amp;&amp;amp; oggenc raw -o tweet.ogg &amp;amp;&amp;amp; rm -rf raw  示例:
+root@hkvps:/home/res# mpg321 tweet.mp3 -w raw &amp;amp;&amp;amp; oggenc raw -o tweet.ogg &amp;amp;&amp;amp; rm -rf raw High Performance MPEG 1.0/2.0/2.5 Audio Player for Layer 1, 2, and 3. Version 0.3.2-1 (2012/03/25). Written and copyrights by Joe Drew, now maintained by Nanakos Chrysostomos and others. Uses code from various people. See &#39;README&#39; for more!
+          
+        
+        </description>
     </item>
     
   </channel>

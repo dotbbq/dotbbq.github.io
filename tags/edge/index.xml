@@ -2,30 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>edge on UNIXETC</title>
-    <link>https://unixetc.com/tags/edge/</link>
-    <description>UNIXETC (edge)</description>
+    
+    
+    
+    <link>/tags/edge/</link>
+    <description>Recent content in edge on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 22 Apr 2012 12:40:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/edge/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/edge/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>NokiaN900设置无线链接</title>
-      <link>https://unixetc.com/post/nokia-n900-set-up-wireless/</link>
+      <link>/post/nokia-n900-set-up-wireless/</link>
       <pubDate>Sun, 22 Apr 2012 12:40:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/nokia-n900-set-up-wireless/</guid>
-      <description>&lt;p&gt;首页点击左上角网络区域&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/3989903888.webp&#34; alt=&#34;915222263.webp&#34;&gt;&lt;/p&gt;
-&lt;p&gt;进入网络设置&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/3531008835.webp&#34; alt=&#34;2062123496.webp&#34;&gt;&lt;/p&gt;
-&lt;p&gt;在网络设置中，可以选择wifi或者GPRS链接&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/3040336154.webp&#34; alt=&#34;2811909545.webp&#34;&gt;&lt;/p&gt;
-&lt;p&gt;点击GPRS的话，将使用运营商的数据业务，点击wifi节点名的话，会出现输入密码提示，输入密码连接完成&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://unixetc.com/imgs/3147522416.webp&#34; alt=&#34;1151275348.webp&#34;&gt;&lt;/p&gt;
-</description>
+      <guid>/post/nokia-n900-set-up-wireless/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          首页点击左上角网络区域
+进入网络设置
+在网络设置中，可以选择wifi或者GPRS链接
+点击GPRS的话，将使用运营商的数据业务，点击wifi节点名的话，会出现输入密码提示，输入密码连接完成
+          
+        
+        </description>
     </item>
     
   </channel>

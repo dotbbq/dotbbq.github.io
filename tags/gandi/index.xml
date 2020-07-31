@@ -2,50 +2,49 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>gandi on UNIXETC</title>
-    <link>https://unixetc.com/tags/gandi/</link>
-    <description>UNIXETC (gandi)</description>
+    
+    
+    
+    <link>/tags/gandi/</link>
+    <description>Recent content in gandi on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 24 Sep 2015 19:23:00 +0000</lastBuildDate>
     
-    <atom:link href="https://unixetc.com/tags/gandi/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/gandi/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Gandi免费SSL证书使用方法</title>
-      <link>https://unixetc.com/post/gandi-free-ssl-certificate-usage/</link>
+      <link>/post/gandi-free-ssl-certificate-usage/</link>
       <pubDate>Thu, 24 Sep 2015 19:23:00 +0000</pubDate>
       
-      <guid>https://unixetc.com/post/gandi-free-ssl-certificate-usage/</guid>
-      <description>&lt;p&gt;首先澄清此文中的&lt;strong&gt;免费&lt;/strong&gt;不是真的免费，而是新注册或转移域名到Gandi，都可以获得标准版SSL证书一年的免费使用。&lt;/p&gt;
-&lt;p&gt;符合以上条件的话，可以进行下面操作了！&lt;/p&gt;
-&lt;p&gt;在Gandi上购买SSL证书，选择标准版，在结算的时候系统会自动判断是否免单，正常情况下会0元结单，完成后接着配置SSL证书。&lt;/p&gt;
-&lt;p&gt;首先提交CSR，这里需要自己生产CSR。&lt;/p&gt;
-&lt;p&gt;在此以&lt;strong&gt;3c.lc&lt;/strong&gt;域名为例，在Ubuntu中操作。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;openssl req -nodes -newkey rsa:2048 -sha1 -keyout 3clc.key -out 3clc.csr
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;然后根据提示填写以下内容：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Country Name (2 letter code) [AU]:                          #国家代码，中国为CN&lt;/p&gt;
-&lt;p&gt;State or Province Name (full name) [Some-State]:            #省份&lt;/p&gt;
-&lt;p&gt;Locality Name (eg, city) []:                                #城市&lt;/p&gt;
-&lt;p&gt;Organization Name (eg, company) [Internet Widgits Pty Ltd]: #组织名&lt;/p&gt;
-&lt;p&gt;Organizational Unit Name (eg, section) []:                  #部门名&lt;/p&gt;
-&lt;p&gt;Common Name (e.g. server FQDN or YOUR name) []:3c.lc        #注意，这里需要填写你的域名。&lt;/p&gt;
-&lt;p&gt;Email Address []:2b@3c.lc                                   #邮箱&lt;/p&gt;
-&lt;p&gt;Please enter the following &amp;lsquo;extra&amp;rsquo; attributes&lt;/p&gt;
-&lt;p&gt;to be sent with your certificate request&lt;/p&gt;
-&lt;p&gt;A challenge password []:                                    #注意，为了后面方便配置nginx，建议密码置空。&lt;/p&gt;
-&lt;p&gt;An optional company name []:                                #扩展组织名&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;完成后，就会生成&lt;strong&gt;3clc.key&lt;/strong&gt;和&lt;strong&gt;3clc.csr&lt;/strong&gt;两个文件。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;cat 3clc.csr
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;将显示的文件内容粘贴到Gandi提交。&lt;/p&gt;
-&lt;p&gt;接下来验证域名所有者权限，有三种方法，建议使用email验证，比较方便。&lt;/p&gt;
-&lt;p&gt;下来是凭证验证，这个得等待系统完成,完成后即可获得SSL证书一枚。&lt;/p&gt;
-&lt;p&gt;至于如何在&lt;strong&gt;Nginx&lt;/strong&gt;中使用SSL，可参考&lt;a href=&#34;https://unixetc.com/post/Nginx-configuration-SSL-certificate/&#34;&gt;Nginx配置SSL证书&lt;/a&gt;&lt;/p&gt;
-</description>
+      <guid>/post/gandi-free-ssl-certificate-usage/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          首先澄清此文中的免费不是真的免费，而是新注册或转移域名到Gandi，都可以获得标准版SSL证书一年的免费使用。
+符合以上条件的话，可以进行下面操作了！
+在Gandi上购买SSL证书，选择标准版，在结算的时候系统会自动判断是否免单，正常情况下会0元结单，完成后接着配置SSL证书。
+首先提交CSR，这里需要自己生产CSR。
+在此以3c.lc域名为例，在Ubuntu中操作。
+openssl req -nodes -newkey rsa:2048 -sha1 -keyout 3clc.key -out 3clc.csr  然后根据提示填写以下内容：
+ Country Name (2 letter code) [AU]: #国家代码，中国为CN
+State or Province Name (full name) [Some-State]: #省份
+Locality Name (eg, city) []: #城市
+Organization Name (eg, company) [Internet Widgits Pty Ltd]: #组织名
+Organizational Unit Name (eg, section) []: #部门名
+Common Name (e.g. server FQDN or YOUR name) []:3c.lc #注意，这里需要填写你的域名。
+Email Address []:2b@3c.lc #邮箱
+Please enter the following &amp;lsquo;extra&amp;rsquo; attributes
+          
+        
+        </description>
     </item>
     
   </channel>
