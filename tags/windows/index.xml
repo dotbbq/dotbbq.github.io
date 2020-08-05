@@ -28,7 +28,9 @@
         
         
         
-          本文介绍如何在Linux上安装Windows字体文件。
+          使用的系统为Ubuntu 19.10，Windows系统分区lable为sys
+参考如下操作：
+alair@e6440:~$ sudo mkdir /usr/share/fonts/winfonts [sudo] alair 的密码： alair@e6440:~$ sudo cp /media/alair/sys/Windows/Fonts/* /usr/share/fonts/winfonts/ alair@e6440:~$ sudo rm -rf /usr/share/fonts/winfonts/*.fon alair@e6440:~$ sudo mkfontscale alair@e6440:~$ sudo mkfontdir alair@e6440:~$ sudo fc-cache 打完收工！
           
         
         </description>

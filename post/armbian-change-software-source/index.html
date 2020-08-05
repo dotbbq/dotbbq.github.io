@@ -31,12 +31,20 @@ sudo apt update sudo apt upgrade -y "/>
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Armbian更改软件源"/>
-<meta name="twitter:description" content="本文介绍了斐讯N1安装Armbian后，如何更改apt软件源。"/>
+<meta name="twitter:description" content="上一篇文章介绍了如何在斐迅N1上安装Armbian，现在介绍如何更改软件源为国内镜像。
+编辑/etc/apt/sources.list替换为以下内容：
+deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free deb http://ftp.debian.org/debian jessie-backports main 接着编辑/etc/apt/sources.list.d/armbian.list ，替换为以下内容：
+deb http://mirrors.tuna.tsinghua.edu.cn/armbian/ buster main buster-utils buster-desktop 保存后，刷新缓存更新系统：
+sudo apt update sudo apt upgrade -y "/>
 
 
 
 <meta property="og:title" content="Armbian更改软件源" />
-<meta property="og:description" content="本文介绍了斐讯N1安装Armbian后，如何更改apt软件源。" />
+<meta property="og:description" content="上一篇文章介绍了如何在斐迅N1上安装Armbian，现在介绍如何更改软件源为国内镜像。
+编辑/etc/apt/sources.list替换为以下内容：
+deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free deb http://ftp.debian.org/debian jessie-backports main 接着编辑/etc/apt/sources.list.d/armbian.list ，替换为以下内容：
+deb http://mirrors.tuna.tsinghua.edu.cn/armbian/ buster main buster-utils buster-desktop 保存后，刷新缓存更新系统：
+sudo apt update sudo apt upgrade -y " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/armbian-change-software-source/" />
 <meta property="article:published_time" content="2019-11-05T00:00:00+00:00" />

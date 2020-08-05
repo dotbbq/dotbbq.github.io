@@ -32,12 +32,22 @@ echo &amp;quot;deb http://repo.yandex.ru/yandex-disk/deb/ stable main&amp;quot; 
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="YandexDisk命令行客户端"/>
-<meta name="twitter:description" content="本文介绍如何在Linux下安装并使用YandexDisk命令行客户端"/>
+<meta name="twitter:description" content="Linux的Yandex.Disk控制台客户端使您可以在Yandex.Disk上管理文件，而无需使用窗口界面或支持WebDAV的程序。
+与WebDAV连接相比，使用控制台客户端的优势：
+ Low system resource requirements. Faster file reading and writing speeds. Faster syncing with the Yandex.Disk server. Manage files offline.  控制台客户端可以安装在以下操作系统上：
+ Ubuntu Linux 8.04 及以上版本 Debian 5 及以上版本 Fedora 9 及以上版本 Red Hat Enterprise Linux 6 及以上版本 CentOS 6 及以上版本  安装客户端 要自动安装客户端，请使用命令进行快速软件包安装。
+.deb软件包 安装示例
+echo &quot;deb http://repo.yandex.ru/yandex-disk/deb/ stable main&quot; | sudo tee -a /etc/apt/sources.list.d/yandex-disk.list &gt; /dev/null wget http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG -O- | sudo apt-key add - sudo apt-get update sudo apt-get install -y yandex-disk 要手动安装客户端，请从下面的相应链接下载相应版本的软件包。"/>
 
 
 
 <meta property="og:title" content="YandexDisk命令行客户端" />
-<meta property="og:description" content="本文介绍如何在Linux下安装并使用YandexDisk命令行客户端" />
+<meta property="og:description" content="Linux的Yandex.Disk控制台客户端使您可以在Yandex.Disk上管理文件，而无需使用窗口界面或支持WebDAV的程序。
+与WebDAV连接相比，使用控制台客户端的优势：
+ Low system resource requirements. Faster file reading and writing speeds. Faster syncing with the Yandex.Disk server. Manage files offline.  控制台客户端可以安装在以下操作系统上：
+ Ubuntu Linux 8.04 及以上版本 Debian 5 及以上版本 Fedora 9 及以上版本 Red Hat Enterprise Linux 6 及以上版本 CentOS 6 及以上版本  安装客户端 要自动安装客户端，请使用命令进行快速软件包安装。
+.deb软件包 安装示例
+echo &quot;deb http://repo.yandex.ru/yandex-disk/deb/ stable main&quot; | sudo tee -a /etc/apt/sources.list.d/yandex-disk.list &gt; /dev/null wget http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG -O- | sudo apt-key add - sudo apt-get update sudo apt-get install -y yandex-disk 要手动安装客户端，请从下面的相应链接下载相应版本的软件包。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/post/yandex-disk-console-client-for-linux/" />
 <meta property="article:published_time" content="2020-02-29T00:00:00+00:00" />

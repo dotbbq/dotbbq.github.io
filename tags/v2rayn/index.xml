@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>V2rayN on UNIXETC</title>
+    
+    
+    
+    <link>/tags/v2rayn/</link>
+    <description>Recent content in V2rayN on UNIXETC</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 30 Jul 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/v2rayn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Nginx V2ray and WebSocket</title>
+      <link>/post/nginx-v2ray-websocket/</link>
+      <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/nginx-v2ray-websocket/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          安装v2ray/nginx v2ray安装可以参考Ubuntu中v2ray客户端配置实例.
+Nginx安装推荐使用OneinStack一键安装脚本
+准备好使用的域名，这里以v.fuckgfw.cn为例。
+v2ray/nginx服务端配置 v2ray安装好后，服务端配置/etc/v2ray/config.json如下:
+{ &amp;quot;inbounds&amp;quot;: [{ &amp;quot;port&amp;quot;: 99999, //代理端口号 &amp;quot;listen&amp;quot;: &amp;quot;127.0.0.1&amp;quot;, &amp;quot;protocol&amp;quot;: &amp;quot;vmess&amp;quot;, &amp;quot;settings&amp;quot;: { &amp;quot;clients&amp;quot;: [{ &amp;quot;id&amp;quot;: &amp;quot;5c1eed18-fse4-41fs-9as9-e85s45bds9ef&amp;quot;, &amp;quot;level&amp;quot;: 1, &amp;quot;alterId&amp;quot;: 64 }] }, &amp;quot;streamSettings&amp;quot;: { &amp;quot;network&amp;quot;: &amp;quot;ws&amp;quot;, &amp;quot;wsSettings&amp;quot;: { &amp;quot;path&amp;quot;: &amp;quot;/fcgfw&amp;quot; //代理目录 } } }], &amp;quot;outbounds&amp;quot;: [{ &amp;quot;protocol&amp;quot;: &amp;quot;freedom&amp;quot;, &amp;quot;settings&amp;quot;: {} }, { &amp;quot;protocol&amp;quot;: &amp;quot;blackhole&amp;quot;, &amp;quot;settings&amp;quot;: {}, &amp;quot;tag&amp;quot;: &amp;quot;blocked&amp;quot; }], &amp;quot;routing&amp;quot;: { &amp;quot;rules&amp;quot;: [{ &amp;quot;type&amp;quot;: &amp;quot;field&amp;quot;, &amp;quot;ip&amp;quot;: [&amp;quot;geoip:private&amp;quot;], &amp;quot;outboundTag&amp;quot;: &amp;quot;blocked&amp;quot; }] } } 使用OneinStack一键脚本新建一个站点，域名为v.fuckgfw.cn，采用SSL加密模式，完成后编辑/usr/local/nginx/conf/vhost/v.fuckgfw.cn.conf文件
+参考以下修改：
+          
+        
+        </description>
+    </item>
+    
+  </channel>
+</rss>

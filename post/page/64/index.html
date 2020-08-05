@@ -133,6 +133,8 @@
           
             #<a href="/tags/websocket/">WebSocket</a>&nbsp;
           
+            #<a href="/tags/v2rayn/">V2rayN</a>&nbsp;
+          
         </span>
       
 
@@ -140,7 +142,14 @@
 
       <div class="post-content">
         
-          本文介绍如何安装v2ray和nginx，并配置v2ray代理模式为websocket。
+          
+            安装v2ray/nginx v2ray安装可以参考Ubuntu中v2ray客户端配置实例.
+Nginx安装推荐使用OneinStack一键安装脚本
+准备好使用的域名，这里以v.fuckgfw.cn为例。
+v2ray/nginx服务端配置 v2ray安装好后，服务端配置/etc/v2ray/config.json如下:
+{ &quot;inbounds&quot;: [{ &quot;port&quot;: 99999, //代理端口号 &quot;listen&quot;: &quot;127.0.0.1&quot;, &quot;protocol&quot;: &quot;vmess&quot;, &quot;settings&quot;: { &quot;clients&quot;: [{ &quot;id&quot;: &quot;5c1eed18-fse4-41fs-9as9-e85s45bds9ef&quot;, &quot;level&quot;: 1, &quot;alterId&quot;: 64 }] }, &quot;streamSettings&quot;: { &quot;network&quot;: &quot;ws&quot;, &quot;wsSettings&quot;: { &quot;path&quot;: &quot;/fcgfw&quot; //代理目录 } } }], &quot;outbounds&quot;: [{ &quot;protocol&quot;: &quot;freedom&quot;, &quot;settings&quot;: {} }, { &quot;protocol&quot;: &quot;blackhole&quot;, &quot;settings&quot;: {}, &quot;tag&quot;: &quot;blocked&quot; }], &quot;routing&quot;: { &quot;rules&quot;: [{ &quot;type&quot;: &quot;field&quot;, &quot;ip&quot;: [&quot;geoip:private&quot;], &quot;outboundTag&quot;: &quot;blocked&quot; }] } } 使用OneinStack一键脚本新建一个站点，域名为v.fuckgfw.cn，采用SSL加密模式，完成后编辑/usr/local/nginx/conf/vhost/v.fuckgfw.cn.conf文件
+参考以下修改：
+          
         
       </div>
       
@@ -184,7 +193,9 @@
 
       <div class="post-content">
         
-          斐讯N1系统信息和UNIXBENCH跑分
+          
+            系统信息 alair@aml:~ $ inxi -F System: Host: aml Kernel: 5.5.0-rc6-aml-s9xxx aarch64 bits: 32 Console: tty 0 Distro: Ubuntu 18.04.4 LTS Machine: No /sys/class/dmi; using dmidecode: dmidecode is not installed. CPU: Quad core ARMv8 rev 4 (v8l) (-MCP-) (ARM) clock speeds: max: 1512 MHz 1: 1512 MHz 2: 1512 MHz 3: 1512 MHz 4: 1512 MHz Graphics: Card: Failed to Detect Video Card! Display Server: N/A driver: N/A tty size: 254x72 Advanced Data: N/A out of X Audio: Card AMLGX driver: AMLGX Sound: ALSA v: k5.
+          
         
       </div>
       
@@ -230,7 +241,14 @@
 
       <div class="post-content">
         
-          本文介绍如何在Linux下安装并使用YandexDisk命令行客户端
+          
+            Linux的Yandex.Disk控制台客户端使您可以在Yandex.Disk上管理文件，而无需使用窗口界面或支持WebDAV的程序。
+与WebDAV连接相比，使用控制台客户端的优势：
+Low system resource requirements. Faster file reading and writing speeds. Faster syncing with the Yandex.Disk server. Manage files offline.  控制台客户端可以安装在以下操作系统上：
+Ubuntu Linux 8.04 及以上版本 Debian 5 及以上版本 Fedora 9 及以上版本 Red Hat Enterprise Linux 6 及以上版本 CentOS 6 及以上版本  安装客户端 要自动安装客户端，请使用命令进行快速软件包安装。
+.deb软件包 安装示例
+echo &quot;deb <a href="http://repo.yandex.ru/yandex-disk/deb/">http://repo.yandex.ru/yandex-disk/deb/</a> stable main&quot; | sudo tee -a /etc/apt/sources.list.d/yandex-disk.list &gt; /dev/null wget <a href="http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG">http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG</a> -O- | sudo apt-key add - sudo apt-get update sudo apt-get install -y yandex-disk 要手动安装客户端，请从下面的相应链接下载相应版本的软件包。
+          
         
       </div>
       
@@ -272,7 +290,7 @@
 
       <div class="post-content">
         
-          本文介绍如何在CentOS中通过repo的方式安装Hugo
+          
         
       </div>
       
@@ -320,7 +338,7 @@
 
       <div class="post-content">
         
-          本文介绍如何在Linux下gnome美化相关方法，包括主题、图标、壁纸等。
+          
         
       </div>
       
@@ -360,7 +378,7 @@
 
       <div class="post-content">
         
-          本文介绍如何在Linux上安装Windows字体文件。
+          
         
       </div>
       
@@ -412,7 +430,7 @@
 
       <div class="post-content">
         
-          本文介绍了斐讯N1安装Armbian后，如何更改apt软件源。
+          
         
       </div>
       
@@ -464,7 +482,28 @@
 
       <div class="post-content">
         
-          本文介绍了如何为斐讯N1安装Armbian
+          
+            最近入手斐讯N1一枚，买的是白色未拆封，到手版本为V2.19_0307_NS，刚好省了降级的麻烦，以下为斐讯N1安装armbian操作过程。
+开启adb调试模式 将N1通过HDMI连接显示器，将鼠标插到N1的USB口上，开机后用鼠标点击系统版本:V2.19_0307_NS区域，多次点击后会出现提示&quot;开启adb调试模式”，即可。
+从此下载minimal_adb_fastboot，下载后安装。
+准备刷机U盘 准备一个不小区8G的U盘，下载镜像写入工具balenaEtcher，下载后安装。
+下载Armbian镜像，在此以Armbian_5.98_Aml-g12_Debian_buster_dev_5.4.0-rc4_20191025.img.xz为例，镜像为debian最新版，不带桌面系统。如果需要其他的可以从此处自行下载。
+Armbian_5.98_Aml-g12_Debian_buster_dev_5.4.0-rc4_20191025.img.xz
+将下载后的镜像文件用balenaEtcher写入U盘，写入完成后先别拔掉U盘，进入到BOOT分区，找到uEnv.ini文件，将dtb_name行改为如下内容：
+dtb_name=/dtb/amlogic/meson-gxl-s905d-phicomm-n1.dtb
+然后退出U盘备用。
+如果你的BOOT分区下/dtd/amlogic/目录中没有meson-gxl-s905d-phicomm-n1.dtb文件，那么可以点击meson-gxl-s905d-phicomm-n1.dtb下载放入相应目录即可。
+从U盘引导Armbian 将制作好的系统U盘插到靠近HDMI一侧的U口，另外一个U口插入双公头的刷机线连接电脑，将N1通过HDMI连接显示器，并且插好网线然后开机。
+开机后可以从显示器上看到盒子的IP地址，电脑上运行Minimal ADB and Fastboot，然后输入adb connect 192.168.1.54命令连接盒子，连接成功后会有如下提示：
+connected to 192.168.1.54:5555
+然后输入adb shell reboot update开始从U盘引导Armbian系统，盒子重启后成功引导armbian，此时可以将usb刷机线拔掉，插入一个外接键盘，开始后面操作。
+Armbian系统默认账号为root，密码为1234，按照提示输入账号信息进行登录，登录后会有更改默认密码提示，按照提示更改默认密码。
+接下来会有新建账号提示:
+Creating a new user account. Press &lt;Ctrl-C&gt; to abort Please provide a username (eg. your forename): 可以按照该提示新建账号，或者按Ctrl+c终止，继续用root账号登录。
+将Armbian安装到N1中 以上只是从U盘成功引导登录Armbian，接下来我们将Armbian安装到N1内置存储(eMMC)，即可拔掉U盘了。
+如果是通过root登录的话，那么直接运行root目录下install.sh即可安装，如下：
+root@aml:~# ./install. sh Start script create MBR and filesystem /dev/mmcblk1 Start backup u-boot default 4＋0 records in 4＋0 records out 4194304 bytes（4.
+          
         
       </div>
       
@@ -661,7 +700,7 @@
 
       <div class="post-content">
         
-          本文介绍了如何破解西数Mycloud的app安装，以达到安装第三方APP的目的。
+          
         
       </div>
       
@@ -709,7 +748,7 @@
 
       <div class="post-content">
         
-          本文介绍了如何判断西数Mycloud是第一代还是第二代
+          
         
       </div>
       
@@ -1143,8 +1182,9 @@ $tar zxf libwebp-1.0.2-linux-x86-64.tar.gz $cd libwebp-1.0.2-linux-x86-64 $cd bi
       <div class="post-content">
         
           
-            首先使用bash &lt;(curl -L -s <a href="https://install.direct/go.sh">https://install.direct/go.sh</a>)来快捷安装v2ray，如下：
-root@vm:~# bash &lt;(curl -L -s <a href="https://install.direct/go.sh">https://install.direct/go.sh</a>) Installing V2Ray v4.18.0 on x86_64 Downloading V2Ray: <a href="https://github.com/v2ray/v2ray-core/releases/download/v4.18.0/v2ray-linux-64.zip">https://github.com/v2ray/v2ray-core/releases/download/v4.18.0/v2ray-linux-64.zip</a> % Total % Received % Xferd Average Speed Time Time Time Current Dload Upload Total Spent Left Speed 100 608 0 608 0 0 581 0 &ndash;:&ndash;:&ndash; 0:00:01 &ndash;:&ndash;:&ndash; 581 100 10.5M 100 10.5M 0 0 172k 0 0:01:02 0:01:02 &ndash;:&ndash;:&ndash; 194k Extracting V2Ray package to /tmp/v2ray. Archive: /tmp/v2ray/v2ray.zip inflating: /tmp/v2ray/config.json creating: /tmp/v2ray/doc/ inflating: /tmp/v2ray/doc/readme.
+            推荐使用WebSocket传输模式，详细配置可参考Nginx V2ray and WebSocket.
+首先使用bash &lt;(curl -L -s <a href="https://install.direct/go.sh">https://install.direct/go.sh</a>)来快捷安装v2ray，如下：
+root@vm:~# bash &lt;(curl -L -s <a href="https://install.direct/go.sh">https://install.direct/go.sh</a>) Installing V2Ray v4.18.0 on x86_64 Downloading V2Ray: <a href="https://github.com/v2ray/v2ray-core/releases/download/v4.18.0/v2ray-linux-64.zip">https://github.com/v2ray/v2ray-core/releases/download/v4.18.0/v2ray-linux-64.zip</a> % Total % Received % Xferd Average Speed Time Time Time Current Dload Upload Total Spent Left Speed 100 608 0 608 0 0 581 0 &ndash;:&ndash;:&ndash; 0:00:01 &ndash;:&ndash;:&ndash; 581 100 10.5M 100 10.5M 0 0 172k 0 0:01:02 0:01:02 &ndash;:&ndash;:&ndash; 194k Extracting V2Ray package to /tmp/v2ray. Archive: /tmp/v2ray/v2ray.
           
         
       </div>

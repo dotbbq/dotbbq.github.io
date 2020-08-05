@@ -28,7 +28,11 @@
         
         
         
-          本文介绍了斐讯N1安装Armbian后，如何更改apt软件源。
+          上一篇文章介绍了如何在斐迅N1上安装Armbian，现在介绍如何更改软件源为国内镜像。
+编辑/etc/apt/sources.list替换为以下内容：
+deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free deb http://ftp.debian.org/debian jessie-backports main 接着编辑/etc/apt/sources.list.d/armbian.list ，替换为以下内容：
+deb http://mirrors.tuna.tsinghua.edu.cn/armbian/ buster main buster-utils buster-desktop 保存后，刷新缓存更新系统：
+sudo apt update sudo apt upgrade -y 
           
         
         </description>

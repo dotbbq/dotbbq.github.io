@@ -28,7 +28,12 @@
         
         
         
-          本文介绍如何在Linux下安装并使用YandexDisk命令行客户端
+          Linux的Yandex.Disk控制台客户端使您可以在Yandex.Disk上管理文件，而无需使用窗口界面或支持WebDAV的程序。
+与WebDAV连接相比，使用控制台客户端的优势：
+ Low system resource requirements. Faster file reading and writing speeds. Faster syncing with the Yandex.Disk server. Manage files offline.  控制台客户端可以安装在以下操作系统上：
+ Ubuntu Linux 8.04 及以上版本 Debian 5 及以上版本 Fedora 9 及以上版本 Red Hat Enterprise Linux 6 及以上版本 CentOS 6 及以上版本  安装客户端 要自动安装客户端，请使用命令进行快速软件包安装。
+.deb软件包 安装示例
+echo &amp;quot;deb http://repo.yandex.ru/yandex-disk/deb/ stable main&amp;quot; | sudo tee -a /etc/apt/sources.list.d/yandex-disk.list &amp;gt; /dev/null wget http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG -O- | sudo apt-key add - sudo apt-get update sudo apt-get install -y yandex-disk 要手动安装客户端，请从下面的相应链接下载相应版本的软件包。
           
         
         </description>
@@ -48,7 +53,10 @@
         
         
         
-          本文介绍如何在CentOS中通过repo的方式安装Hugo
+          Hugo是由Go语言实现的静态网站生成器。简单、易用、高效、易扩展、快速部署。
+新建hugo.repo文件，sudo vi /etc/yum.repos.d/hugo.repo，填入以下内容。
+[daftaupe-hugo] name=Copr repo for hugo owned by daftaupe baseurl=https://copr-be.cloud.fedoraproject.org/results/daftaupe/hugo/epel-7-$basearch/ type=rpm-md skip_if_unavailable=True gpgcheck=1 gpgkey=https://copr-be.cloud.fedoraproject.org/results/daftaupe/hugo/pubkey.gpg repo_gpgcheck=0 enabled=1 保存后更新安装Hugo
+sudo yum update sudo yum install hugo -y 
           
         
         </description>

@@ -28,7 +28,12 @@
         
         
         
-          本文介绍如何安装v2ray和nginx，并配置v2ray代理模式为websocket。
+          安装v2ray/nginx v2ray安装可以参考Ubuntu中v2ray客户端配置实例.
+Nginx安装推荐使用OneinStack一键安装脚本
+准备好使用的域名，这里以v.fuckgfw.cn为例。
+v2ray/nginx服务端配置 v2ray安装好后，服务端配置/etc/v2ray/config.json如下:
+{ &amp;quot;inbounds&amp;quot;: [{ &amp;quot;port&amp;quot;: 99999, //代理端口号 &amp;quot;listen&amp;quot;: &amp;quot;127.0.0.1&amp;quot;, &amp;quot;protocol&amp;quot;: &amp;quot;vmess&amp;quot;, &amp;quot;settings&amp;quot;: { &amp;quot;clients&amp;quot;: [{ &amp;quot;id&amp;quot;: &amp;quot;5c1eed18-fse4-41fs-9as9-e85s45bds9ef&amp;quot;, &amp;quot;level&amp;quot;: 1, &amp;quot;alterId&amp;quot;: 64 }] }, &amp;quot;streamSettings&amp;quot;: { &amp;quot;network&amp;quot;: &amp;quot;ws&amp;quot;, &amp;quot;wsSettings&amp;quot;: { &amp;quot;path&amp;quot;: &amp;quot;/fcgfw&amp;quot; //代理目录 } } }], &amp;quot;outbounds&amp;quot;: [{ &amp;quot;protocol&amp;quot;: &amp;quot;freedom&amp;quot;, &amp;quot;settings&amp;quot;: {} }, { &amp;quot;protocol&amp;quot;: &amp;quot;blackhole&amp;quot;, &amp;quot;settings&amp;quot;: {}, &amp;quot;tag&amp;quot;: &amp;quot;blocked&amp;quot; }], &amp;quot;routing&amp;quot;: { &amp;quot;rules&amp;quot;: [{ &amp;quot;type&amp;quot;: &amp;quot;field&amp;quot;, &amp;quot;ip&amp;quot;: [&amp;quot;geoip:private&amp;quot;], &amp;quot;outboundTag&amp;quot;: &amp;quot;blocked&amp;quot; }] } } 使用OneinStack一键脚本新建一个站点，域名为v.fuckgfw.cn，采用SSL加密模式，完成后编辑/usr/local/nginx/conf/vhost/v.fuckgfw.cn.conf文件
+参考以下修改：
           
         
         </description>
@@ -48,7 +53,7 @@
         
         
         
-          斐讯N1系统信息和UNIXBENCH跑分
+          系统信息 alair@aml:~ $ inxi -F System: Host: aml Kernel: 5.5.0-rc6-aml-s9xxx aarch64 bits: 32 Console: tty 0 Distro: Ubuntu 18.04.4 LTS Machine: No /sys/class/dmi; using dmidecode: dmidecode is not installed. CPU: Quad core ARMv8 rev 4 (v8l) (-MCP-) (ARM) clock speeds: max: 1512 MHz 1: 1512 MHz 2: 1512 MHz 3: 1512 MHz 4: 1512 MHz Graphics: Card: Failed to Detect Video Card! Display Server: N/A driver: N/A tty size: 254x72 Advanced Data: N/A out of X Audio: Card AMLGX driver: AMLGX Sound: ALSA v: k5.
           
         
         </description>
@@ -68,7 +73,12 @@
         
         
         
-          本文介绍如何在Linux下安装并使用YandexDisk命令行客户端
+          Linux的Yandex.Disk控制台客户端使您可以在Yandex.Disk上管理文件，而无需使用窗口界面或支持WebDAV的程序。
+与WebDAV连接相比，使用控制台客户端的优势：
+ Low system resource requirements. Faster file reading and writing speeds. Faster syncing with the Yandex.Disk server. Manage files offline.  控制台客户端可以安装在以下操作系统上：
+ Ubuntu Linux 8.04 及以上版本 Debian 5 及以上版本 Fedora 9 及以上版本 Red Hat Enterprise Linux 6 及以上版本 CentOS 6 及以上版本  安装客户端 要自动安装客户端，请使用命令进行快速软件包安装。
+.deb软件包 安装示例
+echo &amp;quot;deb http://repo.yandex.ru/yandex-disk/deb/ stable main&amp;quot; | sudo tee -a /etc/apt/sources.list.d/yandex-disk.list &amp;gt; /dev/null wget http://repo.yandex.ru/yandex-disk/YANDEX-DISK-KEY.GPG -O- | sudo apt-key add - sudo apt-get update sudo apt-get install -y yandex-disk 要手动安装客户端，请从下面的相应链接下载相应版本的软件包。
           
         
         </description>
@@ -88,7 +98,10 @@
         
         
         
-          本文介绍如何在CentOS中通过repo的方式安装Hugo
+          Hugo是由Go语言实现的静态网站生成器。简单、易用、高效、易扩展、快速部署。
+新建hugo.repo文件，sudo vi /etc/yum.repos.d/hugo.repo，填入以下内容。
+[daftaupe-hugo] name=Copr repo for hugo owned by daftaupe baseurl=https://copr-be.cloud.fedoraproject.org/results/daftaupe/hugo/epel-7-$basearch/ type=rpm-md skip_if_unavailable=True gpgcheck=1 gpgkey=https://copr-be.cloud.fedoraproject.org/results/daftaupe/hugo/pubkey.gpg repo_gpgcheck=0 enabled=1 保存后更新安装Hugo
+sudo yum update sudo yum install hugo -y 
           
         
         </description>
@@ -108,7 +121,12 @@
         
         
         
-          本文介绍如何在Linux下gnome美化相关方法，包括主题、图标、壁纸等。
+          安装必要软件 sudo apt install gnome-tweak-tool chrome-gnome-shell 安装Gnome Shell Extensions 使用Firefox浏览https://extensions.gnome.org/，第一次访问根据提示安装Firefox插件，如下图:
+安装完成后，访问https://extensions.gnome.org/搜索安装以下三个GnomeShellExtension
+ User Themes 加载用户主题，加载目录为~/.local/share/themes Dash to Dock 定制 Dash/Dock Gnome Global Application Menu Gnome全局菜单  安装方法如下，进入到扩展详情后，点击标题后的开关，按照提示安装即可
+安装主题 访问https://www.gnome-look.org/，在GTK3 Themes分类下下载主题，下载后解压拷贝至~/.local/share/themes下，然后打开gnome-tweak，在外观中即可选择已安装的主题。
+在~/.local/share/下新建themes、icons和fonts三个目录，分别对应主题、图标、字体，这些资源都可以在https://www.gnome-look.org/找得到。
+以下为本人的桌面截图，仅供参考：
           
         
         </description>
@@ -128,7 +146,9 @@
         
         
         
-          本文介绍如何在Linux上安装Windows字体文件。
+          使用的系统为Ubuntu 19.10，Windows系统分区lable为sys
+参考如下操作：
+alair@e6440:~$ sudo mkdir /usr/share/fonts/winfonts [sudo] alair 的密码： alair@e6440:~$ sudo cp /media/alair/sys/Windows/Fonts/* /usr/share/fonts/winfonts/ alair@e6440:~$ sudo rm -rf /usr/share/fonts/winfonts/*.fon alair@e6440:~$ sudo mkfontscale alair@e6440:~$ sudo mkfontdir alair@e6440:~$ sudo fc-cache 打完收工！
           
         
         </description>
@@ -148,7 +168,11 @@
         
         
         
-          本文介绍了斐讯N1安装Armbian后，如何更改apt软件源。
+          上一篇文章介绍了如何在斐迅N1上安装Armbian，现在介绍如何更改软件源为国内镜像。
+编辑/etc/apt/sources.list替换为以下内容：
+deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free # deb-src https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free deb http://ftp.debian.org/debian jessie-backports main 接着编辑/etc/apt/sources.list.d/armbian.list ，替换为以下内容：
+deb http://mirrors.tuna.tsinghua.edu.cn/armbian/ buster main buster-utils buster-desktop 保存后，刷新缓存更新系统：
+sudo apt update sudo apt upgrade -y 
           
         
         </description>
@@ -168,7 +192,26 @@
         
         
         
-          本文介绍了如何为斐讯N1安装Armbian
+          最近入手斐讯N1一枚，买的是白色未拆封，到手版本为V2.19_0307_NS，刚好省了降级的麻烦，以下为斐讯N1安装armbian操作过程。
+开启adb调试模式 将N1通过HDMI连接显示器，将鼠标插到N1的USB口上，开机后用鼠标点击系统版本:V2.19_0307_NS区域，多次点击后会出现提示&amp;quot;开启adb调试模式&amp;rdquo;，即可。
+从此下载minimal_adb_fastboot，下载后安装。
+准备刷机U盘 准备一个不小区8G的U盘，下载镜像写入工具balenaEtcher，下载后安装。
+下载Armbian镜像，在此以Armbian_5.98_Aml-g12_Debian_buster_dev_5.4.0-rc4_20191025.img.xz为例，镜像为debian最新版，不带桌面系统。如果需要其他的可以从此处自行下载。
+Armbian_5.98_Aml-g12_Debian_buster_dev_5.4.0-rc4_20191025.img.xz
+将下载后的镜像文件用balenaEtcher写入U盘，写入完成后先别拔掉U盘，进入到BOOT分区，找到uEnv.ini文件，将dtb_name行改为如下内容：
+ dtb_name=/dtb/amlogic/meson-gxl-s905d-phicomm-n1.dtb
+ 然后退出U盘备用。
+如果你的BOOT分区下/dtd/amlogic/目录中没有meson-gxl-s905d-phicomm-n1.dtb文件，那么可以点击meson-gxl-s905d-phicomm-n1.dtb下载放入相应目录即可。
+从U盘引导Armbian 将制作好的系统U盘插到靠近HDMI一侧的U口，另外一个U口插入双公头的刷机线连接电脑，将N1通过HDMI连接显示器，并且插好网线然后开机。
+开机后可以从显示器上看到盒子的IP地址，电脑上运行Minimal ADB and Fastboot，然后输入adb connect 192.168.1.54命令连接盒子，连接成功后会有如下提示：
+ connected to 192.168.1.54:5555
+ 然后输入adb shell reboot update开始从U盘引导Armbian系统，盒子重启后成功引导armbian，此时可以将usb刷机线拔掉，插入一个外接键盘，开始后面操作。
+Armbian系统默认账号为root，密码为1234，按照提示输入账号信息进行登录，登录后会有更改默认密码提示，按照提示更改默认密码。
+接下来会有新建账号提示:
+Creating a new user account. Press &amp;lt;Ctrl-C&amp;gt; to abort Please provide a username (eg. your forename): 可以按照该提示新建账号，或者按Ctrl+c终止，继续用root账号登录。
+将Armbian安装到N1中 以上只是从U盘成功引导登录Armbian，接下来我们将Armbian安装到N1内置存储(eMMC)，即可拔掉U盘了。
+如果是通过root登录的话，那么直接运行root目录下install.sh即可安装，如下：
+ root@aml:~# ./install. sh Start script create MBR and filesystem /dev/mmcblk1 Start backup u-boot default 4＋0 records in 4＋0 records out 4194304 bytes（4.
           
         
         </description>
@@ -253,7 +296,12 @@ Y913刷机  将手机关机，进入FASTBOOT模式连接电脑 下载对应版�
         
         
         
-          本文介绍了如何破解西数Mycloud的app安装，以达到安装第三方APP的目的。
+          感谢俄罗斯大神Fox_exe提供破解方法以及软件。
+破解方法：
+ 登录网页版后台 在URL后输入以下内容： javascript:APP_INSTALL_FUNCTION=1; APPS_EULA=1; check_app_eula(); 备用方法 按[ctrl] + [shift] + [i], 进入 &amp;ldquo;Console&amp;rdquo; , 输入以下内容按回车键： APP_INSTALL_FUNCTION=1; APPS_EULA=1; check_app_eula(); 进入应用页，安装&amp;quot;WD_Crack&amp;rdquo;，下载地址。 刷新页面后就可以安装其他三方app。  一些三方软件
+以下为部分软件清单，详细清单请转至下载目录&amp;raquo;
+ WDMyCloud_AcronisTrueImage_2015.bin WDMyCloud_Adminer_4.2.5.bin WDMyCloud_Arcus_2.5325088.bin WDMyCloud_BitTorrentSync_2.3.8.bin WDMyCloud_ChrootedDebian_8.0-1.bin WDMyCloud_CustomAppList_0.5.bin WDMyCloud_DVBLink_5.50.bin WDMyCloud_Dropbox_2.00.bin WDMyCloud_IceCast_1.04.bin WDMyCloud_Joomla_1.03.bin WDMyCloud_MediaWiki_1.23.15.bin WDMyCloud_QuikFynd2_2.0.1.bin WDMyCloud_Sitebar_3-1.bin WDMyCloud_SqueezeCenter_1.03.bin WDMyCloud_Transmission_2.92-2.bin WDMyCloud_UtilsUpdate-extras_1.0.0.bin WDMyCloud_UtilsUpdate_17.bin WDMyCloud_WDFacebook_0.1.bin WDMyCloud_WDSleepFix_1.0.bin WDMyCloud_WDTimeline_0.1.bin WDMyCloud_WordPress_1.03.bin WDMyCloud_WordPress_4.7.2.bin WDMyCloud_WordPress_4.7.bin WDMyCloud_Z-Way-Server_2.22.bin WDMyCloud_aMule_1.05.bin WDMyCloud_abFiles_1.55.bin WDMyCloud_cdc-acm_0.1.bin WDMyCloud_clamAV_1.12.bin WDMyCloud_cops_1.0.1.bin WDMyCloud_git_1.40.bin WDMyCloud_hamachi_2.1.0.174.bin WDMyCloud_nzbget_1.23.bin WDMyCloud_pawfaliki_0.5.2-2.bin WDMyCloud_phormer_3.3.1-1.bin WDMyCloud_phpBB_1.03.bin WDMyCloud_phpMyAdmin_4.0.10.18.bin WDMyCloud_phpSysInfo_3.2.6-2.bin WDMyCloud_plexmediaserver_1.16.0.1226.bin
+ 
           
         
         </description>
@@ -273,7 +321,10 @@ Y913刷机  将手机关机，进入FASTBOOT模式连接电脑 下载对应版�
         
         
         
-          本文介绍了如何判断西数Mycloud是第一代还是第二代
+          西数MyCloud共出了两代，那么如何判断呢？
+看系统版本 第一代的是3.x/4.x，第二代的是2.x
+看CPU信息 SSH登录MyCloud后，通过cat /proc/cpuinfo检查CPU信息
+ 第一代是Comcerto 2000 EVM 第二代是 Marvell Armada 375 (Device Tree)   
           
         
         </description>
@@ -506,8 +557,9 @@ pkg update pkg upgrade
         
         
         
-          首先使用bash &amp;lt;(curl -L -s https://install.direct/go.sh)来快捷安装v2ray，如下：
-root@vm:~# bash &amp;lt;(curl -L -s https://install.direct/go.sh) Installing V2Ray v4.18.0 on x86_64 Downloading V2Ray: https://github.com/v2ray/v2ray-core/releases/download/v4.18.0/v2ray-linux-64.zip % Total % Received % Xferd Average Speed Time Time Time Current Dload Upload Total Spent Left Speed 100 608 0 608 0 0 581 0 --:--:-- 0:00:01 --:--:-- 581 100 10.5M 100 10.5M 0 0 172k 0 0:01:02 0:01:02 --:--:-- 194k Extracting V2Ray package to /tmp/v2ray. Archive: /tmp/v2ray/v2ray.zip inflating: /tmp/v2ray/config.json creating: /tmp/v2ray/doc/ inflating: /tmp/v2ray/doc/readme.
+          推荐使用WebSocket传输模式，详细配置可参考Nginx V2ray and WebSocket.
+首先使用bash &amp;lt;(curl -L -s https://install.direct/go.sh)来快捷安装v2ray，如下：
+root@vm:~# bash &amp;lt;(curl -L -s https://install.direct/go.sh) Installing V2Ray v4.18.0 on x86_64 Downloading V2Ray: https://github.com/v2ray/v2ray-core/releases/download/v4.18.0/v2ray-linux-64.zip % Total % Received % Xferd Average Speed Time Time Time Current Dload Upload Total Spent Left Speed 100 608 0 608 0 0 581 0 --:--:-- 0:00:01 --:--:-- 581 100 10.5M 100 10.5M 0 0 172k 0 0:01:02 0:01:02 --:--:-- 194k Extracting V2Ray package to /tmp/v2ray. Archive: /tmp/v2ray/v2ray.
           
         
         </description>
