@@ -36,7 +36,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" /><meta property="og:site_name" content="UNIXETC" />
+<meta property="og:updated_time" content="2020-08-06T00:00:00+00:00" /><meta property="og:site_name" content="UNIXETC" />
 
 
 
@@ -115,6 +115,50 @@
   
 
   <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/post/zbook14-install-wireless-driver-under-debian/">Debian下安装Zbook14无线网卡驱动</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2016-08-17
+          </span>
+
+          
+        
+        <span class="post-author">— 作者 alair</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/linux/">Linux</a>&nbsp;
+          
+            #<a href="/tags/debian/">Debian</a>&nbsp;
+          
+            #<a href="/tags/zbook/">Zbook</a>&nbsp;
+          
+            #<a href="/tags/hp/">HP</a>&nbsp;
+          
+            #<a href="/tags/inter/">inter</a>&nbsp;
+          
+            #<a href="/tags/inter7260/">inter7260</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/zbook14-install-wireless-driver-under-debian/">全文 →</a></div>
+      
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/post/hsts-domain-name-replacement-examples/">HSTS域名更换实例</a></h1>
@@ -206,56 +250,6 @@ root@alairpc:~# cat /etc/default/grub # If you change this file, run &lsquo;upda
       </div>
       
         <div><a class="read-more button" href="/post/ubuntu-modify-the-grub-boot-menu/">全文 →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/post/letsencrypt-certificate-quickly-generate-script/">Let&rsquo;s encrypt 证书快速生成脚本</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2016-05-09
-          </span>
-
-          
-        
-        <span class="post-author">— 作者 alair</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/js/">JS</a>&nbsp;
-          
-            #<a href="/tags/https/">https</a>&nbsp;
-          
-            #<a href="/tags/ssl/">ssl</a>&nbsp;
-          
-            #<a href="/tags/letsencrypt/">letsencrypt</a>&nbsp;
-          
-            #<a href="/tags/shell/">shell</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            网站的Let’s encrypt证书快到期了，看了官方的续期方法比较繁琐，于是在网上找了找简单方便做法，结果找到了墓地小企鹅写的一个脚本(shell script)，使用这个脚本可以方便的生成以及更新Let’s encrypt 证书。
-脚本地址 <a href="https://github.com/xdtianyu/scripts/tree/master/lets-encrypt">https://github.com/xdtianyu/scripts/tree/master/lets-encrypt</a>
-下载脚本
-wget <a href="https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.conf">https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.conf</a> wget <a href="https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh">https://raw.githubusercontent.com/xdtianyu/scripts/master/lets-encrypt/letsencrypt.sh</a>  配置
-root@rnse:~/lesh# cat letsencrypt.conf # only modify the values, key files will be generated automaticly. ACCOUNT_KEY=&quot;letsencrypt-account.key&quot; DOMAIN_KEY=&quot;alair.key&quot; DOMAIN_DIR=&quot;/data/wwwroot/alair.cn/compiled&quot; DOMAINS=&quot;DNS:alair.cn,DNS:www.alair.cn&quot; #ECC=TRUE #LIGHTTPD=TRUE  按照需要自定义DOMAIN_KEY、DOMAIN_DIR、DOMAINS三部分。
-生成证书
-root@rnse:~/lesh#chmod +x letsencrypt.sh root@rnse:~/lesh# ./letsencrypt.sh letsencrypt.conf Generate account key&hellip; Generating RSA private key, 4096 bit long modulus &hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;++ &hellip;.++ e is 65537 (0x10001) Generate domain key&hellip; Generating RSA private key, 2048 bit long modulus .
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/letsencrypt-certificate-quickly-generate-script/">全文 →</a></div>
       
     </div>
     

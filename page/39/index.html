@@ -36,7 +36,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" /><meta property="og:site_name" content="UNIXETC" />
+<meta property="og:updated_time" content="2020-08-06T00:00:00+00:00" /><meta property="og:site_name" content="UNIXETC" />
 
 
 
@@ -115,6 +115,48 @@
   
 
   <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/post/can-not-use-add-apt-repository/">无法使用add-apt-repository命令</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2015-08-23
+          </span>
+
+          
+        
+        <span class="post-author">— 作者 alair</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/linux/">Linux</a>&nbsp;
+          
+            #<a href="/tags/apt-get/">apt-get</a>&nbsp;
+          
+            #<a href="/tags/ubuntu/">Ubuntu</a>&nbsp;
+          
+            #<a href="/tags/add-apt-repository/">add-apt-repository</a>&nbsp;
+          
+            #<a href="/tags/ppa/">PPA</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/can-not-use-add-apt-repository/">全文 →</a></div>
+      
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/post/raspberry-pi-install-minidlna-to-create-digital-media-server/">树莓派安装配置minidlna</a></h1>
@@ -225,74 +267,6 @@ DietPi - Config
       </div>
       
         <div><a class="read-more button" href="/post/raspberry-pi-use-dietpi/">全文 →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/post/sumbit-raspberry-pi-data-to-lewei50/">将树莓派数据上传至乐为物联</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2015-07-30
-          </span>
-
-          
-        
-        <span class="post-author">— 作者 alair</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/raspberry-pi/">Raspberry Pi</a>&nbsp;
-          
-            #<a href="/tags/raspi/">raspi</a>&nbsp;
-          
-            #<a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a>&nbsp;
-          
-            #<a href="/tags/humidity/">Humidity</a>&nbsp;
-          
-            #<a href="/tags/%E4%BC%A0%E6%84%9F%E5%99%A8/">传感器</a>&nbsp;
-          
-            #<a href="/tags/%E6%B9%BF%E5%BA%A6/">湿度</a>&nbsp;
-          
-            #<a href="/tags/%E6%B8%A9%E5%BA%A6/">温度</a>&nbsp;
-          
-            #<a href="/tags/json/">JSON</a>&nbsp;
-          
-            #<a href="/tags/seneor/">Seneor</a>&nbsp;
-          
-            #<a href="/tags/%E7%89%A9%E8%81%94%E7%BD%91/">物联网</a>&nbsp;
-          
-            #<a href="/tags/temperature/">Temperature</a>&nbsp;
-          
-            #<a href="/tags/%E4%B9%90%E4%B8%BA%E7%89%A9%E8%81%94/">乐为物联</a>&nbsp;
-          
-            #<a href="/tags/lewei50/">lewei50</a>&nbsp;
-          
-            #<a href="/tags/dht11/">dht11</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            进入http://www.lewei50.com/注册登录
-添加设备(Add Device) 我的物联 -&gt; 我的设备，添加新设备，类型选择其他，不使用模板。
-请自定义设备标识，后面要用到。
-添加传感器 我的物联 -&gt; 感器与控制器，新建传感器。
-其中标识为提交数据依据，建议英文。
-向乐为物联提交数据 lewei.sh代码如下 <a href="http://cdn.lyq.wiki/res/lewei.sh">http://cdn.lyq.wiki/res/lewei.sh</a>
-#!/bin/bash LURL=http://www.lewei50.com/api/V1/Gateway/UpdateSensors/01 KEY=&quot;2fasdfsdfsdf9ffadsf62dfbfsdfa1&quot; sys_load=<code>cat /proc/loadavg | awk '{print $2}'</code> st=<code>/usr/bin/sen_t</code> sh=<code>/usr/bin/sen_h</code> for i in 1 2 3 4 5; do sys_temp=<code>cat /sys/class/thermal/thermal_zone0/temp | awk '{print $1/1000}'</code> if [[ &quot;${sys_temp}&quot; =~ ^- ]] then sys_temp='0.0&rsquo; else echo ${sys_temp} break fi done echo &quot;Printf Values&quot; echo &quot;sys_temp:&quot;${sys_temp} echo &quot;sys_load:&quot;${sys_load} echo &quot;sensor_t:&quot;${st} echo &quot;sensor_h:&quot;${sh} echo &quot;Done!&quot; echo &quot;Sumbit Data to Lewei&quot; curl &ndash;request POST ${LURL} &ndash;header &quot;userkey:${KEY}&quot; &ndash;data &quot;[{&lsquo;Name&rsquo;:&lsquo;load&rsquo;,&lsquo;Value&rsquo;:&lsquo;${sys_load}'},{&lsquo;Name&rsquo;:&lsquo;temp&rsquo;,&lsquo;Value&rsquo;:&lsquo;${sys_temp}'},{&lsquo;Name&rsquo;:&lsquo;sd&rsquo;,&lsquo;Value&rsquo;:&lsquo;${sh}'},{&lsquo;Name&rsquo;:&lsquo;wd&rsquo;,&lsquo;Value&rsquo;:&lsquo;${st}'}]&quot;  其中LURL后面的01为设备标识,KEY为用户Userkey,JSON数据中的Name对应相应的传感器标识。
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/sumbit-raspberry-pi-data-to-lewei50/">全文 →</a></div>
       
     </div>
     

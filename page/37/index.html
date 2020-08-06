@@ -36,7 +36,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" /><meta property="og:site_name" content="UNIXETC" />
+<meta property="og:updated_time" content="2020-08-06T00:00:00+00:00" /><meta property="og:site_name" content="UNIXETC" />
 
 
 
@@ -115,6 +115,67 @@
   
 
   <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/post/gandi-free-ssl-certificate-usage/">Gandi免费SSL证书使用方法</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2015-09-24
+          </span>
+
+          
+        
+        <span class="post-author">— 作者 alair</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/linux/">Linux</a>&nbsp;
+          
+            #<a href="/tags/nginx/">Nginx</a>&nbsp;
+          
+            #<a href="/tags/ssh/">SSH</a>&nbsp;
+          
+            #<a href="/tags/%E5%9F%9F%E5%90%8D/">域名</a>&nbsp;
+          
+            #<a href="/tags/lnmp/">lnmp</a>&nbsp;
+          
+            #<a href="/tags/ssl/">ssl</a>&nbsp;
+          
+            #<a href="/tags/gandi/">gandi</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            首先澄清此文中的免费不是真的免费，而是新注册或转移域名到Gandi，都可以获得标准版SSL证书一年的免费使用。
+符合以上条件的话，可以进行下面操作了！
+在Gandi上购买SSL证书，选择标准版，在结算的时候系统会自动判断是否免单，正常情况下会0元结单，完成后接着配置SSL证书。
+首先提交CSR，这里需要自己生产CSR。
+在此以3c.lc域名为例，在Ubuntu中操作。
+openssl req -nodes -newkey rsa:2048 -sha1 -keyout 3clc.key -out 3clc.csr  然后根据提示填写以下内容：
+Country Name (2 letter code) [AU]: #国家代码，中国为CN
+State or Province Name (full name) [Some-State]: #省份
+Locality Name (eg, city) []: #城市
+Organization Name (eg, company) [Internet Widgits Pty Ltd]: #组织名
+Organizational Unit Name (eg, section) []: #部门名
+Common Name (e.g. server FQDN or YOUR name) []:3c.lc #注意，这里需要填写你的域名。
+Email Address []:2b@3c.lc #邮箱
+Please enter the following ‘extra’ attributes
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/gandi-free-ssl-certificate-usage/">全文 →</a></div>
+      
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/post/gfw-infection-trust-and-deception/">墙、感染、信任和欺骗</a></h1>
@@ -205,44 +266,6 @@
       </div>
       
         <div><a class="read-more button" href="/post/raspberry-pi-allow-root-login/">全文 →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/post/photoshop-compressed-png-images/">使用Photoshop压缩PNG图片</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2015-09-13
-          </span>
-
-          
-        
-        <span class="post-author">— 作者 alair</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/png/">png</a>&nbsp;
-          
-            #<a href="/tags/photoshop/">photoshop</a>&nbsp;
-          
-            #<a href="/tags/adobe/">adobe</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/photoshop-compressed-png-images/">全文 →</a></div>
       
     </div>
     

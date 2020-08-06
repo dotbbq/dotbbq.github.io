@@ -36,7 +36,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" /><meta property="og:site_name" content="UNIXETC" />
+<meta property="og:updated_time" content="2020-08-06T00:00:00+00:00" /><meta property="og:site_name" content="UNIXETC" />
 
 
 
@@ -115,6 +115,70 @@
   
 
   <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/post/use-google-authenticator-set-2step-verification-strengthening-ssh-login/">使用Google Authenticator两步验证加强SSH登录</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2016-01-28
+          </span>
+
+          
+        
+        <span class="post-author">— 作者 alair</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/linux/">Linux</a>&nbsp;
+          
+            #<a href="/tags/google/">Google</a>&nbsp;
+          
+            #<a href="/tags/vps/">VPS</a>&nbsp;
+          
+            #<a href="/tags/ssh/">SSH</a>&nbsp;
+          
+            #<a href="/tags/%E8%B0%B7%E6%AD%8C/">谷歌</a>&nbsp;
+          
+            #<a href="/tags/ga/">ga</a>&nbsp;
+          
+            #<a href="/tags/2step/">2step</a>&nbsp;
+          
+            #<a href="/tags/libpam/">libpam</a>&nbsp;
+          
+            #<a href="/tags/pam/">pam</a>&nbsp;
+          
+            #<a href="/tags/%E4%B8%A4%E6%AD%A5%E9%AA%8C%E8%AF%81/">两步验证</a>&nbsp;
+          
+            #<a href="/tags/otp/">otp</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            Google Authenticator开源版主页 <a href="https://github.com/google/google-authenticator">https://github.com/google/google-authenticator</a>
+安装Google Authenticator Ubuntu已经包含libpam-google-authenticator软件(Ubuntu 11.10以上版本),可以直接使用apt-get安装
+apt-get install libpam-google-authenticator  其他系统可以通过源码编译安装
+git clone <a href="https://github.com/google/google-authenticator-libpam.git">https://github.com/google/google-authenticator-libpam.git</a> cd google-authenticator-libpam/ ./bootstrap.sh ./configure make make install  注意：在Debian7中执行./configure时可能存在以下错误提示
+configure: error: Unable to find the PAM library or the PAM header files  在此需要安装libpam0g-dev和libtool
+apt-get -y install libpam0g-dev libtool  设置Google Authenticator 在手机端搜索安装Google Authenticator
+google-authenticator Do you want authentication tokens to be time-based (y/n) y  然后出现二维码，使用手机端Google Authenticator扫码,接下来服务器端继续设置
+如果没有出现二维码，可以将提示的以**<a href="https://www.google.com/chart?">https://www.google.com/chart?</a>**开头的连接复制到浏览器中，就可以看到二维码了
+Do you want me to update your &quot;/root/.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/use-google-authenticator-set-2step-verification-strengthening-ssh-login/">全文 →</a></div>
+      
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/post/raspberry-pi-install-dnsmasq-and-dnsmasq-china-list/">树莓派安装Dnsmasq加速DNS解析</a></h1>
@@ -216,67 +280,6 @@ sudo vi /etc/init.d/noip2  脚本内容如下
       </div>
       
         <div><a class="read-more button" href="/post/install-configure-noip-client-in-raspberry-pi/">全文 →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/post/raspberry-pi-using-ddclient-and-ddns/">树莓派使用ddclient和DDNS</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2016-01-07
-          </span>
-
-          
-        
-        <span class="post-author">— 作者 alair</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/linux/">Linux</a>&nbsp;
-          
-            #<a href="/tags/raspberry-pi/">Raspberry Pi</a>&nbsp;
-          
-            #<a href="/tags/raspi/">raspi</a>&nbsp;
-          
-            #<a href="/tags/ddns/">DDNS</a>&nbsp;
-          
-            #<a href="/tags/dns/">DNS</a>&nbsp;
-          
-            #<a href="/tags/raspbian/">Raspbian</a>&nbsp;
-          
-            #<a href="/tags/domain/">Domain</a>&nbsp;
-          
-            #<a href="/tags/he.net/">he.net</a>&nbsp;
-          
-            #<a href="/tags/ddclient/">ddclient</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            域名解析 首先得有个域名，在域名管理中将域名DNS设为he.net的DNS地址，如下：
-ns1.he.net ns2.he.net ns3.he.net ns4.he.net ns5.he.net  然后在http://dns.he.net注册账号，添加域名(Add a new domain)
-接下来添加A记录(New A)，勾选允许动态域名解析(Enable entry for dynamic dns)
-点击域名后DDNS列中的刷新按钮，新建一个DDNS密匙(Generate a DDNS key.)
-安装设置ddclient 在树莓派上安装ddclient
-sudo apt-get install ddclient  编辑ddclient配置文件，路径为/etc/ddclient.conf
-protocol=dyndns2 use=web,web=myip.dnsomatic.com server=dyn.dns.he.net login=raspi.in password='ddnskey&rsquo; <a href="http://www.raspi.in">www.raspi.in</a>,raspi.in  其中password为设置DDNS时的key
-重启ddclient服务
-service ddclient restart  验证IP查询结果
-sudo ddclient -query use=if, if=eth0 address is 192.168.1.111 use=if, if=lo address is 127.0.0.1 use=web, web=dnspark address is 36.40.143.235 use=web, web=dyndns address is NOT FOUND use=web, web=loopia address is 36.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/raspberry-pi-using-ddclient-and-ddns/">全文 →</a></div>
       
     </div>
     

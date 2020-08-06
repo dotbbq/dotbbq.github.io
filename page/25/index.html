@@ -36,7 +36,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" /><meta property="og:site_name" content="UNIXETC" />
+<meta property="og:updated_time" content="2020-08-06T00:00:00+00:00" /><meta property="og:site_name" content="UNIXETC" />
 
 
 
@@ -115,6 +115,46 @@
   
 
   <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/post/windows10-enabled-linux-subsystem/">Windows10开启Linux子系统</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2017-03-10
+          </span>
+
+          
+        
+        <span class="post-author">— 作者 alair</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/linux/">Linux</a>&nbsp;
+          
+            #<a href="/tags/windows/">Windows</a>&nbsp;
+          
+            #<a href="/tags/windows10/">Windows10</a>&nbsp;
+          
+            #<a href="/tags/bash/">bash</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/windows10-enabled-linux-subsystem/">全文 →</a></div>
+      
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/post/termux-package-management/">Termux软件包管理</a></h1>
@@ -210,60 +250,6 @@ export PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:$PATH  
       </div>
       
         <div><a class="read-more button" href="/post/fix-raspberry-path-variable/">全文 →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/post/qiniu-batch-operation/">七牛云qshell工具批量操作</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2017-02-12
-          </span>
-
-          
-        
-        <span class="post-author">— 作者 alair</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/qiniu/">qiniu</a>&nbsp;
-          
-            #<a href="/tags/batch/">batch</a>&nbsp;
-          
-            #<a href="/tags/qshell/">qshell</a>&nbsp;
-          
-            #<a href="/tags/%E4%B8%83%E7%89%9B%E4%BA%91/">七牛云</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            为了方便管理七牛云，官方放出了一个工具-qshell
-qshell是利用七牛文档上公开的API实现的一个方便开发者测试和使用七牛API服务的命令行工具。
-使用qshell可以方便的进行批量操作，包括批量上传、批量下载、批量删除等等……
-首先，从https://u18418398.pipipan.com/fs/18418398-314035000下载官方提供的qshell，里面包含多个平台。
-qshell_linux_386	Linux 32位系统 qshell_linux_amd64	Linux 64位系统 qshell_linux_arm	Linux ARM CPU qshell_windows_386.exe	Windows 32位系统 qshell_windows_amd64.exe	Windows 64位系统 qshell_darwin_386	Mac 32位系统，这种系统很老了 qshell_darwin_amd64	Mac 64位系统，主流的系统  解压后，将对应的版本软件放到自定义目录
-在此以windows版实例操作
-帐号设置 使用qshell前，需要进行帐号验证，可以通过qshell account ak sk格式来进行验证，其中ak和sk对应个人面板-&gt;密匙管理中的AccessKey/SecretKey
-qshell account yW!DRel0y8ERbjw%so^?X8 6pfC4OlL$TZtjpNuR4bLxRsD  设置完成后，可以通过qshell account来查看已设置帐号详情
-qshell account AccessKey:yW!DRel0y8ERbjw%so^?X8 SecretKey:6pfC4OlL$TZtjpNuR4bLxRsD  设置完帐号后，我们就可以使用qshell对帐号对应的空间进行操作
-列出当前帐号下所有空间 qshell buckets cname  cname为空间名
-列出空间中所有文件 qshell listbucket cname cname.list.txt  cname为空间名,cname.list.txt为结果输出文件。
-批量上传 qshell qupload up.cfg  up.cfg上传操作配置文件，如下：
-{ &quot;src_dir&quot; : &quot;D:\abc&quot;, &quot;bucket&quot; : &quot;cname&quot; }  src_dir为本地文件夹，Wdinwos下必须使用如上格式
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/qiniu-batch-operation/">全文 →</a></div>
       
     </div>
     

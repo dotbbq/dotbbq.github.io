@@ -36,7 +36,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" /><meta property="og:site_name" content="UNIXETC" />
+<meta property="og:updated_time" content="2020-08-06T00:00:00+00:00" /><meta property="og:site_name" content="UNIXETC" />
 
 
 
@@ -117,6 +117,62 @@
   <div class="posts">
     
     <div class="post on-list">
+      <h1 class="post-title"><a href="/post/edit-the-cydia-software-source/">修改iPhone的Cydia源</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2012-06-18
+          </span>
+
+          
+        
+        <span class="post-author">— 作者 alair</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/apt-get/">apt-get</a>&nbsp;
+          
+            #<a href="/tags/cydia/">Cydia</a>&nbsp;
+          
+            #<a href="/tags/iphone/">iPhone</a>&nbsp;
+          
+            #<a href="/tags/jailbreak/">Jailbreak</a>&nbsp;
+          
+            #<a href="/tags/apple/">Apple</a>&nbsp;
+          
+            #<a href="/tags/ios/">IOS</a>&nbsp;
+          
+            #<a href="/tags/%E8%B6%8A%E7%8B%B1/">越狱</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            越狱后的ios设备cydia为必装平台，但是在软件源管理中，大家可能会发现一些源通过cydia无法编辑,比如Cydia/Telesphoreo。
+我现在入手一部iPhone 4 CDMA版，通过OTA写号使用。在安装sbsettings的时候，一直提示size mismatch而未能安装成功。网上看了看大家的经历，这样的问题最终定位都是某个软件源不匹配造成，试着删除或者更新就可以解决。
+但是我发现机子买回来，里面有两个源是无法编辑的，一个是上面提到的Cydia/Telesphoreo，另一个就是维维网的源。经过我在cydia下编辑删除，试遍了其他的源的删除，但都是不可以成功安装sbsettings。于是我觉得应该是剩下的那两个不可编辑源的问题，由于Cydia/Telesphoreo是Cydia初始安装的源，应该不会有问题，那就需要编辑删除维维网的源了，但是在cydia的源管理下它是不可编辑的。
+最后让我找到了办法，既然在cydia下不可以编辑，那么在ssh下呢，只要找到该源的文件，那就可以编辑了，经过判断查找，最终定位到/private/etc/apt/sources.list.d/目录，在该目录下存放着一些软件源文件(.list)。因为ios采用和debian相同的软件管理软件apt-get，那么他的软件源管理方式应该类似。基于以上经验，最终定位到了/private/etc/apt/sources.list.d/目录。
+具体解决步骤如下：
+进入到/private/etc/apt/sources.list.d/目录，将里面除了cydia.list文件，其他的全部删除。然后编辑cydia.list文件，只留下一行deb <a href="http://apt.saurik.com/">http://apt.saurik.com/</a> 即可，保存之。
+手机上打开cydia，重新刷新软件源。然后按需添加需要的第三方源。
+至于如何编辑cydia目录，一般可以使用itools等软件，但是这样比较繁琐。简单直接的方法是通过ssh连接手机进行操作，可参考通过SSH连接IOS设备
+aPhone:~ root# cd /private/etc/apt/sources.list.d/ aPhone:/private/etc/apt/sources.list.d root# ls -l total 24 -rwxr-xr-x 1 root wheel 259 May 25 23:01 appvv.list* -rw-r&ndash;r&ndash; 1 root wheel 357 Jun 16 13:59 cydia.list -rw-r&ndash;r&ndash; 1 root wheel 227 May 25 23:01 saurik.list aPhone:/private/etc/apt/sources.list.d root# cat cydia.list deb <a href="http://apt.saurik.com/">http://apt.saurik.com/</a> ios/690.10 main deb <a href="http://apt.178.com/">http://apt.178.com/</a> ./ deb <a href="http://download.voicecloud.cn/cydia/">http://download.voicecloud.cn/cydia/</a> ./ deb <a href="http://cydia.zodttd.com/repo/cydia/">http://cydia.zodttd.com/repo/cydia/</a> stable main deb <a href="http://repo666.ultrasn0w.com/">http://repo666.ultrasn0w.com/</a> .
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/edit-the-cydia-software-source/">全文 →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
       <h1 class="post-title"><a href="/post/twelve-percent-problem-on-hp-veer/">HP Veer刷机中遇到的12%卡死问题</a></h1>
       <div class="post-meta">
         
@@ -193,44 +249,6 @@
       </div>
       
         <div><a class="read-more button" href="/post/leave-friends-alone/">全文 →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/post/do-not-save-your-degree-adverb/">不要吝啬您的程度副词</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2012-04-23
-          </span>
-
-          
-        
-        <span class="post-author">— 作者 alair</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/%E6%98%8E%E6%9C%9D/">明朝</a>&nbsp;
-          
-            #<a href="/tags/%E6%98%8E%E6%9C%9D%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/">明朝那些事儿</a>&nbsp;
-          
-            #<a href="/tags/%E5%BD%93%E5%B9%B4%E6%98%8E%E6%9C%88/">当年明月</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/do-not-save-your-degree-adverb/">全文 →</a></div>
       
     </div>
     

@@ -36,7 +36,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" /><meta property="og:site_name" content="UNIXETC" />
+<meta property="og:updated_time" content="2020-08-06T00:00:00+00:00" /><meta property="og:site_name" content="UNIXETC" />
 
 
 
@@ -115,6 +115,68 @@
   
 
   <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/post/oneplus3t-miui10/">一加3T安装MIUI10</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2018-07-19
+          </span>
+
+          
+        
+        <span class="post-author">— 作者 alair</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/android/">Android</a>&nbsp;
+          
+            #<a href="/tags/twrp/">twrp</a>&nbsp;
+          
+            #<a href="/tags/oneplus/">oneplus</a>&nbsp;
+          
+            #<a href="/tags/oneplus3t/">oneplus3t</a>&nbsp;
+          
+            #<a href="/tags/miui/">miui</a>&nbsp;
+          
+            #<a href="/tags/miui10/">miui10</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            首先，十分感谢HitoLiu辛苦劳动，才有了Oneplus3T的MIUI10
+刷机前先确认H2OS版本，由于H大的MIUI10是基于Android 7，所以要是基于Android7系的话，则可以直接刷，要是基于Android8的话，就得先降级。
+一加3T安卓8降级安卓7 基于Android8的手机，下载下面降级包，通过系统内自带升级功能，手动选择该包进行降级。
+一加3T Android 8降级Android 7刷机包 <a href="https://dotbbq.pipipan.com/fs/18418398-315801567">https://dotbbq.pipipan.com/fs/18418398-315801567</a>
+或者在这里下载Android7的底包，刷入底包即可 <a href="https://ciux.org/oneplus3t-base-firmware.html">https://ciux.org/oneplus3t-base-firmware.html</a>
+降级完成后，开始解锁刷入第三方recovery来刷机。
+推荐使用一加3/3T工具包(OnePlus3/3T Unified ToolKit)，使用方法<strong>点击这里</strong>
+一加3T MIUI10刷机流程  解锁  手机端设置-&gt;开发者选项，打开OEM解锁和USB调试。
+连接手机和电脑，打开工具包选择2) Unlock - ReLock Bootloader，下一步选择1解锁。
+手机按照提示选择YES解锁
+刷入TWRP Recovery  重启手机，选择Fastboot模式，连接手机和电脑，选择5) Flash - Boot TWRP Recovery，刷入TWRP
+刷入MIUI10  进入TWRP Recovery，挂载MTP，将MIUI10刷机包拷入手机，然后进行卡刷。
+双清后重启即可！
+官方更新说明 因MIUI官方开始全部适配安卓8，7.1的MIUI在11月2号官方已经正式停更了，目前这版MIUI是MIUI官方发布的最后一个安卓7.1版本，也是目前 最完善的一版。 如果不出意外的话，这也是一加3/3T安卓7.1 MIUI的最后一版。后续就是准备给一加3/3T上安卓O或以上的MIUI了，基本完善后我会优先发在群里 给机油门尝鲜。安卓O的MIUI最快也要半个月以上，且第一版难免bug多，耐心等待别催，只要我手上的3T还没坏就会一直把MIUI维护下去。 8.10.22及以上的MIUI无需双清可直接刷本版MIUI升级，8.10.22以下的需要双清升级。  8.11.3更新日志
+1.同步MIUI官方最后一版安卓7.1的MIUI的更新 2.修复新版附加设置-交换返回与多任务键无效的bug  8.11.2更新日志：
+1.同步MIUI的更新 2.解决WiFi mac地址问题 3.解决WiFi认证问题 4.修复了一些其他已知bug 5.附加设置更新，全新的界面，加入色温调节，省电模式，性能模式等等  8.10.28更新日志：
+1.同步MIUI官方第392周更新 2.修复了一些已知bug 这次不是简单的同步更新，而是完全的重制，除了修复以前的一些已知bug外，流畅度也有大幅度的提升，并且还增加了很多新功能，比如 人脸解锁、AI相机等等，还有很多细节上的变化，应该能让你爽到脱肛的那种。 注意注意注意！这个包更改幅度较大，必须双清刷，否则可能出现各种程序报错！如果data分区被加密则需要格式化data！！否则可能会 一直卡在开机动画不能进系统！  8.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/oneplus3t-miui10/">全文 →</a></div>
+      
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/post/grub-boot-iso-image-file/">GRUB引导ISO镜像</a></h1>
@@ -214,50 +276,6 @@ alair@e6440:~$ apt search memdisk 正在排序&hellip; 完成 全文搜索&helli
       </div>
       
         <div><a class="read-more button" href="/post/excel-file-size-abnormal-check/">全文 →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/post/canonical-livepatch-service/">Ubuntu配置Livepatch服务</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2018-05-25
-          </span>
-
-          
-        
-        <span class="post-author">— 作者 alair</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/linux/">Linux</a>&nbsp;
-          
-            #<a href="/tags/ubuntu/">Ubuntu</a>&nbsp;
-          
-            #<a href="/tags/kernel/">Kernel</a>&nbsp;
-          
-            #<a href="/tags/canonical/">Canonical</a>&nbsp;
-          
-            #<a href="/tags/livepatch/">Livepatch</a>&nbsp;
-          
-            #<a href="/tags/cls/">CLS</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/canonical-livepatch-service/">全文 →</a></div>
       
     </div>
     

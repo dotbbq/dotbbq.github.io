@@ -36,7 +36,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2020-07-30T00:00:00+00:00" /><meta property="og:site_name" content="UNIXETC" />
+<meta property="og:updated_time" content="2020-08-06T00:00:00+00:00" /><meta property="og:site_name" content="UNIXETC" />
 
 
 
@@ -115,6 +115,63 @@
   
 
   <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/post/vmware-installs-alpine-linux-instance/">VMware安装Alpine Linux实例</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2019-05-14
+          </span>
+
+          
+        
+        <span class="post-author">— 作者 alair</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/linux/">Linux</a>&nbsp;
+          
+            #<a href="/tags/alpine/">Alpine</a>&nbsp;
+          
+            #<a href="/tags/alpine-linux/">Alpine Linux</a>&nbsp;
+          
+            #<a href="/tags/vmware/">VMware</a>&nbsp;
+          
+            #<a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">虚拟机</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            AlpineLinux介绍 Alpine 的意思是“高山的”，比如 Alpine plants高山植物，Alpine skiing高山滑雪、the alpine resort阿尔卑斯山胜地。
+Alpine Linux 网站首页注明“Small！Simple！Secure！Alpine Linux is a security-oriented, lightweight Linux distribution based on musl libc and busybox.”概括了以下特点：
+小巧：基于Musl libc和busybox，和busybox一样小巧，最小的Docker镜像只有5MB； 安全：面向安全的轻量发行版； 简单：提供APK包管理工具，软件的搜索、安装、删除、升级都非常方便。 适合容器使用：由于小巧、功能完备，非常适合作为容器的基础镜像。  准备工作 安装VMware虚拟机软件，新建虚拟机，配置如下：
+下载AlpineLinux镜像文件alpine-standard-3.9.4-x86_64.iso，下载地址: <a href="https://www.alpinelinux.org/downloads/">https://www.alpinelinux.org/downloads/</a> 设置虚拟机光驱挂载镜像文件alpine-standard-3.9.4-x86_64.iso。
+开始安装Alpine Linux 启动虚拟机，开始从光驱引导系统，进入系统后，输入root登录，然后输入setup-alpine开始启动安装程序。
+下来设置键盘布局(us)、主机名(vm)以及网络配置：
+接着设置时区(timezone)
+然后是网络代理和网络时间同步(NTP)设置
+接下里选择软件源镜像(mirrors)，我选择了兰州大学的镜像：
+然后选择SSH服务程序，设置安装磁盘以及使用方式，完成安装后会提示**Installation is complete. Please reboot.**至此安装完成。
+安装Awesome桌面 添加普通用户 #adduser alair  启用Community Repository vi /etc/apk/repositories编辑软件源配置，去掉其中Community Repository前面的注释符(#)
+apk update&amp;&amp;apk upgrade更新软件。
+安装awesome 使用以下命令安装awesome、lua、feh和lxterminal
+#apk add awesome lua feh lxterminal  其他桌面应用可以按需添加，比如firefox, gnumeric, xchat, gimp, pidgin, geany, vim等。
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/vmware-installs-alpine-linux-instance/">全文 →</a></div>
+      
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/post/mplayer-and-the-n900-cameras/">Mplayer和N900镜头</a></h1>
@@ -232,52 +289,6 @@ alair@zb14:~/下载$ sudo flasher-3.5 -F RX-51_2009SE_10.2010.13-2.VANILLA_PR_EM
       </div>
       
         <div><a class="read-more button" href="/post/nokia-n900-installation-firmware/">全文 →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/post/n900-removes-unnecessary-software-and-games/">NokiaN900删除不必要的软件</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2019-04-30
-          </span>
-
-          
-        
-        <span class="post-author">— 作者 alair</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/n900/">N900</a>&nbsp;
-          
-            #<a href="/tags/nokia-n900/">Nokia N900</a>&nbsp;
-          
-            #<a href="/tags/%E8%AF%BA%E5%9F%BA%E4%BA%9A/">诺基亚</a>&nbsp;
-          
-            #<a href="/tags/%E7%B2%BE%E7%AE%80/">精简</a>&nbsp;
-          
-            #<a href="/tags/linux/">Linux</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            NokiaN900自带的软件不少，还有一些游戏，以下为这些软件的删除方式。
-首先，建议安装rootsh以获取ROOT权限，然后在xTermianl进行以下操作。
-名称 说明 删除命令     Mahjong 游戏 apt-get remove -y osso-mahjong   Chess 游戏 apt-get remove -y gnuchess   Blocks 游戏 apt-get remove -y maemoblocks   Marbles 游戏 apt-get remove -y osso-lmarbles   AP News 软件 apt-get remove -y ap-installer   Docs To Go 软件 apt-get remove -y dtg-installer   Sketch 画图 apt-get remove -y osso-sketch   Backup 备份 apt-get remove -y osso-backup   PDF reader PDF阅读 apt-get remove -y osso-pdf-viewer   RSS RSS订阅 apt-get remove -y osso-rss-feed-reader   Notes 记事本 apt-get remove -y osso-notes   Amazon Amazon安装快捷方式 rm /usr/share/maemo-installer-utils/amazon.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/n900-removes-unnecessary-software-and-games/">全文 →</a></div>
       
     </div>
     
