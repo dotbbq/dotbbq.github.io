@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<meta name="generator" content="Hugo 0.73.0" />
+	<meta name="generator" content="Hugo 0.74.3" />
     
-      <title>UNIXETC — A personal site</title>
+      <title>UNIXETC — A Personal Site About Anything.</title>
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="A personal site"/>
+<meta name="description" content="A Personal Site About Anything."/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="/" />
@@ -36,7 +36,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2020-08-06T00:00:00+00:00" /><meta property="og:site_name" content="UNIXETC" />
+<meta property="og:updated_time" content="2020-08-11T00:00:00+00:00" /><meta property="og:site_name" content="UNIXETC" />
 
 
 
@@ -115,6 +115,61 @@
   
 
   <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/post/p7zip-usage/">p7zip使用实例</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2017-06-16
+          </span>
+
+          
+        
+        <span class="post-author">— 作者 alair</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/linux/">Linux</a>&nbsp;
+          
+            #<a href="/tags/p7zip/">p7zip</a>&nbsp;
+          
+            #<a href="/tags/7z/">7z</a>&nbsp;
+          
+            #<a href="/tags/7za/">7za</a>&nbsp;
+          
+            #<a href="/tags/lzma/">lzma</a>&nbsp;
+          
+            #<a href="/tags/tar/">tar</a>&nbsp;
+          
+            #<a href="/tags/zip/">zip</a>&nbsp;
+          
+            #<a href="/tags/cab/">cab</a>&nbsp;
+          
+            #<a href="/tags/gzip/">gzip</a>&nbsp;
+          
+            #<a href="/tags/bzip2/">bzip2</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            以下是CentOS7中7za的使用实例,CentOS下安装p7zip可以参考此文
+[root@localhost ~]# 7za 7-Zip (a) [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21 p7zip Version 16.02 (locale=en_US.UTF-8,Utf16=on,HugeFiles=on,64 bits,1 CPU x64) Usage: 7za &lt;command&gt; [&lt;switches&gt;&hellip;] &lt;archive_name&gt; [&lt;file_names&gt;&hellip;] [&lt;@listfiles&hellip;&gt;] &lt;Commands&gt; a : Add files to archive b : Benchmark d : Delete files from archive e : Extract files from archive (without using directory names) h : Calculate hash values for files i : Show information about supported formats l : List contents of archive rn : Rename files in archive t : Test integrity of archive u : Update files to archive x : eXtract files with full paths &lt;Switches&gt; &ndash; : Stop switches parsing -ai[r[-|0]]{@listfile|!
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/p7zip-usage/">全文 →</a></div>
+      
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/post/oneplus3-3t-unified-toolkit/">一加3/3T工具包</a></h1>
@@ -214,59 +269,6 @@ Title OnePlus 3/3T Unified ToolKit v5.0U by @ahmed_radaideh ====================
       </div>
       
         <div><a class="read-more button" href="/post/fix-toshiba-u-disk-write-protection/">全文 →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/post/anbox-run-android-applications-on-linux/">在Linux中运行Android软件</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2017-06-09
-          </span>
-
-          
-        
-        <span class="post-author">— 作者 alair</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/linux/">Linux</a>&nbsp;
-          
-            #<a href="/tags/android/">Android</a>&nbsp;
-          
-            #<a href="/tags/anbox/">Anbox</a>&nbsp;
-          
-            #<a href="/tags/adb/">adb</a>&nbsp;
-          
-            #<a href="/tags/apk/">apk</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            想要在PC上运行Android软件就需要模拟器，Windows版的Android模拟器软件很多，但是Linux平台的就不多了，今天推荐一款Linux下的Android模拟器软件Anbox
-Anbox官方介绍为Android in a Box,Run Android applications on any GNU/Linux operating system.
-Anbox现在还处于测试阶段，很多功能还不完善和稳定，请谨慎使用。
-安装Anbox 首先得安装Snaps,官方地址为https://snapcraft.io/
-LinuxMint中安装Snaps和必须包
-sudo apt install snapd sudo apt install pulseaudio  接下来按照官方指南安装Anbox
-snap install &ndash;classic anbox-installer &amp;&amp; anbox-installer  我试着通过snap来安装一直存在权限问题，一般权限不能运行snap install &ndash;classic anbox-installer，root运行完snap install &ndash;classic anbox-installer后，但运行anbox-installer又提示不能使用root权限，一般权限根本无法运行anbox-installer，搞了半天都没有成功，于是就有了下文。
-通过常规方法安装Anbox
-wget <a href="https://raw.githubusercontent.com/anbox/anbox-installer/master/installer.sh">https://raw.githubusercontent.com/anbox/anbox-installer/master/installer.sh</a> -O anbox-installer chmod +x ./anbox-installer ./anbox-installer  安装完成后会有重启系统的提示
-To ensure all changes made to your system you should now reboot your system. If you don’t do this no Android applications will show up in the system application launcher.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/anbox-run-android-applications-on-linux/">全文 →</a></div>
       
     </div>
     

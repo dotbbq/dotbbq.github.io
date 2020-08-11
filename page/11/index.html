@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<meta name="generator" content="Hugo 0.73.0" />
+	<meta name="generator" content="Hugo 0.74.3" />
     
-      <title>UNIXETC — A personal site</title>
+      <title>UNIXETC — A Personal Site About Anything.</title>
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="A personal site"/>
+<meta name="description" content="A Personal Site About Anything."/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="/" />
@@ -36,7 +36,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2020-08-06T00:00:00+00:00" /><meta property="og:site_name" content="UNIXETC" />
+<meta property="og:updated_time" content="2020-08-11T00:00:00+00:00" /><meta property="og:site_name" content="UNIXETC" />
 
 
 
@@ -115,6 +115,51 @@
   
 
   <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/post/start-with-nokian900-again/">再次入手NokiaN900</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2019-04-22
+          </span>
+
+          
+        
+        <span class="post-author">— 作者 alair</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/nokia/">Nokia</a>&nbsp;
+          
+            #<a href="/tags/n900/">N900</a>&nbsp;
+          
+            #<a href="/tags/maemo/">Maemo</a>&nbsp;
+          
+            #<a href="/tags/nokia-n900/">Nokia N900</a>&nbsp;
+          
+            #<a href="/tags/%E8%AF%BA%E5%9F%BA%E4%BA%9A/">诺基亚</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            时隔八年，再次入手Nokia N900
+系统截图 Nokia N900配置    参数 属性     网络 GSM / HSPA   2G bands GSM 850 / 900 / 1800 / 1900   3G bands HSDPA 900 / 1700 / 2100   速率 HSPA 10.2/2 Mbps   GPRS Class 32   EDGE Class 32   发布 2009, August. Released 2009, November   状态 停产   外观尺寸 110.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/start-with-nokian900-again/">全文 →</a></div>
+      
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/post/maemo-release-history/">Maemo发布版本历史</a></h1>
@@ -251,64 +296,6 @@
       </div>
       
         <div><a class="read-more button" href="/post/meizu-pro-5-installs-ubuntu-touch-system/">全文 →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/post/raspberry-pi-zero-with-ssh-over-usb/">通过SSH Over USB管理树莓派Zero</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2019-04-19
-          </span>
-
-          
-        
-        <span class="post-author">— 作者 alair</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/raspberry-pi/">Raspberry Pi</a>&nbsp;
-          
-            #<a href="/tags/raspi/">raspi</a>&nbsp;
-          
-            #<a href="/tags/ssh/">SSH</a>&nbsp;
-          
-            #<a href="/tags/raspbian/">Raspbian</a>&nbsp;
-          
-            #<a href="/tags/raspberry-pi-zero/">Raspberry Pi Zero</a>&nbsp;
-          
-            #<a href="/tags/ssh-over-usb/">ssh over usb</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            树莓派Zero因为相对来说太小巧，没有提供初始化的网卡，所以我们除了通过串口连接以外，树莓派Zero也提供了USB直接连接的方式。即通过Ethernet Gadget模式来连接pc，并进行ssh连接。
-Ethernet Gadget模式即USB网卡模式，比较常见的就是我们通过android手机的usb接口对pc进行网络共享的一种手段。一般电脑都会自动识别这种设备，并开启网卡进行共享。
-修改配置文件 为了进行USB连接，我们需要修改BOOT文件夹下的config.txt与cmdline.txt配置文件。 首先在config.txt最末行处换行添加如下代码，打开usb网卡模式：
-dtoverlay=dwc2  其次在cmdline.txt文件中找到rootwait字段，并在其后面空格添加如下信息，在打开系统时开启USB网卡模式。
-modules-load=dwc2,g_ether  在boot分区新建ssh文件，以打开ssh访问功能。
-touch ssh  通过usb连接设备 树莓派zero有两个MicroUSB口，一个是电源插口，职司供电的功能，另外一个就是USB接口，它除了供电以外还提供OTG的功能，我们也是通过这个接口来连接PC。 此时我们可以通过以下代码连接树莓派zero：
-ssh <a href="mailto:pi@raspberrypi.local">pi@raspberrypi.local</a>  但此时ip段为DHCP模式获取，如果我们希望通过ip来连接，则我们需要给树莓派的usb网卡设置ip。
-设置USB网卡的IP 我们可以通过ifconfig -a来查看我们现在的网卡设备，此时我们可以看到，USB0网卡设备，我们就是通过该设备连接的pc，所以我们需要设置该网卡的ip。
-sudo nano /etc/network/interfaces  打开网卡配置界面，在最末行添加如下代码来设置固定IP：
-allow-hotplug usb0 iface usb0 inet static address 192.168.7.2 netmask 255.255.255.0 network 192.168.7.0 broadcast 192.168.7.255 gateway 192.168.7.1  然后重启usb0网卡：
-sudo ifdown usb0 sudo ifup usb0 ifconfig usb0  但树莓派此时实际上是从机，我们需要通过设置pc主机的ip来让树莓派0的usb网卡真正运作起来，那么我们对刚才的usb设备设置如下IP：
-IP: 192.168.7.1 掩码: 255.255.255.0 路由: 192.168.7.1
-此时我们就可以通过ip来进行ssh连接了：
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/raspberry-pi-zero-with-ssh-over-usb/">全文 →</a></div>
       
     </div>
     

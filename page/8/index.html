@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<meta name="generator" content="Hugo 0.73.0" />
+	<meta name="generator" content="Hugo 0.74.3" />
     
-      <title>UNIXETC — A personal site</title>
+      <title>UNIXETC — A Personal Site About Anything.</title>
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="A personal site"/>
+<meta name="description" content="A Personal Site About Anything."/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="/" />
@@ -36,7 +36,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2020-08-06T00:00:00+00:00" /><meta property="og:site_name" content="UNIXETC" />
+<meta property="og:updated_time" content="2020-08-11T00:00:00+00:00" /><meta property="og:site_name" content="UNIXETC" />
 
 
 
@@ -117,6 +117,51 @@
   <div class="posts">
     
     <div class="post on-list">
+      <h1 class="post-title"><a href="/post/convert-images-to-webp-in-linux/">Linux中转换图片为webp格式</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2019-06-11
+          </span>
+
+          
+        
+        
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/webp/">webp</a>&nbsp;
+          
+            #<a href="/tags/png/">png</a>&nbsp;
+          
+            #<a href="/tags/google/">google</a>&nbsp;
+          
+            #<a href="/tags/libwebp/">libwebp</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            安装WebP Ubuntu中可以使用以下命令安装WebP
+$sudo apt install webp  其他Linux系统，可以从这里下载对应压缩包，如下：
+wget <a href="https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.0.2-linux-x86-64.tar.gz">https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.0.2-linux-x86-64.tar.gz</a>  解压后得到以下文件：
+$tar zxf libwebp-1.0.2-linux-x86-64.tar.gz $cd libwebp-1.0.2-linux-x86-64 $cd bin $ll total 12M -rwxr-xr-x 1 100 users 679K Jan 15 12:47 anim_diff -rwxr-xr-x 1 100 users 923K Jan 15 12:47 anim_dump -rwxr-xr-x 1 100 users 2.4M Jan 15 12:47 cwebp -rwxr-xr-x 1 100 users 915K Jan 15 12:47 dwebp -rwxr-xr-x 1 100 users 2.3M Jan 15 12:47 get_disto -rwxr-xr-x 1 100 users 703K Jan 15 12:47 gif2webp -rwxr-xr-x 1 100 users 2.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/convert-images-to-webp-in-linux/">全文 →</a></div>
+      
+    </div>
+    
+    <div class="post on-list">
       <h1 class="post-title"><a href="/post/termux-extra-keys-row/">Termux开启扩展快捷键</a></h1>
       <div class="post-meta">
         
@@ -193,56 +238,6 @@
       </div>
       
         <div><a class="read-more button" href="/post/termux-edit-sources.list/">全文 →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/post/v2ray-client-configuration-example-in-ubuntu/">Ubuntu中v2ray客户端配置实例</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2019-05-18
-          </span>
-
-          
-        
-        <span class="post-author">— 作者 alair</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/v2ray/">v2ray</a>&nbsp;
-          
-            #<a href="/tags/proxy/">proxy</a>&nbsp;
-          
-            #<a href="/tags/socks/">socks</a>&nbsp;
-          
-            #<a href="/tags/vmess/">vmess</a>&nbsp;
-          
-            #<a href="/tags/firefox/">Firefox</a>&nbsp;
-          
-            #<a href="/tags/socksv5/">socksv5</a>&nbsp;
-          
-            #<a href="/tags/linux/">Linux</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            推荐使用WebSocket传输模式，详细配置可参考Nginx V2ray and WebSocket.
-首先使用bash &lt;(curl -L -s <a href="https://install.direct/go.sh">https://install.direct/go.sh</a>)来快捷安装v2ray，如下：
-root@vm:~# bash &lt;(curl -L -s <a href="https://install.direct/go.sh">https://install.direct/go.sh</a>) Installing V2Ray v4.18.0 on x86_64 Downloading V2Ray: <a href="https://github.com/v2ray/v2ray-core/releases/download/v4.18.0/v2ray-linux-64.zip">https://github.com/v2ray/v2ray-core/releases/download/v4.18.0/v2ray-linux-64.zip</a> % Total % Received % Xferd Average Speed Time Time Time Current Dload Upload Total Spent Left Speed 100 608 0 608 0 0 581 0 &ndash;:&ndash;:&ndash; 0:00:01 &ndash;:&ndash;:&ndash; 581 100 10.5M 100 10.5M 0 0 172k 0 0:01:02 0:01:02 &ndash;:&ndash;:&ndash; 194k Extracting V2Ray package to /tmp/v2ray. Archive: /tmp/v2ray/v2ray.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/v2ray-client-configuration-example-in-ubuntu/">全文 →</a></div>
       
     </div>
     

@@ -9,10 +9,31 @@
     <description>Recent content in STUFF on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 06 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 11 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/stuff/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Windows10下访问WSL目录</title>
+      <link>/post/access-wsl-directory-in-windows10/</link>
+      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/access-wsl-directory-in-windows10/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          Windows10下访问WSL目录的方法其实很简单，如下所示:
+➜ post git:(master) explorer.exe . 即可通过文件浏览器打开当前目录。
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>Joplin配置坚果云WebDAV同步</title>

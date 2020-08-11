@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<meta name="generator" content="Hugo 0.73.0" />
+	<meta name="generator" content="Hugo 0.74.3" />
     
-      <title>UNIXETC — A personal site</title>
+      <title>UNIXETC — A Personal Site About Anything.</title>
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="A personal site"/>
+<meta name="description" content="A Personal Site About Anything."/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="/" />
@@ -36,7 +36,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2020-08-06T00:00:00+00:00" /><meta property="og:site_name" content="UNIXETC" />
+<meta property="og:updated_time" content="2020-08-11T00:00:00+00:00" /><meta property="og:site_name" content="UNIXETC" />
 
 
 
@@ -115,6 +115,71 @@
   
 
   <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/post/startssl-and-nginx/">StartSSL免费证书与Nginx配置</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2015-10-14
+          </span>
+
+          
+        
+        <span class="post-author">— 作者 alair</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/nginx/">Nginx</a>&nbsp;
+          
+            #<a href="/tags/301/">301</a>&nbsp;
+          
+            #<a href="/tags/ssl/">ssl</a>&nbsp;
+          
+            #<a href="/tags/%E5%85%8D%E8%B4%B9%E8%AF%81%E4%B9%A6/">免费证书</a>&nbsp;
+          
+            #<a href="/tags/rewrite/">rewrite</a>&nbsp;
+          
+            #<a href="/tags/starssl/">starssl</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            注册StartSSL 打开https://www.startssl.com/，点击Sign-up开始注册
+参考上图填写注册信息，然后Continue，会有如下提示，系统会发送验证码到你的注册邮箱
+检查注册邮箱，将收到的验证码填写提交，然后会出现如下提示，等待审核。
+审核通过后，会收到如下提示邮件，点击其中连接，然后输入邮箱中的验证码完成注册
+安装证书 接下来创建私匙
+安装证书
+安装成功后会有如下提示
+验证域名 接下来验证域名，点击Validations Wizard
+填写域名
+选择验证邮件地址
+按照提示输入邮箱接收到的验证码完成验证。
+创建证书 选择Certificates Wizard，证书目标选择Web Server SSL/TLS Certificate
+接下来新建私匙
+点击Skip跳过系统建立步骤，我们自己在VPS上建立CSR文件，参考下图通过openssl命令建立CSR文件
+注意，为了便于后期安装配置方便，建议密码置空
+完成后，cat出建立好的ciuxsss.csr内容，粘贴提交
+接下来添加域名
+接下来将文本框中的内容保存为一个**.crt**文件
+配置Nginx 贴出我的配置文件，大家参考一下
+server { listen 80; location /{ return 301 https://$host$request_uri; } } server { listen 443; #listen 80; #listen [::]:80; server_name ciux.org; index index.html index.htm index.php default.html default.htm default.php; root /home/ciux/compiled; ssl on; ssl_certificate /home/bk/ssl/ciuxsss.crt; ssl_certificate_key /home/bk/ssl/ciuxsss.key; ssl_session_timeout 5m; ssl_protocols SSLv2 SSLv3 TLSv1; ssl_ciphers ALL:!
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/startssl-and-nginx/">全文 →</a></div>
+      
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/post/gandi-free-ssl-certificate-usage/">Gandi免费SSL证书使用方法</a></h1>
@@ -220,52 +285,6 @@ Please enter the following ‘extra’ attributes
       </div>
       
         <div><a class="read-more button" href="/post/gfw-infection-trust-and-deception/">全文 →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/post/raspberry-pi-allow-root-login/">树莓派开启root登录</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2015-09-18
-          </span>
-
-          
-        
-        <span class="post-author">— 作者 alair</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/linux/">Linux</a>&nbsp;
-          
-            #<a href="/tags/raspi/">raspi</a>&nbsp;
-          
-            #<a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a>&nbsp;
-          
-            #<a href="/tags/ssh/">SSH</a>&nbsp;
-          
-            #<a href="/tags/root/">Root</a>&nbsp;
-          
-            #<a href="/tags/udo/">udo</a>&nbsp;
-          
-            #<a href="/tags/sudo/">sudo</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/raspberry-pi-allow-root-login/">全文 →</a></div>
       
     </div>
     

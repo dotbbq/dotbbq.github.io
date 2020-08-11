@@ -9,10 +9,90 @@
     <description>Recent content in Tags on UNIXETC</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 06 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 11 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux</title>
+      <link>/tags/linux/</link>
+      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/linux/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>/tags/windows/</link>
+      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/windows/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>Windows10</title>
+      <link>/tags/windows10/</link>
+      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/windows10/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>WSL</title>
+      <link>/tags/wsl/</link>
+      <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/wsl/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
     
     <item>
       <title>Jianguoyun</title>
@@ -120,26 +200,6 @@
       <pubDate>Thu, 06 Aug 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/%E7%AC%94%E8%AE%B0/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>Linux</title>
-      <link>/tags/linux/</link>
-      <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/linux/</guid>
       <description>
         
           
@@ -620,26 +680,6 @@
       <pubDate>Sun, 08 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/%E7%BE%8E%E5%8C%96/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>Windows</title>
-      <link>/tags/windows/</link>
-      <pubDate>Thu, 21 Nov 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/windows/</guid>
       <description>
         
           
@@ -1420,26 +1460,6 @@
       <pubDate>Sun, 28 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/regedit/</guid>
-      <description>
-        
-          
-          
-          
-        
-        
-        
-          
-          
-        
-        </description>
-    </item>
-    
-    <item>
-      <title>Windows10</title>
-      <link>/tags/windows10/</link>
-      <pubDate>Sun, 28 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/windows10/</guid>
       <description>
         
           

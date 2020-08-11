@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<meta name="generator" content="Hugo 0.73.0" />
+	<meta name="generator" content="Hugo 0.74.3" />
     
-      <title>UNIXETC — A personal site</title>
+      <title>UNIXETC — A Personal Site About Anything.</title>
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="A personal site"/>
+<meta name="description" content="A Personal Site About Anything."/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="/" />
@@ -36,7 +36,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2020-08-06T00:00:00+00:00" /><meta property="og:site_name" content="UNIXETC" />
+<meta property="og:updated_time" content="2020-08-11T00:00:00+00:00" /><meta property="og:site_name" content="UNIXETC" />
 
 
 
@@ -115,6 +115,54 @@
   
 
   <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/post/linux-deployment-goagent/">Linux下部署goAgent</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2013-05-30
+          </span>
+
+          
+        
+        <span class="post-author">— 作者 alair</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/linux/">Linux</a>&nbsp;
+          
+            #<a href="/tags/google/">Google</a>&nbsp;
+          
+            #<a href="/tags/python/">Python</a>&nbsp;
+          
+            #<a href="/tags/goagent/">goagent</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            准备工作 下载Google Appengine SDK For Pyahont与goAgent
+1.Google App Engine SDK for Python <a href="https://developers.google.com/appengine/downloads?hl=zh-CN#Google_App_Engine_SDK_for_Python">https://developers.google.com/appengine/downloads?hl=zh-CN#Google_App_Engine_SDK_for_Python</a> 2.goagent <a href="https://code.google.com/p/goagent/">https://code.google.com/p/goagent/</a>  下载后解压，将goagent文件夹放到google_appengine目录下，目录结构如下:
+~/google_appengine/goagent-goagent-d488f2  准备好Google Application_ID与两步验证密码,如何申请问Google
+配置goagent 编辑~/google_appengine/goagent-goagent-d488f2/local/proxy.ini
+填写正确的appid，在此建议将profile由默认的google_cn改为google_hk
+参考以下步骤执行：
+aquan@edge ~/google_appengine $ python appcfg.py update goagent-goagent-d4488f2/server/python/ 07:03 PM Host: appengine.google.com 07:03 PM Application: wrchiublog; version: 1 07:03 PM Starting update of app: wrchiublog, version: 1 07:03 PM Getting current resource limits. Email: <a href="mailto:wrchiu@126.com">wrchiu@126.com</a> //在此填写googleid Password for <a href="mailto:wrchiu@126.com">wrchiu@126.com</a>: //此处填写两步验证密码，而不是帐号密码 07:04 PM Scanning files on local disk.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/linux-deployment-goagent/">全文 →</a></div>
+      
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/post/install-vnc-server-on-ubuntu-server/">Ubuntu Server中安装VNC Server</a></h1>
@@ -199,49 +247,6 @@
       </div>
       
         <div><a class="read-more button" href="/post/debian-use-apt-spy-to-select-the-best-source/">全文 →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/post/product-codes-of-nokia-n900/">NokiaN900产品码</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2013-04-26
-          </span>
-
-          
-        
-        <span class="post-author">— 作者 alair</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/nokia/">nokia</a>&nbsp;
-          
-            #<a href="/tags/n900/">n900</a>&nbsp;
-          
-            #<a href="/tags/nokia-n900/">nokia n900</a>&nbsp;
-          
-            #<a href="/tags/rx-51/">rx-51</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            电池仓贴纸上面的CODE即是
-0595085: N900 RX-51 TMN (Telecomunicacoes Moveis Nacionais S.A.*) PT V1 - Black 0582648: RX-51 Belgium 0584571: RX-51 Croatia Makedonia 0584572: RX-51 Czech 0591362: RX-51 Estonia 0574180: RX-51 France 0574383: RX-51 Germany 0591474: RX-51 Hungary 0591474: RX-51 Hungary 0574385: RX-51 Italy 0583516: RX-51 Light Swap 0582647: RX-51 MENA 0585168: RX-51 Montenegro Greece 0582645: RX-51 Netherlands 0582644: RX-51 Poland 0574386: RX-51 Russia 0574179: RX-51 Scandinavia Finland Sweden 0587236: RX-51 Scandinavia Norway Denmark 0584570: RX-51 Slovakia 0584570: RX-51 Slovakia 0574384: RX-51 Spain Portugal 0584598: RX-51 Swap 0584598: RX-51 Swap 0587813: RX-51 Swap France 0587810: RX-51 Swap Russia 0587812: RX-51 Swap USA 0560826: RX-51 UK Ireland 0580952: RX-51 USA 0593611: UK CV 0595421: Vodafone UK GB Contract black 1.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/product-codes-of-nokia-n900/">全文 →</a></div>
       
     </div>
     

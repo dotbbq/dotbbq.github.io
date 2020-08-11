@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<meta name="generator" content="Hugo 0.73.0" />
+	<meta name="generator" content="Hugo 0.74.3" />
     
-      <title>UNIXETC — A personal site</title>
+      <title>UNIXETC — A Personal Site About Anything.</title>
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="A personal site"/>
+<meta name="description" content="A Personal Site About Anything."/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="/" />
@@ -36,7 +36,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2020-08-06T00:00:00+00:00" /><meta property="og:site_name" content="UNIXETC" />
+<meta property="og:updated_time" content="2020-08-11T00:00:00+00:00" /><meta property="og:site_name" content="UNIXETC" />
 
 
 
@@ -115,6 +115,60 @@
   
 
   <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/post/raspberrypi-dynamic-ip-updater/">树莓派动态IP更新器</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2017-04-19
+          </span>
+
+          
+        
+        <span class="post-author">— 作者 alair</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/linux/">Linux</a>&nbsp;
+          
+            #<a href="/tags/raspberry-pi/">Raspberry Pi</a>&nbsp;
+          
+            #<a href="/tags/raspi/">raspi</a>&nbsp;
+          
+            #<a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a>&nbsp;
+          
+            #<a href="/tags/python/">Python</a>&nbsp;
+          
+            #<a href="/tags/ipgetter/">ipgetter</a>&nbsp;
+          
+            #<a href="/tags/ip/">ip</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            这是一个python3的脚本，每隔10分钟监控一次IP地址，如果发生变化则会通过AutoRemote消息通知你。 关于AutoRemote的使用可参考这里
+这里推荐使用ipgetter来获取外网IP，地址为https://github.com/phoemur/ipgetter
+安装ipgetter
+sudo apt-get install python3 pip sudo pip3 install ipgetter 你可以从以下地址获取每个通知设备的AutoRemote所需google key
+​	http://autoremotejoaomgcd.appspot.com/?key=[it’s the part that is here]
+以下为python3脚本:
+import ipgetter import urllib.request import requests currentIP = ipgetter.myip() #AutoRemote function to send a notification YOUR_KEY goes here def sendAR(x): AR_key = 'YOUR_KEY' AR_url = 'http://autoremotejoaomgcd.appspot.com/sendmessage?key='+ AR_key +'&amp;message=IP%20' message = AR_url + x response = urllib.request.urlopen(message).read() print(x)	#check the internet and check if previous file is present try: requests.
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/raspberrypi-dynamic-ip-updater/">全文 →</a></div>
+      
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/post/linux_enable_tcp_bbr/">Linux开启TCP BBR算法</a></h1>
@@ -215,59 +269,6 @@ echo &quot;net.core.default_qdisc=fq&quot; &gt;&gt; /etc/sysctl.conf echo &quot;
       </div>
       
         <div><a class="read-more button" href="/post/use-your-phone-to-remotely-control-raspberrypi/">全文 →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/post/linux-set-ip-netmask-gateway-mac-dns/">Linux下设置IP、网关、掩码、MAC和DNS</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2017-03-20
-          </span>
-
-          
-        
-        <span class="post-author">— 作者 alair</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/linux/">Linux</a>&nbsp;
-          
-            #<a href="/tags/dns/">DNS</a>&nbsp;
-          
-            #<a href="/tags/ifconfig/">ifconfig</a>&nbsp;
-          
-            #<a href="/tags/ip/">ip</a>&nbsp;
-          
-            #<a href="/tags/netmask/">netmask</a>&nbsp;
-          
-            #<a href="/tags/gateway/">gateway</a>&nbsp;
-          
-            #<a href="/tags/mac/">mac</a>&nbsp;
-          
-            #<a href="/tags/route/">route</a>&nbsp;
-          
-            #<a href="/tags/resolvconf/">resolvconf</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            先用ifconfig来查看所有活动网络接口
-eth0 Link encap:Ethernet HWaddr b8:27:eb:1b:63:a8 inet addr:192.168.1.6 Bcast:192.168.1.255 Mask:255.255.255.0 inet6 addr: fe80::6502:67ff:89b:b2fd/64 Scope:Link UP BROADCAST RUNNING MULTICAST MTU:1500 Metric:1 RX packets:43239 errors:0 dropped:24 overruns:0 frame:0 TX packets:30644 errors:0 dropped:0 overruns:0 carrier:0 collisions:0 txqueuelen:1000 RX bytes:25068614 (23.9 MiB) TX bytes:5993030 (5.7 MiB) lo Link encap:Local Loopback inet addr:127.0.0.1 Mask:255.0.0.0 inet6 addr: ::1/128 Scope:Host UP LOOPBACK RUNNING MTU:65536 Metric:1 RX packets:1961 errors:0 dropped:0 overruns:0 frame:0 TX packets:1961 errors:0 dropped:0 overruns:0 carrier:0 collisions:0 txqueuelen:1 RX bytes:160232 (156.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/linux-set-ip-netmask-gateway-mac-dns/">全文 →</a></div>
       
     </div>
     

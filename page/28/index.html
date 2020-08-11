@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<meta name="generator" content="Hugo 0.73.0" />
+	<meta name="generator" content="Hugo 0.74.3" />
     
-      <title>UNIXETC — A personal site</title>
+      <title>UNIXETC — A Personal Site About Anything.</title>
     
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="A personal site"/>
+<meta name="description" content="A Personal Site About Anything."/>
 <meta name="keywords" content=""/>
 <meta name="robots" content="noodp"/>
 <link rel="canonical" href="/" />
@@ -36,7 +36,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/" />
-<meta property="og:updated_time" content="2020-08-06T00:00:00+00:00" /><meta property="og:site_name" content="UNIXETC" />
+<meta property="og:updated_time" content="2020-08-11T00:00:00+00:00" /><meta property="og:site_name" content="UNIXETC" />
 
 
 
@@ -115,6 +115,49 @@
   
 
   <div class="posts">
+    
+    <div class="post on-list">
+      <h1 class="post-title"><a href="/post/ubuntu-modify-the-grub-boot-menu/">ubuntu修改grub引导菜单</a></h1>
+      <div class="post-meta">
+        
+          <span class="post-date">
+            2016-06-27
+          </span>
+
+          
+        
+        <span class="post-author">— 作者 alair</span>
+        
+      </div>
+
+      
+        <span class="post-tags">
+          
+            #<a href="/tags/linux/">Linux</a>&nbsp;
+          
+            #<a href="/tags/ubuntu/">Ubuntu</a>&nbsp;
+          
+            #<a href="/tags/grub/">GRUB</a>&nbsp;
+          
+        </span>
+      
+
+      
+
+      <div class="post-content">
+        
+          
+            先运行update-grub命令生成一次grub配置，顺便查看一下识别出来的引导菜单内容
+root@alairpc:~# update-grub Generating grub configuration file &hellip; Found linux image: /boot/vmlinuz-4.4.0-21-generic Found initrd image: /boot/initrd.img-4.4.0-21-generic Found memtest86+ image: /boot/memtest86+.elf Found memtest86+ image: /boot/memtest86+.bin Found Windows 7 (loader) on /dev/sda1 done root@alairpc:~#  注意看，以上共有5个菜单项，最后一个是windows7
+接下来我们来看看gurb配置文件/etc/default/grub
+root@alairpc:~# cat /etc/default/grub # If you change this file, run &lsquo;update-grub&rsquo; afterwards to update # /boot/grub/grub.cfg. # For full documentation of the options in this file, see: # info -f grub -n &lsquo;Simple configuration&rsquo; GRUB_DEFAULT=4 #GRUB_HIDDEN_TIMEOUT=0 GRUB_HIDDEN_TIMEOUT_QUIET=true GRUB_TIMEOUT=3 GRUB_DISTRIBUTOR=<code>lsb_release -i -s 2&amp;gt; /dev/null || echo Debian</code> GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot; GRUB_CMDLINE_LINUX=&quot;locale=zh_CN&quot; # Uncomment to enable BadRAM filtering, modify to suit your needs # This works with Linux (no patch required) and with any kernel that obtains # the memory map information from GRUB (GNU Mach, kernel of FreeBSD .
+          
+        
+      </div>
+      
+        <div><a class="read-more button" href="/post/ubuntu-modify-the-grub-boot-menu/">全文 →</a></div>
+      
+    </div>
     
     <div class="post on-list">
       <h1 class="post-title"><a href="/post/letsencrypt-certificate-quickly-generate-script/">Let&rsquo;s encrypt 证书快速生成脚本</a></h1>
@@ -220,64 +263,6 @@ ssl -L 9891:localhost:8384 root@ip  输入root密码登录成功后，即可本�
       </div>
       
         <div><a class="read-more button" href="/post/use-syncthing-synchronize-files-between-multiple-devices/">全文 →</a></div>
-      
-    </div>
-    
-    <div class="post on-list">
-      <h1 class="post-title"><a href="/post/optimize-and-compress-image-by-optipng/">使用OptiPNG优化压缩图片</a></h1>
-      <div class="post-meta">
-        
-          <span class="post-date">
-            2016-04-03
-          </span>
-
-          
-        
-        <span class="post-author">— 作者 alair</span>
-        
-      </div>
-
-      
-        <span class="post-tags">
-          
-            #<a href="/tags/linux/">Linux</a>&nbsp;
-          
-            #<a href="/tags/png/">png</a>&nbsp;
-          
-            #<a href="/tags/optipng/">optipng</a>&nbsp;
-          
-            #<a href="/tags/bmp/">bmp</a>&nbsp;
-          
-            #<a href="/tags/gif/">gif</a>&nbsp;
-          
-            #<a href="/tags/pnm/">pnm</a>&nbsp;
-          
-            #<a href="/tags/tiff/">tiff</a>&nbsp;
-          
-            #<a href="/tags/optimize/">optimize</a>&nbsp;
-          
-            #<a href="/tags/compress/">compress</a>&nbsp;
-          
-        </span>
-      
-
-      
-
-      <div class="post-content">
-        
-          
-            因工作需要，得处理一张7872x5904体积为178MB的图片，格式为TIFF。
-网上搜了半天，找到一个名为OptiPNG的软件，主要为PNG优化，但也支持TIFF格式。
-下面是OptiPNG的官方介绍
-OptiPNG is a PNG optimizer that recompresses image files to a smaller size, without losing any information. This program also converts external formats (BMP, GIF, PNM and TIFF) to optimized PNG, and performs PNG integrity checks and corrections.
-OptiPNG可以将PNG文件重新压缩，压缩后体积变得更小，并且不会丢失任何信息。同时optipng还支持其他格式的图片，如BMP、GIF、PNM和TIFF。
-至于OptiPNG的威力如何，请看本次实例
-root@raspi:~# ls -lh huxian.tif -rw-r&ndash;r&ndash; 1 root root 178M Apr 4 16:54 huxian.tif //原始文件178MB root@raspi:~# optipng huxian.tif ** Processing: huxian.tif Importing TIFF 7872x5904 pixels, 4x8 bits/pixel, RGB+alpha //分辨率7872x5904 Reducing image to 3x8 bits/pixel, RGB Input file size = 186000368 bytes Trying: zc = 9 zm = 8 zs = 0 f = 0 IDAT size = 4273133 Selecting parameters: zc = 9 zm = 8 zs = 0 f = 0 IDAT size = 4273133 Output file: huxian.
-          
-        
-      </div>
-      
-        <div><a class="read-more button" href="/post/optimize-and-compress-image-by-optipng/">全文 →</a></div>
       
     </div>
     
